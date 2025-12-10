@@ -4,9 +4,11 @@ import java.awt.Point;
 
 /**
  * GeometryUtils.java
- * 
  * Utility class for common geometric calculations used across the codebase.
  * Centralizes distance calculations, point operations, and coordinate transformations.
+ *
+ * Last updated: December 10, 2025
+ * Author: Jetpack Air Traffic Controller Team
  */
 public class GeometryUtils {
     

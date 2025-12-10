@@ -13,5 +13,8 @@ set JOGL_CP=lib\jogl-all.jar;lib\gluegen-rt.jar;out
 REM Set JOGL native library path
 set NATIVE_PATH=.\lib
 
-"c:\Program Files\Java\jdk-25\bin\java" -Djava.library.path=%NATIVE_PATH% -cp "%JOGL_CP%" com.example.App %*
+REM Add JVM flag for native access
+set JVM_OPTS=--enable-native-access=ALL-UNNAMED
+
+"c:\Program Files\Java\jdk-25\bin\java" %JVM_OPTS% -Djava.library.path=%NATIVE_PATH% -cp "%JOGL_CP%" com.example.App %*
 endlocal

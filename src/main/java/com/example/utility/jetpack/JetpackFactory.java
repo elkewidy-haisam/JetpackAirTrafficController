@@ -1,3 +1,7 @@
+// JetpackFactory.java
+// by Haisam Elkewidy
+// Factory class for generating jetpacks for different cities. Provides city-specific callsigns, models, and manufacturers.
+
 package com.example.utility.jetpack;
 
 import java.util.ArrayList;
@@ -5,9 +9,7 @@ import java.util.ArrayList;
 import com.example.jetpack.JetPack;
 
 /**
- * JetpackFactory.java
- * by Haisam Elkewidy
- * 
+ * JetpackFactory
  * Factory class for generating jetpacks for different cities.
  * Provides city-specific callsigns, models, and manufacturers.
  */

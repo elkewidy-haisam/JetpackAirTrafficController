@@ -1,10 +1,13 @@
+// NavigationCalculator.java
+// by Haisam Elkewidy
+// Provides navigation and direction calculation utilities for jetpack flights.
+
 package com.example.navigation;
 
 import java.awt.Point;
 
 /**
- * NavigationCalculator.java
- * 
+ * NavigationCalculator
  * Provides navigation and direction calculation utilities for jetpack flights.
  * Calculates directions, compass headings, and movement vectors.
  */

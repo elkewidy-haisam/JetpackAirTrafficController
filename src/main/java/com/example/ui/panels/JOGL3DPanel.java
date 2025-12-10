@@ -1,35 +1,74 @@
+/*
+ * JOGL3DPanel.java
+ * Hardware-accelerated 3D panel using JOGL for OpenGL rendering. Drop-in replacement for MapTrackingPanel.
+ *
+ * Last updated: December 10, 2025
+ * Author: Jetpack Air Traffic Controller Team
+ */
 package com.example.ui.panels;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Point;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.Timer;
 
 import com.example.flight.JetPackFlight;
 import com.example.flight.JetPackFlightState;
 import com.example.model.CityModel3D;
 import com.example.ui.utility.JOGLRenderer3D;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.util.List;
-import java.util.Map;
-import com.jogamp.opengl.awt.GLJPanel;
 import com.jogamp.opengl.GLCapabilities;
 import com.jogamp.opengl.GLProfile;
-import com.example.accident.AccidentAlert;
-
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseWheelEvent;
+import com.jogamp.opengl.awt.GLJPanel;
 
 /**
- * JOGL3DPanel - Hardware-accelerated 3D panel using JOGL
- * Drop-in replacement for MapTrackingPanel with OpenGL rendering
+ * JOGL3DPanel - Hardware-accelerated 3D panel using JOGL for OpenGL rendering.
+ * Drop-in replacement for MapTrackingPanel.
  */
 public class JOGL3DPanel extends JPanel {
-        // ...existing code...
+    // Methods to filter jetpacks
+    public void hideJetpack(JetPackFlight flight) {
+        visibleJetpacks.remove(flight);
+        repaint();
+    }
+    public void showJetpack(JetPackFlight flight) {
+        visibleJetpacks.add(flight);
+        repaint();
+    }
+    public void setVisibleJetpacks(java.util.Collection<JetPackFlight> flights) {
+        visibleJetpacks.clear();
+        visibleJetpacks.addAll(flights);
+        repaint();
+    }
+    // Shared registry for all open JOGL3DPanel instances
+    private static final java.util.Set<JOGL3DPanel> openPanels = new java.util.HashSet<>();
+    public static void registerPanel(JOGL3DPanel panel) {
+        openPanels.add(panel);
+    }
+    public static void unregisterPanel(JOGL3DPanel panel) {
+        openPanels.remove(panel);
+    }
+    public static java.util.Set<JOGL3DPanel> getOpenPanels() {
+        return new java.util.HashSet<>(openPanels);
+    }
+
     private JOGLRenderer3D renderer;
     private GLJPanel glPanel;
     private JetPackFlight flight;
     private CityModel3D cityModel;
     private List<JetPackFlight> allFlights;
+    private final java.util.Set<JetPackFlight> visibleJetpacks = new java.util.HashSet<>();
     private Map<JetPackFlight, JetPackFlightState> flightStates;
     private Timer updateTimer;
     
@@ -57,6 +96,10 @@ public class JOGL3DPanel extends JPanel {
         this.allFlights = allFlights;
         this.flightStates = flightStates;
         this.cityModel = new CityModel3D(cityName, cityMap);
+        registerPanel(this);
+
+        // By default, all jetpacks are visible
+        visibleJetpacks.addAll(allFlights);
 
         // Create JOGL renderer and GLJPanel
         this.renderer = new JOGLRenderer3D();
@@ -206,7 +249,7 @@ public class JOGL3DPanel extends JPanel {
             return;
         }
         // Ensure renderer receives up-to-date flight, destination, and path data
-        renderer.updateData(flight, cityModel, allFlights, null, flightStates);
+        renderer.updateData(flight, cityModel, new ArrayList<>(visibleJetpacks), null, flightStates);
     }
 
     
@@ -227,6 +270,10 @@ public class JOGL3DPanel extends JPanel {
     @Override
     public void removeNotify() {
         stopUpdateTimer();
+        if (glPanel != null) {
+            glPanel.destroy();
+        }
+        unregisterPanel(this);
         super.removeNotify();
     }
 }

@@ -6,7 +6,7 @@
  *
  * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
-package com.example.util;
+package com.example.utility.map;
 
 import java.io.File;
 import java.io.FileWriter;

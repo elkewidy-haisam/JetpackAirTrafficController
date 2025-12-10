@@ -29,10 +29,25 @@ import java.util.HashMap;
  * CityMapPanel - Main panel for displaying city map with animated jetpacks
  */
 public class CityMapPanel extends JPanel {
+        // Methods to filter jetpacks
+        public void hideJetpack(JetPackFlight flight) {
+            visibleJetpacks.remove(flight);
+            repaint();
+        }
+        public void showJetpack(JetPackFlight flight) {
+            visibleJetpacks.add(flight);
+            repaint();
+        }
+        public void setVisibleJetpacks(java.util.Collection<JetPackFlight> flights) {
+            visibleJetpacks.clear();
+            visibleJetpacks.addAll(flights);
+            repaint();
+        }
     private String city;
     private final ArrayList<JetPack> jetpacks;
     private JPanel mapPanel;
     private final List<JetPackFlight> jetpackFlights;
+    private final java.util.Set<JetPackFlight> visibleJetpacks = new java.util.HashSet<>();
     private Map<JetPackFlight, JetPackFlightState> flightStates;
     private RadarTapeWindow radarTape;
     private javax.swing.Timer dateTimeTimer;
@@ -92,6 +107,9 @@ public class CityMapPanel extends JPanel {
         initializeComponents();
         startDateTimeTimer();
         startRadioInstructions();
+
+        // By default, all jetpacks are visible
+        visibleJetpacks.addAll(jetpackFlights);
     }
     
     public void setShowCitySelectionCallback(Runnable callback) {
@@ -187,6 +205,24 @@ public class CityMapPanel extends JPanel {
         JPanel contentPanel = UIComponentFactory.createBorderLayoutPanel(10, 0);
         contentPanel.setBackground(Color.WHITE);
 
+        // --- Jetpack Filter Panel ---
+        JPanel filterPanel = new JPanel();
+        filterPanel.setLayout(new BoxLayout(filterPanel, BoxLayout.Y_AXIS));
+        filterPanel.setBackground(Color.WHITE);
+        filterPanel.setBorder(BorderFactory.createTitledBorder("Jetpack Filter"));
+        for (JetPackFlight flight : jetpackFlights) {
+            JCheckBox cb = new JCheckBox(flight.getJetpack().getCallsign(), true);
+            cb.addItemListener(e -> {
+                if (cb.isSelected()) {
+                    showJetpack(flight);
+                } else {
+                    hideJetpack(flight);
+                }
+            });
+            filterPanel.add(cb);
+        }
+        contentPanel.add(filterPanel, BorderLayout.WEST);
+
         // Load road map
         mapPanel = UIComponentFactory.createBorderLayoutPanel();
         UIComponentFactory.setPreferredSize(mapPanel, 800, 600);
@@ -228,7 +264,7 @@ public class CityMapPanel extends JPanel {
                     // Apply zoom transformation
                     g2d.scale(zoomScale, zoomScale);
                     
-                    renderer.paintMapComponent(g, this, jetpackFlights, parkingSpaces);
+                    renderer.paintMapComponent(g, this, new ArrayList<>(visibleJetpacks), parkingSpaces);
                 }
                 
                 @Override

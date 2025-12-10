@@ -63,9 +63,9 @@ public class CityMapRenderer {
         // Draw parking spaces
         drawParkingSpaces(g2d, parkingSpaces);
         
-        // Draw jetpack flights
-        for (JetPackFlight flight : jetpackFlights) {
-            flight.draw(g2d);
+            // Only render visible jetpacks
+            for (JetPackFlight flight : jetpackFlights) {
+                flight.draw(g2d);
         }
         
         // Draw performance monitor if enabled

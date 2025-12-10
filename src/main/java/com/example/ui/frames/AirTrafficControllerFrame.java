@@ -1,3 +1,11 @@
+/*
+ * AirTrafficControllerFrame.java
+ * Main application frame for the Air Traffic Controller system.
+ * Handles city selection, map display, session management, and user actions.
+ *
+ * Last updated: December 10, 2025
+ * Author: Jetpack Air Traffic Controller Team
+ */
 package com.example.ui.frames;
 
 import java.awt.BorderLayout;
@@ -16,11 +24,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
+import com.example.jetpack.JetPack;
 import com.example.logging.CityLogManager;
 import com.example.manager.CityDisplayUpdater;
 import com.example.manager.CityJetpackManager;
 import com.example.manager.CityTimerManager;
-import com.example.jetpack.JetPack;
 import com.example.ui.citymap.CityMapPanel;
 import com.example.ui.panels.CitySelectionPanel;
 import com.example.ui.panels.ConsoleOutputPanel;
@@ -30,27 +38,8 @@ import com.example.weather.DayTime;
 import com.example.weather.Weather;
 
 /**
- *  AirTrafficControllerFrame.java
- *  by Haisam Elkewidy
- * 
- *   This class represents the main frame for the Air Traffic Controller application.
- *   It extends JFrame and implements ActionListener to handle user interactions.
- * 
- *   The application now includes pre-existing jetpacks for major cities (New York, Boston, Houston, Dallas).
- *   Users select a city to monitor local air traffic, and the application displays a map with all jetpacks
- *   currently flying within the selected city.
- * 
- *   The jetpacks are launched within a defined grid system. When their flight paths are complete, 
- *   more random flight paths are generated for continued operation, which may include emergency maneuvers if necessary.
- *   It will also display Day/Night mode based on the time of day in the specified locale.
- * 
- *   Attributes:
- *  - Map<String, ArrayList<JetPack>> cityJetpacks: Collection of jetpacks for each city
- *  - String selectedCity: Currently selected city for monitoring
- *  Methods:
- *  - void initializeCityJetpacks(): Initializes pre-existing jetpacks for all cities
- *  - void displayCityMap(String city): Displays the map with jetpacks for the selected city
- * 
+ * AirTrafficControllerFrame - Main application window for the Air Traffic Controller system.
+ * Handles city selection, map display, session management, and user actions.
  */
 public class AirTrafficControllerFrame extends JFrame implements ActionListener {
 

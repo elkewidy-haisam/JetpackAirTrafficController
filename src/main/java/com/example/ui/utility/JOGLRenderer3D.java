@@ -520,6 +520,7 @@ public class JOGLRenderer3D implements GLEventListener {
     private GLU glu;
     private JetPackFlight flight;
     private CityModel3D cityModel;
+    // Only render visible jetpacks (set by panel)
     private List<JetPackFlight> nearbyJetpacks;
     private List<Accident> accidents;
     private Map<JetPackFlight, JetPackFlightState> flightStates;

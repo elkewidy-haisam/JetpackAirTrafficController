@@ -1,3 +1,11 @@
+/*
+ * UIComponentFactory.java
+ * Factory class for creating commonly used UI components with consistent styling.
+ * Centralizes component creation to ensure uniform look and feel across the application.
+ *
+ * Last updated: December 10, 2025
+ * Author: Jetpack Air Traffic Controller Team
+ */
 package com.example.ui.utility;
 
 import java.awt.BorderLayout;
@@ -16,10 +24,7 @@ import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 
 /**
- * UIComponentFactory.java
- * 
- * Factory class for creating commonly used UI components with consistent styling.
- * Centralizes component creation to ensure uniform look and feel across the application.
+ * UIComponentFactory - Centralized factory for styled UI components.
  */
 public class UIComponentFactory {
         // Standard button color

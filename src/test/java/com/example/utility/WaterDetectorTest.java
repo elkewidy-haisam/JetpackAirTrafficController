@@ -11,6 +11,9 @@ import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 
+// Import WaterDetector from main source folder
+import com.example.utility.WaterDetector;
+
 /**
  * Comprehensive test suite for WaterDetector
  */

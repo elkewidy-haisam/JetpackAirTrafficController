@@ -1,21 +1,28 @@
+/*
+ * Building3D.java
+ * Represents a 3D building in the city model, including position, dimensions, and rendering properties.
+ *
+ * Last updated: December 10, 2025
+ * Author: Jetpack Air Traffic Controller Team
+ */
 package com.example.model;
 
-import java.awt.*;
+import java.awt.Color;
 
 /**
- * Building3D - Represents a 3D building in the city model
- * Includes position, dimensions, and rendering properties
+ * Building3D - 3D building representation for city rendering and collision.
+ * Includes position, dimensions, color, type, and footprint logic.
  */
 public class Building3D {
-    private double x;          // X position on map
-    private double y;          // Y position on map
-    private double width;      // Building width
-    private double depth;      // Building depth
-    private double height;     // Building height (altitude)
-    private Color color;       // Building color
-    private String type;       // Building type (skyscraper, office, residential, etc.)
-    private boolean hasWindows;
-    private int floors;
+    private final double x;          // X position on map
+    private final double y;          // Y position on map
+    private final double width;      // Building width
+    private final double depth;      // Building depth
+    private final double height;     // Building height (altitude)
+    private Color color;             // Building color
+    private final String type;       // Building type (skyscraper, office, residential, etc.)
+    private final boolean hasWindows;
+    private final int floors;
     
     public Building3D(double x, double y, double width, double depth, double height, String type) {
         this.x = x;

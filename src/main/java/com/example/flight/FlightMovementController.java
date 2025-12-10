@@ -1,39 +1,54 @@
+
+/*
+ * FlightMovementController.java
+ * Part of Jetpack Air Traffic Controller
+ *
+ * Handles position updates, waypoint navigation, detours, and movement logic for flights/jetpacks.
+ * Integrates collision avoidance, altitude management, and pathfinding with city/building models.
+ *
+ * (c) 2025 Haisam Elkewidy. All rights reserved.
+ */
 package com.example.flight;
 
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.model.Building3D;
+import com.example.model.CityModel3D;
 import com.example.utility.geometry.GeometryUtils;
 
 /**
- * FlightMovementController - handles position updates, waypoint navigation, and movement logic
+ * FlightMovementController handles position updates, waypoint navigation, detours, and movement logic for flights/jetpacks.
+ * It integrates collision avoidance, altitude management, and pathfinding with city/building models.
  */
-import com.example.model.CityModel3D;
-import com.example.model.Building3D;
-
 public class FlightMovementController {
+    // Current position
     private double x;
     private double y;
+    // Navigation
     private Point destination;
-    private Point origin;
     private double speed;
     private double altitude;
-    private List<Point> trail;
+    // Trail of previous positions (for rendering path)
+    private final List<Point> trail;
     private static final int TRAIL_LENGTH = 15;
-    
-    // Waypoint management
+
+    // Waypoint and detour management
     private List<Point> waypoints;
     private List<Point> detourWaypoints;
     private boolean isDetourActive;
     private int currentWaypointIndex;
-    
+
+    // Reference to city/building model for collision avoidance
     private CityModel3D cityModel;
 
+    /**
+     * Constructs a FlightMovementController with initial position, destination, speed, and altitude.
+     */
     public FlightMovementController(Point start, Point destination, double speed, double altitude) {
         this.x = start.x;
         this.y = start.y;
-        this.origin = new Point(start);
         this.destination = destination;
         this.speed = speed;
         this.altitude = altitude;
@@ -43,9 +58,10 @@ public class FlightMovementController {
         this.isDetourActive = false;
         this.currentWaypointIndex = 0;
     }
-    
+
     /**
-     * Updates position based on current target and speed
+     * Updates position based on current target and speed.
+     * Handles collision avoidance, detours, and trail updates.
      * @param effectiveSpeed the speed adjusted for hazards
      * @param isHalted whether emergency halt is active
      * @return true if position was updated, false if halted
@@ -70,7 +86,7 @@ public class FlightMovementController {
         double distance = GeometryUtils.calculateDistance(x, y, target.x, target.y);
 
         // Predict next position
-        double nextX = x, nextY = y;
+        double nextX, nextY;
         if (distance > effectiveSpeed) {
             nextX = x + (dx / distance) * effectiveSpeed;
             nextY = y + (dy / distance) * effectiveSpeed;
@@ -117,7 +133,8 @@ public class FlightMovementController {
     }
     
     /**
-     * Gets the active navigation target based on priority
+     * Gets the active navigation target based on priority:
+     * detour waypoints > regular waypoints > destination.
      */
     public Point getActiveTarget() {
         // Priority: detour waypoints > regular waypoints > destination
@@ -131,7 +148,7 @@ public class FlightMovementController {
     }
     
     /**
-     * Checks if flight has reached final destination
+     * Checks if flight has reached final destination (within one speed unit).
      */
     public boolean hasReachedDestination(boolean isHalted) {
         if (isHalted) {
@@ -145,7 +162,7 @@ public class FlightMovementController {
     }
     
     /**
-     * Sets a new destination and resets waypoint navigation
+     * Sets a new destination and resets waypoint navigation.
      */
     public void setNewDestination(Point newDest) {
         this.destination = newDest;
@@ -153,14 +170,14 @@ public class FlightMovementController {
     }
     
     /**
-     * Adds a waypoint to the flight path
+     * Adds a waypoint to the flight path.
      */
     public void addWaypoint(Point waypoint) {
         waypoints.add(waypoint);
     }
     
     /**
-     * Sets the complete list of waypoints
+     * Sets the complete list of waypoints.
      */
     public void setWaypoints(List<Point> waypoints) {
         this.waypoints = new ArrayList<>(waypoints);
@@ -168,7 +185,7 @@ public class FlightMovementController {
     }
     
     /**
-     * Initiates a detour with specified waypoints
+     * Initiates a detour with specified waypoints.
      */
     public void detour(List<Point> detourPoints) {
         if (detourPoints == null || detourPoints.isEmpty()) {
@@ -180,7 +197,7 @@ public class FlightMovementController {
     }
     
     /**
-     * Resumes normal flight path after detour
+     * Resumes normal flight path after detour.
      */
     public void resumeNormalPath() {
         if (isDetourActive) {
@@ -190,7 +207,7 @@ public class FlightMovementController {
     }
     
     /**
-     * Clears all waypoints and detours, heads directly to parking
+     * Clears all waypoints and detours, heads directly to emergency/parking destination.
      */
     public void setEmergencyDestination(Point emergencyDest, double newSpeed) {
         waypoints.clear();
@@ -201,7 +218,7 @@ public class FlightMovementController {
     }
     
     /**
-     * Updates altitude gradually toward target
+     * Updates altitude gradually toward target, or varies slightly if no target.
      */
     public void updateAltitude(Double targetAltitude) {
         if (targetAltitude != null) {
@@ -217,7 +234,7 @@ public class FlightMovementController {
     }
     
     /**
-     * Calculates direction angle from current position to destination
+     * Calculates direction angle (radians) from current position to destination.
      */
     public double getDirectionAngle() {
         double dx = destination.x - x;
@@ -226,14 +243,14 @@ public class FlightMovementController {
     }
     
     /**
-     * Gets distance to destination
+     * Gets distance to destination (current position to destination).
      */
     public double getDistanceToDestination() {
         return GeometryUtils.calculateDistance(x, y, destination.x, destination.y);
     }
     
     /**
-     * Gets compass direction string
+     * Gets compass direction string (e.g., "East", "Northwest").
      */
     public String getDirectionString() {
         double angle = getDirectionAngle();

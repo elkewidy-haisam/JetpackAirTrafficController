@@ -1,3 +1,16 @@
+
+/*
+ * CollisionDetector.java
+ * Part of Jetpack Air Traffic Controller
+ *
+ * Detects and manages jetpack collisions in the city grid.
+ * Detects and reports collisions between jetpack flights.
+ * Monitors distances and issues warnings/alerts based on proximity.
+ * Integrates with AccidentAlert system for automatic accident reporting.
+ *
+ * (c) 2025 Haisam Elkewidy. All rights reserved.
+ */
+
 package com.example.detection;
 
 import java.util.List;
@@ -9,11 +22,8 @@ import com.example.flight.JetPackFlightState;
 import com.example.ui.frames.RadarTapeWindow;
 
 /**
- * CollisionDetector.java
- * 
- * Detects and reports collisions between jetpack flights.
- * Monitors distances and issues warnings/alerts based on proximity.
- * Integrates with AccidentAlert system for automatic accident reporting.
+ * CollisionDetector detects and reports collisions between jetpack flights.
+ * It monitors distances, issues warnings/alerts, and integrates with AccidentAlert for reporting.
  */
 public class CollisionDetector {
     
@@ -29,7 +39,7 @@ public class CollisionDetector {
      * Constructor with accident alert system
      */
     public CollisionDetector() {
-        this.accidentAlert = new AccidentAlert("COLLISION-ALERT-SYSTEM");
+        this.accidentAlert = new AccidentAlert();
     }
     
     /**
@@ -59,15 +69,11 @@ public class CollisionDetector {
         for (int i = 0; i < jetpackFlights.size(); i++) {
             JetPackFlight flight1 = jetpackFlights.get(i);
             JetPackFlightState state1 = flightStates.get(flight1);
-            
             if (state1 != null && state1.isParked()) continue;
-            
             for (int j = i + 1; j < jetpackFlights.size(); j++) {
                 JetPackFlight flight2 = jetpackFlights.get(j);
                 JetPackFlightState state2 = flightStates.get(flight2);
-                
                 if (state2 != null && state2.isParked()) continue;
-                
                 checkCollisionBetween(flight1, flight2);
             }
         }

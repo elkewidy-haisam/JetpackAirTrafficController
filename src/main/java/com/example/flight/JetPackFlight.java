@@ -1,3 +1,12 @@
+
+/*
+ * JetPackFlight.java
+ * Part of Jetpack Air Traffic Controller
+ *
+ * Manages animated jetpack flight with trails, destinations, and FlightPath logic.
+ *
+ * (c) 2025 Haisam Elkewidy. All rights reserved.
+ */
 package com.example.flight;
 
 import java.awt.Color;
@@ -9,7 +18,8 @@ import com.example.jetpack.JetPack;
 import com.example.parking.ParkingSpace;
 
 /**
- * JetPackFlight class - manages animated jetpack flight with trails, destinations, and FlightPath logic
+ * JetPackFlight manages animated jetpack flight with trails, destinations, and FlightPath logic.
+ * It integrates movement, hazard monitoring, and emergency handling for each jetpack.
  */
 public class JetPackFlight {
     private JetPack jetpack;
@@ -17,49 +27,47 @@ public class JetPackFlight {
     private Color baseColor; // Store original color
     private MovementLogger movementLogger;
     private FlightStateProvider flightStateProvider;
-    
     // Extracted components
     private FlightMovementController movementController;
     private FlightHazardMonitor hazardMonitor;
     private FlightEmergencyHandler emergencyHandler;
     private static final JetPackFlightRenderer renderer = new JetPackFlightRenderer();
-    
     // FlightPath integration - status
     private boolean isActive;
     private String currentStatus;
     private String pathID;
-    
+
     public interface MovementLogger {
         void appendJetpackMovement(String message);
     }
-    
+
     public interface RadioInstructionListener {
         void onInstructionReceived(JetPackFlight flight, String instruction);
         void onInstructionCompleted(JetPackFlight flight, String instruction);
     }
-    
+
     public interface FlightStateProvider {
         JetPackFlightState getFlightState(JetPackFlight flight);
     }
-    
+
     public JetPackFlight(JetPack jetpack, Point start, Point destination, Color color) {
         this.jetpack = jetpack;
         this.color = color;
         this.baseColor = color;
-        
+
         // Initialize components
         double initialAltitude = 80 + Math.random() * 80; // Random altitude 80-160
         this.movementController = new FlightMovementController(start, destination, 2.0, initialAltitude);
         this.hazardMonitor = new FlightHazardMonitor();
         this.emergencyHandler = new FlightEmergencyHandler(jetpack.getCallsign());
-        
+
         // Setup emergency handler callbacks
         this.emergencyHandler.setEmergencyLogger(message -> {
             if (movementLogger != null) {
                 movementLogger.appendJetpackMovement(message);
             }
         });
-        
+
         // Initialize FlightPath attributes
         this.isActive = true;
         this.currentStatus = "ACTIVE";

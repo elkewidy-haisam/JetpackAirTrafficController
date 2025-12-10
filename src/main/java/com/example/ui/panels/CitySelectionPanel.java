@@ -1,3 +1,10 @@
+/*
+ * CitySelectionPanel.java
+ * Panel for selecting a city to monitor air traffic. Extracted from AirTrafficControllerFrame for modularity.
+ *
+ * Last updated: December 10, 2025
+ * Author: Jetpack Air Traffic Controller Team
+ */
 package com.example.ui.panels;
 
 import java.awt.Color;
@@ -12,11 +19,7 @@ import javax.swing.JPanel;
 import com.example.ui.utility.UIComponentFactory;
 
 /**
- * CitySelectionPanel.java
- * by Haisam Elkewidy
- * 
- * Panel for selecting a city to monitor air traffic.
- * Extracted from AirTrafficControllerFrame for better code organization.
+ * CitySelectionPanel - UI panel for city selection in the Air Traffic Controller app.
  */
 public class CitySelectionPanel extends JPanel {
     private JComboBox<String> cityComboBox;

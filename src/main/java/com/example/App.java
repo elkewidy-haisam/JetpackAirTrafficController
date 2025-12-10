@@ -18,17 +18,12 @@ public class App {
     private static final String VERSION = "2.0";
     
     public static void main(String[] args) {
-        // Parse command-line arguments
         AppConfig config = parseArguments(args);
-        
-        // Set system look and feel
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
             System.err.println("Warning: Could not set system look and feel");
         }
-        
-        // Launch application on EDT
         SwingUtilities.invokeLater(() -> {
             try {
                 System.out.println("=".repeat(50));
@@ -39,17 +34,14 @@ public class App {
                     System.out.println("Pre-selected city: " + config.city);
                 }
                 System.out.println("Initializing GUI...");
-                
                 AirTrafficControllerFrame frame = new AirTrafficControllerFrame();
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setSize(800, 600);
                 frame.setTitle(APP_NAME + " v" + VERSION);
-                frame.setLocationRelativeTo(null); // Center on screen
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
-                
                 System.out.println("✅ Application started successfully!");
                 System.out.println("=".repeat(50));
-                
             } catch (Exception e) {
                 System.err.println("❌ Error starting application:");
                 e.printStackTrace();
