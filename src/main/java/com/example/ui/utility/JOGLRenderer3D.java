@@ -424,6 +424,14 @@ public class JOGLRenderer3D implements GLEventListener {
                 if (dist < 500) {
                     gl.glPushMatrix();
                     gl.glTranslated(x, y, z);
+                    // Calculate direction angle using FlightMovementController
+                    double angleRad = 0;
+                    try {
+                        angleRad = jetpack.getDirectionAngle();
+                    } catch (Exception e) {
+                        angleRad = 0;
+                    }
+                    gl.glRotated(Math.toDegrees(angleRad), 0, 1, 0);
                     // Jetpack colors
                     float[] bodyColor = jetpack == flight ? new float[]{0, 1, 0} : new float[]{1, 1, 0};
                     float[] tankColor = {0.7f, 0.7f, 0.7f};

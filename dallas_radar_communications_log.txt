@@ -1,4 +1,64 @@
 === RADAR COMMUNICATIONS LOG ===
 City: Dallas
-Application started: 2025-12-10 16:12:17
+Application started: 2025-12-10 16:33:41
 ==================================================
+[16:38:03] ATC-DAL → David #2
+📡 COLLISION AVOIDANCE
+➤ Traffic alert - change course
+---
+
+[16:38:12] ATC-DAL → Lisa #1
+📡 WEATHER UPDATE
+➤ Current conditions advisory
+---
+
+[16:38:21] ATC-DAL → John #2
+📡 POSITION REPORT REQUEST
+➤ Report position
+---
+
+[16:38:30] ATC-DAL → John #7
+📡 DETOUR AROUND WEATHER
+➤ Alter course to avoid storm
+---
+
+[16:38:40] ATC-DAL → Jane #5
+📡 DETOUR AROUND WEATHER
+➤ Alter course to avoid storm
+---
+
+[16:38:49] ATC-DAL → Amanda #7
+📡 ALTITUDE CHANGE
+➤ Climb to avoid weather
+---
+
+[16:38:58] ATC-DAL → John #7
+📡 EMERGENCY LANDING REQUIRED
+➤ Land immediately at nearest parking
+---
+
+[16:39:07] ATC-DAL → Sarah #7
+📡 EMERGENCY LANDING REQUIRED
+➤ Land immediately at nearest parking
+---
+
+[16:39:16] ATC-DAL → Emily #4
+📡 ALTITUDE CHANGE
+➤ Climb to avoid weather
+---
+
+[16:39:26] ATC-DAL → Sarah #9
+📡 ALTITUDE CHANGE
+➤ Climb to avoid weather
+---
+
+[16:39:35] ATC-DAL → Emily #4
+📡 ALTITUDE CHANGE
+➤ Climb to avoid weather
+---
+
+[16:39:44] ATC-DAL → Sarah #5
+📡 EMERGENCY LANDING REQUIRED
+➤ Land immediately at nearest parking
+---
+

@@ -118,9 +118,17 @@ public class CityModel3D {
         addBuildingCluster(mapWidth * 0.4, mapHeight * 0.1, mapWidth * 0.2, mapHeight * 0.15, 80, 200, 50, 30, 60, "residential");
         // Brooklyn/Queens: lower buildings
         addBuildingCluster(mapWidth * 0.2, mapHeight * 0.2, mapWidth * 0.15, mapHeight * 0.6, 40, 120, 60, 35, 80, "office");
+
+        // Landmarks
+        buildings.add(new Building3D(mapWidth * 0.48, mapHeight * 0.38, 18, 18, 450, "skyscraper")); // Empire State Building
+        buildings.add(new Building3D(mapWidth * 0.52, mapHeight * 0.36, 20, 20, 520, "skyscraper")); // One World Trade Center
+        buildings.add(new Building3D(mapWidth * 0.41, mapHeight * 0.25, 60, 60, 10, "park")); // Central Park
+
         // Iconic bridges
         bridges.add(new Bridge3D(mapWidth * 0.55, mapHeight * 0.32, 60, 10, 30)); // Brooklyn Bridge
         bridges.add(new Bridge3D(mapWidth * 0.38, mapHeight * 0.68, 50, 8, 20)); // Manhattan Bridge
+        bridges.add(new Bridge3D(mapWidth * 0.60, mapHeight * 0.28, 40, 8, 18)); // Williamsburg Bridge
+
         // Rivers
         for (int x = 0; x < mapWidth; x += 8) {
             for (int y = 0; y < mapHeight; y += 8) {
@@ -129,6 +137,9 @@ public class CityModel3D {
                 }
             }
         }
+        // Add more parks
+        buildings.add(new Building3D(mapWidth * 0.36, mapHeight * 0.18, 30, 30, 8, "park")); // Bryant Park
+        buildings.add(new Building3D(mapWidth * 0.53, mapHeight * 0.42, 40, 40, 12, "park")); // Battery Park
     }
 
     /**
@@ -143,14 +154,26 @@ public class CityModel3D {
         addBuildingCluster(mapWidth * 0.5, mapHeight * 0.65, mapWidth * 0.25, mapHeight * 0.2, 60, 180, 45, 30, 40, "commercial");
         // Cambridge: low/medium residential
         addBuildingCluster(mapWidth * 0.6, mapHeight * 0.2, mapWidth * 0.2, mapHeight * 0.3, 30, 80, 70, 40, 80, "residential");
+
+        // Landmarks
+        buildings.add(new Building3D(mapWidth * 0.47, mapHeight * 0.42, 16, 16, 280, "skyscraper")); // Prudential Tower
+        buildings.add(new Building3D(mapWidth * 0.32, mapHeight * 0.38, 22, 22, 60, "stadium")); // Fenway Park
+        buildings.add(new Building3D(mapWidth * 0.44, mapHeight * 0.36, 18, 18, 80, "historic")); // Massachusetts State House
+        buildings.add(new Building3D(mapWidth * 0.41, mapHeight * 0.41, 40, 40, 10, "park")); // Boston Common
+
         // Charles River
         for (int x = (int)(mapWidth * 0.2); x < mapWidth * 0.8; x += 8) {
             for (int y = (int)(mapHeight * 0.48); y < mapHeight * 0.52; y += 8) {
                 cityMap.setRGB(x, y, 0xFF2080E0);
             }
         }
+
         // Historic bridges
         bridges.add(new Bridge3D(mapWidth * 0.5, mapHeight * 0.5, 40, 8, 10)); // Longfellow Bridge
+        bridges.add(new Bridge3D(mapWidth * 0.42, mapHeight * 0.49, 30, 7, 8)); // Harvard Bridge
+        bridges.add(new Bridge3D(mapWidth * 0.58, mapHeight * 0.51, 28, 6, 7)); // BU Bridge
+        // Add more parks
+        buildings.add(new Building3D(mapWidth * 0.38, mapHeight * 0.44, 24, 24, 8, "park")); // Public Garden
     }
     
     /**
@@ -163,16 +186,30 @@ public class CityModel3D {
         addBuildingCluster(mapWidth * 0.35, mapHeight * 0.35, mapWidth * 0.15, mapHeight * 0.15, 80, 200, 40, 25, 35, "office");
         // Suburbs: houses
         addBuildingCluster(mapWidth * 0.2, mapHeight * 0.7, mapWidth * 0.3, mapHeight * 0.2, 20, 60, 60, 35, 100, "residential");
+
+        // Landmarks
+        buildings.add(new Building3D(mapWidth * 0.53, mapHeight * 0.52, 18, 18, 210, "landmark")); // Reunion Tower
+        buildings.add(new Building3D(mapWidth * 0.51, mapHeight * 0.48, 20, 20, 280, "skyscraper")); // Bank of America Plaza
+        buildings.add(new Building3D(mapWidth * 0.49, mapHeight * 0.54, 22, 22, 40, "historic")); // Dealey Plaza
+        buildings.add(new Building3D(mapWidth * 0.47, mapHeight * 0.50, 36, 36, 10, "park")); // Klyde Warren Park
+
         // Trinity River
         for (int x = (int)(mapWidth * 0.1); x < mapWidth * 0.9; x += 8) {
             for (int y = (int)(mapHeight * 0.6); y < mapHeight * 0.65; y += 8) {
                 cityMap.setRGB(x, y, 0xFF2090E0);
             }
         }
+
+        // Bridges
+        bridges.add(new Bridge3D(mapWidth * 0.55, mapHeight * 0.62, 40, 8, 12)); // Margaret Hunt Hill Bridge
+        bridges.add(new Bridge3D(mapWidth * 0.45, mapHeight * 0.63, 32, 7, 10)); // Continental Avenue Bridge
+
         // Wide roads
         for (int i = 0; i < 8; i++) {
             roads.add(new Road3D(mapWidth * (0.1 + i * 0.1), mapHeight * 0.5, 80, 10, 0));
         }
+        // Add more parks
+        buildings.add(new Building3D(mapWidth * 0.41, mapHeight * 0.56, 28, 28, 8, "park")); // Trinity River Park
     }
     
     /**
@@ -185,16 +222,30 @@ public class CityModel3D {
         addBuildingCluster(mapWidth * 0.35, mapHeight * 0.35, mapWidth * 0.15, mapHeight * 0.15, 80, 200, 40, 25, 35, "office");
         // Suburbs: houses
         addBuildingCluster(mapWidth * 0.2, mapHeight * 0.7, mapWidth * 0.3, mapHeight * 0.2, 20, 60, 60, 35, 100, "residential");
+
+        // Landmarks
+        buildings.add(new Building3D(mapWidth * 0.52, mapHeight * 0.52, 20, 20, 420, "skyscraper")); // JPMorgan Chase Tower
+        buildings.add(new Building3D(mapWidth * 0.48, mapHeight * 0.54, 22, 22, 60, "stadium")); // Minute Maid Park
+        buildings.add(new Building3D(mapWidth * 0.62, mapHeight * 0.38, 24, 24, 180, "office")); // Energy Corridor
+        buildings.add(new Building3D(mapWidth * 0.44, mapHeight * 0.58, 36, 36, 12, "park")); // Buffalo Bayou Park
+
         // Bayous/water
         for (int x = (int)(mapWidth * 0.3); x < mapWidth * 0.7; x += 8) {
             for (int y = (int)(mapHeight * 0.55); y < mapHeight * 0.6; y += 8) {
                 cityMap.setRGB(x, y, 0xFF2070E0);
             }
         }
+
+        // Bridges
+        bridges.add(new Bridge3D(mapWidth * 0.46, mapHeight * 0.57, 32, 7, 10)); // Main Street Bridge
+        bridges.add(new Bridge3D(mapWidth * 0.54, mapHeight * 0.59, 28, 6, 8)); // Montrose Bridge
+
         // Sprawling roads
         for (int i = 0; i < 6; i++) {
             roads.add(new Road3D(mapWidth * (0.15 + i * 0.13), mapHeight * 0.5, 60, 8, 0));
         }
+        // Add more parks
+        buildings.add(new Building3D(mapWidth * 0.38, mapHeight * 0.62, 28, 28, 8, "park")); // Discovery Green
     }
     
     /**

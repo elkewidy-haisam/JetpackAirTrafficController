@@ -22,6 +22,12 @@ import com.example.parking.ParkingSpace;
  * It integrates movement, hazard monitoring, and emergency handling for each jetpack.
  */
 public class JetPackFlight {
+    /**
+     * Returns the current direction angle (radians) of flight, for rendering orientation.
+     */
+    public double getDirectionAngle() {
+        return movementController.getDirectionAngle();
+    }
     private JetPack jetpack;
     private Color color;
     private Color baseColor; // Store original color
