@@ -173,6 +173,10 @@ public class CityMapPanelFactory {
         JTextField searchField = new JTextField();
         searchField.setToolTipText("Filter by callsign or message content");
         JButton clearButton = new JButton("Clear");
+            clearButton.setBackground(com.example.ui.utility.UIComponentFactory.STANDARD_BUTTON_BLUE);
+            clearButton.setForeground(java.awt.Color.WHITE);
+            clearButton.setOpaque(true);
+            clearButton.setBorderPainted(false);
         clearButton.setFont(new Font("Arial", Font.PLAIN, 10));
         searchPanel.add(searchLabel, BorderLayout.WEST);
         searchPanel.add(searchField, BorderLayout.CENTER);

@@ -22,6 +22,8 @@ import javax.swing.SwingConstants;
  * Centralizes component creation to ensure uniform look and feel across the application.
  */
 public class UIComponentFactory {
+        // Standard button color
+        public static final java.awt.Color STANDARD_BUTTON_BLUE = new java.awt.Color(30, 90, 180);
     
     // Standard fonts
     public static final Font MONOSPACED_PLAIN_10 = new Font("Monospaced", Font.PLAIN, 10);
@@ -156,6 +158,10 @@ public class UIComponentFactory {
     public static JButton createButton(String text, Font font) {
         JButton button = new JButton(text);
         button.setFont(font);
+        button.setBackground(STANDARD_BUTTON_BLUE);
+        button.setForeground(java.awt.Color.WHITE);
+        button.setOpaque(true);
+        button.setBorderPainted(false);
         return button;
     }
     
@@ -170,6 +176,10 @@ public class UIComponentFactory {
     public static JButton createButton(String text, int width, int height) {
         JButton button = new JButton(text);
         button.setPreferredSize(new Dimension(width, height));
+        button.setBackground(STANDARD_BUTTON_BLUE);
+        button.setForeground(java.awt.Color.WHITE);
+        button.setOpaque(true);
+        button.setBorderPainted(false);
         return button;
     }
     

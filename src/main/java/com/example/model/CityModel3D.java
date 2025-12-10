@@ -10,6 +10,7 @@ import java.util.Random;
  * Buildings are placed based on land/water detection from city maps
  */
 public class CityModel3D {
+                public String getCityName() { return cityName; }
             public BufferedImage getMapImage() { return cityMap; }
         public int getMapWidth() { return mapWidth; }
         public int getMapHeight() { return mapHeight; }
@@ -290,7 +291,4 @@ public class CityModel3D {
         return buildings;
     }
     
-    public String getCityName() {
-        return cityName;
-    }
 }

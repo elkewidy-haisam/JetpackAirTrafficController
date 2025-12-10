@@ -1,19 +1,19 @@
 package com.example.ui.utility;
 
+    import java.util.ArrayList;
+    import java.util.List;
+    import java.util.Map;
+
     import com.example.accident.AccidentAlert.Accident;
     import com.example.flight.JetPackFlight;
     import com.example.flight.JetPackFlightState;
     import com.example.model.CityModel3D;
-    import com.jogamp.opengl.GL2;
     import com.jogamp.opengl.GL;
+    import com.jogamp.opengl.GL2;
     import com.jogamp.opengl.GLAutoDrawable;
     import com.jogamp.opengl.GLEventListener;
     import com.jogamp.opengl.glu.GLU;
     import com.jogamp.opengl.util.gl2.GLUT;
-    import java.util.List;
-    import java.util.ArrayList;
-    import java.util.Map;
-    import java.awt.Point;
 
 /**
  * JOGLRenderer3D - Hardware-accelerated 3D rendering using JOGL/OpenGL
@@ -465,8 +465,58 @@ public class JOGLRenderer3D implements GLEventListener {
                 }
             }
         }
+        // --- Time zone-based shading overlay (like 2D map) ---
+        if (cityName != null && !cityName.isEmpty()) {
+            java.time.ZoneId zoneId = com.example.utility.timezone.TimezoneHelper.getTimezoneForCity(cityName);
+            java.time.LocalDateTime now = java.time.LocalDateTime.now(zoneId);
+            int hour = now.getHour();
+            float[] shadingColor;
+            float alpha;
+            if (hour >= 6 && hour < 7) {
+                // Dawn
+                shadingColor = new float[]{1.0f, 0.55f, 0.0f}; alpha = 0.12f;
+            } else if (hour >= 7 && hour < 17) {
+                // Daytime
+                shadingColor = new float[]{1.0f, 1.0f, 0.78f}; alpha = 0.04f;
+            } else if (hour >= 17 && hour < 18) {
+                // Dusk
+                shadingColor = new float[]{1.0f, 0.27f, 0.0f}; alpha = 0.16f;
+            } else if (hour >= 18 && hour < 20) {
+                // Evening
+                shadingColor = new float[]{0.1f, 0.1f, 0.44f}; alpha = 0.24f;
+            } else if (hour >= 20 || hour < 6) {
+                // Night
+                shadingColor = new float[]{0.0f, 0.0f, 0.2f}; alpha = 0.32f;
+            } else {
+                shadingColor = new float[]{1.0f, 1.0f, 1.0f}; alpha = 0.0f;
+            }
+            if (alpha > 0.01f) {
+                gl.glPushAttrib(GL2.GL_ENABLE_BIT | GL2.GL_COLOR_BUFFER_BIT);
+                gl.glDisable(GL2.GL_LIGHTING);
+                gl.glEnable(GL2.GL_BLEND);
+                gl.glBlendFunc(GL2.GL_SRC_ALPHA, GL2.GL_ONE_MINUS_SRC_ALPHA);
+                gl.glMatrixMode(GL2.GL_PROJECTION);
+                gl.glPushMatrix();
+                gl.glLoadIdentity();
+                gl.glOrtho(0, 1, 0, 1, -1, 1);
+                gl.glMatrixMode(GL2.GL_MODELVIEW);
+                gl.glPushMatrix();
+                gl.glLoadIdentity();
+                gl.glColor4f(shadingColor[0], shadingColor[1], shadingColor[2], alpha);
+                gl.glBegin(GL2.GL_QUADS);
+                gl.glVertex2f(0, 0);
+                gl.glVertex2f(1, 0);
+                gl.glVertex2f(1, 1);
+                gl.glVertex2f(0, 1);
+                gl.glEnd();
+                gl.glPopMatrix();
+                gl.glMatrixMode(GL2.GL_PROJECTION);
+                gl.glPopMatrix();
+                gl.glMatrixMode(GL2.GL_MODELVIEW);
+                gl.glPopAttrib();
+            }
+        }
     }
-// ...existing code...
     private GLU glu;
     private JetPackFlight flight;
     private CityModel3D cityModel;
@@ -482,6 +532,8 @@ public class JOGLRenderer3D implements GLEventListener {
     private static final double FOV = 60.0;
     private static final double NEAR_PLANE = 1.0;
     private static final double FAR_PLANE = 2000.0;
+
+    private String cityName = "";
 
     public JOGLRenderer3D() {
         this.glu = new GLU();

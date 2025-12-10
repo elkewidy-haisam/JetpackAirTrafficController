@@ -55,6 +55,10 @@ public class RadarTapeWindow extends JFrame {
         buttonPanel.setBackground(Color.DARK_GRAY);
         
         JButton clearButton = new JButton("Clear Messages");
+            clearButton.setBackground(com.example.ui.utility.UIComponentFactory.STANDARD_BUTTON_BLUE);
+            clearButton.setForeground(java.awt.Color.WHITE);
+            clearButton.setOpaque(true);
+            clearButton.setBorderPainted(false);
         clearButton.addActionListener(e -> clearMessages());
         buttonPanel.add(clearButton);
         

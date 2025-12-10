@@ -97,6 +97,10 @@ public class CityMapJetpackListFactory {
             // Track button
             if (flight != null && trackingCallback != null) {
                 JButton trackButton = new JButton("🔍 Track");
+                                trackButton.setBackground(com.example.ui.utility.UIComponentFactory.STANDARD_BUTTON_BLUE);
+                                trackButton.setForeground(java.awt.Color.WHITE);
+                                trackButton.setOpaque(true);
+                                trackButton.setBorderPainted(false);
                 trackButton.setFont(new Font("Arial", Font.BOLD, 10));
                 trackButton.setBackground(new Color(100, 149, 237));
                 trackButton.setForeground(Color.WHITE);
@@ -120,6 +124,10 @@ public class CityMapJetpackListFactory {
         buttonPanel.setBackground(Color.WHITE);
         buttonPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         JButton backButton = new JButton("Select Different City");
+            backButton.setBackground(com.example.ui.utility.UIComponentFactory.STANDARD_BUTTON_BLUE);
+            backButton.setForeground(java.awt.Color.WHITE);
+            backButton.setOpaque(true);
+            backButton.setBorderPainted(false);
         backButton.setFont(new Font("Arial", Font.BOLD, 12));
         backButton.setBackground(new Color(70, 130, 180));
         backButton.setForeground(Color.WHITE);

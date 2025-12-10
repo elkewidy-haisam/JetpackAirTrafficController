@@ -9,6 +9,9 @@ import com.example.utility.geometry.GeometryUtils;
 /**
  * FlightMovementController - handles position updates, waypoint navigation, and movement logic
  */
+import com.example.model.CityModel3D;
+import com.example.model.Building3D;
+
 public class FlightMovementController {
     private double x;
     private double y;
@@ -25,6 +28,8 @@ public class FlightMovementController {
     private boolean isDetourActive;
     private int currentWaypointIndex;
     
+    private CityModel3D cityModel;
+
     public FlightMovementController(Point start, Point destination, double speed, double altitude) {
         this.x = start.x;
         this.y = start.y;
@@ -49,24 +54,53 @@ public class FlightMovementController {
         if (isHalted) {
             return false;
         }
-        
+
         // Add current position to trail
         trail.add(0, new Point((int)x, (int)y));
         if (trail.size() > TRAIL_LENGTH) {
             trail.remove(trail.size() - 1);
         }
-        
+
         // Determine target
         Point target = getActiveTarget();
-        
+
         // Calculate direction to target
         double dx = target.x - x;
         double dy = target.y - y;
         double distance = GeometryUtils.calculateDistance(x, y, target.x, target.y);
-        
+
+        // Predict next position
+        double nextX = x, nextY = y;
         if (distance > effectiveSpeed) {
-            x += (dx / distance) * effectiveSpeed;
-            y += (dy / distance) * effectiveSpeed;
+            nextX = x + (dx / distance) * effectiveSpeed;
+            nextY = y + (dy / distance) * effectiveSpeed;
+        } else {
+            nextX = target.x;
+            nextY = target.y;
+        }
+
+        // Collision detection with buildings
+        if (cityModel != null) {
+            for (Building3D b : cityModel.getBuildings()) {
+                // Check if next position is inside any building's footprint
+                if (b.containsPoint(nextX, nextY)) {
+                    // Generate a detour waypoint to go around the building
+                    // Simple logic: pick a point to the right of the building
+                    double detourX = b.getX() + b.getWidth() + 10;
+                    double detourY = b.getY() + b.getLength() + 10;
+                    List<Point> detour = new ArrayList<>();
+                    detour.add(new Point((int)detourX, (int)detourY));
+                    detour.add(target);
+                    detour(detour);
+                    return true; // Skip movement this tick, will move to detour next tick
+                }
+            }
+        }
+
+        // Move if no collision
+        if (distance > effectiveSpeed) {
+            x = nextX;
+            y = nextY;
         } else {
             // Reached current target
             if (isDetourActive && !detourWaypoints.isEmpty()) {
@@ -78,7 +112,7 @@ public class FlightMovementController {
                 currentWaypointIndex++;
             }
         }
-        
+
         return true;
     }
     

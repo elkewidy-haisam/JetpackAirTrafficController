@@ -161,6 +161,10 @@ public class CityMapPanel extends JPanel {
         
         // Right side - radar button
         JButton radarButton = new JButton("📻 Open Radar Tape");
+        radarButton.setBackground(com.example.ui.utility.UIComponentFactory.STANDARD_BUTTON_BLUE);
+        radarButton.setForeground(java.awt.Color.WHITE);
+        radarButton.setOpaque(true);
+        radarButton.setBorderPainted(false);
         radarButton.setFont(new Font("Arial", Font.BOLD, 12));
         radarButton.addActionListener(e -> {
             if (openRadarTapeCallback != null) {
