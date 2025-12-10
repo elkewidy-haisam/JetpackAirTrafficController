@@ -156,6 +156,7 @@ public class AirTrafficControllerFrame extends JFrame implements ActionListener 
             // Update the city map panel with the new radar window reference
             if (cityMapPanel != null) {
                 cityMapPanel.setRadarTapeWindow(radarTapeWindow);
+                cityMapPanel.updateAllFlightStatesRadarWindow();
             }
         } else {
             radarTapeWindow.toFront();

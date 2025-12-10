@@ -135,14 +135,25 @@ public class CityMapPanel extends JPanel {
         this.openRadarTapeCallback = callback;
     }
     
+
     public void setRadarTapeWindow(RadarTapeWindow window) {
         this.radarTape = window;
         this.radarTapeWindow = window;
-        
         // Update all flight states with the new radar window
         if (flightStates != null) {
             for (JetPackFlightState state : flightStates.values()) {
                 state.setRadarTapeWindow(window);
+            }
+        }
+    }
+
+    /**
+     * Ensure all current and future JetPackFlightState instances have the latest radar window
+     */
+    public void updateAllFlightStatesRadarWindow() {
+        if (radarTapeWindow != null && flightStates != null) {
+            for (JetPackFlightState state : flightStates.values()) {
+                state.setRadarTapeWindow(radarTapeWindow);
             }
         }
     }
@@ -243,10 +254,16 @@ public class CityMapPanel extends JPanel {
             // Parking spaces initialized
             
             // Initialize flights using helper class
+
             CityMapFlightInitializer.initializeFlights(
                 jetpacks, jetpackFlights, flightStates, parkingSpaces, cityRadio,
                 mapWidth, mapHeight, mapImage,
-                message -> appendJetpackMovement(message),
+                message -> {
+                    appendJetpackMovement(message);
+                    if (radarTapeWindow != null) {
+                        radarTapeWindow.addMessage(message);
+                    }
+                },
                 f -> flightStates.get(f)
             );
             

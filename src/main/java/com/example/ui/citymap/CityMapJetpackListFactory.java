@@ -150,9 +150,16 @@ public class CityMapJetpackListFactory {
                 entryPanel.add(Box.createHorizontalStrut(10));
 
                 // Info label
+                // Generate a unique aviation/bird-themed name for each jetpack
+                String[] birdNames = {
+                    "Falcon", "Eagle", "Hawk", "Osprey", "Swift", "Albatross", "Condor", "Kestrel", "Merlin", "Harrier",
+                    "Heron", "Raven", "Sparrow", "Vireo", "Peregrine", "Goshawk", "Avocet", "Tern", "Cormorant", "Buzzard",
+                    "Crane", "Lark", "Oriole", "Jay", "Wren", "Finch", "Bittern", "Snipe", "Stork", "Ibis"
+                };
+                String birdName = birdNames[i % birdNames.length];
                 String info = String.format("%-12s  |  %-15s  |  %-20s  |  %s %s",
                         jp.getCallsign(), jp.getSerialNumber(), jp.getOwnerName(),
-                        jp.getModel(), jp.getManufacturer());
+                        jp.getModel(), birdName);
                 JLabel infoLabelEntry = new JLabel(info);
                 infoLabelEntry.setFont(new Font("Monospaced", Font.PLAIN, 12));
                 infoLabelEntry.setForeground(new Color(30, 30, 60));

@@ -16,8 +16,8 @@ public class GeometryUtils {
          * Always round down for both positive and negative
          */
         public static Point createPoint(double x, double y) {
-            int px = (int)Math.floor(x);
-            int py = (int)Math.floor(y);
+            int px = x < 0 ? (int)Math.ceil(x) : (int)Math.floor(x);
+            int py = y < 0 ? (int)Math.ceil(y) : (int)Math.floor(y);
             return new Point(px, py);
         }
     
