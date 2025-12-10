@@ -95,7 +95,34 @@ public class JetpackTrackingWindow extends JFrame {
             if (cityMap == null) {
                 throw new RuntimeException("City map could not be loaded for JOGL panel");
             }
-            renderPanel = new JOGL3DPanel(cityName, flight, allFlights, allStates, cityMap);
+            JOGL3DPanel joglPanel = new JOGL3DPanel(cityName, flight, allFlights, allStates, cityMap);
+            com.jogamp.opengl.awt.GLJPanel glPanel = joglPanel.getGLPanel();
+            com.example.ui.utility.JOGLRenderer3D renderer = joglPanel.getRenderer();
+            glPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+                @Override
+                public void mousePressed(java.awt.event.MouseEvent e) {
+                    renderer.mousePressed(e.getX(), e.getY());
+                }
+                @Override
+                public void mouseReleased(java.awt.event.MouseEvent e) {
+                    renderer.mouseReleased(e.getX(), e.getY());
+                }
+            });
+            glPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+                @Override
+                public void mouseDragged(java.awt.event.MouseEvent e) {
+                    renderer.mouseDragged(e.getX(), e.getY());
+                    glPanel.repaint();
+                }
+            });
+            glPanel.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
+                @Override
+                public void mouseWheelMoved(java.awt.event.MouseWheelEvent e) {
+                    renderer.mouseWheelMoved(e.getWheelRotation());
+                    glPanel.repaint();
+                }
+            });
+            renderPanel = joglPanel;
             System.out.println("Using JOGL hardware-accelerated 3D rendering");
         } catch (Exception e) {
             System.err.println("Failed to initialize JOGL: " + e.getMessage());

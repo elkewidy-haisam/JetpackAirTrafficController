@@ -1,9 +1,9 @@
 === WEATHER BROADCAST LOG ===
 City: New York
-Application started: 2025-12-10 00:47:28
+Application started: 2025-12-10 01:22:16
 ==================================================
 
-[2025-12-10 00:47:30] New York
+[2025-12-10 01:22:19] New York
 === WEATHER BROADCAST ===
 
 Location: New York
@@ -16,28 +16,54 @@ Visibility: 10 miles
 Flight Status:
 ✓ SAFE TO FLY
 
-[2025-12-10 00:48:00] New York
+[2025-12-10 01:22:49] New York
 === WEATHER BROADCAST ===
 
 Location: New York
-Current: Steady Rain
-Severity: 2/5
-Temp: 48.0°F
-Wind: 18 mph
-Visibility: 3 miles
+Current: Drizzle
+Severity: 1/5
+Temp: 53.0°F
+Wind: 9 mph
+Visibility: 7 miles
 
 Flight Status:
 ✓ SAFE TO FLY
 
-[2025-12-10 00:48:00] New York
+[2025-12-10 01:22:49] New York
 === WEATHER BROADCAST ===
 
 Location: New York
-Current: Steady Rain
-Severity: 2/5
-Temp: 48.0°F
-Wind: 18 mph
-Visibility: 3 miles
+Current: Drizzle
+Severity: 1/5
+Temp: 53.0°F
+Wind: 9 mph
+Visibility: 7 miles
+
+Flight Status:
+✓ SAFE TO FLY
+
+[2025-12-10 01:23:19] New York
+=== WEATHER BROADCAST ===
+
+Location: New York
+Current: Clear/Sunny
+Severity: 1/5
+Temp: 77.0°F
+Wind: 7 mph
+Visibility: 10 miles
+
+Flight Status:
+✓ SAFE TO FLY
+
+[2025-12-10 01:23:19] New York
+=== WEATHER BROADCAST ===
+
+Location: New York
+Current: Clear/Sunny
+Severity: 1/5
+Temp: 77.0°F
+Wind: 7 mph
+Visibility: 10 miles
 
 Flight Status:
 ✓ SAFE TO FLY

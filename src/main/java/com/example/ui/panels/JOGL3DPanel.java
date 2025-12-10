@@ -24,34 +24,9 @@ import java.awt.event.MouseWheelEvent;
  * Drop-in replacement for MapTrackingPanel with OpenGL rendering
  */
 public class JOGL3DPanel extends JPanel {
-        // Add mouse listeners for camera control
-        public void setupMouseListeners(GLJPanel glPanel, com.example.ui.utility.JOGLRenderer3D renderer) {
-            glPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-                @Override
-                public void mousePressed(java.awt.event.MouseEvent e) {
-                    renderer.mousePressed(e.getX(), e.getY());
-                }
-                @Override
-                public void mouseReleased(java.awt.event.MouseEvent e) {
-                    renderer.mouseReleased(e.getX(), e.getY());
-                }
-            });
-            glPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-                @Override
-                public void mouseDragged(java.awt.event.MouseEvent e) {
-                    renderer.mouseDragged(e.getX(), e.getY());
-                    glPanel.repaint();
-                }
-            });
-            glPanel.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
-                @Override
-                public void mouseWheelMoved(java.awt.event.MouseWheelEvent e) {
-                    renderer.mouseWheelMoved(e.getWheelRotation());
-                    glPanel.repaint();
-                }
-            });
-        }
+        // ...existing code...
     private JOGLRenderer3D renderer;
+    private GLJPanel glPanel;
     private JetPackFlight flight;
     private CityModel3D cityModel;
     private List<JetPackFlight> allFlights;
@@ -85,10 +60,8 @@ public class JOGL3DPanel extends JPanel {
 
         // Create JOGL renderer and GLJPanel
         this.renderer = new JOGLRenderer3D();
-        GLJPanel glPanel = new GLJPanel(new GLCapabilities(GLProfile.get(GLProfile.GL2)));
+        glPanel = new GLJPanel(new GLCapabilities(GLProfile.get(GLProfile.GL2)));
         glPanel.addGLEventListener(renderer);
-        setupMouseListeners(glPanel, renderer);
-
         setLayout(new BorderLayout());
         setOpaque(false);
         add(glPanel, BorderLayout.CENTER);
@@ -232,11 +205,25 @@ public class JOGL3DPanel extends JPanel {
             System.err.println("[JOGL3DPanel] Renderer or flight is null!");
             return;
         }
-        // ...existing code...
-            // Ensure renderer receives up-to-date flight, destination, and path data
-            renderer.updateData(flight, cityModel, allFlights, null, flightStates);
+        // Ensure renderer receives up-to-date flight, destination, and path data
+        renderer.updateData(flight, cityModel, allFlights, null, flightStates);
     }
+
     
+    /**
+     * Getter for GLJPanel
+     */
+    public GLJPanel getGLPanel() {
+        return glPanel;
+    }
+
+    /**
+     * Getter for JOGLRenderer3D
+     */
+    public JOGLRenderer3D getRenderer() {
+        return renderer;
+    }
+
     @Override
     public void removeNotify() {
         stopUpdateTimer();

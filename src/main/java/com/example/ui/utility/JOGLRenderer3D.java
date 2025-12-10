@@ -55,7 +55,11 @@ public class JOGLRenderer3D implements GLEventListener {
         }
     @Override
     public void init(GLAutoDrawable drawable) {
-        // TODO: Initialize OpenGL state if needed
+        // Enable depth testing for correct 3D rendering
+        GL2 gl = drawable.getGL().getGL2();
+        gl.glEnable(GL.GL_DEPTH_TEST);
+        gl.glDepthFunc(GL.GL_LEQUAL);
+        gl.glClearDepth(1.0f);
     }
 
     @Override
@@ -87,30 +91,27 @@ public class JOGLRenderer3D implements GLEventListener {
             double jetX = flight.getX();
             double jetY = flight.getAltitude();
             double jetZ = flight.getY();
-            double dx = 0, dz = 0;
-            Point dest = flight.getDestination();
-            if (dest != null) {
-                dx = dest.x - jetX;
-                dz = dest.y - jetZ;
-                double len = Math.sqrt(dx*dx + dz*dz);
-                if (len > 0) { dx /= len; dz /= len; }
-            }
-            double camDist = 80;
-            double camHeight = 40;
-            double eyeX = jetX - dx * camDist;
-            double eyeY = Math.max(jetY + camHeight, 5); // Prevent below ground
-            double eyeZ = jetZ - dz * camDist;
-            double lookX = jetX + dx * 30;
+            // Use mouseAzimuth, mouseElevation, mouseDistance for camera position
+            double azRad = Math.toRadians(mouseAzimuth);
+            double elRad = Math.toRadians(mouseElevation);
+            double camDist = mouseDistance;
+            double eyeX = jetX + camDist * Math.cos(azRad) * Math.cos(elRad);
+            double eyeY = Math.max(jetY + camDist * Math.sin(elRad), 5);
+            double eyeZ = jetZ + camDist * Math.sin(azRad) * Math.cos(elRad);
+            double lookX = jetX;
             double lookY = jetY;
-            double lookZ = jetZ + dz * 30;
+            double lookZ = jetZ;
             glu.gluLookAt(eyeX, eyeY, eyeZ, lookX, lookY, lookZ, 0, 1, 0);
         } else {
             double centerX = cityModel != null ? cityModel.getMapWidth() / 2.0 : 0;
             double centerY = 0;
             double centerZ = cityModel != null ? cityModel.getMapHeight() / 2.0 : 0;
-            double eyeX = centerX + cameraDistance * Math.cos(Math.toRadians(cameraAzimuth)) * Math.cos(Math.toRadians(cameraElevation));
-            double eyeY = Math.max(centerY + cameraDistance * Math.sin(Math.toRadians(cameraElevation)), 5);
-            double eyeZ = centerZ + cameraDistance * Math.sin(Math.toRadians(cameraAzimuth)) * Math.cos(Math.toRadians(cameraElevation));
+            double azRad = Math.toRadians(mouseAzimuth);
+            double elRad = Math.toRadians(mouseElevation);
+            double camDist = mouseDistance;
+            double eyeX = centerX + camDist * Math.cos(azRad) * Math.cos(elRad);
+            double eyeY = Math.max(centerY + camDist * Math.sin(elRad), 5);
+            double eyeZ = centerZ + camDist * Math.sin(azRad) * Math.cos(elRad);
             glu.gluLookAt(eyeX, eyeY, eyeZ, centerX, centerY, centerZ, 0, 1, 0);
         }
 
@@ -118,7 +119,7 @@ public class JOGLRenderer3D implements GLEventListener {
         if (cityModel != null) {
             gl.glColor3f(0.4f, 0.7f, 0.3f); // grass green
             gl.glPushMatrix();
-            gl.glTranslated(cityModel.getMapWidth()/2, 0, cityModel.getMapHeight()/2);
+            gl.glTranslated(cityModel.getMapWidth()/2, -0.1, cityModel.getMapHeight()/2); // Slightly below Y=0
             gl.glScaled(cityModel.getMapWidth(), 1, cityModel.getMapHeight());
             gl.glBegin(GL2.GL_QUADS);
             gl.glVertex3f(-0.5f, 0, -0.5f);
@@ -242,69 +243,170 @@ public class JOGLRenderer3D implements GLEventListener {
         // Draw buildings (better proportions, color/material variation, roof detail)
         if (cityModel != null) {
             for (var building : cityModel.getBuildings()) {
-                float baseR = 0.6f, baseG = 0.6f, baseB = 0.7f;
+                float baseR, baseG, baseB;
                 gl.glPushMatrix();
-                gl.glTranslated(building.getX(), building.getHeight() / 2, building.getY());
-                // Skyscraper: tall, with spire and windows
-                if ("skyscraper".equals(building.getType())) {
-                    baseR = 0.7f + (float)Math.random()*0.1f;
-                    baseG = 0.7f + (float)Math.random()*0.1f;
-                    baseB = 0.8f + (float)Math.random()*0.1f;
-                    gl.glColor3f(baseR, baseG, baseB);
-                    gl.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, new float[]{0.9f,0.9f,1.0f,1.0f}, 0);
-                    gl.glMaterialf(GL2.GL_FRONT, GL2.GL_SHININESS, 80f);
-                    gl.glScaled(building.getWidth(), building.getHeight(), building.getLength());
-                    glut.glutSolidCube(1.0f);
-                    // Spire
-                    gl.glPushMatrix();
-                    gl.glTranslated(0, 0.6, 0);
-                    gl.glScaled(0.2, 0.5, 0.2);
-                    gl.glColor3f(0.9f, 0.9f, 0.9f);
-                    glut.glutSolidCone(1, 2, 8, 2);
-                    gl.glPopMatrix();
-                } else if ("office".equals(building.getType())) {
-                    baseR = 0.5f + (float)Math.random()*0.2f;
-                    baseG = 0.6f + (float)Math.random()*0.2f;
-                    baseB = 0.7f + (float)Math.random()*0.1f;
-                    gl.glColor3f(baseR, baseG, baseB);
-                    gl.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, new float[]{0.7f,0.7f,0.7f,1.0f}, 0);
-                    gl.glMaterialf(GL2.GL_FRONT, GL2.GL_SHININESS, 40f);
-                    gl.glScaled(building.getWidth(), building.getHeight(), building.getLength());
-                    glut.glutSolidCube(1.0f);
-                } else if ("residential".equals(building.getType())) {
-                    baseR = 0.8f + (float)Math.random()*0.1f;
-                    baseG = 0.7f + (float)Math.random()*0.1f;
-                    baseB = 0.6f + (float)Math.random()*0.1f;
-                    gl.glColor3f(baseR, baseG, baseB);
-                    gl.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, new float[]{0.8f,0.7f,0.6f,1.0f}, 0);
-                    gl.glMaterialf(GL2.GL_FRONT, GL2.GL_SHININESS, 20f);
-                    gl.glScaled(building.getWidth(), building.getHeight(), building.getLength());
-                    glut.glutSolidCube(1.0f);
-                    // Roof
-                    gl.glPushMatrix();
-                    gl.glTranslated(0, 0.5, 0);
-                    gl.glScaled(0.8, 0.4, 0.8);
-                    gl.glColor3f(baseR*0.8f, baseG*0.8f, baseB*0.8f);
-                    glut.glutSolidCone(0.7, 1.2, 8, 2);
-                    gl.glPopMatrix();
-                } else if ("commercial".equals(building.getType())) {
-                    baseR = 0.7f + (float)Math.random()*0.1f;
-                    baseG = 0.6f + (float)Math.random()*0.1f;
-                    baseB = 0.3f + (float)Math.random()*0.1f;
-                    gl.glColor3f(baseR, baseG, baseB);
-                    gl.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, new float[]{0.9f,0.8f,0.5f,1.0f}, 0);
-                    gl.glMaterialf(GL2.GL_FRONT, GL2.GL_SHININESS, 30f);
-                    gl.glScaled(building.getWidth(), building.getHeight(), building.getLength());
-                    glut.glutSolidCube(1.0f);
-                } else {
-                    baseR = 0.5f + (float)Math.random()*0.1f;
-                    baseG = 0.5f + (float)Math.random()*0.1f;
-                    baseB = 0.5f + (float)Math.random()*0.1f;
-                    gl.glColor3f(baseR, baseG, baseB);
-                    gl.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, new float[]{0.5f,0.5f,0.5f,1.0f}, 0);
-                    gl.glMaterialf(GL2.GL_FRONT, GL2.GL_SHININESS, 10f);
-                    gl.glScaled(building.getWidth(), building.getHeight(), building.getLength());
-                    glut.glutSolidCube(1.0f);
+                // Place building base at Y=0
+                gl.glTranslated(building.getX(), building.getHeight() / 2.0, building.getY());
+                double w = building.getWidth();
+                double h = building.getHeight();
+                double l = building.getLength();
+                switch (building.getType()) {
+                    case "skyscraper":
+                        baseR = 0.7f; baseG = 0.7f; baseB = 0.8f;
+                        gl.glColor3f(baseR, baseG, baseB);
+                        gl.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, new float[]{0.9f,0.9f,1.0f,1.0f}, 0);
+                        gl.glMaterialf(GL2.GL_FRONT, GL2.GL_SHININESS, 80f);
+                        gl.glScaled(w, h, l);
+                        glut.glutSolidCube(1.0f);
+                        // Windows: draw blue rectangles on all 4 sides
+                        gl.glLineWidth(1.2f);
+                        gl.glColor3f(0.2f, 0.4f, 0.9f);
+                        int floors = Math.max(3, (int)h/8);
+                        int winCols = Math.max(2, (int)w/6);
+                        for (int side = 0; side < 4; side++) {
+                            gl.glPushMatrix();
+                            if (side == 1) gl.glRotated(90, 0, 1, 0);
+                            if (side == 2) gl.glRotated(180, 0, 1, 0);
+                            if (side == 3) gl.glRotated(270, 0, 1, 0);
+                            for (int i = 0; i < floors; i++) {
+                                double y = -0.5 + (i+0.5)/floors;
+                                for (int j = 0; j < winCols; j++) {
+                                    double x = -0.4 + (j+0.5)/winCols*0.8;
+                                    gl.glBegin(GL2.GL_QUADS);
+                                    gl.glVertex3d(x-0.04, y-0.06, 0.51);
+                                    gl.glVertex3d(x+0.04, y-0.06, 0.51);
+                                    gl.glVertex3d(x+0.04, y+0.06, 0.51);
+                                    gl.glVertex3d(x-0.04, y+0.06, 0.51);
+                                    gl.glEnd();
+                                }
+                            }
+                            gl.glPopMatrix();
+                        }
+                        // Spire
+                        gl.glPushMatrix();
+                        gl.glTranslated(0, 0.6, 0);
+                        gl.glScaled(0.2, 0.5, 0.2);
+                        gl.glColor3f(0.9f, 0.9f, 0.9f);
+                        glut.glutSolidCone(1, 2, 8, 2);
+                        gl.glPopMatrix();
+                        break;
+                    case "office":
+                        baseR = 0.5f; baseG = 0.6f; baseB = 0.7f;
+                        gl.glColor3f(baseR, baseG, baseB);
+                        gl.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, new float[]{0.7f,0.7f,0.7f,1.0f}, 0);
+                        gl.glMaterialf(GL2.GL_FRONT, GL2.GL_SHININESS, 40f);
+                        gl.glScaled(w, h, l);
+                        glut.glutSolidCube(1.0f);
+                        // Windows: draw white rectangles
+                        gl.glLineWidth(1.1f);
+                        gl.glColor3f(0.85f, 0.85f, 1.0f);
+                        floors = Math.max(2, (int)h/10);
+                        winCols = Math.max(2, (int)w/8);
+                        for (int side = 0; side < 4; side++) {
+                            gl.glPushMatrix();
+                            if (side == 1) gl.glRotated(90, 0, 1, 0);
+                            if (side == 2) gl.glRotated(180, 0, 1, 0);
+                            if (side == 3) gl.glRotated(270, 0, 1, 0);
+                            for (int i = 0; i < floors; i++) {
+                                double y = -0.5 + (i+0.5)/floors;
+                                for (int j = 0; j < winCols; j++) {
+                                    double x = -0.4 + (j+0.5)/winCols*0.8;
+                                    gl.glBegin(GL2.GL_QUADS);
+                                    gl.glVertex3d(x-0.045, y-0.07, 0.51);
+                                    gl.glVertex3d(x+0.045, y-0.07, 0.51);
+                                    gl.glVertex3d(x+0.045, y+0.07, 0.51);
+                                    gl.glVertex3d(x-0.045, y+0.07, 0.51);
+                                    gl.glEnd();
+                                }
+                            }
+                            gl.glPopMatrix();
+                        }
+                        break;
+                    case "residential":
+                        baseR = 0.8f; baseG = 0.7f; baseB = 0.6f;
+                        gl.glColor3f(baseR, baseG, baseB);
+                        gl.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, new float[]{0.8f,0.7f,0.6f,1.0f}, 0);
+                        gl.glMaterialf(GL2.GL_FRONT, GL2.GL_SHININESS, 20f);
+                        gl.glScaled(w, h, l);
+                        glut.glutSolidCube(1.0f);
+                        // Bricks: draw horizontal and vertical lines
+                        gl.glColor3f(0.6f, 0.3f, 0.2f);
+                        int brickRows = Math.max(3, (int)h/4);
+                        int brickCols = Math.max(2, (int)w/3);
+                        for (int side = 0; side < 4; side++) {
+                            gl.glPushMatrix();
+                            if (side == 1) gl.glRotated(90, 0, 1, 0);
+                            if (side == 2) gl.glRotated(180, 0, 1, 0);
+                            if (side == 3) gl.glRotated(270, 0, 1, 0);
+                            // Horizontal lines
+                            for (int i = 1; i < brickRows; i++) {
+                                double y = -0.5 + i/(double)brickRows;
+                                gl.glBegin(GL2.GL_LINES);
+                                gl.glVertex3d(-0.5, y, 0.51);
+                                gl.glVertex3d(0.5, y, 0.51);
+                                gl.glEnd();
+                            }
+                            // Vertical lines
+                            for (int j = 1; j < brickCols; j++) {
+                                double x = -0.5 + j/(double)brickCols;
+                                gl.glBegin(GL2.GL_LINES);
+                                gl.glVertex3d(x, -0.5, 0.51);
+                                gl.glVertex3d(x, 0.5, 0.51);
+                                gl.glEnd();
+                            }
+                            gl.glPopMatrix();
+                        }
+                        // Roof
+                        gl.glPushMatrix();
+                        gl.glTranslated(0, 0.5, 0);
+                        gl.glScaled(0.8, 0.4, 0.8);
+                        gl.glColor3f(baseR*0.8f, baseG*0.8f, baseB*0.8f);
+                        glut.glutSolidCone(0.7, 1.2, 8, 2);
+                        gl.glPopMatrix();
+                        break;
+                    case "commercial":
+                        baseR = 0.7f; baseG = 0.6f; baseB = 0.3f;
+                        gl.glColor3f(baseR, baseG, baseB);
+                        gl.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, new float[]{0.9f,0.8f,0.5f,1.0f}, 0);
+                        gl.glMaterialf(GL2.GL_FRONT, GL2.GL_SHININESS, 30f);
+                        gl.glScaled(w, h, l);
+                        glut.glutSolidCube(1.0f);
+                        // Tiles: draw grid pattern
+                        gl.glColor3f(0.85f, 0.85f, 0.7f);
+                        int tileRows = Math.max(2, (int)h/8);
+                        int tileCols = Math.max(2, (int)w/5);
+                        for (int side = 0; side < 4; side++) {
+                            gl.glPushMatrix();
+                            if (side == 1) gl.glRotated(90, 0, 1, 0);
+                            if (side == 2) gl.glRotated(180, 0, 1, 0);
+                            if (side == 3) gl.glRotated(270, 0, 1, 0);
+                            // Horizontal lines
+                            for (int i = 1; i < tileRows; i++) {
+                                double y = -0.5 + i/(double)tileRows;
+                                gl.glBegin(GL2.GL_LINES);
+                                gl.glVertex3d(-0.5, y, 0.51);
+                                gl.glVertex3d(0.5, y, 0.51);
+                                gl.glEnd();
+                            }
+                            // Vertical lines
+                            for (int j = 1; j < tileCols; j++) {
+                                double x = -0.5 + j/(double)tileCols;
+                                gl.glBegin(GL2.GL_LINES);
+                                gl.glVertex3d(x, -0.5, 0.51);
+                                gl.glVertex3d(x, 0.5, 0.51);
+                                gl.glEnd();
+                            }
+                            gl.glPopMatrix();
+                        }
+                        break;
+                    default:
+                        baseR = 0.5f; baseG = 0.5f; baseB = 0.5f;
+                        gl.glColor3f(baseR, baseG, baseB);
+                        gl.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, new float[]{0.5f,0.5f,0.5f,1.0f}, 0);
+                        gl.glMaterialf(GL2.GL_FRONT, GL2.GL_SHININESS, 10f);
+                        gl.glScaled(w, h, l);
+                        glut.glutSolidCube(1.0f);
+                        break;
                 }
                 gl.glPopMatrix();
             }
