@@ -1,5 +1,5 @@
-package com.example.utility.geometry;
 
+package com.example.utility.geometry;
 import java.awt.Point;
 
 /**
@@ -11,6 +11,15 @@ import java.awt.Point;
  * Author: Jetpack Air Traffic Controller Team
  */
 public class GeometryUtils {
+        /**
+         * Creates a new Point from double coordinates (converts to int)
+         * Always round down for both positive and negative
+         */
+        public static Point createPoint(double x, double y) {
+            int px = (int)Math.floor(x);
+            int py = (int)Math.floor(y);
+            return new Point(px, py);
+        }
     
     /**
      * Calculates the Euclidean distance between two points
@@ -26,6 +35,12 @@ public class GeometryUtils {
         double dy = y2 - y1;
         return Math.sqrt(dx * dx + dy * dy);
     }
+
+        // Added for test compatibility
+        public static double calculateDistance(int x1, int y1, int x2, int y2) {
+            return calculateDistance((double)x1, (double)y1, (double)x2, (double)y2);
+        }
+
     
     /**
      * Calculates the Euclidean distance between two points
@@ -57,9 +72,6 @@ public class GeometryUtils {
      * @param y Y coordinate
      * @return New Point with integer coordinates
      */
-    public static Point createPoint(double x, double y) {
-        return new Point((int)x, (int)y);
-    }
     
     /**
      * Calculates the angle (in radians) from one point to another

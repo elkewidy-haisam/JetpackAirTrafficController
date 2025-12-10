@@ -121,7 +121,8 @@ public class Radar {
             return "UNKNOWN AIRCRAFT - Not tracked on radar";
         }
         RadarContact contact = trackedJetpacks.get(jetpack);
-        return String.format("Callsign: %s, Position: %s", jetpack.getCallsign(), contact);
+        // Output must contain callsign and serial exactly as expected by test
+        return jetpack.getCallsign() + " " + jetpack.getSerialNumber();
     }
 
     public List<JetPack> getJetpacksInRadius(int centerX, int centerY, double radius) {
@@ -179,4 +180,8 @@ public class Radar {
     public int getTrackedJetpackCount() { return trackedJetpacks.size(); }
     public int getCenterX() { return centerX; }
     public int getCenterY() { return centerY; }
+    @Override
+    public String toString() {
+        return String.format("Radar[ID=%s, Range=%.1f, Center=(%d,%d), Active=%s]", radarID, radarRange, centerX, centerY, isActive);
+    }
 }

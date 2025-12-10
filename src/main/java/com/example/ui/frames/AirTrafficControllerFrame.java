@@ -33,7 +33,7 @@ import com.example.ui.citymap.CityMapPanel;
 import com.example.ui.panels.CitySelectionPanel;
 import com.example.ui.panels.ConsoleOutputPanel;
 import com.example.util.ConfigManager;
-import com.example.util.SessionManager;
+import com.example.utility.map.SessionManager;
 import com.example.weather.DayTime;
 import com.example.weather.Weather;
 

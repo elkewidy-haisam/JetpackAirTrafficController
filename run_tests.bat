@@ -16,6 +16,9 @@ if not exist "lib\junit-4.13.2.jar" (
     exit /b 1
 )
 
+REM Step 1: List all main source files recursively
+(for /r src\main\java %%f in (*.java) do @echo %%f) > sources_main.txt
+
 echo Step 1: Compiling main source files...
 javac -cp ".;lib\*" @sources_main.txt
 if errorlevel 1 (

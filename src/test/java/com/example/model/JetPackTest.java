@@ -17,7 +17,8 @@ public class JetPackTest {
     
     @Before
     public void setUp() {
-        jetpack = new JetPack("BOS-001", "ALPHA-01", "John Doe", "2024", "FreedomFlyer", "LibertyCorp");
+           com.example.jetpack.JetPack.resetCallsignCounter();
+           jetpack = new JetPack("BOS-001", "ALPHA-01", "ALPHA-01", "John Doe", "2024", "FreedomFlyer", "LibertyCorp", new java.awt.Point(0,0), 0.0, 0.0);
     }
     
     @Test

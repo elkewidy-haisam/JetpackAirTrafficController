@@ -1,9 +1,24 @@
 === RADAR COMMUNICATIONS LOG ===
 City: New York
-Application started: 2025-12-10 13:32:07
+Application started: 2025-12-10 14:40:07
 ==================================================
-[13:32:49] ATC-NEW → ALPHA-71
+[14:40:26] ATC-NEW → Jane #4
+📡 WEATHER UPDATE
+➤ Current conditions advisory
+---
+
+[14:40:39] ATC-NEW → Sarah #9
+📡 ALTITUDE CLEARANCE
+➤ Cleared to new altitude
+---
+
+[14:40:51] ATC-NEW → Sarah #3
 📡 ROUTE OPTIMIZATION
 ➤ Direct route cleared
+---
+
+[14:41:03] ATC-NEW → Chris #10
+📡 COLLISION AVOIDANCE
+➤ Traffic alert - change course
 ---
 

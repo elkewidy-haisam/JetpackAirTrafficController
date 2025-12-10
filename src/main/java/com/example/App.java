@@ -18,6 +18,11 @@ public class App {
     private static final String VERSION = "2.0";
     
     public static void main(String[] args) {
+        // Prevent GUI startup in test environment
+        if (Boolean.getBoolean("test.env")) {
+            System.out.println("Test environment detected: Skipping GUI startup.");
+            return;
+        }
         AppConfig config = parseArguments(args);
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());

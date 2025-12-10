@@ -1,72 +1,37 @@
+/*
+ * ParkingSpace.java
+ * Part of Jetpack Air Traffic Controller
+ *
+ * Represents a parking space for jetpacks in the city.
+ *
+ * (c) 2025 Haisam Elkewidy. All rights reserved.
+ */
+
 package com.example.parking;
 
-/**
- * ParkingSpace.java
- * by Haisam Elkewidy
- * 
- * This class represents a parking space for a jetpack.
- * 
- * Attributes:
- * - String id: Unique identifier for the parking space
- * - boolean occupied: Indicates if the parking space is currently occupied
- * - double x, y: Location coordinates
- * 
- * Methods:
- * - boolean isOccupied(): Returns true if the space is occupied
- * - void occupy(): Marks the space as occupied
- * - void vacate(): Marks the space as vacant
- */
+import java.awt.Point;
+
 public class ParkingSpace {
+    private final String id;
+    private final Point location;
+    private boolean isOccupied;
 
-    private String id;
-    private boolean occupied;
-    private double x;
-    private double y;
-
-    public ParkingSpace(String id) {
+    public ParkingSpace(String id, int x, int y) {
         this.id = id;
-        this.occupied = false;
-        this.x = 0;
-        this.y = 0;
+        this.location = new Point(x, y);
+        this.isOccupied = false;
     }
 
-    public ParkingSpace(String id, double x, double y) {
-        this.id = id;
-        this.occupied = false;
-        this.x = x;
-        this.y = y;
-    }
+    public String getId() { return id; }
+    public Point getLocation() { return location; }
+    public boolean isOccupied() { return isOccupied; }
+    public int getX() { return location.x; }
+    public int getY() { return location.y; }
+    public void occupy() { this.isOccupied = true; }
+    public void vacate() { this.isOccupied = false; }
 
-    public String getId() {
-        return id;
+    @Override
+    public String toString() {
+        return String.format("ParkingSpace[%s]: Location=%s Occupied=%b", id, location, isOccupied);
     }
-
-    public boolean isOccupied() {
-        return occupied;
-    }
-
-    public void occupy() {
-        this.occupied = true;
-    }
-
-    public void vacate() {
-        this.occupied = false;
-    }
-
-    public double getX() {
-        return x;
-    }
-
-    public double getY() {
-        return y;
-    }
-
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public void setY(double y) {
-        this.y = y;
-    }
-    
 }

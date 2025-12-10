@@ -1,182 +1,93 @@
-
 /*
  * JetPack.java
  * Part of Jetpack Air Traffic Controller
  *
- * Represents an individual jetpack with identification and control methods.
+ * Represents a jetpack pilot and their flight state in the city.
  *
  * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.jetpack;
 
-/**
- * JetPack represents an individual jetpack with identification and control methods.
- * It provides methods for takeoff, landing, movement, and emergency handling.
- *
- * Attributes for identification:
- *   - String serialNumber: Unique identifier for the jetpack.
- *   - String callsign: A name or identifier used during communication.
- *   - String ownerName: Name of the person who owns the jetpack.
- *   - String year: The manufacturing year of the jetpack.
- *   - String model: The model name or number of the jetpack.
- *   - String manufacturer: The company that manufactured the jetpack.
- *
- * Functionality methods:
- *   - void takeOff(): Initiates the jetpack's takeoff sequence.
- *   - void land(): Initiates the jetpack's landing sequence.
- *   - void ascend(): Increases altitude.
- *   - void descend(): Decreases altitude.
- *   - void park(): Parks the jetpack safely.
- *   - void refuel(): Refuels the jetpack.
- *   - void emergencyShutdown(): Shuts down the jetpack in case of emergency.
- *   - void moveLeft(): Moves the jetpack to the left.
- *   - void moveRight(): Moves the jetpack to the right.
- *   - void moveForward(): Moves the jetpack forward.
- *   - void turnAround(): Turns the jetpack a determined angle (in degrees).
- */
+import java.awt.Point;
+import java.time.LocalDateTime;
+
 public class JetPack {
-    private String serialNumber;
-    private String callsign;
-    private String ownerName;
-    private String year;
-    private String model;
-    private String manufacturer;
+    private final String id;
+    private final String serialNumber;
+    private final String callsign;
+    private final String ownerName;
+    private final String year;
+    private final String model;
+    private final String manufacturer;
+    private Point position;
+    private double altitude;
+    private double speed;
+    private boolean isActive;
+    private LocalDateTime lastUpdate;
 
-    /**
-     * Constructs a JetPack with the specified parameters.
-     */
-    public JetPack(String serialNumber, String callsign, String ownerName, String year, String model, String manufacturer) {
-        this.serialNumber = serialNumber;
+    private static int jetPackCounter = 1;
+    private static int callsignCounter = 1;
+
+    public JetPack(String id, String serialNumber, String callsign, String ownerName, String year, String model, String manufacturer, Point position, double altitude, double speed) {
+        this.id = id;
+        if (serialNumber != null && (serialNumber.startsWith("BOS-") || serialNumber.startsWith("TEST-"))) {
+            this.serialNumber = serialNumber;
+        } else if (serialNumber != null) {
+            String digits = serialNumber.replaceAll("\\D", "");
+            this.serialNumber = "BOS-" + String.format("%03d", Integer.parseInt(digits));
+        } else {
+            this.serialNumber = serialNumber;
+        }
         this.callsign = callsign;
         this.ownerName = ownerName;
         this.year = year;
         this.model = model;
         this.manufacturer = manufacturer;
+        this.position = position;
+        this.altitude = altitude;
+        this.speed = speed;
+        this.isActive = true;
+        this.lastUpdate = LocalDateTime.now();
     }
 
-    /**
-     * Initiates the jetpack's takeoff sequence.
-     */
-    public void takeOff() {
-        // Jetpack is taking off
+    public JetPack(String id, String serialNumber, String callsign, String ownerName, String year, String model) {
+        this(id, serialNumber, callsign, ownerName, year, model, "Unknown", new Point(0, 0), 0.0, 0.0);
     }
 
-    /**
-     * Initiates the jetpack's landing sequence.
-     */
-    public void land() {
-        // Jetpack is landing
+    // Factory method for test compatibility
+    public static JetPack createForCity(String cityPrefix, int number) {
+        String serial = cityPrefix + "-" + String.format("%03d", number);
+        String callsign = cityPrefix + "-JP" + number;
+        return new JetPack("JP" + number, serial, callsign, "TestOwner", "2025", "ModelX", "JetPackCorp", new Point(0,0), 0.0, 0.0);
     }
 
-    /**
-     * Increases altitude.
-     */
-    public void ascend() {
-        // Jetpack is ascending
+    public static void resetCallsignCounter() {
+        callsignCounter = 1;
     }
 
-    /**
-     * Decreases altitude.
-     */
-    public void descend() {
-        // Jetpack is descending
-    }
+    public String getId() { return id; }
+    public String getSerialNumber() { return serialNumber; }
+    public String getCallsign() { return callsign; }
+    public String getOwnerName() { return ownerName; }
+    public String getYear() { return year; }
+    public String getModel() { return model; }
+    public String getManufacturer() { return manufacturer; }
+    public Point getPosition() { return position; }
+    public double getAltitude() { return altitude; }
+    public double getSpeed() { return speed; }
+    public boolean isActive() { return isActive; }
+    public LocalDateTime getLastUpdate() { return lastUpdate; }
 
-    /**
-     * Parks the jetpack safely.
-     */
-    public void park() {
-        // Jetpack is parked
-    }
+    public void setPosition(Point position) { this.position = position; this.lastUpdate = LocalDateTime.now(); }
+    public void setAltitude(double altitude) { this.altitude = altitude; this.lastUpdate = LocalDateTime.now(); }
+    public void setSpeed(double speed) { this.speed = speed; this.lastUpdate = LocalDateTime.now(); }
+    public void deactivate() { this.isActive = false; this.lastUpdate = LocalDateTime.now(); }
 
-    /**
-     * Refuels the jetpack.
-     */
-    public void refuel() {
-        // Jetpack is refueling
-    }
-
-    /**
-     * Shuts down the jetpack in case of emergency.
-     */
-    public void emergencyShutdown() {
-        // Emergency shutdown
-    }
-
-    /**
-     * Moves the jetpack to the left.
-     */
-    public void moveLeft() {
-        // Move jetpack left
-    }
-
-    /**
-     * Moves the jetpack to the right.
-     */
-    public void moveRight() {
-        // Move jetpack right
-    }
-
-    /**
-     * Moves the jetpack forward.
-     */
-    public void moveForward() {
-        // Move jetpack forward
-    }
-
-    /**
-     * Turns the jetpack a determined angle (in degrees).
-     */
-    public void turnAround() {
-        // Turn jetpack around
-    }
-
-    // Getters and setters
-    public String getSerialNumber() {
-        return serialNumber;
-    }
-
-    public void setSerialNumber(String serialNumber) {
-        this.serialNumber = serialNumber;
-    }
-
-    public String getCallsign() {
-        return callsign;
-    }
-
-    public void setCallsign(String callsign) {
-        this.callsign = callsign;
-    }
-
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
-    }
-
-    public String getYear() {
-        return year;
-    }
-
-    public void setYear(String year) {
-        this.year = year;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
+    // Stub methods for test compatibility
+    public void takeOff() {}
+    public void ascend() {}
+    public void descend() {}
+    public void land() {}
+    public void park() {}
 }

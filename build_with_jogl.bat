@@ -1,8 +1,8 @@
 @echo off
 REM === Automated build script for Air Traffic Controller project ===
-REM Update sources.txt with all Java files
+REM Update sources.txt with all Java files (including subpackages)
 
-dir /s /b src\main\java\com\example\*.java > sources.txt
+dir /s /b src\main\java\*.java > sources.txt
 
 REM Compile all Java files with JOGL libraries
 REM Explicitly add jogl-all.jar and gluegen-rt.jar to the classpath for compilation

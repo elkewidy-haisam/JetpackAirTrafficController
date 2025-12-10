@@ -25,9 +25,9 @@ public class RadarTest {
     @Before
     public void setUp() {
         radar = new Radar("RADAR-TEST-01", 100.0, 500, 500);
-        jetpack1 = new JetPack("TEST-001", "ALPHA-01", "Pilot1", "2024", "Model1", "Mfg1");
-        jetpack2 = new JetPack("TEST-002", "BRAVO-02", "Pilot2", "2024", "Model2", "Mfg2");
-        jetpack3 = new JetPack("TEST-003", "CHARLIE-03", "Pilot3", "2024", "Model3", "Mfg3");
+        jetpack1 = new JetPack("JP1", "TEST-001", "ALPHA-01", "Pilot1", "2024", "Model1", "Mfg1", new java.awt.Point(0,0), 0.0, 0.0);
+        jetpack2 = new JetPack("JP2", "TEST-002", "BRAVO-02", "Pilot2", "2024", "Model2", "Mfg2", new java.awt.Point(0,0), 0.0, 0.0);
+        jetpack3 = new JetPack("JP3", "TEST-003", "CHARLIE-03", "Pilot3", "2024", "Model3", "Mfg3", new java.awt.Point(0,0), 0.0, 0.0);
     }
     
     @Test

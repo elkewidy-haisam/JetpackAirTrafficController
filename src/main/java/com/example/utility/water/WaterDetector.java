@@ -22,9 +22,16 @@ public class WaterDetector {
     public WaterDetector(String resourcePath) throws IOException {
         InputStream is = getClass().getResourceAsStream(resourcePath);
         if (is == null) {
-            throw new IOException("Could not find resource: " + resourcePath);
+            throw new IOException("Could not find resource");
         }
-        mapImage = ImageIO.read(is);
+        try {
+            mapImage = ImageIO.read(is);
+        } catch (Exception e) {
+            throw new IOException("Could not read image from resource: " + resourcePath);
+        }
+        if (mapImage == null) {
+            throw new IOException("Could not read image from resource: " + resourcePath);
+        }
         width = mapImage.getWidth();
         height = mapImage.getHeight();
     }

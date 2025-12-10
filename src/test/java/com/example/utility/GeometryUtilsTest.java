@@ -1,5 +1,7 @@
 package com.example.utility;
 
+import com.example.utility.geometry.GeometryUtils;
+
 import java.awt.Point;
 
 import static org.junit.Assert.assertEquals;
