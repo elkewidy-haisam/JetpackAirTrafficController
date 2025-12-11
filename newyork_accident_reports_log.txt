@@ -1,24 +1,4 @@
 === ACCIDENT REPORTS LOG ===
 City: New York
-Application started: 2025-12-10 16:33:41
+Application started: 2025-12-10 17:53:48
 ==================================================
-
-[16:37:33] *** ACCIDENT REPORT ***
-🚨 ID: ACC-NEW-1765402653897
-Type: COLLISION
-Severity: MINOR
-Location: (287,328)
-Details: Traffic stopped in area
-⚠️ ALL AIRCRAFT AVOID AREA
----
-
-
-[16:38:08] *** ACCIDENT REPORT ***
-🚨 ID: ACC-NEW-1765402688604
-Type: JETPACK_MALFUNCTION
-Severity: SEVERE
-Location: (636,601)
-Details: Traffic stopped in area
-⚠️ ALL AIRCRAFT AVOID AREA
----
-
