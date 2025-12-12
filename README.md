@@ -161,6 +161,17 @@ Buildings are NOT placed randomly:
 │ City: New York     [WHITE]     │
 └────────────────────────────────┘
 ```
+JetpackTrackingWindow.java
+├── Creates window frame
+├── Loads CityModel3D
+└── Contains Jetpack3DTrackingPanel
+    └── Uses Renderer3D for rendering
+
+CityModel3D.java
+├── Loads city map image
+├── Generates realistic building distribution
+├── Provides water/land detection
+└── Returns buildings near camera position
 
 **HUD Features**:
 - Semi-transparent background
@@ -215,6 +226,9 @@ Renderer3D.java
 ├── drawJetpackModel() - Foreground jetpack
 └── drawDestinationMarker() - Target indicator
 ```
+- Analyzes actual city map pixels
+- Detects rivers, harbors, lakes
+- Enables realistic terrain rendering
 
 ### Performance Optimizations
 1. **View Frustum Culling**: Only renders visible buildings
@@ -895,6 +909,21 @@ Enjoy your enhanced 3D jetpack tracking experience!
 **Location**: `updateDateTimeDisplay()` method
 
 **Error Message**:
+```
+cannot find symbol
+  symbol:   method getTimezoneForCity(java.lang.String)
+  location: class com.example.AirTrafficControllerFrame
+```
+
+**Cause**: The method was moved to `TimezoneHelper` utility class but one call was missed.
+
+**Fix**: 
+```java
+// OLD (line 1571):
+ZoneId timezone = getTimezoneForCity(currentCity);
+
+// NEW:
+ZoneId timezone = TimezoneHelper.getTimezoneForCity(currentCity);
 ```
 cannot find symbol
   symbol:   method getTimezoneForCity(java.lang.String)
