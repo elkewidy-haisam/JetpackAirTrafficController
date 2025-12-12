@@ -1,11 +1,19 @@
-/*
+/**
  * Grid.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Represents the city grid for jetpack navigation and parking.
+ * This class represents the airspace grid system for organizing and tracking flight zones.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Variables:
+ *   - width (int)
+ *   - height (int)
+ *
+ * Methods:
+ *   - Grid(width, height)
+ *   - toString()
+ *
  */
+
 package com.example.model;
 
 public class Grid {

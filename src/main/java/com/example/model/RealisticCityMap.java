@@ -1,11 +1,21 @@
-/*
+/**
  * RealisticCityMap.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Represents a realistic city map for jetpack navigation and parking.
+ * This class handles RealisticCityMap functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Variables:
+ *   - width (int)
+ *   - height (int)
+ *   - parkingSpaces (List<ParkingSpace>)
+ *
+ * Methods:
+ *   - RealisticCityMap(width, height)
+ *   - addParkingSpace(space)
+ *   - toString()
+ *
  */
+
 package com.example.model;
 
 import java.util.ArrayList;

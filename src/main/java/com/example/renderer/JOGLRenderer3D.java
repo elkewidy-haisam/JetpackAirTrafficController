@@ -1,11 +1,19 @@
-/*
+/**
  * JOGLRenderer3D.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * 3D renderer for city models using JOGL. Renders water, roads, bridges, buildings, and houses in OpenGL.
+ * This class handles JOGLRenderer3D functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Variables:
+ *   - cityModel (CityModel3D)
+ *   - glut (GLUT)
+ *
+ * Methods:
+ *   - JOGLRenderer3D(cityModel)
+ *   - display(drawable)
+ *
  */
+
 package com.example.renderer;
 
 import com.example.model.Bridge3D;

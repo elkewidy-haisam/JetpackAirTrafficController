@@ -1,11 +1,14 @@
-/*
+/**
  * TimezoneHelper.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Utility for handling time zone conversions and formatting.
+ * This class handles TimezoneHelper functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Methods:
+ *   - formatWithTimezone(dateTime, zoneId)
+ *
  */
+
 package com.example.utility;
 
 import java.time.ZoneId;

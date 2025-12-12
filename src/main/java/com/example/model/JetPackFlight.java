@@ -1,11 +1,21 @@
-/*
+/**
  * JetPackFlight.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Represents a jetpack flight in the city simulation.
+ * This class handles JetPackFlight functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Variables:
+ *   - jetpackId (String)
+ *   - x (double)
+ *   - y (double)
+ *   - active (boolean)
+ *
+ * Methods:
+ *   - JetPackFlight(jetpackId, x, y)
+ *   - toString()
+ *
  */
+
 package com.example.model;
 
 public class JetPackFlight {

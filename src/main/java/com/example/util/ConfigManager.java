@@ -1,11 +1,20 @@
-/*
+/**
  * ConfigManager.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Handles loading and saving user preferences and application settings.
+ * This class handles ConfigManager functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Variables:
+ *   - properties (Properties)
+ *   - configFile (File)
+ *
+ * Methods:
+ *   - ConfigManager()
+ *   - loadConfig()
+ *   - saveConfig()
+ *
  */
+
 package com.example.util;
 
 import java.io.File;

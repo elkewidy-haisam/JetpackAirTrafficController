@@ -1,12 +1,11 @@
-/*
+/**
  * DebugConfig.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Global debug configuration for the application.
- * Set VERBOSE to false to disable console logging and improve performance.
+ * This class handles DebugConfig functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.util;
 
 /**

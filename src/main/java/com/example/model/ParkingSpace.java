@@ -1,11 +1,24 @@
-/*
+/**
  * ParkingSpace.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Represents a parking space for jetpacks in the city grid.
+ * This class represents a designated parking location for jetpacks within the city.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Variables:
+ *   - id (String)
+ *   - x (double)
+ *   - y (double)
+ *   - occupied (boolean)
+ *
+ * Methods:
+ *   - ParkingSpace(id, x, y)
+ *   - ParkingSpace(id, x, y)
+ *   - occupy()
+ *   - vacate()
+ *   - toString()
+ *
  */
+
 package com.example.model;
 
 public class ParkingSpace {

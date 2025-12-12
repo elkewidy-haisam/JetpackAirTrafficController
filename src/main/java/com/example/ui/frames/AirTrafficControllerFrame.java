@@ -1,11 +1,28 @@
-/*
+/**
  * AirTrafficControllerFrame.java
- * Main application frame for the Air Traffic Controller system.
- * Handles city selection, map display, session management, and user actions.
+ * by Haisam Elkewidy
  *
- * Last updated: December 10, 2025
- * Author: Jetpack Air Traffic Controller Team
+ * This class handles AirTrafficControllerFrame functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - currentCity (String)
+ *   - mainPanel (JPanel)
+ *   - citySelectionPanel (CitySelectionPanel)
+ *   - cityMapPanel (CityMapPanel)
+ *   - currentWeather (Weather)
+ *   - currentDayTime (DayTime)
+ *   - radarTapeWindow (RadarTapeWindow)
+ *   - logManager (CityLogManager)
+ *   - jetpackManager (CityJetpackManager)
+ *   - timerManager (CityTimerManager)
+ *   - ... and 4 more
+ *
+ * Methods:
+ *   - AirTrafficControllerFrame()
+ *   - actionPerformed(e)
+ *
  */
+
 package com.example.ui.frames;
 
 import java.awt.BorderLayout;

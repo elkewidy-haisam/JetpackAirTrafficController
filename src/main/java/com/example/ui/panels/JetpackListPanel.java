@@ -1,3 +1,19 @@
+/**
+ * JetpackListPanel.java
+ * by Haisam Elkewidy
+ *
+ * This class handles JetpackListPanel functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - jetpackListArea (JTextArea)
+ *   - jetpacks (ArrayList<JetPack>)
+ *
+ * Methods:
+ *   - JetpackListPanel(jetpacks)
+ *   - updateList(newJetpacks)
+ *
+ */
+
 package com.example.ui.panels;
 
 import java.awt.BorderLayout;

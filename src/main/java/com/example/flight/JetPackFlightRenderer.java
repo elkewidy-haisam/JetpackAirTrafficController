@@ -1,3 +1,14 @@
+/**
+ * JetPackFlightRenderer.java
+ * by Haisam Elkewidy
+ *
+ * This class handles JetPackFlightRenderer functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - renderFlight(g2d, state)
+ *
+ */
+
 package com.example.flight;
 
 import java.awt.BasicStroke;

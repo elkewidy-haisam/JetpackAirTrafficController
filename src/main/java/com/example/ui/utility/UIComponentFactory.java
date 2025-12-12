@@ -1,11 +1,25 @@
-/*
+/**
  * UIComponentFactory.java
- * Factory class for creating commonly used UI components with consistent styling.
- * Centralizes component creation to ensure uniform look and feel across the application.
+ * by Haisam Elkewidy
  *
- * Last updated: December 10, 2025
- * Author: Jetpack Air Traffic Controller Team
+ * This class handles UIComponentFactory functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - createReadOnlyTextArea(rows, columns, font)
+ *   - createReadOnlyTextArea(rows, columns)
+ *   - createScrollPane(view)
+ *   - createScrollPaneAlwaysVisible(view)
+ *   - createBorderLayoutPanel()
+ *   - createBorderLayoutPanel(hgap, vgap)
+ *   - createFlowLayoutPanel()
+ *   - createFlowLayoutPanel(align)
+ *   - createButton(text, font)
+ *   - createButton(text, width, height)
+ *   - createLabel(text, font)
+ *   - createCenteredLabel(text, font)
+ *
  */
+
 package com.example.ui.utility;
 
 import java.awt.BorderLayout;

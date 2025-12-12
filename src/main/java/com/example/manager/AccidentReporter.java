@@ -1,11 +1,15 @@
-/*
+/**
  * AccidentReporter.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Handles logging and reporting of jetpack accidents in the city simulation.
+ * This class handles AccidentReporter functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Methods:
+ *   - AccidentReporter()
+ *   - saveAccidentReport(accidents)
+ *
  */
+
 package com.example.manager;
 
 import java.io.File;

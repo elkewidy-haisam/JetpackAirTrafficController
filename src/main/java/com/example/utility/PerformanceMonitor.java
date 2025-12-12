@@ -1,11 +1,19 @@
-/*
+/**
  * PerformanceMonitor.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Monitors performance metrics for the city simulation.
+ * This class handles PerformanceMonitor functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Variables:
+ *   - startTime (long)
+ *   - endTime (long)
+ *
+ * Methods:
+ *   - start()
+ *   - stop()
+ *
  */
+
 package com.example.utility;
 
 public class PerformanceMonitor {

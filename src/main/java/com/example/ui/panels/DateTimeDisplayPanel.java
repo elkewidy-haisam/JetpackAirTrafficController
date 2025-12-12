@@ -1,3 +1,18 @@
+/**
+ * DateTimeDisplayPanel.java
+ * by Haisam Elkewidy
+ *
+ * This class handles DateTimeDisplayPanel functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - dateTimeDisplayArea (JTextArea)
+ *
+ * Methods:
+ *   - DateTimeDisplayPanel()
+ *   - updateDisplay(text)
+ *
+ */
+
 package com.example.ui.panels;
 
 import java.awt.BorderLayout;

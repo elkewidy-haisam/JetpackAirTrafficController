@@ -1,11 +1,16 @@
-/*
+/**
  * GeometryUtils.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Utility for geometric calculations in the city simulation.
+ * This class handles GeometryUtils functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Methods:
+ *   - distance(x1, y1, x2, y2)
+ *   - calculateDistance(x1, y1, x2, y2)
+ *   - calculateDistance(x1, y1, x2, y2)
+ *
  */
+
 package com.example.utility;
 
 public class GeometryUtils {

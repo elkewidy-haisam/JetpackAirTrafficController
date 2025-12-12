@@ -1,3 +1,14 @@
+/**
+ * MapTest.java
+ * by Haisam Elkewidy
+ *
+ * This class handles MapTest functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - main(args)
+ *
+ */
+
 package com.example;
 
 import com.example.ui.frames.AirTrafficControllerFrame;

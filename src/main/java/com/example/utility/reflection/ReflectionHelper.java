@@ -1,10 +1,18 @@
-/*
+/**
  * ReflectionHelper.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Utility class for safe reflection operations. Centralizes reflection-based method invocations used for radio command execution.
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * This class handles ReflectionHelper functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - invokeMethod(target, methodName, parameterTypes, arguments)
+ *   - invokeSingleArgMethod(target, methodName, argument, argumentType)
+ *   - invokeTwoArgMethod(target, methodName, arg1, arg1Type, arg2, arg2Type)
+ *   - invokeThreeArgMethod(target, methodName, arg1, arg1Type, arg2, arg2Type, arg3, arg3Type)
+ *   - hasMethod(target, methodName, parameterTypes)
+ *
  */
+
 package com.example.utility.reflection;
 
 import java.lang.reflect.Method;

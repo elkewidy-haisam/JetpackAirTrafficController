@@ -1,11 +1,14 @@
-/*
+/**
  * House3D.java
- * Represents a 3D house in the city model.
- * Stores position, dimensions, and height.
+ * by Haisam Elkewidy
  *
- * Last updated: December 10, 2025
- * Author: Jetpack Air Traffic Controller Team
+ * This class handles House3D functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - House3D(x, y, width, depth, height)
+ *
  */
+
 package com.example.model;
 
 public class House3D {

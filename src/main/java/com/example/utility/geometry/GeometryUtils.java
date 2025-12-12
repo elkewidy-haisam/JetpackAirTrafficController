@@ -1,3 +1,22 @@
+/**
+ * GeometryUtils.java
+ * by Haisam Elkewidy
+ *
+ * This class handles GeometryUtils functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - createPoint(x, y)
+ *   - calculateDistance(x1, y1, x2, y2)
+ *   - calculateDistance(x1, y1, x2, y2)
+ *   - calculateDistance(p1, p2)
+ *   - calculateDistance(from, toX, toY)
+ *   - calculateAngle(fromX, fromY, toX, toY)
+ *   - calculateAngle(from, to)
+ *   - moveToward(currentX, currentY, targetX, targetY, speed)
+ *   - clamp(value, min, max)
+ *   - clamp(value, min, max)
+ *
+ */
 
 package com.example.utility.geometry;
 import java.awt.Point;

@@ -1,10 +1,29 @@
-/*
+/**
  * AccidentAlert.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Alerts jetpack pilots of any accidents, collisions, or hazards in the city.
+ * This class handles AccidentAlert functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Variables:
+ *   - accidentID (String)
+ *   - x (int)
+ *   - y (int)
+ *   - type (String)
+ *   - severity (String)
+ *   - description (String)
+ *   - timestamp (long)
+ *   - isActive (boolean)
+ *   - accidents (List<Accident>)
+ *   - alertId (String)
+ *
+ * Methods:
+ *   - AccidentAlert(alertId)
+ *   - AccidentAlert()
+ *   - toString()
+ *   - reportAccident(accidentID, x, y, type, severity, description)
+ *   - alertJetpacksOfAccident(accidentID, nearbyJetpacks, radius)
+ *   - removeAlert(accidentID)
+ *
  */
 
 package com.example.accident;

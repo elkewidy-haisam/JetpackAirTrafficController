@@ -1,11 +1,17 @@
-/*
+/**
  * SessionManager.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Handles saving and loading city simulation state to session files.
+ * This class handles SessionManager functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Methods:
+ *   - SessionManager()
+ *   - saveSession(city, flights, weather)
+ *   - exportRadarLog(radarLog)
+ *   - exportAccidentReport(accidents)
+ *
  */
+
 package com.example.utility.map;
 
 import java.io.File;

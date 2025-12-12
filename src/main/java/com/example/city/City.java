@@ -1,3 +1,20 @@
+/**
+ * City.java
+ * by Haisam Elkewidy
+ *
+ * This class represents a city with its geographic dimensions and infrastructure.
+ *
+ * Variables:
+ *   - name (String)
+ *   - width (int)
+ *   - height (int)
+ *   - parkingSpaces (List<ParkingSpace>)
+ *
+ * Methods:
+ *   - City(name, width, height)
+ *
+ */
+
 package com.example.city;
 
 import java.util.ArrayList;

@@ -1,3 +1,14 @@
+/**
+ * ParkingSpaceGenerator.java
+ * by Haisam Elkewidy
+ *
+ * This class handles ParkingSpaceGenerator functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - generateParkingSpaces(mapWidth, mapHeight, mapImage, cityCode)
+ *
+ */
+
 package com.example.parking;
 
 import java.awt.image.BufferedImage;

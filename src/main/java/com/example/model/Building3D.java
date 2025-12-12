@@ -1,10 +1,28 @@
-/*
+/**
  * Building3D.java
- * Represents a 3D building in the city model, including position, dimensions, and rendering properties.
+ * by Haisam Elkewidy
  *
- * Last updated: December 10, 2025
- * Author: Jetpack Air Traffic Controller Team
+ * This class represents a 3D building structure in the city model with rendering properties.
+ *
+ * Variables:
+ *   - x (double)
+ *   - y (double)
+ *   - width (double)
+ *   - depth (double)
+ *   - height (double)
+ *   - color (Color)
+ *   - type (String)
+ *   - hasWindows (boolean)
+ *   - floors (int)
+ *
+ * Methods:
+ *   - Building3D(x, y, width, depth, height, type)
+ *   - containsPoint(px, py)
+ *   - distanceTo(px, py)
+ *   - hasWindows()
+ *
  */
+
 package com.example.model;
 
 import java.awt.Color;

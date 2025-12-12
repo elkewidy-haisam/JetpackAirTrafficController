@@ -1,11 +1,14 @@
-/*
+/**
  * CityMapPanel.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Panel for displaying the city map and jetpack positions in the UI.
+ * This class handles CityMapPanel functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Methods:
+ *   - CityMapPanel()
+ *
  */
+
 package com.example.ui.panels;
 
 import javax.swing.JPanel;

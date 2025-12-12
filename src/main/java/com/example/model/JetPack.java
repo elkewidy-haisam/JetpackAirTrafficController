@@ -1,11 +1,20 @@
-/*
+/**
  * JetPack.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Represents a jetpack device used in city flights.
+ * This class represents a jetpack vehicle with pilot information, position, and flight capabilities.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Variables:
+ *   - callsign (String)
+ *   - pilotName (String)
+ *   - available (boolean)
+ *
+ * Methods:
+ *   - JetPack(callsign, pilotName)
+ *   - toString()
+ *
  */
+
 package com.example.model;
 
 public class JetPack {

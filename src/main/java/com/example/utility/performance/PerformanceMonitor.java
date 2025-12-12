@@ -1,10 +1,23 @@
-/*
+/**
  * PerformanceMonitor.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Tracks and displays FPS, memory usage, and other performance metrics for the UI.
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * This class handles PerformanceMonitor functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - frameCount (long)
+ *   - currentFPS (double)
+ *   - lastFPSUpdate (long)
+ *   - visible (boolean)
+ *
+ * Methods:
+ *   - PerformanceMonitor()
+ *   - toggleVisibility()
+ *   - tick()
+ *   - render(g2d, x, y)
+ *
  */
+
 package com.example.utility.performance;
 
 import java.awt.Color;

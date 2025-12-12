@@ -1,3 +1,18 @@
+/**
+ * RadioInstructionsPanel.java
+ * by Haisam Elkewidy
+ *
+ * This class handles RadioInstructionsPanel functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - radioInstructionsArea (JTextArea)
+ *
+ * Methods:
+ *   - RadioInstructionsPanel()
+ *   - updateInstructions(text)
+ *
+ */
+
 package com.example.ui.panels;
 
 import java.awt.BorderLayout;

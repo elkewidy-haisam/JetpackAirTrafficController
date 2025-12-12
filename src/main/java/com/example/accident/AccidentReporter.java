@@ -1,3 +1,24 @@
+/**
+ * AccidentReporter.java
+ * by Haisam Elkewidy
+ *
+ * This class handles AccidentReporter functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - cityRadio (Radio)
+ *   - city (String)
+ *   - random (Random)
+ *   - logManager (CityLogManager)
+ *   - radioInstructionsArea (JTextArea)
+ *   - movementLogger (JetpackMovementLogger)
+ *
+ * Methods:
+ *   - AccidentReporter(cityRadio, city, logManager)
+ *   - reportRandomAccident()
+ *   - reportAccident(accidentID, x, y, accidentType, severity, description)
+ *
+ */
+
 package com.example.accident;
 
 import java.time.LocalDateTime;

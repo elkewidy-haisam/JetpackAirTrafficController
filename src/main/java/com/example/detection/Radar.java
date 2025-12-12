@@ -1,13 +1,37 @@
-/*
+/**
  * Radar.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * The radar class is meant for the AirTrafficController to have positional awareness
- * of every jetpack within the locale's airspace.
- * - updateJetPackPositions() - frequently update jetpack's positions on the radar,
- * - identifyAircraft() - used to fetch jetpack's identifiers and display them on the map
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * This class provides radar tracking capabilities for monitoring jetpack positions in the airspace.
+ *
+ * Variables:
+ *   - trackedJetpacks (Map<JetPack, RadarContact>)
+ *   - radarRange (double)
+ *   - scanInterval (int)
+ *   - isActive (boolean)
+ *   - radarID (String)
+ *   - centerX (int)
+ *   - centerY (int)
+ *   - x (int)
+ *   - y (int)
+ *   - altitude (int)
+ *   - ... and 2 more
+ *
+ * Methods:
+ *   - Radar(radarID, radarRange, centerX, centerY)
+ *   - Radar()
+ *   - updatePosition(x, y, altitude)
+ *   - toString()
+ *   - updateJetPackPosition(jetpack, x, y, altitude)
+ *   - addJetpackToRadar(jetpack, x, y, altitude)
+ *   - removeJetpackFromRadar(jetpack)
+ *   - identifyAircraft(jetpack)
+ *   - checkForCollisions(minimumSeparation)
+ *   - performRadarSweep()
+ *   - toString()
+ *
  */
+
 package com.example.detection;
 
 import java.util.ArrayList;
@@ -142,17 +166,25 @@ public class Radar {
     public List<String> checkForCollisions(double minimumSeparation) {
         List<String> warnings = new ArrayList<>();
         List<JetPack> jetpacks = new ArrayList<>(trackedJetpacks.keySet());
+        
+        // Check each pair of jetpacks exactly once (i < j avoids duplicate checks)
         for (int i = 0; i < jetpacks.size(); i++) {
             for (int j = i + 1; j < jetpacks.size(); j++) {
                 JetPack jp1 = jetpacks.get(i);
                 JetPack jp2 = jetpacks.get(j);
                 RadarContact contact1 = trackedJetpacks.get(jp1);
                 RadarContact contact2 = trackedJetpacks.get(jp2);
+                
+                // Calculate 2D horizontal distance using Pythagorean theorem
                 double distance = Math.sqrt(
                     Math.pow(contact1.getX() - contact2.getX(), 2) +
                     Math.pow(contact1.getY() - contact2.getY(), 2)
                 );
+                
+                // Check vertical separation
                 double altitudeDiff = Math.abs(contact1.getAltitude() - contact2.getAltitude());
+                
+                // Collision risk if too close horizontally AND vertically (< 100 feet altitude separation)
                 if (distance < minimumSeparation && altitudeDiff < 100) {
                     warnings.add(String.format(
                         "COLLISION WARNING: %s and %s are %.1f units apart (minimum: %.1f)",

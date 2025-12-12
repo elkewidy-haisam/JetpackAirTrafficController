@@ -1,10 +1,16 @@
-/*
+/**
  * ParkingSpaceManager.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Manages parking spaces for jetpacks in the city map panel.
+ * This class handles ParkingSpaceManager functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Variables:
+ *   - parkingSpaces (List<ParkingSpace>)
+ *
+ * Methods:
+ *   - ParkingSpaceManager()
+ *   - addParkingSpace(space)
+ *
  */
 
 package com.example.ui.panels;

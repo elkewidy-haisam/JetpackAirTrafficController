@@ -1,11 +1,19 @@
-/*
+/**
  * Weather.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Represents weather conditions in the city simulation.
+ * This class represents weather conditions with varying severity levels that affect flight operations.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Variables:
+ *   - currentWeather (String)
+ *   - currentSeverity (String)
+ *
+ * Methods:
+ *   - Weather(currentWeather, currentSeverity)
+ *   - toString()
+ *
  */
+
 package com.example.model;
 
 public class Weather {

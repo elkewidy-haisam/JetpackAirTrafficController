@@ -1,3 +1,28 @@
+/**
+ * CityMapAnimationController.java
+ * by Haisam Elkewidy
+ *
+ * This class handles CityMapAnimationController functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - jetpackFlights (List<JetPackFlight>)
+ *   - flightStates (Map<JetPackFlight, JetPackFlightState>)
+ *   - currentWeather (Weather)
+ *   - performanceMonitor (PerformanceMonitor)
+ *   - radarTapeWindow (RadarTapeWindow)
+ *   - weatherManager (CityMapWeatherManager)
+ *   - rand (Random)
+ *   - updateCounter (int)
+ *   - collisionCheckCounter (int)
+ *
+ * Methods:
+ *   - CityMapAnimationController(jetpackFlights, Map<JetPackFlight, flightStates, currentWeather, performanceMonitor, radarTapeWindow, weatherManager)
+ *   - startAnimation(mapPanel, mapWidth, mapHeight)
+ *   - actionPerformed(e)
+ *   - stopAnimation()
+ *
+ */
+
 package com.example.ui.citymap;
 
 import java.awt.Point;

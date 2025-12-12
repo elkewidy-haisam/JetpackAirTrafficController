@@ -1,3 +1,24 @@
+/**
+ * RadioCommandExecutor.java
+ * by Haisam Elkewidy
+ *
+ * This class handles RadioCommandExecutor functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - flightRegistry (Map<String, Object>)
+ *   - flightStateRegistry (Map<String, Object>)
+ *
+ * Methods:
+ *   - RadioCommandExecutor()
+ *   - registerFlight(callsign, flight)
+ *   - registerFlightState(callsign, flightState)
+ *   - unregisterFlight(callsign)
+ *   - executeCoordinateInstruction(callsign, newX, newY, reason)
+ *   - executeAltitudeInstruction(callsign, newAltitude, reason)
+ *   - executeEmergencyLandingInstruction(callsign, directive)
+ *
+ */
+
 package com.example.radio;
 
 import java.util.HashMap;

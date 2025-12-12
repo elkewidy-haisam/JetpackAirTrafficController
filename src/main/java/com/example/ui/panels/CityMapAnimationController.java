@@ -1,11 +1,16 @@
-/*
+/**
  * CityMapAnimationController.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Controls animations for the city map panel, including jetpack movements.
+ * This class handles CityMapAnimationController functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Methods:
+ *   - CityMapAnimationController()
+ *   - startAnimation()
+ *   - stopAnimation()
+ *
  */
+
 package com.example.ui.panels;
 
 public class CityMapAnimationController {

@@ -1,11 +1,14 @@
-/*
+/**
  * JetpackFactory.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Factory for creating JetPack instances.
+ * This class handles JetpackFactory functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Methods:
+ *   - createJetPack(id, serialNumber, callsign, ownerName, year, model, manufacturer)
+ *
  */
+
 package com.example.utility;
 
 import com.example.jetpack.JetPack;

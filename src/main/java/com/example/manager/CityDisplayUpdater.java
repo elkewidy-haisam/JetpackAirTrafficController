@@ -1,3 +1,19 @@
+/**
+ * CityDisplayUpdater.java
+ * by Haisam Elkewidy
+ *
+ * This class handles CityDisplayUpdater functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - weatherLabel (JLabel)
+ *   - dateTimeLabel (JLabel)
+ *
+ * Methods:
+ *   - updateWeatherDisplay(weather)
+ *   - updateDateTimeDisplay(city, dayTime)
+ *
+ */
+
 package com.example.manager;
 
 import com.example.weather.Weather;

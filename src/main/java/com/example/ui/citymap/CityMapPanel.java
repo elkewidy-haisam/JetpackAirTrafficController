@@ -1,3 +1,34 @@
+/**
+ * CityMapPanel.java
+ * by Haisam Elkewidy
+ *
+ * This class handles CityMapPanel functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - radarTapeWindow (RadarTapeWindow)
+ *   - logManager (CityLogManager)
+ *   - city (String)
+ *   - jetpacks (ArrayList<JetPack>)
+ *   - mapPanel (JPanel)
+ *   - mapWithJetpacks (JPanel)
+ *   - jetpackFlights (List<JetPackFlight>)
+ *   - flightStates (Map<JetPackFlight, JetPackFlightState>)
+ *   - radarTape (RadarTapeWindow)
+ *   - weatherLabel (JLabel)
+ *   - ... and 22 more
+ *
+ * Methods:
+ *   - CityMapPanel(city, jetpacks, weather, dayTime, logManager, radarWindow)
+ *   - hideJetpack(flight)
+ *   - showJetpack(flight)
+ *   - updateAllFlightStatesRadarWindow()
+ *   - keyPressed(e)
+ *   - updateWeatherBroadcast()
+ *   - appendJetpackMovement(message)
+ *   - actionPerformed(e)
+ *   - stopAnimation()
+ *
+ */
 
 package com.example.ui.citymap;
 

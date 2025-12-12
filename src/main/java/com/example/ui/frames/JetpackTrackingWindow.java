@@ -1,12 +1,32 @@
-
-/*
+/**
  * JetpackTrackingWindow.java
- * Displays a separate window tracking a single jetpack in 3D, with realistic city buildings, water detection,
- * nearby jetpacks, and accident markers. Supports both legacy Graphics2D and hardware-accelerated JOGL rendering.
+ * by Haisam Elkewidy
  *
- * Last updated: December 10, 2025
- * Author: Jetpack Air Traffic Controller Team
+ * This class handles JetpackTrackingWindow functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - updateTimer (Timer)
+ *   - jetpack (JetPack)
+ *   - flight (JetPackFlight)
+ *   - cityName (String)
+ *   - allFlights (List<JetPackFlight>)
+ *   - allStates (Map<JetPackFlight, JetPackFlightState>)
+ *   - animationController (CityMapAnimationController)
+ *   - renderPanel (JPanel)
+ *   - useJOGL (boolean)
+ *   - cityName (String)
+ *   - ... and 5 more
+ *
+ * Methods:
+ *   - JetpackTrackingWindow(jetpack, flight, cityName, allFlights, Map<JetPackFlight, allStates, animationController)
+ *   - windowClosing(e)
+ *   - mousePressed(e)
+ *   - mouseReleased(e)
+ *   - mouseDragged(e)
+ *   - mouseWheelMoved(e)
+ *
  */
+
 package com.example.ui.frames;
 
 import com.example.jetpack.JetPack;

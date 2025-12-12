@@ -1,11 +1,14 @@
-/*
+/**
  * WaterDetector.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Utility for detecting water regions in the city grid.
+ * This class handles WaterDetector functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Methods:
+ *   - WaterDetector(resourcePath)
+ *
  */
+
 package com.example.utility;
 
 

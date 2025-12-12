@@ -1,10 +1,21 @@
-/*
+/**
  * GridRenderer.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Utility class for rendering grid overlays on maps.
+ * This class handles GridRenderer functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Variables:
+ *   - grid (Grid)
+ *   - visible (boolean)
+ *   - gridColor (Color)
+ *   - labelColor (Color)
+ *   - gridSpacing (int)
+ *
+ * Methods:
+ *   - GridRenderer(grid)
+ *   - toggleVisibility()
+ *   - render(g2d, mapWidth, mapHeight)
+ *
  */
 
 package com.example.grid;

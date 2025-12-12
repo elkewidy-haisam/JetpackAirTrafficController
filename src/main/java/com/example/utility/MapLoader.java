@@ -1,11 +1,15 @@
-/*
+/**
  * MapLoader.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Loads map data for the city simulation.
+ * This class handles MapLoader functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Methods:
+ *   - MapLoader()
+ *   - loadMap(mapFile)
+ *
  */
+
 package com.example.utility;
 
 public class MapLoader {

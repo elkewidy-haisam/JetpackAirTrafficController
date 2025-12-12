@@ -1,13 +1,33 @@
-
-/*
+/**
  * FlightMovementController.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Handles position updates, waypoint navigation, detours, and movement logic for flights/jetpacks.
- * Integrates collision avoidance, altitude management, and pathfinding with city/building models.
+ * This class handles FlightMovementController functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Variables:
+ *   - x (double)
+ *   - y (double)
+ *   - destination (Point)
+ *   - speed (double)
+ *   - altitude (double)
+ *   - trail (List<Point>)
+ *   - waypoints (List<Point>)
+ *   - detourWaypoints (List<Point>)
+ *   - isDetourActive (boolean)
+ *   - currentWaypointIndex (int)
+ *   - ... and 1 more
+ *
+ * Methods:
+ *   - FlightMovementController(start, destination, speed, altitude)
+ *   - updatePosition(effectiveSpeed, isHalted)
+ *   - hasReachedDestination(isHalted)
+ *   - addWaypoint(waypoint)
+ *   - detour(detourPoints)
+ *   - resumeNormalPath()
+ *   - updateAltitude(targetAltitude)
+ *
  */
+
 package com.example.flight;
 
 import java.awt.Point;

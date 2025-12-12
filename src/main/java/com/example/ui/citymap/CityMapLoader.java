@@ -1,3 +1,21 @@
+/**
+ * CityMapLoader.java
+ * by Haisam Elkewidy
+ *
+ * This class handles CityMapLoader functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - mapIcon (ImageIcon)
+ *   - mapImage (BufferedImage)
+ *   - mapWidth (int)
+ *   - mapHeight (int)
+ *
+ * Methods:
+ *   - loadCityMap(city, panel)
+ *   - loadCityMap(cityName)
+ *
+ */
+
 package com.example.ui.citymap;
 
 import java.awt.Graphics2D;

@@ -1,11 +1,15 @@
-/*
+/**
  * CityMapWeatherManager.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Manages weather updates and display for the city map panel.
+ * This class handles CityMapWeatherManager functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Methods:
+ *   - CityMapWeatherManager()
+ *   - updateWeather(weatherInfo)
+ *
  */
+
 package com.example.ui.panels;
 
 public class CityMapWeatherManager {

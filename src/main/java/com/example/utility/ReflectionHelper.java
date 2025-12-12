@@ -1,11 +1,14 @@
-/*
+/**
  * ReflectionHelper.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Utility for reflection-based operations in the city simulation.
+ * This class handles ReflectionHelper functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Methods:
+ *   - invokeMethod(obj, methodName, paramTypes, args)
+ *
  */
+
 package com.example.utility;
 
 import java.lang.reflect.Method;

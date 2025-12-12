@@ -1,3 +1,22 @@
+/**
+ * CityMapRadioInstructionHandler.java
+ * by Haisam Elkewidy
+ *
+ * This class handles CityMapRadioInstructionHandler functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - city (String)
+ *   - cityRadio (Radio)
+ *   - currentWeather (Weather)
+ *   - logManager (CityLogManager)
+ *   - updater (CityMapUpdater)
+ *   - random (Random)
+ *
+ * Methods:
+ *   - CityMapRadioInstructionHandler(city, cityRadio, currentWeather, logManager, updater)
+ *
+ */
+
 package com.example.ui.citymap;
 
 import java.time.LocalDateTime;

@@ -1,3 +1,22 @@
+/**
+ * NavigationCalculator.java
+ * by Haisam Elkewidy
+ *
+ * This class handles NavigationCalculator functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - calculateDistance(x1, y1, x2, y2)
+ *   - calculateDistance(from, to)
+ *   - calculateCompassDirection(fromX, fromY, toX, toY)
+ *   - calculateDirectionWithEmoji(fromX, fromY, toX, toY)
+ *   - calculateAngle(fromX, fromY, toX, toY)
+ *   - calculateNextPosition(currentX, currentY, targetX, targetY, speed)
+ *   - hasReachedTarget(currentX, currentY, targetX, targetY, threshold)
+ *   - normalizeAngle(angle)
+ *   - calculateBearing(from, to)
+ *
+ */
+
 // NavigationCalculator.java
 // by Haisam Elkewidy
 // Provides navigation and direction calculation utilities for jetpack flights.

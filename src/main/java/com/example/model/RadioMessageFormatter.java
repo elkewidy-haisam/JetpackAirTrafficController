@@ -1,11 +1,15 @@
-/*
+/**
  * RadioMessageFormatter.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Formats radio messages for display and logging.
+ * This class handles RadioMessageFormatter functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Methods:
+ *   - RadioMessageFormatter()
+ *   - format(message)
+ *
  */
+
 package com.example.model;
 
 public class RadioMessageFormatter {

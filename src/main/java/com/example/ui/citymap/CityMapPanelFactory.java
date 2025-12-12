@@ -1,3 +1,26 @@
+/**
+ * CityMapPanelFactory.java
+ * by Haisam Elkewidy
+ *
+ * This class handles CityMapPanelFactory functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - panel (JPanel)
+ *   - textArea (JTextArea)
+ *   - panel (JPanel)
+ *   - label (JLabel)
+ *
+ * Methods:
+ *   - createDateTimePanel(city, currentDayTime)
+ *   - actionPerformed(e)
+ *   - createParkingAvailabilityPanel(parkingSpaces)
+ *   - createWeatherBroadcastPanel()
+ *   - createJetpackMovementPanel(jetpackCount, city)
+ *   - keyReleased(e)
+ *   - createRadioInstructionsPanel(cityRadio, jetpacks)
+ *
+ */
+
 package com.example.ui.citymap;
 
 import com.example.logging.CityLogManager;

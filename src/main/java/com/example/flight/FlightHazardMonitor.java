@@ -1,13 +1,25 @@
-
-
-/*
+/**
  * FlightHazardMonitor.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Tracks and manages flight hazards for jetpack flights.
+ * This class handles FlightHazardMonitor functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Variables:
+ *   - inclementWeather (boolean)
+ *   - buildingCollapse (boolean)
+ *   - airAccident (boolean)
+ *   - policeActivity (boolean)
+ *   - emergencyHalt (boolean)
+ *
+ * Methods:
+ *   - FlightHazardMonitor()
+ *   - hasActiveHazards()
+ *   - calculateEffectiveSpeed(baseSpeed)
+ *   - clearAllHazards()
+ *   - clearEmergencyHalt()
+ *
  */
+
 package com.example.flight;
 
 import java.util.ArrayList;

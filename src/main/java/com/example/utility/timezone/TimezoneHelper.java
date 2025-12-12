@@ -1,10 +1,11 @@
-/*
+/**
  * TimezoneHelper.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Utility class for handling timezone operations for different cities.
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * This class handles TimezoneHelper functionality in the Air Traffic Controller system.
+ *
  */
+
 package com.example.utility.timezone;
 
 

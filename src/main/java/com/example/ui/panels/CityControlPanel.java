@@ -1,11 +1,20 @@
-/*
+/**
  * CityControlPanel.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Right-side control panel containing date/time, weather, movement, and radio displays.
+ * This class handles CityControlPanel functionality in the Air Traffic Controller system.
  *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Variables:
+ *   - dateTimePanel (DateTimeDisplayPanel)
+ *   - weatherPanel (WeatherBroadcastPanel)
+ *   - movementPanel (JetpackMovementPanel)
+ *   - radioPanel (RadioInstructionsPanel)
+ *
+ * Methods:
+ *   - CityControlPanel()
+ *
  */
+
 package com.example.ui.panels;
 
 import javax.swing.*;

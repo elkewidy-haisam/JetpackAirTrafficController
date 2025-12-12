@@ -1,3 +1,31 @@
+/**
+ * CityMapWeatherManager.java
+ * by Haisam Elkewidy
+ *
+ * This class handles CityMapWeatherManager functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - city (String)
+ *   - currentWeather (Weather)
+ *   - jetpackFlights (List<JetPackFlight>)
+ *   - flightStates (Map<JetPackFlight, JetPackFlightState>)
+ *   - parkingSpaces (List<ParkingSpace>)
+ *   - cityRadio (Radio)
+ *   - radarTapeWindow (RadarTapeWindow)
+ *   - parentComponent (Component)
+ *   - updater (CityMapUpdater)
+ *   - weatherLabel (JLabel)
+ *
+ * Methods:
+ *   - CityMapWeatherManager(city, currentWeather, jetpackFlights, Map<JetPackFlight, flightStates, parkingSpaces, cityRadio, radarTapeWindow, parentComponent, updater)
+ *   - startWeatherTimer(weatherDisplayUpdater)
+ *   - stopWeatherTimer()
+ *   - updateWeatherDisplay()
+ *   - groundAllFlights(reason)
+ *   - initiateEmergencyLandings(reason)
+ *
+ */
+
 package com.example.ui.citymap;
 
 import java.awt.Component;

@@ -1,3 +1,24 @@
+/**
+ * CityLogManager.java
+ * by Haisam Elkewidy
+ *
+ * This class handles CityLogManager functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - cityJetpackLogFiles (Map<String, String>)
+ *   - cityRadarLogFiles (Map<String, String>)
+ *   - cityWeatherLogFiles (Map<String, String>)
+ *   - cityAccidentLogFiles (Map<String, String>)
+ *
+ * Methods:
+ *   - CityLogManager()
+ *   - writeToJetpackLog(city, message)
+ *   - writeToRadarLog(city, message)
+ *   - writeToWeatherLog(city, message)
+ *   - writeToAccidentLog(city, message)
+ *
+ */
+
 package com.example.logging;
 
 import java.io.BufferedReader;
