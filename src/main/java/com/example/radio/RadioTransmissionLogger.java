@@ -1,3 +1,10 @@
+/**
+ * RadioTransmissionLogger.java
+ * by Haisam Elkewidy
+ *
+ * RadioTransmissionLogger - manages radio transmission logging
+ */
+
 package com.example.radio;
 
 import java.time.LocalTime;

@@ -1,11 +1,10 @@
-/*
+/**
  * JetpackFactory.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Factory for creating JetPack instances.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.utility;
 
 import com.example.jetpack.JetPack;

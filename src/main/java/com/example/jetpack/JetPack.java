@@ -1,10 +1,8 @@
-/*
+/**
  * JetPack.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Represents a jetpack pilot and their flight state in the city.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
 
 package com.example.jetpack;

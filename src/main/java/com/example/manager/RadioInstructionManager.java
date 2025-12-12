@@ -1,3 +1,10 @@
+/**
+ * RadioInstructionManager.java
+ * by Haisam Elkewidy
+ *
+ * Manages radio instructions and ATC communications.
+ */
+
 package com.example.manager;
 
 import java.time.LocalDateTime;

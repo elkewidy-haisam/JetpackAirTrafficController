@@ -1,11 +1,10 @@
-/*
+/**
  * FlightEmergencyHandler.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Handles radio instructions and emergency procedures for jetpack flights.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.flight;
 
 import java.awt.Point;

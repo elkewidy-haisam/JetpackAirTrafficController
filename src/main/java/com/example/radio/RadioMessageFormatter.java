@@ -1,3 +1,10 @@
+/**
+ * RadioMessageFormatter.java
+ * by Haisam Elkewidy
+ *
+ * RadioMessageFormatter - formats radio transmission messages
+ */
+
 package com.example.radio;
 
 /**

@@ -1,10 +1,10 @@
-/*
+/**
  * Building3D.java
- * Represents a 3D building in the city model, including position, dimensions, and rendering properties.
+ * by Haisam Elkewidy
  *
- * Last updated: December 10, 2025
- * Author: Jetpack Air Traffic Controller Team
+ * Represents a 3D building with position, dimensions, and rendering properties.
  */
+
 package com.example.model;
 
 import java.awt.Color;

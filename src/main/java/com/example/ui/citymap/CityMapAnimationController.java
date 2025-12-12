@@ -1,3 +1,10 @@
+/**
+ * CityMapAnimationController.java
+ * by Haisam Elkewidy
+ *
+ * Controls animation timing and updates for city map.
+ */
+
 package com.example.ui.citymap;
 
 import java.awt.Point;

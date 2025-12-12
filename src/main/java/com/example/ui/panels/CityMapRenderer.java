@@ -1,11 +1,10 @@
-/*
+/**
  * CityMapRenderer.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Responsible for rendering the city map and jetpack positions in the UI.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.ui.panels;
 
 import java.awt.Graphics;

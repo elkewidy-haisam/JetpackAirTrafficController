@@ -1,11 +1,10 @@
-/*
+/**
  * CityMapPanelFactory.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Factory for creating city map panels and related UI components.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.ui.panels;
 
 

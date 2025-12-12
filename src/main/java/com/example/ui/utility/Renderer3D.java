@@ -1,11 +1,10 @@
-/*
+/**
  * Renderer3D.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Advanced 3D rendering for jetpack tracking with realistic city models.
- * Enhanced to show nearby jetpacks, accidents, and flight states.
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Advanced 3D rendering for jetpack tracking with realistic city models. Enhanced to show nearby jetpacks, accidents, and flight states.
  */
+
 package com.example.ui.utility;
 
 import com.example.flight.JetPackFlight;

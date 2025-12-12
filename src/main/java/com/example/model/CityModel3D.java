@@ -1,11 +1,10 @@
-/*
+/**
  * CityModel3D.java
- * Creates realistic 3D city models for specific cities, including buildings, roads, bridges, and houses.
- * Buildings are placed based on land/water detection from city maps and city-specific logic.
+ * by Haisam Elkewidy
  *
- * Last updated: December 10, 2025
- * Author: Jetpack Air Traffic Controller Team
+ * CityModel3D.java
  */
+
 package com.example.model;
 
 import java.awt.image.BufferedImage;

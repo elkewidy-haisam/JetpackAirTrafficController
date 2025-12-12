@@ -1,3 +1,10 @@
+/**
+ * JOGLRenderer3D.java
+ * by Haisam Elkewidy
+ *
+ * Hardware-accelerated 3D renderer using JOGL OpenGL.
+ */
+
 
 package com.example.ui.utility;
 

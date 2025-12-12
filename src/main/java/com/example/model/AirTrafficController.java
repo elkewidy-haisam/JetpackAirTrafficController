@@ -1,11 +1,10 @@
-/*
+/**
  * AirTrafficController.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Central controller for managing jetpack flights, city state, and accident alerts.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.model;
 
 import java.util.ArrayList;

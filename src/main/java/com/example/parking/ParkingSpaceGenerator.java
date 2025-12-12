@@ -1,3 +1,10 @@
+/**
+ * ParkingSpaceGenerator.java
+ * by Haisam Elkewidy
+ *
+ * ParkingSpaceGenerator.java
+ */
+
 package com.example.parking;
 
 import java.awt.image.BufferedImage;

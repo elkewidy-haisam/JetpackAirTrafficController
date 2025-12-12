@@ -1,11 +1,10 @@
-/*
+/**
  * Radio.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Represents a radio communication device for jetpack flights.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.model;
 
 public class Radio {

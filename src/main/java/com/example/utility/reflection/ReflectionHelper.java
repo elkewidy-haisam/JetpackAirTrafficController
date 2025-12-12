@@ -1,10 +1,10 @@
-/*
+/**
  * ReflectionHelper.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Utility class for safe reflection operations. Centralizes reflection-based method invocations used for radio command execution.
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.utility.reflection;
 
 import java.lang.reflect.Method;

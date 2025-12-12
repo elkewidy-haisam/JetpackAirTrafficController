@@ -1,12 +1,10 @@
-
-/*
+/**
  * JetPackFlight.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Manages animated jetpack flight with trails, destinations, and FlightPath logic.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.flight;
 
 import java.awt.Color;

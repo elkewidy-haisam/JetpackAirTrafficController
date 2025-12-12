@@ -1,11 +1,10 @@
-/*
+/**
  * GridRenderer.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Responsible for rendering the city grid in the UI.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.utility;
 
 import java.awt.Graphics;

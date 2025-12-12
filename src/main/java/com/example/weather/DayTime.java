@@ -1,10 +1,10 @@
-/*
+/**
  * DayTime.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Reveals the date and time on the air traffic controller, setting the UI to day, night, sunset, or dusk.
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.weather;
 
 import java.time.LocalTime;

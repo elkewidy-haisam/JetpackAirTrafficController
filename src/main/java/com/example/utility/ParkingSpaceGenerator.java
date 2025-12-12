@@ -1,11 +1,10 @@
-/*
+/**
  * ParkingSpaceGenerator.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Generates parking spaces for jetpacks in the city grid.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.utility;
 
 import com.example.model.ParkingSpace;

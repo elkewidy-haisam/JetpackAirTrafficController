@@ -1,3 +1,10 @@
+/**
+ * CityMapJetpackListFactory.java
+ * by Haisam Elkewidy
+ *
+ * Factory for creating jetpack list UI components.
+ */
+
 
 package com.example.ui.citymap;
 

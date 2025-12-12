@@ -1,11 +1,10 @@
-/*
+/**
  * City.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Represents a city in the simulation, including grid and parking spaces.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.model;
 
 import java.util.ArrayList;

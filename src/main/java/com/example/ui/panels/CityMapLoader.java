@@ -1,11 +1,10 @@
-/*
+/**
  * CityMapLoader.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Loads city map data and initializes the city map panel.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.ui.panels;
 
 public class CityMapLoader {

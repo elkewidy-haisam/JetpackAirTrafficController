@@ -1,3 +1,10 @@
+/**
+ * CityMapFlightInitializer.java
+ * by Haisam Elkewidy
+ *
+ * Initializes flight paths and jetpack positions on city map.
+ */
+
 package com.example.ui.citymap;
 
 import java.awt.Color;

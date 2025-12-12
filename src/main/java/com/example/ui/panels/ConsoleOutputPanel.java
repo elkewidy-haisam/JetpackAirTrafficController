@@ -1,10 +1,10 @@
-/*
+/**
  * ConsoleOutputPanel.java
- * Displays console output messages with a terminal-style appearance for the Air Traffic Controller app.
+ * by Haisam Elkewidy
  *
- * Last updated: December 10, 2025
- * Author: Jetpack Air Traffic Controller Team
+ * ConsoleOutputPanel.java
  */
+
 package com.example.ui.panels;
 
 import java.awt.Color;

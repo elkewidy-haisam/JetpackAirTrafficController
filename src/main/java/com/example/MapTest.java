@@ -1,3 +1,10 @@
+/**
+ * MapTest.java
+ * by Haisam Elkewidy
+ *
+ * Quick test to launch the Air Traffic Controller application
+ */
+
 package com.example;
 
 import com.example.ui.frames.AirTrafficControllerFrame;

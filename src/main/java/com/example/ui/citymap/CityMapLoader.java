@@ -1,3 +1,10 @@
+/**
+ * CityMapLoader.java
+ * by Haisam Elkewidy
+ *
+ * CityMapLoader - Handles loading of city map images from various sources
+ */
+
 package com.example.ui.citymap;
 
 import java.awt.Graphics2D;

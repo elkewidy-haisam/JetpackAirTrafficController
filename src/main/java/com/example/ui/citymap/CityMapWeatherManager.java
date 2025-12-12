@@ -1,3 +1,10 @@
+/**
+ * CityMapWeatherManager.java
+ * by Haisam Elkewidy
+ *
+ * Manages weather display and effects on city map.
+ */
+
 package com.example.ui.citymap;
 
 import java.awt.Component;

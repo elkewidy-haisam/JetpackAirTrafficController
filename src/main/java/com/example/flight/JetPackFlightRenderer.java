@@ -1,3 +1,10 @@
+/**
+ * JetPackFlightRenderer.java
+ * by Haisam Elkewidy
+ *
+ * JetPackFlightRenderer - Handles all rendering lo
+ */
+
 package com.example.flight;
 
 import java.awt.BasicStroke;

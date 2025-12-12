@@ -1,14 +1,8 @@
-
-/*
+/**
  * CollisionDetector.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Detects and manages jetpack collisions in the city grid.
- * Detects and reports collisions between jetpack flights.
- * Monitors distances and issues warnings/alerts based on proximity.
- * Integrates with AccidentAlert system for automatic accident reporting.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Detects and manages jetpack collisions in the city grid. Detects and reports collisions between jetpack flights. Monitors distances and issues warnings/alerts based on proximity. Integrates with AccidentAlert system for automatic accident reporting.
  */
 
 package com.example.detection;

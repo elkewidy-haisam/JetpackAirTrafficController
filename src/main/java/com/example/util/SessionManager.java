@@ -1,11 +1,10 @@
-/*
+/**
  * SessionManager.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Handles saving and loading city simulation state to session files.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.util;
 
 import java.io.File;

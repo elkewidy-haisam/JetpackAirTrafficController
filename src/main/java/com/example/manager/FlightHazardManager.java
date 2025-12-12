@@ -1,3 +1,10 @@
+/**
+ * FlightHazardManager.java
+ * by Haisam Elkewidy
+ *
+ * FlightHazardManager.java
+ */
+
 package com.example.manager;
 
 import java.util.ArrayList;

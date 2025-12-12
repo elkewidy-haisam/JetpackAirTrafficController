@@ -1,11 +1,10 @@
-/*
+/**
  * RadioTransmissionLogger.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Logs radio transmissions for jetpack flights.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.model;
 
 import java.util.ArrayList;

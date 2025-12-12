@@ -1,13 +1,10 @@
-
-/*
+/**
  * Grid.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Represents the grid system used for navigation and positioning within a locale.
- * Contains attributes and methods relevant to the grid's functionality and identification.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Represents the grid system used for navigation and positioning within a locale. Contains attributes and methods relevant to the grid's functionality and identification.
  */
+
 package com.example.grid;
 
 public class Grid {

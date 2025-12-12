@@ -1,13 +1,10 @@
-
-
-/*
+/**
  * FlightHazardMonitor.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Tracks and manages flight hazards for jetpack flights.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.flight;
 
 import java.util.ArrayList;

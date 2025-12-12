@@ -1,13 +1,10 @@
-/*
+/**
  * Radar.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * The radar class is meant for the AirTrafficController to have positional awareness
- * of every jetpack within the locale's airspace.
- * - updateJetPackPositions() - frequently update jetpack's positions on the radar,
- * - identifyAircraft() - used to fetch jetpack's identifiers and display them on the map
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * The radar class is meant for the AirTrafficController to have positional awareness of every jetpack within the locale's airspace. - updateJetPackPositions() - frequently update jetpack's positions on the radar, - identifyAircraft() - used to fetch jetpack's identifiers and display them on the map
  */
+
 package com.example.detection;
 
 import java.util.ArrayList;

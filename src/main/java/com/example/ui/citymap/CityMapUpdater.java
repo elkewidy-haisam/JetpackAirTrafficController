@@ -1,3 +1,10 @@
+/**
+ * CityMapUpdater.java
+ * by Haisam Elkewidy
+ *
+ * CityMapUpdater - Handles all UI text area updates for the city map panel
+ */
+
 package com.example.ui.citymap;
 
 import java.time.LocalDateTime;

@@ -1,11 +1,10 @@
-/*
+/**
  * AccidentAlert.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Represents an accident event and provides alerting logic for jetpack collisions and emergencies.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.model;
 
 import java.time.LocalDateTime;

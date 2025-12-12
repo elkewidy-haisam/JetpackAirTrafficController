@@ -1,3 +1,10 @@
+/**
+ * JOGL3DPanel.java
+ * by Haisam Elkewidy
+ *
+ * JOGL3DPanel.java
+ */
+
 
 /*
  * JOGL3DPanel.java

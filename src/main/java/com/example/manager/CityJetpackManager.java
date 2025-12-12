@@ -1,3 +1,10 @@
+/**
+ * CityJetpackManager.java
+ * by Haisam Elkewidy
+ *
+ * Manages jetpack collections for multiple cities.
+ */
+
 package com.example.manager;
 
 import com.example.jetpack.JetPack;

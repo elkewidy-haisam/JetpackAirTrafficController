@@ -1,3 +1,10 @@
+/**
+ * AccidentReporter.java
+ * by Haisam Elkewidy
+ *
+ * AccidentReporter.java
+ */
+
 package com.example.accident;
 
 import java.time.LocalDateTime;

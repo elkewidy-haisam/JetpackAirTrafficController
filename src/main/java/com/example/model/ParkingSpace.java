@@ -1,11 +1,10 @@
-/*
+/**
  * ParkingSpace.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Represents a parking space for jetpacks in the city grid.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.model;
 
 public class ParkingSpace {

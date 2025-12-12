@@ -1,3 +1,10 @@
+/**
+ * CityMapPanelFactory.java
+ * by Haisam Elkewidy
+ *
+ * Factory for creating city map panel instances.
+ */
+
 package com.example.ui.citymap;
 
 import com.example.logging.CityLogManager;

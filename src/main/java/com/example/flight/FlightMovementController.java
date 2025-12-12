@@ -1,13 +1,10 @@
-
-/*
+/**
  * FlightMovementController.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
- * Handles position updates, waypoint navigation, detours, and movement logic for flights/jetpacks.
- * Integrates collision avoidance, altitude management, and pathfinding with city/building models.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
+ * Handles position updates, waypoint navigation, detours, and movement logic for flights/jetpacks. Integrates collision avoidance, altitude management, and pathfinding with city/building models.
  */
+
 package com.example.flight;
 
 import java.awt.Point;

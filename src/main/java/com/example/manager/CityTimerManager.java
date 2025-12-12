@@ -1,3 +1,10 @@
+/**
+ * CityTimerManager.java
+ * by Haisam Elkewidy
+ *
+ * CityTimerManager.java
+ */
+
 package com.example.manager;
 
 import javax.swing.Timer;

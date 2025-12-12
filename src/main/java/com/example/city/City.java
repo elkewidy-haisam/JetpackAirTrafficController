@@ -1,3 +1,10 @@
+/**
+ * City.java
+ * by Haisam Elkewidy
+ *
+ * City class represents a city with its dimensions and parking spaces
+ */
+
 package com.example.city;
 
 import java.util.ArrayList;

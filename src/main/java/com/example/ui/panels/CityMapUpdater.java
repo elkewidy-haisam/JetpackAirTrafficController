@@ -1,11 +1,10 @@
-/*
+/**
  * CityMapUpdater.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Responsible for updating the city map panel with new data and state changes.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.ui.panels;
 
 public class CityMapUpdater {

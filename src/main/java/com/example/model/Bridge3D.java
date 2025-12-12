@@ -1,11 +1,10 @@
-/*
+/**
  * Bridge3D.java
- * Represents a 3D bridge in the city model.
- * Stores position, dimensions, and orientation.
+ * by Haisam Elkewidy
  *
- * Last updated: December 10, 2025
- * Author: Jetpack Air Traffic Controller Team
+ * Bridge3D.java
  */
+
 package com.example.model;
 
 public class Bridge3D {

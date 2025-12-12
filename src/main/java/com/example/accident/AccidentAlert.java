@@ -1,10 +1,8 @@
-/*
+/**
  * AccidentAlert.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Alerts jetpack pilots of any accidents, collisions, or hazards in the city.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
 
 package com.example.accident;

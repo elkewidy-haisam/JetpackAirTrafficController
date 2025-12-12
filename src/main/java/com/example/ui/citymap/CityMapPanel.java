@@ -1,3 +1,10 @@
+/**
+ * CityMapPanel.java
+ * by Haisam Elkewidy
+ *
+ * Main panel displaying city map with jetpacks and UI elements.
+ */
+
 
 package com.example.ui.citymap;
 

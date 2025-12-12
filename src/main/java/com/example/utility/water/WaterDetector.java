@@ -1,10 +1,10 @@
-/*
+/**
  * WaterDetector.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Utility for detecting water regions in map images and finding land points for jetpack navigation.
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.utility.water;
 
 import java.awt.Point;

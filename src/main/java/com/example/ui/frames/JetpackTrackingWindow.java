@@ -1,12 +1,11 @@
-
-/*
+/**
  * JetpackTrackingWindow.java
- * Displays a separate window tracking a single jetpack in 3D, with realistic city buildings, water detection,
- * nearby jetpacks, and accident markers. Supports both legacy Graphics2D and hardware-accelerated JOGL rendering.
+ * by Haisam Elkewidy
  *
- * Last updated: December 10, 2025
- * Author: Jetpack Air Traffic Controller Team
+ * Window for tracking individual jetpack flights in 3D view.
  */
+
+
 package com.example.ui.frames;
 
 import com.example.jetpack.JetPack;

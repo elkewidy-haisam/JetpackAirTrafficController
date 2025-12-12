@@ -1,11 +1,10 @@
-/*
+/**
  * RadarTapeWindow.java
- * Displays communication logs with jetpacks in a radar-style window.
- * Provides message history, timestamping, and log file writing.
+ * by Haisam Elkewidy
  *
- * Last updated: December 10, 2025
- * Author: Jetpack Air Traffic Controller Team
+ * RadarTapeWindow.java
  */
+
 package com.example.ui.frames;
 
 import java.awt.BorderLayout;

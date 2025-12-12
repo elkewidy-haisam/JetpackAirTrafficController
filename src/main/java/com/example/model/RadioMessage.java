@@ -1,11 +1,10 @@
-/*
+/**
  * RadioMessage.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Represents a radio message sent between jetpack flights and control.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.model;
 
 public class RadioMessage {

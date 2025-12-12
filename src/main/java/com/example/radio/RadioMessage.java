@@ -1,3 +1,10 @@
+/**
+ * RadioMessage.java
+ * by Haisam Elkewidy
+ *
+ * RadioMessage represents a two-way radio communication message
+ */
+
 package com.example.radio;
 
 /**

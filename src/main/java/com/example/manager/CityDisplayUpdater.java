@@ -1,3 +1,10 @@
+/**
+ * CityDisplayUpdater.java
+ * by Haisam Elkewidy
+ *
+ * CityDisplay
+ */
+
 package com.example.manager;
 
 import com.example.weather.Weather;

@@ -1,3 +1,10 @@
+/**
+ * RadioCommandExecutor.java
+ * by Haisam Elkewidy
+ *
+ * RadioCommandExecutor - executes radio commands on
+ */
+
 package com.example.radio;
 
 import java.util.HashMap;

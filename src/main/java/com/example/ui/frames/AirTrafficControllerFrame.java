@@ -1,11 +1,10 @@
-/*
+/**
  * AirTrafficControllerFrame.java
- * Main application frame for the Air Traffic Controller system.
- * Handles city selection, map display, session management, and user actions.
+ * by Haisam Elkewidy
  *
- * Last updated: December 10, 2025
- * Author: Jetpack Air Traffic Controller Team
+ * AirTrafficControllerFrame.java
  */
+
 package com.example.ui.frames;
 
 import java.awt.BorderLayout;

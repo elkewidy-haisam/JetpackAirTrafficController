@@ -1,11 +1,10 @@
-/*
+/**
  * JetPackFlight.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Represents a jetpack flight in the city simulation.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.model;
 
 public class JetPackFlight {

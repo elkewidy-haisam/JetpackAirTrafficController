@@ -1,11 +1,10 @@
-/*
+/**
  * Road3D.java
- * Represents a 3D road in the city model.
- * Stores position, dimensions, and orientation.
+ * by Haisam Elkewidy
  *
- * Last updated: December 10, 2025
- * Author: Jetpack Air Traffic Controller Team
+ * Road3D.java
  */
+
 package com.example.model;
 
 public class Road3D {

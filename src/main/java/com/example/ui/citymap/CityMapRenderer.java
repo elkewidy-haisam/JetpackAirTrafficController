@@ -1,3 +1,10 @@
+/**
+ * CityMapRenderer.java
+ * by Haisam Elkewidy
+ *
+ * Renders visual elements on the city map.
+ */
+
 package com.example.ui.citymap;
 
 import java.awt.BasicStroke;

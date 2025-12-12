@@ -1,3 +1,10 @@
+/**
+ * ParkingSpaceManager.java
+ * by Haisam Elkewidy
+ *
+ * ParkingSpaceManager.java
+ */
+
 package com.example.parking;
 
 import java.awt.Color;

@@ -1,11 +1,10 @@
-/*
+/**
  * JetPackFlightState.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Manages jetpack parking behavior and state transitions.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.flight;
 
 import java.awt.Point;

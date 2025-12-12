@@ -1,10 +1,10 @@
-/*
+/**
  * Weather.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Represents different kinds of weather along with varying degrees of severity.
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
+
 package com.example.weather;
 
 import java.util.HashMap;

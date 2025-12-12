@@ -1,3 +1,10 @@
+/**
+ * App.java
+ * by Haisam Elkewidy
+ *
+ * Main entry point for the Air Traffic Controller application.
+ */
+
 package com.example;
 
 import javax.swing.JFrame;

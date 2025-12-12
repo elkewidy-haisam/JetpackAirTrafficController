@@ -1,10 +1,8 @@
-/*
+/**
  * GridRenderer.java
- * Part of Jetpack Air Traffic Controller
+ * by Haisam Elkewidy
  *
  * Utility class for rendering grid overlays on maps.
- *
- * (c) 2025 Haisam Elkewidy. All rights reserved.
  */
 
 package com.example.grid;
