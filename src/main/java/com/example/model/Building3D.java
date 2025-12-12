@@ -1,0 +1,89 @@
+/*
+ * Building3D.java
+ * Represents a 3D building in the city model, including position, dimensions, and rendering properties.
+ *
+ * Last updated: December 10, 2025
+ * Author: Jetpack Air Traffic Controller Team
+ */
+package com.example.model;
+
+import java.awt.Color;
+
+/**
+ * Building3D - 3D building representation for city rendering and collision.
+ * Includes position, dimensions, color, type, and footprint logic.
+ */
+public class Building3D {
+    private final double x;          // X position on map
+    private final double y;          // Y position on map
+    private final double width;      // Building width
+    private final double depth;      // Building depth
+    private final double height;     // Building height (altitude)
+    private Color color;             // Building color
+    private final String type;       // Building type (skyscraper, office, residential, etc.)
+    private final boolean hasWindows;
+    private final int floors;
+    
+    public Building3D(double x, double y, double width, double depth, double height, String type) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.depth = depth;
+        this.height = height;
+        this.type = type;
+        this.hasWindows = true;
+        this.floors = (int)(height / 10); // Approximate floor count
+        assignColorByType();
+    }
+    
+    private void assignColorByType() {
+        switch (type) {
+            case "skyscraper":
+                color = new Color(100, 120, 140); // Dark blue-grey
+                break;
+            case "office":
+                color = new Color(140, 140, 140); // Grey
+                break;
+            case "residential":
+                color = new Color(180, 160, 140); // Tan/beige
+                break;
+            case "commercial":
+                color = new Color(160, 140, 120); // Light brown
+                break;
+            case "landmark":
+                color = new Color(150, 130, 110); // Distinctive color
+                break;
+            default:
+                color = new Color(130, 130, 130);
+        }
+    }
+    
+    /**
+     * Check if a point is inside this building's footprint
+     */
+    public boolean containsPoint(double px, double py) {
+        return px >= x && px <= x + width &&
+               py >= y && py <= y + depth;
+    }
+    
+    /**
+     * Get distance from a point to this building
+     */
+    public double distanceTo(double px, double py) {
+        // Distance to closest point on building rectangle
+        double dx = Math.max(x - px, Math.max(0, px - (x + width)));
+        double dy = Math.max(y - py, Math.max(0, py - (y + depth)));
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+    
+    // Getters and setters
+    public double getX() { return x; }
+    public double getY() { return y; }
+    public double getWidth() { return width; }
+    public double getLength() { return depth; }
+    public double getHeight() { return height; }
+    public String getType() { return type; }
+    public Color getColor() { return color; }
+    public boolean hasWindows() { return hasWindows; }
+    public int getFloors() { return floors; }
+}
