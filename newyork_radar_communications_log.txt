@@ -1,49 +1,49 @@
 === RADAR COMMUNICATIONS LOG ===
 City: New York
-Application started: 2025-12-12 00:48:34
+Application started: 2025-12-11 19:31:35
 ==================================================
-[00:48:45] ATC-NEW → GOLF-47
-📡 ALTITUDE CLEARANCE
-➤ Cleared to new altitude
----
-
-[00:48:54] ATC-NEW → ECHO-65
-📡 ALTITUDE CLEARANCE
-➤ Cleared to new altitude
----
-
-[00:49:03] ATC-NEW → GOLF-97
-📡 ALTITUDE CLEARANCE
-➤ Cleared to new altitude
----
-
-[00:49:12] ATC-NEW → ECHO-55
-📡 ALTITUDE CHANGE
-➤ Climb to avoid weather
----
-
-[00:49:21] ATC-NEW → FOXTROT-86
-📡 DETOUR AROUND WEATHER
-➤ Alter course to avoid storm
----
-
-[00:49:30] ATC-NEW → GOLF-77
-📡 ALTITUDE CHANGE
-➤ Climb to avoid weather
----
-
-[00:49:39] ATC-NEW → CHARLIE-73
+[19:31:50] ATC-NEW → Jane #7
 📡 COLLISION AVOIDANCE
 ➤ Traffic alert - change course
 ---
 
-[00:49:48] ATC-NEW → JULIET-60
-📡 ALTITUDE CLEARANCE
-➤ Cleared to new altitude
+[19:32:02] ATC-NEW → Lisa #7
+📡 ROUTE OPTIMIZATION
+➤ Direct route cleared
 ---
 
-[00:49:57] ATC-NEW → INDIA-39
-📡 POSITION REPORT REQUEST
-➤ Report position
+[19:32:15] ATC-NEW → David #7
+📡 ROUTE OPTIMIZATION
+➤ Direct route cleared
+---
+
+[19:32:28] ATC-NEW → Michael #3
+📡 ROUTE OPTIMIZATION
+➤ Direct route cleared
+---
+
+[19:32:41] ATC-NEW → David #7
+📡 WEATHER UPDATE
+➤ Current conditions advisory
+---
+
+[19:32:53] ATC-NEW → Michael #1
+📡 COLLISION AVOIDANCE
+➤ Traffic alert - change course
+---
+
+[19:33:06] ATC-NEW → Michael #6
+📡 ROUTE OPTIMIZATION
+➤ Direct route cleared
+---
+
+[19:33:19] ATC-NEW → Robert #10
+📡 ROUTE OPTIMIZATION
+➤ Direct route cleared
+---
+
+[19:33:32] ATC-NEW → Robert #6
+📡 ALTITUDE CLEARANCE
+➤ Cleared to new altitude
 ---
 
