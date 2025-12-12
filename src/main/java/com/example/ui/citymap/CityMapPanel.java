@@ -1,3 +1,4 @@
+
 package com.example.ui.citymap;
 
 
@@ -29,6 +30,8 @@ import java.util.HashMap;
  * CityMapPanel - Main panel for displaying city map with animated jetpacks
  */
 public class CityMapPanel extends JPanel {
+            private RadarTapeWindow radarTapeWindow;
+            private CityLogManager logManager;
         // Methods to filter jetpacks
         public void hideJetpack(JetPackFlight flight) {
             visibleJetpacks.remove(flight);
@@ -46,6 +49,7 @@ public class CityMapPanel extends JPanel {
     private String city;
     private final ArrayList<JetPack> jetpacks;
     private JPanel mapPanel;
+    private JPanel mapWithJetpacks;
     private final List<JetPackFlight> jetpackFlights;
     private final java.util.Set<JetPackFlight> visibleJetpacks = new java.util.HashSet<>();
     private Map<JetPackFlight, JetPackFlightState> flightStates;
@@ -84,8 +88,6 @@ public class CityMapPanel extends JPanel {
     // Callbacks for communication with parent frame
     private final Weather currentWeather;
     private final DayTime currentDayTime;
-    private CityLogManager logManager;
-    private RadarTapeWindow radarTapeWindow;
     private Runnable showCitySelectionCallback;
     private Runnable openRadarTapeCallback;
 
@@ -95,13 +97,12 @@ public class CityMapPanel extends JPanel {
         this.jetpacks = jetpacks;
         this.currentWeather = weather;
         this.currentDayTime = dayTime;
-        this.logManager = logManager;
-        this.radarTapeWindow = radarWindow;
         this.jetpackFlights = new ArrayList<>();
         this.flightStates = new HashMap<>();
         this.parkingSpaces = new ArrayList<>();
         this.parkingManager = new ParkingSpaceManager(city);
         this.cityRadio = new Radio("122.8", "ATC-" + city.toUpperCase().substring(0, 3));
+        this.logManager = logManager;
         setLayout(new BorderLayout(10, 10));
         setBackground(Color.WHITE);
         initializeComponents();
@@ -267,23 +268,16 @@ public class CityMapPanel extends JPanel {
                 f -> flightStates.get(f)
             );
             
-            // Set radar tape window for all states
-            for (JetPackFlightState state : flightStates.values()) {
-                state.setRadarTapeWindow(radarTapeWindow);
-            }
-            
-            JPanel mapWithJetpacks = new JPanel() {
+            // Initialize mapWithJetpacks panel
+            mapWithJetpacks = new JPanel() {
                 @Override
                 protected void paintComponent(Graphics g) {
                     super.paintComponent(g);
                     Graphics2D g2d = (Graphics2D) g;
-                    
                     // Apply zoom transformation
                     g2d.scale(zoomScale, zoomScale);
-                    
                     renderer.paintMapComponent(g, this, new ArrayList<>(visibleJetpacks), parkingSpaces);
                 }
-                
                 @Override
                 public Dimension getPreferredSize() {
                     Dimension original = renderer.getPreferredSize();
@@ -293,6 +287,12 @@ public class CityMapPanel extends JPanel {
                     );
                 }
             };
+
+            // Set radar tape window and repaint callback for all states
+            for (JetPackFlightState state : flightStates.values()) {
+                state.setRadarTapeWindow(radarTapeWindow);
+                state.setRepaintCallback(() -> mapWithJetpacks.repaint());
+            }
             
             // Add keyboard shortcuts
             mapWithJetpacks.setFocusable(true);
@@ -389,7 +389,7 @@ public class CityMapPanel extends JPanel {
         rightPanel.add(radioResult.getPanel());
         
         // Initialize updater and radio handler
-        updater = new CityMapUpdater(city, logManager, weatherBroadcastArea, jetpackMovementArea, radioInstructionsArea);
+        updater = new CityMapUpdater(city, this.logManager, weatherBroadcastArea, jetpackMovementArea, radioInstructionsArea);
         radioHandler = new CityMapRadioInstructionHandler(city, cityRadio, currentWeather, logManager, updater);
         
         // Now that updater is initialized, update the weather broadcast

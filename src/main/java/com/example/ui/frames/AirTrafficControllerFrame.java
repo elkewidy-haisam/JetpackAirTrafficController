@@ -11,11 +11,13 @@ package com.example.ui.frames;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Desktop;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -94,12 +96,12 @@ public class AirTrafficControllerFrame extends JFrame implements ActionListener 
      * Shows the city selection panel
      */
     private void showCitySelection() {
-        System.out.println("showCitySelection() called"); // Debug
+        // ...removed debug output...
         
         // Stop animation and clean up before switching panels
         if (cityMapPanel != null) {
             try {
-                System.out.println("Stopping animations..."); // Debug
+                // ...removed debug output...
                 cityMapPanel.stopAnimation();
                 // Give timers a moment to stop
                 Thread.sleep(100);
@@ -112,7 +114,7 @@ public class AirTrafficControllerFrame extends JFrame implements ActionListener 
         // Switch panels on EDT
         SwingUtilities.invokeLater(() -> {
             try {
-                System.out.println("Switching to city selection panel..."); // Debug
+                // ...removed debug output...
                 mainPanel.removeAll();
                 mainPanel.add(citySelectionPanel, BorderLayout.CENTER);
                 mainPanel.add(consolePanel, BorderLayout.SOUTH);
@@ -122,7 +124,7 @@ public class AirTrafficControllerFrame extends JFrame implements ActionListener 
                 
                 // Log the action
                 consolePanel.appendMessage("Returned to city selection");
-                System.out.println("City selection panel displayed"); // Debug
+                // ...removed debug output...
                 
                 // Nullify the reference to help with cleanup
                 cityMapPanel = null;
@@ -187,6 +189,17 @@ public class AirTrafficControllerFrame extends JFrame implements ActionListener 
         setSize(900, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+
+        // Set custom jetpack icon for window and taskbar (where supported)
+        try {
+            java.util.List<Image> icons = new java.util.ArrayList<>();
+            Image icon = ImageIO.read(getClass().getResource("/jetpack_icon.png"));
+            icons.add(icon);
+            // If you have multiple sizes, load and add them here for best cross-platform support
+            setIconImages(icons);
+        } catch (Exception e) {
+            // If icon fails to load, continue without it
+        }
         
         // Create menu bar
         createMenuBar();

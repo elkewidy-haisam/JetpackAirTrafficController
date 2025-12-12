@@ -20,14 +20,14 @@ public class JetpackFactory {
      */
     public static ArrayList<JetPack> generateJetpacksForCity(String prefix, String cityName) {
         ArrayList<JetPack> jetpacks = new ArrayList<>();
-        
+
         // Base arrays to cycle through
         String[] baseCallsigns = getCallsignsForCity(cityName);
         String[] baseOwners = {"John", "Jane", "Michael", "Sarah", "David", "Emily", "Chris", "Amanda", "Robert", "Lisa"};
         String[] baseModels = getModelsForCity(cityName);
         String[] baseManufacturers = getManufacturersForCity(cityName);
         String[] years = {"2022", "2023", "2024"};
-        
+
         // Generate 100 jetpacks
         for (int i = 0; i < 100; i++) {
             int jetpackNumber = i + 1;
@@ -37,17 +37,18 @@ public class JetpackFactory {
             String model = baseModels[i % baseModels.length];
             String manufacturer = baseManufacturers[i % baseManufacturers.length];
             String year = years[i % years.length];
-            
-            jetpacks.add(new JetPack(
-                prefix + "-" + String.format("%03d", i + 1),
-                callsign,
-                owner,
-                year,
-                model,
-                manufacturer
+
+            jetpacks.add(com.example.utility.JetpackFactory.createJetPack(
+                prefix + "-" + String.format("%03d", i + 1), // id
+                prefix + "-" + String.format("%03d", i + 1), // serialNumber
+                callsign, // callsign
+                owner, // ownerName
+                year, // year
+                model, // model
+                manufacturer // manufacturer
             ));
         }
-        
+
         return jetpacks;
     }
     

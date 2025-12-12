@@ -21,6 +21,9 @@ import com.example.ui.frames.RadarTapeWindow;
  * It tracks parking status, available spaces, and integrates with the radar tape window.
  */
 public class JetPackFlightState {
+        public void setRepaintCallback(Runnable repaintCallback) {
+            this.repaintCallback = repaintCallback;
+        }
     private final JetPackFlight flight;
     private ParkingSpace targetParking;
     private boolean isParked;
@@ -29,6 +32,7 @@ public class JetPackFlightState {
     private final List<ParkingSpace> availableParkingSpaces;
     private RadarTapeWindow radarTapeWindow;
     private MovementLogger movementLogger;
+    private Runnable repaintCallback;
 
     public interface MovementLogger {
         void appendJetpackMovement(String message);
@@ -40,6 +44,7 @@ public class JetPackFlightState {
         this.random = new Random();
         this.isParked = false;
         this.parkingTimeRemaining = 0;
+        this.repaintCallback = null;
     }
 
     public void setRadarTapeWindow(RadarTapeWindow window) {
@@ -64,10 +69,10 @@ public class JetPackFlightState {
                 Math.pow(flight.getX() - targetParking.getX(), 2) +
                 Math.pow(flight.getY() - targetParking.getY(), 2)
             );
-            if (distance < 30 && random.nextDouble() < 0.5) {
+            if (distance < 30 && random.nextDouble() < 0.95) { // Increased probability
                 arriveAtParking();
             }
-        } else if (random.nextDouble() < 0.15) {
+        } else if (random.nextDouble() < 0.95) { // Further increased probability
             selectRandomParking();
         }
     }
@@ -106,6 +111,7 @@ public class JetPackFlightState {
             movementLogger.appendJetpackMovement(flight.getJetpack().getCallsign() +
                 " ✓ landed at " + targetParking.getId() + " (parking for ~" + parkingSeconds + "s)");
         }
+        if (repaintCallback != null) repaintCallback.run();
     }
 
     private void departFromParking() {
@@ -120,6 +126,7 @@ public class JetPackFlightState {
                 movementLogger.appendJetpackMovement(flight.getJetpack().getCallsign() +
                     " 🚀 departing from " + targetParking.getId());
             }
+            if (repaintCallback != null) repaintCallback.run();
             targetParking = null;
         }
     }
@@ -136,6 +143,6 @@ public class JetPackFlightState {
     }
 
     public void update() {
-        // Stub implementation
+        updateParkingState();
     }
 }

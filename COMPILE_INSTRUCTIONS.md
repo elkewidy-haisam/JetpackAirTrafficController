@@ -1,4 +1,4 @@
-# Compilation Instructions
+# Compilation Instructions (December 2025)
 
 ## JOGL Integration Complete - Ready to Compile
 
@@ -28,10 +28,12 @@ mvn clean install
    - Native libraries for Windows
 
 2. **Compile all Java files**
-   - JOGLRenderer3D.java ✓
-   - JOGL3DPanel.java ✓
-   - Modified JetpackTrackingWindow.java ✓
-   - All other existing files ✓
+   - JOGLRenderer3D.java
+   - JOGL3DPanel.java
+   - JetpackTrackingWindow.java
+   - CityModel3D.java
+   - Renderer3D.java
+   - All other existing files
 
 3. **Output**
    - Compiled classes in `target/classes/`

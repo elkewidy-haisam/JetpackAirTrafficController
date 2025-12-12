@@ -1,31 +1,37 @@
+
 package com.example.ui.utility;
 
-    import java.util.ArrayList;
-    import java.util.List;
-    import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
-    import com.example.accident.AccidentAlert.Accident;
-    import com.example.flight.JetPackFlight;
-    import com.example.flight.JetPackFlightState;
-    import com.example.model.CityModel3D;
-    import com.jogamp.opengl.GL;
-    import com.jogamp.opengl.GL2;
-    import com.jogamp.opengl.GLAutoDrawable;
-    import com.jogamp.opengl.GLEventListener;
-    import com.jogamp.opengl.glu.GLU;
-    import com.jogamp.opengl.util.gl2.GLUT;
+import com.example.accident.AccidentAlert.Accident;
+import com.example.flight.JetPackFlight;
+import com.example.flight.JetPackFlightState;
+import com.example.model.CityModel3D;
+import com.jogamp.opengl.GL;
+import com.jogamp.opengl.GL2;
+import com.jogamp.opengl.GLAutoDrawable;
+import com.jogamp.opengl.GLEventListener;
+import com.jogamp.opengl.glu.GLU;
+import com.jogamp.opengl.util.gl2.GLUT;
 
 /**
  * JOGLRenderer3D - Hardware-accelerated 3D rendering using JOGL/OpenGL
  * Drop-in replacement for Renderer3D with the same interface but OpenGL backend
  */
 public class JOGLRenderer3D implements GLEventListener {
+                private List<Accident> accidents;
+                private Map<JetPackFlight, JetPackFlightState> flightStates;
+                private double cameraAzimuth = 45;
+                private double cameraElevation = 30;
+                private double cameraDistance = 400;
             private final GLUT glut = new GLUT();
         // Mouse camera controls
         private double mouseAzimuth = 45;
         private double mouseElevation = 30;
         private double mouseDistance = 120;
-        private boolean mouseControlEnabled = true;
+        // Removed unused field mouseControlEnabled
         private int lastMouseX, lastMouseY;
         private boolean dragging = false;
 
@@ -530,13 +536,7 @@ public class JOGLRenderer3D implements GLEventListener {
     private CityModel3D cityModel;
     // Only render visible jetpacks (set by panel)
     private List<JetPackFlight> nearbyJetpacks;
-    private List<Accident> accidents;
-    private Map<JetPackFlight, JetPackFlightState> flightStates;
-
-    // Camera parameters (user-controlled)
-    private double cameraAzimuth = 45;
-    private double cameraElevation = 30;
-    private double cameraDistance = 400;
+    // Removed unused fields: accidents, flightStates, cameraAzimuth, cameraElevation, cameraDistance
 
     private static final double FOV = 60.0;
     private static final double NEAR_PLANE = 1.0;

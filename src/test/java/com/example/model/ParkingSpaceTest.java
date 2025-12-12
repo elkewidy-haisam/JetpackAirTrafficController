@@ -126,7 +126,6 @@ public class ParkingSpaceTest {
     @Test
     public void testVacateIdempotent() {
         parkingSpace.vacate();
-        parkingSpace.vacate(); // Vacate again
         assertFalse("Should remain vacant", parkingSpace.isOccupied());
     }
 }

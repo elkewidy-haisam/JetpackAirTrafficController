@@ -8,7 +8,6 @@
  */
 package com.example.ui.panels;
 
-import javax.swing.JPanel;
 
 public class CityMapPanelFactory {
     public static CityMapPanel createCityMapPanel() {

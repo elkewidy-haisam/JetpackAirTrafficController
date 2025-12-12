@@ -20,6 +20,18 @@ import com.example.weather.Weather;
  * CityMapAnimationController - Manages the animation loop and collision detection
  */
 public class CityMapAnimationController {
+        // Helper to check if a jetpack is in the process of parking (has a target parking assigned)
+        private boolean isParkingInProgress(JetPackFlightState state) {
+            if (state == null) return false;
+            try {
+                java.lang.reflect.Field targetParkingField = state.getClass().getDeclaredField("targetParking");
+                targetParkingField.setAccessible(true);
+                Object targetParking = targetParkingField.get(state);
+                return targetParking != null && !state.isParked();
+            } catch (Exception e) {
+                return false;
+            }
+        }
     private javax.swing.Timer animationTimer;
     private final List<JetPackFlight> jetpackFlights;
     private final Map<JetPackFlight, JetPackFlightState> flightStates;
@@ -77,14 +89,22 @@ public class CityMapAnimationController {
                         flight.updatePosition();
                     }
                     
+                    // Ensure parking logic is executed for each flight
+                    if (state != null) {
+                        // ...removed debug output...
+                        state.update();
+                    }
+
                     updateCounter++;
                     if (updateCounter >= 18) {
                         if (state != null) {
+                            // ...removed debug output...
                             state.update();
                         }
                     }
                     
-                    if (flight.hasReachedDestination() && (state == null || !state.isParked())) {
+                    // Only assign a new random destination if not parked and not in the process of parking
+                    if (flight.hasReachedDestination() && (state == null || (!state.isParked() && !CityMapAnimationController.this.isParkingInProgress(state)))) {
                         Point newDest = new Point(50 + rand.nextInt(mapWidth - 100), 50 + rand.nextInt(mapHeight - 100));
                         flight.setNewDestination(newDest);
                     }

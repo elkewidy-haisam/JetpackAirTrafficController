@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.example.jetpack.JetPack;
-import com.example.util.DebugConfig;
 
 /**
  * Radar provides positional awareness of every jetpack within the locale's airspace.
@@ -90,7 +89,7 @@ public class Radar {
 
     public Map<JetPack, RadarContact> getJetPackPositions() {
         if (!isActive) {
-            if (DebugConfig.VERBOSE) System.out.println("WARNING: Radar is not active!");
+            // ...removed debug output...
             return new HashMap<>();
         }
         return new HashMap<>(trackedJetpacks);

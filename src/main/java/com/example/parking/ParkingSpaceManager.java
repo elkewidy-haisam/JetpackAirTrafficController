@@ -43,20 +43,24 @@ public class ParkingSpaceManager {
 
         while (spaces.size() < TARGET_SPACES && attempts < maxAttempts) {
             attempts++;
-            
+
             int x = 10 + rand.nextInt(mapWidth - 20);
             int y = 10 + rand.nextInt(mapHeight - 20);
 
             if (isLandPixel(mapImage, x, y)) {
                 spaces.add(new ParkingSpace(cityCode + "-P" + (spaces.size() + 1), x, y));
-                
-                // Progress tracking removed
             } else {
                 waterRejections++;
             }
         }
 
         parkingSpaces.addAll(spaces);
+
+        // ...removed debug output...
+        for (ParkingSpace ps : parkingSpaces) {
+            // ...removed debug output...
+        }
+        // ...removed debug output and file writing block entirely...
         // Parking spaces generated
     }
     

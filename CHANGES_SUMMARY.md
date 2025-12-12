@@ -1,7 +1,7 @@
 # Code Changes Summary
 
 ## Overview
-All four city MapViewer classes have been updated with the following enhancements:
+All four city MapViewer classes have been updated with the following enhancements (December 2025):
 
 ## Changes Applied to All Cities
 
@@ -14,22 +14,30 @@ All four city MapViewer classes have been updated with the following enhancement
 ### 2. Jetpacks
 - **Count**: 300 jetpacks per city (tripled from previous count)
 - **Dynamic Creation**: Jetpacks are now created dynamically using ArrayList
-  - Created in a loop based on list size
-  - No hard-coded count in the loop
+    - Created in a loop based on list size
+    - No hard-coded count in the loop
 - **Water Avoidance**: Jetpack start and destination points avoid water
 
 ### 3. Water Detection System
 - **WaterDetector Class**: Implemented in `WaterDetector.java`
-  - Analyzes map images pixel-by-pixel
-  - Detects water based on RGB color values
-  - Provides `getRandomLandPoint()` method for safe placement
-  
-- **Algorithm**: Identifies water by checking if:
-  - Blue channel > Red + 20 AND Blue > Green + 20, OR
-  - Blue > 150 AND Blue > Red AND Blue > Green, OR
-  - Red < 100 AND Green < 150 AND Blue > 100 AND (Blue - Red) > 30
+    - Analyzes map images pixel-by-pixel
+    - Detects water based on RGB color values
+    - Provides `getRandomLandPoint()` method for safe placement
 
-### 4. Updated Files
+- **Algorithm**: Identifies water by checking if:
+    - Blue channel > Red + 20 AND Blue > Green + 20, OR
+    - Blue > 150 AND Blue > Red AND Blue > Green, OR
+    - Red < 100 AND Green < 150 AND Blue > 100 AND (Blue - Red) > 30
+
+### 4. 3D City Model and Jetpack Tracking
+- **CityModel3D.java**: Generates realistic city-specific building layouts
+- **Renderer3D.java**: Advanced 3D rendering engine
+- **JetpackTrackingWindow.java**: Main tracking window (uses 3D models)
+- **CityMapJetpackListFactory.java**: Interactive list with Track buttons
+- **CityMapPanel.java**: Launches tracking windows
+- **CityMapLoader.java**: Enhanced map loading
+
+### 5. Updated Files
 
 #### BostonMapViewer.java
 - Map: Boston-Road-Map-1265x977.jpg

@@ -1,3 +1,4 @@
+
 /*
  * JetpackTrackingWindow.java
  * Displays a separate window tracking a single jetpack in 3D, with realistic city buildings, water detection,
@@ -31,6 +32,7 @@ import com.example.accident.AccidentAlert;
  * Shows a behind-the-jetpack view, city context, and supports both JOGL and legacy rendering.
  */
 public class JetpackTrackingWindow extends JFrame {
+        private Timer updateTimer;
     private final JetPack jetpack;
     private final JetPackFlight flight;
     private final String cityName;
@@ -38,7 +40,6 @@ public class JetpackTrackingWindow extends JFrame {
     private final Map<JetPackFlight, JetPackFlightState> allStates;
     private final CityMapAnimationController animationController;
     private JPanel renderPanel; // Can be MapTrackingPanel or JOGL3DPanel
-    private javax.swing.Timer updateTimer;
     private boolean useJOGL = true; // Set to true to use JOGL by default
     
     public JetpackTrackingWindow(JetPack jetpack, JetPackFlight flight, String cityName,
@@ -52,7 +53,6 @@ public class JetpackTrackingWindow extends JFrame {
         this.allStates = allStates;
         this.animationController = animationController;
         
-        setTitle("3D Tracking (JOGL): " + jetpack.getCallsign() + " - " + cityName);
         setSize(900, 700);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -361,16 +361,32 @@ public class JetpackTrackingWindow extends JFrame {
             }
             y += lineHeight + 5;
             
-            // Callsign
-            g2d.setColor(Color.YELLOW);
-            g2d.drawString("Callsign: " + flight.getJetpack().getCallsign(), 20, y);
+            // Jetpack info (callsign, serial, owner, model, bird name) - match 2D panel
+            com.example.jetpack.JetPack jp = flight.getJetpack();
+            int idx = 0;
+            if (allFlights != null) {
+                for (int i = 0; i < allFlights.size(); i++) {
+                    if (allFlights.get(i) == flight) { idx = i; break; }
+                }
+            }
+            String[] birdNames = {
+                "Falcon", "Eagle", "Hawk", "Osprey", "Swift", "Albatross", "Condor", "Kestrel", "Merlin", "Harrier",
+                "Heron", "Raven", "Sparrow", "Vireo", "Peregrine", "Goshawk", "Avocet", "Tern", "Cormorant", "Buzzard",
+                "Crane", "Lark", "Oriole", "Jay", "Wren", "Finch", "Bittern", "Snipe", "Stork", "Ibis"
+            };
+            String birdName = birdNames[idx % birdNames.length];
+            // Match 2D panel: Callsign | Serial | Owner | Model | Bird
+            String info = String.format("%-12s  |  %-15s  |  %-20s  |  %s %s",
+                jp.getCallsign(), jp.getSerialNumber(), jp.getOwnerName(), jp.getModel(), birdName);
+            g2d.setColor(new Color(255, 255, 200));
+            g2d.drawString(info, 20, y);
             y += lineHeight;
-            
+
             // City info
             g2d.setColor(Color.WHITE);
             g2d.drawString("City: " + cityName, 20, y);
             y += lineHeight;
-            
+
             // Nearby jetpacks count
             List<JetPackFlight> nearby = getNearbyJetpacks();
             if (!nearby.isEmpty()) {

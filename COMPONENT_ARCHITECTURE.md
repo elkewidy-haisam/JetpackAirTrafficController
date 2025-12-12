@@ -1,41 +1,32 @@
 # Swing Component Architecture
 
-## Component Hierarchy
+## Component Hierarchy (December 2025)
 
 ```
 AirTrafficControllerFrame (JFrame)
-│
 ├── CitySelectionPanel (extracted - CitySelectionPanel.java)
 │   ├── JLabel (instructionLabel)
 │   ├── JComboBox<String> (cityComboBox)
 │   └── JButton (selectButton)
-│
 ├── ConsoleOutputPanel (extracted - ConsoleOutputPanel.java)
 │   └── JTextArea (consoleOutput) in JScrollPane
-│
 └── CityMapPanel (inner class - complex, stays in main frame)
-    │
     ├── Map Display (CENTER)
     │   └── MapDisplayPanel (extracted - MapDisplayPanel.java)
     │       ├── ImageIcon (city map)
     │       ├── JetPackFlight animations (draws jetpacks)
     │       ├── Parking spaces rendering
     │       └── Time-based shading overlay
-    │
     ├── Control Panel (EAST - right side)
     │   └── CityControlPanel (extracted - CityControlPanel.java)
     │       ├── DateTimeDisplayPanel (extracted)
     │       │   └── JTextArea (date/time display)
-    │       │
     │       ├── WeatherBroadcastPanel (extracted)
     │       │   └── JTextArea (weather info)
-    │       │
     │       ├── JetpackMovementPanel (extracted)
     │       │   └── JTextArea (movement logs)
-    │       │
     │       └── RadioInstructionsPanel (extracted)
     │           └── JTextArea (radio comms)
-    │
     └── Jetpack List (SOUTH - bottom)
         └── JetpackListPanel (extracted - JetpackListPanel.java)
             └── JTextArea (jetpack table)

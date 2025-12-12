@@ -1,245 +1,1214 @@
 === JETPACK MOVEMENT LOG ===
 City: New York
-Application started: 2025-12-10 17:53:48
+Application started: 2025-12-11 19:31:35
 ==================================================
-[17:54:19] Michael #8 moving 🚀 West (816 units)
-[17:54:21] Amanda #7 moving 🚀 Northwest (735 units)
-[17:54:21] Michael #2 moving 🚀 West (877 units)
-[17:54:21] Jane #6 moving 🚀 North (287 units)
-[17:54:21] Sarah #5 moving 🚀 Northeast (567 units)
-[17:54:21] Sarah #7 moving 🚀 West (972 units)
-[17:54:22] Jane #8 moving 🚀 Northeast (749 units)
-[17:54:22] Robert #6 moving 🚀 Northeast (1179 units)
-[17:54:22] Michael #1 moving 🚀 East (1135 units)
-[17:54:22] Emily #2 moving 🚀 Northwest (411 units)
-[17:54:22] Amanda #3 moving 🚀 Southeast (616 units)
-[17:54:22] Michael #3 moving 🚀 Southwest (690 units)
-[17:54:22] John #6 moving 🚀 Southwest (644 units)
-[17:54:22] Michael #6 moving 🚀 South (404 units)
-[17:54:23] Robert #8 moving 🚀 West (358 units)
-[17:54:23] Emily #1 moving 🚀 Southeast (1179 units)
-[17:54:24] John #9 moving 🚀 Northeast (790 units)
-[17:54:24] Amanda #4 moving 🚀 South (586 units)
-[17:54:24] Robert #3 moving 🚀 East (458 units)
-[17:54:24] Robert #5 moving 🚀 South (367 units)
-[17:54:24] John #5 moving 🚀 Southwest (840 units)
-[17:54:24] Lisa #8 moving 🚀 South (736 units)
-[17:54:24] Chris #1 moving 🚀 Southwest (170 units)
-[17:54:25] David #1 moving 🚀 Southeast (344 units)
-[17:54:25] Chris #5 moving 🚀 West (527 units)
-[17:54:25] Lisa #9 moving 🚀 West (879 units)
-[17:54:26] Robert #2 moving 🚀 Southeast (841 units)
-[17:54:26] Robert #1 moving 🚀 Northeast (546 units)
-[17:54:26] Lisa #10 moving 🚀 West (630 units)
-[17:54:26] John #8 moving 🚀 Southeast (386 units)
-[17:54:26] Jane #6 moving 🚀 West (601 units)
-[17:54:27] Michael #5 moving 🚀 East (719 units)
-[17:54:27] John #10 moving 🚀 West (749 units)
-[17:54:28] Robert #9 moving 🚀 South (202 units)
-[17:54:28] Amanda #6 moving 🚀 Northwest (579 units)
-[17:54:28] Chris #1 moving 🚀 East (394 units)
-[17:54:28] Chris #4 moving 🚀 Northeast (1090 units)
-[17:54:29] Lisa #1 moving 🚀 Southwest (118 units)
-[17:54:29] Jane #3 moving 🚀 West (508 units)
-[17:54:29] Lisa #5 moving 🚀 North (733 units)
-[17:54:29] John #1 moving 🚀 Northwest (670 units)
-[17:54:29] Emily #8 moving 🚀 Northeast (694 units)
-[17:54:29] Amanda #8 moving 🚀 North (564 units)
-[17:54:29] Emily #3 moving 🚀 South (84 units)
-[17:54:29] Chris #7 moving 🚀 West (605 units)
-[17:54:29] Emily #9 moving 🚀 Southwest (1193 units)
-[17:54:30] Emily #4 moving 🚀 Northeast (619 units)
-[17:54:30] Chris #8 moving 🚀 West (401 units)
-[17:54:30] Robert #8 moving 🚀 East (1159 units)
-[17:54:30] Emily #6 moving 🚀 Southwest (852 units)
-[17:54:30] David #2 moving 🚀 West (700 units)
-[17:54:30] Emily #2 moving 🚀 South (381 units)
-[17:54:30] Jane #4 moving 🚀 Southeast (489 units)
-[17:54:31] Sarah #4 moving 🚀 Northwest (725 units)
-[17:54:31] Lisa #2 moving 🚀 East (937 units)
-[17:54:31] Chris #9 moving 🚀 Northwest (267 units)
-[17:54:31] Emily #3 moving 🚀 South (705 units)
-[17:54:31] Michael #6 moving 🚀 Northeast (559 units)
-[17:54:31] Lisa #1 moving 🚀 North (648 units)
-[17:54:31] Amanda #10 moving 🚀 South (419 units)
-[17:54:31] Jane #10 moving 🚀 West (356 units)
-[17:54:32] Robert #5 moving 🚀 South (358 units)
-[17:54:32] Lisa #7 moving 🚀 Northwest (716 units)
-[17:54:32] Robert #9 moving 🚀 Northeast (651 units)
-[17:54:35] David #1 moving 🚀 Southwest (229 units)
-[17:54:35] Chris #2 moving 🚀 Northeast (214 units)
-[17:54:35] Michael #4 moving 🚀 West (554 units)
-[17:54:36] Sarah #2 acknowledges radio instruction: Proceeding to (158,208) - Direct routing
-[17:54:36] Jane #5 moving 🚀 East (974 units)
-[17:54:37] Jane #1 moving 🚀 Southwest (426 units)
-[17:54:37] Emily #7 moving 🚀 Northeast (948 units)
-[17:54:37] Robert #4 moving 🚀 South (354 units)
-[17:54:38] Lisa #4 moving 🚀 North (114 units)
-[17:54:38] Emily #5 moving 🚀 South (448 units)
-[17:54:38] Sarah #5 moving 🚀 Southeast (320 units)
-[17:54:39] David #10 moving 🚀 West (709 units)
-[17:54:39] Sarah #2 moving 🚀 Northeast (627 units)
-[17:54:40] Jane #2 moving 🚀 East (881 units)
-[17:54:40] David #6 moving 🚀 North (896 units)
-[17:54:40] Jane #7 moving 🚀 Northwest (589 units)
-[17:54:40] Robert #3 moving 🚀 Southwest (720 units)
-[17:54:40] Robert #10 moving 🚀 West (1280 units)
-[17:54:41] Amanda #5 moving 🚀 Northeast (864 units)
-[17:54:41] Robert #7 moving 🚀 Southwest (960 units)
-[17:54:42] John #8 moving 🚀 South (273 units)
-[17:54:42] Michael #10 moving 🚀 South (432 units)
-[17:54:43] Sarah #3 moving 🚀 West (1177 units)
-[17:54:44] Amanda #3 moving 🚀 Northwest (711 units)
-[17:54:44] Michael #7 moving 🚀 West (816 units)
-[17:54:44] Sarah #1 moving 🚀 Southwest (1450 units)
-[17:54:45] Lisa #4 moving 🚀 West (1226 units)
-[17:54:46] Chris #5 moving 🚀 Southwest (280 units)
-[17:54:47] Amanda #7 moving 🚀 East (764 units)
-[17:54:47] Amanda #4 moving 🚀 Southeast (163 units)
-[17:54:48] John #6 moving 🚀 Northeast (900 units)
-[17:54:48] Emily #10 moving 🚀 Northwest (1019 units)
-[17:54:49] Chris #1 moving 🚀 East (885 units)
-[17:54:49] Chris #9 moving 🚀 North (416 units)
-[17:54:49] Chris #2 moving 🚀 Southeast (821 units)
-[17:54:50] David #1 moving 🚀 Northwest (945 units)
-[17:54:50] Sarah #6 moving 🚀 Southeast (704 units)
-[17:54:50] Michael #8 moving 🚀 East (1071 units)
-[17:54:50] Chris #6 moving 🚀 Northwest (135 units)
-[17:54:50] Michael #3 moving 🚀 Southwest (374 units)
-[17:54:51] Sarah #8 moving 🚀 Southeast (701 units)
-[17:54:51] David #3 moving 🚀 South (723 units)
-[17:54:51] Amanda #2 moving 🚀 Northeast (319 units)
-[17:54:52] Jane #8 moving 🚀 West (464 units)
-[17:54:52] Robert #1 moving 🚀 Southeast (566 units)
-[17:54:52] Lisa #6 moving 🚀 East (691 units)
-[17:54:53] David #5 moving 🚀 West (859 units)
-[17:54:54] David #7 moving 🚀 West (255 units)
-[17:54:55] Emily #10 acknowledges radio instruction: Proceeding to (519,848) - Direct routing
-[17:54:55] Emily #2 moving 🚀 North (367 units)
-[17:54:55] Chris #8 moving 🚀 East (590 units)
-[17:54:56] Jane #10 moving 🚀 Northwest (499 units)
-[17:54:56] Michael #2 moving 🚀 East (463 units)
-[17:54:57] David #4 moving 🚀 Northwest (871 units)
-[17:54:57] David #9 moving 🚀 Northwest (459 units)
-[17:54:57] Robert #5 moving 🚀 West (373 units)
-[17:54:57] Jane #6 moving 🚀 North (196 units)
-[17:54:57] Lisa #10 moving 🚀 Southeast (377 units)
-[17:54:57] Amanda #4 moving 🚀 North (553 units)
-[17:54:58] Jane #3 moving 🚀 North (410 units)
-[17:54:58] Chris #6 moving 🚀 Northwest (297 units)
-[17:54:58] Sarah #5 moving 🚀 Northeast (82 units)
-[17:54:58] Amanda #9 moving 🚀 Northeast (348 units)
-[17:54:59] Amanda #1 moving 🚀 Southeast (141 units)
-[17:54:59] John #8 moving 🚀 Northeast (180 units)
-[17:54:59] Lisa #8 moving 🚀 Northeast (684 units)
-[17:54:59] Robert #4 moving 🚀 West (317 units)
-[17:55:00] Amanda #10 moving 🚀 Northwest (275 units)
-[17:55:00] John #9 moving 🚀 Northwest (206 units)
-[17:55:00] Michael #9 moving 🚀 East (1131 units)
-[17:55:00] Amanda #6 moving 🚀 South (298 units)
-[17:55:00] Sarah #9 moving 🚀 West (396 units)
-[17:55:01] Lisa #3 moving 🚀 Northeast (875 units)
-[17:55:01] John #7 moving 🚀 North (752 units)
-[17:55:02] Jane #4 moving 🚀 North (895 units)
-[17:55:02] John #2 moving 🚀 North (627 units)
-[17:55:03] Amanda #8 moving 🚀 South (854 units)
-[17:55:03] Chris #3 moving 🚀 Southeast (622 units)
-[17:55:03] Chris #10 moving 🚀 East (257 units)
-[17:55:03] Jane #1 moving 🚀 Northeast (471 units)
-[17:55:03] Sarah #5 moving 🚀 West (312 units)
-[17:55:04] Michael #5 acknowledges radio instruction: Proceeding to (1329,280) - Traffic separation
-[17:55:04] Chris #5 moving 🚀 Northeast (489 units)
-[17:55:05] Sarah #7 moving 🚀 East (829 units)
-[17:55:05] John #5 moving 🚀 East (660 units)
-[17:55:05] Chris #7 moving 🚀 East (843 units)
-[17:55:06] Emily #5 moving 🚀 South (480 units)
-[17:55:06] Michael #5 moving 🚀 West (318 units)
-[17:55:07] John #3 moving 🚀 Southeast (792 units)
-[17:55:07] Michael #6 moving 🚀 West (887 units)
-[17:55:07] Amanda #1 moving 🚀 East (561 units)
-[17:55:08] Emily #4 moving 🚀 South (746 units)
-[17:55:08] John #1 moving 🚀 Southeast (345 units)
-[17:55:08] John #10 moving 🚀 East (1249 units)
-[17:55:09] David #7 moving 🚀 North (700 units)
-[17:55:09] Lisa #9 moving 🚀 Southeast (994 units)
-[17:55:09] Michael #10 moving 🚀 Northeast (419 units)
-[17:55:09] Jane #6 moving 🚀 Southeast (636 units)
-[17:55:09] Robert #2 moving 🚀 South (565 units)
-[17:55:10] Michael #4 moving 🚀 North (880 units)
-[17:55:10] John #8 moving 🚀 Northwest (832 units)
-[17:55:10] David #8 moving 🚀 East (792 units)
-[17:55:10] Amanda #2 moving 🚀 Southeast (543 units)
-[17:55:10] Emily #8 moving 🚀 West (734 units)
-[17:55:10] Sarah #10 moving 🚀 Northeast (955 units)
-[17:55:10] John #4 moving 🚀 West (366 units)
-[17:55:12] Lisa #5 moving 🚀 South (726 units)
-[17:55:12] Jane #9 moving 🚀 East (1342 units)
-[17:55:12] John #9 moving 🚀 Northwest (573 units)
-[17:55:13] Michael #3 moving 🚀 Northeast (983 units)
-[17:55:13] Lisa #1 moving 🚀 East (349 units)
-[17:55:14] Chris #9 moving 🚀 East (969 units)
-[17:55:14] David #2 moving 🚀 East (726 units)
-[17:55:14] Robert #9 moving 🚀 Southwest (751 units)
-[17:55:15] Michael #1 moving 🚀 Northwest (620 units)
-[17:55:15] Emily #3 moving 🚀 Northwest (811 units)
-[17:55:15] Jane #7 moving 🚀 East (1308 units)
-[17:55:16] Chris #6 moving 🚀 South (697 units)
-[17:55:16] Sarah #4 moving 🚀 Northeast (400 units)
-[17:55:16] Amanda #10 moving 🚀 Northeast (659 units)
-[17:55:17] Emily #2 moving 🚀 Southeast (315 units)
-[17:55:17] Robert #6 moving 🚀 Southwest (189 units)
-[17:55:18] Sarah #2 moving 🚀 South (157 units)
-[17:55:18] Amanda #6 moving 🚀 Northeast (297 units)
-[17:55:18] Robert #4 moving 🚀 Southwest (137 units)
-[17:55:18] Chris #10 moving 🚀 Northeast (796 units)
-[17:55:19] Lisa #7 moving 🚀 Southwest (395 units)
-[17:55:19] Amanda #9 moving 🚀 Southeast (115 units)
-[17:55:19] Jane #8 moving 🚀 Southeast (589 units)
-[17:55:19] Robert #5 moving 🚀 South (131 units)
-[17:55:20] Lisa #10 moving 🚀 Northeast (396 units)
-[17:55:21] Sarah #5 moving 🚀 North (349 units)
-[17:55:22] David #10 moving 🚀 South (407 units)
-[17:55:22] Jane #3 moving 🚀 East (735 units)
-[17:55:22] Emily #6 moving 🚀 North (108 units)
-[17:55:23] Emily #10 acknowledges radio instruction: Proceeding to (806,479) - Traffic separation
-[17:55:23] Emily #1 moving 🚀 Northwest (863 units)
-[17:55:24] Sarah #9 moving 🚀 Southwest (226 units)
-[17:55:24] Michael #2 moving 🚀 South (514 units)
-[17:55:24] Robert #3 moving 🚀 Northeast (1152 units)
-[17:55:24] David #9 moving 🚀 West (422 units)
-[17:55:25] Michael #5 moving 🚀 West (938 units)
-[17:55:25] Emily #10 moving 🚀 Northeast (183 units)
-[17:55:26] Robert #1 moving 🚀 Northwest (595 units)
-[17:55:26] Amanda #9 moving 🚀 Northwest (744 units)
-[17:55:26] Jane #10 moving 🚀 East (559 units)
-[17:55:26] Robert #4 moving 🚀 Northwest (584 units)
-[17:55:27] Sarah #2 moving 🚀 East (382 units)
-[17:55:27] Amanda #3 moving 🚀 Southeast (530 units)
-[17:55:27] Robert #5 moving 🚀 Northwest (958 units)
-[17:55:29] John #1 moving 🚀 East (434 units)
-[17:55:29] Robert #6 moving 🚀 Southwest (744 units)
-[17:55:29] Lisa #2 moving 🚀 Northwest (950 units)
-[17:55:29] Emily #6 moving 🚀 Northwest (650 units)
-[17:55:30] Chris #8 moving 🚀 North (641 units)
-[17:55:31] Amanda #4 moving 🚀 Southwest (550 units)
-[17:55:31] Jane #1 moving 🚀 Southwest (902 units)
-[17:55:32] Chris #4 moving 🚀 Southwest (1032 units)
-[17:55:32] Sarah #6 moving 🚀 East (696 units)
-[17:55:32] John #4 moving 🚀 Northeast (494 units)
-[17:55:33] Sarah #8 moving 🚀 Northeast (888 units)
-[17:55:33] Jane #2 moving 🚀 North (532 units)
-[17:55:33] Chris #5 moving 🚀 Northeast (796 units)
-[17:55:34] Amanda #5 moving 🚀 Southwest (1151 units)
-[17:55:34] Amanda #7 moving 🚀 Southwest (1319 units)
-[17:55:34] Michael #7 moving 🚀 Southeast (1062 units)
-[17:55:34] Lisa #6 moving 🚀 Northeast (225 units)
-[17:55:34] Michael #10 moving 🚀 North (649 units)
-[17:55:35] Lisa #1 moving 🚀 West (1102 units)
-[17:55:35] David #3 moving 🚀 Northeast (741 units)
-[17:55:35] David #6 moving 🚀 Southwest (169 units)
-[17:55:35] Emily #5 moving 🚀 Northeast (956 units)
-[17:55:35] Emily #7 moving 🚀 Northeast (159 units)
-[17:55:35] Jane #5 moving 🚀 Southwest (541 units)
-[17:55:35] Amanda #6 moving 🚀 Northeast (567 units)
-[17:55:36] Emily #2 moving 🚀 North (844 units)
-[17:55:36] Emily #10 moving 🚀 Northeast (606 units)
+[19:31:37] John #1 moving 🚀 East (641 units)
+[19:31:37] John #1 🚀 heading to parking NEW-P46
+[19:31:37] Jane #1 moving 🚀 Southwest (1134 units)
+[19:31:37] Jane #1 🚀 heading to parking NEW-P49
+[19:31:37] Michael #1 moving 🚀 South (725 units)
+[19:31:37] Michael #1 🚀 heading to parking NEW-P93
+[19:31:37] Sarah #1 moving 🚀 East (1256 units)
+[19:31:37] Sarah #1 🚀 heading to parking NEW-P78
+[19:31:37] David #1 moving 🚀 West (372 units)
+[19:31:37] David #1 🚀 heading to parking NEW-P2
+[19:31:37] Emily #1 moving 🚀 Southwest (188 units)
+[19:31:37] Emily #1 🚀 heading to parking NEW-P49
+[19:31:37] Chris #1 moving 🚀 Southwest (961 units)
+[19:31:37] Chris #1 🚀 heading to parking NEW-P85
+[19:31:37] Amanda #1 moving 🚀 East (556 units)
+[19:31:37] Amanda #1 🚀 heading to parking NEW-P45
+[19:31:37] Robert #1 moving 🚀 Southwest (491 units)
+[19:31:37] Robert #1 🚀 heading to parking NEW-P95
+[19:31:37] Lisa #1 moving 🚀 East (41 units)
+[19:31:37] Lisa #1 🚀 heading to parking NEW-P50
+[19:31:37] John #2 moving 🚀 East (735 units)
+[19:31:37] John #2 🚀 heading to parking NEW-P60
+[19:31:37] Jane #2 moving 🚀 Northeast (1011 units)
+[19:31:37] Jane #2 🚀 heading to parking NEW-P47
+[19:31:37] Michael #2 moving 🚀 Southwest (883 units)
+[19:31:37] Michael #2 🚀 heading to parking NEW-P74
+[19:31:37] Sarah #2 moving 🚀 Southwest (714 units)
+[19:31:37] Sarah #2 🚀 heading to parking NEW-P10
+[19:31:37] David #2 moving 🚀 South (481 units)
+[19:31:37] David #2 🚀 heading to parking NEW-P39
+[19:31:37] Emily #2 moving 🚀 Northeast (803 units)
+[19:31:37] Emily #2 🚀 heading to parking NEW-P99
+[19:31:37] Chris #2 moving 🚀 Northwest (1028 units)
+[19:31:37] Chris #2 🚀 heading to parking NEW-P7
+[19:31:37] Amanda #2 moving 🚀 East (396 units)
+[19:31:37] Amanda #2 🚀 heading to parking NEW-P9
+[19:31:37] Robert #2 moving 🚀 West (574 units)
+[19:31:37] Robert #2 🚀 heading to parking NEW-P8
+[19:31:37] Lisa #2 moving 🚀 West (212 units)
+[19:31:37] Lisa #2 🚀 heading to parking NEW-P66
+[19:31:37] John #3 moving 🚀 East (910 units)
+[19:31:37] John #3 🚀 heading to parking NEW-P25
+[19:31:37] Jane #3 moving 🚀 Southwest (598 units)
+[19:31:37] Jane #3 🚀 heading to parking NEW-P65
+[19:31:37] Michael #3 moving 🚀 East (640 units)
+[19:31:37] Michael #3 🚀 heading to parking NEW-P22
+[19:31:37] Sarah #3 moving 🚀 Southeast (285 units)
+[19:31:37] Sarah #3 🚀 heading to parking NEW-P41
+[19:31:37] David #3 moving 🚀 West (1054 units)
+[19:31:37] David #3 🚀 heading to parking NEW-P53
+[19:31:37] Emily #3 moving 🚀 Southwest (584 units)
+[19:31:37] Emily #3 🚀 heading to parking NEW-P31
+[19:31:37] Chris #3 moving 🚀 Southwest (64 units)
+[19:31:37] Chris #3 🚀 heading to parking NEW-P70
+[19:31:37] Amanda #3 moving 🚀 Northeast (553 units)
+[19:31:37] Amanda #3 🚀 heading to parking NEW-P39
+[19:31:37] Robert #3 moving 🚀 West (1008 units)
+[19:31:37] Robert #3 🚀 heading to parking NEW-P16
+[19:31:37] Lisa #3 moving 🚀 West (1204 units)
+[19:31:37] Lisa #3 🚀 heading to parking NEW-P90
+[19:31:37] John #4 moving 🚀 Northeast (1286 units)
+[19:31:37] John #4 🚀 heading to parking NEW-P13
+[19:31:37] Jane #4 moving 🚀 West (280 units)
+[19:31:37] Jane #4 🚀 heading to parking NEW-P21
+[19:31:37] Michael #4 moving 🚀 Southeast (361 units)
+[19:31:37] Michael #4 🚀 heading to parking NEW-P10
+[19:31:37] Sarah #4 moving 🚀 Southwest (336 units)
+[19:31:37] Sarah #4 🚀 heading to parking NEW-P77
+[19:31:37] David #4 moving 🚀 Southeast (1088 units)
+[19:31:37] David #4 🚀 heading to parking NEW-P72
+[19:31:37] Emily #4 moving 🚀 East (246 units)
+[19:31:37] Emily #4 🚀 heading to parking NEW-P48
+[19:31:37] Chris #4 moving 🚀 Southwest (1057 units)
+[19:31:37] Chris #4 🚀 heading to parking NEW-P67
+[19:31:37] Amanda #4 moving 🚀 Southeast (1069 units)
+[19:31:37] Amanda #4 🚀 heading to parking NEW-P77
+[19:31:37] Robert #4 moving 🚀 West (371 units)
+[19:31:37] Robert #4 🚀 heading to parking NEW-P42
+[19:31:37] Lisa #4 moving 🚀 West (585 units)
+[19:31:37] Lisa #4 🚀 heading to parking NEW-P40
+[19:31:38] John #5 moving 🚀 Northeast (621 units)
+[19:31:38] John #5 🚀 heading to parking NEW-P81
+[19:31:38] Jane #5 moving 🚀 Northwest (466 units)
+[19:31:38] Jane #5 🚀 heading to parking NEW-P11
+[19:31:38] Michael #5 moving 🚀 North (792 units)
+[19:31:38] Michael #5 🚀 heading to parking NEW-P50
+[19:31:38] Sarah #5 moving 🚀 Northeast (399 units)
+[19:31:38] Sarah #5 🚀 heading to parking NEW-P80
+[19:31:38] David #5 moving 🚀 Southeast (1085 units)
+[19:31:38] David #5 🚀 heading to parking NEW-P72
+[19:31:38] Emily #5 moving 🚀 Northwest (536 units)
+[19:31:38] Emily #5 🚀 heading to parking NEW-P44
+[19:31:38] Chris #5 moving 🚀 Northeast (238 units)
+[19:31:38] Chris #5 🚀 heading to parking NEW-P99
+[19:31:38] Amanda #5 moving 🚀 Southeast (255 units)
+[19:31:38] Amanda #5 🚀 heading to parking NEW-P40
+[19:31:38] Robert #5 moving 🚀 Southwest (806 units)
+[19:31:38] Robert #5 🚀 heading to parking NEW-P56
+[19:31:38] Lisa #5 moving 🚀 Northwest (899 units)
+[19:31:38] Lisa #5 🚀 heading to parking NEW-P80
+[19:31:38] John #6 moving 🚀 Southeast (1248 units)
+[19:31:38] John #6 🚀 heading to parking NEW-P98
+[19:31:38] Jane #6 moving 🚀 Southeast (471 units)
+[19:31:38] Jane #6 🚀 heading to parking NEW-P73
+[19:31:38] Michael #6 moving 🚀 Northeast (448 units)
+[19:31:38] Michael #6 🚀 heading to parking NEW-P25
+[19:31:38] Sarah #6 moving 🚀 East (543 units)
+[19:31:38] Sarah #6 🚀 heading to parking NEW-P51
+[19:31:38] David #6 moving 🚀 Northwest (900 units)
+[19:31:38] David #6 🚀 heading to parking NEW-P55
+[19:31:38] Emily #6 moving 🚀 Northeast (1124 units)
+[19:31:38] Emily #6 🚀 heading to parking NEW-P15
+[19:31:38] Chris #6 moving 🚀 South (734 units)
+[19:31:38] Chris #6 🚀 heading to parking NEW-P56
+[19:31:38] Amanda #6 moving 🚀 Northwest (59 units)
+[19:31:38] Amanda #6 🚀 heading to parking NEW-P59
+[19:31:38] Robert #6 moving 🚀 Southeast (95 units)
+[19:31:38] Robert #6 🚀 heading to parking NEW-P72
+[19:31:38] Lisa #6 moving 🚀 Northwest (655 units)
+[19:31:38] Lisa #6 🚀 heading to parking NEW-P26
+[19:31:38] John #7 moving 🚀 South (366 units)
+[19:31:38] John #7 🚀 heading to parking NEW-P1
+[19:31:38] Jane #7 moving 🚀 South (474 units)
+[19:31:38] Jane #7 🚀 heading to parking NEW-P100
+[19:31:38] Michael #7 moving 🚀 West (1103 units)
+[19:31:38] Michael #7 🚀 heading to parking NEW-P89
+[19:31:38] Sarah #7 moving 🚀 Southeast (1102 units)
+[19:31:38] Sarah #7 🚀 heading to parking NEW-P72
+[19:31:38] David #7 moving 🚀 Northwest (770 units)
+[19:31:38] David #7 🚀 heading to parking NEW-P23
+[19:31:38] Emily #7 moving 🚀 South (381 units)
+[19:31:38] Emily #7 🚀 heading to parking NEW-P92
+[19:31:38] Chris #7 moving 🚀 Southwest (844 units)
+[19:31:38] Chris #7 🚀 heading to parking NEW-P86
+[19:31:38] Amanda #7 moving 🚀 South (498 units)
+[19:31:38] Amanda #7 🚀 heading to parking NEW-P77
+[19:31:38] Robert #7 moving 🚀 East (363 units)
+[19:31:38] Robert #7 🚀 heading to parking NEW-P7
+[19:31:38] Lisa #7 moving 🚀 Northwest (620 units)
+[19:31:38] Lisa #7 🚀 heading to parking NEW-P7
+[19:31:38] John #8 moving 🚀 Northeast (567 units)
+[19:31:38] John #8 🚀 heading to parking NEW-P70
+[19:31:38] Jane #8 moving 🚀 South (350 units)
+[19:31:38] Jane #8 🚀 heading to parking NEW-P40
+[19:31:38] Michael #8 moving 🚀 Northwest (393 units)
+[19:31:38] Michael #8 🚀 heading to parking NEW-P25
+[19:31:38] Sarah #8 moving 🚀 Northwest (247 units)
+[19:31:38] Sarah #8 🚀 heading to parking NEW-P18
+[19:31:38] David #8 moving 🚀 South (830 units)
+[19:31:38] David #8 🚀 heading to parking NEW-P34
+[19:31:38] Emily #8 moving 🚀 East (1048 units)
+[19:31:38] Emily #8 🚀 heading to parking NEW-P81
+[19:31:38] Chris #8 moving 🚀 West (1110 units)
+[19:31:38] Chris #8 🚀 heading to parking NEW-P97
+[19:31:38] Amanda #8 moving 🚀 West (128 units)
+[19:31:38] Amanda #8 🚀 heading to parking NEW-P32
+[19:31:38] Robert #8 moving 🚀 Northeast (614 units)
+[19:31:38] Robert #8 🚀 heading to parking NEW-P88
+[19:31:38] Lisa #8 moving 🚀 North (461 units)
+[19:31:38] Lisa #8 🚀 heading to parking NEW-P2
+[19:31:38] John #9 moving 🚀 Northeast (552 units)
+[19:31:38] John #9 🚀 heading to parking NEW-P22
+[19:31:38] Jane #9 moving 🚀 Northeast (1436 units)
+[19:31:38] Jane #9 🚀 heading to parking NEW-P50
+[19:31:38] Michael #9 moving 🚀 Northeast (854 units)
+[19:31:38] Michael #9 🚀 heading to parking NEW-P8
+[19:31:38] Sarah #9 moving 🚀 West (416 units)
+[19:31:38] Sarah #9 🚀 heading to parking NEW-P79
+[19:31:38] David #9 moving 🚀 South (305 units)
+[19:31:38] David #9 🚀 heading to parking NEW-P64
+[19:31:38] Emily #9 moving 🚀 West (783 units)
+[19:31:38] Emily #9 🚀 heading to parking NEW-P31
+[19:31:38] Chris #9 moving 🚀 Northwest (1076 units)
+[19:31:38] Chris #9 🚀 heading to parking NEW-P90
+[19:31:38] Amanda #9 moving 🚀 East (207 units)
+[19:31:38] Amanda #9 🚀 heading to parking NEW-P77
+[19:31:38] Robert #9 moving 🚀 Southwest (615 units)
+[19:31:38] Robert #9 🚀 heading to parking NEW-P57
+[19:31:38] Lisa #9 moving 🚀 West (602 units)
+[19:31:38] Lisa #9 🚀 heading to parking NEW-P89
+[19:31:38] John #10 moving 🚀 West (834 units)
+[19:31:38] John #10 🚀 heading to parking NEW-P85
+[19:31:38] Jane #10 moving 🚀 Northwest (1040 units)
+[19:31:38] Jane #10 🚀 heading to parking NEW-P69
+[19:31:38] Michael #10 moving 🚀 West (563 units)
+[19:31:38] Michael #10 🚀 heading to parking NEW-P41
+[19:31:38] Sarah #10 moving 🚀 East (372 units)
+[19:31:38] Sarah #10 🚀 heading to parking NEW-P88
+[19:31:38] David #10 moving 🚀 Southwest (342 units)
+[19:31:38] David #10 🚀 heading to parking NEW-P67
+[19:31:38] Emily #10 moving 🚀 North (852 units)
+[19:31:38] Emily #10 🚀 heading to parking NEW-P68
+[19:31:38] Chris #10 moving 🚀 South (895 units)
+[19:31:39] Chris #10 🚀 heading to parking NEW-P45
+[19:31:39] Amanda #10 moving 🚀 Southwest (368 units)
+[19:31:39] Amanda #10 🚀 heading to parking NEW-P92
+[19:31:39] Robert #10 moving 🚀 West (700 units)
+[19:31:39] Robert #10 🚀 heading to parking NEW-P87
+[19:31:39] Lisa #10 moving 🚀 West (627 units)
+[19:31:39] Lisa #10 🚀 heading to parking NEW-P55
+[19:31:42] Lisa #1 ✓ landed at NEW-P50 (parking for ~82s)
+[19:31:43] Amanda #6 ✓ landed at NEW-P59 (parking for ~60s)
+[19:31:44] Chris #3 ✓ landed at NEW-P70 (parking for ~86s)
+[19:31:45] Amanda #6 🚀 departing from NEW-P59
+[19:31:45] Amanda #6 moving 🚀 Northeast (940 units)
+[19:31:45] Amanda #6 🚀 heading to parking NEW-P71
+[19:31:45] Robert #6 ✓ landed at NEW-P72 (parking for ~50s)
+[19:31:46] Chris #3 🚀 departing from NEW-P70
+[19:31:46] Chris #3 moving 🚀 West (619 units)
+[19:31:46] Chris #3 🚀 heading to parking NEW-P21
+[19:31:46] Robert #6 🚀 departing from NEW-P72
+[19:31:46] Robert #6 moving 🚀 Northwest (539 units)
+[19:31:46] Robert #6 🚀 heading to parking NEW-P63
+[19:31:46] Lisa #1 🚀 departing from NEW-P50
+[19:31:46] Lisa #1 moving 🚀 Southwest (905 units)
+[19:31:46] Lisa #1 🚀 heading to parking NEW-P21
+[19:31:46] Amanda #8 ✓ landed at NEW-P32 (parking for ~82s)
+[19:31:47] Amanda #8 🚀 departing from NEW-P32
+[19:31:47] Amanda #8 moving 🚀 Northeast (596 units)
+[19:31:47] Amanda #8 🚀 heading to parking NEW-P62
+[19:31:47] Emily #1 ✓ landed at NEW-P49 (parking for ~54s)
+[19:31:48] Amanda #9 ✓ landed at NEW-P77 (parking for ~56s)
+[19:31:48] Lisa #2 ✓ landed at NEW-P66 (parking for ~68s)
+[19:31:48] Amanda #9 🚀 departing from NEW-P77
+[19:31:48] Amanda #9 moving 🚀 Northwest (271 units)
+[19:31:48] Amanda #9 🚀 heading to parking NEW-P63
+[19:31:48] Chris #5 ✓ landed at NEW-P99 (parking for ~46s)
+[19:31:49] Emily #1 🚀 departing from NEW-P49
+[19:31:49] Emily #1 moving 🚀 West (228 units)
+[19:31:49] Emily #1 🚀 heading to parking NEW-P89
+[19:31:49] Lisa #2 🚀 departing from NEW-P66
+[19:31:49] Lisa #2 moving 🚀 Northeast (327 units)
+[19:31:49] Lisa #2 🚀 heading to parking NEW-P86
+[19:31:49] Emily #4 ✓ landed at NEW-P48 (parking for ~34s)
+[19:31:49] Sarah #8 ✓ landed at NEW-P18 (parking for ~54s)
+[19:31:49] Amanda #5 ✓ landed at NEW-P40 (parking for ~40s)
+[19:31:49] Chris #5 🚀 departing from NEW-P99
+[19:31:49] Emily #4 🚀 departing from NEW-P48
+[19:31:49] Chris #5 moving 🚀 West (344 units)
+[19:31:49] Chris #5 🚀 heading to parking NEW-P26
+[19:31:49] Emily #4 moving 🚀 North (410 units)
+[19:31:49] Emily #4 🚀 heading to parking NEW-P23
+[19:31:49] Sarah #8 🚀 departing from NEW-P18
+[19:31:49] Amanda #5 🚀 departing from NEW-P40
+[19:31:49] Amanda #5 moving 🚀 Northwest (516 units)
+[19:31:49] Amanda #5 🚀 heading to parking NEW-P20
+[19:31:49] Sarah #8 moving 🚀 Northeast (763 units)
+[19:31:49] Sarah #8 🚀 heading to parking NEW-P8
+[19:31:50] Jane #7 acknowledges radio instruction: Proceeding to (307,552) - Traffic separation
+[19:31:50] Jane #4 ✓ landed at NEW-P21 (parking for ~30s)
+[19:31:50] Sarah #3 ✓ landed at NEW-P41 (parking for ~54s)
+[19:31:50] Jane #4 🚀 departing from NEW-P21
+[19:31:50] Jane #4 moving 🚀 West (28 units)
+[19:31:50] Jane #4 🚀 heading to parking NEW-P21
+[19:31:50] Jane #4 ✓ landed at NEW-P21 (parking for ~90s)
+[19:31:50] David #9 ✓ landed at NEW-P64 (parking for ~70s)
+[19:31:50] Sarah #3 🚀 departing from NEW-P41
+[19:31:50] Sarah #3 moving 🚀 Northeast (560 units)
+[19:31:51] Sarah #3 🚀 heading to parking NEW-P99
+[19:31:51] Sarah #4 ✓ landed at NEW-P77 (parking for ~34s)
+[19:31:51] David #9 🚀 departing from NEW-P64
+[19:31:51] Jane #4 🚀 departing from NEW-P21
+[19:31:51] Jane #4 moving 🚀 East (539 units)
+[19:31:51] Jane #4 🚀 heading to parking NEW-P60
+[19:31:51] David #9 moving 🚀 East (433 units)
+[19:31:51] David #9 🚀 heading to parking NEW-P62
+[19:31:51] David #10 ✓ landed at NEW-P67 (parking for ~48s)
+[19:31:51] Jane #8 ✓ landed at NEW-P40 (parking for ~78s)
+[19:31:51] Sarah #4 🚀 departing from NEW-P77
+[19:31:51] Sarah #4 moving 🚀 North (570 units)
+[19:31:51] Sarah #4 🚀 heading to parking NEW-P58
+[19:31:52] Michael #4 ✓ landed at NEW-P10 (parking for ~58s)
+[19:31:52] Robert #7 ✓ landed at NEW-P7 (parking for ~76s)
+[19:31:52] John #7 ✓ landed at NEW-P1 (parking for ~78s)
+[19:31:52] David #10 🚀 departing from NEW-P67
+[19:31:52] David #10 moving 🚀 South (552 units)
+[19:31:52] David #10 🚀 heading to parking NEW-P74
+[19:31:52] Amanda #10 ✓ landed at NEW-P92 (parking for ~84s)
+[19:31:52] David #1 ✓ landed at NEW-P2 (parking for ~50s)
+[19:31:52] Robert #4 ✓ landed at NEW-P42 (parking for ~66s)
+[19:31:52] Sarah #10 ✓ landed at NEW-P88 (parking for ~64s)
+[19:31:52] Emily #7 ✓ landed at NEW-P92 (parking for ~62s)
+[19:31:52] Jane #8 🚀 departing from NEW-P40
+[19:31:52] Michael #4 🚀 departing from NEW-P10
+[19:31:52] Jane #8 moving 🚀 Northeast (546 units)
+[19:31:52] Jane #8 🚀 heading to parking NEW-P99
+[19:31:52] Michael #4 moving 🚀 North (537 units)
+[19:31:52] Michael #4 🚀 heading to parking NEW-P14
+[19:31:52] Michael #8 ✓ landed at NEW-P25 (parking for ~74s)
+[19:31:53] Amanda #2 ✓ landed at NEW-P9 (parking for ~64s)
+[19:31:53] Sarah #5 ✓ landed at NEW-P80 (parking for ~88s)
+[19:31:53] Robert #7 🚀 departing from NEW-P7
+[19:31:53] Robert #7 moving 🚀 West (429 units)
+[19:31:53] Robert #7 🚀 heading to parking NEW-P90
+[19:31:53] Robert #4 🚀 departing from NEW-P42
+[19:31:53] John #7 🚀 departing from NEW-P1
+[19:31:53] Sarah #10 🚀 departing from NEW-P88
+[19:31:53] Sarah #10 moving 🚀 Southeast (308 units)
+[19:31:53] Sarah #10 🚀 heading to parking NEW-P46
+[19:31:53] Robert #4 moving 🚀 Southeast (918 units)
+[19:31:53] Robert #4 🚀 heading to parking NEW-P17
+[19:31:53] John #7 moving 🚀 North (282 units)
+[19:31:53] John #7 🚀 heading to parking NEW-P42
+[19:31:53] Amanda #10 🚀 departing from NEW-P92
+[19:31:53] Amanda #10 moving 🚀 North (220 units)
+[19:31:53] Amanda #10 🚀 heading to parking NEW-P59
+[19:31:53] Emily #7 🚀 departing from NEW-P92
+[19:31:53] Emily #7 moving 🚀 Northeast (114 units)
+[19:31:53] Emily #7 🚀 heading to parking NEW-P12
+[19:31:53] Sarah #9 ✓ landed at NEW-P79 (parking for ~66s)
+[19:31:53] David #1 🚀 departing from NEW-P2
+[19:31:53] David #1 moving 🚀 East (856 units)
+[19:31:53] David #1 🚀 heading to parking NEW-P19
+[19:31:54] Amanda #2 🚀 departing from NEW-P9
+[19:31:54] Amanda #2 moving 🚀 Northeast (440 units)
+[19:31:54] Amanda #2 🚀 heading to parking NEW-P19
+[19:31:54] Michael #8 🚀 departing from NEW-P25
+[19:31:54] Michael #8 moving 🚀 Northwest (992 units)
+[19:31:54] Michael #8 🚀 heading to parking NEW-P20
+[19:31:54] Emily #1 ✓ landed at NEW-P89 (parking for ~30s)
+[19:31:54] Sarah #5 🚀 departing from NEW-P80
+[19:31:54] Sarah #5 moving 🚀 Northeast (29 units)
+[19:31:54] Sarah #5 🚀 heading to parking NEW-P80
+[19:31:54] Sarah #5 ✓ landed at NEW-P80 (parking for ~80s)
+[19:31:54] Michael #6 ✓ landed at NEW-P25 (parking for ~80s)
+[19:31:54] Sarah #9 🚀 departing from NEW-P79
+[19:31:54] Sarah #9 moving 🚀 South (587 units)
+[19:31:54] Sarah #9 🚀 heading to parking NEW-P54
+[19:31:55] Lisa #8 ✓ landed at NEW-P2 (parking for ~40s)
+[19:31:55] Jane #5 ✓ landed at NEW-P11 (parking for ~36s)
+[19:31:55] Jane #6 ✓ landed at NEW-P73 (parking for ~50s)
+[19:31:55] Emily #1 🚀 departing from NEW-P89
+[19:31:55] Emily #1 moving 🚀 Northeast (1168 units)
+[19:31:55] Emily #1 🚀 heading to parking NEW-P43
+[19:31:55] Amanda #9 ✓ landed at NEW-P63 (parking for ~44s)
+[19:31:55] David #2 ✓ landed at NEW-P39 (parking for ~66s)
+[19:31:55] Lisa #8 🚀 departing from NEW-P2
+[19:31:55] Lisa #8 moving 🚀 North (289 units)
+[19:31:55] Lisa #8 🚀 heading to parking NEW-P20
+[19:31:55] Jane #5 🚀 departing from NEW-P11
+[19:31:55] Jane #5 moving 🚀 Southwest (1036 units)
+[19:31:55] Jane #5 🚀 heading to parking NEW-P93
+[19:31:55] Sarah #5 🚀 departing from NEW-P80
+[19:31:55] Sarah #5 moving 🚀 Southeast (731 units)
+[19:31:55] Sarah #5 🚀 heading to parking NEW-P88
+[19:31:55] Michael #6 🚀 departing from NEW-P25
+[19:31:55] Michael #6 moving 🚀 West (680 units)
+[19:31:55] Michael #6 🚀 heading to parking NEW-P23
+[19:31:55] Robert #1 ✓ landed at NEW-P95 (parking for ~62s)
+[19:31:56] Jane #6 🚀 departing from NEW-P73
+[19:31:56] Jane #6 moving 🚀 Northwest (661 units)
+[19:31:56] Jane #6 🚀 heading to parking NEW-P64
+[19:31:56] Emily #7 ✓ landed at NEW-P12 (parking for ~40s)
+[19:31:56] Amanda #7 ✓ landed at NEW-P77 (parking for ~76s)
+[19:31:56] Amanda #9 🚀 departing from NEW-P63
+[19:31:56] Amanda #9 moving 🚀 Northwest (783 units)
+[19:31:56] Amanda #9 🚀 heading to parking NEW-P52
+[19:31:56] Emily #7 🚀 departing from NEW-P12
+[19:31:56] Emily #7 moving 🚀 Northeast (281 units)
+[19:31:56] Emily #7 🚀 heading to parking NEW-P10
+[19:31:57] Emily #5 ✓ landed at NEW-P44 (parking for ~72s)
+[19:31:57] Amanda #7 🚀 departing from NEW-P77
+[19:31:57] Amanda #7 moving 🚀 West (799 units)
+[19:31:57] Amanda #7 🚀 heading to parking NEW-P48
+[19:31:57] Sarah #6 ✓ landed at NEW-P51 (parking for ~48s)
+[19:31:57] Lisa #2 ✓ landed at NEW-P86 (parking for ~82s)
+[19:31:57] David #2 🚀 departing from NEW-P39
+[19:31:57] David #2 moving 🚀 Southeast (881 units)
+[19:31:57] David #2 🚀 heading to parking NEW-P3
+[19:31:57] Robert #1 🚀 departing from NEW-P95
+[19:31:57] Amanda #3 ✓ landed at NEW-P39 (parking for ~64s)
+[19:31:57] John #9 ✓ landed at NEW-P22 (parking for ~62s)
+[19:31:57] Robert #1 moving 🚀 Northwest (855 units)
+[19:31:57] Robert #1 🚀 heading to parking NEW-P79
+[19:31:57] Amanda #1 ✓ landed at NEW-P45 (parking for ~64s)
+[19:31:58] Michael #10 ✓ landed at NEW-P41 (parking for ~56s)
+[19:31:58] Sarah #6 🚀 departing from NEW-P51
+[19:31:58] Sarah #6 moving 🚀 West (1060 units)
+[19:31:58] Sarah #6 🚀 heading to parking NEW-P66
+[19:31:58] John #8 ✓ landed at NEW-P70 (parking for ~86s)
+[19:31:58] Emily #5 🚀 departing from NEW-P44
+[19:31:58] Robert #2 ✓ landed at NEW-P8 (parking for ~90s)
+[19:31:58] Emily #5 moving 🚀 Northeast (515 units)
+[19:31:58] Emily #5 🚀 heading to parking NEW-P26
+[19:31:58] Chris #5 ✓ landed at NEW-P26 (parking for ~80s)
+[19:31:58] Emily #3 ✓ landed at NEW-P31 (parking for ~40s)
+[19:31:58] John #9 🚀 departing from NEW-P22
+[19:31:58] Lisa #2 🚀 departing from NEW-P86
+[19:31:58] Amanda #3 🚀 departing from NEW-P39
+[19:31:58] Amanda #3 moving 🚀 Northwest (366 units)
+[19:31:58] Amanda #3 🚀 heading to parking NEW-P6
+[19:31:58] Lisa #4 ✓ landed at NEW-P40 (parking for ~38s)
+[19:31:58] John #9 moving 🚀 Southeast (340 units)
+[19:31:58] John #9 🚀 heading to parking NEW-P27
+[19:31:58] Lisa #2 moving 🚀 Northwest (444 units)
+[19:31:58] Lisa #2 🚀 heading to parking NEW-P5
+[19:31:59] Michael #10 🚀 departing from NEW-P41
+[19:31:59] Michael #10 moving 🚀 West (552 units)
+[19:31:59] Michael #10 🚀 heading to parking NEW-P49
+[19:31:59] Jane #3 ✓ landed at NEW-P65 (parking for ~74s)
+[19:31:59] Amanda #10 ✓ landed at NEW-P59 (parking for ~48s)
+[19:31:59] Emily #3 🚀 departing from NEW-P31
+[19:31:59] Emily #3 moving 🚀 Northeast (771 units)
+[19:31:59] Emily #3 🚀 heading to parking NEW-P83
+[19:31:59] Lisa #4 🚀 departing from NEW-P40
+[19:31:59] Lisa #9 ✓ landed at NEW-P89 (parking for ~62s)
+[19:31:59] Lisa #4 moving 🚀 Southwest (890 units)
+[19:31:59] Lisa #4 🚀 heading to parking NEW-P34
+[19:31:59] John #8 🚀 departing from NEW-P70
+[19:31:59] John #8 moving 🚀 Northwest (949 units)
+[19:31:59] John #8 🚀 heading to parking NEW-P7
+[19:31:59] Robert #8 ✓ landed at NEW-P88 (parking for ~58s)
+[19:32:00] Robert #9 ✓ landed at NEW-P57 (parking for ~30s)
+[19:32:00] Robert #2 🚀 departing from NEW-P8
+[19:32:00] Chris #5 🚀 departing from NEW-P26
+[19:32:00] Chris #5 moving 🚀 West (486 units)
+[19:32:00] Chris #5 🚀 heading to parking NEW-P20
+[19:32:00] Robert #2 moving 🚀 Southeast (748 units)
+[19:32:00] Robert #2 🚀 heading to parking NEW-P98
+[19:32:00] Lisa #7 ✓ landed at NEW-P7 (parking for ~60s)
+[19:32:00] Amanda #1 🚀 departing from NEW-P45
+[19:32:00] John #5 ✓ landed at NEW-P81 (parking for ~84s)
+[19:32:00] Amanda #1 moving 🚀 North (444 units)
+[19:32:00] Amanda #1 🚀 heading to parking NEW-P38
+[19:32:00] Amanda #10 🚀 departing from NEW-P59
+[19:32:00] Amanda #10 moving 🚀 East (615 units)
+[19:32:00] Amanda #10 🚀 heading to parking NEW-P38
+[19:32:00] Lisa #10 ✓ landed at NEW-P55 (parking for ~88s)
+[19:32:00] Robert #9 🚀 departing from NEW-P57
+[19:32:00] Robert #6 ✓ landed at NEW-P63 (parking for ~76s)
+[19:32:00] Robert #9 moving 🚀 Northwest (346 units)
+[19:32:00] Robert #9 🚀 heading to parking NEW-P91
+[19:32:00] Jane #3 🚀 departing from NEW-P65
+[19:32:01] Lisa #9 🚀 departing from NEW-P89
+[19:32:01] Jane #3 moving 🚀 North (928 units)
+[19:32:01] Jane #3 🚀 heading to parking NEW-P26
+[19:32:01] Lisa #9 moving 🚀 East (1270 units)
+[19:32:01] Lisa #9 🚀 heading to parking NEW-P37
+[19:32:01] John #1 ✓ landed at NEW-P46 (parking for ~62s)
+[19:32:01] Michael #3 ✓ landed at NEW-P22 (parking for ~80s)
+[19:32:01] Robert #8 🚀 departing from NEW-P88
+[19:32:01] Robert #8 moving 🚀 South (491 units)
+[19:32:01] Robert #8 🚀 heading to parking NEW-P17
+[19:32:01] Emily #4 ✓ landed at NEW-P23 (parking for ~60s)
+[19:32:01] Lisa #7 🚀 departing from NEW-P7
+[19:32:01] Lisa #7 moving 🚀 West (369 units)
+[19:32:01] Lisa #7 🚀 heading to parking NEW-P16
+[19:32:01] Lisa #6 ✓ landed at NEW-P26 (parking for ~36s)
+[19:32:01] John #7 ✓ landed at NEW-P42 (parking for ~46s)
+[19:32:02] John #5 🚀 departing from NEW-P81
+[19:32:02] John #5 moving 🚀 North (473 units)
+[19:32:02] John #5 🚀 heading to parking NEW-P19
+[19:32:02] Robert #6 🚀 departing from NEW-P63
+[19:32:02] Robert #6 moving 🚀 Northwest (683 units)
+[19:32:02] Robert #6 🚀 heading to parking NEW-P53
+[19:32:02] Lisa #10 🚀 departing from NEW-P55
+[19:32:02] Lisa #10 moving 🚀 Southeast (1026 units)
+[19:32:02] Lisa #10 🚀 heading to parking NEW-P45
+[19:32:02] Lisa #6 🚀 departing from NEW-P26
+[19:32:02] Lisa #6 moving 🚀 South (527 units)
+[19:32:02] Lisa #6 🚀 heading to parking NEW-P41
+[19:32:02] Emily #4 🚀 departing from NEW-P23
+[19:32:02] Emily #4 moving 🚀 Northeast (945 units)
+[19:32:02] Emily #4 🚀 heading to parking NEW-P99
+[19:32:02] Lisa #7 acknowledges radio instruction: Proceeding to (168,893) - Direct routing
+[19:32:02] John #7 🚀 departing from NEW-P42
+[19:32:03] Michael #3 🚀 departing from NEW-P22
+[19:32:03] Michael #3 moving 🚀 South (919 units)
+[19:32:03] Michael #3 🚀 heading to parking NEW-P78
+[19:32:03] John #7 moving 🚀 Northeast (362 units)
+[19:32:03] John #7 🚀 heading to parking NEW-P52
+[19:32:03] Sarah #10 ✓ landed at NEW-P46 (parking for ~46s)
+[19:32:03] Chris #3 ✓ landed at NEW-P21 (parking for ~48s)
+[19:32:03] Robert #10 ✓ landed at NEW-P87 (parking for ~40s)
+[19:32:03] John #1 🚀 departing from NEW-P46
+[19:32:03] John #1 moving 🚀 Northwest (560 units)
+[19:32:03] John #1 🚀 heading to parking NEW-P9
+[19:32:03] Sarah #10 🚀 departing from NEW-P46
+[19:32:04] Sarah #10 moving 🚀 West (1157 units)
+[19:32:04] Sarah #10 🚀 heading to parking NEW-P12
+[19:32:04] Sarah #2 ✓ landed at NEW-P10 (parking for ~66s)
+[19:32:04] Robert #10 🚀 departing from NEW-P87
+[19:32:04] Robert #10 moving 🚀 North (99 units)
+[19:32:04] Robert #10 🚀 heading to parking NEW-P20
+[19:32:04] Chris #3 🚀 departing from NEW-P21
+[19:32:04] Chris #3 moving 🚀 Northwest (724 units)
+[19:32:04] Chris #3 🚀 heading to parking NEW-P55
+[19:32:04] Michael #1 ✓ landed at NEW-P93 (parking for ~66s)
+[19:32:05] John #2 ✓ landed at NEW-P60 (parking for ~72s)
+[19:32:05] Chris #6 ✓ landed at NEW-P56 (parking for ~46s)
+[19:32:05] Amanda #8 ✓ landed at NEW-P62 (parking for ~60s)
+[19:32:05] Lisa #8 ✓ landed at NEW-P20 (parking for ~58s)
+[19:32:05] David #9 ✓ landed at NEW-P62 (parking for ~62s)
+[19:32:05] Chris #6 🚀 departing from NEW-P56
+[19:32:05] Chris #6 moving 🚀 Northeast (412 units)
+[19:32:05] Chris #6 🚀 heading to parking NEW-P75
+[19:32:05] Amanda #5 ✓ landed at NEW-P20 (parking for ~54s)
+[19:32:06] Amanda #8 🚀 departing from NEW-P62
+[19:32:06] Amanda #8 moving 🚀 Southwest (1245 units)
+[19:32:06] Amanda #8 🚀 heading to parking NEW-P56
+[19:32:06] David #7 ✓ landed at NEW-P23 (parking for ~72s)
+[19:32:06] Lisa #8 🚀 departing from NEW-P20
+[19:32:06] Emily #7 ✓ landed at NEW-P10 (parking for ~58s)
+[19:32:06] Lisa #8 moving 🚀 South (1043 units)
+[19:32:06] Lisa #8 🚀 heading to parking NEW-P56
+[19:32:06] David #9 🚀 departing from NEW-P62
+[19:32:06] David #9 moving 🚀 Northwest (935 units)
+[19:32:06] David #9 🚀 heading to parking NEW-P80
+[19:32:06] Sarah #2 🚀 departing from NEW-P10
+[19:32:06] Sarah #2 moving 🚀 East (477 units)
+[19:32:06] Sarah #2 🚀 heading to parking NEW-P38
+[19:32:06] Emily #9 ✓ landed at NEW-P31 (parking for ~54s)
+[19:32:07] Amanda #5 🚀 departing from NEW-P20
+[19:32:07] Amanda #5 moving 🚀 Southeast (237 units)
+[19:32:07] Amanda #5 🚀 heading to parking NEW-P7
+[19:32:07] Michael #1 🚀 departing from NEW-P93
+[19:32:07] Michael #5 ✓ landed at NEW-P50 (parking for ~32s)
+[19:32:07] Robert #10 ✓ landed at NEW-P20 (parking for ~76s)
+[19:32:07] Michael #1 moving 🚀 East (1056 units)
+[19:32:07] Michael #1 🚀 heading to parking NEW-P72
+[19:32:07] Emily #7 🚀 departing from NEW-P10
+[19:32:07] Emily #7 moving 🚀 Southwest (259 units)
+[19:32:07] Emily #7 🚀 heading to parking NEW-P48
+[19:32:07] Robert #7 ✓ landed at NEW-P90 (parking for ~88s)
+[19:32:08] Emily #2 ✓ landed at NEW-P99 (parking for ~78s)
+[19:32:08] Robert #5 ✓ landed at NEW-P56 (parking for ~80s)
+[19:32:08] David #7 🚀 departing from NEW-P23
+[19:32:08] David #7 moving 🚀 East (921 units)
+[19:32:08] David #7 🚀 heading to parking NEW-P43
+[19:32:08] John #2 🚀 departing from NEW-P60
+[19:32:08] Michael #5 🚀 departing from NEW-P50
+[19:32:08] Michael #5 moving 🚀 West (1302 units)
+[19:32:08] Michael #5 🚀 heading to parking NEW-P16
+[19:32:08] John #2 moving 🚀 Southwest (534 units)
+[19:32:08] John #2 🚀 heading to parking NEW-P95
+[19:32:08] Emily #9 🚀 departing from NEW-P31
+[19:32:08] Emily #9 moving 🚀 Northeast (1294 units)
+[19:32:08] Emily #9 🚀 heading to parking NEW-P15
+[19:32:09] Robert #10 🚀 departing from NEW-P20
+[19:32:09] Robert #10 moving 🚀 Southeast (1139 units)
+[19:32:09] Robert #10 🚀 heading to parking NEW-P95
+[19:32:09] David #8 ✓ landed at NEW-P34 (parking for ~32s)
+[19:32:09] John #10 ✓ landed at NEW-P85 (parking for ~52s)
+[19:32:09] Amanda #2 ✓ landed at NEW-P19 (parking for ~54s)
+[19:32:09] Sarah #3 ✓ landed at NEW-P99 (parking for ~44s)
+[19:32:09] Robert #5 🚀 departing from NEW-P56
+[19:32:09] Robert #5 moving 🚀 North (878 units)
+[19:32:09] Robert #5 🚀 heading to parking NEW-P6
+[19:32:09] Chris #7 ✓ landed at NEW-P86 (parking for ~70s)
+[19:32:09] Robert #7 🚀 departing from NEW-P90
+[19:32:09] Robert #7 moving 🚀 West (29 units)
+[19:32:09] Robert #7 🚀 heading to parking NEW-P90
+[19:32:10] Robert #7 ✓ landed at NEW-P90 (parking for ~74s)
+[19:32:10] David #8 🚀 departing from NEW-P34
+[19:32:10] David #8 moving 🚀 Northeast (1414 units)
+[19:32:10] David #8 🚀 heading to parking NEW-P30
+[19:32:10] Jane #4 ✓ landed at NEW-P60 (parking for ~88s)
+[19:32:10] Emily #10 ✓ landed at NEW-P68 (parking for ~60s)
+[19:32:10] Michael #9 ✓ landed at NEW-P8 (parking for ~68s)
+[19:32:10] John #10 🚀 departing from NEW-P85
+[19:32:10] John #10 moving 🚀 North (358 units)
+[19:32:10] John #10 🚀 heading to parking NEW-P1
+[19:32:10] Amanda #2 🚀 departing from NEW-P19
+[19:32:11] Amanda #2 moving 🚀 West (900 units)
+[19:32:11] Amanda #2 🚀 heading to parking NEW-P87
+[19:32:11] Sarah #3 🚀 departing from NEW-P99
+[19:32:11] Sarah #3 moving 🚀 West (211 units)
+[19:32:11] Sarah #3 🚀 heading to parking NEW-P71
+[19:32:11] Chris #7 🚀 departing from NEW-P86
+[19:32:11] Emily #2 🚀 departing from NEW-P99
+[19:32:11] Chris #7 moving 🚀 Southwest (331 units)
+[19:32:11] Chris #7 🚀 heading to parking NEW-P84
+[19:32:11] Emily #10 🚀 departing from NEW-P68
+[19:32:11] Emily #10 moving 🚀 Southwest (539 units)
+[19:32:11] Emily #10 🚀 heading to parking NEW-P55
+[19:32:12] Michael #2 ✓ landed at NEW-P74 (parking for ~52s)
+[19:32:12] Emily #2 moving 🚀 Southwest (542 units)
+[19:32:12] Emily #2 🚀 heading to parking NEW-P40
+[19:32:12] Robert #7 🚀 departing from NEW-P90
+[19:32:12] Robert #7 moving 🚀 South (771 units)
+[19:32:12] Robert #7 🚀 heading to parking NEW-P31
+[19:32:12] Michael #9 🚀 departing from NEW-P8
+[19:32:12] Michael #9 moving 🚀 Southwest (618 units)
+[19:32:12] Michael #9 🚀 heading to parking NEW-P23
+[19:32:12] David #10 ✓ landed at NEW-P74 (parking for ~82s)
+[19:32:13] Sarah #4 ✓ landed at NEW-P58 (parking for ~70s)
+[19:32:13] Jane #4 🚀 departing from NEW-P60
+[19:32:13] Jane #4 moving 🚀 West (1256 units)
+[19:32:13] Jane #4 🚀 heading to parking NEW-P4
+[19:32:13] Chris #10 ✓ landed at NEW-P45 (parking for ~58s)
+[19:32:13] John #9 ✓ landed at NEW-P27 (parking for ~58s)
+[19:32:13] Michael #4 ✓ landed at NEW-P14 (parking for ~44s)
+[19:32:13] Lisa #5 ✓ landed at NEW-P80 (parking for ~40s)
+[19:32:13] David #6 ✓ landed at NEW-P55 (parking for ~46s)
+[19:32:13] Jane #8 ✓ landed at NEW-P99 (parking for ~44s)
+[19:32:14] John #3 ✓ landed at NEW-P25 (parking for ~30s)
+[19:32:14] Lisa #5 🚀 departing from NEW-P80
+[19:32:14] Lisa #5 moving 🚀 West (477 units)
+[19:32:14] Lisa #5 🚀 heading to parking NEW-P29
+[19:32:14] Amanda #3 ✓ landed at NEW-P6 (parking for ~32s)
+[19:32:14] Michael #4 🚀 departing from NEW-P14
+[19:32:14] Michael #4 moving 🚀 Southwest (177 units)
+[19:32:14] Michael #4 🚀 heading to parking NEW-P2
+[19:32:14] David #6 🚀 departing from NEW-P55
+[19:32:14] David #6 moving 🚀 East (719 units)
+[19:32:15] David #6 🚀 heading to parking NEW-P9
+[19:32:15] Chris #10 🚀 departing from NEW-P45
+[19:32:15] John #3 🚀 departing from NEW-P25
+[19:32:15] John #9 🚀 departing from NEW-P27
+[19:32:15] Chris #10 moving 🚀 Northwest (1377 units)
+[19:32:15] Chris #10 🚀 heading to parking NEW-P29
+[19:32:15] John #3 moving 🚀 East (458 units)
+[19:32:15] John #3 🚀 heading to parking NEW-P70
+[19:32:15] Sarah #4 🚀 departing from NEW-P58
+[19:32:15] John #9 moving 🚀 Southwest (666 units)
+[19:32:15] John #9 🚀 heading to parking NEW-P41
+[19:32:15] David #7 acknowledges radio instruction: Proceeding to (1192,923) - Direct routing
+[19:32:15] Sarah #4 moving 🚀 Southeast (220 units)
+[19:32:15] Sarah #4 🚀 heading to parking NEW-P88
+[19:32:15] Jane #8 🚀 departing from NEW-P99
+[19:32:15] Jane #8 moving 🚀 West (344 units)
+[19:32:15] Jane #8 🚀 heading to parking NEW-P26
+[19:32:15] David #10 🚀 departing from NEW-P74
+[19:32:16] David #10 moving 🚀 Northeast (620 units)
+[19:32:16] David #10 🚀 heading to parking NEW-P75
+[19:32:16] Michael #2 🚀 departing from NEW-P74
+[19:32:16] Michael #2 moving 🚀 Northeast (1347 units)
+[19:32:16] Michael #2 🚀 heading to parking NEW-P11
+[19:32:16] Amanda #3 🚀 departing from NEW-P6
+[19:32:16] Amanda #3 moving 🚀 East (840 units)
+[19:32:16] Amanda #3 🚀 heading to parking NEW-P43
+[19:32:17] Robert #9 ✓ landed at NEW-P91 (parking for ~42s)
+[19:32:17] Chris #1 ✓ landed at NEW-P85 (parking for ~64s)
+[19:32:17] Robert #9 🚀 departing from NEW-P91
+[19:32:17] Robert #9 moving 🚀 Northwest (613 units)
+[19:32:17] Robert #9 🚀 heading to parking NEW-P16
+[19:32:18] Lisa #7 ✓ landed at NEW-P16 (parking for ~66s)
+[19:32:18] Amanda #5 ✓ landed at NEW-P7 (parking for ~58s)
+[19:32:18] Amanda #6 ✓ landed at NEW-P71 (parking for ~88s)
+[19:32:18] Lisa #1 ✓ landed at NEW-P21 (parking for ~82s)
+[19:32:18] Lisa #2 ✓ landed at NEW-P5 (parking for ~62s)
+[19:32:19] Robert #3 ✓ landed at NEW-P16 (parking for ~80s)
+[19:32:19] Sarah #8 ✓ landed at NEW-P8 (parking for ~62s)
+[19:32:19] Sarah #9 ✓ landed at NEW-P54 (parking for ~58s)
+[19:32:19] Jane #2 ✓ landed at NEW-P47 (parking for ~52s)
+[19:32:19] John #7 ✓ landed at NEW-P52 (parking for ~48s)
+[19:32:19] Lisa #7 🚀 departing from NEW-P16
+[19:32:19] Lisa #7 moving 🚀 Southeast (535 units)
+[19:32:19] Lisa #7 🚀 heading to parking NEW-P40
+[19:32:20] Chris #1 🚀 departing from NEW-P85
+[19:32:20] Amanda #5 🚀 departing from NEW-P7
+[19:32:20] Chris #1 moving 🚀 Northeast (463 units)
+[19:32:20] Chris #1 🚀 heading to parking NEW-P49
+[19:32:20] Amanda #5 moving 🚀 East (520 units)
+[19:32:20] Amanda #5 🚀 heading to parking NEW-P58
+[19:32:20] Chris #2 ✓ landed at NEW-P7 (parking for ~86s)
+[19:32:20] Emily #7 ✓ landed at NEW-P48 (parking for ~50s)
+[19:32:20] Lisa #2 🚀 departing from NEW-P5
+[19:32:20] Lisa #2 moving 🚀 East (1353 units)
+[19:32:20] Lisa #2 🚀 heading to parking NEW-P62
+[19:32:21] Sarah #9 🚀 departing from NEW-P54
+[19:32:21] Amanda #1 ✓ landed at NEW-P38 (parking for ~72s)
+[19:32:21] John #7 🚀 departing from NEW-P52
+[19:32:21] John #7 moving 🚀 West (213 units)
+[19:32:21] John #7 🚀 heading to parking NEW-P16
+[19:32:21] Sarah #8 🚀 departing from NEW-P8
+[19:32:21] Sarah #9 moving 🚀 North (425 units)
+[19:32:21] Sarah #9 🚀 heading to parking NEW-P39
+[19:32:21] Sarah #8 moving 🚀 South (583 units)
+[19:32:21] Sarah #8 🚀 heading to parking NEW-P57
+[19:32:21] Jane #10 ✓ landed at NEW-P69 (parking for ~90s)
+[19:32:21] Amanda #6 🚀 departing from NEW-P71
+[19:32:21] Amanda #6 moving 🚀 East (387 units)
+[19:32:21] Amanda #6 🚀 heading to parking NEW-P13
+[19:32:21] Robert #3 🚀 departing from NEW-P16
+[19:32:21] Robert #3 moving 🚀 Southeast (316 units)
+[19:32:21] Robert #3 🚀 heading to parking NEW-P44
+[19:32:22] Sarah #3 ✓ landed at NEW-P71 (parking for ~72s)
+[19:32:22] Emily #8 ✓ landed at NEW-P81 (parking for ~72s)
+[19:32:22] David #3 ✓ landed at NEW-P53 (parking for ~48s)
+[19:32:22] Emily #7 🚀 departing from NEW-P48
+[19:32:22] Chris #4 ✓ landed at NEW-P67 (parking for ~66s)
+[19:32:22] Emily #7 moving 🚀 Northeast (1198 units)
+[19:32:22] Emily #7 🚀 heading to parking NEW-P94
+[19:32:22] Emily #5 ✓ landed at NEW-P26 (parking for ~32s)
+[19:32:22] Jane #2 🚀 departing from NEW-P47
+[19:32:23] Jane #2 moving 🚀 West (1120 units)
+[19:32:23] Jane #2 🚀 heading to parking NEW-P20
+[19:32:23] Michael #4 ✓ landed at NEW-P2 (parking for ~66s)
+[19:32:23] Amanda #4 ✓ landed at NEW-P77 (parking for ~66s)
+[19:32:23] Chris #5 ✓ landed at NEW-P20 (parking for ~82s)
+[19:32:23] Emily #5 🚀 departing from NEW-P26
+[19:32:23] Chris #9 ✓ landed at NEW-P90 (parking for ~86s)
+[19:32:23] David #3 🚀 departing from NEW-P53
+[19:32:23] David #3 moving 🚀 Northeast (615 units)
+[19:32:23] David #3 🚀 heading to parking NEW-P8
+[19:32:23] Emily #5 moving 🚀 Southeast (369 units)
+[19:32:23] Emily #5 🚀 heading to parking NEW-P58
+[19:32:24] Lisa #1 🚀 departing from NEW-P21
+[19:32:24] Lisa #1 moving 🚀 North (364 units)
+[19:32:24] Lisa #1 🚀 heading to parking NEW-P40
+[19:32:24] Sarah #3 🚀 departing from NEW-P71
+[19:32:24] Sarah #3 moving 🚀 Southwest (1021 units)
+[19:32:24] Sarah #3 🚀 heading to parking NEW-P93
+[19:32:24] David #5 ✓ landed at NEW-P72 (parking for ~78s)
+[19:32:24] Emily #8 🚀 departing from NEW-P81
+[19:32:24] Emily #8 moving 🚀 West (1198 units)
+[19:32:24] Emily #8 🚀 heading to parking NEW-P18
+[19:32:24] Jane #10 🚀 departing from NEW-P69
+[19:32:24] David #4 ✓ landed at NEW-P72 (parking for ~86s)
+[19:32:24] Jane #10 moving 🚀 Southeast (832 units)
+[19:32:24] Jane #10 🚀 heading to parking NEW-P17
+[19:32:24] Chris #4 🚀 departing from NEW-P67
+[19:32:25] Chris #4 moving 🚀 South (60 units)
+[19:32:25] Chris #4 🚀 heading to parking NEW-P24
+[19:32:25] Michael #4 🚀 departing from NEW-P2
+[19:32:25] Amanda #4 🚀 departing from NEW-P77
+[19:32:25] Sarah #7 ✓ landed at NEW-P72 (parking for ~72s)
+[19:32:25] Michael #4 moving 🚀 East (841 units)
+[19:32:25] Michael #4 🚀 heading to parking NEW-P36
+[19:32:25] Amanda #4 moving 🚀 Northwest (859 units)
+[19:32:25] Amanda #4 🚀 heading to parking NEW-P79
+[19:32:25] Michael #7 ✓ landed at NEW-P89 (parking for ~64s)
+[19:32:25] Robert #8 ✓ landed at NEW-P17 (parking for ~58s)
+[19:32:26] John #5 ✓ landed at NEW-P19 (parking for ~36s)
+[19:32:26] Amanda #1 🚀 departing from NEW-P38
+[19:32:26] Chris #8 ✓ landed at NEW-P97 (parking for ~80s)
+[19:32:26] Amanda #1 moving 🚀 West (745 units)
+[19:32:26] Amanda #1 🚀 heading to parking NEW-P1
+[19:32:26] Chris #5 🚀 departing from NEW-P20
+[19:32:26] Michael #10 ✓ landed at NEW-P49 (parking for ~62s)
+[19:32:26] Chris #2 🚀 departing from NEW-P7
+[19:32:26] Chris #5 moving 🚀 South (429 units)
+[19:32:26] Chris #5 🚀 heading to parking NEW-P42
+[19:32:27] Chris #2 moving 🚀 East (653 units)
+[19:32:27] Chris #2 🚀 heading to parking NEW-P43
+[19:32:27] Chris #9 🚀 departing from NEW-P90
+[19:32:27] Sarah #4 ✓ landed at NEW-P88 (parking for ~80s)
+[19:32:27] Chris #9 moving 🚀 Southeast (1295 units)
+[19:32:27] Chris #9 🚀 heading to parking NEW-P77
+[19:32:27] Chris #4 ✓ landed at NEW-P24 (parking for ~52s)
+[19:32:27] David #5 🚀 departing from NEW-P72
+[19:32:27] Emily #6 ✓ landed at NEW-P15 (parking for ~78s)
+[19:32:27] John #5 🚀 departing from NEW-P19
+[19:32:27] John #5 moving 🚀 South (1056 units)
+[19:32:27] John #5 🚀 heading to parking NEW-P3
+[19:32:27] David #5 moving 🚀 Northwest (1244 units)
+[19:32:28] David #5 🚀 heading to parking NEW-P18
+[19:32:28] Michael #3 acknowledges radio instruction: Proceeding to (1390,227) - Direct routing
+[19:32:28] David #4 🚀 departing from NEW-P72
+[19:32:28] Jane #6 ✓ landed at NEW-P64 (parking for ~56s)
+[19:32:28] David #4 moving 🚀 North (1044 units)
+[19:32:28] David #4 🚀 heading to parking NEW-P22
+[19:32:28] Robert #8 🚀 departing from NEW-P17
+[19:32:28] Jane #1 ✓ landed at NEW-P49 (parking for ~38s)
+[19:32:29] Michael #7 🚀 departing from NEW-P89
+[19:32:29] Michael #7 moving 🚀 East (1209 units)
+[19:32:29] Michael #7 🚀 heading to parking NEW-P36
+[19:32:29] Robert #8 moving 🚀 Northeast (771 units)
+[19:32:29] Robert #8 🚀 heading to parking NEW-P27
+[19:32:29] Sarah #7 🚀 departing from NEW-P72
+[19:32:29] Sarah #7 moving 🚀 North (1060 units)
+[19:32:29] Sarah #7 🚀 heading to parking NEW-P71
+[19:32:29] Michael #6 ✓ landed at NEW-P23 (parking for ~86s)
+[19:32:29] Chris #6 ✓ landed at NEW-P75 (parking for ~64s)
+[19:32:29] Michael #10 🚀 departing from NEW-P49
+[19:32:30] Michael #10 moving 🚀 Northeast (731 units)
+[19:32:30] Michael #10 🚀 heading to parking NEW-P9
+[19:32:30] Chris #4 🚀 departing from NEW-P24
+[19:32:30] Chris #4 moving 🚀 Northeast (701 units)
+[19:32:30] Chris #4 🚀 heading to parking NEW-P68
+[19:32:30] Chris #8 🚀 departing from NEW-P97
+[19:32:30] Chris #8 moving 🚀 South (1136 units)
+[19:32:30] Chris #8 🚀 heading to parking NEW-P56
+[19:32:30] Jane #6 🚀 departing from NEW-P64
+[19:32:30] Jane #6 moving 🚀 Northwest (619 units)
+[19:32:30] Jane #6 🚀 heading to parking NEW-P26
+[19:32:31] Sarah #4 🚀 departing from NEW-P88
+[19:32:31] Sarah #4 moving 🚀 West (706 units)
+[19:32:31] Sarah #4 🚀 heading to parking NEW-P82
+[19:32:31] Emily #6 🚀 departing from NEW-P15
+[19:32:31] Emily #6 moving 🚀 West (1069 units)
+[19:32:31] Emily #6 🚀 heading to parking NEW-P20
+[19:32:31] Lisa #6 ✓ landed at NEW-P41 (parking for ~66s)
+[19:32:32] Jane #1 🚀 departing from NEW-P49
+[19:32:32] Chris #6 🚀 departing from NEW-P75
+[19:32:32] Chris #6 moving 🚀 Northeast (813 units)
+[19:32:32] Chris #6 🚀 heading to parking NEW-P11
+[19:32:32] Jane #1 moving 🚀 Northeast (282 units)
+[19:32:32] Jane #1 🚀 heading to parking NEW-P39
+[19:32:32] Michael #6 🚀 departing from NEW-P23
+[19:32:32] Michael #6 moving 🚀 Southwest (133 units)
+[19:32:32] Michael #6 🚀 heading to parking NEW-P24
+[19:32:32] Chris #7 ✓ landed at NEW-P84 (parking for ~76s)
+[19:32:33] John #10 ✓ landed at NEW-P1 (parking for ~64s)
+[19:32:33] Sarah #5 ✓ landed at NEW-P88 (parking for ~46s)
+[19:32:33] Lisa #6 🚀 departing from NEW-P41
+[19:32:33] Lisa #3 ✓ landed at NEW-P90 (parking for ~60s)
+[19:32:33] Lisa #6 moving 🚀 West (604 units)
+[19:32:33] Lisa #6 🚀 heading to parking NEW-P55
+[19:32:34] Amanda #10 ✓ landed at NEW-P38 (parking for ~78s)
+[19:32:34] Sarah #5 🚀 departing from NEW-P88
+[19:32:34] Sarah #5 moving 🚀 Northwest (466 units)
+[19:32:34] Sarah #5 🚀 heading to parking NEW-P33
+[19:32:34] John #10 🚀 departing from NEW-P1
+[19:32:34] John #10 moving 🚀 East (1312 units)
+[19:32:34] John #10 🚀 heading to parking NEW-P73
+[19:32:34] Chris #7 🚀 departing from NEW-P84
+[19:32:34] Chris #7 moving 🚀 West (23 units)
+[19:32:35] Chris #7 🚀 heading to parking NEW-P93
+[19:32:35] John #7 ✓ landed at NEW-P16 (parking for ~88s)
+[19:32:35] Chris #7 ✓ landed at NEW-P93 (parking for ~30s)
+[19:32:35] Sarah #2 ✓ landed at NEW-P38 (parking for ~30s)
+[19:32:35] Lisa #3 🚀 departing from NEW-P90
+[19:32:35] Lisa #3 moving 🚀 Southeast (851 units)
+[19:32:35] Lisa #3 🚀 heading to parking NEW-P41
+[19:32:35] John #1 ✓ landed at NEW-P9 (parking for ~78s)
+[19:32:35] Chris #7 🚀 departing from NEW-P93
+[19:32:36] Chris #7 moving 🚀 East (715 units)
+[19:32:36] Chris #7 🚀 heading to parking NEW-P17
+[19:32:36] Jane #8 ✓ landed at NEW-P26 (parking for ~86s)
+[19:32:36] Amanda #10 🚀 departing from NEW-P38
+[19:32:36] John #6 ✓ landed at NEW-P98 (parking for ~30s)
+[19:32:36] Amanda #10 moving 🚀 Northeast (714 units)
+[19:32:36] Amanda #10 🚀 heading to parking NEW-P13
+[19:32:37] David #1 ✓ landed at NEW-P19 (parking for ~58s)
+[19:32:37] Amanda #9 ✓ landed at NEW-P52 (parking for ~38s)
+[19:32:37] Sarah #1 ✓ landed at NEW-P78 (parking for ~70s)
+[19:32:37] Sarah #2 🚀 departing from NEW-P38
+[19:32:37] Sarah #2 moving 🚀 Northwest (830 units)
+[19:32:37] Sarah #2 🚀 heading to parking NEW-P20
+[19:32:37] John #6 🚀 departing from NEW-P98
+[19:32:38] John #6 moving 🚀 West (956 units)
+[19:32:38] John #6 🚀 heading to parking NEW-P93
+[19:32:38] John #7 🚀 departing from NEW-P16
+[19:32:38] John #7 moving 🚀 South (356 units)
+[19:32:38] John #7 🚀 heading to parking NEW-P67
+[19:32:38] Amanda #9 🚀 departing from NEW-P52
+[19:32:38] Amanda #9 moving 🚀 Northwest (322 units)
+[19:32:38] Amanda #9 🚀 heading to parking NEW-P29
+[19:32:39] John #4 ✓ landed at NEW-P13 (parking for ~36s)
+[19:32:39] Jane #8 🚀 departing from NEW-P26
+[19:32:39] Michael #6 ✓ landed at NEW-P24 (parking for ~62s)
+[19:32:39] Jane #8 moving 🚀 Southwest (699 units)
+[19:32:39] Jane #8 🚀 heading to parking NEW-P86
+[19:32:39] Robert #4 ✓ landed at NEW-P17 (parking for ~58s)
+[19:32:40] John #4 🚀 departing from NEW-P13
+[19:32:40] John #4 moving 🚀 West (277 units)
+[19:32:40] John #4 🚀 heading to parking NEW-P11
+[19:32:40] Amanda #7 ✓ landed at NEW-P48 (parking for ~74s)
+[19:32:40] David #1 🚀 departing from NEW-P19
+[19:32:40] David #1 moving 🚀 Southwest (1427 units)
+[19:32:40] David #1 🚀 heading to parking NEW-P56
+[19:32:41] John #2 ✓ landed at NEW-P95 (parking for ~44s)
+[19:32:41] John #1 🚀 departing from NEW-P9
+[19:32:41] John #1 moving 🚀 Southeast (491 units)
+[19:32:41] John #1 🚀 heading to parking NEW-P60
+[19:32:41] Michael #6 🚀 departing from NEW-P24
+[19:32:41] Michael #6 moving 🚀 South (281 units)
+[19:32:41] Michael #6 🚀 heading to parking NEW-P84
+[19:32:41] Robert #4 🚀 departing from NEW-P17
+[19:32:42] Robert #6 ✓ landed at NEW-P53 (parking for ~68s)
+[19:32:42] Robert #4 moving 🚀 Northeast (936 units)
+[19:32:42] Robert #4 🚀 heading to parking NEW-P15
+[19:32:42] Sarah #1 🚀 departing from NEW-P78
+[19:32:42] Sarah #1 moving 🚀 South (85 units)
+[19:32:42] Sarah #1 🚀 heading to parking NEW-P28
+[19:32:42] Robert #3 ✓ landed at NEW-P44 (parking for ~64s)
+[19:32:43] Robert #2 ✓ landed at NEW-P98 (parking for ~68s)
+[19:32:43] Amanda #7 🚀 departing from NEW-P48
+[19:32:43] Emily #3 ✓ landed at NEW-P83 (parking for ~42s)
+[19:32:43] Amanda #7 moving 🚀 Northeast (896 units)
+[19:32:43] Amanda #7 🚀 heading to parking NEW-P58
+[19:32:44] John #3 ✓ landed at NEW-P70 (parking for ~54s)
+[19:32:44] John #2 🚀 departing from NEW-P95
+[19:32:44] Robert #6 🚀 departing from NEW-P53
+[19:32:44] John #2 moving 🚀 North (471 units)
+[19:32:44] John #2 🚀 heading to parking NEW-P41
+[19:32:44] Robert #6 moving 🚀 East (580 units)
+[19:32:44] Robert #6 🚀 heading to parking NEW-P96
+[19:32:44] Emily #3 🚀 departing from NEW-P83
+[19:32:45] Emily #3 moving 🚀 Southwest (720 units)
+[19:32:45] Emily #3 🚀 heading to parking NEW-P18
+[19:32:45] Robert #3 🚀 departing from NEW-P44
+[19:32:45] Robert #3 moving 🚀 East (1015 units)
+[19:32:45] Robert #3 🚀 heading to parking NEW-P76
+[19:32:45] Lisa #5 ✓ landed at NEW-P29 (parking for ~82s)
+[19:32:45] Robert #2 🚀 departing from NEW-P98
+[19:32:45] Robert #2 moving 🚀 West (1041 units)
+[19:32:45] Robert #2 🚀 heading to parking NEW-P53
+[19:32:45] Robert #1 ✓ landed at NEW-P79 (parking for ~60s)
+[19:32:45] John #3 🚀 departing from NEW-P70
+[19:32:46] John #3 moving 🚀 West (349 units)
+[19:32:46] John #3 🚀 heading to parking NEW-P64
+[19:32:46] Sarah #1 ✓ landed at NEW-P28 (parking for ~46s)
+[19:32:46] Emily #10 ✓ landed at NEW-P55 (parking for ~66s)
+[19:32:46] Michael #8 ✓ landed at NEW-P20 (parking for ~90s)
+[19:32:47] Emily #2 ✓ landed at NEW-P40 (parking for ~64s)
+[19:32:47] David #2 ✓ landed at NEW-P3 (parking for ~52s)
+[19:32:47] Amanda #6 ✓ landed at NEW-P13 (parking for ~50s)
+[19:32:47] Lisa #5 🚀 departing from NEW-P29
+[19:32:47] Lisa #5 moving 🚀 South (1123 units)
+[19:32:47] Lisa #5 🚀 heading to parking NEW-P85
+[19:32:48] Chris #3 ✓ landed at NEW-P55 (parking for ~44s)
+[19:32:48] Emily #5 ✓ landed at NEW-P58 (parking for ~52s)
+[19:32:48] Lisa #1 ✓ landed at NEW-P40 (parking for ~82s)
+[19:32:48] Emily #10 🚀 departing from NEW-P55
+[19:32:48] Amanda #6 🚀 departing from NEW-P13
+[19:32:48] Emily #10 moving 🚀 South (377 units)
+[19:32:48] Emily #10 🚀 heading to parking NEW-P100
+[19:32:49] Amanda #6 moving 🚀 West (935 units)
+[19:32:49] Amanda #6 🚀 heading to parking NEW-P6
+[19:32:49] Jane #1 ✓ landed at NEW-P39 (parking for ~84s)
+[19:32:49] Sarah #1 🚀 departing from NEW-P28
+[19:32:49] Sarah #1 moving 🚀 Northwest (532 units)
+[19:32:49] Sarah #1 🚀 heading to parking NEW-P64
+[19:32:49] Sarah #9 ✓ landed at NEW-P39 (parking for ~74s)
+[19:32:50] Michael #8 🚀 departing from NEW-P20
+[19:32:50] Jane #9 ✓ landed at NEW-P50 (parking for ~66s)
+[19:32:50] Chris #3 🚀 departing from NEW-P55
+[19:32:50] Chris #3 moving 🚀 North (457 units)
+[19:32:50] Chris #3 🚀 heading to parking NEW-P97
+[19:32:50] Michael #8 moving 🚀 South (406 units)
+[19:32:50] Michael #8 🚀 heading to parking NEW-P42
+[19:32:50] Robert #1 🚀 departing from NEW-P79
+[19:32:50] Robert #1 moving 🚀 East (780 units)
+[19:32:50] Robert #1 🚀 heading to parking NEW-P43
+[19:32:50] Emily #5 🚀 departing from NEW-P58
+[19:32:50] Emily #5 moving 🚀 Southwest (916 units)
+[19:32:50] Emily #5 🚀 heading to parking NEW-P1
+[19:32:51] David #2 🚀 departing from NEW-P3
+[19:32:51] David #2 moving 🚀 West (181 units)
+[19:32:51] David #2 🚀 heading to parking NEW-P45
+[19:32:51] Chris #1 ✓ landed at NEW-P49 (parking for ~58s)
+[19:32:51] Emily #2 🚀 departing from NEW-P40
+[19:32:52] Emily #2 moving 🚀 Northwest (719 units)
+[19:32:52] Emily #2 🚀 heading to parking NEW-P29
+[19:32:52] Lisa #4 ✓ landed at NEW-P34 (parking for ~52s)
+[19:32:52] Jane #9 🚀 departing from NEW-P50
+[19:32:52] Jane #9 moving 🚀 West (875 units)
+[19:32:52] Jane #9 🚀 heading to parking NEW-P80
+[19:32:52] Sarah #9 🚀 departing from NEW-P39
+[19:32:52] Sarah #9 moving 🚀 East (820 units)
+[19:32:52] Sarah #9 🚀 heading to parking NEW-P37
+[19:32:53] Michael #9 ✓ landed at NEW-P23 (parking for ~74s)
+[19:32:53] Michael #1 acknowledges radio instruction: Proceeding to (1000,177) - Traffic separation
+[19:32:54] Lisa #4 🚀 departing from NEW-P34
+[19:32:54] Lisa #4 moving 🚀 Northeast (699 units)
+[19:32:54] Lisa #4 🚀 heading to parking NEW-P39
+[19:32:54] Jane #5 ✓ landed at NEW-P93 (parking for ~76s)
+[19:32:54] Lisa #1 🚀 departing from NEW-P40
+[19:32:54] Lisa #1 moving 🚀 West (519 units)
+[19:32:54] Lisa #1 🚀 heading to parking NEW-P35
+[19:32:55] Jane #1 🚀 departing from NEW-P39
+[19:32:55] Jane #1 moving 🚀 Southwest (464 units)
+[19:32:55] Jane #1 🚀 heading to parking NEW-P48
+[19:32:55] Chris #5 ✓ landed at NEW-P42 (parking for ~84s)
+[19:32:55] Michael #9 🚀 departing from NEW-P23
+[19:32:55] Amanda #5 ✓ landed at NEW-P58 (parking for ~34s)
+[19:32:55] Michael #9 moving 🚀 East (606 units)
+[19:32:55] Michael #9 🚀 heading to parking NEW-P38
+[19:32:55] Chris #1 🚀 departing from NEW-P49
+[19:32:56] Chris #1 moving 🚀 East (684 units)
+[19:32:56] Chris #1 🚀 heading to parking NEW-P25
+[19:32:56] David #10 ✓ landed at NEW-P75 (parking for ~80s)
+[19:32:56] Jane #5 🚀 departing from NEW-P93
+[19:32:56] Jane #5 moving 🚀 Northwest (284 units)
+[19:32:56] Jane #5 🚀 heading to parking NEW-P89
+[19:32:56] Lisa #7 ✓ landed at NEW-P40 (parking for ~36s)
+[19:32:56] John #8 ✓ landed at NEW-P7 (parking for ~76s)
+[19:32:57] Jane #3 ✓ landed at NEW-P26 (parking for ~62s)
+[19:32:57] Amanda #5 🚀 departing from NEW-P58
+[19:32:57] Amanda #5 moving 🚀 Northwest (229 units)
+[19:32:57] Amanda #5 🚀 heading to parking NEW-P33
+[19:32:57] Lisa #7 🚀 departing from NEW-P40
+[19:32:57] Lisa #7 moving 🚀 West (483 units)
+[19:32:57] Lisa #7 🚀 heading to parking NEW-P67
+[19:32:57] John #4 ✓ landed at NEW-P11 (parking for ~46s)
+[19:32:58] Robert #9 ✓ landed at NEW-P16 (parking for ~76s)
+[19:32:58] Chris #5 🚀 departing from NEW-P42
+[19:32:58] Chris #5 moving 🚀 South (412 units)
+[19:32:58] Chris #5 🚀 heading to parking NEW-P66
+[19:32:58] David #10 🚀 departing from NEW-P75
+[19:32:58] David #10 moving 🚀 Northwest (576 units)
+[19:32:58] David #10 🚀 heading to parking NEW-P5
+[19:32:59] Jane #3 🚀 departing from NEW-P26
+[19:32:59] John #9 ✓ landed at NEW-P41 (parking for ~66s)
+[19:32:59] Jane #3 moving 🚀 Southwest (797 units)
+[19:32:59] Jane #3 🚀 heading to parking NEW-P67
+[19:32:59] Amanda #9 ✓ landed at NEW-P29 (parking for ~82s)
+[19:32:59] John #8 🚀 departing from NEW-P7
+[19:32:59] John #8 moving 🚀 Northwest (293 units)
+[19:32:59] John #8 🚀 heading to parking NEW-P20
+[19:32:59] Michael #3 ✓ landed at NEW-P78 (parking for ~62s)
+[19:32:59] Michael #6 ✓ landed at NEW-P84 (parking for ~82s)
+[19:33:00] John #4 🚀 departing from NEW-P11
+[19:33:00] John #4 moving 🚀 Southwest (617 units)
+[19:33:00] John #4 🚀 heading to parking NEW-P61
+[19:33:00] Emily #4 ✓ landed at NEW-P99 (parking for ~40s)
+[19:33:01] John #7 ✓ landed at NEW-P67 (parking for ~40s)
+[19:33:01] Robert #9 🚀 departing from NEW-P16
+[19:33:01] Robert #9 moving 🚀 South (735 units)
+[19:33:01] Robert #9 🚀 heading to parking NEW-P54
+[19:33:01] Sarah #8 ✓ landed at NEW-P57 (parking for ~82s)
+[19:33:01] John #9 🚀 departing from NEW-P41
+[19:33:01] John #9 moving 🚀 West (275 units)
+[19:33:01] John #9 🚀 heading to parking NEW-P39
+[19:33:01] Sarah #6 ✓ landed at NEW-P66 (parking for ~84s)
+[19:33:02] Michael #3 🚀 departing from NEW-P78
+[19:33:02] Michael #3 moving 🚀 Northwest (1044 units)
+[19:33:02] Michael #3 🚀 heading to parking NEW-P26
+[19:33:02] Amanda #9 🚀 departing from NEW-P29
+[19:33:02] David #2 ✓ landed at NEW-P45 (parking for ~86s)
+[19:33:02] Amanda #9 moving 🚀 South (403 units)
+[19:33:02] Amanda #9 🚀 heading to parking NEW-P55
+[19:33:03] Emily #4 🚀 departing from NEW-P99
+[19:33:03] Emily #4 moving 🚀 Southwest (1071 units)
+[19:33:03] Emily #4 🚀 heading to parking NEW-P100
+[19:33:03] Michael #6 🚀 departing from NEW-P84
+[19:33:03] Michael #6 moving 🚀 Northeast (234 units)
+[19:33:03] Michael #6 🚀 heading to parking NEW-P10
+[19:33:03] David #6 ✓ landed at NEW-P9 (parking for ~50s)
+[19:33:03] John #7 🚀 departing from NEW-P67
+[19:33:03] John #7 moving 🚀 North (251 units)
+[19:33:03] John #7 🚀 heading to parking NEW-P35
+[19:33:03] Emily #1 ✓ landed at NEW-P43 (parking for ~80s)
+[19:33:04] Robert #7 ✓ landed at NEW-P31 (parking for ~54s)
+[19:33:04] Sarah #8 🚀 departing from NEW-P57
+[19:33:04] David #6 🚀 departing from NEW-P9
+[19:33:04] Sarah #8 moving 🚀 Southeast (525 units)
+[19:33:04] Sarah #8 🚀 heading to parking NEW-P72
+[19:33:05] David #6 moving 🚀 Southwest (864 units)
+[19:33:05] David #6 🚀 heading to parking NEW-P1
+[19:33:05] Sarah #6 🚀 departing from NEW-P66
+[19:33:05] Sarah #6 moving 🚀 North (307 units)
+[19:33:05] Sarah #6 🚀 heading to parking NEW-P23
+[19:33:06] Sarah #5 ✓ landed at NEW-P33 (parking for ~80s)
+[19:33:06] Robert #7 🚀 departing from NEW-P31
+[19:33:06] Michael #6 acknowledges radio instruction: Proceeding to (436,455) - Direct routing
+[19:33:06] Robert #7 moving 🚀 Southeast (196 units)
+[19:33:06] Robert #7 🚀 heading to parking NEW-P54
+[19:33:07] David #3 ✓ landed at NEW-P8 (parking for ~42s)
+[19:33:07] Lisa #10 ✓ landed at NEW-P45 (parking for ~60s)
+[19:33:07] David #3 🚀 departing from NEW-P8
+[19:33:07] David #9 ✓ landed at NEW-P80 (parking for ~48s)
+[19:33:08] David #3 moving 🚀 Southwest (788 units)
+[19:33:08] David #3 🚀 heading to parking NEW-P31
+[19:33:08] Sarah #5 🚀 departing from NEW-P33
+[19:33:08] Sarah #5 moving 🚀 South (753 units)
+[19:33:08] Sarah #5 🚀 heading to parking NEW-P17
+[19:33:08] David #2 🚀 departing from NEW-P45
+[19:33:08] Robert #5 ✓ landed at NEW-P6 (parking for ~36s)
+[19:33:09] Emily #1 🚀 departing from NEW-P43
+[19:33:09] David #2 moving 🚀 North (1126 units)
+[19:33:09] David #2 🚀 heading to parking NEW-P68
+[19:33:09] David #7 ✓ landed at NEW-P43 (parking for ~74s)
+[19:33:09] Emily #1 moving 🚀 West (1110 units)
+[19:33:09] Emily #1 🚀 heading to parking NEW-P97
+[19:33:09] Lisa #10 🚀 departing from NEW-P45
+[19:33:09] Lisa #10 moving 🚀 West (730 units)
+[19:33:09] Lisa #10 🚀 heading to parking NEW-P93
+[19:33:10] John #3 ✓ landed at NEW-P64 (parking for ~42s)
+[19:33:10] David #9 🚀 departing from NEW-P80
+[19:33:10] David #9 moving 🚀 South (909 units)
+[19:33:10] David #9 🚀 heading to parking NEW-P48
+[19:33:10] Robert #5 🚀 departing from NEW-P6
+[19:33:10] Robert #5 moving 🚀 South (782 units)
+[19:33:10] Robert #5 🚀 heading to parking NEW-P92
+[19:33:11] John #3 🚀 departing from NEW-P64
+[19:33:11] John #3 moving 🚀 West (614 units)
+[19:33:11] John #3 🚀 heading to parking NEW-P10
+[19:33:11] David #7 🚀 departing from NEW-P43
+[19:33:11] Amanda #5 ✓ landed at NEW-P33 (parking for ~62s)
+[19:33:12] David #7 moving 🚀 Southwest (1219 units)
+[19:33:12] David #7 🚀 heading to parking NEW-P92
+[19:33:12] Amanda #2 ✓ landed at NEW-P87 (parking for ~44s)
+[19:33:12] Chris #2 ✓ landed at NEW-P43 (parking for ~44s)
+[19:33:12] Jane #6 ✓ landed at NEW-P26 (parking for ~70s)
+[19:33:13] Amanda #3 ✓ landed at NEW-P43 (parking for ~44s)
+[19:33:13] Amanda #2 🚀 departing from NEW-P87
+[19:33:13] Amanda #2 moving 🚀 Southeast (462 units)
+[19:33:13] Amanda #2 🚀 heading to parking NEW-P61
+[19:33:13] Amanda #5 🚀 departing from NEW-P33
+[19:33:14] Amanda #5 moving 🚀 South (603 units)
+[19:33:14] Amanda #5 🚀 heading to parking NEW-P75
+[19:33:14] Amanda #3 🚀 departing from NEW-P43
+[19:33:14] Amanda #3 moving 🚀 Southwest (1166 units)
+[19:33:14] Amanda #3 🚀 heading to parking NEW-P89
+[19:33:14] Emily #10 ✓ landed at NEW-P100 (parking for ~52s)
+[19:33:15] John #1 ✓ landed at NEW-P60 (parking for ~50s)
+[19:33:15] Jane #6 🚀 departing from NEW-P26
+[19:33:15] Lisa #6 ✓ landed at NEW-P55 (parking for ~52s)
+[19:33:15] Jane #5 ✓ landed at NEW-P89 (parking for ~90s)
+[19:33:15] Jane #6 moving 🚀 Southwest (1284 units)
+[19:33:15] Jane #6 🚀 heading to parking NEW-P74
+[19:33:16] Chris #2 🚀 departing from NEW-P43
+[19:33:16] Lisa #8 ✓ landed at NEW-P56 (parking for ~72s)
+[19:33:16] Chris #2 moving 🚀 Southwest (1101 units)
+[19:33:16] Chris #2 🚀 heading to parking NEW-P84
+[19:33:16] Emily #10 🚀 departing from NEW-P100
+[19:33:16] Emily #10 moving 🚀 West (201 units)
+[19:33:16] Emily #10 🚀 heading to parking NEW-P4
+[19:33:17] John #2 ✓ landed at NEW-P41 (parking for ~82s)
+[19:33:17] Lisa #6 🚀 departing from NEW-P55
+[19:33:17] Lisa #6 moving 🚀 South (482 units)
+[19:33:17] Lisa #6 🚀 heading to parking NEW-P84
+[19:33:17] Michael #6 ✓ landed at NEW-P10 (parking for ~32s)
+[19:33:18] Michael #8 ✓ landed at NEW-P42 (parking for ~84s)
+[19:33:18] Chris #4 ✓ landed at NEW-P68 (parking for ~42s)
+[19:33:18] Robert #7 ✓ landed at NEW-P54 (parking for ~54s)
+[19:33:18] Lisa #8 🚀 departing from NEW-P56
+[19:33:18] Lisa #8 moving 🚀 Northeast (1009 units)
+[19:33:18] Lisa #8 🚀 heading to parking NEW-P9
+[19:33:18] Jane #5 🚀 departing from NEW-P89
+[19:33:19] John #1 🚀 departing from NEW-P60
+[19:33:19] Amanda #1 ✓ landed at NEW-P1 (parking for ~82s)
+[19:33:19] Jane #5 moving 🚀 Northeast (1324 units)
+[19:33:19] Jane #5 🚀 heading to parking NEW-P19
+[19:33:19] Robert #10 acknowledges radio instruction: Proceeding to (946,101) - Direct routing
+[19:33:19] John #1 moving 🚀 West (1045 units)
+[19:33:19] John #1 🚀 heading to parking NEW-P48
+[19:33:19] Michael #6 🚀 departing from NEW-P10
+[19:33:19] Michael #6 moving 🚀 North (764 units)
+[19:33:19] Michael #6 🚀 heading to parking NEW-P29
+[19:33:20] John #8 ✓ landed at NEW-P20 (parking for ~66s)
+[19:33:20] Sarah #4 ✓ landed at NEW-P82 (parking for ~72s)
+[19:33:20] John #7 ✓ landed at NEW-P35 (parking for ~68s)
+[19:33:20] Sarah #10 ✓ landed at NEW-P12 (parking for ~30s)
+[19:33:20] Chris #4 🚀 departing from NEW-P68
+[19:33:20] Chris #4 moving 🚀 Southeast (248 units)
+[19:33:20] Chris #4 🚀 heading to parking NEW-P83
+[19:33:21] John #9 ✓ landed at NEW-P39 (parking for ~46s)
+[19:33:21] Robert #7 🚀 departing from NEW-P54
+[19:33:21] Michael #10 ✓ landed at NEW-P9 (parking for ~80s)
+[19:33:21] Robert #7 moving 🚀 North (769 units)
+[19:33:22] Robert #7 🚀 heading to parking NEW-P52
+[19:33:22] Sarah #10 🚀 departing from NEW-P12
+[19:33:22] Sarah #10 moving 🚀 Northeast (1167 units)
+[19:33:22] Sarah #10 🚀 heading to parking NEW-P22
+[19:33:22] Michael #8 🚀 departing from NEW-P42
+[19:33:22] Michael #8 moving 🚀 South (209 units)
+[19:33:22] Michael #8 🚀 heading to parking NEW-P24
+[19:33:23] John #9 🚀 departing from NEW-P39
+[19:33:23] Chris #3 ✓ landed at NEW-P97 (parking for ~90s)
+[19:33:23] John #8 🚀 departing from NEW-P20
+[19:33:23] John #8 moving 🚀 East (497 units)
+[19:33:23] John #8 🚀 heading to parking NEW-P83
+[19:33:23] John #9 moving 🚀 Southwest (448 units)
+[19:33:23] John #9 🚀 heading to parking NEW-P93
+[19:33:23] John #7 🚀 departing from NEW-P35
+[19:33:23] John #7 moving 🚀 Northeast (178 units)
+[19:33:23] John #7 🚀 heading to parking NEW-P6
+[19:33:24] Sarah #4 🚀 departing from NEW-P82
+[19:33:24] Sarah #4 moving 🚀 Southeast (1064 units)
+[19:33:24] Sarah #4 🚀 heading to parking NEW-P3
+[19:33:24] Robert #8 ✓ landed at NEW-P27 (parking for ~72s)
+[19:33:24] Lisa #9 ✓ landed at NEW-P37 (parking for ~88s)
+[19:33:25] John #2 🚀 departing from NEW-P41
+[19:33:25] John #2 moving 🚀 Southwest (893 units)
+[19:33:25] John #2 🚀 heading to parking NEW-P85
+[19:33:25] Michael #10 🚀 departing from NEW-P9
+[19:33:25] Michael #10 moving 🚀 South (818 units)
+[19:33:25] Michael #10 🚀 heading to parking NEW-P3
+[19:33:26] Jane #10 ✓ landed at NEW-P17 (parking for ~66s)
+[19:33:26] Amanda #1 🚀 departing from NEW-P1
+[19:33:26] Chris #3 🚀 departing from NEW-P97
+[19:33:26] Robert #6 ✓ landed at NEW-P96 (parking for ~72s)
+[19:33:27] Amanda #1 moving 🚀 Northeast (783 units)
+[19:33:27] Amanda #1 🚀 heading to parking NEW-P80
+[19:33:27] Chris #3 moving 🚀 Southeast (1571 units)
+[19:33:27] Chris #3 🚀 heading to parking NEW-P78
+[19:33:27] Robert #8 🚀 departing from NEW-P27
+[19:33:27] Robert #8 moving 🚀 West (1056 units)
+[19:33:27] Robert #8 🚀 heading to parking NEW-P87
+[19:33:27] Michael #4 ✓ landed at NEW-P36 (parking for ~66s)
+[19:33:28] Sarah #6 ✓ landed at NEW-P23 (parking for ~72s)
+[19:33:28] Lisa #9 🚀 departing from NEW-P37
+[19:33:28] Lisa #9 moving 🚀 North (477 units)
+[19:33:28] Lisa #9 🚀 heading to parking NEW-P19
+[19:33:28] Jane #10 🚀 departing from NEW-P17
+[19:33:28] Chris #7 ✓ landed at NEW-P17 (parking for ~86s)
+[19:33:28] Jane #10 moving 🚀 Northwest (1266 units)
+[19:33:28] Jane #10 🚀 heading to parking NEW-P29
+[19:33:29] Amanda #4 ✓ landed at NEW-P79 (parking for ~76s)
+[19:33:29] Amanda #10 ✓ landed at NEW-P13 (parking for ~60s)
+[19:33:29] Sarah #1 ✓ landed at NEW-P64 (parking for ~42s)
+[19:33:29] Robert #10 ✓ landed at NEW-P95 (parking for ~34s)
+[19:33:30] Chris #5 ✓ landed at NEW-P66 (parking for ~34s)
+[19:33:30] Michael #4 🚀 departing from NEW-P36
+[19:33:30] Robert #6 🚀 departing from NEW-P96
+[19:33:30] Robert #6 moving 🚀 East (169 units)
+[19:33:30] Robert #6 🚀 heading to parking NEW-P58
+[19:33:30] Michael #4 moving 🚀 West (1035 units)
+[19:33:31] Michael #4 🚀 heading to parking NEW-P35
+[19:33:31] Jane #1 ✓ landed at NEW-P48 (parking for ~88s)
+[19:33:31] Robert #10 🚀 departing from NEW-P95
+[19:33:31] Chris #5 🚀 departing from NEW-P66
+[19:33:31] Sarah #6 🚀 departing from NEW-P23
+[19:33:31] Sarah #6 moving 🚀 Northeast (613 units)
+[19:33:31] Sarah #6 🚀 heading to parking NEW-P96
+[19:33:32] Chris #6 ✓ landed at NEW-P11 (parking for ~88s)
+[19:33:32] Jane #8 ✓ landed at NEW-P86 (parking for ~68s)
+[19:33:32] Robert #10 moving 🚀 North (996 units)
+[19:33:32] Robert #10 🚀 heading to parking NEW-P26
+[19:33:32] Chris #5 moving 🚀 Northwest (336 units)
+[19:33:32] Chris #5 🚀 heading to parking NEW-P5
+[19:33:32] Amanda #10 🚀 departing from NEW-P13
+[19:33:32] Amanda #10 moving 🚀 West (1178 units)
+[19:33:33] Amanda #10 🚀 heading to parking NEW-P90
+[19:33:33] Chris #7 🚀 departing from NEW-P17

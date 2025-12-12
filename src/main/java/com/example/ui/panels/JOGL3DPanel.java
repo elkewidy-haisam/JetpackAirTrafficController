@@ -1,3 +1,4 @@
+
 /*
  * JOGL3DPanel.java
  * Hardware-accelerated 3D panel using JOGL for OpenGL rendering. Drop-in replacement for MapTrackingPanel.
@@ -37,6 +38,7 @@ import com.jogamp.opengl.awt.GLJPanel;
  * Drop-in replacement for MapTrackingPanel.
  */
 public class JOGL3DPanel extends JPanel {
+        private List<JetPackFlight> allFlights;
     // Methods to filter jetpacks
     public void hideJetpack(JetPackFlight flight) {
         visibleJetpacks.remove(flight);
@@ -67,7 +69,6 @@ public class JOGL3DPanel extends JPanel {
     private GLJPanel glPanel;
     private JetPackFlight flight;
     private CityModel3D cityModel;
-    private List<JetPackFlight> allFlights;
     private final java.util.Set<JetPackFlight> visibleJetpacks = new java.util.HashSet<>();
     private Map<JetPackFlight, JetPackFlightState> flightStates;
     private Timer updateTimer;
@@ -79,19 +80,19 @@ public class JOGL3DPanel extends JPanel {
     private JLabel terrainLabel;
     private JLabel callsignLabel;
     private JLabel cityLabel;
+    private JLabel jetpackInfoLabel; // New label for 2D-style info
 
     // Camera control state
     private double cameraAzimuth = 45; // horizontal angle
     private double cameraElevation = 30; // vertical angle
     private double cameraDistance = 400; // zoom
-    private int lastMouseX, lastMouseY;
-    private boolean dragging = false;
+    // Removed unused camera control fields lastMouseX, lastMouseY, dragging
     
     public JOGL3DPanel(String cityName, JetPackFlight flight, 
                    List<JetPackFlight> allFlights,
                    Map<JetPackFlight, JetPackFlightState> flightStates,
                    BufferedImage cityMap) {
-        super();
+        // Removed unused variable dest
         this.flight = flight;
         this.allFlights = allFlights;
         this.flightStates = flightStates;
@@ -135,7 +136,7 @@ public class JOGL3DPanel extends JPanel {
         hudOverlay.setLayout(new BoxLayout(hudOverlay, BoxLayout.Y_AXIS));
         hudOverlay.setOpaque(false);
         hudOverlay.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        hudOverlay.setMaximumSize(new Dimension(180, 180));
+        hudOverlay.setMaximumSize(new Dimension(260, 220));
         hudOverlay.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         // Create HUD labels
@@ -144,6 +145,7 @@ public class JOGL3DPanel extends JPanel {
         terrainLabel = createHUDLabel("Terrain: LAND", Color.WHITE);
         callsignLabel = createHUDLabel("Callsign: N/A", Color.YELLOW);
         cityLabel = createHUDLabel("City: " + cityName, Color.WHITE);
+        jetpackInfoLabel = createHUDLabel("", new Color(255, 255, 200)); // New info label
 
         hudOverlay.add(positionLabel);
         hudOverlay.add(Box.createVerticalStrut(5));
@@ -154,6 +156,8 @@ public class JOGL3DPanel extends JPanel {
         hudOverlay.add(callsignLabel);
         hudOverlay.add(Box.createVerticalStrut(5));
         hudOverlay.add(cityLabel);
+        hudOverlay.add(Box.createVerticalStrut(10));
+        hudOverlay.add(jetpackInfoLabel);
     }
     
     /**
@@ -196,14 +200,14 @@ public class JOGL3DPanel extends JPanel {
      */
     private void updateHUD() {
         if (flight == null) return;
-        
+
         double x = flight.getX();
         double y = flight.getY();
         Point dest = flight.getDestination();
-        
+
         // Update position
         positionLabel.setText(String.format("X: %.1f, Y: %.1f", x, y));
-        
+
         // Update status
         String status = "ACTIVE";
         if (flightStates != null && flightStates.containsKey(flight)) {
@@ -220,7 +224,7 @@ public class JOGL3DPanel extends JPanel {
             statusLabel.setForeground(Color.RED);
         }
         statusLabel.setText("Status: " + status);
-        
+
         // Update terrain
         String terrain = "LAND 🌲";
         Color terrainColor = Color.GREEN;
@@ -233,10 +237,31 @@ public class JOGL3DPanel extends JPanel {
         }
         terrainLabel.setText("Terrain: " + terrain);
         terrainLabel.setForeground(terrainColor);
-        
+
         // Update callsign
         if (flight.getJetpack() != null) {
             callsignLabel.setText("Callsign: " + flight.getJetpack().getCallsign());
+        }
+
+        // Update 2D-style info label (callsign, serial, owner, model, bird name)
+        if (flight.getJetpack() != null && allFlights != null) {
+            com.example.jetpack.JetPack jp = flight.getJetpack();
+            int idx = 0;
+            for (int i = 0; i < allFlights.size(); i++) {
+                if (allFlights.get(i) == flight) { idx = i; break; }
+            }
+            String[] birdNames = {
+                "Falcon", "Eagle", "Hawk", "Osprey", "Swift", "Albatross", "Condor", "Kestrel", "Merlin", "Harrier",
+                "Heron", "Raven", "Sparrow", "Vireo", "Peregrine", "Goshawk", "Avocet", "Tern", "Cormorant", "Buzzard",
+                "Crane", "Lark", "Oriole", "Jay", "Wren", "Finch", "Bittern", "Snipe", "Stork", "Ibis"
+            };
+            String birdName = birdNames[idx % birdNames.length];
+            String info = String.format("%-12s  |  %-15s  |  %-20s  |  %s %s",
+                    jp.getCallsign(), jp.getSerialNumber(), jp.getOwnerName(),
+                    jp.getModel(), birdName);
+            jetpackInfoLabel.setText(info);
+        } else {
+            jetpackInfoLabel.setText("");
         }
     }
     
