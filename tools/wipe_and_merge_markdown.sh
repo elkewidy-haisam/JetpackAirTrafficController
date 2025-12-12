@@ -11,7 +11,7 @@ CONFIRM_DELETE="${1:-}"
 # Ensure README.md exists
 if [[ ! -f "README.md" ]]; then
   echo "[INFO] README.md not found. Creating an empty README.md..."
-  : > README.md
+  touch README.md
 fi
 
 ROOT_README_ABS="$(cd "$(dirname "README.md")" && pwd)/$(basename "README.md")"
@@ -26,7 +26,13 @@ It contains the plain text from all other Markdown files in this repository.
 HDR
 
 # 2) Collect all markdown files recursively, sorted by path
-mapfile -t FILES < <(find . -type f -name "*.md" | LC_ALL=C sort)
+mapfile -t FILES < <(find . -type f -name "*.md" 2>/dev/null | LC_ALL=C sort)
+
+# Check if any markdown files were found
+if [[ ${#FILES[@]} -eq 0 ]]; then
+  echo "[WARNING] No markdown files found in repository."
+  exit 0
+fi
 
 # 3) Append each file content except the root README.md
 for F in "${FILES[@]}"; do

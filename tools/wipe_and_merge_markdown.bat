@@ -12,6 +12,10 @@ REM Ensure we're at repo root with README.md present (create if missing)
 if not exist "README.md" (
   echo [INFO] README.md not found. Creating an empty README.md...
   type nul > "README.md"
+  if errorlevel 1 (
+    echo [ERROR] Failed to create README.md
+    exit /b 1
+  )
 )
 
 set "ROOT_README=%CD%\README.md"
