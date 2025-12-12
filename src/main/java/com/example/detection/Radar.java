@@ -139,17 +139,25 @@ public class Radar {
     public List<String> checkForCollisions(double minimumSeparation) {
         List<String> warnings = new ArrayList<>();
         List<JetPack> jetpacks = new ArrayList<>(trackedJetpacks.keySet());
+        
+        // Check each pair of jetpacks exactly once (i < j avoids duplicate checks)
         for (int i = 0; i < jetpacks.size(); i++) {
             for (int j = i + 1; j < jetpacks.size(); j++) {
                 JetPack jp1 = jetpacks.get(i);
                 JetPack jp2 = jetpacks.get(j);
                 RadarContact contact1 = trackedJetpacks.get(jp1);
                 RadarContact contact2 = trackedJetpacks.get(jp2);
+                
+                // Calculate 2D horizontal distance using Pythagorean theorem
                 double distance = Math.sqrt(
                     Math.pow(contact1.getX() - contact2.getX(), 2) +
                     Math.pow(contact1.getY() - contact2.getY(), 2)
                 );
+                
+                // Check vertical separation
                 double altitudeDiff = Math.abs(contact1.getAltitude() - contact2.getAltitude());
+                
+                // Collision risk if too close horizontally AND vertically (< 100 feet altitude separation)
                 if (distance < minimumSeparation && altitudeDiff < 100) {
                     warnings.add(String.format(
                         "COLLISION WARNING: %s and %s are %.1f units apart (minimum: %.1f)",
