@@ -2,7 +2,27 @@
  * RadioMessageFormatter.java
  * by Haisam Elkewidy
  *
- * RadioMessageFormatter - formats radio transmission messages
+ * This class handles RadioMessageFormatter functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - controllerCallSign (String)
+ *
+ * Methods:
+ *   - RadioMessageFormatter(controllerCallSign)
+ *   - formatCoordinateInstruction(callsign, newX, newY, reason)
+ *   - formatAltitudeInstruction(callsign, newAltitude, reason)
+ *   - formatTakeoffClearance(callsign, runway)
+ *   - formatLandingClearance(callsign, landingZone)
+ *   - formatEmergencyDirective(callsign, directive)
+ *   - formatBroadcast(message)
+ *   - formatWeatherInfo(callsign, weatherInfo)
+ *   - formatPositionRequest(callsign)
+ *   - formatAccidentReport(accidentID, x, y, type, severity, description)
+ *   - formatAccidentCleared(accidentID, x, y)
+ *   - formatHandoffMessage(callsign, arrivalController)
+ *   - formatPilotAcknowledgment(callsign, acknowledgment)
+ *   - formatHandoffAcknowledgment(callsign, arrivalController, acknowledgment)
+ *
  */
 
 package com.example.radio;

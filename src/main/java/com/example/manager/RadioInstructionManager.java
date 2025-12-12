@@ -2,7 +2,19 @@
  * RadioInstructionManager.java
  * by Haisam Elkewidy
  *
- * Manages radio instructions and ATC communications.
+ * This class handles RadioInstructionManager functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - cityRadio (Radio)
+ *   - currentWeather (Weather)
+ *   - city (String)
+ *   - random (Random)
+ *   - logManager (CityLogManager)
+ *   - radioInstructionsArea (JTextArea)
+ *
+ * Methods:
+ *   - RadioInstructionManager(cityRadio, city, logManager)
+ *
  */
 
 package com.example.manager;

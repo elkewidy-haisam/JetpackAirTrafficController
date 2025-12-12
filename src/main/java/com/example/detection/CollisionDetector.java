@@ -2,7 +2,17 @@
  * CollisionDetector.java
  * by Haisam Elkewidy
  *
- * Detects and manages jetpack collisions in the city grid. Detects and reports collisions between jetpack flights. Monitors distances and issues warnings/alerts based on proximity. Integrates with AccidentAlert system for automatic accident reporting.
+ * This class detects potential collisions between jetpacks and issues warnings to prevent accidents.
+ *
+ * Variables:
+ *   - radarTape (RadarTapeWindow)
+ *   - accidentAlert (AccidentAlert)
+ *   - accidentCounter (int)
+ *
+ * Methods:
+ *   - CollisionDetector()
+ *   - checkCollisions(jetpackFlights, Map<JetPackFlight, flightStates)
+ *
  */
 
 package com.example.detection;

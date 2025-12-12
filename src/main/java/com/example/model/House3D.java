@@ -2,7 +2,11 @@
  * House3D.java
  * by Haisam Elkewidy
  *
- * House3D.java
+ * This class handles House3D functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - House3D(x, y, width, depth, height)
+ *
  */
 
 package com.example.model;

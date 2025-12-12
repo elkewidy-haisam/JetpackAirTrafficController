@@ -2,9 +2,34 @@
  * JOGLRenderer3D.java
  * by Haisam Elkewidy
  *
- * Hardware-accelerated 3D renderer using JOGL OpenGL.
+ * This class handles JOGLRenderer3D functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - accidents (List<Accident>)
+ *   - flightStates (Map<JetPackFlight, JetPackFlightState>)
+ *   - cameraAzimuth (double)
+ *   - cameraElevation (double)
+ *   - cameraDistance (double)
+ *   - glut (GLUT)
+ *   - mouseAzimuth (double)
+ *   - mouseElevation (double)
+ *   - mouseDistance (double)
+ *   - dragging (boolean)
+ *   - ... and 5 more
+ *
+ * Methods:
+ *   - JOGLRenderer3D()
+ *   - mousePressed(x, y)
+ *   - mouseReleased(x, y)
+ *   - mouseDragged(x, y)
+ *   - mouseWheelMoved(wheelRotation)
+ *   - init(drawable)
+ *   - dispose(drawable)
+ *   - display(drawable)
+ *   - updateData(flight, cityModel, nearbyJetpacks, accidents, Map<JetPackFlight, flightStates)
+ *   - reshape(drawable, x, y, width, height)
+ *
  */
-
 
 package com.example.ui.utility;
 

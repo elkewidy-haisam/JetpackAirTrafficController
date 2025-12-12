@@ -2,7 +2,19 @@
  * AccidentAlert.java
  * by Haisam Elkewidy
  *
- * Represents an accident event and provides alerting logic for jetpack collisions and emergencies.
+ * This class handles AccidentAlert functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - description (String)
+ *   - timestamp (LocalDateTime)
+ *   - location (String)
+ *   - jetpackId (String)
+ *   - severity (Severity)
+ *
+ * Methods:
+ *   - AccidentAlert(description, location, jetpackId, severity)
+ *   - toString()
+ *
  */
 
 package com.example.model;

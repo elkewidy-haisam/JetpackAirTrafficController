@@ -1,3 +1,20 @@
+/**
+ * MapDisplayPanel.java
+ * by Haisam Elkewidy
+ *
+ * This class handles MapDisplayPanel functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - mapIcon (ImageIcon)
+ *   - parkingSpaces (List<RealisticCityMap.ParkingSpace>)
+ *   - parkingRenderer (ParkingSpaceRenderer)
+ *   - shadingRenderer (ShadingRenderer)
+ *
+ * Methods:
+ *   - MapDisplayPanel(mapIcon, parkingSpaces)
+ *
+ */
+
 package com.example.ui.panels;
 
 import javax.swing.*;

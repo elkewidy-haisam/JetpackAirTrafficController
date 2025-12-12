@@ -2,7 +2,20 @@
  * GridRenderer.java
  * by Haisam Elkewidy
  *
- * Utility class for rendering grid overlays on maps.
+ * This class handles GridRenderer functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - grid (Grid)
+ *   - visible (boolean)
+ *   - gridColor (Color)
+ *   - labelColor (Color)
+ *   - gridSpacing (int)
+ *
+ * Methods:
+ *   - GridRenderer(grid)
+ *   - toggleVisibility()
+ *   - render(g2d, mapWidth, mapHeight)
+ *
  */
 
 package com.example.grid;

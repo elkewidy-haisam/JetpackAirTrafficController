@@ -2,7 +2,12 @@
  * Renderer3D.java
  * by Haisam Elkewidy
  *
- * Advanced 3D rendering for jetpack tracking with realistic city models. Enhanced to show nearby jetpacks, accidents, and flight states.
+ * This class handles Renderer3D functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - renderScene(g2d, width, height, flight, cityModel)
+ *   - renderScene(g2d, width, height, flight, cityModel, nearbyJetpacks, accidents, Map<JetPackFlight, flightStates)
+ *
  */
 
 package com.example.ui.utility;

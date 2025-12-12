@@ -2,7 +2,12 @@
  * CityMapLoader.java
  * by Haisam Elkewidy
  *
- * Loads city map data and initializes the city map panel.
+ * This class handles CityMapLoader functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - CityMapLoader()
+ *   - loadMapData()
+ *
  */
 
 package com.example.ui.panels;

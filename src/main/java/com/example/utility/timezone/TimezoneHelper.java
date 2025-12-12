@@ -2,7 +2,8 @@
  * TimezoneHelper.java
  * by Haisam Elkewidy
  *
- * Utility class for handling timezone operations for different cities.
+ * This class handles TimezoneHelper functionality in the Air Traffic Controller system.
+ *
  */
 
 package com.example.utility.timezone;

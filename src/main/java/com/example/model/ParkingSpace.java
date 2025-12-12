@@ -2,7 +2,21 @@
  * ParkingSpace.java
  * by Haisam Elkewidy
  *
- * Represents a parking space for jetpacks in the city grid.
+ * This class represents a designated parking location for jetpacks within the city.
+ *
+ * Variables:
+ *   - id (String)
+ *   - x (double)
+ *   - y (double)
+ *   - occupied (boolean)
+ *
+ * Methods:
+ *   - ParkingSpace(id, x, y)
+ *   - ParkingSpace(id, x, y)
+ *   - occupy()
+ *   - vacate()
+ *   - toString()
+ *
  */
 
 package com.example.model;

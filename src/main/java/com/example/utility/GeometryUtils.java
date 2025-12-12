@@ -2,7 +2,13 @@
  * GeometryUtils.java
  * by Haisam Elkewidy
  *
- * Utility for geometric calculations in the city simulation.
+ * This class handles GeometryUtils functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - distance(x1, y1, x2, y2)
+ *   - calculateDistance(x1, y1, x2, y2)
+ *   - calculateDistance(x1, y1, x2, y2)
+ *
  */
 
 package com.example.utility;

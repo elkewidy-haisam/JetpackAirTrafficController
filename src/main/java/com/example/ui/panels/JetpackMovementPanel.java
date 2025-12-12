@@ -1,3 +1,19 @@
+/**
+ * JetpackMovementPanel.java
+ * by Haisam Elkewidy
+ *
+ * This class handles JetpackMovementPanel functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - jetpackMovementArea (JTextArea)
+ *
+ * Methods:
+ *   - JetpackMovementPanel()
+ *   - appendMovement(text)
+ *   - clearMovement()
+ *
+ */
+
 package com.example.ui.panels;
 
 import java.awt.BorderLayout;

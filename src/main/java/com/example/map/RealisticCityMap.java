@@ -1,3 +1,20 @@
+/**
+ * RealisticCityMap.java
+ * by Haisam Elkewidy
+ *
+ * This class handles RealisticCityMap functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - mapImage (BufferedImage)
+ *   - cityName (String)
+ *   - imageLoaded (boolean)
+ *   - parkingSpaces (List<ParkingSpace>)
+ *
+ * Methods:
+ *   - RealisticCityMap(cityName)
+ *
+ */
+
 package com.example.map;
 
 import javax.swing.*;

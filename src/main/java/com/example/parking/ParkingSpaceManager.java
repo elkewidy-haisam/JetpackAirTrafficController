@@ -2,7 +2,17 @@
  * ParkingSpaceManager.java
  * by Haisam Elkewidy
  *
- * ParkingSpaceManager.java
+ * This class handles ParkingSpaceManager functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - parkingSpaces (List<ParkingSpace>)
+ *   - city (String)
+ *
+ * Methods:
+ *   - ParkingSpaceManager(city)
+ *   - initializeParkingSpaces(mapWidth, mapHeight, mapImage)
+ *   - updateParkingAvailability(parkingAvailabilityLabel)
+ *
  */
 
 package com.example.parking;

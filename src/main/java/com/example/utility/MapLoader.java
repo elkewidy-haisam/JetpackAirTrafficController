@@ -2,7 +2,12 @@
  * MapLoader.java
  * by Haisam Elkewidy
  *
- * Loads map data for the city simulation.
+ * This class handles MapLoader functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - MapLoader()
+ *   - loadMap(mapFile)
+ *
  */
 
 package com.example.utility;

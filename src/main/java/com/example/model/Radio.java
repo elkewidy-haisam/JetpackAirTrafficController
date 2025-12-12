@@ -2,7 +2,17 @@
  * Radio.java
  * by Haisam Elkewidy
  *
- * Represents a radio communication device for jetpack flights.
+ * This class handles radio communications between Air Traffic Control and jetpack pilots.
+ *
+ * Variables:
+ *   - frequency (String)
+ *   - enabled (boolean)
+ *
+ * Methods:
+ *   - Radio(frequency)
+ *   - transmit(message)
+ *   - toString()
+ *
  */
 
 package com.example.model;

@@ -2,7 +2,11 @@
  * TimezoneHelper.java
  * by Haisam Elkewidy
  *
- * Utility for handling time zone conversions and formatting.
+ * This class handles TimezoneHelper functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - formatWithTimezone(dateTime, zoneId)
+ *
  */
 
 package com.example.utility;

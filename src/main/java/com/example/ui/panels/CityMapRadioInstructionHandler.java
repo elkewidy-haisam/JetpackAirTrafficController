@@ -2,7 +2,12 @@
  * CityMapRadioInstructionHandler.java
  * by Haisam Elkewidy
  *
- * Handles radio instructions for jetpack flights on the city map panel.
+ * This class handles CityMapRadioInstructionHandler functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - CityMapRadioInstructionHandler()
+ *   - handleInstruction(instruction)
+ *
  */
 
 package com.example.ui.panels;

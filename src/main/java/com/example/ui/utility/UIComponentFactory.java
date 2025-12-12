@@ -2,7 +2,22 @@
  * UIComponentFactory.java
  * by Haisam Elkewidy
  *
- * UIComponentFactory.java
+ * This class handles UIComponentFactory functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - createReadOnlyTextArea(rows, columns, font)
+ *   - createReadOnlyTextArea(rows, columns)
+ *   - createScrollPane(view)
+ *   - createScrollPaneAlwaysVisible(view)
+ *   - createBorderLayoutPanel()
+ *   - createBorderLayoutPanel(hgap, vgap)
+ *   - createFlowLayoutPanel()
+ *   - createFlowLayoutPanel(align)
+ *   - createButton(text, font)
+ *   - createButton(text, width, height)
+ *   - createLabel(text, font)
+ *   - createCenteredLabel(text, font)
+ *
  */
 
 package com.example.ui.utility;

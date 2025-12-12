@@ -2,7 +2,11 @@
  * ReflectionHelper.java
  * by Haisam Elkewidy
  *
- * Utility for reflection-based operations in the city simulation.
+ * This class handles ReflectionHelper functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - invokeMethod(obj, methodName, paramTypes, args)
+ *
  */
 
 package com.example.utility;

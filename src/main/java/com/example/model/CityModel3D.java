@@ -2,7 +2,22 @@
  * CityModel3D.java
  * by Haisam Elkewidy
  *
- * CityModel3D.java
+ * This class creates and manages realistic 3D city models with buildings and terrain.
+ *
+ * Variables:
+ *   - cityName (String)
+ *   - buildings (List<Building3D>)
+ *   - roads (List<Road3D>)
+ *   - bridges (List<Bridge3D>)
+ *   - houses (List<House3D>)
+ *   - cityMap (BufferedImage)
+ *   - mapWidth (int)
+ *   - mapHeight (int)
+ *   - random (Random)
+ *
+ * Methods:
+ *   - CityModel3D(cityName, cityMap)
+ *
  */
 
 package com.example.model;

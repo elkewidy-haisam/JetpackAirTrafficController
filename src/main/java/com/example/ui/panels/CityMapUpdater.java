@@ -2,7 +2,12 @@
  * CityMapUpdater.java
  * by Haisam Elkewidy
  *
- * Responsible for updating the city map panel with new data and state changes.
+ * This class handles CityMapUpdater functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - CityMapUpdater()
+ *   - updateMapPanel(panel)
+ *
  */
 
 package com.example.ui.panels;

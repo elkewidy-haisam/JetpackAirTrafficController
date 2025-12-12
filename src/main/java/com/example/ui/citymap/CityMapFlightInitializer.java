@@ -2,7 +2,11 @@
  * CityMapFlightInitializer.java
  * by Haisam Elkewidy
  *
- * Initializes flight paths and jetpack positions on city map.
+ * This class handles CityMapFlightInitializer functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - initializeFlights(jetpacks, jetpackFlights, Map<JetPackFlight, flightStates, parkingSpaces, cityRadio, mapWidth, mapHeight, mapImage, movementLogger, flightStateProvider)
+ *
  */
 
 package com.example.ui.citymap;

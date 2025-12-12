@@ -2,7 +2,15 @@
  * RadioTransmissionLogger.java
  * by Haisam Elkewidy
  *
- * Logs radio transmissions for jetpack flights.
+ * This class handles RadioTransmissionLogger functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - transmissions (List<String>)
+ *
+ * Methods:
+ *   - RadioTransmissionLogger()
+ *   - logTransmission(transmission)
+ *
  */
 
 package com.example.model;

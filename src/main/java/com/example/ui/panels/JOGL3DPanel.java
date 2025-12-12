@@ -2,9 +2,31 @@
  * JOGL3DPanel.java
  * by Haisam Elkewidy
  *
- * JOGL3DPanel.java
+ * This class handles JOGL3DPanel functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - allFlights (List<JetPackFlight>)
+ *   - renderer (JOGLRenderer3D)
+ *   - glPanel (GLJPanel)
+ *   - flight (JetPackFlight)
+ *   - cityModel (CityModel3D)
+ *   - flightStates (Map<JetPackFlight, JetPackFlightState>)
+ *   - updateTimer (Timer)
+ *   - hudOverlay (JPanel)
+ *   - positionLabel (JLabel)
+ *   - statusLabel (JLabel)
+ *   - ... and 7 more
+ *
+ * Methods:
+ *   - JOGL3DPanel(cityName, flight, allFlights, Map<JetPackFlight, flightStates, cityMap)
+ *   - hideJetpack(flight)
+ *   - showJetpack(flight)
+ *   - registerPanel(panel)
+ *   - unregisterPanel(panel)
+ *   - stopUpdateTimer()
+ *   - removeNotify()
+ *
  */
-
 
 /*
  * JOGL3DPanel.java

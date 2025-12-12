@@ -2,7 +2,21 @@
  * CityTimerManager.java
  * by Haisam Elkewidy
  *
- * CityTimerManager.java
+ * This class handles CityTimerManager functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - weatherTimer (Timer)
+ *   - dateTimeTimer (Timer)
+ *   - animationTimer (Timer)
+ *
+ * Methods:
+ *   - startWeatherTimer(callback)
+ *   - startDateTimeTimer(callback)
+ *   - stopWeatherTimer()
+ *   - stopDateTimeTimer()
+ *   - stopAnimationTimer()
+ *   - stopAllTimers()
+ *
  */
 
 package com.example.manager;

@@ -2,7 +2,11 @@
  * Road3D.java
  * by Haisam Elkewidy
  *
- * Road3D.java
+ * This class handles Road3D functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - Road3D(x, y, length, width, angle)
+ *
  */
 
 package com.example.model;

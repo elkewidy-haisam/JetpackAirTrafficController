@@ -2,7 +2,29 @@
  * FlightEmergencyHandler.java
  * by Haisam Elkewidy
  *
- * Handles radio instructions and emergency procedures for jetpack flights.
+ * This class handles FlightEmergencyHandler functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - radioDestination (Point)
+ *   - radioAltitude (Double)
+ *   - followingRadioInstruction (boolean)
+ *   - callsign (String)
+ *   - mapImage (BufferedImage)
+ *   - logger (EmergencyLogger)
+ *   - radioListener (RadioInstructionListener)
+ *
+ * Methods:
+ *   - FlightEmergencyHandler(callsign)
+ *   - FlightEmergencyHandler()
+ *   - receiveCoordinateInstruction(newX, newY, reason)
+ *   - receiveAltitudeInstruction(currentAltitude, newAltitude, reason)
+ *   - receiveEmergencyLandingInstruction(currentX, currentY, parkingSpaces, reason)
+ *   - findEmergencyLandingSpot(currentX, currentY, parkingSpaces, reason)
+ *   - generateEmergencyDetour(currentX, currentY, destination)
+ *   - checkRadioDestinationReached(currentDest, distance, speed)
+ *   - checkRadioAltitudeReached(currentAltitude)
+ *   - clearInstructions()
+ *
  */
 
 package com.example.flight;

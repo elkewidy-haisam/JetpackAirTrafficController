@@ -2,7 +2,12 @@
  * RadioMessageFormatter.java
  * by Haisam Elkewidy
  *
- * Formats radio messages for display and logging.
+ * This class handles RadioMessageFormatter functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - RadioMessageFormatter()
+ *   - format(message)
+ *
  */
 
 package com.example.model;

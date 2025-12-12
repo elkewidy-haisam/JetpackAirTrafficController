@@ -2,7 +2,22 @@
  * Accident.java
  * by Haisam Elkewidy
  *
- * Represents a single accident event in the city.
+ * This class handles Accident functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - accidentID (String)
+ *   - x (int)
+ *   - y (int)
+ *   - type (String)
+ *   - severity (String)
+ *   - description (String)
+ *   - timestamp (long)
+ *   - isActive (boolean)
+ *
+ * Methods:
+ *   - Accident(accidentID, x, y, type, severity, description)
+ *   - toString()
+ *
  */
 
 package com.example.accident;

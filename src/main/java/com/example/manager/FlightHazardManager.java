@@ -2,7 +2,21 @@
  * FlightHazardManager.java
  * by Haisam Elkewidy
  *
- * FlightHazardManager.java
+ * This class handles FlightHazardManager functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - inclementWeather (boolean)
+ *   - buildingCollapse (boolean)
+ *   - airAccident (boolean)
+ *   - policeActivity (boolean)
+ *   - emergencyHalt (boolean)
+ *   - currentStatus (String)
+ *
+ * Methods:
+ *   - FlightHazardManager()
+ *   - clearEmergencyHalt()
+ *   - hasActiveHazards()
+ *
  */
 
 package com.example.manager;

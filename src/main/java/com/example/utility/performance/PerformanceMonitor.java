@@ -2,7 +2,20 @@
  * PerformanceMonitor.java
  * by Haisam Elkewidy
  *
- * Tracks and displays FPS, memory usage, and other performance metrics for the UI.
+ * This class handles PerformanceMonitor functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - frameCount (long)
+ *   - currentFPS (double)
+ *   - lastFPSUpdate (long)
+ *   - visible (boolean)
+ *
+ * Methods:
+ *   - PerformanceMonitor()
+ *   - toggleVisibility()
+ *   - tick()
+ *   - render(g2d, x, y)
+ *
  */
 
 package com.example.utility.performance;

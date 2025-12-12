@@ -2,7 +2,18 @@
  * RadioMessage.java
  * by Haisam Elkewidy
  *
- * Represents a radio message sent between jetpack flights and control.
+ * This class handles RadioMessage functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - sender (String)
+ *   - receiver (String)
+ *   - content (String)
+ *   - type (MessageType)
+ *
+ * Methods:
+ *   - RadioMessage(sender, receiver, content, type)
+ *   - toString()
+ *
  */
 
 package com.example.model;

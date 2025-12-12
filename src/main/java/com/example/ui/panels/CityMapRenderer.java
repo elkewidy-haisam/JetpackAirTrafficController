@@ -2,7 +2,11 @@
  * CityMapRenderer.java
  * by Haisam Elkewidy
  *
- * Responsible for rendering the city map and jetpack positions in the UI.
+ * This class handles CityMapRenderer functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - CityMapRenderer()
+ *
  */
 
 package com.example.ui.panels;

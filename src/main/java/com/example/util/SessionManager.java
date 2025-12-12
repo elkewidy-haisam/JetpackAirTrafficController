@@ -2,7 +2,14 @@
  * SessionManager.java
  * by Haisam Elkewidy
  *
- * Handles saving and loading city simulation state to session files.
+ * This class handles SessionManager functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - SessionManager()
+ *   - saveSession(city, flights, weather)
+ *   - exportRadarLog(radarLog)
+ *   - exportAccidentReport(accidents)
+ *
  */
 
 package com.example.util;

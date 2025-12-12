@@ -2,7 +2,33 @@
  * JetPack.java
  * by Haisam Elkewidy
  *
- * Represents a jetpack pilot and their flight state in the city.
+ * This class handles JetPack functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - id (String)
+ *   - serialNumber (String)
+ *   - callsign (String)
+ *   - ownerName (String)
+ *   - year (String)
+ *   - model (String)
+ *   - manufacturer (String)
+ *   - position (Point)
+ *   - altitude (double)
+ *   - speed (double)
+ *   - ... and 4 more
+ *
+ * Methods:
+ *   - JetPack(id, serialNumber, callsign, ownerName, year, model)
+ *   - JetPack(id, serialNumber, callsign, ownerName, year, model, manufacturer, position, altitude, speed)
+ *   - createForCity(cityPrefix, number)
+ *   - resetCallsignCounter()
+ *   - deactivate()
+ *   - takeOff()
+ *   - ascend()
+ *   - descend()
+ *   - land()
+ *   - park()
+ *
  */
 
 package com.example.jetpack;

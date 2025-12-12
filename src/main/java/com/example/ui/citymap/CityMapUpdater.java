@@ -2,7 +2,21 @@
  * CityMapUpdater.java
  * by Haisam Elkewidy
  *
- * CityMapUpdater - Handles all UI text area updates for the city map panel
+ * This class handles CityMapUpdater functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - city (String)
+ *   - logManager (CityLogManager)
+ *   - weatherBroadcastArea (JTextArea)
+ *   - jetpackMovementArea (JTextArea)
+ *   - radioInstructionsArea (JTextArea)
+ *
+ * Methods:
+ *   - CityMapUpdater(city, logManager, weatherBroadcastArea, jetpackMovementArea, radioInstructionsArea)
+ *   - updateWeatherBroadcast(currentWeather)
+ *   - appendJetpackMovement(message)
+ *   - appendRadioInstruction(message)
+ *
  */
 
 package com.example.ui.citymap;

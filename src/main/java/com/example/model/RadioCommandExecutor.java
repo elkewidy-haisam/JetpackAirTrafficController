@@ -2,7 +2,12 @@
  * RadioCommandExecutor.java
  * by Haisam Elkewidy
  *
- * Executes radio commands for jetpack flights.
+ * This class handles RadioCommandExecutor functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - RadioCommandExecutor()
+ *   - executeCommand(command, radio)
+ *
  */
 
 package com.example.model;

@@ -2,7 +2,11 @@
  * Bridge3D.java
  * by Haisam Elkewidy
  *
- * Bridge3D.java
+ * This class handles Bridge3D functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - Bridge3D(x, y, length, width, angle)
+ *
  */
 
 package com.example.model;

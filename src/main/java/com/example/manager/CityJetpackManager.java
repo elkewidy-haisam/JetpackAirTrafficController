@@ -2,7 +2,11 @@
  * CityJetpackManager.java
  * by Haisam Elkewidy
  *
- * Manages jetpack collections for multiple cities.
+ * This class handles CityJetpackManager functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - CityJetpackManager()
+ *
  */
 
 package com.example.manager;

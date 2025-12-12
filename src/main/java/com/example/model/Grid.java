@@ -2,7 +2,16 @@
  * Grid.java
  * by Haisam Elkewidy
  *
- * Represents the city grid for jetpack navigation and parking.
+ * This class represents the airspace grid system for organizing and tracking flight zones.
+ *
+ * Variables:
+ *   - width (int)
+ *   - height (int)
+ *
+ * Methods:
+ *   - Grid(width, height)
+ *   - toString()
+ *
  */
 
 package com.example.model;

@@ -2,7 +2,25 @@
  * AirTrafficControllerFrame.java
  * by Haisam Elkewidy
  *
- * AirTrafficControllerFrame.java
+ * This class handles AirTrafficControllerFrame functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - currentCity (String)
+ *   - mainPanel (JPanel)
+ *   - citySelectionPanel (CitySelectionPanel)
+ *   - cityMapPanel (CityMapPanel)
+ *   - currentWeather (Weather)
+ *   - currentDayTime (DayTime)
+ *   - radarTapeWindow (RadarTapeWindow)
+ *   - logManager (CityLogManager)
+ *   - jetpackManager (CityJetpackManager)
+ *   - timerManager (CityTimerManager)
+ *   - ... and 4 more
+ *
+ * Methods:
+ *   - AirTrafficControllerFrame()
+ *   - actionPerformed(e)
+ *
  */
 
 package com.example.ui.frames;

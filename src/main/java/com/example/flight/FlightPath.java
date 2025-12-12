@@ -1,3 +1,37 @@
+/**
+ * FlightPath.java
+ * by Haisam Elkewidy
+ *
+ * This class handles FlightPath functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - pathID (String)
+ *   - origin (String)
+ *   - destination (String)
+ *   - waypoints (List<String>)
+ *   - detourWaypoints (List<String>)
+ *   - isDetourActive (boolean)
+ *   - inclementWeather (boolean)
+ *   - buildingCollapse (boolean)
+ *   - airAccident (boolean)
+ *   - policeActivity (boolean)
+ *   - ... and 3 more
+ *
+ * Methods:
+ *   - FlightPath(pathID, origin, destination, waypoints)
+ *   - FlightPath(pathID, origin, destination)
+ *   - FlightPath()
+ *   - detour(detourPoints, hazardType)
+ *   - detour(detourPoints)
+ *   - halt(reason)
+ *   - resumeNormalPath()
+ *   - clearEmergencyHalt()
+ *   - hasActiveHazards()
+ *   - addWaypoint(waypoint)
+ *   - toString()
+ *
+ */
+
 package com.example.flight;
 import java.util.ArrayList;
 import java.util.List;

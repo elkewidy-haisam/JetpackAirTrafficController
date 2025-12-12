@@ -1,3 +1,18 @@
+/**
+ * WeatherBroadcastPanel.java
+ * by Haisam Elkewidy
+ *
+ * This class handles WeatherBroadcastPanel functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - weatherBroadcastArea (JTextArea)
+ *
+ * Methods:
+ *   - WeatherBroadcastPanel()
+ *   - updateBroadcast(text)
+ *
+ */
+
 package com.example.ui.panels;
 
 import java.awt.BorderLayout;

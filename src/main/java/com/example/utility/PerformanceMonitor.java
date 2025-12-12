@@ -2,7 +2,16 @@
  * PerformanceMonitor.java
  * by Haisam Elkewidy
  *
- * Monitors performance metrics for the city simulation.
+ * This class handles PerformanceMonitor functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - startTime (long)
+ *   - endTime (long)
+ *
+ * Methods:
+ *   - start()
+ *   - stop()
+ *
  */
 
 package com.example.utility;

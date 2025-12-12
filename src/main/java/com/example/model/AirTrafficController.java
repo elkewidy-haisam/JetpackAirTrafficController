@@ -2,7 +2,18 @@
  * AirTrafficController.java
  * by Haisam Elkewidy
  *
- * Central controller for managing jetpack flights, city state, and accident alerts.
+ * This class represents the overall Air Traffic Controller for managing jetpack flights and airspace operations.
+ *
+ * Variables:
+ *   - flights (List<JetPackFlight>)
+ *   - accidentAlerts (List<AccidentAlert>)
+ *
+ * Methods:
+ *   - AirTrafficController()
+ *   - addFlight(flight)
+ *   - removeFlight(flight)
+ *   - reportAccident(alert)
+ *
  */
 
 package com.example.model;

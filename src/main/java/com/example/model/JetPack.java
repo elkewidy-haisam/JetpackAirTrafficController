@@ -2,7 +2,17 @@
  * JetPack.java
  * by Haisam Elkewidy
  *
- * Represents a jetpack device used in city flights.
+ * This class represents a jetpack vehicle with pilot information, position, and flight capabilities.
+ *
+ * Variables:
+ *   - callsign (String)
+ *   - pilotName (String)
+ *   - available (boolean)
+ *
+ * Methods:
+ *   - JetPack(callsign, pilotName)
+ *   - toString()
+ *
  */
 
 package com.example.model;

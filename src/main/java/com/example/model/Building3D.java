@@ -2,7 +2,25 @@
  * Building3D.java
  * by Haisam Elkewidy
  *
- * Represents a 3D building with position, dimensions, and rendering properties.
+ * This class represents a 3D building structure in the city model with rendering properties.
+ *
+ * Variables:
+ *   - x (double)
+ *   - y (double)
+ *   - width (double)
+ *   - depth (double)
+ *   - height (double)
+ *   - color (Color)
+ *   - type (String)
+ *   - hasWindows (boolean)
+ *   - floors (int)
+ *
+ * Methods:
+ *   - Building3D(x, y, width, depth, height, type)
+ *   - containsPoint(px, py)
+ *   - distanceTo(px, py)
+ *   - hasWindows()
+ *
  */
 
 package com.example.model;

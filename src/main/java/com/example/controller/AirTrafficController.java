@@ -1,3 +1,40 @@
+/**
+ * AirTrafficController.java
+ * by Haisam Elkewidy
+ *
+ * This class handles AirTrafficController functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - controllerID (String)
+ *   - location (String)
+ *   - managedJetpacks (List<JetPack>)
+ *   - radio (Radio)
+ *   - radar (Radar)
+ *   - weather (Weather)
+ *   - accidentAlert (AccidentAlert)
+ *   - grid (Grid)
+ *   - dayTime (DayTime)
+ *   - activeFlightPaths (List<FlightPath>)
+ *   - ... and 1 more
+ *
+ * Methods:
+ *   - AirTrafficController(controllerID, location, gridWidth, gridHeight)
+ *   - AirTrafficController()
+ *   - registerJetpack(jetpack, x, y, altitude)
+ *   - unregisterJetpack(jetpack)
+ *   - createFlightPath(jetpack, origin, destination)
+ *   - updateJetpackPosition(jetpack, x, y, altitude)
+ *   - reportAccident(x, y, type, severity, description)
+ *   - clearAccident(accidentID)
+ *   - updateWeather(newWeather)
+ *   - performSystemCheck()
+ *   - checkForCollisions()
+ *   - emergencyShutdown()
+ *   - restart()
+ *   - toString()
+ *
+ */
+
 package com.example.controller;
 
 import java.util.ArrayList;

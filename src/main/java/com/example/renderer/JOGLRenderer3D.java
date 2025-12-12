@@ -2,7 +2,16 @@
  * JOGLRenderer3D.java
  * by Haisam Elkewidy
  *
- * 3D renderer for city models using JOGL. Renders water, roads, bridges, buildings, and houses in OpenGL.
+ * This class handles JOGLRenderer3D functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - cityModel (CityModel3D)
+ *   - glut (GLUT)
+ *
+ * Methods:
+ *   - JOGLRenderer3D(cityModel)
+ *   - display(drawable)
+ *
  */
 
 package com.example.renderer;

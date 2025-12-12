@@ -2,7 +2,11 @@
  * CityMapPanelFactory.java
  * by Haisam Elkewidy
  *
- * Factory for creating city map panels and related UI components.
+ * This class handles CityMapPanelFactory functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - createCityMapPanel()
+ *
  */
 
 package com.example.ui.panels;

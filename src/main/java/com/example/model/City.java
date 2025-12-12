@@ -2,7 +2,19 @@
  * City.java
  * by Haisam Elkewidy
  *
- * Represents a city in the simulation, including grid and parking spaces.
+ * This class represents a city with its geographic dimensions and infrastructure.
+ *
+ * Variables:
+ *   - name (String)
+ *   - width (int)
+ *   - height (int)
+ *   - parkingSpaces (List<ParkingSpace>)
+ *
+ * Methods:
+ *   - City(name, width, height)
+ *   - addParkingSpace(space)
+ *   - toString()
+ *
  */
 
 package com.example.model;

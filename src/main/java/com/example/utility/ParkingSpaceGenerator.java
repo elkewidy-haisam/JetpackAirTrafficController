@@ -2,7 +2,11 @@
  * ParkingSpaceGenerator.java
  * by Haisam Elkewidy
  *
- * Generates parking spaces for jetpacks in the city grid.
+ * This class handles ParkingSpaceGenerator functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - generateSpaces(count)
+ *
  */
 
 package com.example.utility;

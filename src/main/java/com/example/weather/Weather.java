@@ -2,7 +2,26 @@
  * Weather.java
  * by Haisam Elkewidy
  *
- * Represents different kinds of weather along with varying degrees of severity.
+ * This class handles Weather functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - weatherTypes (Map<String, Integer>)
+ *   - currentWeather (String)
+ *   - currentSeverity (int)
+ *   - temperature (double)
+ *   - windSpeed (int)
+ *   - visibility (int)
+ *   - weatherID (String)
+ *   - lastUpdated (long)
+ *
+ * Methods:
+ *   - Weather(weatherID, initialWeather)
+ *   - Weather()
+ *   - sendWeatherBroadcast()
+ *   - changeWeather(newWeather)
+ *   - changeWeatherRandomly()
+ *   - toString()
+ *
  */
 
 package com.example.weather;

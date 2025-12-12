@@ -2,7 +2,20 @@
  * RadioTransmissionLogger.java
  * by Haisam Elkewidy
  *
- * RadioTransmissionLogger - manages radio transmission logging
+ * This class handles RadioTransmissionLogger functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - transmissionLog (List<String>)
+ *   - isTransmitting (boolean)
+ *
+ * Methods:
+ *   - RadioTransmissionLogger()
+ *   - transmit(message)
+ *   - logTransmission(message)
+ *   - transmitAndLog(message)
+ *   - clearTransmissionLog()
+ *   - printLog()
+ *
  */
 
 package com.example.radio;

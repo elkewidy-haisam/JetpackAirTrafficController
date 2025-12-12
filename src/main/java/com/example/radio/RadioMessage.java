@@ -2,7 +2,20 @@
  * RadioMessage.java
  * by Haisam Elkewidy
  *
- * RadioMessage represents a two-way radio communication message
+ * This class handles RadioMessage functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - sender (String)
+ *   - receiver (String)
+ *   - message (String)
+ *   - timestamp (long)
+ *   - type (MessageType)
+ *   - acknowledged (boolean)
+ *
+ * Methods:
+ *   - RadioMessage(sender, receiver, message, type)
+ *   - toString()
+ *
  */
 
 package com.example.radio;

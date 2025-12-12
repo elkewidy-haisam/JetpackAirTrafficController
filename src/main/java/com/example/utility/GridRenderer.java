@@ -2,7 +2,11 @@
  * GridRenderer.java
  * by Haisam Elkewidy
  *
- * Responsible for rendering the city grid in the UI.
+ * This class handles GridRenderer functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - GridRenderer()
+ *
  */
 
 package com.example.utility;

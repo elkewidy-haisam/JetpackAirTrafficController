@@ -2,7 +2,16 @@
  * ConsoleOutputPanel.java
  * by Haisam Elkewidy
  *
- * ConsoleOutputPanel.java
+ * This class handles ConsoleOutputPanel functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - consoleOutput (JTextArea)
+ *
+ * Methods:
+ *   - ConsoleOutputPanel()
+ *   - appendMessage(message)
+ *   - clear()
+ *
  */
 
 package com.example.ui.panels;

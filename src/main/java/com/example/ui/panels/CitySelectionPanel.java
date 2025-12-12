@@ -2,7 +2,17 @@
  * CitySelectionPanel.java
  * by Haisam Elkewidy
  *
- * CitySelectionPanel.java
+ * This class handles CitySelectionPanel functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - cityComboBox (JComboBox<String>)
+ *   - selectButton (JButton)
+ *   - instructionLabel (JLabel)
+ *   - citySelectedCallback (Consumer<String>)
+ *
+ * Methods:
+ *   - CitySelectionPanel(citySelectedCallback)
+ *
  */
 
 package com.example.ui.panels;

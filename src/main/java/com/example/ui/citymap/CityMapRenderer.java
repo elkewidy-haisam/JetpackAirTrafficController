@@ -2,7 +2,18 @@
  * CityMapRenderer.java
  * by Haisam Elkewidy
  *
- * Renders visual elements on the city map.
+ * This class handles CityMapRenderer functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - city (String)
+ *   - mapIcon (ImageIcon)
+ *   - gridRenderer (GridRenderer)
+ *   - performanceMonitor (PerformanceMonitor)
+ *
+ * Methods:
+ *   - CityMapRenderer(city, mapIcon, gridRenderer, performanceMonitor)
+ *   - paintMapComponent(g, component, jetpackFlights, parkingSpaces)
+ *
  */
 
 package com.example.ui.citymap;

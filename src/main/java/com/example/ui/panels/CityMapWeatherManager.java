@@ -2,7 +2,12 @@
  * CityMapWeatherManager.java
  * by Haisam Elkewidy
  *
- * Manages weather updates and display for the city map panel.
+ * This class handles CityMapWeatherManager functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - CityMapWeatherManager()
+ *   - updateWeather(weatherInfo)
+ *
  */
 
 package com.example.ui.panels;

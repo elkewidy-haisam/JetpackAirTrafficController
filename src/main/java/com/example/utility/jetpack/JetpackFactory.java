@@ -1,3 +1,14 @@
+/**
+ * JetpackFactory.java
+ * by Haisam Elkewidy
+ *
+ * This class handles JetpackFactory functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - generateJetpacksForCity(prefix, cityName)
+ *
+ */
+
 // JetpackFactory.java
 // by Haisam Elkewidy
 // Factory class for generating jetpacks for different cities. Provides city-specific callsigns, models, and manufacturers.

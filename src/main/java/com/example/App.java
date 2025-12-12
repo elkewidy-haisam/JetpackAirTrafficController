@@ -2,7 +2,11 @@
  * App.java
  * by Haisam Elkewidy
  *
- * Main entry point for the Air Traffic Controller application.
+ * This class handles App functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - main(args)
+ *
  */
 
 package com.example;

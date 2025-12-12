@@ -2,7 +2,34 @@
  * Radar.java
  * by Haisam Elkewidy
  *
- * The radar class is meant for the AirTrafficController to have positional awareness of every jetpack within the locale's airspace. - updateJetPackPositions() - frequently update jetpack's positions on the radar, - identifyAircraft() - used to fetch jetpack's identifiers and display them on the map
+ * This class provides radar tracking capabilities for monitoring jetpack positions in the airspace.
+ *
+ * Variables:
+ *   - trackedJetpacks (Map<JetPack, RadarContact>)
+ *   - radarRange (double)
+ *   - scanInterval (int)
+ *   - isActive (boolean)
+ *   - radarID (String)
+ *   - centerX (int)
+ *   - centerY (int)
+ *   - x (int)
+ *   - y (int)
+ *   - altitude (int)
+ *   - ... and 2 more
+ *
+ * Methods:
+ *   - Radar(radarID, radarRange, centerX, centerY)
+ *   - Radar()
+ *   - updatePosition(x, y, altitude)
+ *   - toString()
+ *   - updateJetPackPosition(jetpack, x, y, altitude)
+ *   - addJetpackToRadar(jetpack, x, y, altitude)
+ *   - removeJetpackFromRadar(jetpack)
+ *   - identifyAircraft(jetpack)
+ *   - checkForCollisions(minimumSeparation)
+ *   - performRadarSweep()
+ *   - toString()
+ *
  */
 
 package com.example.detection;

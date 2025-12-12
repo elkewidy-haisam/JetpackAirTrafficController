@@ -2,7 +2,8 @@
  * DebugConfig.java
  * by Haisam Elkewidy
  *
- * Global debug configuration for the application. Set VERBOSE to false to disable console logging and improve performance.
+ * This class handles DebugConfig functionality in the Air Traffic Controller system.
+ *
  */
 
 package com.example.util;

@@ -2,7 +2,11 @@
  * WaterDetector.java
  * by Haisam Elkewidy
  *
- * Utility for detecting water regions in the city grid.
+ * This class handles WaterDetector functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - WaterDetector(resourcePath)
+ *
  */
 
 package com.example.utility;

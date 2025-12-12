@@ -2,7 +2,39 @@
  * JetPackFlight.java
  * by Haisam Elkewidy
  *
- * Manages animated jetpack flight with trails, destinations, and FlightPath logic.
+ * This class handles JetPackFlight functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - jetpack (JetPack)
+ *   - color (Color)
+ *   - baseColor (Color)
+ *   - movementLogger (MovementLogger)
+ *   - flightStateProvider (FlightStateProvider)
+ *   - movementController (FlightMovementController)
+ *   - hazardMonitor (FlightHazardMonitor)
+ *   - emergencyHandler (FlightEmergencyHandler)
+ *   - isActive (boolean)
+ *   - currentStatus (String)
+ *   - ... and 1 more
+ *
+ * Methods:
+ *   - JetPackFlight(jetpack, start, destination, color)
+ *   - onInstructionReceived(instruction)
+ *   - onInstructionCompleted(instruction)
+ *   - receiveCoordinateInstruction(newX, newY, reason)
+ *   - receiveAltitudeInstruction(newAltitude, reason)
+ *   - receiveEmergencyLandingInstruction(parkingSpaces, reason)
+ *   - updatePosition()
+ *   - hasReachedDestination()
+ *   - addWaypoint(waypoint)
+ *   - detour(detourPoints, hazardType)
+ *   - halt(reason)
+ *   - emergencyLanding(parkingSpaces, reason)
+ *   - resumeNormalPath()
+ *   - clearEmergencyHalt()
+ *   - hasActiveHazards()
+ *   - ... and 1 more
+ *
  */
 
 package com.example.flight;

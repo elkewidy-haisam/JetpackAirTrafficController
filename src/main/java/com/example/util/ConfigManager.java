@@ -2,7 +2,17 @@
  * ConfigManager.java
  * by Haisam Elkewidy
  *
- * Handles loading and saving user preferences and application settings.
+ * This class handles ConfigManager functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - properties (Properties)
+ *   - configFile (File)
+ *
+ * Methods:
+ *   - ConfigManager()
+ *   - loadConfig()
+ *   - saveConfig()
+ *
  */
 
 package com.example.util;

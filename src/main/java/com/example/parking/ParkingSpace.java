@@ -2,7 +2,19 @@
  * ParkingSpace.java
  * by Haisam Elkewidy
  *
- * Represents a parking space for jetpacks in the city.
+ * This class handles ParkingSpace functionality in the Air Traffic Controller system.
+ *
+ * Variables:
+ *   - id (String)
+ *   - location (Point)
+ *   - isOccupied (boolean)
+ *
+ * Methods:
+ *   - ParkingSpace(id, x, y)
+ *   - occupy()
+ *   - vacate()
+ *   - toString()
+ *
  */
 
 package com.example.parking;

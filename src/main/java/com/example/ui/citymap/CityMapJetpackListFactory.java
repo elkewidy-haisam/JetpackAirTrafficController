@@ -2,9 +2,16 @@
  * CityMapJetpackListFactory.java
  * by Haisam Elkewidy
  *
- * Factory for creating jetpack list UI components.
+ * This class handles CityMapJetpackListFactory functionality in the Air Traffic Controller system.
+ *
+ * Methods:
+ *   - createJetpackListPanel(jetpacks, jetpackFlights, showCitySelectionCallback, stopAnimationCallback, trackingCallback)
+ *   - insertUpdate(e)
+ *   - removeUpdate(e)
+ *   - changedUpdate(e)
+ *   - createJetpackListPanel(jetpacks, showCitySelectionCallback, stopAnimationCallback)
+ *
  */
-
 
 package com.example.ui.citymap;
 
