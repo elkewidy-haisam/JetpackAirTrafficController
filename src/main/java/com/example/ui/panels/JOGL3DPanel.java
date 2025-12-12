@@ -80,7 +80,7 @@ public class JOGL3DPanel extends JPanel {
     private JLabel terrainLabel;
     private JLabel callsignLabel;
     private JLabel cityLabel;
-    private JLabel jetpackInfoLabel; // New label for 2D-style info
+    // private JLabel jetpackInfoLabel; // Removed: 2D-style info label
 
     // Camera control state
     private double cameraAzimuth = 45; // horizontal angle
@@ -145,8 +145,6 @@ public class JOGL3DPanel extends JPanel {
         terrainLabel = createHUDLabel("Terrain: LAND", Color.WHITE);
         callsignLabel = createHUDLabel("Callsign: N/A", Color.YELLOW);
         cityLabel = createHUDLabel("City: " + cityName, Color.WHITE);
-        jetpackInfoLabel = createHUDLabel("", new Color(255, 255, 200)); // New info label
-
         hudOverlay.add(positionLabel);
         hudOverlay.add(Box.createVerticalStrut(5));
         hudOverlay.add(statusLabel);
@@ -156,8 +154,6 @@ public class JOGL3DPanel extends JPanel {
         hudOverlay.add(callsignLabel);
         hudOverlay.add(Box.createVerticalStrut(5));
         hudOverlay.add(cityLabel);
-        hudOverlay.add(Box.createVerticalStrut(10));
-        hudOverlay.add(jetpackInfoLabel);
     }
     
     /**
@@ -243,26 +239,7 @@ public class JOGL3DPanel extends JPanel {
             callsignLabel.setText("Callsign: " + flight.getJetpack().getCallsign());
         }
 
-        // Update 2D-style info label (callsign, serial, owner, model, bird name)
-        if (flight.getJetpack() != null && allFlights != null) {
-            com.example.jetpack.JetPack jp = flight.getJetpack();
-            int idx = 0;
-            for (int i = 0; i < allFlights.size(); i++) {
-                if (allFlights.get(i) == flight) { idx = i; break; }
-            }
-            String[] birdNames = {
-                "Falcon", "Eagle", "Hawk", "Osprey", "Swift", "Albatross", "Condor", "Kestrel", "Merlin", "Harrier",
-                "Heron", "Raven", "Sparrow", "Vireo", "Peregrine", "Goshawk", "Avocet", "Tern", "Cormorant", "Buzzard",
-                "Crane", "Lark", "Oriole", "Jay", "Wren", "Finch", "Bittern", "Snipe", "Stork", "Ibis"
-            };
-            String birdName = birdNames[idx % birdNames.length];
-            String info = String.format("%-12s  |  %-15s  |  %-20s  |  %s %s",
-                    jp.getCallsign(), jp.getSerialNumber(), jp.getOwnerName(),
-                    jp.getModel(), birdName);
-            jetpackInfoLabel.setText(info);
-        } else {
-            jetpackInfoLabel.setText("");
-        }
+        // Detailed 2D-style info label removed; no additional HUD text here.
     }
     
     /**
