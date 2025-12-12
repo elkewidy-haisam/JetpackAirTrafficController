@@ -27,6 +27,8 @@ public class JOGLRenderer3D implements GLEventListener {
                 private double cameraElevation = 30;
                 private double cameraDistance = 400;
             private final GLUT glut = new GLUT();
+        // Configurable offset for jetpack facing direction (degrees)
+        private static final double JETPACK_DIRECTION_OFFSET_DEGREES = 90.0;
         // Mouse camera controls
         private double mouseAzimuth = 45;
         private double mouseElevation = 30;
@@ -437,7 +439,8 @@ public class JOGLRenderer3D implements GLEventListener {
                     } catch (Exception e) {
                         angleRad = 0;
                     }
-                    gl.glRotated(Math.toDegrees(angleRad), 0, 1, 0);
+                    // Apply offset so jetpack model faces correct direction
+                    gl.glRotated(Math.toDegrees(angleRad) + JETPACK_DIRECTION_OFFSET_DEGREES, 0, 1, 0);
                     // Jetpack colors
                     float[] bodyColor = jetpack == flight ? new float[]{0, 1, 0} : new float[]{1, 1, 0};
                     float[] tankColor = {0.7f, 0.7f, 0.7f};

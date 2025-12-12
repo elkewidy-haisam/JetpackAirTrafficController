@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run 3D Jetpack App (JOGL)",
+			"type": "shell",
+			"command": "run_with_jogl.bat"
+		},
+		{
+			"label": "Re-run 3D Jetpack App (JOGL) with offset",
+			"type": "shell",
+			"command": "run_with_jogl.bat"
+		}
+	]
+}

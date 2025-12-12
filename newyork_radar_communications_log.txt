@@ -1,14 +1,363 @@
 === RADAR COMMUNICATIONS LOG ===
 City: New York
-Application started: 2025-12-12 17:11:03
+Application started: 2025-12-12 17:26:55
 ==================================================
-[17:11:13] ATC-NEW → ALPHA-51
+[17:27:08] ATC-NEW → HOTEL-08
+📡 ROUTE OPTIMIZATION
+➤ Direct route cleared
+---
+
+[17:27:19] ATC-NEW → JULIET-80
 📡 WEATHER UPDATE
 ➤ Current conditions advisory
 ---
 
-[17:11:22] ATC-NEW → FOXTROT-86
+[17:27:30] ATC-NEW → ALPHA-61
+📡 ALTITUDE CHANGE
+➤ Climb to avoid weather
+---
+
+[17:27:41] ATC-NEW → JULIET-10
+📡 ALTITUDE CHANGE
+➤ Climb to avoid weather
+---
+
+[17:27:52] ATC-NEW → INDIA-19
+📡 EMERGENCY LANDING REQUIRED
+➤ Land immediately at nearest parking
+---
+
+[17:28:03] ATC-NEW → INDIA-19
+📡 DETOUR AROUND WEATHER
+➤ Alter course to avoid storm
+---
+
+[17:28:14] *** ACCIDENT REPORT ***
+🚨 ID: ACC-NEW-1765578493944
+Type: COLLISION
+Severity: SEVERE
+Location: (394,512)
+Details: Building damage reported
+⚠️ ALL AIRCRAFT AVOID AREA
+---
+
+[17:28:24] ATC-NEW → DELTA-24
+📡 ALTITUDE CHANGE
+➤ Climb to avoid weather
+---
+
+[17:28:36] ATC-NEW → FOXTROT-36
+📡 ALTITUDE CLEARANCE
+➤ Cleared to new altitude
+---
+
+[17:28:46] ATC-NEW → FOXTROT-26
+📡 COLLISION AVOIDANCE
+➤ Traffic alert - change course
+---
+
+[17:28:57] ATC-NEW → BRAVO-52
+📡 ALTITUDE CLEARANCE
+➤ Cleared to new altitude
+---
+
+[17:29:08] ATC-NEW → INDIA-49
+📡 ALTITUDE CHANGE
+➤ Climb to avoid weather
+---
+
+[17:29:19] ATC-NEW → CHARLIE-83
+📡 ALTITUDE CHANGE
+➤ Climb to avoid weather
+---
+
+[17:29:30] ATC-NEW → HOTEL-88
+📡 DETOUR AROUND WEATHER
+➤ Alter course to avoid storm
+---
+
+[17:29:41] ATC-NEW → ALPHA-71
+📡 DETOUR AROUND WEATHER
+➤ Alter course to avoid storm
+---
+
+[17:29:52] ATC-NEW → INDIA-69
+📡 DETOUR AROUND WEATHER
+➤ Alter course to avoid storm
+---
+
+[17:30:03] ATC-NEW → DELTA-34
+📡 ROUTE OPTIMIZATION
+➤ Direct route cleared
+---
+
+[17:30:14] ATC-NEW → HOTEL-88
+📡 COLLISION AVOIDANCE
+➤ Traffic alert - change course
+---
+
+[17:30:24] ATC-NEW → GOLF-97
+📡 ROUTE OPTIMIZATION
+➤ Direct route cleared
+---
+
+[17:30:35] ATC-NEW → BRAVO-02
+📡 EMERGENCY LANDING REQUIRED
+➤ Land immediately at nearest parking
+---
+
+[17:30:46] ATC-NEW → ALPHA-81
+📡 EMERGENCY LANDING REQUIRED
+➤ Land immediately at nearest parking
+---
+
+[17:30:57] ATC-NEW → BRAVO-72
+📡 EMERGENCY LANDING REQUIRED
+➤ Land immediately at nearest parking
+---
+
+[17:31:08] ATC-NEW → JULIET-40
 📡 WEATHER UPDATE
 ➤ Current conditions advisory
+---
+
+[17:31:20] ATC-NEW → CHARLIE-03
+📡 COLLISION AVOIDANCE
+➤ Traffic alert - change course
+---
+
+[17:31:30] ATC-NEW → FOXTROT-56
+📡 WEATHER UPDATE
+➤ Current conditions advisory
+---
+
+[17:31:41] ATC-NEW → HOTEL-68
+📡 WEATHER UPDATE
+➤ Current conditions advisory
+---
+
+[17:32:02] ATC-NEW → GOLF-27
+📡 ALTITUDE CHANGE
+➤ Climb to avoid weather
+---
+
+[17:32:13] ATC-NEW → JULIET-80
+📡 ALTITUDE CHANGE
+➤ Climb to avoid weather
+---
+
+[17:32:25] ATC-NEW → FOXTROT-96
+📡 EMERGENCY LANDING REQUIRED
+➤ Land immediately at nearest parking
+---
+
+[17:32:35] ATC-NEW → ECHO-85
+📡 EMERGENCY LANDING REQUIRED
+➤ Land immediately at nearest parking
+---
+
+[17:32:46] ATC-NEW → CHARLIE-03
+📡 EMERGENCY LANDING REQUIRED
+➤ Land immediately at nearest parking
+---
+
+[17:32:57] ATC-NEW → HOTEL-38
+📡 EMERGENCY LANDING REQUIRED
+➤ Land immediately at nearest parking
+---
+
+[17:33:08] ATC-NEW → HOTEL-78
+📡 EMERGENCY LANDING REQUIRED
+➤ Land immediately at nearest parking
+---
+
+[17:33:19] ATC-NEW → DELTA-64
+📡 EMERGENCY LANDING REQUIRED
+➤ Land immediately at nearest parking
+---
+
+[17:33:41] ATC-NEW → GOLF-07
+📡 ROUTE OPTIMIZATION
+➤ Direct route cleared
+---
+
+[17:33:52] ATC-NEW → CHARLIE-83
+📡 POSITION REPORT REQUEST
+➤ Report position
+---
+
+[17:34:03] ATC-NEW → BRAVO-62
+📡 COLLISION AVOIDANCE
+➤ Traffic alert - change course
+---
+
+[17:34:25] ATC-NEW → HOTEL-78
+📡 ALTITUDE CLEARANCE
+➤ Cleared to new altitude
+---
+
+[17:34:35] ATC-NEW → GOLF-97
+📡 ROUTE OPTIMIZATION
+➤ Direct route cleared
+---
+
+[17:34:46] ATC-NEW → JULIET-10
+📡 COLLISION AVOIDANCE
+➤ Traffic alert - change course
+---
+
+[17:34:57] ATC-NEW → FOXTROT-36
+📡 POSITION REPORT REQUEST
+➤ Report position
+---
+
+[17:35:08] ATC-NEW → HOTEL-98
+📡 WEATHER UPDATE
+➤ Current conditions advisory
+---
+
+[17:35:19] ATC-NEW → ECHO-45
+📡 POSITION REPORT REQUEST
+➤ Report position
+---
+
+[17:35:29] ATC-NEW → BRAVO-22
+📡 ROUTE OPTIMIZATION
+➤ Direct route cleared
+---
+
+[17:35:40] ATC-NEW → HOTEL-28
+📡 POSITION REPORT REQUEST
+➤ Report position
+---
+
+[17:35:51] ATC-NEW → FOXTROT-36
+📡 POSITION REPORT REQUEST
+➤ Report position
+---
+
+[17:36:03] ATC-NEW → ECHO-35
+📡 ROUTE OPTIMIZATION
+➤ Direct route cleared
+---
+
+[17:36:13] ATC-NEW → DELTA-44
+📡 ROUTE OPTIMIZATION
+➤ Direct route cleared
+---
+
+[17:36:36] ATC-NEW → FOXTROT-16
+📡 ROUTE OPTIMIZATION
+➤ Direct route cleared
+---
+
+[17:36:46] ATC-NEW → INDIA-59
+📡 ROUTE OPTIMIZATION
+➤ Direct route cleared
+---
+
+[17:36:57] ATC-NEW → BRAVO-42
+📡 COLLISION AVOIDANCE
+➤ Traffic alert - change course
+---
+
+[17:37:08] ATC-NEW → JULIET-10
+📡 WEATHER UPDATE
+➤ Current conditions advisory
+---
+
+[17:37:18] ATC-NEW → INDIA-09
+📡 WEATHER UPDATE
+➤ Current conditions advisory
+---
+
+[17:37:29] ATC-NEW → GOLF-37
+📡 EMERGENCY LANDING REQUIRED
+➤ Land immediately at nearest parking
+---
+
+[17:37:41] ATC-NEW → ALPHA-01
+📡 DETOUR AROUND WEATHER
+➤ Alter course to avoid storm
+---
+
+[17:37:51] ATC-NEW → ALPHA-41
+📡 ALTITUDE CHANGE
+➤ Climb to avoid weather
+---
+
+[17:38:03] ATC-NEW → JULIET-100
+📡 DETOUR AROUND WEATHER
+➤ Alter course to avoid storm
+---
+
+[17:38:13] ATC-NEW → FOXTROT-86
+📡 DETOUR AROUND WEATHER
+➤ Alter course to avoid storm
+---
+
+[17:38:24] ATC-NEW → FOXTROT-36
+📡 EMERGENCY LANDING REQUIRED
+➤ Land immediately at nearest parking
+---
+
+[17:38:35] ATC-NEW → ECHO-35
+📡 POSITION REPORT REQUEST
+➤ Report position
+---
+
+[17:38:46] ATC-NEW → INDIA-29
+📡 POSITION REPORT REQUEST
+➤ Report position
+---
+
+[17:38:56] ATC-NEW → BRAVO-92
+📡 COLLISION AVOIDANCE
+➤ Traffic alert - change course
+---
+
+[17:39:07] ATC-NEW → INDIA-79
+📡 WEATHER UPDATE
+➤ Current conditions advisory
+---
+
+[17:39:19] ATC-NEW → BRAVO-42
+📡 COLLISION AVOIDANCE
+➤ Traffic alert - change course
+---
+
+[17:39:30] ATC-NEW → INDIA-49
+📡 EMERGENCY LANDING REQUIRED
+➤ Land immediately at nearest parking
+---
+
+[17:39:40] ATC-NEW → INDIA-09
+📡 DETOUR AROUND WEATHER
+➤ Alter course to avoid storm
+---
+
+[17:39:51] ATC-NEW → ECHO-45
+📡 EMERGENCY LANDING REQUIRED
+➤ Land immediately at nearest parking
+---
+
+[17:40:02] ATC-NEW → ALPHA-11
+📡 ALTITUDE CLEARANCE
+➤ Cleared to new altitude
+---
+
+[17:40:13] ATC-NEW → ALPHA-21
+📡 WEATHER UPDATE
+➤ Current conditions advisory
+---
+
+[17:40:24] ATC-NEW → GOLF-47
+📡 POSITION REPORT REQUEST
+➤ Report position
+---
+
+[17:40:35] ATC-NEW → FOXTROT-66
+📡 POSITION REPORT REQUEST
+➤ Report position
 ---
 
