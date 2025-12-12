@@ -2,17 +2,24 @@
  * WaterDetector.java
  * by Haisam Elkewidy
  *
- * This class handles WaterDetector functionality in the Air Traffic Controller system.
+ * This class detects water regions in map images and finds safe land points for jetpack navigation.
+ * Uses RGB pixel analysis with empirically-derived thresholds to identify water bodies like rivers,
+ * harbors, and lakes, ensuring jetpacks don't park or land in water.
  *
  * Variables:
- *   - mapImage (BufferedImage)
- *   - width (int)
- *   - height (int)
+ *   - mapImage (BufferedImage): The city map image used for water detection
+ *   - width (int): Width of the map image in pixels
+ *   - height (int): Height of the map image in pixels
  *
  * Methods:
- *   - WaterDetector(resourcePath)
- *   - findClosestLandPoint(x, y)
+ *   - WaterDetector(resourcePath): Constructor that loads the map image
+ *   - isWater(x, y): Checks if a coordinate is water based on RGB analysis
+ *   - getRandomLandPoint(rand, margin): Finds a random valid land point
+ *   - findClosestLandPoint(x, y): Finds nearest land using spiral search
+ *   - getWidth(): Returns map width
+ *   - getHeight(): Returns map height
  *
+ * The water detection algorithm analyzes blue dominance in RGB values to identify water pixels.
  */
 
 package com.example.utility.water;

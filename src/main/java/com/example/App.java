@@ -2,11 +2,20 @@
  * App.java
  * by Haisam Elkewidy
  *
- * This class handles App functionality in the Air Traffic Controller system.
+ * This is the main entry point for the Air Traffic Controller application.
+ * It initializes the GUI and provides command-line argument support for customization.
+ * The application can be configured with options like pre-selecting a city.
+ *
+ * Variables:
+ *   - APP_NAME (String): Name of the application displayed in UI
+ *   - VERSION (String): Current version number
  *
  * Methods:
- *   - main(args)
+ *   - main(args): Main entry point that launches the application
+ *   - parseArguments(args): Parses command-line arguments
+ *   - printHelp(): Displays help information for command-line options
  *
+ * The application supports command-line arguments for selecting cities and displaying help/version info.
  */
 
 package com.example;
@@ -18,11 +27,6 @@ import javax.swing.UIManager;
 
 import com.example.ui.frames.AirTrafficControllerFrame;
 
-/**
- * App.java
- * Main entry point for Air Traffic Controller application
- * Supports command-line arguments for customization
- */
 public class App {
     
     private static final String APP_NAME = "Air Traffic Controller";
