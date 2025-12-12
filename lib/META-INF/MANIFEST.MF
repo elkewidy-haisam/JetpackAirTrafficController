@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.10.5
+Created-By: 21.0.7+6-LTS (Eclipse Adoptium)
+Application-Name: Java Bindings for OpenGL
+Specification-Title: Java Bindings for OpenGL API Specification
+Specification-Version: 2.6
+Specification-Vendor: JogAmp Community
+Implementation-Title: Java Bindings for OpenGL Runtime Environment
+Implementation-Version: 2.6.0
+Implementation-Build: 2.6-b1548-20250831
+Implementation-Branch: origin/master
+Implementation-Commit: f5964604d3e940c07c3e6af884f06b4eceb08dd4
+Implementation-Vendor: JogAmp Community
+Implementation-URL: http://jogamp.org/
+Extension-Name: jogamp.nativetag.opengl
+Implementation-Vendor-Id: com.jogamp
+Trusted-Library: true
+Permissions: all-permissions
+Application-Library-Allowable-Codebase: *
+Add-Opens: java.desktop/sun.awt java.desktop/sun.awt.windows java.desk
+ top/sun.java2d
+Codebase: *.jogamp.org
+

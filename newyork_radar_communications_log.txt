@@ -1,0 +1,98 @@
+=== RADAR COMMUNICATIONS LOG ===
+City: New York
+Application started: 2025-12-12 15:19:47
+==================================================
+[15:20:04] ATC-NEW → BRAVO-32
+📡 WEATHER UPDATE
+➤ Current conditions advisory
+---
+
+[15:20:19] ATC-NEW → ALPHA-31
+📡 ALTITUDE CLEARANCE
+➤ Cleared to new altitude
+---
+
+[15:20:32] ATC-NEW → CHARLIE-73
+📡 COLLISION AVOIDANCE
+➤ Traffic alert - change course
+---
+
+[15:20:46] ATC-NEW → CHARLIE-83
+📡 WEATHER UPDATE
+➤ Current conditions advisory
+---
+
+[15:21:00] ATC-NEW → HOTEL-68
+📡 WEATHER UPDATE
+➤ Current conditions advisory
+---
+
+[15:21:14] ATC-NEW → BRAVO-82
+📡 ALTITUDE CLEARANCE
+➤ Cleared to new altitude
+---
+
+[15:21:28] ATC-NEW → ALPHA-31
+📡 COLLISION AVOIDANCE
+➤ Traffic alert - change course
+---
+
+[15:21:42] ATC-NEW → INDIA-19
+📡 POSITION REPORT REQUEST
+➤ Report position
+---
+
+[15:21:56] ATC-NEW → INDIA-99
+📡 POSITION REPORT REQUEST
+➤ Report position
+---
+
+[15:22:10] ATC-NEW → ALPHA-61
+📡 COLLISION AVOIDANCE
+➤ Traffic alert - change course
+---
+
+[15:22:24] *** ACCIDENT REPORT ***
+🚨 ID: ACC-NEW-1765570944165
+Type: EMERGENCY_LANDING
+Severity: MINOR
+Location: (527,616)
+Details: Medical assistance required
+⚠️ ALL AIRCRAFT AVOID AREA
+---
+
+[15:22:38] ATC-NEW → FOXTROT-96
+📡 POSITION REPORT REQUEST
+➤ Report position
+---
+
+[15:22:52] ATC-NEW → DELTA-64
+📡 POSITION REPORT REQUEST
+➤ Report position
+---
+
+[15:23:20] ATC-NEW → JULIET-50
+📡 COLLISION AVOIDANCE
+➤ Traffic alert - change course
+---
+
+[15:23:34] ATC-NEW → HOTEL-58
+📡 COLLISION AVOIDANCE
+➤ Traffic alert - change course
+---
+
+[15:23:49] ATC-NEW → INDIA-69
+📡 ALTITUDE CLEARANCE
+➤ Cleared to new altitude
+---
+
+[15:24:01] ATC-NEW → CHARLIE-03
+📡 ALTITUDE CHANGE
+➤ Climb to avoid weather
+---
+
+[15:24:16] ATC-NEW → BRAVO-22
+📡 DETOUR AROUND WEATHER
+➤ Alter course to avoid storm
+---
+

@@ -1,0 +1,1621 @@
+=== JETPACK MOVEMENT LOG ===
+City: New York
+Application started: 2025-12-12 15:19:47
+==================================================
+[15:19:51] BRAVO-02 moving 🚀 Northeast (1605 units)
+[15:19:51] BRAVO-02 🚀 heading to parking NEW-P29
+[15:19:51] CHARLIE-03 moving 🚀 Southeast (422 units)
+[15:19:51] CHARLIE-03 🚀 heading to parking NEW-P98
+[15:19:51] DELTA-04 moving 🚀 Northeast (442 units)
+[15:19:51] DELTA-04 🚀 heading to parking NEW-P27
+[15:19:51] ECHO-05 moving 🚀 Southeast (1003 units)
+[15:19:51] ECHO-05 🚀 heading to parking NEW-P6
+[15:19:51] FOXTROT-06 moving 🚀 Southwest (760 units)
+[15:19:51] FOXTROT-06 🚀 heading to parking NEW-P44
+[15:19:51] GOLF-07 moving 🚀 Southwest (252 units)
+[15:19:51] GOLF-07 🚀 heading to parking NEW-P23
+[15:19:51] HOTEL-08 moving 🚀 Southwest (701 units)
+[15:19:51] HOTEL-08 🚀 heading to parking NEW-P59
+[15:19:51] INDIA-09 moving 🚀 Southeast (1029 units)
+[15:19:51] INDIA-09 🚀 heading to parking NEW-P50
+[15:19:51] JULIET-10 moving 🚀 North (166 units)
+[15:19:51] JULIET-10 🚀 heading to parking NEW-P55
+[15:19:51] ALPHA-11 moving 🚀 South (457 units)
+[15:19:51] ALPHA-11 🚀 heading to parking NEW-P60
+[15:19:51] BRAVO-12 moving 🚀 Northeast (664 units)
+[15:19:51] BRAVO-12 🚀 heading to parking NEW-P4
+[15:19:51] CHARLIE-13 moving 🚀 North (534 units)
+[15:19:51] CHARLIE-13 🚀 heading to parking NEW-P3
+[15:19:51] DELTA-14 moving 🚀 Southwest (848 units)
+[15:19:51] DELTA-14 🚀 heading to parking NEW-P86
+[15:19:51] GOLF-17 moving 🚀 Northeast (175 units)
+[15:19:51] GOLF-17 🚀 heading to parking NEW-P65
+[15:19:51] HOTEL-18 moving 🚀 South (620 units)
+[15:19:51] HOTEL-18 🚀 heading to parking NEW-P96
+[15:19:51] INDIA-19 moving 🚀 North (378 units)
+[15:19:51] INDIA-19 🚀 heading to parking NEW-P60
+[15:19:51] JULIET-20 moving 🚀 South (881 units)
+[15:19:51] JULIET-20 🚀 heading to parking NEW-P6
+[15:19:51] ALPHA-21 moving 🚀 Southeast (812 units)
+[15:19:51] ALPHA-21 🚀 heading to parking NEW-P35
+[15:19:51] BRAVO-22 moving 🚀 Northwest (246 units)
+[15:19:51] BRAVO-22 🚀 heading to parking NEW-P71
+[15:19:51] CHARLIE-23 moving 🚀 Northeast (623 units)
+[15:19:51] CHARLIE-23 🚀 heading to parking NEW-P93
+[15:19:51] DELTA-24 moving 🚀 Northeast (626 units)
+[15:19:51] DELTA-24 🚀 heading to parking NEW-P82
+[15:19:51] ECHO-25 moving 🚀 North (317 units)
+[15:19:51] ECHO-25 🚀 heading to parking NEW-P32
+[15:19:51] FOXTROT-26 moving 🚀 Northwest (590 units)
+[15:19:51] FOXTROT-26 🚀 heading to parking NEW-P33
+[15:19:51] GOLF-27 moving 🚀 Southeast (1420 units)
+[15:19:51] GOLF-27 🚀 heading to parking NEW-P50
+[15:19:51] HOTEL-28 moving 🚀 Northwest (649 units)
+[15:19:51] HOTEL-28 🚀 heading to parking NEW-P7
+[15:19:51] INDIA-29 moving 🚀 West (1333 units)
+[15:19:51] INDIA-29 🚀 heading to parking NEW-P43
+[15:19:51] JULIET-30 moving 🚀 South (739 units)
+[15:19:51] JULIET-30 🚀 heading to parking NEW-P2
+[15:19:51] ALPHA-31 moving 🚀 East (518 units)
+[15:19:51] ALPHA-31 🚀 heading to parking NEW-P68
+[15:19:51] BRAVO-32 moving 🚀 Northwest (493 units)
+[15:19:51] BRAVO-32 🚀 heading to parking NEW-P78
+[15:19:51] CHARLIE-33 moving 🚀 East (1253 units)
+[15:19:51] CHARLIE-33 🚀 heading to parking NEW-P1
+[15:19:51] DELTA-34 moving 🚀 Northwest (727 units)
+[15:19:51] DELTA-34 🚀 heading to parking NEW-P31
+[15:19:51] ECHO-35 moving 🚀 West (389 units)
+[15:19:51] ECHO-35 🚀 heading to parking NEW-P78
+[15:19:51] FOXTROT-36 moving 🚀 Northwest (515 units)
+[15:19:51] FOXTROT-36 🚀 heading to parking NEW-P73
+[15:19:51] GOLF-37 moving 🚀 Northeast (877 units)
+[15:19:51] GOLF-37 🚀 heading to parking NEW-P55
+[15:19:51] HOTEL-38 moving 🚀 East (477 units)
+[15:19:51] HOTEL-38 🚀 heading to parking NEW-P66
+[15:19:51] INDIA-39 moving 🚀 Northwest (647 units)
+[15:19:51] INDIA-39 🚀 heading to parking NEW-P71
+[15:19:51] JULIET-40 moving 🚀 Southeast (453 units)
+[15:19:51] JULIET-40 🚀 heading to parking NEW-P68
+[15:19:51] ALPHA-41 moving 🚀 Southeast (1292 units)
+[15:19:51] ALPHA-41 🚀 heading to parking NEW-P42
+[15:19:51] BRAVO-42 moving 🚀 West (1006 units)
+[15:19:51] BRAVO-42 🚀 heading to parking NEW-P31
+[15:19:51] CHARLIE-43 moving 🚀 Southeast (446 units)
+[15:19:51] CHARLIE-43 🚀 heading to parking NEW-P61
+[15:19:51] DELTA-44 moving 🚀 Southeast (277 units)
+[15:19:51] DELTA-44 🚀 heading to parking NEW-P71
+[15:19:51] ECHO-45 moving 🚀 Northwest (626 units)
+[15:19:51] ECHO-45 🚀 heading to parking NEW-P61
+[15:19:51] FOXTROT-46 moving 🚀 Northwest (157 units)
+[15:19:51] FOXTROT-46 🚀 heading to parking NEW-P61
+[15:19:51] GOLF-47 moving 🚀 South (457 units)
+[15:19:51] GOLF-47 🚀 heading to parking NEW-P24
+[15:19:51] HOTEL-48 moving 🚀 North (568 units)
+[15:19:51] HOTEL-48 🚀 heading to parking NEW-P69
+[15:19:51] INDIA-49 moving 🚀 East (939 units)
+[15:19:51] INDIA-49 🚀 heading to parking NEW-P98
+[15:19:51] JULIET-50 moving 🚀 Northeast (438 units)
+[15:19:51] JULIET-50 🚀 heading to parking NEW-P3
+[15:19:51] ALPHA-51 moving 🚀 Northeast (1023 units)
+[15:19:51] ALPHA-51 🚀 heading to parking NEW-P29
+[15:19:51] BRAVO-52 moving 🚀 Southwest (390 units)
+[15:19:51] BRAVO-52 🚀 heading to parking NEW-P92
+[15:19:51] CHARLIE-53 moving 🚀 Southwest (1053 units)
+[15:19:51] CHARLIE-53 🚀 heading to parking NEW-P24
+[15:19:51] DELTA-54 moving 🚀 Northwest (524 units)
+[15:19:51] DELTA-54 🚀 heading to parking NEW-P12
+[15:19:51] ECHO-55 moving 🚀 North (78 units)
+[15:19:51] ECHO-55 🚀 heading to parking NEW-P5
+[15:19:51] FOXTROT-56 moving 🚀 North (234 units)
+[15:19:52] FOXTROT-56 🚀 heading to parking NEW-P78
+[15:19:52] GOLF-57 moving 🚀 West (97 units)
+[15:19:52] GOLF-57 🚀 heading to parking NEW-P68
+[15:19:52] HOTEL-58 moving 🚀 West (633 units)
+[15:19:52] HOTEL-58 🚀 heading to parking NEW-P39
+[15:19:52] INDIA-59 moving 🚀 North (698 units)
+[15:19:52] INDIA-59 🚀 heading to parking NEW-P9
+[15:19:52] JULIET-60 moving 🚀 Northeast (324 units)
+[15:19:52] JULIET-60 🚀 heading to parking NEW-P77
+[15:19:52] ALPHA-61 moving 🚀 Southeast (733 units)
+[15:19:52] ALPHA-61 🚀 heading to parking NEW-P22
+[15:19:52] BRAVO-62 moving 🚀 East (314 units)
+[15:19:52] BRAVO-62 🚀 heading to parking NEW-P92
+[15:19:52] CHARLIE-63 moving 🚀 South (780 units)
+[15:19:52] CHARLIE-63 🚀 heading to parking NEW-P52
+[15:19:52] DELTA-64 moving 🚀 East (588 units)
+[15:19:52] DELTA-64 🚀 heading to parking NEW-P82
+[15:19:52] ECHO-65 moving 🚀 Northwest (482 units)
+[15:19:52] ECHO-65 🚀 heading to parking NEW-P60
+[15:19:52] FOXTROT-66 moving 🚀 Northeast (826 units)
+[15:19:52] FOXTROT-66 🚀 heading to parking NEW-P61
+[15:19:52] GOLF-67 moving 🚀 Northwest (1365 units)
+[15:19:52] GOLF-67 🚀 heading to parking NEW-P70
+[15:19:52] HOTEL-68 moving 🚀 East (1055 units)
+[15:19:52] HOTEL-68 🚀 heading to parking NEW-P84
+[15:19:52] INDIA-69 moving 🚀 East (1047 units)
+[15:19:52] INDIA-69 🚀 heading to parking NEW-P25
+[15:19:52] JULIET-70 moving 🚀 Southeast (731 units)
+[15:19:52] JULIET-70 🚀 heading to parking NEW-P79
+[15:19:52] ALPHA-71 moving 🚀 Southeast (774 units)
+[15:19:52] ALPHA-71 🚀 heading to parking NEW-P57
+[15:19:52] BRAVO-72 moving 🚀 North (509 units)
+[15:19:52] BRAVO-72 🚀 heading to parking NEW-P51
+[15:19:52] CHARLIE-73 moving 🚀 West (1362 units)
+[15:19:52] CHARLIE-73 🚀 heading to parking NEW-P17
+[15:19:52] DELTA-74 moving 🚀 West (236 units)
+[15:19:52] DELTA-74 🚀 heading to parking NEW-P55
+[15:19:52] ECHO-75 moving 🚀 South (401 units)
+[15:19:52] ECHO-75 🚀 heading to parking NEW-P27
+[15:19:52] FOXTROT-76 moving 🚀 West (918 units)
+[15:19:52] FOXTROT-76 🚀 heading to parking NEW-P62
+[15:19:52] GOLF-77 moving 🚀 Northeast (781 units)
+[15:19:52] GOLF-77 🚀 heading to parking NEW-P67
+[15:19:52] HOTEL-78 moving 🚀 West (768 units)
+[15:19:52] HOTEL-78 🚀 heading to parking NEW-P92
+[15:19:52] INDIA-79 moving 🚀 West (561 units)
+[15:19:52] INDIA-79 🚀 heading to parking NEW-P8
+[15:19:52] JULIET-80 moving 🚀 North (102 units)
+[15:19:52] JULIET-80 🚀 heading to parking NEW-P8
+[15:19:52] ALPHA-81 moving 🚀 East (591 units)
+[15:19:52] ALPHA-81 🚀 heading to parking NEW-P40
+[15:19:52] BRAVO-82 moving 🚀 Southwest (297 units)
+[15:19:52] BRAVO-82 🚀 heading to parking NEW-P24
+[15:19:52] CHARLIE-83 moving 🚀 Southwest (976 units)
+[15:19:52] CHARLIE-83 🚀 heading to parking NEW-P48
+[15:19:52] DELTA-84 moving 🚀 North (53 units)
+[15:19:52] DELTA-84 🚀 heading to parking NEW-P7
+[15:19:52] ECHO-85 moving 🚀 North (445 units)
+[15:19:52] ECHO-85 🚀 heading to parking NEW-P67
+[15:19:52] FOXTROT-86 moving 🚀 Southeast (585 units)
+[15:19:52] FOXTROT-86 🚀 heading to parking NEW-P50
+[15:19:52] GOLF-87 moving 🚀 Northeast (404 units)
+[15:19:52] GOLF-87 🚀 heading to parking NEW-P94
+[15:19:52] HOTEL-88 moving 🚀 North (44 units)
+[15:19:52] HOTEL-88 🚀 heading to parking NEW-P85
+[15:19:52] INDIA-89 moving 🚀 Southeast (1003 units)
+[15:19:52] INDIA-89 🚀 heading to parking NEW-P68
+[15:19:52] JULIET-90 moving 🚀 East (496 units)
+[15:19:52] JULIET-90 🚀 heading to parking NEW-P40
+[15:19:52] ALPHA-91 moving 🚀 Southeast (681 units)
+[15:19:52] ALPHA-91 🚀 heading to parking NEW-P60
+[15:19:52] BRAVO-92 moving 🚀 East (950 units)
+[15:19:52] BRAVO-92 🚀 heading to parking NEW-P96
+[15:19:52] CHARLIE-93 moving 🚀 North (895 units)
+[15:19:52] CHARLIE-93 🚀 heading to parking NEW-P87
+[15:19:52] DELTA-94 moving 🚀 Northeast (441 units)
+[15:19:52] DELTA-94 🚀 heading to parking NEW-P54
+[15:19:52] ECHO-95 moving 🚀 Southwest (670 units)
+[15:19:52] ECHO-95 🚀 heading to parking NEW-P58
+[15:19:52] FOXTROT-96 moving 🚀 Northeast (909 units)
+[15:19:52] FOXTROT-96 🚀 heading to parking NEW-P49
+[15:19:52] GOLF-97 moving 🚀 Northwest (797 units)
+[15:19:52] GOLF-97 🚀 heading to parking NEW-P62
+[15:19:52] HOTEL-98 moving 🚀 South (746 units)
+[15:19:52] HOTEL-98 🚀 heading to parking NEW-P84
+[15:19:52] INDIA-99 moving 🚀 Northwest (920 units)
+[15:19:52] INDIA-99 🚀 heading to parking NEW-P19
+[15:19:52] JULIET-100 moving 🚀 Northeast (853 units)
+[15:19:52] JULIET-100 🚀 heading to parking NEW-P89
+[15:19:55] ALPHA-01 moving 🚀 East (1159 units)
+[15:19:55] ALPHA-01 🚀 heading to parking NEW-P32
+[15:19:55] ECHO-15 moving 🚀 East (1317 units)
+[15:19:55] ECHO-15 🚀 heading to parking NEW-P25
+[15:19:55] FOXTROT-16 moving 🚀 Southwest (431 units)
+[15:19:55] FOXTROT-16 🚀 heading to parking NEW-P55
+[15:19:56] HOTEL-88 ✓ landed at NEW-P85 (parking for ~60s)
+[15:19:57] DELTA-84 ✓ landed at NEW-P7 (parking for ~80s)
+[15:19:58] HOTEL-88 🚀 departing from NEW-P85
+[15:19:58] HOTEL-88 moving 🚀 Northwest (131 units)
+[15:19:58] HOTEL-88 🚀 heading to parking NEW-P57
+[15:19:58] ECHO-55 ✓ landed at NEW-P5 (parking for ~70s)
+[15:19:59] DELTA-84 🚀 departing from NEW-P7
+[15:19:59] DELTA-84 moving 🚀 Southwest (323 units)
+[15:19:59] DELTA-84 🚀 heading to parking NEW-P71
+[15:19:59] GOLF-57 ✓ landed at NEW-P68 (parking for ~62s)
+[15:20:00] JULIET-80 ✓ landed at NEW-P8 (parking for ~90s)
+[15:20:00] ECHO-55 🚀 departing from NEW-P5
+[15:20:00] ECHO-55 moving 🚀 South (787 units)
+[15:20:00] ECHO-55 🚀 heading to parking NEW-P18
+[15:20:01] GOLF-57 🚀 departing from NEW-P68
+[15:20:01] GOLF-57 moving 🚀 Northwest (1078 units)
+[15:20:01] GOLF-57 🚀 heading to parking NEW-P95
+[15:20:02] JULIET-80 🚀 departing from NEW-P8
+[15:20:02] JULIET-80 moving 🚀 North (513 units)
+[15:20:02] JULIET-80 🚀 heading to parking NEW-P88
+[15:20:03] FOXTROT-46 ✓ landed at NEW-P61 (parking for ~82s)
+[15:20:03] JULIET-10 ✓ landed at NEW-P55 (parking for ~88s)
+[15:20:04] GOLF-17 ✓ landed at NEW-P65 (parking for ~78s)
+[15:20:04] HOTEL-88 ✓ landed at NEW-P57 (parking for ~76s)
+[15:20:05] FOXTROT-46 🚀 departing from NEW-P61
+[15:20:06] FOXTROT-46 moving 🚀 West (611 units)
+[15:20:06] FOXTROT-46 🚀 heading to parking NEW-P88
+[15:20:06] HOTEL-88 🚀 departing from NEW-P57
+[15:20:06] HOTEL-88 moving 🚀 Northwest (812 units)
+[15:20:06] HOTEL-88 🚀 heading to parking NEW-P62
+[15:20:08] FOXTROT-56 ✓ landed at NEW-P78 (parking for ~70s)
+[15:20:08] DELTA-74 ✓ landed at NEW-P55 (parking for ~54s)
+[15:20:08] BRAVO-22 ✓ landed at NEW-P71 (parking for ~86s)
+[15:20:09] GOLF-07 ✓ landed at NEW-P23 (parking for ~76s)
+[15:20:09] GOLF-17 🚀 departing from NEW-P65
+[15:20:09] JULIET-10 🚀 departing from NEW-P55
+[15:20:09] GOLF-17 moving 🚀 West (542 units)
+[15:20:09] GOLF-17 🚀 heading to parking NEW-P99
+[15:20:09] JULIET-10 moving 🚀 West (330 units)
+[15:20:09] JULIET-10 🚀 heading to parking NEW-P58
+[15:20:10] DELTA-74 🚀 departing from NEW-P55
+[15:20:10] DELTA-74 moving 🚀 Southwest (746 units)
+[15:20:10] DELTA-74 🚀 heading to parking NEW-P53
+[15:20:10] FOXTROT-56 🚀 departing from NEW-P78
+[15:20:10] FOXTROT-56 moving 🚀 East (680 units)
+[15:20:10] FOXTROT-56 🚀 heading to parking NEW-P79
+[15:20:11] DELTA-44 ✓ landed at NEW-P71 (parking for ~62s)
+[15:20:12] BRAVO-22 🚀 departing from NEW-P71
+[15:20:12] BRAVO-22 moving 🚀 North (57 units)
+[15:20:12] BRAVO-22 🚀 heading to parking NEW-P67
+[15:20:12] BRAVO-82 ✓ landed at NEW-P24 (parking for ~44s)
+[15:20:12] DELTA-44 🚀 departing from NEW-P71
+[15:20:13] DELTA-44 moving 🚀 Southeast (146 units)
+[15:20:13] DELTA-44 🚀 heading to parking NEW-P51
+[15:20:13] BRAVO-62 ✓ landed at NEW-P92 (parking for ~44s)
+[15:20:13] ECHO-25 ✓ landed at NEW-P32 (parking for ~54s)
+[15:20:14] BRAVO-22 ✓ landed at NEW-P67 (parking for ~76s)
+[15:20:14] BRAVO-82 🚀 departing from NEW-P24
+[15:20:14] BRAVO-82 moving 🚀 Northeast (683 units)
+[15:20:14] BRAVO-82 🚀 heading to parking NEW-P69
+[15:20:14] JULIET-60 ✓ landed at NEW-P77 (parking for ~68s)
+[15:20:14] GOLF-07 🚀 departing from NEW-P23
+[15:20:14] GOLF-07 moving 🚀 Southeast (596 units)
+[15:20:14] GOLF-07 🚀 heading to parking NEW-P57
+[15:20:15] BRAVO-62 🚀 departing from NEW-P92
+[15:20:15] BRAVO-62 moving 🚀 North (732 units)
+[15:20:15] BRAVO-62 🚀 heading to parking NEW-P9
+[15:20:15] ECHO-25 🚀 departing from NEW-P32
+[15:20:15] ECHO-25 moving 🚀 Northwest (1365 units)
+[15:20:15] ECHO-25 🚀 heading to parking NEW-P64
+[15:20:16] BRAVO-22 🚀 departing from NEW-P67
+[15:20:16] BRAVO-22 moving 🚀 Southwest (904 units)
+[15:20:16] BRAVO-22 🚀 heading to parking NEW-P17
+[15:20:16] JULIET-60 🚀 departing from NEW-P77
+[15:20:16] JULIET-60 moving 🚀 North (847 units)
+[15:20:16] JULIET-60 🚀 heading to parking NEW-P39
+[15:20:17] INDIA-19 ✓ landed at NEW-P60 (parking for ~70s)
+[15:20:18] DELTA-84 ✓ landed at NEW-P71 (parking for ~64s)
+[15:20:18] ECHO-35 ✓ landed at NEW-P78 (parking for ~68s)
+[15:20:18] BRAVO-52 ✓ landed at NEW-P92 (parking for ~46s)
+[15:20:19] ECHO-75 ✓ landed at NEW-P27 (parking for ~54s)
+[15:20:19] GOLF-87 ✓ landed at NEW-P94 (parking for ~36s)
+[15:20:20] INDIA-19 🚀 departing from NEW-P60
+[15:20:20] INDIA-19 moving 🚀 Southeast (398 units)
+[15:20:20] INDIA-19 🚀 heading to parking NEW-P68
+[15:20:20] BRAVO-52 🚀 departing from NEW-P92
+[15:20:20] BRAVO-52 moving 🚀 Northwest (487 units)
+[15:20:20] BRAVO-52 🚀 heading to parking NEW-P21
+[15:20:21] DELTA-84 🚀 departing from NEW-P71
+[15:20:21] DELTA-84 moving 🚀 Southwest (900 units)
+[15:20:21] DELTA-84 🚀 heading to parking NEW-P17
+[15:20:21] CHARLIE-03 ✓ landed at NEW-P98 (parking for ~54s)
+[15:20:21] GOLF-87 🚀 departing from NEW-P94
+[15:20:21] GOLF-87 moving 🚀 West (445 units)
+[15:20:21] GOLF-87 🚀 heading to parking NEW-P57
+[15:20:21] ECHO-35 🚀 departing from NEW-P78
+[15:20:21] ECHO-35 moving 🚀 West (106 units)
+[15:20:21] ECHO-35 🚀 heading to parking NEW-P44
+[15:20:21] DELTA-44 ✓ landed at NEW-P51 (parking for ~70s)
+[15:20:21] ECHO-75 🚀 departing from NEW-P27
+[15:20:22] ECHO-75 moving 🚀 South (467 units)
+[15:20:22] ECHO-75 🚀 heading to parking NEW-P8
+[15:20:22] FOXTROT-16 ✓ landed at NEW-P55 (parking for ~70s)
+[15:20:22] JULIET-50 ✓ landed at NEW-P3 (parking for ~38s)
+[15:20:23] DELTA-94 ✓ landed at NEW-P54 (parking for ~58s)
+[15:20:23] DELTA-04 ✓ landed at NEW-P27 (parking for ~32s)
+[15:20:23] CHARLIE-43 ✓ landed at NEW-P61 (parking for ~88s)
+[15:20:23] ECHO-85 ✓ landed at NEW-P67 (parking for ~44s)
+[15:20:24] JULIET-40 ✓ landed at NEW-P68 (parking for ~34s)
+[15:20:24] JULIET-50 🚀 departing from NEW-P3
+[15:20:24] ALPHA-11 ✓ landed at NEW-P60 (parking for ~48s)
+[15:20:24] GOLF-47 ✓ landed at NEW-P24 (parking for ~40s)
+[15:20:24] JULIET-50 moving 🚀 Southeast (797 units)
+[15:20:24] JULIET-50 🚀 heading to parking NEW-P28
+[15:20:24] DELTA-44 🚀 departing from NEW-P51
+[15:20:25] DELTA-44 moving 🚀 North (246 units)
+[15:20:25] DELTA-44 🚀 heading to parking NEW-P100
+[15:20:25] ECHO-85 🚀 departing from NEW-P67
+[15:20:25] ECHO-85 moving 🚀 Southeast (936 units)
+[15:20:25] ECHO-85 🚀 heading to parking NEW-P35
+[15:20:25] JULIET-40 🚀 departing from NEW-P68
+[15:20:25] DELTA-94 🚀 departing from NEW-P54
+[15:20:26] JULIET-40 moving 🚀 Northwest (293 units)
+[15:20:26] JULIET-40 🚀 heading to parking NEW-P92
+[15:20:26] DELTA-94 moving 🚀 South (561 units)
+[15:20:26] DELTA-94 🚀 heading to parking NEW-P84
+[15:20:26] CHARLIE-03 🚀 departing from NEW-P98
+[15:20:26] DELTA-04 🚀 departing from NEW-P27
+[15:20:26] CHARLIE-03 moving 🚀 Northwest (1261 units)
+[15:20:26] CHARLIE-03 🚀 heading to parking NEW-P9
+[15:20:26] DELTA-04 moving 🚀 Southeast (957 units)
+[15:20:26] DELTA-04 🚀 heading to parking NEW-P96
+[15:20:26] GOLF-47 🚀 departing from NEW-P24
+[15:20:26] GOLF-47 moving 🚀 East (1094 units)
+[15:20:26] GOLF-47 🚀 heading to parking NEW-P30
+[15:20:27] HOTEL-38 ✓ landed at NEW-P66 (parking for ~38s)
+[15:20:27] ECHO-65 ✓ landed at NEW-P60 (parking for ~50s)
+[15:20:27] CHARLIE-43 🚀 departing from NEW-P61
+[15:20:27] CHARLIE-43 moving 🚀 South (346 units)
+[15:20:28] CHARLIE-43 🚀 heading to parking NEW-P68
+[15:20:28] BRAVO-32 ✓ landed at NEW-P78 (parking for ~50s)
+[15:20:28] HOTEL-38 🚀 departing from NEW-P66
+[15:20:28] JULIET-90 ✓ landed at NEW-P40 (parking for ~76s)
+[15:20:29] HOTEL-38 moving 🚀 North (562 units)
+[15:20:29] HOTEL-38 🚀 heading to parking NEW-P39
+[15:20:29] ECHO-35 ✓ landed at NEW-P44 (parking for ~76s)
+[15:20:29] FOXTROT-16 🚀 departing from NEW-P55
+[15:20:30] ALPHA-11 🚀 departing from NEW-P60
+[15:20:30] FOXTROT-16 moving 🚀 South (711 units)
+[15:20:30] FOXTROT-16 🚀 heading to parking NEW-P86
+[15:20:30] ALPHA-11 moving 🚀 Northeast (901 units)
+[15:20:30] ALPHA-11 🚀 heading to parking NEW-P49
+[15:20:30] ECHO-65 🚀 departing from NEW-P60
+[15:20:30] ECHO-65 moving 🚀 Southeast (698 units)
+[15:20:30] ECHO-65 🚀 heading to parking NEW-P91
+[15:20:30] BRAVO-72 ✓ landed at NEW-P51 (parking for ~64s)
+[15:20:31] FOXTROT-36 ✓ landed at NEW-P73 (parking for ~62s)
+[15:20:31] ALPHA-31 ✓ landed at NEW-P68 (parking for ~78s)
+[15:20:31] BRAVO-32 🚀 departing from NEW-P78
+[15:20:31] BRAVO-32 moving 🚀 Northeast (630 units)
+[15:20:31] BRAVO-32 🚀 heading to parking NEW-P67
+[15:20:32] DELTA-54 ✓ landed at NEW-P12 (parking for ~44s)
+[15:20:32] CHARLIE-73 acknowledges radio instruction: Proceeding to (867,632) - Traffic separation
+[15:20:33] CHARLIE-13 ✓ landed at NEW-P3 (parking for ~42s)
+[15:20:33] JULIET-90 🚀 departing from NEW-P40
+[15:20:33] JULIET-90 moving 🚀 North (989 units)
+[15:20:33] JULIET-90 🚀 heading to parking NEW-P67
+[15:20:33] ECHO-35 🚀 departing from NEW-P44
+[15:20:33] ECHO-35 moving 🚀 Southwest (252 units)
+[15:20:33] ECHO-35 🚀 heading to parking NEW-P53
+[15:20:34] BRAVO-72 🚀 departing from NEW-P51
+[15:20:34] BRAVO-72 moving 🚀 Southeast (800 units)
+[15:20:34] BRAVO-72 🚀 heading to parking NEW-P84
+[15:20:34] FOXTROT-36 🚀 departing from NEW-P73
+[15:20:34] DELTA-54 🚀 departing from NEW-P12
+[15:20:34] DELTA-54 moving 🚀 Northeast (1005 units)
+[15:20:34] DELTA-54 🚀 heading to parking NEW-P100
+[15:20:34] FOXTROT-36 moving 🚀 East (719 units)
+[15:20:34] FOXTROT-36 🚀 heading to parking NEW-P30
+[15:20:35] ALPHA-31 🚀 departing from NEW-P68
+[15:20:35] ALPHA-31 moving 🚀 Northeast (1061 units)
+[15:20:35] ALPHA-31 🚀 heading to parking NEW-P93
+[15:20:36] JULIET-10 ✓ landed at NEW-P58 (parking for ~36s)
+[15:20:36] INDIA-79 ✓ landed at NEW-P8 (parking for ~44s)
+[15:20:37] HOTEL-48 ✓ landed at NEW-P69 (parking for ~52s)
+[15:20:37] CHARLIE-13 🚀 departing from NEW-P3
+[15:20:38] CHARLIE-13 moving 🚀 Southeast (733 units)
+[15:20:38] CHARLIE-13 🚀 heading to parking NEW-P86
+[15:20:38] INDIA-79 🚀 departing from NEW-P8
+[15:20:38] INDIA-79 moving 🚀 North (798 units)
+[15:20:38] INDIA-79 🚀 heading to parking NEW-P72
+[15:20:38] FOXTROT-86 ✓ landed at NEW-P50 (parking for ~76s)
+[15:20:39] DELTA-64 ✓ landed at NEW-P82 (parking for ~76s)
+[15:20:39] FOXTROT-26 ✓ landed at NEW-P33 (parking for ~74s)
+[15:20:39] ALPHA-81 ✓ landed at NEW-P40 (parking for ~46s)
+[15:20:39] JULIET-10 🚀 departing from NEW-P58
+[15:20:40] HOTEL-48 🚀 departing from NEW-P69
+[15:20:40] HOTEL-48 moving 🚀 Southeast (717 units)
+[15:20:40] HOTEL-48 🚀 heading to parking NEW-P98
+[15:20:40] JULIET-10 moving 🚀 Northeast (681 units)
+[15:20:40] JULIET-10 🚀 heading to parking NEW-P7
+[15:20:41] ALPHA-81 🚀 departing from NEW-P40
+[15:20:41] ALPHA-81 moving 🚀 Northwest (1097 units)
+[15:20:41] ALPHA-81 🚀 heading to parking NEW-P59
+[15:20:42] HOTEL-18 ✓ landed at NEW-P96 (parking for ~72s)
+[15:20:42] CHARLIE-23 ✓ landed at NEW-P93 (parking for ~84s)
+[15:20:42] FOXTROT-86 🚀 departing from NEW-P50
+[15:20:42] FOXTROT-86 moving 🚀 Northwest (804 units)
+[15:20:42] FOXTROT-86 🚀 heading to parking NEW-P69
+[15:20:42] FOXTROT-26 🚀 departing from NEW-P33
+[15:20:42] DELTA-64 🚀 departing from NEW-P82
+[15:20:42] DELTA-64 moving 🚀 South (348 units)
+[15:20:43] DELTA-64 🚀 heading to parking NEW-P20
+[15:20:43] DELTA-24 ✓ landed at NEW-P82 (parking for ~36s)
+[15:20:43] FOXTROT-26 moving 🚀 East (842 units)
+[15:20:43] FOXTROT-26 🚀 heading to parking NEW-P25
+[15:20:43] ECHO-45 ✓ landed at NEW-P61 (parking for ~80s)
+[15:20:43] HOTEL-58 ✓ landed at NEW-P39 (parking for ~48s)
+[15:20:43] JULIET-80 ✓ landed at NEW-P88 (parking for ~56s)
+[15:20:44] DELTA-24 🚀 departing from NEW-P82
+[15:20:44] DELTA-24 moving 🚀 West (943 units)
+[15:20:44] DELTA-24 🚀 heading to parking NEW-P58
+[15:20:45] INDIA-39 ✓ landed at NEW-P71 (parking for ~34s)
+[15:20:45] HOTEL-28 ✓ landed at NEW-P7 (parking for ~46s)
+[15:20:45] HOTEL-18 🚀 departing from NEW-P96
+[15:20:46] HOTEL-18 moving 🚀 North (798 units)
+[15:20:46] HOTEL-18 🚀 heading to parking NEW-P51
+[15:20:46] HOTEL-58 🚀 departing from NEW-P39
+[15:20:46] HOTEL-58 moving 🚀 Southeast (679 units)
+[15:20:46] HOTEL-58 🚀 heading to parking NEW-P54
+[15:20:46] JULIET-80 🚀 departing from NEW-P88
+[15:20:46] JULIET-80 moving 🚀 Southeast (798 units)
+[15:20:46] JULIET-80 🚀 heading to parking NEW-P34
+[15:20:46] BRAVO-12 ✓ landed at NEW-P4 (parking for ~86s)
+[15:20:46] INDIA-39 🚀 departing from NEW-P71
+[15:20:47] CHARLIE-23 🚀 departing from NEW-P93
+[15:20:47] CHARLIE-23 moving 🚀 Southwest (378 units)
+[15:20:47] CHARLIE-23 🚀 heading to parking NEW-P5
+[15:20:47] INDIA-39 moving 🚀 Southeast (522 units)
+[15:20:47] INDIA-39 🚀 heading to parking NEW-P79
+[15:20:47] ECHO-45 🚀 departing from NEW-P61
+[15:20:47] ECHO-45 moving 🚀 Southwest (121 units)
+[15:20:47] ECHO-45 🚀 heading to parking NEW-P81
+[15:20:47] ECHO-95 ✓ landed at NEW-P58 (parking for ~42s)
+[15:20:47] HOTEL-28 🚀 departing from NEW-P7
+[15:20:48] HOTEL-28 moving 🚀 Southwest (1207 units)
+[15:20:48] HOTEL-28 🚀 heading to parking NEW-P17
+[15:20:48] DELTA-44 ✓ landed at NEW-P100 (parking for ~34s)
+[15:20:48] ALPHA-91 ✓ landed at NEW-P60 (parking for ~88s)
+[15:20:49] ECHO-95 🚀 departing from NEW-P58
+[15:20:49] ECHO-95 moving 🚀 Southwest (508 units)
+[15:20:49] ECHO-95 🚀 heading to parking NEW-P53
+[15:20:50] DELTA-44 🚀 departing from NEW-P100
+[15:20:50] DELTA-44 moving 🚀 South (764 units)
+[15:20:50] DELTA-44 🚀 heading to parking NEW-P77
+[15:20:50] INDIA-59 ✓ landed at NEW-P9 (parking for ~78s)
+[15:20:50] HOTEL-08 ✓ landed at NEW-P59 (parking for ~72s)
+[15:20:52] ALPHA-91 🚀 departing from NEW-P60
+[15:20:52] ALPHA-91 moving 🚀 West (558 units)
+[15:20:52] ALPHA-91 🚀 heading to parking NEW-P62
+[15:20:52] DELTA-34 ✓ landed at NEW-P31 (parking for ~36s)
+[15:20:53] JULIET-70 ✓ landed at NEW-P79 (parking for ~66s)
+[15:20:53] ALPHA-61 ✓ landed at NEW-P22 (parking for ~70s)
+[15:20:53] JULIET-40 ✓ landed at NEW-P92 (parking for ~80s)
+[15:20:54] INDIA-59 🚀 departing from NEW-P9
+[15:20:54] JULIET-30 ✓ landed at NEW-P2 (parking for ~66s)
+[15:20:54] INDIA-59 moving 🚀 Southeast (541 units)
+[15:20:54] INDIA-59 🚀 heading to parking NEW-P14
+[15:20:55] DELTA-34 🚀 departing from NEW-P31
+[15:20:55] DELTA-34 moving 🚀 Southeast (1188 units)
+[15:20:55] DELTA-34 🚀 heading to parking NEW-P28
+[15:20:55] HOTEL-98 ✓ landed at NEW-P84 (parking for ~56s)
+[15:20:55] BRAVO-12 🚀 departing from NEW-P4
+[15:20:55] BRAVO-12 moving 🚀 East (578 units)
+[15:20:56] BRAVO-12 🚀 heading to parking NEW-P54
+[15:20:56] FOXTROT-06 ✓ landed at NEW-P44 (parking for ~80s)
+[15:20:56] ECHO-45 ✓ landed at NEW-P81 (parking for ~70s)
+[15:20:56] ECHO-35 ✓ landed at NEW-P53 (parking for ~72s)
+[15:20:57] JULIET-70 🚀 departing from NEW-P79
+[15:20:57] JULIET-70 moving 🚀 North (634 units)
+[15:20:57] JULIET-70 🚀 heading to parking NEW-P10
+[15:20:57] GOLF-17 ✓ landed at NEW-P99 (parking for ~82s)
+[15:20:57] ALPHA-61 🚀 departing from NEW-P22
+[15:20:57] HOTEL-78 ✓ landed at NEW-P92 (parking for ~76s)
+[15:20:58] ALPHA-61 moving 🚀 Southeast (27 units)
+[15:20:58] ALPHA-61 🚀 heading to parking NEW-P22
+[15:20:58] ALPHA-61 ✓ landed at NEW-P22 (parking for ~60s)
+[15:20:58] JULIET-30 🚀 departing from NEW-P2
+[15:20:58] HOTEL-08 🚀 departing from NEW-P59
+[15:20:58] JULIET-30 moving 🚀 Northeast (1187 units)
+[15:20:58] JULIET-30 🚀 heading to parking NEW-P46
+[15:20:58] ALPHA-71 ✓ landed at NEW-P57 (parking for ~52s)
+[15:20:59] HOTEL-08 moving 🚀 Southeast (497 units)
+[15:20:59] HOTEL-08 🚀 heading to parking NEW-P37
+[15:20:59] JULIET-40 🚀 departing from NEW-P92
+[15:20:59] JULIET-40 moving 🚀 Northwest (465 units)
+[15:20:59] JULIET-40 🚀 heading to parking NEW-P23
+[15:20:59] HOTEL-98 🚀 departing from NEW-P84
+[15:20:59] HOTEL-98 moving 🚀 Northwest (118 units)
+[15:20:59] HOTEL-98 🚀 heading to parking NEW-P91
+[15:21:00] INDIA-19 ✓ landed at NEW-P68 (parking for ~46s)
+[15:21:00] FOXTROT-46 ✓ landed at NEW-P88 (parking for ~66s)
+[15:21:00] CHARLIE-63 ✓ landed at NEW-P52 (parking for ~34s)
+[15:21:00] GOLF-77 ✓ landed at NEW-P67 (parking for ~76s)
+[15:21:01] ECHO-45 🚀 departing from NEW-P81
+[15:21:01] ECHO-45 moving 🚀 Southeast (526 units)
+[15:21:01] ECHO-45 🚀 heading to parking NEW-P50
+[15:21:02] ECHO-35 🚀 departing from NEW-P53
+[15:21:02] ECHO-35 moving 🚀 Northeast (800 units)
+[15:21:02] ECHO-35 🚀 heading to parking NEW-P71
+[15:21:02] CHARLIE-63 🚀 departing from NEW-P52
+[15:21:02] GOLF-97 ✓ landed at NEW-P62 (parking for ~78s)
+[15:21:02] ALPHA-61 🚀 departing from NEW-P22
+[15:21:02] CHARLIE-63 moving 🚀 North (799 units)
+[15:21:02] CHARLIE-63 🚀 heading to parking NEW-P47
+[15:21:02] ALPHA-71 🚀 departing from NEW-P57
+[15:21:02] ALPHA-71 moving 🚀 North (794 units)
+[15:21:02] ALPHA-71 🚀 heading to parking NEW-P10
+[15:21:02] ALPHA-61 moving 🚀 Southwest (531 units)
+[15:21:02] ALPHA-61 🚀 heading to parking NEW-P6
+[15:21:03] INDIA-19 🚀 departing from NEW-P68
+[15:21:03] INDIA-19 moving 🚀 North (807 units)
+[15:21:03] INDIA-19 🚀 heading to parking NEW-P100
+[15:21:03] HOTEL-78 🚀 departing from NEW-P92
+[15:21:03] HOTEL-78 moving 🚀 South (374 units)
+[15:21:03] HOTEL-78 🚀 heading to parking NEW-P6
+[15:21:03] CHARLIE-43 ✓ landed at NEW-P68 (parking for ~80s)
+[15:21:04] ALPHA-21 ✓ landed at NEW-P35 (parking for ~82s)
+[15:21:04] FOXTROT-46 🚀 departing from NEW-P88
+[15:21:04] FOXTROT-46 moving 🚀 Southeast (1086 units)
+[15:21:04] FOXTROT-46 🚀 heading to parking NEW-P84
+[15:21:05] GOLF-77 🚀 departing from NEW-P67
+[15:21:05] GOLF-77 moving 🚀 Southwest (954 units)
+[15:21:05] GOLF-77 🚀 heading to parking NEW-P12
+[15:21:05] FOXTROT-66 ✓ landed at NEW-P61 (parking for ~82s)
+[15:21:06] GOLF-97 🚀 departing from NEW-P62
+[15:21:06] GOLF-87 ✓ landed at NEW-P57 (parking for ~78s)
+[15:21:06] GOLF-97 moving 🚀 North (381 units)
+[15:21:06] GOLF-97 🚀 heading to parking NEW-P64
+[15:21:07] FOXTROT-06 🚀 departing from NEW-P44
+[15:21:07] FOXTROT-06 moving 🚀 East (294 units)
+[15:21:07] FOXTROT-06 🚀 heading to parking NEW-P69
+[15:21:07] DELTA-14 ✓ landed at NEW-P86 (parking for ~50s)
+[15:21:07] CHARLIE-43 🚀 departing from NEW-P68
+[15:21:08] CHARLIE-43 moving 🚀 Northeast (568 units)
+[15:21:08] CHARLIE-43 🚀 heading to parking NEW-P32
+[15:21:08] GOLF-17 🚀 departing from NEW-P99
+[15:21:08] GOLF-17 moving 🚀 East (797 units)
+[15:21:08] GOLF-17 🚀 heading to parking NEW-P54
+[15:21:08] ALPHA-21 🚀 departing from NEW-P35
+[15:21:08] JULIET-100 ✓ landed at NEW-P89 (parking for ~50s)
+[15:21:09] ALPHA-21 moving 🚀 Northwest (781 units)
+[15:21:09] ALPHA-21 🚀 heading to parking NEW-P55
+[15:21:09] HOTEL-98 ✓ landed at NEW-P91 (parking for ~48s)
+[15:21:10] FOXTROT-66 🚀 departing from NEW-P61
+[15:21:10] FOXTROT-66 moving 🚀 Southwest (1040 units)
+[15:21:10] FOXTROT-66 🚀 heading to parking NEW-P48
+[15:21:10] ECHO-75 ✓ landed at NEW-P8 (parking for ~58s)
+[15:21:10] BRAVO-52 ✓ landed at NEW-P21 (parking for ~62s)
+[15:21:10] ECHO-55 ✓ landed at NEW-P18 (parking for ~64s)
+[15:21:11] GOLF-87 🚀 departing from NEW-P57
+[15:21:11] GOLF-37 ✓ landed at NEW-P55 (parking for ~82s)
+[15:21:11] GOLF-87 moving 🚀 North (532 units)
+[15:21:11] GOLF-87 🚀 heading to parking NEW-P51
+[15:21:11] JULIET-100 🚀 departing from NEW-P89
+[15:21:11] JULIET-100 moving 🚀 Southeast (998 units)
+[15:21:11] JULIET-100 🚀 heading to parking NEW-P80
+[15:21:11] JULIET-20 ✓ landed at NEW-P6 (parking for ~66s)
+[15:21:12] HOTEL-98 🚀 departing from NEW-P91
+[15:21:12] HOTEL-98 moving 🚀 Northwest (1252 units)
+[15:21:12] HOTEL-98 🚀 heading to parking NEW-P13
+[15:21:13] ECHO-75 🚀 departing from NEW-P8
+[15:21:13] CHARLIE-93 ✓ landed at NEW-P87 (parking for ~46s)
+[15:21:13] GOLF-07 ✓ landed at NEW-P57 (parking for ~86s)
+[15:21:13] DELTA-14 🚀 departing from NEW-P86
+[15:21:13] ECHO-75 moving 🚀 East (512 units)
+[15:21:13] ECHO-75 🚀 heading to parking NEW-P77
+[15:21:13] DELTA-14 moving 🚀 North (992 units)
+[15:21:13] DELTA-14 🚀 heading to parking NEW-P74
+[15:21:13] BRAVO-52 🚀 departing from NEW-P21
+[15:21:14] BRAVO-52 moving 🚀 Southeast (311 units)
+[15:21:14] BRAVO-52 🚀 heading to parking NEW-P14
+[15:21:14] ECHO-55 🚀 departing from NEW-P18
+[15:21:14] ECHO-55 moving 🚀 Northwest (1371 units)
+[15:21:14] ECHO-55 🚀 heading to parking NEW-P95
+[15:21:14] FOXTROT-96 ✓ landed at NEW-P49 (parking for ~74s)
+[15:21:15] JULIET-20 🚀 departing from NEW-P6
+[15:21:15] JULIET-20 moving 🚀 North (343 units)
+[15:21:15] JULIET-20 🚀 heading to parking NEW-P90
+[15:21:15] GOLF-37 🚀 departing from NEW-P55
+[15:21:15] FOXTROT-76 ✓ landed at NEW-P62 (parking for ~90s)
+[15:21:15] CHARLIE-93 🚀 departing from NEW-P87
+[15:21:15] GOLF-37 moving 🚀 South (450 units)
+[15:21:15] GOLF-37 🚀 heading to parking NEW-P85
+[15:21:15] CHARLIE-93 moving 🚀 South (509 units)
+[15:21:15] CHARLIE-93 🚀 heading to parking NEW-P61
+[15:21:16] INDIA-99 ✓ landed at NEW-P19 (parking for ~62s)
+[15:21:16] FOXTROT-56 ✓ landed at NEW-P79 (parking for ~36s)
+[15:21:17] INDIA-49 ✓ landed at NEW-P98 (parking for ~40s)
+[15:21:17] FOXTROT-56 🚀 departing from NEW-P79
+[15:21:17] FOXTROT-56 moving 🚀 Northeast (512 units)
+[15:21:17] FOXTROT-56 🚀 heading to parking NEW-P76
+[15:21:18] DELTA-64 ✓ landed at NEW-P20 (parking for ~90s)
+[15:21:18] FOXTROT-96 🚀 departing from NEW-P49
+[15:21:18] FOXTROT-96 moving 🚀 Southwest (1457 units)
+[15:21:18] FOXTROT-96 🚀 heading to parking NEW-P63
+[15:21:19] BRAVO-92 ✓ landed at NEW-P96 (parking for ~56s)
+[15:21:19] INDIA-99 🚀 departing from NEW-P19
+[15:21:19] INDIA-99 moving 🚀 East (961 units)
+[15:21:19] INDIA-99 🚀 heading to parking NEW-P5
+[15:21:19] INDIA-49 🚀 departing from NEW-P98
+[15:21:19] INDIA-49 moving 🚀 Northwest (706 units)
+[15:21:19] INDIA-49 🚀 heading to parking NEW-P60
+[15:21:20] FOXTROT-76 🚀 departing from NEW-P62
+[15:21:20] FOXTROT-76 moving 🚀 Northeast (437 units)
+[15:21:20] FOXTROT-76 🚀 heading to parking NEW-P9
+[15:21:20] BRAVO-82 ✓ landed at NEW-P69 (parking for ~76s)
+[15:21:20] CHARLIE-83 ✓ landed at NEW-P48 (parking for ~58s)
+[15:21:21] BRAVO-92 🚀 departing from NEW-P96
+[15:21:21] BRAVO-92 moving 🚀 West (366 units)
+[15:21:21] BRAVO-92 🚀 heading to parking NEW-P86
+[15:21:21] DELTA-74 ✓ landed at NEW-P53 (parking for ~52s)
+[15:21:21] GOLF-07 🚀 departing from NEW-P57
+[15:21:21] GOLF-07 moving 🚀 Northwest (973 units)
+[15:21:21] GOLF-07 🚀 heading to parking NEW-P64
+[15:21:21] DELTA-64 🚀 departing from NEW-P20
+[15:21:21] DELTA-64 moving 🚀 South (26 units)
+[15:21:22] DELTA-64 🚀 heading to parking NEW-P20
+[15:21:22] DELTA-64 ✓ landed at NEW-P20 (parking for ~76s)
+[15:21:22] HOTEL-88 ✓ landed at NEW-P62 (parking for ~78s)
+[15:21:22] ECHO-05 ✓ landed at NEW-P6 (parking for ~86s)
+[15:21:22] INDIA-89 ✓ landed at NEW-P68 (parking for ~72s)
+[15:21:22] DELTA-94 ✓ landed at NEW-P84 (parking for ~84s)
+[15:21:22] CHARLIE-83 🚀 departing from NEW-P48
+[15:21:23] BRAVO-42 ✓ landed at NEW-P31 (parking for ~42s)
+[15:21:23] DELTA-74 🚀 departing from NEW-P53
+[15:21:23] DELTA-74 moving 🚀 East (1046 units)
+[15:21:23] DELTA-74 🚀 heading to parking NEW-P98
+[15:21:23] CHARLIE-83 moving 🚀 Southwest (26 units)
+[15:21:23] CHARLIE-83 🚀 heading to parking NEW-P48
+[15:21:23] CHARLIE-83 ✓ landed at NEW-P48 (parking for ~46s)
+[15:21:23] BRAVO-82 🚀 departing from NEW-P69
+[15:21:23] BRAVO-82 moving 🚀 North (481 units)
+[15:21:23] BRAVO-82 🚀 heading to parking NEW-P100
+[15:21:23] CHARLIE-23 ✓ landed at NEW-P5 (parking for ~62s)
+[15:21:24] ALPHA-51 ✓ landed at NEW-P29 (parking for ~66s)
+[15:21:24] BRAVO-42 🚀 departing from NEW-P31
+[15:21:24] INDIA-09 ✓ landed at NEW-P50 (parking for ~58s)
+[15:21:24] BRAVO-42 moving 🚀 West (55 units)
+[15:21:24] BRAVO-42 🚀 heading to parking NEW-P70
+[15:21:24] DELTA-64 🚀 departing from NEW-P20
+[15:21:24] HOTEL-38 ✓ landed at NEW-P39 (parking for ~48s)
+[15:21:24] DELTA-64 moving 🚀 Northwest (575 units)
+[15:21:24] DELTA-64 🚀 heading to parking NEW-P87
+[15:21:24] CHARLIE-83 🚀 departing from NEW-P48
+[15:21:24] CHARLIE-83 moving 🚀 Northeast (1044 units)
+[15:21:24] CHARLIE-83 🚀 heading to parking NEW-P55
+[15:21:25] HOTEL-88 🚀 departing from NEW-P62
+[15:21:25] HOTEL-88 moving 🚀 East (1469 units)
+[15:21:25] HOTEL-88 🚀 heading to parking NEW-P35
+[15:21:25] BRAVO-62 ✓ landed at NEW-P9 (parking for ~90s)
+[15:21:25] INDIA-89 🚀 departing from NEW-P68
+[15:21:25] INDIA-89 moving 🚀 West (153 units)
+[15:21:25] INDIA-89 🚀 heading to parking NEW-P57
+[15:21:26] CHARLIE-23 🚀 departing from NEW-P5
+[15:21:26] CHARLIE-23 moving 🚀 Southeast (487 units)
+[15:21:26] CHARLIE-23 🚀 heading to parking NEW-P1
+[15:21:26] DELTA-94 🚀 departing from NEW-P84
+[15:21:26] DELTA-94 moving 🚀 Northwest (979 units)
+[15:21:26] DELTA-94 🚀 heading to parking NEW-P36
+[15:21:26] INDIA-69 ✓ landed at NEW-P25 (parking for ~46s)
+[15:21:26] CHARLIE-53 ✓ landed at NEW-P24 (parking for ~44s)
+[15:21:26] HOTEL-38 🚀 departing from NEW-P39
+[15:21:26] HOTEL-38 moving 🚀 South (939 units)
+[15:21:27] HOTEL-38 🚀 heading to parking NEW-P37
+[15:21:27] BRAVO-42 ✓ landed at NEW-P70 (parking for ~30s)
+[15:21:27] ALPHA-51 🚀 departing from NEW-P29
+[15:21:27] HOTEL-68 ✓ landed at NEW-P84 (parking for ~80s)
+[15:21:27] ALPHA-51 moving 🚀 Southwest (1330 units)
+[15:21:27] ALPHA-51 🚀 heading to parking NEW-P45
+[15:21:27] BRAVO-42 🚀 departing from NEW-P70
+[15:21:27] INDIA-69 🚀 departing from NEW-P25
+[15:21:27] BRAVO-42 moving 🚀 Southeast (1162 units)
+[15:21:27] BRAVO-42 🚀 heading to parking NEW-P86
+[15:21:27] INDIA-69 moving 🚀 North (585 units)
+[15:21:27] INDIA-69 🚀 heading to parking NEW-P82
+[15:21:28] CHARLIE-53 🚀 departing from NEW-P24
+[15:21:28] CHARLIE-53 moving 🚀 East (508 units)
+[15:21:28] CHARLIE-53 🚀 heading to parking NEW-P45
+[15:21:28] ALPHA-31 acknowledges radio instruction: Proceeding to (1206,744) - Traffic separation
+[15:21:28] BRAVO-62 🚀 departing from NEW-P9
+[15:21:28] BRAVO-62 moving 🚀 Southeast (728 units)
+[15:21:28] BRAVO-62 🚀 heading to parking NEW-P75
+[15:21:29] INDIA-09 🚀 departing from NEW-P50
+[15:21:29] ECHO-05 🚀 departing from NEW-P6
+[15:21:29] INDIA-09 moving 🚀 Northwest (920 units)
+[15:21:29] INDIA-09 🚀 heading to parking NEW-P73
+[15:21:29] ECHO-05 moving 🚀 Northeast (328 units)
+[15:21:29] ECHO-05 🚀 heading to parking NEW-P68
+[15:21:29] HOTEL-68 🚀 departing from NEW-P84
+[15:21:29] HOTEL-68 moving 🚀 Northwest (1012 units)
+[15:21:29] HOTEL-68 🚀 heading to parking NEW-P44
+[15:21:30] FOXTROT-06 ✓ landed at NEW-P69 (parking for ~64s)
+[15:21:30] BRAVO-32 ✓ landed at NEW-P67 (parking for ~38s)
+[15:21:31] BRAVO-32 🚀 departing from NEW-P67
+[15:21:31] BRAVO-32 moving 🚀 East (164 units)
+[15:21:31] BRAVO-32 🚀 heading to parking NEW-P65
+[15:21:31] HOTEL-78 ✓ landed at NEW-P6 (parking for ~38s)
+[15:21:31] INDIA-39 ✓ landed at NEW-P79 (parking for ~34s)
+[15:21:32] ALPHA-01 ✓ landed at NEW-P32 (parking for ~54s)
+[15:21:32] INDIA-89 ✓ landed at NEW-P57 (parking for ~40s)
+[15:21:32] ECHO-95 ✓ landed at NEW-P53 (parking for ~58s)
+[15:21:32] FOXTROT-06 🚀 departing from NEW-P69
+[15:21:32] HOTEL-78 🚀 departing from NEW-P6
+[15:21:32] HOTEL-78 moving 🚀 East (255 units)
+[15:21:32] HOTEL-78 🚀 heading to parking NEW-P28
+[15:21:32] FOXTROT-06 moving 🚀 East (719 units)
+[15:21:32] FOXTROT-06 🚀 heading to parking NEW-P20
+[15:21:33] INDIA-39 🚀 departing from NEW-P79
+[15:21:33] INDIA-39 moving 🚀 Southeast (429 units)
+[15:21:33] INDIA-39 🚀 heading to parking NEW-P84
+[15:21:33] JULIET-60 ✓ landed at NEW-P39 (parking for ~38s)
+[15:21:33] ECHO-65 ✓ landed at NEW-P91 (parking for ~78s)
+[15:21:33] GOLF-57 ✓ landed at NEW-P95 (parking for ~40s)
+[15:21:33] INDIA-89 🚀 departing from NEW-P57
+[15:21:34] INDIA-89 moving 🚀 Northeast (281 units)
+[15:21:34] INDIA-89 🚀 heading to parking NEW-P22
+[15:21:34] FOXTROT-16 ✓ landed at NEW-P86 (parking for ~46s)
+[15:21:34] BRAVO-52 ✓ landed at NEW-P14 (parking for ~64s)
+[15:21:34] GOLF-97 ✓ landed at NEW-P64 (parking for ~88s)
+[15:21:34] JULIET-60 🚀 departing from NEW-P39
+[15:21:34] JULIET-60 moving 🚀 East (245 units)
+[15:21:34] JULIET-60 🚀 heading to parking NEW-P36
+[15:21:35] ECHO-95 🚀 departing from NEW-P53
+[15:21:35] GOLF-57 🚀 departing from NEW-P95
+[15:21:35] GOLF-57 moving 🚀 South (1166 units)
+[15:21:35] GOLF-57 🚀 heading to parking NEW-P45
+[15:21:35] ECHO-95 moving 🚀 Southeast (752 units)
+[15:21:35] ECHO-95 🚀 heading to parking NEW-P28
+[15:21:35] JULIET-40 ✓ landed at NEW-P23 (parking for ~38s)
+[15:21:35] ALPHA-01 🚀 departing from NEW-P32
+[15:21:35] ECHO-65 🚀 departing from NEW-P91
+[15:21:36] ALPHA-01 moving 🚀 West (1255 units)
+[15:21:36] ALPHA-01 🚀 heading to parking NEW-P31
+[15:21:36] ECHO-65 moving 🚀 Northwest (511 units)
+[15:21:36] ECHO-65 🚀 heading to parking NEW-P75
+[15:21:36] BRAVO-52 🚀 departing from NEW-P14
+[15:21:36] BRAVO-52 moving 🚀 West (592 units)
+[15:21:36] BRAVO-52 🚀 heading to parking NEW-P43
+[15:21:36] JULIET-50 ✓ landed at NEW-P28 (parking for ~56s)
+[15:21:36] JULIET-20 ✓ landed at NEW-P90 (parking for ~86s)
+[15:21:36] JULIET-40 🚀 departing from NEW-P23
+[15:21:37] BRAVO-22 ✓ landed at NEW-P17 (parking for ~80s)
+[15:21:37] JULIET-40 moving 🚀 Southeast (1058 units)
+[15:21:37] JULIET-40 🚀 heading to parking NEW-P83
+[15:21:37] FOXTROT-16 🚀 departing from NEW-P86
+[15:21:37] GOLF-97 🚀 departing from NEW-P64
+[15:21:37] GOLF-97 moving 🚀 Southeast (1508 units)
+[15:21:37] GOLF-97 🚀 heading to parking NEW-P40
+[15:21:37] FOXTROT-16 moving 🚀 Northwest (612 units)
+[15:21:37] FOXTROT-16 🚀 heading to parking NEW-P73
+[15:21:37] FOXTROT-36 ✓ landed at NEW-P30 (parking for ~66s)
+[15:21:37] HOTEL-08 ✓ landed at NEW-P37 (parking for ~54s)
+[15:21:38] JULIET-10 ✓ landed at NEW-P7 (parking for ~42s)
+[15:21:38] INDIA-59 ✓ landed at NEW-P14 (parking for ~76s)
+[15:21:38] CHARLIE-33 ✓ landed at NEW-P1 (parking for ~74s)
+[15:21:38] JULIET-50 🚀 departing from NEW-P28
+[15:21:38] JULIET-50 moving 🚀 West (611 units)
+[15:21:38] JULIET-50 🚀 heading to parking NEW-P56
+[15:21:38] ALPHA-91 ✓ landed at NEW-P62 (parking for ~74s)
+[15:21:39] FOXTROT-36 🚀 departing from NEW-P30
+[15:21:39] JULIET-20 🚀 departing from NEW-P90
+[15:21:39] BRAVO-22 🚀 departing from NEW-P17
+[15:21:39] BRAVO-22 moving 🚀 Northeast (1019 units)
+[15:21:39] BRAVO-22 🚀 heading to parking NEW-P89
+[15:21:39] FOXTROT-36 moving 🚀 South (334 units)
+[15:21:39] FOXTROT-36 🚀 heading to parking NEW-P52
+[15:21:39] JULIET-20 moving 🚀 East (742 units)
+[15:21:39] JULIET-20 🚀 heading to parking NEW-P26
+[15:21:40] BRAVO-32 ✓ landed at NEW-P65 (parking for ~64s)
+[15:21:40] CHARLIE-13 ✓ landed at NEW-P86 (parking for ~44s)
+[15:21:40] HOTEL-48 ✓ landed at NEW-P98 (parking for ~58s)
+[15:21:40] CHARLIE-33 🚀 departing from NEW-P1
+[15:21:40] INDIA-59 🚀 departing from NEW-P14
+[15:21:40] INDIA-59 moving 🚀 East (645 units)
+[15:21:40] INDIA-59 🚀 heading to parking NEW-P54
+[15:21:40] DELTA-84 ✓ landed at NEW-P17 (parking for ~88s)
+[15:21:40] JULIET-10 🚀 departing from NEW-P7
+[15:21:40] CHARLIE-33 moving 🚀 West (979 units)
+[15:21:41] CHARLIE-33 🚀 heading to parking NEW-P27
+[15:21:41] ECHO-45 ✓ landed at NEW-P50 (parking for ~88s)
+[15:21:41] ALPHA-91 🚀 departing from NEW-P62
+[15:21:41] JULIET-10 moving 🚀 Southeast (452 units)
+[15:21:41] JULIET-10 🚀 heading to parking NEW-P76
+[15:21:41] ALPHA-41 ✓ landed at NEW-P42 (parking for ~60s)
+[15:21:41] ALPHA-91 moving 🚀 East (283 units)
+[15:21:41] ALPHA-91 🚀 heading to parking NEW-P88
+[15:21:41] HOTEL-08 🚀 departing from NEW-P37
+[15:21:41] HOTEL-08 moving 🚀 North (497 units)
+[15:21:42] HOTEL-08 🚀 heading to parking NEW-P3
+[15:21:42] BRAVO-12 ✓ landed at NEW-P54 (parking for ~84s)
+[15:21:42] ALPHA-61 ✓ landed at NEW-P6 (parking for ~78s)
+[15:21:43] BRAVO-32 🚀 departing from NEW-P65
+[15:21:43] HOTEL-58 ✓ landed at NEW-P54 (parking for ~48s)
+[15:21:43] BRAVO-32 moving 🚀 South (224 units)
+[15:21:43] BRAVO-32 🚀 heading to parking NEW-P75
+[15:21:43] HOTEL-48 🚀 departing from NEW-P98
+[15:21:43] HOTEL-48 moving 🚀 Northwest (818 units)
+[15:21:43] HOTEL-48 🚀 heading to parking NEW-P71
+[15:21:43] BRAVO-72 ✓ landed at NEW-P84 (parking for ~46s)
+[15:21:44] BRAVO-92 ✓ landed at NEW-P86 (parking for ~30s)
+[15:21:44] ECHO-15 ✓ landed at NEW-P25 (parking for ~68s)
+[15:21:44] ALPHA-41 🚀 departing from NEW-P42
+[15:21:44] ALPHA-41 moving 🚀 West (30 units)
+[15:21:44] ALPHA-41 🚀 heading to parking NEW-P40
+[15:21:44] ALPHA-41 ✓ landed at NEW-P40 (parking for ~50s)
+[15:21:45] CHARLIE-13 🚀 departing from NEW-P86
+[15:21:45] CHARLIE-13 moving 🚀 North (746 units)
+[15:21:45] CHARLIE-13 🚀 heading to parking NEW-P58
+[15:21:45] BRAVO-92 🚀 departing from NEW-P86
+[15:21:45] HOTEL-58 🚀 departing from NEW-P54
+[15:21:45] HOTEL-58 moving 🚀 West (827 units)
+[15:21:45] HOTEL-58 🚀 heading to parking NEW-P3
+[15:21:45] BRAVO-92 moving 🚀 Northwest (1175 units)
+[15:21:45] BRAVO-92 🚀 heading to parking NEW-P9
+[15:21:46] INDIA-29 ✓ landed at NEW-P43 (parking for ~60s)
+[15:21:46] DELTA-84 🚀 departing from NEW-P17
+[15:21:46] ECHO-45 🚀 departing from NEW-P50
+[15:21:46] ECHO-45 moving 🚀 North (487 units)
+[15:21:46] ECHO-45 🚀 heading to parking NEW-P54
+[15:21:46] BRAVO-72 🚀 departing from NEW-P84
+[15:21:46] DELTA-84 moving 🚀 East (1356 units)
+[15:21:46] DELTA-84 🚀 heading to parking NEW-P50
+[15:21:46] BRAVO-72 moving 🚀 Northwest (1012 units)
+[15:21:46] BRAVO-72 🚀 heading to parking NEW-P58
+[15:21:47] GOLF-37 ✓ landed at NEW-P85 (parking for ~34s)
+[15:21:47] ALPHA-61 🚀 departing from NEW-P6
+[15:21:47] ALPHA-61 moving 🚀 North (936 units)
+[15:21:47] ALPHA-61 🚀 heading to parking NEW-P67
+[15:21:48] ALPHA-41 🚀 departing from NEW-P40
+[15:21:48] ALPHA-41 moving 🚀 North (1020 units)
+[15:21:48] ALPHA-41 🚀 heading to parking NEW-P38
+[15:21:48] INDIA-79 ✓ landed at NEW-P72 (parking for ~82s)
+[15:21:49] GOLF-37 🚀 departing from NEW-P85
+[15:21:49] GOLF-37 moving 🚀 Northwest (807 units)
+[15:21:49] GOLF-37 🚀 heading to parking NEW-P19
+[15:21:49] INDIA-29 🚀 departing from NEW-P43
+[15:21:50] INDIA-29 moving 🚀 Northeast (1227 units)
+[15:21:50] INDIA-29 🚀 heading to parking NEW-P46
+[15:21:50] GOLF-67 ✓ landed at NEW-P70 (parking for ~48s)
+[15:21:50] JULIET-70 ✓ landed at NEW-P10 (parking for ~36s)
+[15:21:50] FOXTROT-76 ✓ landed at NEW-P9 (parking for ~54s)
+[15:21:51] ECHO-85 ✓ landed at NEW-P35 (parking for ~42s)
+[15:21:51] ALPHA-11 ✓ landed at NEW-P49 (parking for ~90s)
+[15:21:52] ECHO-75 ✓ landed at NEW-P77 (parking for ~88s)
+[15:21:52] GOLF-87 ✓ landed at NEW-P51 (parking for ~84s)
+[15:21:52] BRAVO-12 🚀 departing from NEW-P54
+[15:21:52] CHARLIE-43 ✓ landed at NEW-P32 (parking for ~78s)
+[15:21:52] BRAVO-12 moving 🚀 South (523 units)
+[15:21:52] BRAVO-12 🚀 heading to parking NEW-P50
+[15:21:52] ECHO-15 🚀 departing from NEW-P25
+[15:21:52] JULIET-70 🚀 departing from NEW-P10
+[15:21:52] JULIET-70 moving 🚀 Southwest (516 units)
+[15:21:53] JULIET-70 🚀 heading to parking NEW-P58
+[15:21:53] ECHO-15 moving 🚀 West (1106 units)
+[15:21:53] ECHO-15 🚀 heading to parking NEW-P88
+[15:21:53] GOLF-67 🚀 departing from NEW-P70
+[15:21:53] GOLF-67 moving 🚀 Southeast (924 units)
+[15:21:53] GOLF-67 🚀 heading to parking NEW-P81
+[15:21:53] ECHO-05 ✓ landed at NEW-P68 (parking for ~72s)
+[15:21:54] INDIA-79 🚀 departing from NEW-P72
+[15:21:54] INDIA-79 moving 🚀 East (1015 units)
+[15:21:54] INDIA-79 🚀 heading to parking NEW-P54
+[15:21:54] ECHO-85 🚀 departing from NEW-P35
+[15:21:54] ECHO-85 moving 🚀 Southwest (327 units)
+[15:21:54] ECHO-85 🚀 heading to parking NEW-P42
+[15:21:55] FOXTROT-76 🚀 departing from NEW-P9
+[15:21:55] HOTEL-78 ✓ landed at NEW-P28 (parking for ~44s)
+[15:21:55] FOXTROT-86 ✓ landed at NEW-P69 (parking for ~86s)
+[15:21:55] FOXTROT-76 moving 🚀 East (902 units)
+[15:21:55] FOXTROT-76 🚀 heading to parking NEW-P11
+[15:21:55] CHARLIE-93 ✓ landed at NEW-P61 (parking for ~44s)
+[15:21:55] DELTA-04 ✓ landed at NEW-P96 (parking for ~64s)
+[15:21:56] JULIET-60 ✓ landed at NEW-P36 (parking for ~84s)
+[15:21:56] HOTEL-78 🚀 departing from NEW-P28
+[15:21:56] HOTEL-78 moving 🚀 Northeast (726 units)
+[15:21:56] HOTEL-78 🚀 heading to parking NEW-P54
+[15:21:56] GOLF-27 ✓ landed at NEW-P50 (parking for ~46s)
+[15:21:56] CHARLIE-93 🚀 departing from NEW-P61
+[15:21:56] CHARLIE-93 moving 🚀 North (303 units)
+[15:21:56] CHARLIE-93 🚀 heading to parking NEW-P65
+[15:21:57] CHARLIE-43 🚀 departing from NEW-P32
+[15:21:57] GOLF-87 🚀 departing from NEW-P51
+[15:21:57] GOLF-87 moving 🚀 South (536 units)
+[15:21:57] GOLF-87 🚀 heading to parking NEW-P85
+[15:21:57] HOTEL-18 ✓ landed at NEW-P51 (parking for ~52s)
+[15:21:57] CHARLIE-43 moving 🚀 South (278 units)
+[15:21:57] CHARLIE-43 🚀 heading to parking NEW-P97
+[15:21:57] ECHO-75 🚀 departing from NEW-P77
+[15:21:57] ECHO-75 moving 🚀 North (611 units)
+[15:21:57] ECHO-75 🚀 heading to parking NEW-P47
+[15:21:58] FOXTROT-56 ✓ landed at NEW-P76 (parking for ~68s)
+[15:21:58] JULIET-80 ✓ landed at NEW-P34 (parking for ~42s)
+[15:21:58] DELTA-44 ✓ landed at NEW-P77 (parking for ~68s)
+[15:21:59] INDIA-89 ✓ landed at NEW-P22 (parking for ~56s)
+[15:21:59] FOXTROT-26 ✓ landed at NEW-P25 (parking for ~52s)
+[15:21:59] FOXTROT-86 🚀 departing from NEW-P69
+[15:21:59] FOXTROT-86 moving 🚀 South (635 units)
+[15:21:59] FOXTROT-86 🚀 heading to parking NEW-P45
+[15:21:59] GOLF-27 🚀 departing from NEW-P50
+[15:21:59] GOLF-27 moving 🚀 Southeast (26 units)
+[15:22:00] GOLF-27 🚀 heading to parking NEW-P50
+[15:22:00] GOLF-27 ✓ landed at NEW-P50 (parking for ~44s)
+[15:22:00] JULIET-80 🚀 departing from NEW-P34
+[15:22:00] HOTEL-18 🚀 departing from NEW-P51
+[15:22:00] HOTEL-18 moving 🚀 West (746 units)
+[15:22:00] HOTEL-18 🚀 heading to parking NEW-P31
+[15:22:00] JULIET-80 moving 🚀 Northwest (1027 units)
+[15:22:00] JULIET-80 🚀 heading to parking NEW-P62
+[15:22:01] JULIET-60 🚀 departing from NEW-P36
+[15:22:01] JULIET-60 moving 🚀 Southwest (363 units)
+[15:22:01] JULIET-60 🚀 heading to parking NEW-P41
+[15:22:01] FOXTROT-56 🚀 departing from NEW-P76
+[15:22:01] FOXTROT-56 moving 🚀 West (1065 units)
+[15:22:01] FOXTROT-56 🚀 heading to parking NEW-P3
+[15:22:01] ECHO-05 🚀 departing from NEW-P68
+[15:22:01] BRAVO-82 ✓ landed at NEW-P100 (parking for ~48s)
+[15:22:02] ECHO-05 moving 🚀 North (635 units)
+[15:22:02] ECHO-05 🚀 heading to parking NEW-P4
+[15:22:02] INDIA-89 🚀 departing from NEW-P22
+[15:22:02] INDIA-89 moving 🚀 Southeast (515 units)
+[15:22:02] INDIA-89 🚀 heading to parking NEW-P42
+[15:22:02] FOXTROT-26 🚀 departing from NEW-P25
+[15:22:02] FOXTROT-26 moving 🚀 North (581 units)
+[15:22:02] FOXTROT-26 🚀 heading to parking NEW-P82
+[15:22:02] GOLF-27 🚀 departing from NEW-P50
+[15:22:02] DELTA-44 🚀 departing from NEW-P77
+[15:22:02] DELTA-44 moving 🚀 Southeast (397 units)
+[15:22:02] DELTA-44 🚀 heading to parking NEW-P83
+[15:22:02] DELTA-04 🚀 departing from NEW-P96
+[15:22:02] ALPHA-11 🚀 departing from NEW-P49
+[15:22:03] GOLF-27 moving 🚀 Southwest (256 units)
+[15:22:03] GOLF-27 🚀 heading to parking NEW-P96
+[15:22:03] DELTA-04 moving 🚀 Northwest (384 units)
+[15:22:03] DELTA-04 🚀 heading to parking NEW-P85
+[15:22:03] ALPHA-11 moving 🚀 Southwest (1099 units)
+[15:22:03] ALPHA-11 🚀 heading to parking NEW-P78
+[15:22:04] BRAVO-82 🚀 departing from NEW-P100
+[15:22:04] BRAVO-82 moving 🚀 Southeast (1081 units)
+[15:22:04] BRAVO-82 🚀 heading to parking NEW-P83
+[15:22:04] JULIET-90 ✓ landed at NEW-P67 (parking for ~68s)
+[15:22:04] CHARLIE-23 ✓ landed at NEW-P1 (parking for ~52s)
+[15:22:04] BRAVO-32 ✓ landed at NEW-P75 (parking for ~36s)
+[15:22:05] BRAVO-32 🚀 departing from NEW-P75
+[15:22:05] BRAVO-32 moving 🚀 South (697 units)
+[15:22:05] BRAVO-32 🚀 heading to parking NEW-P52
+[15:22:05] DELTA-54 ✓ landed at NEW-P100 (parking for ~32s)
+[15:22:05] CHARLIE-23 🚀 departing from NEW-P1
+[15:22:06] CHARLIE-23 moving 🚀 West (1349 units)
+[15:22:06] CHARLIE-23 🚀 heading to parking NEW-P62
+[15:22:06] JULIET-90 🚀 departing from NEW-P67
+[15:22:06] JULIET-90 moving 🚀 South (126 units)
+[15:22:06] JULIET-90 🚀 heading to parking NEW-P51
+[15:22:06] DELTA-54 🚀 departing from NEW-P100
+[15:22:06] DELTA-54 moving 🚀 Southwest (651 units)
+[15:22:06] DELTA-54 🚀 heading to parking NEW-P15
+[15:22:07] GOLF-47 ✓ landed at NEW-P30 (parking for ~68s)
+[15:22:07] ALPHA-91 ✓ landed at NEW-P88 (parking for ~68s)
+[15:22:07] CHARLIE-53 ✓ landed at NEW-P45 (parking for ~36s)
+[15:22:08] DELTA-24 ✓ landed at NEW-P58 (parking for ~88s)
+[15:22:08] ALPHA-71 ✓ landed at NEW-P10 (parking for ~48s)
+[15:22:08] ECHO-35 ✓ landed at NEW-P71 (parking for ~72s)
+[15:22:08] CHARLIE-63 ✓ landed at NEW-P47 (parking for ~30s)
+[15:22:08] CHARLIE-53 🚀 departing from NEW-P45
+[15:22:08] CHARLIE-53 moving 🚀 North (1026 units)
+[15:22:09] CHARLIE-53 🚀 heading to parking NEW-P74
+[15:22:09] FOXTROT-36 ✓ landed at NEW-P52 (parking for ~66s)
+[15:22:09] INDIA-39 ✓ landed at NEW-P84 (parking for ~62s)
+[15:22:09] GOLF-47 🚀 departing from NEW-P30
+[15:22:09] GOLF-47 moving 🚀 Northwest (954 units)
+[15:22:09] GOLF-47 🚀 heading to parking NEW-P99
+[15:22:09] DELTA-64 ✓ landed at NEW-P87 (parking for ~64s)
+[15:22:09] ALPHA-91 🚀 departing from NEW-P88
+[15:22:09] ALPHA-91 moving 🚀 Northeast (419 units)
+[15:22:09] ALPHA-91 🚀 heading to parking NEW-P74
+[15:22:10] INDIA-19 ✓ landed at NEW-P100 (parking for ~34s)
+[15:22:10] CHARLIE-63 🚀 departing from NEW-P47
+[15:22:10] ALPHA-61 acknowledges radio instruction: Proceeding to (659,309) - Traffic separation
+[15:22:10] CHARLIE-63 moving 🚀 Southwest (551 units)
+[15:22:10] CHARLIE-63 🚀 heading to parking NEW-P14
+[15:22:11] ALPHA-71 🚀 departing from NEW-P10
+[15:22:11] ALPHA-71 moving 🚀 Northeast (45 units)
+[15:22:11] ALPHA-71 🚀 heading to parking NEW-P89
+[15:22:11] INDIA-19 🚀 departing from NEW-P100
+[15:22:11] INDIA-19 moving 🚀 Southeast (1045 units)
+[15:22:11] INDIA-19 🚀 heading to parking NEW-P80
+[15:22:12] DELTA-24 🚀 departing from NEW-P58
+[15:22:12] DELTA-24 moving 🚀 West (355 units)
+[15:22:12] DELTA-24 🚀 heading to parking NEW-P19
+[15:22:12] BRAVO-02 ✓ landed at NEW-P29 (parking for ~72s)
+[15:22:12] ECHO-35 🚀 departing from NEW-P71
+[15:22:12] ECHO-35 moving 🚀 Southeast (683 units)
+[15:22:12] ECHO-35 🚀 heading to parking NEW-P30
+[15:22:12] INDIA-39 🚀 departing from NEW-P84
+[15:22:12] ALPHA-71 ✓ landed at NEW-P89 (parking for ~38s)
+[15:22:12] ALPHA-21 ✓ landed at NEW-P55 (parking for ~38s)
+[15:22:12] FOXTROT-36 🚀 departing from NEW-P52
+[15:22:12] INDIA-39 moving 🚀 Northwest (808 units)
+[15:22:12] INDIA-39 🚀 heading to parking NEW-P69
+[15:22:13] FOXTROT-36 moving 🚀 North (949 units)
+[15:22:13] FOXTROT-36 🚀 heading to parking NEW-P67
+[15:22:13] DELTA-64 🚀 departing from NEW-P87
+[15:22:13] DELTA-64 moving 🚀 South (1031 units)
+[15:22:13] DELTA-64 🚀 heading to parking NEW-P83
+[15:22:13] GOLF-17 ✓ landed at NEW-P54 (parking for ~66s)
+[15:22:14] ALPHA-71 🚀 departing from NEW-P89
+[15:22:14] ALPHA-21 🚀 departing from NEW-P55
+[15:22:14] ALPHA-71 moving 🚀 Southeast (900 units)
+[15:22:14] ALPHA-71 🚀 heading to parking NEW-P25
+[15:22:14] ALPHA-21 moving 🚀 Northeast (472 units)
+[15:22:14] ALPHA-21 🚀 heading to parking NEW-P7
+[15:22:14] INDIA-69 ✓ landed at NEW-P82 (parking for ~54s)
+[15:22:14] JULIET-90 ✓ landed at NEW-P51 (parking for ~34s)
+[15:22:15] INDIA-49 ✓ landed at NEW-P60 (parking for ~50s)
+[15:22:15] JULIET-90 🚀 departing from NEW-P51
+[15:22:15] JULIET-90 moving 🚀 Southwest (370 units)
+[15:22:15] JULIET-90 🚀 heading to parking NEW-P14
+[15:22:15] INDIA-69 🚀 departing from NEW-P82
+[15:22:16] INDIA-69 moving 🚀 Southwest (958 units)
+[15:22:16] INDIA-69 🚀 heading to parking NEW-P57
+[15:22:16] INDIA-49 🚀 departing from NEW-P60
+[15:22:16] INDIA-49 moving 🚀 Northwest (676 units)
+[15:22:16] INDIA-49 🚀 heading to parking NEW-P95
+[15:22:17] CHARLIE-43 ✓ landed at NEW-P97 (parking for ~58s)
+[15:22:17] BRAVO-02 🚀 departing from NEW-P29
+[15:22:17] BRAVO-02 moving 🚀 South (735 units)
+[15:22:17] BRAVO-02 🚀 heading to parking NEW-P25
+[15:22:18] ECHO-25 ✓ landed at NEW-P64 (parking for ~38s)
+[15:22:18] ALPHA-81 ✓ landed at NEW-P59 (parking for ~58s)
+[15:22:18] GOLF-17 🚀 departing from NEW-P54
+[15:22:19] GOLF-17 moving 🚀 Southwest (786 units)
+[15:22:19] GOLF-17 🚀 heading to parking NEW-P86
+[15:22:19] ECHO-85 ✓ landed at NEW-P42 (parking for ~66s)
+[15:22:19] GOLF-27 ✓ landed at NEW-P96 (parking for ~42s)
+[15:22:19] CHARLIE-93 ✓ landed at NEW-P65 (parking for ~58s)
+[15:22:20] ECHO-25 🚀 departing from NEW-P64
+[15:22:20] ECHO-65 ✓ landed at NEW-P75 (parking for ~40s)
+[15:22:20] ECHO-25 moving 🚀 Southeast (516 units)
+[15:22:20] ECHO-25 🚀 heading to parking NEW-P27
+[15:22:20] CHARLIE-43 🚀 departing from NEW-P97
+[15:22:20] CHARLIE-43 moving 🚀 Northwest (862 units)
+[15:22:20] CHARLIE-43 🚀 heading to parking NEW-P89
+[15:22:21] CHARLIE-03 ✓ landed at NEW-P9 (parking for ~66s)
+[15:22:21] ALPHA-81 🚀 departing from NEW-P59
+[15:22:21] ALPHA-81 moving 🚀 South (433 units)
+[15:22:21] ALPHA-81 🚀 heading to parking NEW-P24
+[15:22:21] JULIET-10 ✓ landed at NEW-P76 (parking for ~68s)
+[15:22:21] GOLF-27 🚀 departing from NEW-P96
+[15:22:22] GOLF-27 moving 🚀 North (403 units)
+[15:22:22] GOLF-27 🚀 heading to parking NEW-P79
+[15:22:22] ECHO-65 🚀 departing from NEW-P75
+[15:22:22] ECHO-65 moving 🚀 Southeast (643 units)
+[15:22:22] ECHO-65 🚀 heading to parking NEW-P84
+[15:22:22] CHARLIE-93 🚀 departing from NEW-P65
+[15:22:23] ECHO-85 🚀 departing from NEW-P42
+[15:22:23] CHARLIE-93 moving 🚀 Southwest (990 units)
+[15:22:23] CHARLIE-93 🚀 heading to parking NEW-P2
+[15:22:23] ECHO-85 moving 🚀 Northwest (1499 units)
+[15:22:23] ECHO-85 🚀 heading to parking NEW-P70
+[15:22:24] 🚨 ACCIDENT REPORTED: EMERGENCY_LANDING at (527,616) - Severity: MINOR
+[15:22:24] GOLF-77 ✓ landed at NEW-P12 (parking for ~60s)
+[15:22:25] HOTEL-08 ✓ landed at NEW-P3 (parking for ~44s)
+[15:22:25] GOLF-77 🚀 departing from NEW-P12
+[15:22:25] GOLF-77 moving 🚀 Northeast (1519 units)
+[15:22:25] GOLF-77 🚀 heading to parking NEW-P29
+[15:22:26] CHARLIE-03 🚀 departing from NEW-P9
+[15:22:26] CHARLIE-03 moving 🚀 Southeast (523 units)
+[15:22:26] CHARLIE-03 🚀 heading to parking NEW-P41
+[15:22:26] BRAVO-52 ✓ landed at NEW-P43 (parking for ~56s)
+[15:22:27] JULIET-10 🚀 departing from NEW-P76
+[15:22:27] BRAVO-62 ✓ landed at NEW-P75 (parking for ~68s)
+[15:22:27] JULIET-10 moving 🚀 West (743 units)
+[15:22:27] JULIET-10 🚀 heading to parking NEW-P4
+[15:22:27] JULIET-60 ✓ landed at NEW-P41 (parking for ~82s)
+[15:22:28] ECHO-45 ✓ landed at NEW-P54 (parking for ~36s)
+[15:22:28] HOTEL-08 🚀 departing from NEW-P3
+[15:22:28] ECHO-45 🚀 departing from NEW-P54
+[15:22:29] ECHO-45 moving 🚀 Northwest (600 units)
+[15:22:29] ECHO-45 🚀 heading to parking NEW-P100
+[15:22:29] BRAVO-52 🚀 departing from NEW-P43
+[15:22:29] BRAVO-52 moving 🚀 East (1205 units)
+[15:22:29] BRAVO-52 🚀 heading to parking NEW-P5
+[15:22:29] HOTEL-08 moving 🚀 Northeast (533 units)
+[15:22:29] HOTEL-08 🚀 heading to parking NEW-P71
+[15:22:30] FOXTROT-16 ✓ landed at NEW-P73 (parking for ~58s)
+[15:22:30] BRAVO-62 🚀 departing from NEW-P75
+[15:22:30] BRAVO-62 moving 🚀 North (282 units)
+[15:22:30] BRAVO-62 🚀 heading to parking NEW-P67
+[15:22:30] DELTA-04 ✓ landed at NEW-P85 (parking for ~34s)
+[15:22:30] JULIET-60 🚀 departing from NEW-P41
+[15:22:31] JULIET-60 moving 🚀 North (356 units)
+[15:22:31] JULIET-60 🚀 heading to parking NEW-P100
+[15:22:31] DELTA-44 ✓ landed at NEW-P83 (parking for ~72s)
+[15:22:31] JULIET-50 ✓ landed at NEW-P56 (parking for ~60s)
+[15:22:32] JULIET-100 ✓ landed at NEW-P80 (parking for ~68s)
+[15:22:32] HOTEL-28 ✓ landed at NEW-P17 (parking for ~52s)
+[15:22:32] DELTA-04 🚀 departing from NEW-P85
+[15:22:32] DELTA-04 moving 🚀 Northwest (471 units)
+[15:22:33] DELTA-04 🚀 heading to parking NEW-P78
+[15:22:33] FOXTROT-06 ✓ landed at NEW-P20 (parking for ~86s)
+[15:22:33] DELTA-14 ✓ landed at NEW-P74 (parking for ~84s)
+[15:22:33] JULIET-50 🚀 departing from NEW-P56
+[15:22:33] JULIET-50 moving 🚀 Northeast (738 units)
+[15:22:33] JULIET-50 🚀 heading to parking NEW-P69
+[15:22:34] DELTA-44 🚀 departing from NEW-P83
+[15:22:34] DELTA-44 moving 🚀 West (788 units)
+[15:22:34] DELTA-44 🚀 heading to parking NEW-P8
+[15:22:34] FOXTROT-46 ✓ landed at NEW-P84 (parking for ~58s)
+[15:22:34] JULIET-70 ✓ landed at NEW-P58 (parking for ~90s)
+[15:22:34] FOXTROT-16 🚀 departing from NEW-P73
+[15:22:34] HOTEL-28 🚀 departing from NEW-P17
+[15:22:34] FOXTROT-66 ✓ landed at NEW-P48 (parking for ~70s)
+[15:22:35] FOXTROT-16 moving 🚀 Northeast (724 units)
+[15:22:35] FOXTROT-16 🚀 heading to parking NEW-P46
+[15:22:35] HOTEL-28 moving 🚀 East (1447 units)
+[15:22:35] HOTEL-28 🚀 heading to parking NEW-P49
+[15:22:35] BRAVO-12 ✓ landed at NEW-P50 (parking for ~88s)
+[15:22:35] JULIET-100 🚀 departing from NEW-P80
+[15:22:35] JULIET-100 moving 🚀 Southwest (215 units)
+[15:22:35] JULIET-100 🚀 heading to parking NEW-P18
+[15:22:36] INDIA-99 ✓ landed at NEW-P5 (parking for ~56s)
+[15:22:37] FOXTROT-46 🚀 departing from NEW-P84
+[15:22:37] FOXTROT-46 moving 🚀 Northwest (559 units)
+[15:22:37] FOXTROT-46 🚀 heading to parking NEW-P61
+[15:22:37] DELTA-34 ✓ landed at NEW-P28 (parking for ~58s)
+[15:22:37] INDIA-59 ✓ landed at NEW-P54 (parking for ~62s)
+[15:22:38] FOXTROT-66 🚀 departing from NEW-P48
+[15:22:38] FOXTROT-66 moving 🚀 North (358 units)
+[15:22:38] FOXTROT-66 🚀 heading to parking NEW-P12
+[15:22:38] INDIA-99 🚀 departing from NEW-P5
+[15:22:38] INDIA-99 moving 🚀 Southwest (597 units)
+[15:22:38] INDIA-99 🚀 heading to parking NEW-P14
+[15:22:38] JULIET-70 🚀 departing from NEW-P58
+[15:22:39] JULIET-70 moving 🚀 Southeast (811 units)
+[15:22:39] JULIET-70 🚀 heading to parking NEW-P30
+[15:22:39] ECHO-95 ✓ landed at NEW-P28 (parking for ~84s)
+[15:22:39] DELTA-24 ✓ landed at NEW-P19 (parking for ~32s)
+[15:22:39] GOLF-87 ✓ landed at NEW-P85 (parking for ~38s)
+[15:22:40] GOLF-07 ✓ landed at NEW-P64 (parking for ~60s)
+[15:22:40] JULIET-30 ✓ landed at NEW-P46 (parking for ~58s)
+[15:22:40] DELTA-34 🚀 departing from NEW-P28
+[15:22:40] DELTA-34 moving 🚀 Northwest (912 units)
+[15:22:40] DELTA-34 🚀 heading to parking NEW-P21
+[15:22:40] INDIA-59 🚀 departing from NEW-P54
+[15:22:41] INDIA-59 moving 🚀 South (303 units)
+[15:22:41] INDIA-59 🚀 heading to parking NEW-P30
+[15:22:41] DELTA-24 🚀 departing from NEW-P19
+[15:22:41] DELTA-14 🚀 departing from NEW-P74
+[15:22:41] DELTA-24 moving 🚀 East (100 units)
+[15:22:41] DELTA-24 🚀 heading to parking NEW-P21
+[15:22:41] GOLF-87 🚀 departing from NEW-P85
+[15:22:42] FOXTROT-06 🚀 departing from NEW-P20
+[15:22:42] DELTA-14 moving 🚀 Southwest (284 units)
+[15:22:42] DELTA-14 🚀 heading to parking NEW-P58
+[15:22:42] GOLF-87 moving 🚀 West (822 units)
+[15:22:42] GOLF-87 🚀 heading to parking NEW-P48
+[15:22:42] FOXTROT-06 moving 🚀 West (964 units)
+[15:22:42] FOXTROT-06 🚀 heading to parking NEW-P88
+[15:22:42] INDIA-89 ✓ landed at NEW-P42 (parking for ~32s)
+[15:22:43] JULIET-30 🚀 departing from NEW-P46
+[15:22:43] JULIET-30 moving 🚀 West (694 units)
+[15:22:43] JULIET-30 🚀 heading to parking NEW-P9
+[15:22:43] HOTEL-38 ✓ landed at NEW-P37 (parking for ~58s)
+[15:22:43] ECHO-95 🚀 departing from NEW-P28
+[15:22:43] ECHO-95 moving 🚀 North (914 units)
+[15:22:43] ECHO-95 🚀 heading to parking NEW-P38
+[15:22:44] INDIA-89 🚀 departing from NEW-P42
+[15:22:44] INDIA-89 moving 🚀 Northwest (1012 units)
+[15:22:44] INDIA-89 🚀 heading to parking NEW-P44
+[15:22:44] BRAVO-12 🚀 departing from NEW-P50
+[15:22:44] BRAVO-12 moving 🚀 North (902 units)
+[15:22:44] BRAVO-12 🚀 heading to parking NEW-P93
+[15:22:44] ALPHA-91 ✓ landed at NEW-P74 (parking for ~40s)
+[15:22:45] INDIA-09 ✓ landed at NEW-P73 (parking for ~80s)
+[15:22:45] JULIET-20 ✓ landed at NEW-P26 (parking for ~40s)
+[15:22:45] JULIET-90 ✓ landed at NEW-P14 (parking for ~34s)
+[15:22:46] GOLF-07 🚀 departing from NEW-P64
+[15:22:46] ALPHA-91 🚀 departing from NEW-P74
+[15:22:46] ALPHA-91 moving 🚀 Southwest (558 units)
+[15:22:46] ALPHA-91 🚀 heading to parking NEW-P59
+[15:22:46] GOLF-07 moving 🚀 Southeast (1277 units)
+[15:22:46] GOLF-07 🚀 heading to parking NEW-P28
+[15:22:46] HOTEL-38 🚀 departing from NEW-P37
+[15:22:47] HOTEL-38 moving 🚀 Northeast (413 units)
+[15:22:47] HOTEL-38 🚀 heading to parking NEW-P66
+[15:22:47] DELTA-94 ✓ landed at NEW-P36 (parking for ~76s)
+[15:22:47] JULIET-90 🚀 departing from NEW-P14
+[15:22:47] JULIET-90 moving 🚀 Northwest (595 units)
+[15:22:47] JULIET-90 🚀 heading to parking NEW-P31
+[15:22:48] JULIET-20 🚀 departing from NEW-P26
+[15:22:48] JULIET-20 moving 🚀 Northwest (647 units)
+[15:22:48] JULIET-20 🚀 heading to parking NEW-P38
+[15:22:48] ECHO-75 ✓ landed at NEW-P47 (parking for ~72s)
+[15:22:49] DELTA-24 ✓ landed at NEW-P21 (parking for ~48s)
+[15:22:49] FOXTROT-26 ✓ landed at NEW-P82 (parking for ~80s)
+[15:22:49] DELTA-74 ✓ landed at NEW-P98 (parking for ~60s)
+[15:22:50] DELTA-94 🚀 departing from NEW-P36
+[15:22:50] DELTA-94 moving 🚀 South (567 units)
+[15:22:50] DELTA-94 🚀 heading to parking NEW-P81
+[15:22:50] DELTA-24 🚀 departing from NEW-P21
+[15:22:50] DELTA-24 moving 🚀 Southeast (829 units)
+[15:22:50] DELTA-24 🚀 heading to parking NEW-P6
+[15:22:51] ECHO-75 🚀 departing from NEW-P47
+[15:22:51] ECHO-75 moving 🚀 South (571 units)
+[15:22:51] ECHO-75 🚀 heading to parking NEW-P77
+[15:22:51] CHARLIE-13 ✓ landed at NEW-P58 (parking for ~70s)
+[15:22:51] CHARLIE-83 ✓ landed at NEW-P55 (parking for ~78s)
+[15:22:51] FOXTROT-86 ✓ landed at NEW-P45 (parking for ~52s)
+[15:22:52] DELTA-74 🚀 departing from NEW-P98
+[15:22:52] DELTA-74 moving 🚀 Northwest (1265 units)
+[15:22:52] DELTA-74 🚀 heading to parking NEW-P9
+[15:22:52] INDIA-09 🚀 departing from NEW-P73
+[15:22:52] FOXTROT-26 🚀 departing from NEW-P82
+[15:22:52] FOXTROT-26 moving 🚀 South (347 units)
+[15:22:52] FOXTROT-26 🚀 heading to parking NEW-P32
+[15:22:53] INDIA-09 moving 🚀 Northeast (472 units)
+[15:22:53] INDIA-09 🚀 heading to parking NEW-P67
+[15:22:53] JULIET-100 ✓ landed at NEW-P18 (parking for ~56s)
+[15:22:53] ALPHA-21 ✓ landed at NEW-P7 (parking for ~78s)
+[15:22:54] ECHO-05 ✓ landed at NEW-P4 (parking for ~30s)
+[15:22:54] BRAVO-62 ✓ landed at NEW-P67 (parking for ~72s)
+[15:22:54] FOXTROT-86 🚀 departing from NEW-P45
+[15:22:54] FOXTROT-86 moving 🚀 East (745 units)
+[15:22:54] FOXTROT-86 🚀 heading to parking NEW-P50
+[15:22:54] HOTEL-68 ✓ landed at NEW-P44 (parking for ~66s)
+[15:22:55] CHARLIE-83 🚀 departing from NEW-P55
+[15:22:55] CHARLIE-83 moving 🚀 Northwest (644 units)
+[15:22:55] CHARLIE-83 🚀 heading to parking NEW-P72
+[15:22:55] GOLF-27 ✓ landed at NEW-P79 (parking for ~42s)
+[15:22:56] JULIET-100 🚀 departing from NEW-P18
+[15:22:56] JULIET-100 moving 🚀 Northwest (1035 units)
+[15:22:56] JULIET-100 🚀 heading to parking NEW-P88
+[15:22:56] ECHO-05 🚀 departing from NEW-P4
+[15:22:56] HOTEL-48 ✓ landed at NEW-P71 (parking for ~30s)
+[15:22:57] ECHO-05 moving 🚀 Northwest (546 units)
+[15:22:57] ECHO-05 🚀 heading to parking NEW-P31
+[15:22:57] ALPHA-21 🚀 departing from NEW-P7
+[15:22:57] CHARLIE-63 ✓ landed at NEW-P14 (parking for ~32s)
+[15:22:57] ALPHA-21 moving 🚀 Southwest (533 units)
+[15:22:57] ALPHA-21 🚀 heading to parking NEW-P41
+[15:22:57] BRAVO-62 🚀 departing from NEW-P67
+[15:22:57] BRAVO-62 moving 🚀 Southwest (872 units)
+[15:22:57] BRAVO-62 🚀 heading to parking NEW-P53
+[15:22:58] HOTEL-68 🚀 departing from NEW-P44
+[15:22:58] GOLF-27 🚀 departing from NEW-P79
+[15:22:58] HOTEL-68 moving 🚀 Northeast (365 units)
+[15:22:58] HOTEL-68 🚀 heading to parking NEW-P41
+[15:22:58] HOTEL-98 ✓ landed at NEW-P13 (parking for ~62s)
+[15:22:58] GOLF-27 moving 🚀 Northeast (739 units)
+[15:22:59] GOLF-27 🚀 heading to parking NEW-P29
+[15:22:59] CHARLIE-13 🚀 departing from NEW-P58
+[15:22:59] HOTEL-48 🚀 departing from NEW-P71
+[15:22:59] CHARLIE-13 moving 🚀 Southeast (804 units)
+[15:22:59] CHARLIE-13 🚀 heading to parking NEW-P30
+[15:22:59] HOTEL-48 moving 🚀 Southwest (360 units)
+[15:22:59] HOTEL-48 🚀 heading to parking NEW-P33
+[15:22:59] HOTEL-78 ✓ landed at NEW-P54 (parking for ~78s)
+[15:23:00] ALPHA-81 ✓ landed at NEW-P24 (parking for ~82s)
+[15:23:00] CHARLIE-63 🚀 departing from NEW-P14
+[15:23:00] CHARLIE-63 moving 🚀 West (259 units)
+[15:23:00] CHARLIE-63 🚀 heading to parking NEW-P44
+[15:23:00] HOTEL-58 ✓ landed at NEW-P3 (parking for ~60s)
+[15:23:01] GOLF-37 ✓ landed at NEW-P19 (parking for ~56s)
+[15:23:01] HOTEL-98 🚀 departing from NEW-P13
+[15:23:01] HOTEL-98 moving 🚀 East (560 units)
+[15:23:01] HOTEL-98 🚀 heading to parking NEW-P36
+[15:23:02] HOTEL-78 🚀 departing from NEW-P54
+[15:23:02] JULIET-60 ✓ landed at NEW-P100 (parking for ~82s)
+[15:23:02] HOTEL-78 moving 🚀 Northwest (320 units)
+[15:23:02] HOTEL-78 🚀 heading to parking NEW-P65
+[15:23:02] DELTA-54 ✓ landed at NEW-P15 (parking for ~46s)
+[15:23:03] HOTEL-58 🚀 departing from NEW-P3
+[15:23:03] ALPHA-81 🚀 departing from NEW-P24
+[15:23:03] ALPHA-81 moving 🚀 North (568 units)
+[15:23:03] ALPHA-81 🚀 heading to parking NEW-P88
+[15:23:03] HOTEL-58 moving 🚀 Southwest (559 units)
+[15:23:03] HOTEL-58 🚀 heading to parking NEW-P24
+[15:23:03] GOLF-37 🚀 departing from NEW-P19
+[15:23:03] GOLF-37 moving 🚀 South (174 units)
+[15:23:03] GOLF-37 🚀 heading to parking NEW-P59
+[15:23:04] HOTEL-18 ✓ landed at NEW-P31 (parking for ~66s)
+[15:23:04] DELTA-54 🚀 departing from NEW-P15
+[15:23:05] DELTA-54 moving 🚀 North (106 units)
+[15:23:05] DELTA-54 🚀 heading to parking NEW-P27
+[15:23:05] ECHO-25 ✓ landed at NEW-P27 (parking for ~36s)
+[15:23:05] BRAVO-32 ✓ landed at NEW-P52 (parking for ~54s)
+[15:23:06] JULIET-60 🚀 departing from NEW-P100
+[15:23:06] HOTEL-18 🚀 departing from NEW-P31
+[15:23:06] JULIET-60 moving 🚀 Southwest (1118 units)
+[15:23:06] JULIET-60 🚀 heading to parking NEW-P63
+[15:23:07] HOTEL-18 moving 🚀 Southeast (569 units)
+[15:23:07] HOTEL-18 🚀 heading to parking NEW-P14
+[15:23:07] BRAVO-42 ✓ landed at NEW-P86 (parking for ~48s)
+[15:23:07] DELTA-14 ✓ landed at NEW-P58 (parking for ~72s)
+[15:23:07] ECHO-25 🚀 departing from NEW-P27
+[15:23:07] ECHO-25 moving 🚀 Southeast (991 units)
+[15:23:07] ECHO-25 🚀 heading to parking NEW-P18
+[15:23:08] INDIA-59 ✓ landed at NEW-P30 (parking for ~62s)
+[15:23:08] BRAVO-32 🚀 departing from NEW-P52
+[15:23:08] BRAVO-32 moving 🚀 Northeast (140 units)
+[15:23:08] BRAVO-32 🚀 heading to parking NEW-P98
+[15:23:09] BRAVO-42 🚀 departing from NEW-P86
+[15:23:09] BRAVO-42 moving 🚀 North (872 units)
+[15:23:09] BRAVO-42 🚀 heading to parking NEW-P71
+[15:23:10] CHARLIE-33 ✓ landed at NEW-P27 (parking for ~54s)
+[15:23:10] INDIA-59 🚀 departing from NEW-P30
+[15:23:10] INDIA-59 moving 🚀 North (679 units)
+[15:23:10] INDIA-59 🚀 heading to parking NEW-P49
+[15:23:10] FOXTROT-66 ✓ landed at NEW-P12 (parking for ~84s)
+[15:23:10] ECHO-55 ✓ landed at NEW-P95 (parking for ~62s)
+[15:23:11] ECHO-35 ✓ landed at NEW-P30 (parking for ~40s)
+[15:23:11] DELTA-54 ✓ landed at NEW-P27 (parking for ~82s)
+[15:23:11] BRAVO-22 ✓ landed at NEW-P89 (parking for ~80s)
+[15:23:11] JULIET-40 ✓ landed at NEW-P83 (parking for ~90s)
+[15:23:12] CHARLIE-33 🚀 departing from NEW-P27
+[15:23:12] CHARLIE-33 moving 🚀 Southeast (920 units)
+[15:23:12] CHARLIE-33 🚀 heading to parking NEW-P91
+[15:23:13] CHARLIE-03 ✓ landed at NEW-P41 (parking for ~56s)
+[15:23:13] FOXTROT-76 ✓ landed at NEW-P11 (parking for ~44s)
+[15:23:13] DELTA-14 🚀 departing from NEW-P58
+[15:23:13] ECHO-55 🚀 departing from NEW-P95
+[15:23:14] DELTA-14 moving 🚀 Southwest (182 units)
+[15:23:14] DELTA-14 🚀 heading to parking NEW-P3
+[15:23:14] ECHO-35 🚀 departing from NEW-P30
+[15:23:14] ECHO-35 moving 🚀 Southeast (160 units)
+[15:23:14] ECHO-35 🚀 heading to parking NEW-P91
+[15:23:14] ECHO-55 moving 🚀 South (95 units)
+[15:23:14] ECHO-55 🚀 heading to parking NEW-P13
+[15:23:14] FOXTROT-66 🚀 departing from NEW-P12
+[15:23:14] FOXTROT-66 moving 🚀 North (814 units)
+[15:23:14] FOXTROT-66 🚀 heading to parking NEW-P9
+[15:23:14] GOLF-67 ✓ landed at NEW-P81 (parking for ~82s)
+[15:23:15] FOXTROT-76 🚀 departing from NEW-P11
+[15:23:15] FOXTROT-76 moving 🚀 South (635 units)
+[15:23:15] FOXTROT-76 🚀 heading to parking NEW-P50
+[15:23:15] DELTA-54 🚀 departing from NEW-P27
+[15:23:15] BRAVO-22 🚀 departing from NEW-P89
+[15:23:16] BRAVO-22 moving 🚀 Southeast (223 units)
+[15:23:16] BRAVO-22 🚀 heading to parking NEW-P16
+[15:23:16] DELTA-54 moving 🚀 East (959 units)
+[15:23:16] DELTA-54 🚀 heading to parking NEW-P32
+[15:23:16] DELTA-04 ✓ landed at NEW-P78 (parking for ~78s)
+[15:23:16] JULIET-40 🚀 departing from NEW-P83
+[15:23:16] JULIET-40 moving 🚀 West (731 units)
+[15:23:16] JULIET-40 🚀 heading to parking NEW-P37
+[15:23:16] INDIA-49 ✓ landed at NEW-P95 (parking for ~34s)
+[15:23:17] GOLF-37 ✓ landed at NEW-P59 (parking for ~64s)
+[15:23:17] HOTEL-08 ✓ landed at NEW-P71 (parking for ~84s)
+[15:23:18] BRAVO-72 ✓ landed at NEW-P58 (parking for ~34s)
+[15:23:18] INDIA-49 🚀 departing from NEW-P95
+[15:23:18] INDIA-49 moving 🚀 Northwest (28 units)
+[15:23:18] INDIA-49 🚀 heading to parking NEW-P95
+[15:23:18] GOLF-67 🚀 departing from NEW-P81
+[15:23:19] CHARLIE-03 🚀 departing from NEW-P41
+[15:23:19] INDIA-49 ✓ landed at NEW-P95 (parking for ~46s)
+[15:23:19] GOLF-67 moving 🚀 Southwest (537 units)
+[15:23:19] GOLF-67 🚀 heading to parking NEW-P8
+[15:23:19] CHARLIE-03 moving 🚀 Southwest (159 units)
+[15:23:19] CHARLIE-03 🚀 heading to parking NEW-P14
+[15:23:19] BRAVO-32 ✓ landed at NEW-P98 (parking for ~86s)
+[15:23:20] JULIET-50 acknowledges radio instruction: Proceeding to (539,409) - Traffic separation
+[15:23:20] ECHO-65 ✓ landed at NEW-P84 (parking for ~76s)
+[15:23:20] GOLF-57 ✓ landed at NEW-P45 (parking for ~50s)
+[15:23:20] BRAVO-72 🚀 departing from NEW-P58
+[15:23:20] BRAVO-72 moving 🚀 East (987 units)
+[15:23:20] BRAVO-72 🚀 heading to parking NEW-P29
+[15:23:21] GOLF-37 🚀 departing from NEW-P59
+[15:23:21] GOLF-37 moving 🚀 Southeast (709 units)
+[15:23:21] GOLF-37 🚀 heading to parking NEW-P6
+[15:23:21] ALPHA-41 ✓ landed at NEW-P38 (parking for ~34s)
+[15:23:21] ECHO-55 ✓ landed at NEW-P13 (parking for ~52s)
+[15:23:22] INDIA-49 🚀 departing from NEW-P95
+[15:23:22] INDIA-49 moving 🚀 South (737 units)
+[15:23:22] INDIA-49 🚀 heading to parking NEW-P43
+[15:23:22] CHARLIE-63 ✓ landed at NEW-P44 (parking for ~34s)
+[15:23:23] ALPHA-51 ✓ landed at NEW-P45 (parking for ~60s)
+[15:23:23] ALPHA-41 🚀 departing from NEW-P38
+[15:23:23] ALPHA-41 moving 🚀 South (955 units)
+[15:23:24] ALPHA-41 🚀 heading to parking NEW-P6
+[15:23:24] GOLF-57 🚀 departing from NEW-P45
+[15:23:24] GOLF-57 moving 🚀 North (517 units)
+[15:23:24] GOLF-57 🚀 heading to parking NEW-P66
+[15:23:24] CHARLIE-63 🚀 departing from NEW-P44
+[15:23:25] ECHO-55 🚀 departing from NEW-P13
+[15:23:25] ECHO-55 moving 🚀 East (604 units)
+[15:23:25] ECHO-55 🚀 heading to parking NEW-P10
+[15:23:25] CHARLIE-63 moving 🚀 West (353 units)
+[15:23:25] CHARLIE-63 🚀 heading to parking NEW-P17
+[15:23:25] ECHO-65 🚀 departing from NEW-P84
+[15:23:25] ECHO-65 moving 🚀 West (547 units)
+[15:23:25] ECHO-65 🚀 heading to parking NEW-P86
+[15:23:25] BRAVO-32 🚀 departing from NEW-P98
+[15:23:25] BRAVO-32 moving 🚀 Northwest (1295 units)
+[15:23:26] BRAVO-32 🚀 heading to parking NEW-P9
+[15:23:26] FOXTROT-96 ✓ landed at NEW-P63 (parking for ~74s)
+[15:23:26] FOXTROT-26 ✓ landed at NEW-P32 (parking for ~86s)
+[15:23:27] HOTEL-38 ✓ landed at NEW-P66 (parking for ~68s)
+[15:23:27] INDIA-79 ✓ landed at NEW-P54 (parking for ~34s)
+[15:23:27] DELTA-04 🚀 departing from NEW-P78
+[15:23:27] DELTA-04 moving 🚀 Southeast (846 units)
+[15:23:27] DELTA-04 🚀 heading to parking NEW-P52
+[15:23:27] ECHO-45 ✓ landed at NEW-P100 (parking for ~78s)
+[15:23:28] BRAVO-02 ✓ landed at NEW-P25 (parking for ~52s)
+[15:23:28] INDIA-39 ✓ landed at NEW-P69 (parking for ~90s)
+[15:23:28] ALPHA-51 🚀 departing from NEW-P45
+[15:23:28] ALPHA-51 moving 🚀 Northwest (711 units)
+[15:23:28] ALPHA-51 🚀 heading to parking NEW-P3
+[15:23:29] INDIA-79 🚀 departing from NEW-P54
+[15:23:29] INDIA-79 moving 🚀 West (837 units)
+[15:23:29] INDIA-79 🚀 heading to parking NEW-P44
+[15:23:30] HOTEL-08 🚀 departing from NEW-P71
+[15:23:30] HOTEL-08 moving 🚀 Southwest (791 units)
+[15:23:30] HOTEL-08 🚀 heading to parking NEW-P8
+[15:23:31] ECHO-35 ✓ landed at NEW-P91 (parking for ~50s)
+[15:23:31] FOXTROT-96 🚀 departing from NEW-P63
+[15:23:31] HOTEL-38 🚀 departing from NEW-P66
+[15:23:31] HOTEL-38 moving 🚀 Southwest (602 units)
+[15:23:31] HOTEL-38 🚀 heading to parking NEW-P24
+[15:23:31] FOXTROT-96 moving 🚀 North (1018 units)
+[15:23:31] FOXTROT-96 🚀 heading to parking NEW-P74
+[15:23:32] FOXTROT-26 🚀 departing from NEW-P32
+[15:23:32] FOXTROT-26 moving 🚀 Southwest (1464 units)
+[15:23:32] FOXTROT-26 🚀 heading to parking NEW-P48
+[15:23:32] ECHO-45 🚀 departing from NEW-P100
+[15:23:32] ECHO-45 moving 🚀 Southwest (1311 units)
+[15:23:33] ECHO-45 🚀 heading to parking NEW-P48
+[15:23:33] INDIA-39 🚀 departing from NEW-P69
+[15:23:33] FOXTROT-46 ✓ landed at NEW-P61 (parking for ~74s)
+[15:23:33] DELTA-14 ✓ landed at NEW-P3 (parking for ~58s)
+[15:23:33] INDIA-39 moving 🚀 Southwest (606 units)
+[15:23:34] INDIA-39 🚀 heading to parking NEW-P2
+[15:23:34] HOTEL-58 acknowledges radio instruction: Proceeding to (240,452) - Traffic separation
+[15:23:35] ECHO-35 🚀 departing from NEW-P91
+[15:23:35] BRAVO-02 🚀 departing from NEW-P25
+[15:23:35] ECHO-35 moving 🚀 Northwest (818 units)
+[15:23:35] ECHO-35 🚀 heading to parking NEW-P4
+[15:23:35] BRAVO-02 moving 🚀 West (894 units)
+[15:23:36] BRAVO-02 🚀 heading to parking NEW-P14
+[15:23:36] ALPHA-01 ✓ landed at NEW-P31 (parking for ~34s)
+[15:23:36] GOLF-17 ✓ landed at NEW-P86 (parking for ~90s)
+[15:23:36] HOTEL-68 ✓ landed at NEW-P41 (parking for ~72s)
+[15:23:37] HOTEL-48 ✓ landed at NEW-P33 (parking for ~58s)
+[15:23:37] HOTEL-78 ✓ landed at NEW-P65 (parking for ~46s)
+[15:23:37] JULIET-80 ✓ landed at NEW-P62 (parking for ~36s)
+[15:23:37] CHARLIE-03 ✓ landed at NEW-P14 (parking for ~76s)
+[15:23:38] ECHO-15 ✓ landed at NEW-P88 (parking for ~64s)
+[15:23:38] FOXTROT-46 🚀 departing from NEW-P61
+[15:23:38] JULIET-80 🚀 departing from NEW-P62
+[15:23:38] JULIET-80 moving 🚀 East (337 units)
+[15:23:38] JULIET-80 🚀 heading to parking NEW-P27
+[15:23:39] FOXTROT-46 moving 🚀 Southeast (542 units)
+[15:23:39] FOXTROT-46 🚀 heading to parking NEW-P52
+[15:23:39] HOTEL-78 🚀 departing from NEW-P65
+[15:23:39] HOTEL-78 moving 🚀 North (249 units)
+[15:23:40] HOTEL-78 🚀 heading to parking NEW-P7
+[15:23:40] HOTEL-88 ✓ landed at NEW-P35 (parking for ~68s)
+[15:23:40] ALPHA-01 🚀 departing from NEW-P31
+[15:23:40] HOTEL-48 🚀 departing from NEW-P33
+[15:23:41] BRAVO-92 ✓ landed at NEW-P9 (parking for ~64s)
+[15:23:41] ALPHA-01 moving 🚀 East (833 units)
+[15:23:41] ALPHA-01 🚀 heading to parking NEW-P16
+[15:23:41] HOTEL-48 moving 🚀 Northeast (617 units)
+[15:23:41] HOTEL-48 🚀 heading to parking NEW-P87
+[15:23:42] INDIA-99 ✓ landed at NEW-P14 (parking for ~60s)
+[15:23:42] HOTEL-68 🚀 departing from NEW-P41
+[15:23:42] HOTEL-68 moving 🚀 Southwest (746 units)
+[15:23:43] HOTEL-68 🚀 heading to parking NEW-P63
+[15:23:43] DELTA-14 🚀 departing from NEW-P3
+[15:23:44] DELTA-14 moving 🚀 Southeast (151 units)
+[15:23:44] DELTA-14 🚀 heading to parking NEW-P73
+[15:23:44] BRAVO-22 ✓ landed at NEW-P16 (parking for ~32s)
+[15:23:44] FOXTROT-56 ✓ landed at NEW-P3 (parking for ~36s)
+[15:23:44] ALPHA-71 ✓ landed at NEW-P25 (parking for ~36s)
+[15:23:45] JULIET-10 ✓ landed at NEW-P4 (parking for ~58s)
+[15:23:45] GOLF-47 ✓ landed at NEW-P99 (parking for ~54s)
+[15:23:46] INDIA-09 ✓ landed at NEW-P67 (parking for ~76s)
+[15:23:47] HOTEL-88 🚀 departing from NEW-P35
+[15:23:47] HOTEL-88 moving 🚀 West (742 units)
+[15:23:47] HOTEL-88 🚀 heading to parking NEW-P57
+[15:23:47] BRAVO-92 🚀 departing from NEW-P9
+[15:23:47] BRAVO-22 🚀 departing from NEW-P16
+[15:23:48] BRAVO-22 moving 🚀 South (235 units)
+[15:23:48] BRAVO-22 🚀 heading to parking NEW-P75
+[15:23:48] BRAVO-92 moving 🚀 Southeast (984 units)
+[15:23:48] BRAVO-92 🚀 heading to parking NEW-P79
+[15:23:48] INDIA-99 🚀 departing from NEW-P14
+[15:23:48] INDIA-99 moving 🚀 Northeast (596 units)
+[15:23:48] INDIA-99 🚀 heading to parking NEW-P5
+[15:23:49] FOXTROT-56 🚀 departing from NEW-P3
+[15:23:49] FOXTROT-56 moving 🚀 Southeast (985 units)
+[15:23:49] FOXTROT-56 🚀 heading to parking NEW-P96
+[15:23:49] ALPHA-71 🚀 departing from NEW-P25
+[15:23:49] ALPHA-71 moving 🚀 West (1327 units)
+[15:23:49] ALPHA-71 🚀 heading to parking NEW-P19
+[15:23:50] ALPHA-91 ✓ landed at NEW-P59 (parking for ~66s)
+[15:23:51] GOLF-47 🚀 departing from NEW-P99
+[15:23:51] ECHO-15 🚀 departing from NEW-P88
+[15:23:51] GOLF-47 moving 🚀 East (1043 units)
+[15:23:51] GOLF-47 🚀 heading to parking NEW-P93
+[15:23:52] ECHO-15 moving 🚀 Northeast (471 units)
+[15:23:52] ECHO-15 🚀 heading to parking NEW-P71
+[15:23:52] GOLF-17 🚀 departing from NEW-P86
+[15:23:52] CHARLIE-03 🚀 departing from NEW-P14
+[15:23:53] GOLF-17 moving 🚀 Northwest (950 units)
+[15:23:53] GOLF-17 🚀 heading to parking NEW-P19
+[15:23:53] CHARLIE-03 moving 🚀 Northwest (591 units)
+[15:23:53] CHARLIE-03 🚀 heading to parking NEW-P31
+[15:23:53] FOXTROT-36 ✓ landed at NEW-P67 (parking for ~72s)
+[15:23:54] CHARLIE-43 ✓ landed at NEW-P89 (parking for ~54s)
+[15:23:54] ALPHA-91 🚀 departing from NEW-P59
+[15:23:54] ALPHA-91 moving 🚀 Southeast (1101 units)
+[15:23:54] ALPHA-91 🚀 heading to parking NEW-P83
+[15:23:55] BRAVO-82 ✓ landed at NEW-P83 (parking for ~84s)
+[15:23:55] JULIET-10 🚀 departing from NEW-P4
+[15:23:56] JULIET-10 moving 🚀 South (272 units)
+[15:23:56] JULIET-10 🚀 heading to parking NEW-P60
+[15:23:56] ALPHA-11 ✓ landed at NEW-P78 (parking for ~34s)
+[15:23:57] FOXTROT-36 🚀 departing from NEW-P67
+[15:23:57] FOXTROT-36 moving 🚀 Southeast (921 units)
+[15:23:57] FOXTROT-36 🚀 heading to parking NEW-P80
+[15:23:58] CHARLIE-43 🚀 departing from NEW-P89
+[15:23:58] CHARLIE-43 moving 🚀 Southwest (1191 units)
+[15:23:58] CHARLIE-43 🚀 heading to parking NEW-P63
+[15:23:58] INDIA-09 🚀 departing from NEW-P67
+[15:23:59] INDIA-09 moving 🚀 South (658 units)
+[15:23:59] INDIA-09 🚀 heading to parking NEW-P57
+[15:24:00] ALPHA-11 🚀 departing from NEW-P78
+[15:24:00] ALPHA-11 moving 🚀 Northwest (523 units)
+[15:24:00] ALPHA-11 🚀 heading to parking NEW-P72
+[15:24:00] BRAVO-82 🚀 departing from NEW-P83
+[15:24:00] BRAVO-82 moving 🚀 West (560 units)
+[15:24:00] BRAVO-82 🚀 heading to parking NEW-P6
+[15:24:01] INDIA-29 ✓ landed at NEW-P46 (parking for ~44s)
+[15:24:02] CHARLIE-53 ✓ landed at NEW-P74 (parking for ~76s)
+[15:24:02] JULIET-90 ✓ landed at NEW-P31 (parking for ~66s)
+[15:24:03] INDIA-29 🚀 departing from NEW-P46
+[15:24:03] INDIA-29 moving 🚀 Southwest (1323 units)
+[15:24:03] INDIA-29 🚀 heading to parking NEW-P56
+[15:24:03] DELTA-94 ✓ landed at NEW-P81 (parking for ~32s)
+[15:24:04] FOXTROT-16 ✓ landed at NEW-P46 (parking for ~62s)
+[15:24:04] DELTA-94 🚀 departing from NEW-P81
+[15:24:04] DELTA-94 moving 🚀 North (267 units)
+[15:24:04] DELTA-94 🚀 heading to parking NEW-P55
+[15:24:05] INDIA-69 ✓ landed at NEW-P57 (parking for ~78s)
+[15:24:05] ECHO-75 ✓ landed at NEW-P77 (parking for ~84s)
+[15:24:05] JULIET-90 🚀 departing from NEW-P31
+[15:24:06] CHARLIE-53 🚀 departing from NEW-P74
+[15:24:06] CHARLIE-53 moving 🚀 Southeast (628 units)
+[15:24:06] CHARLIE-53 🚀 heading to parking NEW-P81
+[15:24:06] JULIET-90 moving 🚀 East (1066 units)
+[15:24:06] JULIET-90 🚀 heading to parking NEW-P54
+[15:24:07] INDIA-69 🚀 departing from NEW-P57
+[15:24:07] INDIA-69 moving 🚀 Southwest (758 units)
+[15:24:08] INDIA-69 🚀 heading to parking NEW-P48
+[15:24:08] FOXTROT-16 🚀 departing from NEW-P46
+[15:24:08] ECHO-75 🚀 departing from NEW-P77
+[15:24:08] ECHO-75 moving 🚀 South (277 units)
+[15:24:08] ECHO-75 🚀 heading to parking NEW-P28
+[15:24:09] FOXTROT-16 moving 🚀 East (440 units)
+[15:24:09] FOXTROT-16 🚀 heading to parking NEW-P82
+[15:24:10] DELTA-64 ✓ landed at NEW-P83 (parking for ~38s)
+[15:24:10] ALPHA-21 ✓ landed at NEW-P41 (parking for ~54s)
+[15:24:10] DELTA-14 ✓ landed at NEW-P73 (parking for ~62s)
+[15:24:11] INDIA-19 ✓ landed at NEW-P80 (parking for ~50s)
+[15:24:11] ECHO-05 ✓ landed at NEW-P31 (parking for ~60s)
+[15:24:11] DELTA-64 🚀 departing from NEW-P83
+[15:24:12] DELTA-64 moving 🚀 North (1006 units)
+[15:24:12] DELTA-64 🚀 heading to parking NEW-P49
+[15:24:12] JULIET-20 ✓ landed at NEW-P38 (parking for ~78s)
+[15:24:13] ALPHA-21 🚀 departing from NEW-P41
+[15:24:13] JULIET-30 ✓ landed at NEW-P9 (parking for ~38s)
+[15:24:14] ALPHA-21 moving 🚀 Southeast (721 units)
+[15:24:14] ALPHA-21 🚀 heading to parking NEW-P91
+[15:24:14] INDIA-19 🚀 departing from NEW-P80
+[15:24:14] INDIA-19 moving 🚀 Northwest (1099 units)
+[15:24:14] INDIA-19 🚀 heading to parking NEW-P88
+[15:24:15] DELTA-44 ✓ landed at NEW-P8 (parking for ~56s)
+[15:24:15] JULIET-30 🚀 departing from NEW-P9
+[15:24:15] JULIET-30 moving 🚀 Southwest (388 units)
+[15:24:15] JULIET-30 🚀 heading to parking NEW-P19
+[15:24:16] BRAVO-22 acknowledges radio instruction: Proceeding to (974,749) - Weather avoidance - Showers
+[15:24:16] JULIET-20 🚀 departing from NEW-P38
+[15:24:17] JULIET-20 moving 🚀 South (908 units)
+[15:24:17] JULIET-20 🚀 heading to parking NEW-P28
+[15:24:17] DELTA-44 🚀 departing from NEW-P8
+[15:24:17] DELTA-44 moving 🚀 Southeast (312 units)
+[15:24:17] DELTA-44 🚀 heading to parking NEW-P45
+[15:24:18] DELTA-14 🚀 departing from NEW-P73
+[15:24:18] DELTA-14 moving 🚀 Northeast (727 units)
+[15:24:18] DELTA-14 🚀 heading to parking NEW-P46
+[15:24:19] ECHO-05 🚀 departing from NEW-P31
+[15:24:19] ECHO-05 moving 🚀 Southeast (737 units)
+[15:24:19] ECHO-05 🚀 heading to parking NEW-P92
+[15:24:20] DELTA-84 ✓ landed at NEW-P50 (parking for ~66s)
+[15:24:21] HOTEL-98 ✓ landed at NEW-P36 (parking for ~32s)
+[15:24:21] CHARLIE-93 ✓ landed at NEW-P2 (parking for ~52s)
+[15:24:22] DELTA-84 🚀 departing from NEW-P50
+[15:24:22] HOTEL-98 🚀 departing from NEW-P36
+[15:24:22] HOTEL-98 moving 🚀 Southwest (357 units)
+[15:24:22] HOTEL-98 🚀 heading to parking NEW-P41
+[15:24:22] DELTA-84 moving 🚀 North (391 units)
+[15:24:22] DELTA-84 🚀 heading to parking NEW-P20
+[15:24:23] CHARLIE-63 ✓ landed at NEW-P17 (parking for ~42s)
+[15:24:23] HOTEL-78 ✓ landed at NEW-P7 (parking for ~40s)
+[15:24:23] ALPHA-81 ✓ landed at NEW-P88 (parking for ~90s)
+[15:24:23] CHARLIE-83 ✓ landed at NEW-P72 (parking for ~90s)
+[15:24:24] JULIET-70 ✓ landed at NEW-P30 (parking for ~60s)
