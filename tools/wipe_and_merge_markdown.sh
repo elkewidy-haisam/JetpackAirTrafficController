@@ -53,19 +53,11 @@ Consolidated documentation from all Markdown files in the repository (excluding 
 
 HDR
 
-mapfile -t FILES < <(find . -type f -name "*.md" -print0 | xargs -0 -I{} python - <<'PY'
-import os, sys
-print(os.path.abspath(sys.argv[1]))
-PY {} | LC_ALL=C sort)
+mapfile -t FILES < <(find . -type f -name "*.md" -print0 | xargs -0 python -c "import os, sys; [print(os.path.abspath(f)) for f in sys.argv[1:]]" | LC_ALL=C sort)
 
 for F in "${FILES[@]}"; do
   if [[ "$F" != "$ROOT_README_ABS" ]]; then
-    REL="$(python - <<'PY'
-import os,sys
-root=os.path.abspath(".")
-path=sys.stdin.read().strip()
-print(os.path.relpath(path, root))
-PY <<<"$F")"
+    REL="$(python -c "import os; print(os.path.relpath('$F', '.'))")"
     {
       echo ""
       echo "---"
