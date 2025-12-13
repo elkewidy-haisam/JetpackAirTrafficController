@@ -125,6 +125,16 @@ public class JOGL3DPanel extends JPanel {
         this.cityModel = new CityModel3D(cityName, cityMap);
         registerPanel(this);
 
+        // Set city model for all flights for building collision detection
+        if (flight != null) {
+            flight.setCityModel(cityModel);
+        }
+        for (JetPackFlight f : allFlights) {
+            if (f != null) {
+                f.setCityModel(cityModel);
+            }
+        }
+
         // By default, all jetpacks are visible
         visibleJetpacks.addAll(allFlights);
 

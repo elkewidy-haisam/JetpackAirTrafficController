@@ -291,7 +291,8 @@ public class CityMapPanel extends JPanel {
                         radarTapeWindow.addMessage(message);
                     }
                 },
-                f -> flightStates.get(f)
+                f -> flightStates.get(f),
+                city  // Pass city name for building collision detection
             );
             
             // Initialize mapWithJetpacks panel

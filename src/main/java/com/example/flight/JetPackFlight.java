@@ -124,6 +124,13 @@ public class JetPackFlight {
         emergencyHandler.setMapImage(mapImage);
     }
     
+    /**
+     * Sets the city model for building collision detection
+     */
+    public void setCityModel(com.example.model.CityModel3D cityModel) {
+        movementController.setCityModel(cityModel);
+    }
+    
     public void setRadioInstructionListener(RadioInstructionListener listener) {
         emergencyHandler.setRadioInstructionListener(new FlightEmergencyHandler.RadioInstructionListener() {
             @Override

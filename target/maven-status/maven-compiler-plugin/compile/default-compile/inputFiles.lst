@@ -109,6 +109,7 @@
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/util/SessionManager.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/accident/Accident.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/accident/AccidentReporter.java
+/home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/detection/BuildingCollisionDetector.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/panels/CityMapFlightInitializer.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/radio/Radio.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/utility/map/SessionManager.java

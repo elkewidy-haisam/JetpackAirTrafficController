@@ -27,6 +27,7 @@ com/example/utility/PerformanceMonitor.class
 com/example/model/Grid.class
 com/example/utility/geometry/GeometryUtils.class
 com/example/detection/Radar.class
+com/example/detection/BuildingCollisionDetector.class
 com/example/utility/ReflectionHelper.class
 com/example/ui/citymap/CityMapPanelFactory$1.class
 com/example/ui/panels/CityMapJetpackListFactory.class

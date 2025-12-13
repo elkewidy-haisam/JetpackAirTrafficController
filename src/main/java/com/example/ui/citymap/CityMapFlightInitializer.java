@@ -40,8 +40,15 @@ public class CityMapFlightInitializer {
                                         int mapHeight,
                                         java.awt.image.BufferedImage mapImage,
                                         MovementLogger movementLogger,
-                                        FlightStateProvider flightStateProvider) {
+                                        FlightStateProvider flightStateProvider,
+                                        String cityName) {
         Random rand = new Random();
+        
+        // Create city model for building collision detection
+        com.example.model.CityModel3D cityModel = null;
+        if (cityName != null && mapImage != null) {
+            cityModel = new com.example.model.CityModel3D(cityName, mapImage);
+        }
         
         for (JetPack jp : jetpacks) {
             Point start = new Point(
@@ -59,6 +66,11 @@ public class CityMapFlightInitializer {
             flight.setMovementLogger(message -> movementLogger.logMovement(message));
             flight.setFlightStateProvider(f -> flightStateProvider.getFlightState(f));
             flight.setMapImage(mapImage);
+            
+            // Set city model for building collision detection
+            if (cityModel != null) {
+                flight.setCityModel(cityModel);
+            }
             
             // Register flight with radio for command execution
             cityRadio.registerFlight(jp.getCallsign(), flight);
