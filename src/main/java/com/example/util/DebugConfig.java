@@ -39,33 +39,53 @@ public class DebugConfig {
     /**
      * Master verbose flag - controls all debug output across the application.
      * Set to false for production/normal use, true for debugging.
+     * When false, JVM can optimize away all debug code branches.
      */
-    public static final boolean VERBOSE = false;
+    public static final boolean VERBOSE = false;  // Master switch: false = production mode
 
     /**
      * Individual system flags (all respect VERBOSE - if VERBOSE is false, these are ignored).
      */
-    public static final boolean LOG_WEATHER = false;
-    public static final boolean LOG_RADAR = false;
-    public static final boolean LOG_ACCIDENTS = false;
-    public static final boolean LOG_RADIO = false;
-    public static final boolean LOG_ATC = false;
+    
+    /** Enable/disable weather system debug logging */
+    public static final boolean LOG_WEATHER = false;     // Weather subsystem logging flag
+    
+    /** Enable/disable radar system debug logging */
+    public static final boolean LOG_RADAR = false;       // Radar subsystem logging flag
+    
+    /** Enable/disable accident system debug logging */
+    public static final boolean LOG_ACCIDENTS = false;   // Accident subsystem logging flag
+    
+    /** Enable/disable radio communication debug logging */
+    public static final boolean LOG_RADIO = false;       // Radio subsystem logging flag
+    
+    /** Enable/disable air traffic control debug logging */
+    public static final boolean LOG_ATC = false;         // ATC subsystem logging flag
 
     /**
      * Checks if logging is enabled for a specific system.
+     * First checks master VERBOSE flag, then checks specific system flag.
+     * 
      * @param system The system name (weather, radar, accidents, radio, atc)
      * @return true if logging is enabled for the system, false otherwise
      */
     public static boolean isEnabled(String system) {
-        if (!VERBOSE) return false;
+        if (!VERBOSE) return false;  // If master switch is off, return false immediately
 
+        // Convert system name to lowercase for case-insensitive matching
         switch (system.toLowerCase()) {
-            case "weather": return LOG_WEATHER;
-            case "radar": return LOG_RADAR;
-            case "accidents": return LOG_ACCIDENTS;
-            case "radio": return LOG_RADIO;
-            case "atc": return LOG_ATC;
-            default: return false;
+            case "weather":    // Check if weather logging is enabled
+                return LOG_WEATHER;    // Return the weather logging flag
+            case "radar":      // Check if radar logging is enabled
+                return LOG_RADAR;      // Return the radar logging flag
+            case "accidents":  // Check if accidents logging is enabled
+                return LOG_ACCIDENTS;  // Return the accidents logging flag
+            case "radio":      // Check if radio logging is enabled
+                return LOG_RADIO;      // Return the radio logging flag
+            case "atc":        // Check if ATC logging is enabled
+                return LOG_ATC;        // Return the ATC logging flag
+            default:           // Unknown system name
+                return false;          // Return false for unrecognized systems
         }
     }
 }
