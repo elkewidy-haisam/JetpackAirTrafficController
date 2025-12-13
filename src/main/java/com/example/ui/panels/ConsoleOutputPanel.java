@@ -41,51 +41,71 @@ import com.example.ui.utility.UIComponentFactory;
  * ConsoleOutputPanel - Terminal-style output panel for status and log messages.
  */
 public class ConsoleOutputPanel extends JScrollPane {
+    /** Text area for terminal-style console output with green-on-black styling */
     private JTextArea consoleOutput;
     
+    /**
+     * Constructs a new ConsoleOutputPanel.
+     * Initializes terminal-style output display with scrolling.
+     */
     public ConsoleOutputPanel() {
-        initializeUI();
+        initializeUI();  // Initialize UI components
     }
     
+    /**
+     * Initializes the UI layout and components.
+     * Creates terminal-style text area with green text on black background.
+     */
     private void initializeUI() {
+        // Create read-only text area with monospace font for console appearance
         consoleOutput = UIComponentFactory.createReadOnlyTextArea(8, 80, UIComponentFactory.COURIER_PLAIN_11);
-        consoleOutput.setBackground(Color.BLACK);
-        consoleOutput.setForeground(new Color(0, 255, 0)); // Green text
-        consoleOutput.setMargin(new Insets(5, 5, 5, 5));
+        consoleOutput.setBackground(Color.BLACK);  // Black background like terminal
+        consoleOutput.setForeground(new Color(0, 255, 0));  // Bright green text like terminal
+        consoleOutput.setMargin(new Insets(5, 5, 5, 5));  // 5px padding all sides
         
-        setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);  // Always show scrollbar
+        // Create titled border with dark gray color
         setBorder(BorderFactory.createTitledBorder(
-            BorderFactory.createLineBorder(Color.DARK_GRAY, 2),
-            "Console Output",
-            javax.swing.border.TitledBorder.LEFT,
-            javax.swing.border.TitledBorder.TOP,
-            new Font("Arial", Font.BOLD, 12),
-            Color.DARK_GRAY
+            BorderFactory.createLineBorder(Color.DARK_GRAY, 2),  // Dark gray 2px border
+            "Console Output",  // Title text
+            javax.swing.border.TitledBorder.LEFT,  // Title aligned left
+            javax.swing.border.TitledBorder.TOP,  // Title at top
+            new Font("Arial", Font.BOLD, 12),  // Title font
+            Color.DARK_GRAY  // Title color matches border
         ));
         
-        setViewportView(consoleOutput);
+        setViewportView(consoleOutput);  // Set text area as scrollable viewport content
     }
     
     /**
-     * Appends a message to the console
+     * Appends a message to the console with newline.
+     * Auto-scrolls to show the new message at bottom.
+     * 
+     * @param message the message text to append
      */
     public void appendMessage(String message) {
-        if (consoleOutput != null) {
-            consoleOutput.append(message + "\n");
-            consoleOutput.setCaretPosition(consoleOutput.getDocument().getLength());
+        if (consoleOutput != null) {  // Check text area is initialized
+            consoleOutput.append(message + "\n");  // Append message with newline
+            consoleOutput.setCaretPosition(consoleOutput.getDocument().getLength());  // Scroll to bottom
         }
     }
     
     /**
-     * Clears the console
+     * Clears all console output.
+     * Empties the text area to show blank console.
      */
     public void clear() {
-        if (consoleOutput != null) {
-            consoleOutput.setText("");
+        if (consoleOutput != null) {  // Check text area is initialized
+            consoleOutput.setText("");  // Clear all text
         }
     }
     
+    /**
+     * Returns the console text area for direct manipulation.
+     * 
+     * @return the JTextArea displaying console output
+     */
     public JTextArea getConsoleArea() {
-        return consoleOutput;
+        return consoleOutput;  // Return text area reference
     }
 }
