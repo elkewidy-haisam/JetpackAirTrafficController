@@ -1,25 +1,37 @@
 /**
- * NavigationCalculator component for the Air Traffic Controller system.
+ * Utility class providing navigation calculations for jetpack flight path planning and direction finding.
  * 
  * Purpose:
- * Provides navigationcalculator functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Offers a comprehensive suite of navigation algorithms for calculating distances, bearings, headings,
+ * and movement vectors essential to jetpack flight operations. Supports both 2D map-based navigation
+ * and compass-bearing calculations for pilot guidance. Provides stateless utility methods that can be
+ * called from any flight management component without instantiation.
  * 
  * Key Responsibilities:
- * - Implement core navigationcalculator operations
- * - Maintain necessary state for navigationcalculator functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Calculate Euclidean distances between coordinates and Point objects
+ * - Compute compass bearings and cardinal directions (N, NE, E, SE, S, SW, W, NW)
+ * - Determine heading angles in degrees from current position to destination
+ * - Generate movement direction vectors for incremental flight path progression
+ * - Support waypoint-to-waypoint navigation with bearing updates
+ * - Provide intermediate position calculations for smooth flight animations
+ * - Enable turn angle calculations for smooth course corrections
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by JetPackFlight for movement direction and destination bearing
+ * - Referenced by FlightMovementController for path following algorithms
+ * - Integrated with FlightPath for waypoint-to-waypoint navigation
+ * - Consulted by UI components for displaying flight direction indicators
+ * - Supports Radio communications with bearing information for pilot guidance
+ * - Used in emergency procedures to calculate direct routes to safe landing zones
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Pure utility class with static methods only (no instance state)
+ * - Thread-safe due to stateless design
+ * - Combines with GeometryUtils for comprehensive spatial calculations
+ * - Uses standard navigation conventions (0° = North, clockwise rotation)
+ * - Supports both degree and radian angle representations
+ * - Cardinal direction calculations use 45-degree sector boundaries
+ * - Zero external dependencies beyond standard Java Math library
  * 
  * @author Haisam Elkewidy
  */

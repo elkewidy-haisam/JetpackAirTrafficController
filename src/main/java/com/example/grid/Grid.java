@@ -1,25 +1,39 @@
 /**
- * Grid component for the Air Traffic Controller system.
+ * Domain model defining the coordinate system and dimensional properties of a city's airspace grid.
  * 
  * Purpose:
- * Provides grid functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Represents the spatial reference framework for a city's air traffic control region, defining dimensions,
+ * coordinate system type, and locale identification. Provides a standardized structure for grid-based
+ * spatial operations including coordinate transformations, boundary validation, and grid overlay rendering.
+ * Supports multiple coordinate system types for flexibility in different operational contexts.
  * 
  * Key Responsibilities:
- * - Implement core grid operations
- * - Maintain necessary state for grid functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Store grid dimensions (width, height) in pixel or unit coordinates
+ * - Define coordinate system type (Cartesian, geographic, custom)
+ * - Maintain locale identification for multi-city support
+ * - Support dynamic grid dimension updates for reconfiguration
+ * - Provide coordinate system switching capability
+ * - Enable grid information queries for display and logging
+ * - Support grid overlay rendering in visualization components
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by GridRenderer for overlay visualization on city maps
+ * - Referenced by coordinate transformation utilities
+ * - Consulted by spatial query operations for boundary validation
+ * - Integrated with CityMapPanel for grid toggle feature
+ * - Supports debugging and testing with grid overlay display
+ * - Coordinates with locale-specific map configurations
+ * - Provides dimensional context for parking space generation
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Mutable dimensions support dynamic reconfiguration scenarios
+ * - Immutable locale name ensures grid-city association stability
+ * - Grid type options: "Cartesian", "Geographic", "Custom"
+ * - Coordinate system examples: "Pixel", "Lat/Lon", "UTM"
+ * - Width/height typically match city map dimensions (800x600, 1265x977, etc.)
+ * - Simple data model; no complex spatial algorithms (delegated to utilities)
+ * - Thread-safe for read operations; synchronization needed for dimension updates
+ * - Lightweight structure suitable for per-city grid instances
  * 
  * @author Haisam Elkewidy
  */

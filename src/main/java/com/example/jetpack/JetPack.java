@@ -1,25 +1,38 @@
 /**
- * JetPack component for the Air Traffic Controller system.
+ * Domain model representing an individual jetpack aircraft with pilot information and flight characteristics.
  * 
  * Purpose:
- * Provides jetpack functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Encapsulates all identifying and operational data for a single jetpack unit within the air traffic
+ * control system. Serves as the primary data carrier for jetpack identity (serial number, callsign),
+ * ownership (pilot name), manufacturing details (year, model, manufacturer), and real-time state
+ * (position, altitude, speed, activity status). Acts as the authoritative source of jetpack information
+ * referenced throughout the ATC system.
  * 
  * Key Responsibilities:
- * - Implement core jetpack operations
- * - Maintain necessary state for jetpack functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Store immutable jetpack identity: ID, serial number, callsign, owner
+ * - Maintain manufacturing metadata: year, model, manufacturer name
+ * - Track mutable flight state: current position (x, y), altitude, speed
+ * - Manage operational status: active/inactive, last update timestamp
+ * - Provide unique callsign generation with formatted numbering (ALPHA-01, BRAVO-02, etc.)
+ * - Support jetpack lifecycle: creation, activation, status updates, parking
+ * - Enable identification queries for display in lists, tracking windows, and logs
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Created by JetpackFactory with city-specific callsigns and models
+ * - Referenced by JetPackFlight for animation and movement tracking
+ * - Displayed in CityMapJetpackListFactory UI components (list entries, track buttons)
+ * - Shown in JetpackTrackingWindow header with full details
+ * - Logged in movement logs with callsign and serial number
+ * - Used by Radio for pilot identification in communications
+ * - Tracked by Radar for aircraft identification and position monitoring
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Immutable identity fields after construction (ID, serial, callsign, owner, manufacturing)
+ * - Mutable state fields for real-time updates (position, altitude, speed, active status)
+ * - Static counters for auto-incrementing IDs and callsign numbers
+ * - Callsign format: [ALPHA|BRAVO|CHARLIE]-[01-99] with leading zeros for single digits
+ * - Thread-safe for read operations; external synchronization needed for state updates
+ * - Lightweight data object; no business logic beyond accessors and mutators
  * 
  * @author Haisam Elkewidy
  */

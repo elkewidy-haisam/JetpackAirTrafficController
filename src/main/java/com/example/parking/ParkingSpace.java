@@ -1,25 +1,37 @@
 /**
- * ParkingSpace component for the Air Traffic Controller system.
+ * Domain model representing a designated parking location for jetpack aircraft landing and storage.
  * 
  * Purpose:
- * Provides parkingspace functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Encapsulates a single parking space with unique identification, map coordinates, and occupancy state.
+ * Serves as the fundamental unit of parking infrastructure within the air traffic control system,
+ * enabling jetpacks to safely land, park for rest periods, and vacate when ready to resume flight
+ * operations. Provides occupancy tracking to prevent double-booking and parking conflicts.
  * 
  * Key Responsibilities:
- * - Implement core parkingspace operations
- * - Maintain necessary state for parkingspace functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Store immutable parking space identity (ID) and location coordinates
+ * - Track current occupancy status (occupied vs. available)
+ * - Provide location queries for distance calculations and map rendering
+ * - Support occupy/vacate operations for parking lifecycle management
+ * - Enable identification in logs and UI displays with formatted ID (e.g., NYC-P42, BOS-P17)
+ * - Maintain simple state suitable for high-frequency queries during landing operations
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Created by ParkingSpaceGenerator and ParkingSpaceManager during map initialization
+ * - Allocated by JetPackFlightState when jetpack enters parking mode
+ * - Queried by FlightEmergencyHandler to find nearest available space during emergencies
+ * - Rendered in CityMapPanel as green markers (available) or red markers (occupied)
+ * - Referenced in movement logs when jetpack parks or departs
+ * - Used by collision detection to avoid landing conflicts
+ * - Tracked by ParkingSpaceManager for availability queries
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Immutable identity (ID) and location after construction
+ * - Mutable occupancy state for dynamic allocation/deallocation
+ * - Lightweight data object suitable for collections of 100+ spaces per city
+ * - Thread-safe for read operations; external synchronization for occupy/vacate
+ * - ID format: [CITY_CODE]-P[number] (e.g., NYC-P001, BOS-P042, HOU-P099)
+ * - Location guaranteed to be on land (not water) via generation-time filtering
+ * - No ownership tracking; only binary occupied/available state
  * 
  * @author Haisam Elkewidy
  */

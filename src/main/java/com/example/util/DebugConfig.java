@@ -1,25 +1,40 @@
 /**
- * DebugConfig component for the Air Traffic Controller system.
+ * Global debug configuration constants controlling verbose logging and diagnostic output across the application.
  * 
  * Purpose:
- * Provides debugconfig functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Provides centralized debug flag management for enabling/disabling diagnostic logging throughout
+ * the air traffic control system. Controls master verbose flag and subsystem-specific logging flags
+ * for weather, radar, accidents, radio, and ATC operations. Enables performance optimization by
+ * disabling logging in production while supporting detailed diagnostics during development and
+ * troubleshooting.
  * 
  * Key Responsibilities:
- * - Implement core debugconfig operations
- * - Maintain necessary state for debugconfig functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Define master VERBOSE flag controlling all debug output
+ * - Provide subsystem-specific logging flags (weather, radar, accidents, radio, ATC)
+ * - Enable performance optimization by disabling logging overhead
+ * - Support targeted debugging with individual system flags
+ * - Provide compile-time constants for efficient code optimization
+ * - Facilitate production/development mode switching
+ * - Document debug flag usage and conventions
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Referenced throughout application for conditional debug logging
+ * - Consulted by Weather, Radar, AccidentReporter, Radio, ATC components
+ * - Used in if-statements to guard expensive debug operations
+ * - Enables JVM compiler optimizations for false constant conditions
+ * - Supports performance profiling with selective logging
+ * - Used in testing scenarios with debug output enabled
+ * - Coordinates with logging frameworks and console output
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Static final constants for compile-time optimization
+ * - Master VERBOSE flag gates all subsystem flags
+ * - Individual flags ignored when VERBOSE is false (performance)
+ * - Boolean flags enable simple if-guard patterns: if (DebugConfig.LOG_WEATHER) { ... }
+ * - Set VERBOSE = false for production/normal use (default)
+ * - Set VERBOSE = true for development/debugging scenarios
+ * - Subsystem flags allow targeted diagnostics without full verbose mode
+ * - No runtime configuration; flags set at compile time for performance
  * 
  * @author Haisam Elkewidy
  */

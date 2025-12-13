@@ -1,25 +1,41 @@
 /**
- * JetPackFlightState component for the Air Traffic Controller system.
+ * Manages parking behavior and state transitions for individual jetpack flights including space allocation and timing.
  * 
  * Purpose:
- * Provides jetpackflightstate functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Coordinates the complete parking lifecycle for a jetpack including space selection, approach navigation,
+ * parking timer management, and departure sequencing. Integrates with parking infrastructure to find
+ * available spaces, manages timed parking durations (60-180 seconds), and handles state transitions
+ * between flying, approaching parking, parked, and departing states. Provides movement logging and
+ * UI repaint coordination for visual feedback.
  * 
  * Key Responsibilities:
- * - Implement core jetpackflightstate operations
- * - Maintain necessary state for jetpackflightstate functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Select nearest available parking space when jetpack initiates parking sequence
+ * - Navigate jetpack to target parking location with precision landing
+ * - Manage parking timer countdown (random 60-180 second duration per park event)
+ * - Occupy parking space upon landing and vacate upon departure
+ * - Log parking events (approaching, landed, departing) to movement logger
+ * - Trigger UI repaints for visual state updates during parking transitions
+ * - Handle parking unavailability scenarios (all spaces occupied)
+ * - Coordinate with RadarTapeWindow for parking status broadcasts
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Paired one-to-one with JetPackFlight for parking behavior management
+ * - Queries ParkingSpaceManager for available spaces and nearest space calculations
+ * - Updates ParkingSpace occupancy status during land/depart operations
+ * - Logs to MovementLogger interface (typically JetpackMovementPanel)
+ * - Broadcasts to RadarTapeWindow for operator awareness
+ * - Triggers repaint callbacks to update CityMapPanel rendering
+ * - Used by CityMapPanel during animation timer updates
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - State pattern manages parking lifecycle (selecting → approaching → parked → departing)
+ * - One FlightState instance per JetPackFlight for encapsulated parking logic
+ * - Random parking duration: 60-180 seconds provides realistic variability
+ * - Parking timer decremented on each animation frame (50ms intervals)
+ * - Nearest space selection via Euclidean distance calculation
+ * - Occupies parking space atomically to prevent race conditions
+ * - Callback-based architecture for logging and UI updates
+ * - Handles edge case: no available parking (logs warning, continues flying)
  * 
  * @author Haisam Elkewidy
  */

@@ -1,25 +1,38 @@
 /**
- * ParkingSpaceGenerator component for the Air Traffic Controller system.
+ * Factory class for generating parking space collections with intelligent water-aware placement.
  * 
  * Purpose:
- * Provides parkingspacegenerator functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Creates parking space distributions across city maps using rejection sampling to avoid water
+ * bodies. Analyzes map image pixels to determine land vs. water areas and generates 100 parking
+ * spaces per city, ensuring all spaces are placed on valid landing zones. Provides deterministic
+ * generation with configurable retry limits to handle maps with extensive water coverage.
  * 
  * Key Responsibilities:
- * - Implement core parkingspacegenerator operations
- * - Maintain necessary state for parkingspacegenerator functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Generate target count (100) of parking spaces per city map
+ * - Use water detection algorithm to reject placements over rivers, harbors, and lakes
+ * - Apply rejection sampling with configurable retry limits (10x target count attempts)
+ * - Create city-specific parking IDs with proper prefixes (NYC-P, BOS-P, HOU-P, DAL-P)
+ * - Maintain margin boundaries (10-20 pixels) to avoid map edges
+ * - Report generation statistics (attempts, water rejections, success rate)
+ * - Handle water-heavy maps (Boston harbor) with extended attempt budgets
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by ParkingSpaceManager during city map initialization
+ * - Integrates with WaterDetector algorithm for land/water classification
+ * - Provides ParkingSpace instances to CityMapPanel for rendering
+ * - Coordinates with city map dimensions from BufferedImage
+ * - Results displayed as green markers in map visualization
+ * - Generation statistics logged for debugging water-heavy city configurations
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Factory pattern encapsulates parking space creation logic
+ * - Stateless utility class with static generation method
+ * - Water detection: blue channel dominance (blue > red+threshold AND blue > green+threshold)
+ * - Random placement with uniform distribution across valid land areas
+ * - Target: 100 spaces per city; accepts fewer if attempts exhausted
+ * - Max attempts: TARGET_SPACES * MAX_ATTEMPTS_MULTIPLIER (typically 1000 tries)
+ * - Thread-safe due to stateless design; uses local Random instance per call
+ * - IDs auto-increment: [CITY_CODE]-P1, [CITY_CODE]-P2, ..., [CITY_CODE]-P100
  * 
  * @author Haisam Elkewidy
  */

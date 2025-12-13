@@ -1,25 +1,40 @@
 /**
- * TimezoneHelper component for the Air Traffic Controller system.
+ * Utility class for timezone conversions and city-specific time formatting across multiple US cities.
  * 
  * Purpose:
- * Provides timezonehelper functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Provides timezone mapping and conversion utilities for displaying accurate local times in different
+ * cities. Enables the air traffic control system to show correct time zones for New York (EST),
+ * Boston (EST), Houston (CST), and Dallas (CST). Supports timezone-aware formatting with proper
+ * ZoneId handling and ISO 8601 standard formats. Essential for multi-city operations where each
+ * city operates on its local time.
  * 
  * Key Responsibilities:
- * - Implement core timezonehelper operations
- * - Maintain necessary state for timezonehelper functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Map city names to appropriate Java ZoneId instances
+ * - Convert ZonedDateTime between different timezone contexts
+ * - Format timestamps with timezone information for display
+ * - Support US Eastern and Central time zones
+ * - Enable accurate local time displays for each city
+ * - Provide ISO 8601 formatted output for standards compliance
+ * - Handle timezone abbreviations (EST, CST) for user-friendly display
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by CityDisplayUpdater for date/time label formatting
+ * - Referenced by AirTrafficControllerFrame for timezone selection
+ * - Supports Weather system for timezone-aware broadcasts
+ * - Integrates with DateTimeDisplayPanel for accurate time display
+ * - Used in logging systems for timestamp normalization
+ * - Coordinates with DayTime for complete time management
+ * - Supports future expansion to other US or international cities
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Static utility class with stateless timezone operations
+ * - City-to-timezone mappings: "New York"→"America/New_York", "Houston"→"America/Chicago"
+ * - Thread-safe due to stateless design
+ * - Uses Java 8+ ZoneId and ZonedDateTime APIs
+ * - ISO 8601 format for standardized timestamp representation
+ * - Supports timezone abbreviations via ZonedDateTime formatting
+ * - Eastern Time: UTC-5 (EST) / UTC-4 (EDT with daylight saving)
+ * - Central Time: UTC-6 (CST) / UTC-5 (CDT with daylight saving)
  * 
  * @author Haisam Elkewidy
  */
