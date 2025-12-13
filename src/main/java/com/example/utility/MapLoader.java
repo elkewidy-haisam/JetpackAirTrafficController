@@ -39,6 +39,8 @@ public class MapLoader {
      */
     public MapLoader() {
         // Initialization logic if needed - reserved for future implementation
+        // Future: Initialize cache for loaded maps
+        // Future: Set up default resource paths
     }
 
     /**
@@ -50,6 +52,10 @@ public class MapLoader {
      */
     public void loadMap(String mapFile) {
         // Logic to load map data from file - implementation pending
-        // Future: Use ImageIO.read() or similar to load map images
+        // TODO: Check if file exists
+        // TODO: Use ImageIO.read(new File(mapFile)) to load image
+        // TODO: Handle IOException for missing files
+        // TODO: Store loaded image in cache or return to caller
+        // TODO: Support loading from classpath using getResourceAsStream
     }
 }

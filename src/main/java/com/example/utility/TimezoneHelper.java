@@ -47,8 +47,11 @@ public class TimezoneHelper {
      */
     public static String formatWithTimezone(ZonedDateTime dateTime, String zoneId) {
         // Convert the datetime to the specified timezone while preserving the instant
+        // withZoneSameInstant changes timezone but keeps same moment in time
         ZonedDateTime zoned = dateTime.withZoneSameInstant(ZoneId.of(zoneId));
-        // Format using ISO standard datetime format
+        
+        // Format using ISO standard datetime format (includes timezone offset)
+        // Returns string like "2024-01-15T10:30:45-05:00[America/New_York]"
         return zoned.format(DateTimeFormatter.ISO_ZONED_DATE_TIME);
     }
 }

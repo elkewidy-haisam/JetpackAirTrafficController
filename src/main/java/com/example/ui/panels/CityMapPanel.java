@@ -31,14 +31,31 @@ import javax.swing.JPanel;
 import java.awt.Graphics;
 
 public class CityMapPanel extends JPanel {
+    /**
+     * Constructs a new CityMapPanel with default settings.
+     * Calls parent JPanel constructor for basic Swing initialization.
+     */
     public CityMapPanel() {
-        super();
+        super();  // Initialize parent JPanel with default layout
         // Initialization logic if needed
+        // Future: Set preferred size, background color, double buffering
+        // Future: Initialize city map image, jetpack list, parking spaces
     }
 
+    /**
+     * Custom paint method to render city map and jetpack positions.
+     * Called automatically by Swing when panel needs repainting.
+     * Override to provide custom rendering of map background and jetpack icons.
+     * 
+     * @param g the Graphics context to draw on
+     */
     @Override
     protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
+        super.paintComponent(g);  // Paint parent component first (background, borders)
         // Custom drawing logic for city map and jetpacks
+        // TODO: Draw city map image as background
+        // TODO: Draw parking spaces as green squares
+        // TODO: Draw jetpacks as icons with callsigns
+        // TODO: Draw flight paths and trajectories
     }
 }

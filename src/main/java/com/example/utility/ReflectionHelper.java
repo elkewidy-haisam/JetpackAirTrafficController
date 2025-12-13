@@ -49,8 +49,11 @@ public class ReflectionHelper {
      */
     public static Object invokeMethod(Object obj, String methodName, Class<?>[] paramTypes, Object[] args) throws Exception {
         // Get the Method object for the specified method name and parameter types
+        // Uses reflection to find method at runtime instead of compile-time binding
         Method method = obj.getClass().getMethod(methodName, paramTypes);
+        
         // Invoke the method on the object with the provided arguments
+        // method.invoke calls the method and returns its result (or null for void methods)
         return method.invoke(obj, args);
     }
 }
