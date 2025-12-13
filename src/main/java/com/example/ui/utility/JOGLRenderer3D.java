@@ -55,6 +55,12 @@ public class JOGLRenderer3D implements GLEventListener {
             private final GLUT glut = new GLUT();
         // Configurable offset for jetpack facing direction (degrees)
         private static final double JETPACK_DIRECTION_OFFSET_DEGREES = 90.0;
+        // Jetpack rendering constants
+        private static final int TANK_STRAP_COUNT = 3;
+        private static final float[] JETPACK_TANK_SPECULAR = {0.9f, 0.9f, 1.0f, 1.0f};
+        private static final float JETPACK_TANK_SHININESS = 60f;
+        private static final float[] JETPACK_CONTROL_SPECULAR = {0.6f, 0.8f, 0.4f, 1.0f};
+        private static final float JETPACK_CONTROL_SHININESS = 40f;
         // Mouse camera controls
         private double mouseAzimuth = 45;
         private double mouseElevation = 30;
@@ -472,7 +478,6 @@ public class JOGLRenderer3D implements GLEventListener {
                     float[] tankColor = {0.75f, 0.75f, 0.8f}; // Metallic silver
                     float[] topColor = {0.15f, 0.15f, 0.15f}; // Dark cap
                     float[] nozzleColor = {0.2f, 0.2f, 0.25f}; // Dark nozzle
-                    float[] thrustColor = {1.0f, 0.5f, 0.0f}; // Orange thrust glow
                     float[] strapColor = {0.2f, 0.2f, 0.2f}; // Black straps
                     float[] backplateColor = {0.3f, 0.3f, 0.35f}; // Gray backplate
                     
@@ -499,78 +504,16 @@ public class JOGLRenderer3D implements GLEventListener {
                     glut.glutSolidCylinder(0.4, 4, 8, 2);
                     gl.glPopMatrix();
                     
-                    // Draw left fuel tank with details
-                    gl.glPushMatrix();
-                    gl.glTranslated(-2.2, 0, 0);
-                    // Main tank body
-                    gl.glColor3fv(tankColor, 0);
-                    gl.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, new float[]{0.9f, 0.9f, 1.0f, 1.0f}, 0);
-                    gl.glMaterialf(GL2.GL_FRONT, GL2.GL_SHININESS, 60f);
-                    glut.glutSolidCylinder(1.3, 10, 16, 4);
-                    // Tank top cap
-                    gl.glTranslated(0, 10, 0);
-                    gl.glColor3fv(topColor, 0);
-                    glut.glutSolidSphere(1.4, 12, 10);
-                    // Exhaust nozzle at bottom
-                    gl.glTranslated(0, -10, 0);
-                    gl.glPushMatrix();
-                    gl.glRotated(180, 1, 0, 0);
-                    gl.glColor3fv(nozzleColor, 0);
-                    glut.glutSolidCone(1.5, 2.5, 12, 4);
-                    // Thrust glow effect
-                    gl.glTranslated(0, 0, 2.5);
-                    gl.glColor4f(thrustColor[0], thrustColor[1], thrustColor[2], 0.6f);
-                    glut.glutSolidCone(1.2, 1.5, 8, 2);
-                    gl.glPopMatrix();
-                    // Tank straps
-                    for (int i = 0; i < 3; i++) {
-                        gl.glPushMatrix();
-                        gl.glTranslated(0, 2 + i * 3, 0);
-                        gl.glColor3fv(strapColor, 0);
-                        glut.glutSolidTorus(0.15, 1.4, 8, 12);
-                        gl.glPopMatrix();
-                    }
-                    gl.glPopMatrix();
-                    
-                    // Draw right fuel tank with details (mirror of left)
-                    gl.glPushMatrix();
-                    gl.glTranslated(2.2, 0, 0);
-                    // Main tank body
-                    gl.glColor3fv(tankColor, 0);
-                    gl.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, new float[]{0.9f, 0.9f, 1.0f, 1.0f}, 0);
-                    gl.glMaterialf(GL2.GL_FRONT, GL2.GL_SHININESS, 60f);
-                    glut.glutSolidCylinder(1.3, 10, 16, 4);
-                    // Tank top cap
-                    gl.glTranslated(0, 10, 0);
-                    gl.glColor3fv(topColor, 0);
-                    glut.glutSolidSphere(1.4, 12, 10);
-                    // Exhaust nozzle at bottom
-                    gl.glTranslated(0, -10, 0);
-                    gl.glPushMatrix();
-                    gl.glRotated(180, 1, 0, 0);
-                    gl.glColor3fv(nozzleColor, 0);
-                    glut.glutSolidCone(1.5, 2.5, 12, 4);
-                    // Thrust glow effect
-                    gl.glTranslated(0, 0, 2.5);
-                    gl.glColor4f(thrustColor[0], thrustColor[1], thrustColor[2], 0.6f);
-                    glut.glutSolidCone(1.2, 1.5, 8, 2);
-                    gl.glPopMatrix();
-                    // Tank straps
-                    for (int i = 0; i < 3; i++) {
-                        gl.glPushMatrix();
-                        gl.glTranslated(0, 2 + i * 3, 0);
-                        gl.glColor3fv(strapColor, 0);
-                        glut.glutSolidTorus(0.15, 1.4, 8, 12);
-                        gl.glPopMatrix();
-                    }
-                    gl.glPopMatrix();
+                    // Draw left and right fuel tanks using helper method
+                    drawFuelTank(gl, -2.2, tankColor, topColor, nozzleColor, strapColor);
+                    drawFuelTank(gl, 2.2, tankColor, topColor, nozzleColor, strapColor);
                     
                     // Draw central control unit
                     gl.glPushMatrix();
                     gl.glTranslated(0, 5, 0);
                     gl.glColor3fv(bodyColor, 0);
-                    gl.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, new float[]{0.6f, 0.8f, 0.4f, 1.0f}, 0);
-                    gl.glMaterialf(GL2.GL_FRONT, GL2.GL_SHININESS, 40f);
+                    gl.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, JETPACK_CONTROL_SPECULAR, 0);
+                    gl.glMaterialf(GL2.GL_FRONT, GL2.GL_SHININESS, JETPACK_CONTROL_SHININESS);
                     glut.glutSolidCube(2.5f);
                     // Control panel indicator lights
                     gl.glTranslated(0, 0, 1.3);
@@ -674,6 +617,51 @@ public class JOGLRenderer3D implements GLEventListener {
             }
         }
     }
+    
+    /**
+     * Helper method to draw a single fuel tank with details
+     * @param gl OpenGL context
+     * @param xOffset X position offset (negative for left tank, positive for right)
+     * @param tankColor Color for the tank body
+     * @param topColor Color for the tank cap
+     * @param nozzleColor Color for the exhaust nozzle
+     * @param strapColor Color for the straps
+     */
+    private void drawFuelTank(GL2 gl, double xOffset, float[] tankColor, float[] topColor, 
+                              float[] nozzleColor, float[] strapColor) {
+        gl.glPushMatrix();
+        gl.glTranslated(xOffset, 0, 0);
+        // Main tank body
+        gl.glColor3fv(tankColor, 0);
+        gl.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, JETPACK_TANK_SPECULAR, 0);
+        gl.glMaterialf(GL2.GL_FRONT, GL2.GL_SHININESS, JETPACK_TANK_SHININESS);
+        glut.glutSolidCylinder(1.3, 10, 16, 4);
+        // Tank top cap
+        gl.glTranslated(0, 10, 0);
+        gl.glColor3fv(topColor, 0);
+        glut.glutSolidSphere(1.4, 12, 10);
+        // Exhaust nozzle at bottom
+        gl.glTranslated(0, -10, 0);
+        gl.glPushMatrix();
+        gl.glRotated(180, 1, 0, 0);
+        gl.glColor3fv(nozzleColor, 0);
+        glut.glutSolidCone(1.5, 2.5, 12, 4);
+        // Thrust glow effect (using solid color without transparency)
+        gl.glTranslated(0, 0, 2.5);
+        gl.glColor3f(1.0f, 0.5f, 0.0f);
+        glut.glutSolidCone(1.2, 1.5, 8, 2);
+        gl.glPopMatrix();
+        // Tank straps
+        for (int i = 0; i < TANK_STRAP_COUNT; i++) {
+            gl.glPushMatrix();
+            gl.glTranslated(0, 2 + i * 3, 0);
+            gl.glColor3fv(strapColor, 0);
+            glut.glutSolidTorus(0.15, 1.4, 8, 12);
+            gl.glPopMatrix();
+        }
+        gl.glPopMatrix();
+    }
+    
     private GLU glu;
     private JetPackFlight flight;
     private CityModel3D cityModel;
