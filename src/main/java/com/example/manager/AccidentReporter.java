@@ -35,47 +35,83 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class AccidentReporter {
+    // Directory path for accident reports: ~/.jetpack/accidents/
     private static final String ACCIDENTS_DIR = System.getProperty("user.home") + File.separator + ".jetpack" + File.separator + "accidents";
+    
+    // Timestamp format for report filenames: YYYYMMDD_HHMMSS
     private static final DateTimeFormatter TIMESTAMP_FORMAT = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
 
+    /**
+     * Constructs a new AccidentReporter and ensures directory structure exists.
+     * Creates accidents directory if needed to prevent IO errors during report generation.
+     */
     public AccidentReporter() {
+        // Initialize directory structure before any file operations
         ensureAccidentsDirectory();
     }
 
+    /**
+     * Ensures the accidents directory exists, creating it if necessary.
+     * Creates parent directories as needed (.jetpack and .jetpack/accidents).
+     */
     private void ensureAccidentsDirectory() {
+        // Construct File object for accidents directory
         File dir = new File(ACCIDENTS_DIR);
+        
+        // Check existence before attempting creation
         if (!dir.exists()) {
+            // Create directory and all necessary parents
             dir.mkdirs();
         }
     }
 
     /**
-     * Save accident report to a file
+     * Saves accident report to a timestamped file in accidents directory.
+     * Generates formatted report with accident count, details, and separators.
+     * Returns file path on success or null on IO error.
+     * 
+     * @param accidents List of accident description strings to include in report
+     * @return Absolute path to saved report file, or null if save failed
      */
     public String saveAccidentReport(List<String> accidents) {
+        // Generate timestamp for unique filename
         String timestamp = LocalDateTime.now().format(TIMESTAMP_FORMAT);
+        
+        // Create filename: accident_report_TIMESTAMP.txt
         String filename = String.format("accident_report_%s.txt", timestamp);
         File reportFile = new File(ACCIDENTS_DIR, filename);
 
+        // Use try-with-resources for automatic writer cleanup
         try (PrintWriter writer = new PrintWriter(new FileWriter(reportFile))) {
+            // Write report header with decorative border
             writer.println("=".repeat(80));
             writer.println("JETPACK TRAFFIC CONTROL SYSTEM - ACCIDENT REPORT");
             writer.println("Generated: " + LocalDateTime.now());
             writer.println("=".repeat(80));
             writer.println();
+            
+            // Include total count for quick assessment
             writer.println("Total Accidents: " + accidents.size());
             writer.println();
 
+            // Write each accident with sequential numbering and separator
             for (int i = 0; i < accidents.size(); i++) {
+                // Number accidents starting from 1 for human readability
                 writer.println(String.format("Accident #%d:", i + 1));
+                
+                // Write accident details (should include location, type, severity, timestamp)
                 writer.println(accidents.get(i));
+                
+                // Add separator line between accidents for visual clarity
                 writer.println("-".repeat(80));
             }
 
+            // Confirm successful save to console
             System.out.println("Accident report saved: " + reportFile.getAbsolutePath());
             return reportFile.getAbsolutePath();
 
         } catch (IOException e) {
+            // Log error and return null to indicate save failure
             System.err.println("Error saving accident report: " + e.getMessage());
             return null;
         }

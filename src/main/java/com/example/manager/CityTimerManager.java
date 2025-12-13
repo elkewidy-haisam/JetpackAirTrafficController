@@ -39,31 +39,46 @@ import javax.swing.Timer;
  */
 public class CityTimerManager {
     
+    // Timer for periodic weather updates (30 second intervals)
     private Timer weatherTimer;
+    
+    // Timer for date/time display updates (1 second intervals)
     private Timer dateTimeTimer;
+    
+    // Timer for animation frame updates (externally managed)
     private Timer animationTimer;
     
     /**
-     * Starts the weather timer to update weather every 30 seconds
+     * Starts the weather timer to update weather conditions every 30 seconds.
+     * Stops any existing weather timer before creating new one to prevent duplicates.
      * 
-     * @param callback The action to perform on each timer tick
+     * @param callback Runnable to execute on each timer tick (typically weather update logic)
      */
     public void startWeatherTimer(Runnable callback) {
-        stopWeatherTimer(); // Stop existing timer if any
+        // Stop existing timer if any to prevent multiple concurrent timers
+        stopWeatherTimer();
         
+        // Create new timer with 30 second delay (30000ms)
         weatherTimer = new Timer(30000, e -> callback.run());
+        
+        // Start timer - begins firing immediately
         weatherTimer.start();
     }
     
     /**
-     * Starts the date/time timer to update every second
+     * Starts the date/time timer to update display every second.
+     * Stops any existing date/time timer before creating new one to prevent duplicates.
      * 
-     * @param callback The action to perform on each timer tick
+     * @param callback Runnable to execute on each timer tick (typically display update logic)
      */
     public void startDateTimeTimer(Runnable callback) {
-        stopDateTimeTimer(); // Stop existing timer if any
+        // Stop existing timer if any to prevent multiple concurrent timers
+        stopDateTimeTimer();
         
+        // Create new timer with 1 second delay (1000ms)
         dateTimeTimer = new Timer(1000, e -> callback.run());
+        
+        // Start timer - begins firing immediately
         dateTimeTimer.start();
     }
     
