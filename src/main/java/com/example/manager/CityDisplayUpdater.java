@@ -1,25 +1,38 @@
 /**
- * CityDisplayUpdater component for the Air Traffic Controller system.
+ * Manages real-time updates of weather and date/time displays with timezone-aware formatting.
  * 
  * Purpose:
- * Provides citydisplayupdater functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Coordinates periodic updates of UI labels showing current weather conditions and local date/time
+ * for selected cities. Integrates weather system state with timezone calculations to provide
+ * accurate, city-specific displays including day/night indicators and formatted timestamps.
+ * Decouples weather/time logic from UI rendering for clean separation of concerns.
  * 
  * Key Responsibilities:
- * - Implement core citydisplayupdater operations
- * - Maintain necessary state for citydisplayupdater functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Update weather label with current conditions, temperature, and day/night status
+ * - Update date/time label with timezone-aware local time for selected city
+ * - Format weather information with emoji indicators (☀️ Day, 🌙 Night)
+ * - Apply timezone conversions using TimezoneHelper for accurate local time
+ * - Coordinate with Weather and DayTime objects for current state
+ * - Trigger UI label repaints with formatted text
+ * - Support label injection via setter methods for flexible UI binding
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by CityMapWeatherManager to update weather display on timer
+ * - Integrates with Weather object for current condition queries
+ * - Consults DayTime for time-of-day classification (morning/afternoon/evening/night)
+ * - Uses TimezoneHelper to get city-specific timezone for accurate display
+ * - Updates JLabel components in CityMapPanel or other UI containers
+ * - Coordinates with AirTrafficControllerFrame for main display updates
+ * - Supports multiple cities with proper timezone handling (EST, CST, PST, etc.)
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Manager pattern encapsulates display update logic
+ * - Label references injected via setters for flexible UI coupling
+ * - Stateless updater; relies on Weather/DayTime objects for current state
+ * - Thread-safe for EDT-based UI updates (Swing single-thread model)
+ * - Emoji indicators: ☀️ (day), 🌙 (night) for visual clarity
+ * - Date/time format: "MMM dd, yyyy HH:mm:ss z" (e.g., "Dec 13, 2025 14:30:45 EST")
+ * - Null-safe: checks for null labels before updates
  * 
  * @author Haisam Elkewidy
  */
