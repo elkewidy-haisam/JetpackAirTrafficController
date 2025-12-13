@@ -27,11 +27,19 @@
 package com.example.ui.panels;
 
 public class CityMapLoader {
+    /**
+     * Default constructor for CityMapLoader.
+     * Performs initialization needed for map loading operations.
+     */
     public CityMapLoader() {
-        // Initialization logic if needed
+        // Placeholder for initialization logic (e.g., setting up file readers, caches)
     }
 
+    /**
+     * Loads city map data from data source.
+     * This is a stub method awaiting implementation.
+     */
     public void loadMapData() {
-        // Logic to load city map data
+        // Stub method - will load city map data from file/database when implemented
     }
 }

@@ -28,11 +28,21 @@
 package com.example.ui.panels;
 
 public class CityMapWeatherManager {
+    /**
+     * Default constructor for CityMapWeatherManager.
+     * Performs initialization needed for weather management operations.
+     */
     public CityMapWeatherManager() {
-        // Initialization logic if needed
+        // Placeholder for initialization logic (e.g., setting up weather data structures)
     }
 
+    /**
+     * Updates weather display on the city map panel.
+     * Applies new weather information to visual representation.
+     * 
+     * @param weatherInfo Weather information string to display
+     */
     public void updateWeather(String weatherInfo) {
-        // Logic to update weather display on the city map panel
+        // Stub method - will update weather display on city map when implemented
     }
 }

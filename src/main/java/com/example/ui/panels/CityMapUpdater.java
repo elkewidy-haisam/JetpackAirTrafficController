@@ -27,12 +27,23 @@
 package com.example.ui.panels;
 
 public class CityMapUpdater {
+    /**
+     * Default constructor for CityMapUpdater.
+     * Performs initialization needed for map update operations.
+     */
     public CityMapUpdater() {
-        // Initialization logic if needed
+        // Placeholder for initialization logic (e.g., setting up update intervals)
     }
 
+    /**
+     * Updates the city map panel with new data and triggers repaint.
+     * Refreshes visual display to reflect current state.
+     * 
+     * @param panel CityMapPanel to update
+     */
     public void updateMapPanel(CityMapPanel panel) {
-        // Logic to update the city map panel with new data
+        // Stub comment: Logic to update the city map panel with new data
+        // Trigger repaint to refresh visual display
         panel.repaint();
     }
 }
