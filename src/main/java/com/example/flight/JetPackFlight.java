@@ -86,57 +86,57 @@ public class JetPackFlight {
     }
 
     public JetPackFlight(JetPack jetpack, Point start, Point destination, Color color) {
-        this.jetpack = jetpack;
-        this.color = color;
-        this.baseColor = color;
+        this.jetpack = jetpack;  // Store jetpack reference for callsign, identification, and properties
+        this.color = color;  // Set current display color for rendering
+        this.baseColor = color;  // Preserve original color to restore after temporary color changes (emergencies, hazards)
 
-        // Initialize components
-        double initialAltitude = 80 + Math.random() * 80; // Random altitude 80-160
-        this.movementController = new FlightMovementController(start, destination, 2.0, initialAltitude);
-        this.hazardMonitor = new FlightHazardMonitor();
-        this.emergencyHandler = new FlightEmergencyHandler(jetpack.getCallsign());
+        // Initialize components - delegate movement, hazard, and emergency logic to specialized controllers
+        double initialAltitude = 80 + Math.random() * 80;  // Random altitude 80-160 for realistic separation and variety
+        this.movementController = new FlightMovementController(start, destination, 2.0, initialAltitude);  // Create controller with initial position, target, speed 2.0, and altitude
+        this.hazardMonitor = new FlightHazardMonitor();  // Create hazard monitor to track and respond to flight hazards
+        this.emergencyHandler = new FlightEmergencyHandler(jetpack.getCallsign());  // Create emergency handler with jetpack identifier for logging
 
-        // Setup emergency handler callbacks
-        this.emergencyHandler.setEmergencyLogger(message -> {
-            if (movementLogger != null) {
-                movementLogger.appendJetpackMovement(message);
+        // Setup emergency handler callbacks - wire emergency messages to movement logger if available
+        this.emergencyHandler.setEmergencyLogger(message -> {  // Lambda callback for emergency log messages
+            if (movementLogger != null) {  // Check if movement logger has been set
+                movementLogger.appendJetpackMovement(message);  // Forward emergency message to movement log
             }
         });
 
-        // Initialize FlightPath attributes
-        this.isActive = true;
-        this.currentStatus = "ACTIVE";
-        this.pathID = jetpack.getCallsign() + "-PATH";
+        // Initialize FlightPath attributes - set up active flight tracking state
+        this.isActive = true;  // Flight starts in active state (not halted or completed)
+        this.currentStatus = "ACTIVE";  // Set initial status text for UI display
+        this.pathID = jetpack.getCallsign() + "-PATH";  // Generate unique path identifier from callsign for tracking
     }
     
     public void setMovementLogger(MovementLogger logger) {
-        this.movementLogger = logger;
+        this.movementLogger = logger;  // Set logger for recording all flight movement and status changes
     }
     
     public void setFlightStateProvider(FlightStateProvider provider) {
-        this.flightStateProvider = provider;
+        this.flightStateProvider = provider;  // Set provider that supplies parking/timer state for this flight
     }
     
     /**
      * Sets the map image for water detection during emergency landings
      */
     public void setMapImage(java.awt.image.BufferedImage mapImage) {
-        emergencyHandler.setMapImage(mapImage);
+        emergencyHandler.setMapImage(mapImage);  // Pass map image to emergency handler for water pixel detection during landing site selection
     }
     
     public void setRadioInstructionListener(RadioInstructionListener listener) {
-        emergencyHandler.setRadioInstructionListener(new FlightEmergencyHandler.RadioInstructionListener() {
+        emergencyHandler.setRadioInstructionListener(new FlightEmergencyHandler.RadioInstructionListener() {  // Create adapter to bridge emergency handler callbacks to flight-level listener
             @Override
             public void onInstructionReceived(String instruction) {
-                if (listener != null) {
-                    listener.onInstructionReceived(JetPackFlight.this, instruction);
+                if (listener != null) {  // Check if listener has been provided
+                    listener.onInstructionReceived(JetPackFlight.this, instruction);  // Notify listener that this flight received an instruction, passing flight reference
                 }
             }
             
             @Override
             public void onInstructionCompleted(String instruction) {
-                if (listener != null) {
-                    listener.onInstructionCompleted(JetPackFlight.this, instruction);
+                if (listener != null) {  // Check if listener has been provided
+                    listener.onInstructionCompleted(JetPackFlight.this, instruction);  // Notify listener that this flight completed an instruction, passing flight reference
                 }
             }
         });
@@ -146,115 +146,115 @@ public class JetPackFlight {
      * Receives and executes a radio instruction to change coordinates
      */
     public void receiveCoordinateInstruction(int newX, int newY, String reason) {
-        Point newDest = emergencyHandler.receiveCoordinateInstruction(newX, newY, reason);
-        movementController.setNewDestination(newDest);
-        this.currentStatus = "RADIO: " + reason;
+        Point newDest = emergencyHandler.receiveCoordinateInstruction(newX, newY, reason);  // Process coordinate instruction through emergency handler (logs and creates new Point)
+        movementController.setNewDestination(newDest);  // Update movement controller to fly to new coordinates
+        this.currentStatus = "RADIO: " + reason;  // Update status text to reflect radio instruction and reason
     }
     
     /**
      * Receives and executes a radio instruction to change altitude
      */
     public void receiveAltitudeInstruction(double newAltitude, String reason) {
-        emergencyHandler.receiveAltitudeInstruction(movementController.getAltitude(), newAltitude, reason);
-        this.currentStatus = "RADIO: " + reason;
+        emergencyHandler.receiveAltitudeInstruction(movementController.getAltitude(), newAltitude, reason);  // Process altitude instruction through emergency handler (logs current and target altitude)
+        this.currentStatus = "RADIO: " + reason;  // Update status text to reflect radio instruction and reason
     }
     
     /**
      * Receives emergency landing instruction
      */
     public void receiveEmergencyLandingInstruction(List<ParkingSpace> parkingSpaces, String reason) {
-        emergencyLanding(parkingSpaces, "RADIO ORDER: " + reason);
+        emergencyLanding(parkingSpaces, "RADIO ORDER: " + reason);  // Delegate to emergency landing method with radio order prefix for logging
     }
     
     public void updatePosition() {
-        // Don't move if emergency halt is active
-        if (hazardMonitor.isEmergencyHalt() || !isActive) {
-            return;
+        // Don't move if emergency halt is active or flight is inactive
+        if (hazardMonitor.isEmergencyHalt() || !isActive) {  // Check both emergency halt flag and active status
+            return;  // Skip position update to keep jetpack stationary during halt
         }
         
-        // Calculate effective speed based on hazards
-        double effectiveSpeed = hazardMonitor.calculateEffectiveSpeed(movementController.getSpeed());
+        // Calculate effective speed based on hazards - may reduce speed for safety
+        double effectiveSpeed = hazardMonitor.calculateEffectiveSpeed(movementController.getSpeed());  // Get speed adjusted for hazard flags (weather, accidents, etc.)
         
-        // Update position through movement controller
-        movementController.updatePosition(effectiveSpeed, hazardMonitor.isEmergencyHalt());
+        // Update position through movement controller - incremental movement toward destination
+        movementController.updatePosition(effectiveSpeed, hazardMonitor.isEmergencyHalt());  // Move jetpack using calculated speed, passing halt status
         
-        // Check if radio destination reached
-        Point radioDestination = emergencyHandler.getRadioDestination();
-        if (radioDestination != null) {
-            double distance = movementController.getDistanceToDestination();
-            emergencyHandler.checkRadioDestinationReached(
-                movementController.getDestination(), 
-                distance, 
-                movementController.getSpeed()
+        // Check if radio destination reached - handle completion of coordinate instructions
+        Point radioDestination = emergencyHandler.getRadioDestination();  // Get active radio coordinate instruction if any
+        if (radioDestination != null) {  // If there's an active radio coordinate instruction
+            double distance = movementController.getDistanceToDestination();  // Calculate remaining distance to target
+            emergencyHandler.checkRadioDestinationReached(  // Check if we've arrived at radio-instructed coordinates
+                movementController.getDestination(),  // Current destination point
+                distance,  // Distance remaining
+                movementController.getSpeed()  // Current speed for threshold calculation
             );
-            if (emergencyHandler.getRadioDestination() == null && emergencyHandler.getRadioAltitude() == null) {
-                currentStatus = "ACTIVE";
+            if (emergencyHandler.getRadioDestination() == null && emergencyHandler.getRadioAltitude() == null) {  // If both coordinate and altitude instructions completed
+                currentStatus = "ACTIVE";  // Reset status to normal active flight
             }
         }
         
-        // Handle radio altitude instruction
-        boolean altitudeReached = emergencyHandler.checkRadioAltitudeReached(movementController.getAltitude());
-        if (altitudeReached && emergencyHandler.getRadioDestination() == null) {
-            currentStatus = "ACTIVE";
+        // Handle radio altitude instruction - check if target altitude reached
+        boolean altitudeReached = emergencyHandler.checkRadioAltitudeReached(movementController.getAltitude());  // Check if current altitude matches radio-instructed altitude
+        if (altitudeReached && emergencyHandler.getRadioDestination() == null) {  // If altitude reached and no coordinate instruction pending
+            currentStatus = "ACTIVE";  // Reset status to normal active flight
         }
         
-        // Update altitude
-        movementController.updateAltitude(emergencyHandler.getRadioAltitude());
+        // Update altitude - gradually adjust toward target altitude
+        movementController.updateAltitude(emergencyHandler.getRadioAltitude());  // Pass target altitude (null if none) for gradual adjustment
         
-        // Update color based on speed
-        updateColorBySpeed(effectiveSpeed);
+        // Update color based on speed - visual feedback for speed changes
+        updateColorBySpeed(effectiveSpeed);  // Adjust jetpack display color based on current effective speed
     }
     
     private Point getActiveTarget() {
-        return movementController.getActiveTarget();
+        return movementController.getActiveTarget();  // Retrieve current active waypoint or final destination from movement controller
     }
     
     public boolean hasReachedDestination() {
-        return movementController.hasReachedDestination(hazardMonitor.isEmergencyHalt());
+        return movementController.hasReachedDestination(hazardMonitor.isEmergencyHalt());  // Check if jetpack has reached its destination, considering halt status
     }
     
     public void setNewDestination(Point newDest) {
-        if (hazardMonitor.isEmergencyHalt()) {
-            return;
+        if (hazardMonitor.isEmergencyHalt()) {  // Check if emergency halt is active
+            return;  // Ignore destination change during emergency halt (safety lock)
         }
         
-        movementController.setNewDestination(newDest);
-        logMovementDirection();
+        movementController.setNewDestination(newDest);  // Update destination in movement controller
+        logMovementDirection();  // Log new heading direction for movement history
     }
     
-    // FlightPath methods
+    // FlightPath methods - waypoint and detour management
     
     public void addWaypoint(Point waypoint) {
-        movementController.addWaypoint(waypoint);
+        movementController.addWaypoint(waypoint);  // Add single waypoint to flight path queue for sequential navigation
     }
     
     public void setWaypoints(List<Point> waypoints) {
-        movementController.setWaypoints(waypoints);
+        movementController.setWaypoints(waypoints);  // Replace entire waypoint queue with new list of waypoints
     }
     
     public void detour(List<Point> detourPoints, String hazardType) {
-        if (detourPoints == null || detourPoints.isEmpty()) {
-            return;
+        if (detourPoints == null || detourPoints.isEmpty()) {  // Validate detour points provided
+            return;  // Ignore empty detour request (no alternate route available)
         }
         
-        movementController.detour(detourPoints);
-        this.currentStatus = "DETOUR";
+        movementController.detour(detourPoints);  // Insert detour waypoints at front of queue to navigate around hazard
+        this.currentStatus = "DETOUR";  // Update status to indicate active detour
         
-        if (movementLogger != null) {
-            movementLogger.appendJetpackMovement(jetpack.getCallsign() + 
-                " DETOUR: Avoiding " + hazardType);
+        if (movementLogger != null) {  // Check if movement logger is available
+            movementLogger.appendJetpackMovement(jetpack.getCallsign() +  // Log detour event with callsign
+                " DETOUR: Avoiding " + hazardType);  // Include hazard type being avoided
         }
     }
     
     public void halt(String reason) {
-        hazardMonitor.setEmergencyHalt(true);
-        this.isActive = false;
-        this.currentStatus = "EMERGENCY HALT";
-        this.color = Color.RED; // Change color to indicate emergency
+        hazardMonitor.setEmergencyHalt(true);  // Set emergency halt flag in hazard monitor to freeze movement
+        this.isActive = false;  // Mark flight as inactive to prevent position updates
+        this.currentStatus = "EMERGENCY HALT";  // Update status text for UI display
+        this.color = Color.RED;  // Change color to red to visually indicate emergency halt state
         
-        if (movementLogger != null) {
-            movementLogger.appendJetpackMovement(jetpack.getCallsign() + 
-                " ⛔ EMERGENCY HALT: " + reason);
+        if (movementLogger != null) {  // Check if movement logger is available
+            movementLogger.appendJetpackMovement(jetpack.getCallsign() +  // Log halt event with callsign
+                " ⛔ EMERGENCY HALT: " + reason);  // Include stop sign emoji and reason for halt
         }
     }
     
@@ -263,21 +263,21 @@ public class JetPackFlight {
      * Finds nearest parking space and navigates there immediately
      */
     public void emergencyLanding(List<ParkingSpace> parkingSpaces, String reason) {
-        Point emergencyDest = emergencyHandler.receiveEmergencyLandingInstruction(
-            movementController.getX(), 
-            movementController.getY(), 
-            parkingSpaces, 
-            reason
+        Point emergencyDest = emergencyHandler.receiveEmergencyLandingInstruction(  // Find nearest available parking space for emergency landing
+            movementController.getX(),  // Current X position for distance calculations
+            movementController.getY(),  // Current Y position for distance calculations
+            parkingSpaces,  // List of all parking spaces to search
+            reason  // Reason for emergency landing (logged by handler)
         );
         
-        if (emergencyDest == null) {
-            // No parking available, just halt in place
-            halt("EMERGENCY LANDING - " + reason);
+        if (emergencyDest == null) {  // Check if emergency handler found a parking space
+            // No parking available, just halt in place - safety fallback
+            halt("EMERGENCY LANDING - " + reason);  // Execute emergency halt with reason
         } else {
-            // Set parking as immediate destination
-            movementController.setEmergencyDestination(emergencyDest, movementController.getSpeed() * 1.5);
-            this.currentStatus = "EMERGENCY LANDING";
-            this.color = Color.MAGENTA; // Magenta indicates emergency landing
+            // Set parking as immediate destination - clear waypoints and head straight there
+            movementController.setEmergencyDestination(emergencyDest, movementController.getSpeed() * 1.5);  // Set emergency destination with 50% speed boost for urgency
+            this.currentStatus = "EMERGENCY LANDING";  // Update status to indicate emergency landing in progress
+            this.color = Color.MAGENTA;  // Change color to magenta to visually distinguish emergency landing from other states
         }
     }
     
