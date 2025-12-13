@@ -35,40 +35,83 @@
 package com.example.model;
 
 public class RadioMessage {
+    /** Identifier of the message sender (callsign or controller ID) */
     private final String sender;
+    /** Identifier of the message receiver (callsign or controller ID) */
     private final String receiver;
+    /** The message content text/payload */
     private final String content;
+    /** The type/category of this message */
     private final MessageType type;
 
+    /**
+     * Enumeration of message types for categorization and filtering.
+     */
     public enum MessageType {
-        INSTRUCTION, STATUS, ALERT, GENERAL
+        /** Instruction messages containing directives or commands */
+        INSTRUCTION,
+        /** Status update messages reporting current state */
+        STATUS,
+        /** Alert messages for warnings or urgent notifications */
+        ALERT,
+        /** General communication messages */
+        GENERAL
     }
 
+    /**
+     * Constructs a new RadioMessage with specified parameters.
+     * Message is immutable after construction.
+     * 
+     * @param sender the identifier of who is sending the message
+     * @param receiver the identifier of who should receive the message
+     * @param content the text content of the message
+     * @param type the message type classification
+     */
     public RadioMessage(String sender, String receiver, String content, MessageType type) {
-        this.sender = sender;
-        this.receiver = receiver;
-        this.content = content;
-        this.type = type;
+        this.sender = sender;      // Store sender identifier
+        this.receiver = receiver;  // Store receiver identifier
+        this.content = content;    // Store message content
+        this.type = type;          // Store message type
     }
 
+    /**
+     * Returns the sender identifier.
+     * @return the sender's callsign or ID
+     */
     public String getSender() {
-        return sender;
+        return sender;  // Return stored sender
     }
 
+    /**
+     * Returns the receiver identifier.
+     * @return the receiver's callsign or ID
+     */
     public String getReceiver() {
-        return receiver;
+        return receiver;  // Return stored receiver
     }
 
+    /**
+     * Returns the message content.
+     * @return the message text
+     */
     public String getContent() {
-        return content;
+        return content;  // Return stored content
     }
 
+    /**
+     * Returns the message type.
+     * @return the MessageType classification
+     */
     public MessageType getType() {
-        return type;
+        return type;  // Return stored message type
     }
 
+    /**
+     * Returns a formatted string representation of this message.
+     * @return formatted string with type, sender, receiver, and content
+     */
     @Override
     public String toString() {
-        return String.format("RadioMessage[type=%s, from=%s, to=%s, content=%s]", type, sender, receiver, content);
+        return String.format("RadioMessage[type=%s, from=%s, to=%s, content=%s]", type, sender, receiver, content);  // Format and return message info
     }
 }

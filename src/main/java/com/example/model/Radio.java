@@ -30,34 +30,64 @@
 package com.example.model;
 
 public class Radio {
+    /** The radio frequency this transceiver operates on (e.g., "121.5" for emergency) */
     private final String frequency;
+    /** Whether this radio is currently enabled and able to transmit */
     private boolean enabled;
 
+    /**
+     * Constructs a new Radio on the specified frequency.
+     * Radio is initially enabled.
+     * 
+     * @param frequency the operating frequency for this radio
+     */
     public Radio(String frequency) {
-        this.frequency = frequency;
-        this.enabled = true;
+        this.frequency = frequency;  // Store the radio frequency
+        this.enabled = true;         // Enable the radio initially
     }
 
+    /**
+     * Returns the frequency this radio operates on.
+     * @return the frequency string
+     */
     public String getFrequency() {
-        return frequency;
+        return frequency;  // Return the stored frequency
     }
 
+    /**
+     * Checks if this radio is currently enabled.
+     * @return true if enabled, false if disabled
+     */
     public boolean isEnabled() {
-        return enabled;
+        return enabled;  // Return the enabled status
     }
 
+    /**
+     * Sets the enabled status of this radio.
+     * @param enabled true to enable, false to disable
+     */
     public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
+        this.enabled = enabled;  // Update the enabled status
     }
 
+    /**
+     * Transmits a message on this radio frequency.
+     * Message is only sent if radio is enabled.
+     * 
+     * @param message the message to transmit
+     */
     public void transmit(String message) {
-        if (enabled) {
-            System.out.println("[Radio " + frequency + "] " + message);
+        if (enabled) {  // Check if radio is enabled
+            System.out.println("[Radio " + frequency + "] " + message);  // Print the transmission
         }
     }
 
+    /**
+     * Returns a string representation of this radio.
+     * @return formatted string with frequency and enabled status
+     */
     @Override
     public String toString() {
-        return String.format("Radio[frequency=%s, enabled=%s]", frequency, enabled);
+        return String.format("Radio[frequency=%s, enabled=%s]", frequency, enabled);  // Format and return radio info
     }
 }

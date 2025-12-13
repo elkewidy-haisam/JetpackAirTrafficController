@@ -11,12 +11,23 @@
 package com.example.model;
 
 public class RadioMessageFormatter {
+    /**
+     * Constructs a new RadioMessageFormatter.
+     * No special initialization required.
+     */
     public RadioMessageFormatter() {
-        // Default constructor
+        // Default constructor - no initialization needed
     }
 
+    /**
+     * Formats a RadioMessage into a standardized string representation.
+     * Includes message type, sender, receiver, and content.
+     * 
+     * @param message the RadioMessage to format
+     * @return formatted string, or "[Invalid Message]" if message is null
+     */
     public String format(RadioMessage message) {
-        if (message == null) return "[Invalid Message]";
-        return String.format("[%s] From: %s | To: %s | %s", message.getType(), message.getSender(), message.getReceiver(), message.getContent());
+        if (message == null) return "[Invalid Message]";  // Handle null input
+        return String.format("[%s] From: %s | To: %s | %s", message.getType(), message.getSender(), message.getReceiver(), message.getContent());  // Format message with all fields
     }
 }

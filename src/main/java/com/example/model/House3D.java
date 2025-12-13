@@ -28,19 +28,62 @@
 package com.example.model;
 
 public class House3D {
-    public final double x, y, width, depth, height;
+    /** The x-coordinate of the house's corner position */
+    public final double x;
+    /** The y-coordinate of the house's corner position */
+    public final double y;
+    /** The width of the house along the x-axis */
+    public final double width;
+    /** The depth of the house along the y-axis */
+    public final double depth;
+    /** The height of the house along the z-axis */
+    public final double height;
 
+    /**
+     * Constructs a new House3D with specified 3D dimensions.
+     * All geometric properties are immutable after construction.
+     * 
+     * @param x corner x-coordinate position
+     * @param y corner y-coordinate position
+     * @param width house width along x-axis
+     * @param depth house depth along y-axis
+     * @param height house height along z-axis
+     */
     public House3D(double x, double y, double width, double depth, double height) {
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.depth = depth;
-        this.height = height;
+        this.x = x;            // Store house x position
+        this.y = y;            // Store house y position
+        this.width = width;    // Store house width
+        this.depth = depth;    // Store house depth
+        this.height = height;  // Store house height
     }
 
-    public double getX() { return x; }
-    public double getY() { return y; }
-    public double getWidth() { return width; }
-    public double getLength() { return depth; }
-    public double getHeight() { return height; }
+    /**
+     * Returns the x-coordinate of the house.
+     * @return x-coordinate value
+     */
+    public double getX() { return x; }  // Return x position
+    
+    /**
+     * Returns the y-coordinate of the house.
+     * @return y-coordinate value
+     */
+    public double getY() { return y; }  // Return y position
+    
+    /**
+     * Returns the width of the house.
+     * @return width value
+     */
+    public double getWidth() { return width; }  // Return house width
+    
+    /**
+     * Returns the depth (length) of the house.
+     * @return depth value
+     */
+    public double getLength() { return depth; }  // Return house depth (alias for length)
+    
+    /**
+     * Returns the height of the house.
+     * @return height value
+     */
+    public double getHeight() { return height; }  // Return house height
 }

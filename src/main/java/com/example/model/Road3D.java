@@ -28,18 +28,56 @@
 package com.example.model;
 
 public class Road3D {
-    public final double x, y, length, width, angle;
+    /** The x-coordinate of the road's center position */
+    public final double x;
+    /** The y-coordinate of the road's center position */
+    public final double y;
+    /** The length of the road along its primary axis */
+    public final double length;
+    /** The width of the road perpendicular to its length */
+    public final double width;
+    /** The rotation angle of the road in degrees */
+    public final double angle;
 
+    /**
+     * Constructs a new Road3D with specified geometry.
+     * All geometric properties are immutable after construction.
+     * 
+     * @param x center x-coordinate position
+     * @param y center y-coordinate position
+     * @param length road length along primary axis
+     * @param width road width perpendicular to length
+     * @param angle rotation angle in degrees
+     */
     public Road3D(double x, double y, double length, double width, double angle) {
-        this.x = x;
-        this.y = y;
-        this.length = length;
-        this.width = width;
-        this.angle = angle;
+        this.x = x;            // Store road x position
+        this.y = y;            // Store road y position
+        this.length = length;  // Store road length
+        this.width = width;    // Store road width
+        this.angle = angle;    // Store rotation angle
     }
 
-    public double getX() { return x; }
-    public double getY() { return y; }
-    public double getLength() { return length; }
-    public double getWidth() { return width; }
+    /**
+     * Returns the x-coordinate of the road.
+     * @return x-coordinate value
+     */
+    public double getX() { return x; }  // Return x position
+    
+    /**
+     * Returns the y-coordinate of the road.
+     * @return y-coordinate value
+     */
+    public double getY() { return y; }  // Return y position
+    
+    /**
+     * Returns the length of the road.
+     * @return length value
+     */
+    public double getLength() { return length; }  // Return road length
+    
+    /**
+     * Returns the width of the road.
+     * @return width value
+     */
+    public double getWidth() { return width; }  // Return road width
 }

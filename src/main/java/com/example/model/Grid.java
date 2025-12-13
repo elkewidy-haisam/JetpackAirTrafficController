@@ -31,24 +31,43 @@
 package com.example.model;
 
 public class Grid {
+    /** The horizontal dimension of the grid in coordinate units */
     private final int width;
+    /** The vertical dimension of the grid in coordinate units */
     private final int height;
 
+    /**
+     * Constructs a new Grid with the specified dimensions.
+     * @param width the horizontal dimension
+     * @param height the vertical dimension
+     */
     public Grid(int width, int height) {
-        this.width = width;
-        this.height = height;
+        this.width = width;    // Store the grid width
+        this.height = height;  // Store the grid height
     }
 
+    /**
+     * Returns the width of the grid.
+     * @return the grid width in coordinate units
+     */
     public int getWidth() {
-        return width;
+        return width;  // Return the stored width value
     }
 
+    /**
+     * Returns the height of the grid.
+     * @return the grid height in coordinate units
+     */
     public int getHeight() {
-        return height;
+        return height;  // Return the stored height value
     }
 
+    /**
+     * Returns a string representation of this grid.
+     * @return formatted string showing grid dimensions
+     */
     @Override
     public String toString() {
-        return String.format("Grid[width=%d, height=%d]", width, height);
+        return String.format("Grid[width=%d, height=%d]", width, height);  // Format and return grid info
     }
 }

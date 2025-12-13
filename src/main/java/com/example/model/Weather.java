@@ -32,32 +32,60 @@
 package com.example.model;
 
 public class Weather {
+    /** Current weather condition description (e.g., "Clear", "Rain", "Fog", "Storm") */
     private String currentWeather;
+    /** Severity level of current weather (e.g., "Low", "Moderate", "High", "Severe") */
     private String currentSeverity;
 
+    /**
+     * Constructs a new Weather object with specified conditions.
+     * 
+     * @param currentWeather description of the weather condition
+     * @param currentSeverity severity level classification
+     */
     public Weather(String currentWeather, String currentSeverity) {
-        this.currentWeather = currentWeather;
-        this.currentSeverity = currentSeverity;
+        this.currentWeather = currentWeather;    // Store the weather condition
+        this.currentSeverity = currentSeverity;  // Store the severity level
     }
 
+    /**
+     * Returns the current weather condition.
+     * @return weather condition string
+     */
     public String getCurrentWeather() {
-        return currentWeather;
+        return currentWeather;  // Return the stored weather condition
     }
 
+    /**
+     * Updates the current weather condition.
+     * @param currentWeather new weather condition description
+     */
     public void setCurrentWeather(String currentWeather) {
-        this.currentWeather = currentWeather;
+        this.currentWeather = currentWeather;  // Update the weather condition
     }
 
+    /**
+     * Returns the current weather severity level.
+     * @return severity level string
+     */
     public String getCurrentSeverity() {
-        return currentSeverity;
+        return currentSeverity;  // Return the stored severity level
     }
 
+    /**
+     * Updates the weather severity level.
+     * @param currentSeverity new severity level classification
+     */
     public void setCurrentSeverity(String currentSeverity) {
-        this.currentSeverity = currentSeverity;
+        this.currentSeverity = currentSeverity;  // Update the severity level
     }
 
+    /**
+     * Returns a string representation of this weather object.
+     * @return formatted string with weather condition and severity
+     */
     @Override
     public String toString() {
-        return String.format("Weather[weather=%s, severity=%s]", currentWeather, currentSeverity);
+        return String.format("Weather[weather=%s, severity=%s]", currentWeather, currentSeverity);  // Format and return weather info
     }
 }

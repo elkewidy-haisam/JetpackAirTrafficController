@@ -31,34 +31,64 @@
 package com.example.model;
 
 public class JetPack {
+    /** Unique identifier callsign for this jetpack (e.g., "ALPHA-1", "BRAVO-2") */
     private final String callsign;
+    /** Name of the pilot operating this jetpack */
     private final String pilotName;
+    /** Whether this jetpack is available for operations (true = available, false = grounded) */
     private boolean available;
 
+    /**
+     * Constructs a new JetPack with specified identification.
+     * Jetpack is initially marked as available.
+     * 
+     * @param callsign the unique callsign identifier for radio communications
+     * @param pilotName the name of the pilot operating this jetpack
+     */
     public JetPack(String callsign, String pilotName) {
-        this.callsign = callsign;
-        this.pilotName = pilotName;
-        this.available = true;
+        this.callsign = callsign;    // Store the callsign identifier
+        this.pilotName = pilotName;  // Store the pilot's name
+        this.available = true;       // Mark as available initially
     }
 
+    /**
+     * Returns the callsign of this jetpack.
+     * @return the callsign identifier string
+     */
     public String getCallsign() {
-        return callsign;
+        return callsign;  // Return the stored callsign
     }
 
+    /**
+     * Returns the name of the pilot operating this jetpack.
+     * @return the pilot's name
+     */
     public String getPilotName() {
-        return pilotName;
+        return pilotName;  // Return the stored pilot name
     }
 
+    /**
+     * Checks if this jetpack is available for operations.
+     * @return true if available, false if grounded
+     */
     public boolean isAvailable() {
-        return available;
+        return available;  // Return the availability status
     }
 
+    /**
+     * Sets the availability status of this jetpack.
+     * @param available true to mark available, false to mark grounded
+     */
     public void setAvailable(boolean available) {
-        this.available = available;
+        this.available = available;  // Update the availability status
     }
 
+    /**
+     * Returns a string representation of this jetpack.
+     * @return formatted string with callsign, pilot, and availability
+     */
     @Override
     public String toString() {
-        return String.format("JetPack[callsign=%s, pilot=%s, available=%s]", callsign, pilotName, available);
+        return String.format("JetPack[callsign=%s, pilot=%s, available=%s]", callsign, pilotName, available);  // Format and return jetpack info
     }
 }
