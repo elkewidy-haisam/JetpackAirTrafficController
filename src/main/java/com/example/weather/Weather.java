@@ -39,127 +39,167 @@ import java.util.Map;
 import java.util.Random;
 
 public class Weather {
+    /** Severity level 1: Safe for all flight operations (Clear, Partly Cloudy, Light Rain, etc.) */
     public static final int SEVERITY_MINIMAL = 1;
+    /** Severity level 2: Manageable conditions requiring pilot awareness (Fog, Steady Rain, Windy) */
     public static final int SEVERITY_MANAGEABLE = 2;
+    /** Severity level 3: Moderate conditions requiring caution (Heavy Rain, Strong Winds) */
     public static final int SEVERITY_MODERATE = 3;
+    /** Severity level 4: Severe conditions requiring restricted operations (Thunderstorms) */
     public static final int SEVERITY_SEVERE = 4;
+    /** Severity level 5: Critical conditions - all flight operations must cease immediately */
     public static final int SEVERITY_CRITICAL = 5;
-    /** false */
+    /** Flag to control debug output - set to false in production to reduce console noise */
     private static final boolean VERBOSE_LOGGING = false;
 
-    /** weatherTypes */
+    /** Maps weather condition names (e.g., "Clear/Sunny") to their severity levels (1-5) */
     private final Map<String, Integer> weatherTypes;
-    /** currentWeather */
+    /** The current weather condition name (e.g., "Thunderstorm", "Clear/Sunny") */
     private String currentWeather;
-    /** currentSeverity */
+    /** The current severity level (1-5) corresponding to currentWeather */
     private int currentSeverity;
-    /** temperature */
+    /** Current temperature in degrees Fahrenheit */
     private double temperature;
-    /** windSpeed */
+    /** Current wind speed in miles per hour */
     private int windSpeed;
-    /** visibility */
+    /** Current visibility distance in miles */
     private int visibility;
-    /** weatherID */
+    /** Unique identifier for this Weather instance (e.g., "WEATHER-01" for city-specific tracking) */
     private final String weatherID;
-    /** lastUpdated */
+    /** Timestamp (milliseconds since epoch) of last weather update */
     private long lastUpdated;
 
+    /**
+     * Default constructor initializing weather to pleasant conditions.
+     * Sets weather to "Clear/Sunny" with default ID "WEATHER-01".
+     */
     public Weather() {
-        this.weatherTypes = new HashMap<>();
-        initializeWeatherTypes();
-        this.currentWeather = "Clear/Sunny";
-        this.currentSeverity = weatherTypes.get(currentWeather);
-        this.temperature = 72.0;
-        this.windSpeed = 5;
-        this.visibility = 10;
-        this.weatherID = "WEATHER-01";
-        this.lastUpdated = System.currentTimeMillis();
+        this.weatherTypes = new HashMap<>();      // Create empty map for weather-to-severity mappings
+        initializeWeatherTypes();                  // Populate map with all known weather types
+        this.currentWeather = "Clear/Sunny";       // Start with clear conditions
+        this.currentSeverity = weatherTypes.get(currentWeather);  // Get severity for Clear/Sunny (=1)
+        this.temperature = 72.0;                   // Set comfortable temperature (72°F)
+        this.windSpeed = 5;                        // Set light wind (5 mph)
+        this.visibility = 10;                      // Set excellent visibility (10 miles)
+        this.weatherID = "WEATHER-01";             // Assign default weather station ID
+        this.lastUpdated = System.currentTimeMillis();  // Record initialization timestamp
     }
 
+    /**
+     * Constructor with custom weather ID and initial condition.
+     * Validates initialWeather against known types, defaults to Clear/Sunny if invalid.
+     * 
+     * @param weatherID unique identifier for this weather instance
+     * @param initialWeather the starting weather condition name
+     */
     public Weather(String weatherID, String initialWeather) {
-        this.weatherTypes = new HashMap<>();
-        initializeWeatherTypes();
-        this.weatherID = weatherID;
-        if (weatherTypes.containsKey(initialWeather)) {
-            this.currentWeather = initialWeather;
-            this.currentSeverity = weatherTypes.get(initialWeather);
-        } else {
-            this.currentWeather = "Clear/Sunny";
-            this.currentSeverity = SEVERITY_MINIMAL;
+        this.weatherTypes = new HashMap<>();      // Create empty map for weather-to-severity mappings
+        initializeWeatherTypes();                  // Populate map with all known weather types
+        this.weatherID = weatherID;                // Store the provided weather station ID
+        if (weatherTypes.containsKey(initialWeather)) {  // Check if initialWeather is valid
+            this.currentWeather = initialWeather;  // Use provided weather condition
+            this.currentSeverity = weatherTypes.get(initialWeather);  // Get severity from map
+        } else {  // If invalid weather type provided
+            this.currentWeather = "Clear/Sunny";   // Default to safe condition
+            this.currentSeverity = SEVERITY_MINIMAL;  // Set lowest severity level
         }
-        this.temperature = 72.0;
-        this.windSpeed = 5;
-        this.visibility = 10;
-        this.lastUpdated = System.currentTimeMillis();
+        this.temperature = 72.0;                   // Set comfortable temperature (72°F)
+        this.windSpeed = 5;                        // Set light wind (5 mph)
+        this.visibility = 10;                      // Set excellent visibility (10 miles)
+        this.lastUpdated = System.currentTimeMillis();  // Record initialization timestamp
     }
 
+    /**
+     * Populates weatherTypes map with all recognized weather conditions and their severity levels.
+     * Groups conditions into severity categories from MINIMAL (1) to CRITICAL (5).
+     */
     private void initializeWeatherTypes() {
-        weatherTypes.put("Clear/Sunny", SEVERITY_MINIMAL);
-        weatherTypes.put("Partly Cloudy", SEVERITY_MINIMAL);
-        weatherTypes.put("Overcast", SEVERITY_MINIMAL);
-        weatherTypes.put("Light Rain", SEVERITY_MINIMAL);
-        weatherTypes.put("Drizzle", SEVERITY_MINIMAL);
-        weatherTypes.put("Light Snow", SEVERITY_MINIMAL);
-        weatherTypes.put("Flurries", SEVERITY_MINIMAL);
+        // SEVERITY_MINIMAL (1): Safe conditions for all flight operations
+        weatherTypes.put("Clear/Sunny", SEVERITY_MINIMAL);       // Perfect visibility, no precipitation
+        weatherTypes.put("Partly Cloudy", SEVERITY_MINIMAL);     // Some clouds, still safe
+        weatherTypes.put("Overcast", SEVERITY_MINIMAL);          // Cloud cover but no precipitation
+        weatherTypes.put("Light Rain", SEVERITY_MINIMAL);        // Minor precipitation, manageable
+        weatherTypes.put("Drizzle", SEVERITY_MINIMAL);           // Very light precipitation
+        weatherTypes.put("Light Snow", SEVERITY_MINIMAL);        // Minor snow, not accumulating fast
+        weatherTypes.put("Flurries", SEVERITY_MINIMAL);          // Intermittent light snow
 
-        weatherTypes.put("Fog", SEVERITY_MANAGEABLE);
-        weatherTypes.put("Mist", SEVERITY_MANAGEABLE);
-        weatherTypes.put("Steady Rain", SEVERITY_MANAGEABLE);
-        weatherTypes.put("Showers", SEVERITY_MANAGEABLE);
-        weatherTypes.put("Thunder Showers", SEVERITY_MANAGEABLE);
-        weatherTypes.put("Windy Conditions", SEVERITY_MANAGEABLE);
+        // SEVERITY_MANAGEABLE (2): Requires pilot awareness and caution
+        weatherTypes.put("Fog", SEVERITY_MANAGEABLE);            // Reduced visibility concern
+        weatherTypes.put("Mist", SEVERITY_MANAGEABLE);           // Slight visibility reduction
+        weatherTypes.put("Steady Rain", SEVERITY_MANAGEABLE);    // Consistent precipitation
+        weatherTypes.put("Showers", SEVERITY_MANAGEABLE);        // Intermittent heavier rain
+        weatherTypes.put("Thunder Showers", SEVERITY_MANAGEABLE);// Rain with lightning nearby
+        weatherTypes.put("Windy Conditions", SEVERITY_MANAGEABLE);// Strong winds affecting control
     }
 
+    /**
+     * Generates and returns a formatted weather broadcast message.
+     * Includes all atmospheric parameters, flight status, and safety recommendations.
+     * Optionally outputs to console if VERBOSE_LOGGING is enabled.
+     * 
+     * @return formatted weather broadcast string ready for radio transmission
+     */
     public String sendWeatherBroadcast() {
-        String severityDescription = getSeverityDescription(currentSeverity);
-        StringBuilder broadcast = new StringBuilder();
-        broadcast.append("\n*** WEATHER BROADCAST ***\n");
-        broadcast.append("Weather ID: ").append(weatherID).append("\n");
-        broadcast.append("Current Conditions: ").append(currentWeather).append("\n");
-        broadcast.append("Severity Level: ").append(currentSeverity).append(" - ").append(severityDescription).append("\n");
-        broadcast.append("Temperature: ").append(String.format("%.1f", temperature)).append("°F\n");
-        broadcast.append("Wind Speed: ").append(windSpeed).append(" mph\n");
-        broadcast.append("Visibility: ").append(visibility).append(" miles\n");
-        broadcast.append("Flight Status: ").append(getFlightStatus()).append("\n");
-        broadcast.append("Recommendations: ").append(getRecommendations()).append("\n");
-        broadcast.append("Last Updated: ").append(new java.util.Date(lastUpdated)).append("\n");
-        broadcast.append("*************************\n");
-        String message = broadcast.toString();
-        if (VERBOSE_LOGGING) {
-            System.out.println(message);
+        String severityDescription = getSeverityDescription(currentSeverity);  // Get human-readable severity
+        StringBuilder broadcast = new StringBuilder();  // Create builder for efficient string construction
+        broadcast.append("\n*** WEATHER BROADCAST ***\n");  // Add header
+        broadcast.append("Weather ID: ").append(weatherID).append("\n");  // Include weather station ID
+        broadcast.append("Current Conditions: ").append(currentWeather).append("\n");  // Add weather type
+        broadcast.append("Severity Level: ").append(currentSeverity).append(" - ").append(severityDescription).append("\n");  // Add severity with description
+        broadcast.append("Temperature: ").append(String.format("%.1f", temperature)).append("°F\n");  // Add temp with 1 decimal
+        broadcast.append("Wind Speed: ").append(windSpeed).append(" mph\n");  // Add wind speed
+        broadcast.append("Visibility: ").append(visibility).append(" miles\n");  // Add visibility distance
+        broadcast.append("Flight Status: ").append(getFlightStatus()).append("\n");  // Add flight safety assessment
+        broadcast.append("Recommendations: ").append(getRecommendations()).append("\n");  // Add pilot recommendations
+        broadcast.append("Last Updated: ").append(new java.util.Date(lastUpdated)).append("\n");  // Add timestamp
+        broadcast.append("*************************\n");  // Add footer
+        String message = broadcast.toString();  // Convert StringBuilder to String
+        if (VERBOSE_LOGGING) {  // Check if debug output is enabled
+            System.out.println(message);  // Output to console for debugging
         }
-        return message;
+        return message;  // Return formatted broadcast string
     }
 
+    /**
+     * Changes the current weather to a new condition.
+     * Validates the weather type, updates severity, adjusts atmospheric parameters,
+     * and broadcasts the change. Silently ignores invalid weather types.
+     * 
+     * @param newWeather the name of the new weather condition to apply
+     */
     public void changeWeather(String newWeather) {
-        if (!weatherTypes.containsKey(newWeather)) {
-            return;
+        if (!weatherTypes.containsKey(newWeather)) {  // Validate weather type exists
+            return;  // Silently abort if invalid weather type
         }
-        String oldWeather = this.currentWeather;
-        int oldSeverity = this.currentSeverity;
-        this.currentWeather = newWeather;
-        this.currentSeverity = weatherTypes.get(newWeather);
-        this.lastUpdated = System.currentTimeMillis();
-        adjustWeatherParameters();
-        if (VERBOSE_LOGGING) {
-            System.out.println("\n*** WEATHER CHANGE ***");
-            System.out.println("Previous: " + oldWeather + " (Severity " + oldSeverity + ")");
-            System.out.println("Current: " + currentWeather + " (Severity " + currentSeverity + ")");
-            if (currentSeverity > oldSeverity) {
-                System.out.println("WARNING: Weather conditions have deteriorated!");
-            } else if (currentSeverity < oldSeverity) {
-                System.out.println("Weather conditions have improved.");
+        String oldWeather = this.currentWeather;  // Store previous weather for logging
+        int oldSeverity = this.currentSeverity;   // Store previous severity for comparison
+        this.currentWeather = newWeather;         // Update to new weather condition
+        this.currentSeverity = weatherTypes.get(newWeather);  // Look up and set new severity
+        this.lastUpdated = System.currentTimeMillis();  // Record timestamp of change
+        adjustWeatherParameters();  // Update temperature, wind, visibility for new weather
+        if (VERBOSE_LOGGING) {  // Check if debug output is enabled
+            System.out.println("\n*** WEATHER CHANGE ***");  // Log header
+            System.out.println("Previous: " + oldWeather + " (Severity " + oldSeverity + ")");  // Log old state
+            System.out.println("Current: " + currentWeather + " (Severity " + currentSeverity + ")");  // Log new state
+            if (currentSeverity > oldSeverity) {  // Check if weather worsened
+                System.out.println("WARNING: Weather conditions have deteriorated!");  // Alert on deterioration
+            } else if (currentSeverity < oldSeverity) {  // Check if weather improved
+                System.out.println("Weather conditions have improved.");  // Note improvement
             }
-            System.out.println("**********************\n");
+            System.out.println("**********************\n");  // Log footer
         }
-        sendWeatherBroadcast();
+        sendWeatherBroadcast();  // Broadcast updated weather to all listeners
     }
 
+    /**
+     * Randomly changes the weather to any registered weather type.
+     * Useful for simulation and testing dynamic weather scenarios.
+     */
     public void changeWeatherRandomly() {
-        Random random = new Random();
-        String[] weatherArray = weatherTypes.keySet().toArray(new String[weatherTypes.size()]);
-        String randomWeather = weatherArray[random.nextInt(weatherArray.length)];
-        changeWeather(randomWeather);
+        Random random = new Random();  // Create random number generator
+        String[] weatherArray = weatherTypes.keySet().toArray(new String[weatherTypes.size()]);  // Convert map keys to array
+        String randomWeather = weatherArray[random.nextInt(weatherArray.length)];  // Pick random weather from array
+        changeWeather(randomWeather);  // Apply the randomly selected weather
     }
 
     private void adjustWeatherParameters() {
