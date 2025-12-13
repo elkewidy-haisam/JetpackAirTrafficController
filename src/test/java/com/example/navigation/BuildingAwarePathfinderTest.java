@@ -95,10 +95,8 @@ public class BuildingAwarePathfinderTest {
         List<Point> path = nyPathfinder.findPath(50, 50, 150, 150);
         
         assertNotNull("Path should not be null", path);
-        // New York has many buildings, so path should have waypoints
-        if (!path.isEmpty()) {
-            assertTrue("Path should have waypoints to avoid buildings", path.size() > 0);
-        }
+        // New York has many buildings, so pathfinder should attempt to find a route
+        // (may be empty if straight line is clear)
     }
     
     @Test
