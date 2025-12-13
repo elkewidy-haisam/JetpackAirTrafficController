@@ -1,8 +1,8 @@
 REM ============================================================================
-REM verify_changes.bat - Verifies verify changes correctness and integrity
+REM verify_changes.bat - Verifies code changes correctness and integrity
 REM ============================================================================
 REM Purpose:
-REM   Batch script for the Jetpack Air Traffic Controller project that verifies verify changes correctness and integrity.
+REM   Batch script for the Jetpack Air Traffic Controller project that verifies code changes correctness and integrity.
 REM   Provides a convenient command-line interface for development and testing tasks.
 REM
 REM Usage:

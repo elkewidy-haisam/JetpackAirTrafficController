@@ -1,9 +1,9 @@
 REM ============================================================================
-REM wipe_and_merge_markdown.bat - Handles wipe and merge markdown operations
+REM wipe_and_merge_markdown.bat - Consolidates all Markdown files into README
 REM ============================================================================
 REM Purpose:
-REM   Batch script for the Jetpack Air Traffic Controller project that handles wipe and merge markdown operations.
-REM   Provides a convenient command-line interface for development and testing tasks.
+REM   Merges all Markdown documentation files in the repository into a single README.md,
+REM   creating consolidated documentation. Provides a convenient interface for documentation management.
 REM
 REM Usage:
 REM   wipe_and_merge_markdown.bat

@@ -1,8 +1,8 @@
 REM ============================================================================
-REM test_refactor_compile.bat - Compiles the test refactor compile components using Maven
+REM test_refactor_compile.bat - Compiles refactored code for testing
 REM ============================================================================
 REM Purpose:
-REM   Batch script for the Jetpack Air Traffic Controller project that compiles the test refactor compile components using maven.
+REM   Batch script for the Jetpack Air Traffic Controller project that compiles refactored code using Maven.
 REM   Provides a convenient command-line interface for development and testing tasks.
 REM
 REM Usage:

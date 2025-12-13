@@ -1,8 +1,8 @@
 REM ============================================================================
-REM test_log_compile.bat - Compiles the test log compile components using Maven
+REM test_log_compile.bat - Compiles logging components for testing
 REM ============================================================================
 REM Purpose:
-REM   Batch script for the Jetpack Air Traffic Controller project that compiles the test log compile components using maven.
+REM   Batch script for the Jetpack Air Traffic Controller project that compiles logging test components using Maven.
 REM   Provides a convenient command-line interface for development and testing tasks.
 REM
 REM Usage:
