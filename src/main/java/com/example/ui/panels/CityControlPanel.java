@@ -37,56 +37,96 @@ import com.example.ui.utility.UIComponentFactory;
  * Each sub-panel is accessible via a getter for integration with the main frame.
  */
 public class CityControlPanel extends JPanel {
+    // Date and time display sub-panel
     private DateTimeDisplayPanel dateTimePanel;
+    // Weather broadcast information sub-panel
     private WeatherBroadcastPanel weatherPanel;
+    // Jetpack movement controls sub-panel
     private JetpackMovementPanel movementPanel;
+    // Radio instructions display sub-panel
     private RadioInstructionsPanel radioPanel;
 
     /** Constructs the CityControlPanel and initializes all sub-panels. */
     public CityControlPanel() {
+        // Initialize and configure UI components with sub-panels
         initializeUI();
     }
 
     /** Initializes the layout and adds all sub-panels to the control panel. */
     private void initializeUI() {
+        // Set vertical box layout for stacking panels
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        // Set preferred size to 300x600 pixels
         UIComponentFactory.setPreferredSize(this, 300, 600);
+        // Set white background for panel
         setBackground(Color.WHITE);
 
-        // Date/Time Panel
+        // Create and add Date/Time display panel
         dateTimePanel = new DateTimeDisplayPanel();
+        // Add date/time panel to layout
         add(dateTimePanel);
+        // Add 10-pixel vertical spacing
         add(Box.createRigidArea(new Dimension(0, 10)));
 
-        // Weather Broadcast Panel
+        // Create and add Weather broadcast panel
         weatherPanel = new WeatherBroadcastPanel();
+        // Add weather panel to layout
         add(weatherPanel);
+        // Add 10-pixel vertical spacing
         add(Box.createRigidArea(new Dimension(0, 10)));
 
-        // Jetpack Movement Panel
+        // Create and add Jetpack movement controls panel
         movementPanel = new JetpackMovementPanel();
+        // Add movement panel to layout
         add(movementPanel);
+        // Add 10-pixel vertical spacing
         add(Box.createRigidArea(new Dimension(0, 10)));
 
-        // Radio Instructions Panel
+        // Create and add Radio instructions panel
         radioPanel = new RadioInstructionsPanel();
+        // Add radio panel to layout
         add(radioPanel);
     }
 
-    // Getters for each sub-panel
+    // Accessor methods for each sub-panel
+    
+    /**
+     * Returns the date/time display panel.
+     * 
+     * @return DateTimeDisplayPanel instance
+     */
     public DateTimeDisplayPanel getDateTimePanel() {
+        // Return reference to date/time panel
         return dateTimePanel;
     }
 
+    /**
+     * Returns the weather broadcast panel.
+     * 
+     * @return WeatherBroadcastPanel instance
+     */
     public WeatherBroadcastPanel getWeatherPanel() {
+        // Return reference to weather panel
         return weatherPanel;
     }
 
+    /**
+     * Returns the jetpack movement panel.
+     * 
+     * @return JetpackMovementPanel instance
+     */
     public JetpackMovementPanel getMovementPanel() {
+        // Return reference to movement panel
         return movementPanel;
     }
 
+    /**
+     * Returns the radio instructions panel.
+     * 
+     * @return RadioInstructionsPanel instance
+     */
     public RadioInstructionsPanel getRadioPanel() {
+        // Return reference to radio panel
         return radioPanel;
     }
 }

@@ -47,14 +47,26 @@ import com.example.ui.utility.UIComponentFactory;
  * Displays real-time weather broadcast information for a city.
  */
 public class WeatherBroadcastPanel extends JPanel {
+    // Text area for displaying real-time weather broadcast information
     private JTextArea weatherBroadcastArea;
     
+    /**
+     * Constructs a new WeatherBroadcastPanel.
+     * Initializes weather broadcast display with forest green styling.
+     */
     public WeatherBroadcastPanel() {
+        // Initialize and configure UI components
         initializeUI();
     }
     
+    /**
+     * Initializes and configures all UI components.
+     * Sets up display with forest green border and honeydew background.
+     */
     private void initializeUI() {
+        // Set BorderLayout for simple CENTER positioning
         setLayout(new BorderLayout());
+        // Create titled border with forest green color (34,139,34)
         setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createLineBorder(new Color(34, 139, 34), 2),
             "Weather Broadcast",
@@ -63,31 +75,52 @@ public class WeatherBroadcastPanel extends JPanel {
             new Font("Arial", Font.BOLD, 12),
             new Color(34, 139, 34)
         ));
+        // Set white background for panel
         setBackground(Color.WHITE);
+        // Constrain maximum size to fit weather broadcast content
         setMaximumSize(new Dimension(300, 150));
         
+        // Create read-only text area with 6 rows, 25 columns, Courier Plain 11pt font
         weatherBroadcastArea = UIComponentFactory.createReadOnlyTextArea(6, 25, UIComponentFactory.COURIER_PLAIN_11);
+        // Set honeydew background (240,255,240)
         weatherBroadcastArea.setBackground(new Color(240, 255, 240));
+        // Set dark green foreground text color (0,100,0)
         weatherBroadcastArea.setForeground(new Color(0, 100, 0));
+        // Add 5-pixel margin on all sides
         weatherBroadcastArea.setMargin(new Insets(5, 5, 5, 5));
         
+        // Create scroll pane wrapper for text area
         JScrollPane scrollPane = new JScrollPane(weatherBroadcastArea);
+        // Show vertical scrollbar only when needed
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         
+        // Add scroll pane to center of panel
         add(scrollPane, BorderLayout.CENTER);
     }
     
     /**
-     * Updates the weather broadcast display
+     * Updates the displayed weather broadcast text.
+     * Resets caret to beginning for consistent display.
+     * 
+     * @param text New weather broadcast string to display
      */
     public void updateBroadcast(String text) {
+        // Check if text area has been initialized
         if (weatherBroadcastArea != null) {
+            // Update text area content with new broadcast
             weatherBroadcastArea.setText(text);
+            // Reset caret to beginning of text
             weatherBroadcastArea.setCaretPosition(0);
         }
     }
     
+    /**
+     * Returns the text area component for direct access.
+     * 
+     * @return JTextArea displaying weather broadcast
+     */
     public JTextArea getBroadcastArea() {
+        // Return reference to broadcast text area
         return weatherBroadcastArea;
     }
 }
