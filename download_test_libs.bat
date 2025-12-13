@@ -1,3 +1,21 @@
+REM ============================================================================
+REM download_test_libs.bat - Executes download test libs to validate functionality
+REM ============================================================================
+REM Purpose:
+REM   Batch script for the Jetpack Air Traffic Controller project that executes download test libs to validate functionality.
+REM   Provides a convenient command-line interface for development and testing tasks.
+REM
+REM Usage:
+REM   download_test_libs.bat
+REM
+REM Requirements:
+REM   - Java JDK 11 or higher
+REM   - Maven (where applicable)
+REM   - Appropriate permissions for file operations
+REM
+REM Author: Haisam Elkewidy
+REM ============================================================================
+
 @echo off
 REM Download JUnit and Hamcrest libraries for testing
 

@@ -1,3 +1,21 @@
+REM ============================================================================
+REM test_swing_components.bat - Executes test swing components to validate functionality
+REM ============================================================================
+REM Purpose:
+REM   Batch script for the Jetpack Air Traffic Controller project that executes test swing components to validate functionality.
+REM   Provides a convenient command-line interface for development and testing tasks.
+REM
+REM Usage:
+REM   test_swing_components.bat
+REM
+REM Requirements:
+REM   - Java JDK 11 or higher
+REM   - Maven (where applicable)
+REM   - Appropriate permissions for file operations
+REM
+REM Author: Haisam Elkewidy
+REM ============================================================================
+
 @echo off
 cd /d "c:\Users\Elkewidy\Desktop\e10b\e10btermproject"
 cls

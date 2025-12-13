@@ -1,3 +1,21 @@
+REM ============================================================================
+REM wipe_and_merge_markdown.bat - Handles wipe and merge markdown operations
+REM ============================================================================
+REM Purpose:
+REM   Batch script for the Jetpack Air Traffic Controller project that handles wipe and merge markdown operations.
+REM   Provides a convenient command-line interface for development and testing tasks.
+REM
+REM Usage:
+REM   wipe_and_merge_markdown.bat
+REM
+REM Requirements:
+REM   - Java JDK 11 or higher
+REM   - Maven (where applicable)
+REM   - Appropriate permissions for file operations
+REM
+REM Author: Haisam Elkewidy
+REM ============================================================================
+
 @echo off
 setlocal enabledelayedexpansion
 

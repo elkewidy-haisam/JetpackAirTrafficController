@@ -1,3 +1,23 @@
+REM ============================================================================
+REM compile_3d.bat - Compile the 3D tracking visualization components
+REM ============================================================================
+REM Purpose:
+REM   Builds the 3D tracking implementation including JOGL-based rendering
+REM   components for hardware-accelerated 3D visualization of the city model,
+REM   buildings, and jetpack flights. Verifies JOGL dependencies and provides
+REM   clear success/failure feedback.
+REM
+REM Usage:
+REM   compile_3d.bat
+REM
+REM Requirements:
+REM   - Maven with JOGL dependencies configured
+REM   - OpenGL-capable graphics hardware
+REM   - Java JDK 11 or higher
+REM
+REM Author: Haisam Elkewidy
+REM ============================================================================
+
 @echo off
 cd /d "c:\Users\Elkewidy\Desktop\e10b\e10btermproject"
 echo Compiling 3D Tracking Implementation...
