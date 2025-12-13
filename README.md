@@ -1207,27 +1207,270 @@ The Air Traffic Controller application now creates **separate log files for each
 
 ## Log Files Created
 
-For each city (New York, Boston, Houston, Dallas), three log files are created:
+For each city (New York, Boston, Houston, Dallas), four log files are created:
 
 ### New York City
 - `newyork_jetpack_movement_log.txt` - Tracks all jetpack movements in NYC
 - `newyork_radar_communications_log.txt` - Records radar/radio communications in NYC
 - `newyork_weather_broadcast_log.txt` - Logs weather broadcasts for NYC
+- `newyork_accident_reports_log.txt` - Records accident reports in NYC
 
 ### Boston
 - `boston_jetpack_movement_log.txt` - Tracks all jetpack movements in Boston
 - `boston_radar_communications_log.txt` - Records radar/radio communications in Boston
 - `boston_weather_broadcast_log.txt` - Logs weather broadcasts for Boston
+- `boston_accident_reports_log.txt` - Records accident reports in Boston
 
 ### Houston
 - `houston_jetpack_movement_log.txt` - Tracks all jetpack movements in Houston
 - `houston_radar_communications_log.txt` - Records radar/radio communications in Houston
 - `houston_weather_broadcast_log.txt` - Logs weather broadcasts for Houston
+- `houston_accident_reports_log.txt` - Records accident reports in Houston
 
 ### Dallas
 - `dallas_jetpack_movement_log.txt` - Tracks all jetpack movements in Dallas
 - `dallas_radar_communications_log.txt` - Records radar/radio communications in Dallas
 - `dallas_weather_broadcast_log.txt` - Logs weather broadcasts for Dallas
+- `dallas_accident_reports_log.txt` - Records accident reports in Dallas
+
+## Communication Log Details
+
+This section provides comprehensive information about all communications logged by the system, including format, content types, and examples.
+
+### 1. Jetpack Movement Log
+
+**Purpose**: Tracks all jetpack movements, directions, destinations, and parking activities.
+
+**File Format**: `[citycode]_jetpack_movement_log.txt`
+
+**Message Types**:
+- **Movement Messages**: Record jetpack direction and distance traveled
+  - Format: `[HH:MM:SS] CALLSIGN moving 🚀 DIRECTION (DISTANCE units)`
+  - Example: `[17:26:57] ALPHA-01 moving 🚀 West (728 units)`
+  
+- **Destination Messages**: Record jetpack parking destinations
+  - Format: `[HH:MM:SS] CALLSIGN 🚀 heading to parking PARKING-ID`
+  - Example: `[17:26:57] ALPHA-01 🚀 heading to parking NEW-P86`
+
+**Directions Logged**: North, South, East, West, Northeast, Northwest, Southeast, Southwest
+
+**Sample Log Entry**:
+```
+[17:26:57] ALPHA-01 moving 🚀 West (728 units)
+[17:26:57] ALPHA-01 🚀 heading to parking NEW-P86
+[17:26:58] BRAVO-02 moving 🚀 East (153 units)
+[17:26:58] BRAVO-02 🚀 heading to parking NEW-P13
+```
+
+### 2. Radar Communications Log
+
+**Purpose**: Records all Air Traffic Control (ATC) radio communications between controllers and jetpack pilots, including instructions, alerts, and accident reports.
+
+**File Format**: `[citycode]_radar_communications_log.txt`
+
+**Message Types**:
+
+#### ATC Instructions
+- **Route Optimization**
+  - Format: `[HH:MM:SS] ATC-[CITY] → CALLSIGN\n📡 ROUTE OPTIMIZATION\n➤ Direct route cleared`
+  - Purpose: Approve direct routing for jetpack
+  
+- **Weather Updates**
+  - Format: `[HH:MM:SS] ATC-[CITY] → CALLSIGN\n📡 WEATHER UPDATE\n➤ Current conditions advisory`
+  - Purpose: Inform pilot of current weather conditions
+  
+- **Altitude Changes**
+  - Format: `[HH:MM:SS] ATC-[CITY] → CALLSIGN\n📡 ALTITUDE CHANGE\n➤ Climb to avoid weather`
+  - Purpose: Instruct pilot to change altitude
+  
+- **Emergency Landing**
+  - Format: `[HH:MM:SS] ATC-[CITY] → CALLSIGN\n📡 EMERGENCY LANDING REQUIRED\n➤ Land immediately at nearest parking`
+  - Purpose: Order immediate emergency landing
+  
+- **Weather Detours**
+  - Format: `[HH:MM:SS] ATC-[CITY] → CALLSIGN\n📡 DETOUR AROUND WEATHER\n➤ Alter course to avoid storm`
+  - Purpose: Redirect jetpack around hazardous weather
+
+#### Accident Reports
+- **Collision Alerts**
+  - Format:
+    ```
+    [HH:MM:SS] *** ACCIDENT REPORT ***
+    🚨 ID: ACC-[CITY]-[TIMESTAMP]
+    Type: [ACCIDENT_TYPE]
+    Severity: [SEVERITY_LEVEL]
+    Location: (X,Y)
+    Details: [DESCRIPTION]
+    ⚠️ ALL AIRCRAFT AVOID AREA
+    ```
+  - Accident Types: COLLISION, MECHANICAL_FAILURE, WEATHER_RELATED, PILOT_ERROR
+  - Severity Levels: MINOR, MAJOR, CRITICAL
+
+**Sample Log Entry**:
+```
+[17:27:08] ATC-NEW → HOTEL-08
+📡 ROUTE OPTIMIZATION
+➤ Direct route cleared
+---
+
+[17:28:14] *** ACCIDENT REPORT ***
+🚨 ID: ACC-NEW-1765578493944
+Type: COLLISION
+Severity: SEVERE
+Location: (394,512)
+Details: Building damage reported
+⚠️ ALL AIRCRAFT AVOID AREA
+---
+```
+
+### 3. Weather Broadcast Log
+
+**Purpose**: Logs detailed weather information including conditions, severity levels, temperature, wind speed, visibility, and flight status.
+
+**File Format**: `[citycode]_weather_broadcast_log.txt`
+
+**Weather Severity Levels**:
+
+#### Severity 1 - MINIMAL (Everyday conditions, minimal risk)
+- **Conditions**: 
+  - Clear/Sunny
+  - Partly Cloudy
+  - Overcast
+  - Light Rain
+  - Drizzle
+  - Light Snow
+  - Flurries
+- **Flight Status**: ✓ SAFE TO FLY
+- **Impact**: Normal operations, standard precautions apply
+
+#### Severity 2 - MANAGEABLE (Noticeable impact, manageable disruptions)
+- **Conditions**:
+  - Fog
+  - Mist
+  - Steady Rain
+  - Showers
+  - Thunder Showers
+  - Windy Conditions
+- **Flight Status**: ✗ RESTRICTIONS IN PLACE (Caution advised)
+- **Impact**: Increased caution required, monitor conditions closely
+
+#### Severity 3 - MODERATE (Moderate risk, flight restrictions)
+- **Flight Status**: ✗ FLIGHT RESTRICTIONS IN EFFECT
+- **Impact**: Experienced pilots only, avoid unnecessary flights
+
+#### Severity 4 - SEVERE (Severe conditions, flight hazardous)
+- **Flight Status**: ✗ FLIGHT OPERATIONS SUSPENDED
+- **Impact**: Ground all aircraft, emergency operations only
+
+#### Severity 5 - CRITICAL (Critical conditions, no-fly zone)
+- **Flight Status**: ✗ NO-FLY ZONE DECLARED
+- **Impact**: All flights prohibited, seek immediate shelter
+
+**Weather Broadcast Format**:
+```
+[YYYY-MM-DD HH:MM:SS] City Name
+=== WEATHER BROADCAST ===
+
+Location: [CITY_NAME]
+Current: [WEATHER_CONDITION]
+Severity: [1-5]/5
+Temp: [TEMPERATURE]°F
+Wind: [SPEED] mph
+Visibility: [DISTANCE] miles
+
+Flight Status:
+[STATUS_MESSAGE]
+```
+
+**Sample Log Entries**:
+```
+[2025-12-12 17:26:57] New York
+=== WEATHER BROADCAST ===
+
+Location: New York
+Current: Clear/Sunny
+Severity: 1/5
+Temp: 72.0°F
+Wind: 5 mph
+Visibility: 10 miles
+
+Flight Status:
+✓ SAFE TO FLY
+```
+
+```
+[2025-12-12 17:27:27] New York
+=== WEATHER BROADCAST ===
+
+Location: New York
+Current: Windy Conditions
+Severity: 2/5
+Temp: 66.0°F
+Wind: 38 mph
+Visibility: 10 miles
+
+Flight Status:
+✗ RESTRICTIONS IN PLACE
+```
+
+### 4. Accident Reports Log
+
+**Purpose**: Records all accident incidents with detailed information about type, severity, location, and affected jetpacks.
+
+**File Format**: `[citycode]_accident_reports_log.txt`
+
+**Accident Information**:
+
+**Severity Levels**:
+- **MINOR**: Minor incidents, minimal damage, no injuries
+- **MAJOR**: Significant damage, possible injuries, investigation required
+- **CRITICAL**: Severe damage, casualties, full investigation and emergency response
+
+**Accident Types**:
+- **COLLISION**: Mid-air collision or ground impact
+- **MECHANICAL_FAILURE**: Equipment malfunction or system failure
+- **WEATHER_RELATED**: Accident caused by weather conditions
+- **PILOT_ERROR**: Accident caused by pilot mistake
+
+**Report Format**:
+```
+[HH:MM:SS] *** ACCIDENT REPORT ***
+🚨 ID: ACC-[CITY]-[TIMESTAMP]
+Type: [ACCIDENT_TYPE]
+Severity: [SEVERITY_LEVEL]
+Location: (X,Y)
+Details: [DESCRIPTION]
+⚠️ ALL AIRCRAFT AVOID AREA
+---
+```
+
+**Sample Log Entry**:
+```
+[17:28:14] *** ACCIDENT REPORT ***
+🚨 ID: ACC-NEW-1765578493944
+Type: COLLISION
+Severity: SEVERE
+Location: (394,512)
+Details: Building damage reported
+⚠️ ALL AIRCRAFT AVOID AREA
+---
+```
+
+### Radio Message Types
+
+The system uses structured radio messages for all ATC communications. Each message includes:
+
+**Message Components**:
+- **Sender**: Originating entity (e.g., ATC-NEW, CALLSIGN)
+- **Receiver**: Destination entity (e.g., CALLSIGN, ATC-NEW)
+- **Content**: Message payload (instructions, status, alerts)
+- **Type**: Message classification
+
+**Message Type Classifications**:
+1. **INSTRUCTION**: Direct commands to pilots (altitude changes, route changes, landing orders)
+2. **STATUS**: Status updates and acknowledgments
+3. **ALERT**: Emergency notifications and warnings
+4. **GENERAL**: General communications and advisories
 
 ## Implementation Details
 
@@ -1263,7 +1506,7 @@ For each city (New York, Boston, Houston, Dallas), three log files are created:
 ## Behavior
 
 ### On Application Start
-- All 12 log files (3 per city × 4 cities) are cleared and initialized
+- All 16 log files (4 per city × 4 cities) are cleared and initialized
 - Each file receives a header with city name and start timestamp
 - Clean slate for each new application run
 
@@ -1279,15 +1522,19 @@ e10btermproject/
 ├── newyork_jetpack_movement_log.txt
 ├── newyork_radar_communications_log.txt
 ├── newyork_weather_broadcast_log.txt
+├── newyork_accident_reports_log.txt
 ├── boston_jetpack_movement_log.txt
 ├── boston_radar_communications_log.txt
 ├── boston_weather_broadcast_log.txt
+├── boston_accident_reports_log.txt
 ├── houston_jetpack_movement_log.txt
 ├── houston_radar_communications_log.txt
 ├── houston_weather_broadcast_log.txt
+├── houston_accident_reports_log.txt
 ├── dallas_jetpack_movement_log.txt
 ├── dallas_radar_communications_log.txt
-└── dallas_weather_broadcast_log.txt
+├── dallas_weather_broadcast_log.txt
+└── dallas_accident_reports_log.txt
 ```
 
 ## Benefits
