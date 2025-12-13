@@ -282,58 +282,58 @@ public class JetPackFlight {
     }
     
     public void resumeNormalPath() {
-        if (movementController.isDetourActive()) {
-            movementController.resumeNormalPath();
-            currentStatus = "ACTIVE";
+        if (movementController.isDetourActive()) {  // Check if jetpack is currently following a detour route
+            movementController.resumeNormalPath();  // Clear detour waypoints and return to original flight path
+            currentStatus = "ACTIVE";  // Reset status to normal active flight
             
-            if (movementLogger != null) {
-                movementLogger.appendJetpackMovement(jetpack.getCallsign() + 
-                    " Resuming normal flight path");
+            if (movementLogger != null) {  // Check if movement logger is available
+                movementLogger.appendJetpackMovement(jetpack.getCallsign() +  // Log path resumption with callsign
+                    " Resuming normal flight path");  // Indicate return to original route
             }
         }
     }
     
     public void clearEmergencyHalt() {
-        if (hazardMonitor.isEmergencyHalt()) {
-            hazardMonitor.clearEmergencyHalt();
-            isActive = true;
-            currentStatus = "ACTIVE";
-            color = new Color(color.getRed(), color.getGreen(), color.getBlue()); // Restore original color
+        if (hazardMonitor.isEmergencyHalt()) {  // Check if emergency halt flag is set
+            hazardMonitor.clearEmergencyHalt();  // Clear emergency halt flag to allow movement
+            isActive = true;  // Reactivate flight to enable position updates
+            currentStatus = "ACTIVE";  // Reset status to normal active flight
+            color = new Color(color.getRed(), color.getGreen(), color.getBlue());  // Restore original color (creates new Color instance to ensure fresh state)
             
-            if (movementLogger != null) {
-                movementLogger.appendJetpackMovement(jetpack.getCallsign() + 
-                    " ✓ Emergency cleared, resuming flight");
+            if (movementLogger != null) {  // Check if movement logger is available
+                movementLogger.appendJetpackMovement(jetpack.getCallsign() +  // Log emergency clearance with callsign
+                    " ✓ Emergency cleared, resuming flight");  // Include checkmark to indicate successful clearance
             }
         }
     }
     
     public List<String> getActiveHazards() {
-        return hazardMonitor.getActiveHazards();
+        return hazardMonitor.getActiveHazards();  // Retrieve list of currently active hazard types (weather, accidents, police, etc.)
     }
     
     public boolean hasActiveHazards() {
-        return hazardMonitor.hasActiveHazards();
+        return hazardMonitor.hasActiveHazards();  // Check if any hazard flags are currently set
     }
     
-    // Hazard setters
+    // Hazard setters - update hazard flags and status text
     public void setInclementWeather(boolean active) {
-        hazardMonitor.setInclementWeather(active);
-        if (active) {
-            currentStatus = "WEATHER WARNING";
+        hazardMonitor.setInclementWeather(active);  // Set or clear inclement weather hazard flag
+        if (active) {  // If weather hazard is being activated
+            currentStatus = "WEATHER WARNING";  // Update status to indicate weather-related speed reduction
         }
     }
     
     public void setBuildingCollapse(boolean active) {
-        hazardMonitor.setBuildingCollapse(active);
-        if (active) {
-            currentStatus = "BUILDING HAZARD";
+        hazardMonitor.setBuildingCollapse(active);  // Set or clear building collapse hazard flag
+        if (active) {  // If building hazard is being activated
+            currentStatus = "BUILDING HAZARD";  // Update status to indicate building-related avoidance
         }
     }
     
     public void setAirAccident(boolean active) {
-        hazardMonitor.setAirAccident(active);
-        if (active) {
-            currentStatus = "ACCIDENT ZONE";
+        hazardMonitor.setAirAccident(active);  // Set or clear air accident hazard flag
+        if (active) {  // If accident hazard is being activated
+            currentStatus = "ACCIDENT ZONE";  // Update status to indicate accident zone avoidance
         }
     }
     
@@ -341,107 +341,107 @@ public class JetPackFlight {
      * Triggers emergency rerouting due to collision
      */
     public void setEmergencyReroute(boolean active) {
-        if (active) {
-            List<Point> emergencyWaypoints = emergencyHandler.generateEmergencyDetour(
-                movementController.getX(),
-                movementController.getY(),
-                movementController.getDestination()
+        if (active) {  // If emergency reroute is being activated
+            List<Point> emergencyWaypoints = emergencyHandler.generateEmergencyDetour(  // Generate alternate route around collision
+                movementController.getX(),  // Current X position as detour start
+                movementController.getY(),  // Current Y position as detour start
+                movementController.getDestination()  // Final destination to return to after detour
             );
             
-            detour(emergencyWaypoints, "COLLISION");
-            hazardMonitor.setAirAccident(true);
+            detour(emergencyWaypoints, "COLLISION");  // Execute detour with generated waypoints, logging collision as reason
+            hazardMonitor.setAirAccident(true);  // Set air accident hazard flag to reduce speed during detour
         }
     }
     
     public void setPoliceActivity(boolean active) {
-        hazardMonitor.setPoliceActivity(active);
-        if (active) {
-            currentStatus = "POLICE AREA";
+        hazardMonitor.setPoliceActivity(active);  // Set or clear police activity hazard flag
+        if (active) {  // If police activity hazard is being activated
+            currentStatus = "POLICE AREA";  // Update status to indicate police presence requiring caution
         }
     }
     
     public String getCurrentStatus() {
-        return currentStatus;
+        return currentStatus;  // Return current flight status text for UI display
     }
     
     public boolean isEmergencyHalt() {
-        return hazardMonitor.isEmergencyHalt();
+        return hazardMonitor.isEmergencyHalt();  // Check if emergency halt flag is active
     }
     
     private void logMovementDirection() {
-        if (movementLogger != null) {
-            String direction = movementController.getDirectionString();
-            double distance = movementController.getDistanceToDestination();
-            movementLogger.appendJetpackMovement(jetpack.getCallsign() + 
-                " moving " + direction + " (" + String.format("%.0f", distance) + " units)");
+        if (movementLogger != null) {  // Check if movement logger is available
+            String direction = movementController.getDirectionString();  // Get compass direction string (e.g., "N", "NE", "E", etc.)
+            double distance = movementController.getDistanceToDestination();  // Calculate remaining distance to destination
+            movementLogger.appendJetpackMovement(jetpack.getCallsign() +  // Log movement with callsign
+                " moving " + direction + " (" + String.format("%.0f", distance) + " units)");  // Include direction and formatted distance
         }
     }
     
     public void draw(Graphics2D g2d) {
-        // Get current state from provider
-        JetPackFlightState state = (flightStateProvider != null) ? flightStateProvider.getFlightState(this) : null;
-        boolean isParked = (state != null && state.isParked());
+        // Get current state from provider - check parking and timer status
+        JetPackFlightState state = (flightStateProvider != null) ? flightStateProvider.getFlightState(this) : null;  // Query flight state provider if available
+        boolean isParked = (state != null && state.isParked());  // Determine if jetpack is currently parked based on state
         
-        // Build render state
-        JetPackFlightRenderer.FlightRenderState renderState = new JetPackFlightRenderer.FlightRenderState(
-            movementController.getX(),
-            movementController.getY(),
-            movementController.getAltitude(),
-            movementController.getDestination(),
-            getActiveTarget(),
-            color,
-            jetpack.getCallsign(),
-            isParked,
-            hazardMonitor.isEmergencyHalt(),
-            movementController.isDetourActive(),
-            hasActiveHazards(),
-            movementController.getTrail(),
-            movementController.getWaypoints(),
-            movementController.getCurrentWaypointIndex()
+        // Build render state - aggregate all visual properties into single object
+        JetPackFlightRenderer.FlightRenderState renderState = new JetPackFlightRenderer.FlightRenderState(  // Create render state with all drawing parameters
+            movementController.getX(),  // Current X position for jetpack icon
+            movementController.getY(),  // Current Y position for jetpack icon
+            movementController.getAltitude(),  // Current altitude for shadow/size scaling
+            movementController.getDestination(),  // Final destination for line drawing
+            getActiveTarget(),  // Current active waypoint or destination
+            color,  // Current display color (may be modified for hazards/emergencies)
+            jetpack.getCallsign(),  // Callsign text for label
+            isParked,  // Parking status affects rendering (static vs animated)
+            hazardMonitor.isEmergencyHalt(),  // Emergency halt affects color/icon
+            movementController.isDetourActive(),  // Detour affects waypoint rendering
+            hasActiveHazards(),  // Hazards affect color/warnings
+            movementController.getTrail(),  // Position history for trail rendering
+            movementController.getWaypoints(),  // Waypoint list for path visualization
+            movementController.getCurrentWaypointIndex()  // Current waypoint index for progress indication
         );
         
-        // Delegate to renderer
-        renderer.renderFlight(g2d, renderState);
+        // Delegate to renderer - use static renderer for all drawing operations
+        renderer.renderFlight(g2d, renderState);  // Pass graphics context and render state to renderer for visual output
     }
     
     /**
      * Updates jetpack color based on current speed
      */
     private void updateColorBySpeed(double effectiveSpeed) {
-        // Speed-based color gradient: Blue (slow) -> Green (normal) -> Yellow (fast) -> Red (very fast)
-        if (effectiveSpeed < 1.0) {
-            color = new Color(0, 100, 255); // Blue - slow
-        } else if (effectiveSpeed < 2.0) {
-            color = new Color(0, 200, 100); // Green - normal
-        } else if (effectiveSpeed < 3.0) {
-            color = new Color(255, 200, 0); // Yellow - fast
-        } else {
-            color = new Color(255, 50, 0); // Red - very fast
+        // Speed-based color gradient: Blue (slow) -> Green (normal) -> Yellow (fast) -> Red (very fast) - provides visual feedback for speed changes
+        if (effectiveSpeed < 1.0) {  // Check if speed is below normal (hazard-reduced)
+            color = new Color(0, 100, 255);  // Blue - indicates slow/cautious movement
+        } else if (effectiveSpeed < 2.0) {  // Check if speed is at normal cruise (2.0 is base speed)
+            color = new Color(0, 200, 100);  // Green - indicates normal flight speed
+        } else if (effectiveSpeed < 3.0) {  // Check if speed is above normal but not extreme
+            color = new Color(255, 200, 0);  // Yellow - indicates fast movement (emergency landing boost)
+        } else {  // Speed is 3.0 or higher (extreme)
+            color = new Color(255, 50, 0);  // Red - indicates very fast/urgent movement
         }
     }
     
-    // Getters
+    // Getters - provide read access to internal state via delegation
     public JetPack getJetpack() {
-        return jetpack;
+        return jetpack;  // Return jetpack reference for callsign and properties access
     }
     
     public double getX() {
-        return movementController.getX();
+        return movementController.getX();  // Delegate X coordinate retrieval to movement controller
     }
     
     public double getY() {
-        return movementController.getY();
+        return movementController.getY();  // Delegate Y coordinate retrieval to movement controller
     }
     
     public Point getDestination() {
-        return movementController.getDestination();
+        return movementController.getDestination();  // Delegate destination retrieval to movement controller
     }
     
     public Color getColor() {
-        return color;
+        return color;  // Return current display color (may be modified from base color)
     }
 
     public double getAltitude() {
-        return movementController.getAltitude();
+        return movementController.getAltitude();  // Delegate altitude retrieval to movement controller
     }
 }
