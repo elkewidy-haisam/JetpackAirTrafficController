@@ -56,7 +56,7 @@ public class CollisionDetector {
      * Constructor with accident alert system
      */
     public CollisionDetector() {
-        this.accidentAlert = new AccidentAlert();
+        this.accidentAlert = new AccidentAlert();  // Initialize accident alert system for collision reporting
     }
     
     /**
@@ -65,14 +65,14 @@ public class CollisionDetector {
      * @param radarTape The radar tape window
      */
     public void setRadarTape(RadarTapeWindow radarTape) {
-        this.radarTape = radarTape;
+        this.radarTape = radarTape;  // Store reference to radar tape for displaying collision alerts
     }
     
     /**
      * Gets the accident alert system
      */
     public AccidentAlert getAccidentAlert() {
-        return accidentAlert;
+        return accidentAlert;  // Return accident alert system for external access
     }
     
     /**
@@ -83,15 +83,15 @@ public class CollisionDetector {
      */
     public void checkCollisions(List<JetPackFlight> jetpackFlights, 
                                Map<JetPackFlight, JetPackFlightState> flightStates) {
-        for (int i = 0; i < jetpackFlights.size(); i++) {
-            JetPackFlight flight1 = jetpackFlights.get(i);
-            JetPackFlightState state1 = flightStates.get(flight1);
-            if (state1 != null && state1.isParked()) continue;
-            for (int j = i + 1; j < jetpackFlights.size(); j++) {
-                JetPackFlight flight2 = jetpackFlights.get(j);
-                JetPackFlightState state2 = flightStates.get(flight2);
-                if (state2 != null && state2.isParked()) continue;
-                checkCollisionBetween(flight1, flight2);
+        for (int i = 0; i < jetpackFlights.size(); i++) {  // Iterate through all flights
+            JetPackFlight flight1 = jetpackFlights.get(i);  // Get first flight
+            JetPackFlightState state1 = flightStates.get(flight1);  // Get state of first flight
+            if (state1 != null && state1.isParked()) continue;  // Skip parked flights (not actively flying)
+            for (int j = i + 1; j < jetpackFlights.size(); j++) {  // Iterate through remaining flights (avoid duplicate checks)
+                JetPackFlight flight2 = jetpackFlights.get(j);  // Get second flight
+                JetPackFlightState state2 = flightStates.get(flight2);  // Get state of second flight
+                if (state2 != null && state2.isParked()) continue;  // Skip parked flights
+                checkCollisionBetween(flight1, flight2);  // Check for collision between this pair
             }
         }
     }
@@ -103,14 +103,14 @@ public class CollisionDetector {
      * @param flight2 Second flight
      */
     private void checkCollisionBetween(JetPackFlight flight1, JetPackFlight flight2) {
-        double distance = calculateDistance(flight1, flight2);
+        double distance = calculateDistance(flight1, flight2);  // Calculate distance between flights
         
-        if (distance < ACCIDENT_DISTANCE) {
-            reportAccident(flight1, flight2, distance);
-        } else if (distance < CRITICAL_DISTANCE) {
-            reportCriticalProximity(flight1, flight2, distance);
-        } else if (distance < WARNING_DISTANCE) {
-            reportWarningProximity(flight1, flight2, distance);
+        if (distance < ACCIDENT_DISTANCE) {  // Check if distance is below accident threshold (20 units)
+            reportAccident(flight1, flight2, distance);  // Report actual collision
+        } else if (distance < CRITICAL_DISTANCE) {  // Check if distance is below critical threshold (50 units)
+            reportCriticalProximity(flight1, flight2, distance);  // Report critical proximity warning
+        } else if (distance < WARNING_DISTANCE) {  // Check if distance is below warning threshold (100 units)
+            reportWarningProximity(flight1, flight2, distance);  // Report proximity warning
         }
     }
     
@@ -122,9 +122,9 @@ public class CollisionDetector {
      * @return Distance between flights
      */
     private double calculateDistance(JetPackFlight flight1, JetPackFlight flight2) {
-        double dx = flight1.getX() - flight2.getX();
-        double dy = flight1.getY() - flight2.getY();
-        return Math.sqrt(dx * dx + dy * dy);
+        double dx = flight1.getX() - flight2.getX();  // Calculate horizontal distance difference
+        double dy = flight1.getY() - flight2.getY();  // Calculate vertical distance difference
+        return Math.sqrt(dx * dx + dy * dy);  // Return Euclidean distance using Pythagorean theorem
     }
     
     /**
@@ -135,28 +135,28 @@ public class CollisionDetector {
      * @param distance Distance between flights
      */
     private void reportAccident(JetPackFlight flight1, JetPackFlight flight2, double distance) {
-        accidentCounter++;
-        String accidentID = "ACC-" + System.currentTimeMillis() + "-" + accidentCounter;
+        accidentCounter++;  // Increment accident counter for tracking
+        String accidentID = "ACC-" + System.currentTimeMillis() + "-" + accidentCounter;  // Generate unique accident ID
         
-        int x = (int)((flight1.getX() + flight2.getX()) / 2);
-        int y = (int)((flight1.getY() + flight2.getY()) / 2);
+        int x = (int)((flight1.getX() + flight2.getX()) / 2);  // Calculate collision X coordinate (midpoint)
+        int y = (int)((flight1.getY() + flight2.getY()) / 2);  // Calculate collision Y coordinate (midpoint)
         
-        String description = String.format("Mid-air collision between %s and %s at distance %.1f units",
+        String description = String.format("Mid-air collision between %s and %s at distance %.1f units",  // Format collision description
             flight1.getJetpack().getCallsign(), flight2.getJetpack().getCallsign(), distance);
         
         // Report to accident alert system
-        accidentAlert.reportAccident(accidentID, x, y, "COLLISION", "SEVERE", description);
+        accidentAlert.reportAccident(accidentID, x, y, "COLLISION", "SEVERE", description);  // Log accident with severe severity
         
         // Log to radar tape
-        if (radarTape != null && radarTape.isVisible()) {
-            radarTape.addMessage("🚨 ACCIDENT: " + flight1.getJetpack().getCallsign() + 
+        if (radarTape != null && radarTape.isVisible()) {  // Check if radar tape window is available and visible
+            radarTape.addMessage("🚨 ACCIDENT: " + flight1.getJetpack().getCallsign() +   // Add accident message to radar display
                 " and " + flight2.getJetpack().getCallsign() + 
                 " COLLIDED at " + String.format("%.1f", distance) + " units! ID: " + accidentID);
         }
         
         // Trigger emergency rerouting for nearby flights
-        flight1.setEmergencyReroute(true);
-        flight2.setEmergencyReroute(true);
+        flight1.setEmergencyReroute(true);  // Set emergency reroute flag for first flight
+        flight2.setEmergencyReroute(true);  // Set emergency reroute flag for second flight
     }
     
     /**
@@ -167,8 +167,8 @@ public class CollisionDetector {
      * @param distance Distance between flights
      */
     private void reportCriticalProximity(JetPackFlight flight1, JetPackFlight flight2, double distance) {
-        if (radarTape != null && radarTape.isVisible()) {
-            radarTape.addMessage("⚠️ CRITICAL: " + flight1.getJetpack().getCallsign() + 
+        if (radarTape != null && radarTape.isVisible()) {  // Check if radar tape window is available and visible
+            radarTape.addMessage("⚠️ CRITICAL: " + flight1.getJetpack().getCallsign() +   // Add critical proximity warning to radar display
                 " and " + flight2.getJetpack().getCallsign() + 
                 " are " + String.format("%.1f", distance) + " units apart - COLLISION RISK!");
         }
@@ -182,8 +182,8 @@ public class CollisionDetector {
      * @param distance Distance between flights
      */
     private void reportWarningProximity(JetPackFlight flight1, JetPackFlight flight2, double distance) {
-        if (radarTape != null && radarTape.isVisible()) {
-            radarTape.addMessage("⚠️ Warning: " + flight1.getJetpack().getCallsign() + 
+        if (radarTape != null && radarTape.isVisible()) {  // Check if radar tape window is available and visible
+            radarTape.addMessage("⚠️ Warning: " + flight1.getJetpack().getCallsign() +   // Add proximity warning to radar display
                 " and " + flight2.getJetpack().getCallsign() + 
                 " are " + String.format("%.1f", distance) + " units apart");
         }

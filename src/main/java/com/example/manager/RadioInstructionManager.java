@@ -64,10 +64,10 @@ public class RadioInstructionManager {
      * @param logManager The log manager
      */
     public RadioInstructionManager(Radio cityRadio, String city, CityLogManager logManager) {
-        this.cityRadio = cityRadio;
-        this.city = city;
-        this.logManager = logManager;
-        this.random = new Random();
+        this.cityRadio = cityRadio;  // Store radio communication system
+        this.city = city;  // Store city name for logging context
+        this.logManager = logManager;  // Store log manager for instruction logging
+        this.random = new Random();  // Initialize random number generator for probabilistic events
     }
     
     /**
@@ -76,7 +76,7 @@ public class RadioInstructionManager {
      * @param weather The current weather object
      */
     public void setWeather(Weather weather) {
-        this.currentWeather = weather;
+        this.currentWeather = weather;  // Update weather reference for instruction decision-making
     }
     
     /**
@@ -85,7 +85,7 @@ public class RadioInstructionManager {
      * @param textArea The text area for displaying instructions
      */
     public void setRadioInstructionsArea(JTextArea textArea) {
-        this.radioInstructionsArea = textArea;
+        this.radioInstructionsArea = textArea;  // Store reference to UI component for displaying instructions
     }
     
     /**
@@ -98,36 +98,36 @@ public class RadioInstructionManager {
     public void issueRandomRadioInstruction(java.util.List<JetPackFlight> jetpackFlights,
                                            java.util.Map<JetPackFlight, JetPackFlightState> flightStates,
                                            AccidentReporter accidentReporter) {
-        if (jetpackFlights.isEmpty() || radioInstructionsArea == null) return;
+        if (jetpackFlights.isEmpty() || radioInstructionsArea == null) return;  // Exit if no flights or no UI to display
         
-        JetPackFlight flight = jetpackFlights.get(random.nextInt(jetpackFlights.size()));
-        JetPackFlightState state = flightStates.get(flight);
+        JetPackFlight flight = jetpackFlights.get(random.nextInt(jetpackFlights.size()));  // Select random flight
+        JetPackFlightState state = flightStates.get(flight);  // Get flight state
         
-        if (state != null && state.isParked()) return;
+        if (state != null && state.isParked()) return;  // Skip parked flights (not actively flying)
         
-        int instructionType = random.nextInt(100);
+        int instructionType = random.nextInt(100);  // Generate random number 0-99 for instruction type selection
         
         // 2% chance of accident report
-        if (instructionType < 2 && accidentReporter != null) {
-            accidentReporter.reportRandomAccident();
-            return;
+        if (instructionType < 2 && accidentReporter != null) {  // Check for accident report (2% probability)
+            accidentReporter.reportRandomAccident();  // Report a random accident
+            return;  // Exit after accident report
         }
         
-        String instruction;
-        String action;
+        String instruction;  // Declare variable for instruction text
+        String action;  // Declare variable for action description
         
-        if (currentWeather != null && !currentWeather.isSafeToFly()) {
-            instruction = issueWeatherCriticalInstruction(flight, instructionType);
-            action = getWeatherCriticalAction(instructionType);
-        } else if (currentWeather != null && currentWeather.getCurrentSeverity() >= 3) {
-            instruction = issueWeatherAdvisoryInstruction(flight, instructionType);
-            action = getWeatherAdvisoryAction(instructionType);
-        } else {
-            instruction = issueRoutineInstruction(flight, instructionType);
-            action = getRoutineAction(instructionType);
+        if (currentWeather != null && !currentWeather.isSafeToFly()) {  // Check for critical weather conditions
+            instruction = issueWeatherCriticalInstruction(flight, instructionType);  // Issue critical weather instruction
+            action = getWeatherCriticalAction(instructionType);  // Get corresponding action description
+        } else if (currentWeather != null && currentWeather.getCurrentSeverity() >= 3) {  // Check for moderate weather severity
+            instruction = issueWeatherAdvisoryInstruction(flight, instructionType);  // Issue weather advisory
+            action = getWeatherAdvisoryAction(instructionType);  // Get corresponding action description
+        } else {  // Normal weather conditions
+            instruction = issueRoutineInstruction(flight, instructionType);  // Issue routine instruction
+            action = getRoutineAction(instructionType);  // Get corresponding action description
         }
         
-        logInstruction(flight, instruction, action);
+        logInstruction(flight, instruction, action);  // Log the instruction to display and file
     }
     
     private String issueWeatherCriticalInstruction(JetPackFlight flight, int type) {
