@@ -1,25 +1,34 @@
 /**
- * RadioCommandExecutor component for the Air Traffic Controller system.
+ * Executes radio commands on registered flight objects using reflection for loose coupling.
  * 
  * Purpose:
- * Provides radiocommandexecutor functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Maintains a registry of active flights and their states, executing radio instructions (coordinate changes,
+ * altitude adjustments, emergency landings) by dynamically invoking methods on flight objects via reflection.
+ * This allows the radio system to send commands without direct dependencies on specific flight implementations.
  * 
  * Key Responsibilities:
- * - Implement core radiocommandexecutor operations
- * - Maintain necessary state for radiocommandexecutor functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Maintain registries of flights and flight states indexed by callsign
+ * - Execute coordinate instruction commands on flight objects
+ * - Execute altitude instruction commands on flight objects
+ * - Execute emergency landing directives on flight states
+ * - Use reflection to invoke methods without compile-time dependencies
+ * - Handle registration/unregistration of flights entering/leaving airspace
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by Radio to execute commands on target flights
+ * - Invokes methods on JetPackFlight via ReflectionHelper
+ * - Invokes methods on JetPackFlightState for parking operations
+ * - Registers flights when they enter airspace
+ * - Unregisters flights when they land or leave airspace
+ * - Provides parking space information for emergency landings
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Command pattern: encapsulates instructions as executable operations
+ * - Registry pattern: maintains flight lookup by callsign
+ * - Reflection-based invocation via ReflectionHelper for flexibility
+ * - No type safety - relies on duck typing (method name matching)
+ * - Graceful handling of reflection errors (logs warning, continues)
+ * - Thread-safety not guaranteed - external synchronization required
  * 
  * @author Haisam Elkewidy
  */

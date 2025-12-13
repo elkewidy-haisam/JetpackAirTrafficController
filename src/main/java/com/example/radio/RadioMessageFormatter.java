@@ -1,25 +1,32 @@
 /**
- * RadioMessageFormatter component for the Air Traffic Controller system.
+ * Formats radio transmission messages into standardized aviation communication format.
  * 
  * Purpose:
- * Provides radiomessageformatter functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Provides consistent formatting for all radio messages broadcast by the air traffic controller, using
+ * standard aviation phraseology and structure. Ensures messages include proper callsigns, coordinates,
+ * altitudes, and reasons in a format familiar to pilots. Supports multiple message types including
+ * coordinate changes, altitude instructions, emergency directives, and weather broadcasts.
  * 
  * Key Responsibilities:
- * - Implement core radiomessageformatter operations
- * - Maintain necessary state for radiomessageformatter functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Format coordinate change instructions with target location and reason
+ * - Format altitude change instructions with target altitude and reason
+ * - Format emergency landing directives with parking space assignments
+ * - Format weather broadcast messages with atmospheric conditions
+ * - Format accident alert broadcasts with location and severity
+ * - Ensure consistent message structure across all communication types
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by Radio to format messages before transmission
+ * - Provides formatted strings for RadioMessage objects
+ * - Supports RadioInstructionsPanel display formatting
+ * - Integrates with CityLogManager for log entry formatting
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Formatter pattern: single-purpose message formatting utility
+ * - Immutable controller callsign set at construction
+ * - Uses aviation standard format: "[CALLSIGN], [ATC], [INSTRUCTION]"
+ * - All methods return formatted strings (no side effects)
+ * - Thread-safe due to immutable state
  * 
  * @author Haisam Elkewidy
  */

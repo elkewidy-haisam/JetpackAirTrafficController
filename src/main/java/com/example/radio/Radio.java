@@ -1,25 +1,35 @@
 /**
- * Radio component for the Air Traffic Controller system.
+ * Central radio communication system for broadcasting instructions, emergencies, and weather to jetpacks.
  * 
  * Purpose:
- * Provides radio functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Serves as the primary communication hub between air traffic control and all jetpacks in the airspace.
+ * Transmits coordinate changes, altitude instructions, emergency directives, weather broadcasts, and
+ * accident alerts. Uses reflection to execute commands on registered flight objects without tight coupling.
  * 
  * Key Responsibilities:
- * - Implement core radio operations
- * - Maintain necessary state for radio functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Broadcast messages to all jetpacks or specific callsigns
+ * - Issue coordinate and altitude change instructions
+ * - Transmit emergency landing directives
+ * - Broadcast weather updates and accident reports
+ * - Queue and manage radio messages with acknowledgment tracking
+ * - Log all radio transmissions for auditing and replay
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Uses RadioCommandExecutor to invoke commands on flight objects via reflection
+ * - Formats messages through RadioMessageFormatter for consistent presentation
+ * - Logs transmissions via RadioTransmissionLogger for record keeping
+ * - Creates RadioMessage objects for each communication
+ * - Broadcasts to JetPackFlight objects registered with the command executor
+ * - Integrates with AccidentReporter for accident notifications
+ * - Used by Weather system to broadcast condition updates
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Delegation pattern: delegates to specialized components (executor, formatter, logger)
+ * - Command pattern: encapsulates instructions as executable commands
+ * - Observer pattern: broadcasts to multiple registered listeners (jetpacks)
+ * - Uses reflection via ReflectionHelper for loose coupling
+ * - Emergency frequency 121.5 MHz as default
+ * - Thread-safety not guaranteed - external synchronization required
  * 
  * @author Haisam Elkewidy
  */

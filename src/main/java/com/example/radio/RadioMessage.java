@@ -1,25 +1,31 @@
 /**
- * RadioMessage component for the Air Traffic Controller system.
+ * Represents a bidirectional radio communication message with sender, receiver, and acknowledgment tracking.
  * 
  * Purpose:
- * Provides radiomessage functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Models a single radio transmission in the air traffic control system, encapsulating the message content,
+ * participants (sender/receiver), type classification (INSTRUCTION, EMERGENCY, etc.), and acknowledgment
+ * status. Used for logging, queuing, and tracking radio communications between ATC and jetpacks.
  * 
  * Key Responsibilities:
- * - Implement core radiomessage operations
- * - Maintain necessary state for radiomessage functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Store message content and transmission metadata
+ * - Identify sender and receiver (ATC, jetpack callsigns)
+ * - Classify messages by type (INSTRUCTION, EMERGENCY, BROADCAST, etc.)
+ * - Track acknowledgment status for two-way communication
+ * - Provide timestamp for chronological message ordering
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Created by Radio when transmitting messages
+ * - Queued in Radio's message queue for processing
+ * - Logged by RadioTransmissionLogger for record keeping
+ * - Displayed in RadarTapeWindow and RadioInstructionsPanel
+ * - Referenced by CityLogManager for persistent logging
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Immutable core fields (sender, receiver, message, type, timestamp)
+ * - Single mutable field (acknowledged) for lifecycle tracking
+ * - MessageType enum defines all valid communication types
+ * - Timestamp automatically set at construction time
+ * - Value object with comprehensive data for auditing
  * 
  * @author Haisam Elkewidy
  */

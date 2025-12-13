@@ -1,25 +1,34 @@
 /**
- * GeometryUtils component for the Air Traffic Controller system.
+ * Collection of static utility methods for geometric calculations used throughout the application.
  * 
  * Purpose:
- * Provides geometryutils functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Provides reusable geometric computation functions to eliminate code duplication and ensure consistent
+ * mathematical operations across the codebase. Includes distance calculations, angle computations, point
+ * transformations, range checks, and clamping operations used extensively in flight path calculations,
+ * collision detection, and UI rendering.
  * 
  * Key Responsibilities:
- * - Implement core geometryutils operations
- * - Maintain necessary state for geometryutils functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Calculate Euclidean distances between points (2D coordinate space)
+ * - Perform point-to-point and point-to-coordinate distance measurements
+ * - Create Point objects from double coordinates with proper rounding
+ * - Calculate angles between points for heading/direction computation
+ * - Perform range/proximity checks for collision detection
+ * - Clamp values to valid ranges (min/max boundaries)
+ * - Support movement vector calculations for flight path updates
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by JetPackFlight for movement and distance calculations
+ * - Referenced by CollisionDetector for proximity detection
+ * - Utilized by FlightEmergencyHandler for nearest parking space searches
+ * - Applied in NavigationCalculator for path planning
+ * - Supports UI rendering for object positioning
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Pure utility class with only static methods (stateless)
+ * - Thread-safe due to lack of mutable state
+ * - Uses standard Java Math library for calculations
+ * - No external dependencies beyond java.awt.Point
+ * - Alternative to/duplicate of NavigationCalculator in some functions
  * 
  * @author Haisam Elkewidy
  */

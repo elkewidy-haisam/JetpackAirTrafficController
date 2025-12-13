@@ -1,25 +1,30 @@
 /**
- * RadioTransmissionLogger component for the Air Traffic Controller system.
+ * Logs and maintains a chronological record of all radio transmissions for audit and replay purposes.
  * 
  * Purpose:
- * Provides radiotransmissionlogger functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Captures every radio transmission with timestamps for debugging, compliance, and incident analysis.
+ * Maintains an in-memory log of all messages broadcast through the radio system, providing methods to
+ * retrieve transmission history and track whether the radio is actively transmitting.
  * 
  * Key Responsibilities:
- * - Implement core radiotransmissionlogger operations
- * - Maintain necessary state for radiotransmissionlogger functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Log all outgoing radio transmissions with timestamps
+ * - Maintain chronological list of transmission records
+ * - Track transmission state (transmitting vs. idle)
+ * - Provide access to transmission history for replay/analysis
+ * - Format log entries with HH:mm:ss timestamps
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by Radio to log every broadcast message
+ * - Provides transmission history to CityLogManager for persistent storage
+ * - Supports RadarTapeWindow for displaying communication history
+ * - Enables incident investigation by replaying radio communications
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Simple append-only logger (no deletion or modification)
+ * - In-memory storage only (no persistence - CityLogManager handles that)
+ * - Uses LocalTime for timestamp formatting
+ * - Unbounded list growth - may require periodic clearing in long sessions
+ * - Thread-safety not guaranteed - external synchronization required
  * 
  * @author Haisam Elkewidy
  */

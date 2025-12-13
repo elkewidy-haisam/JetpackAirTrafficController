@@ -1,25 +1,34 @@
 /**
- * ParkingSpaceGenerator component for the Air Traffic Controller system.
+ * Generates parking spaces distributed across the city map while avoiding water bodies and obstacles.
  * 
  * Purpose:
- * Provides parkingspacegenerator functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Procedurally creates parking space infrastructure by analyzing the city map image and placing parking
+ * locations only on valid land areas. Uses water detection algorithms to ensure jetpacks don't attempt
+ * to park in rivers, lakes, or harbors. Distributes parking spaces evenly across the city with
+ * configurable density.
  * 
  * Key Responsibilities:
- * - Implement core parkingspacegenerator operations
- * - Maintain necessary state for parkingspacegenerator functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Generate specified number of parking spaces (typically 1000 per city)
+ * - Analyze city map image to identify water vs. land areas
+ * - Place parking spaces only on land, avoiding water bodies
+ * - Create city-specific parking IDs (BOS-P001, NYC-P001, etc.)
+ * - Respect map boundaries and margin constraints
+ * - Ensure even distribution across the available land area
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Uses WaterDetector to identify valid land locations
+ * - Creates ParkingSpace objects with unique IDs
+ * - Called by CityMapPanel during city initialization
+ * - Provides parking infrastructure to City model
+ * - Supports JetPackFlightState for parking assignment
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Factory pattern: generates parking space objects
+ * - Depends on BufferedImage from city map loader
+ * - Uses Random for pseudo-random distribution
+ * - Retry logic for water detection failures (falls back to center)
+ * - Configurable margin to avoid edge-of-map parking
+ * - Deterministic with same random seed (for testing)
  * 
  * @author Haisam Elkewidy
  */
