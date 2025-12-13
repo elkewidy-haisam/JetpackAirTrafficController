@@ -28,7 +28,7 @@
 package com.example.model;
 
 public class House3D {
-    // X-coordinate of house position, Y-coordinate, width, depth, and height dimensions
+    // House position X-coordinate; Y-coordinate; width (X-axis); depth (Y-axis); height (Z-axis)
     public final double x, y, width, depth, height;
 
     /**

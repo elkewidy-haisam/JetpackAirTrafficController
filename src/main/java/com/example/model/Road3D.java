@@ -28,7 +28,7 @@
 package com.example.model;
 
 public class Road3D {
-    // X-coordinate of road center point, Y-coordinate, length, width, and rotation angle
+    // Road center X-coordinate; Y-coordinate; segment length; surface width; rotation angle in degrees
     public final double x, y, length, width, angle;
 
     /**

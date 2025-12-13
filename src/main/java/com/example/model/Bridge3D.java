@@ -28,7 +28,7 @@
 package com.example.model;
 
 public class Bridge3D {
-    // X-coordinate of bridge center point in world space
+    // Bridge center X-coordinate in world space; Y-coordinate; span length; deck width; rotation angle in degrees
     public final double x, y, length, width, angle;
 
     /**
