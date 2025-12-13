@@ -469,33 +469,147 @@ public class JOGLRenderer3D implements GLEventListener {
                     gl.glRotated(Math.toDegrees(angleRad) + JETPACK_DIRECTION_OFFSET_DEGREES, 0, 1, 0);
                     // Jetpack colors
                     float[] bodyColor = jetpack == flight ? new float[]{0, 1, 0} : new float[]{1, 1, 0};
-                    float[] tankColor = {0.7f, 0.7f, 0.7f};
-                    float[] topColor = {0.2f, 0.2f, 0.2f};
-                    // Draw left tank
+                    float[] tankColor = {0.75f, 0.75f, 0.8f}; // Metallic silver
+                    float[] topColor = {0.15f, 0.15f, 0.15f}; // Dark cap
+                    float[] nozzleColor = {0.2f, 0.2f, 0.25f}; // Dark nozzle
+                    float[] thrustColor = {1.0f, 0.5f, 0.0f}; // Orange thrust glow
+                    float[] strapColor = {0.2f, 0.2f, 0.2f}; // Black straps
+                    float[] backplateColor = {0.3f, 0.3f, 0.35f}; // Gray backplate
+                    
+                    // Draw backplate/harness (behind the tanks)
                     gl.glPushMatrix();
-                    gl.glTranslated(-2.5, 0, 0);
+                    gl.glTranslated(0, 5, -1.5);
+                    gl.glColor3fv(backplateColor, 0);
+                    gl.glScaled(6, 11, 0.8);
+                    glut.glutSolidCube(1.0f);
+                    gl.glPopMatrix();
+                    
+                    // Draw shoulder straps
+                    gl.glPushMatrix();
+                    gl.glTranslated(-2, 9, -1);
+                    gl.glRotated(-15, 0, 0, 1);
+                    gl.glColor3fv(strapColor, 0);
+                    glut.glutSolidCylinder(0.4, 4, 8, 2);
+                    gl.glPopMatrix();
+                    
+                    gl.glPushMatrix();
+                    gl.glTranslated(2, 9, -1);
+                    gl.glRotated(15, 0, 0, 1);
+                    gl.glColor3fv(strapColor, 0);
+                    glut.glutSolidCylinder(0.4, 4, 8, 2);
+                    gl.glPopMatrix();
+                    
+                    // Draw left fuel tank with details
+                    gl.glPushMatrix();
+                    gl.glTranslated(-2.2, 0, 0);
+                    // Main tank body
                     gl.glColor3fv(tankColor, 0);
-                    glut.glutSolidCylinder(1.2, 10, 12, 2);
+                    gl.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, new float[]{0.9f, 0.9f, 1.0f, 1.0f}, 0);
+                    gl.glMaterialf(GL2.GL_FRONT, GL2.GL_SHININESS, 60f);
+                    glut.glutSolidCylinder(1.3, 10, 16, 4);
+                    // Tank top cap
                     gl.glTranslated(0, 10, 0);
                     gl.glColor3fv(topColor, 0);
-                    glut.glutSolidSphere(1.3, 10, 8);
-                    gl.glPopMatrix();
-                    // Draw right tank
+                    glut.glutSolidSphere(1.4, 12, 10);
+                    // Exhaust nozzle at bottom
+                    gl.glTranslated(0, -10, 0);
                     gl.glPushMatrix();
-                    gl.glTranslated(2.5, 0, 0);
+                    gl.glRotated(180, 1, 0, 0);
+                    gl.glColor3fv(nozzleColor, 0);
+                    glut.glutSolidCone(1.5, 2.5, 12, 4);
+                    // Thrust glow effect
+                    gl.glTranslated(0, 0, 2.5);
+                    gl.glColor4f(thrustColor[0], thrustColor[1], thrustColor[2], 0.6f);
+                    glut.glutSolidCone(1.2, 1.5, 8, 2);
+                    gl.glPopMatrix();
+                    // Tank straps
+                    for (int i = 0; i < 3; i++) {
+                        gl.glPushMatrix();
+                        gl.glTranslated(0, 2 + i * 3, 0);
+                        gl.glColor3fv(strapColor, 0);
+                        glut.glutSolidTorus(0.15, 1.4, 8, 12);
+                        gl.glPopMatrix();
+                    }
+                    gl.glPopMatrix();
+                    
+                    // Draw right fuel tank with details (mirror of left)
+                    gl.glPushMatrix();
+                    gl.glTranslated(2.2, 0, 0);
+                    // Main tank body
                     gl.glColor3fv(tankColor, 0);
-                    glut.glutSolidCylinder(1.2, 10, 12, 2);
+                    gl.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, new float[]{0.9f, 0.9f, 1.0f, 1.0f}, 0);
+                    gl.glMaterialf(GL2.GL_FRONT, GL2.GL_SHININESS, 60f);
+                    glut.glutSolidCylinder(1.3, 10, 16, 4);
+                    // Tank top cap
                     gl.glTranslated(0, 10, 0);
                     gl.glColor3fv(topColor, 0);
-                    glut.glutSolidSphere(1.3, 10, 8);
-                    gl.glPopMatrix();
-                    // Draw central body
+                    glut.glutSolidSphere(1.4, 12, 10);
+                    // Exhaust nozzle at bottom
+                    gl.glTranslated(0, -10, 0);
                     gl.glPushMatrix();
+                    gl.glRotated(180, 1, 0, 0);
+                    gl.glColor3fv(nozzleColor, 0);
+                    glut.glutSolidCone(1.5, 2.5, 12, 4);
+                    // Thrust glow effect
+                    gl.glTranslated(0, 0, 2.5);
+                    gl.glColor4f(thrustColor[0], thrustColor[1], thrustColor[2], 0.6f);
+                    glut.glutSolidCone(1.2, 1.5, 8, 2);
+                    gl.glPopMatrix();
+                    // Tank straps
+                    for (int i = 0; i < 3; i++) {
+                        gl.glPushMatrix();
+                        gl.glTranslated(0, 2 + i * 3, 0);
+                        gl.glColor3fv(strapColor, 0);
+                        glut.glutSolidTorus(0.15, 1.4, 8, 12);
+                        gl.glPopMatrix();
+                    }
+                    gl.glPopMatrix();
+                    
+                    // Draw central control unit
+                    gl.glPushMatrix();
+                    gl.glTranslated(0, 5, 0);
                     gl.glColor3fv(bodyColor, 0);
-                    glut.glutSolidCylinder(2, 12, 16, 2);
-                    gl.glTranslated(0, 12, 0);
+                    gl.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, new float[]{0.6f, 0.8f, 0.4f, 1.0f}, 0);
+                    gl.glMaterialf(GL2.GL_FRONT, GL2.GL_SHININESS, 40f);
+                    glut.glutSolidCube(2.5f);
+                    // Control panel indicator lights
+                    gl.glTranslated(0, 0, 1.3);
+                    gl.glColor3f(0.0f, 1.0f, 0.0f);
+                    glut.glutSolidSphere(0.2, 8, 8);
+                    gl.glTranslated(0.5, 0, 0);
+                    gl.glColor3f(1.0f, 0.0f, 0.0f);
+                    glut.glutSolidSphere(0.2, 8, 8);
+                    gl.glTranslated(-1.0, 0, 0);
+                    gl.glColor3f(0.0f, 0.0f, 1.0f);
+                    glut.glutSolidSphere(0.2, 8, 8);
+                    gl.glPopMatrix();
+                    
+                    // Draw stabilizer fins
+                    gl.glPushMatrix();
+                    gl.glTranslated(0, 8, 0);
                     gl.glColor3fv(topColor, 0);
-                    glut.glutSolidSphere(2.2, 12, 8);
+                    // Left fin
+                    gl.glPushMatrix();
+                    gl.glTranslated(-3.5, 0, 0);
+                    gl.glRotated(90, 0, 1, 0);
+                    gl.glScaled(1.5, 2.5, 0.2);
+                    glut.glutSolidCube(1.0f);
+                    gl.glPopMatrix();
+                    // Right fin
+                    gl.glPushMatrix();
+                    gl.glTranslated(3.5, 0, 0);
+                    gl.glRotated(90, 0, 1, 0);
+                    gl.glScaled(1.5, 2.5, 0.2);
+                    glut.glutSolidCube(1.0f);
+                    gl.glPopMatrix();
+                    gl.glPopMatrix();
+                    
+                    // Draw connecting crossbar between tanks
+                    gl.glPushMatrix();
+                    gl.glTranslated(0, 6, 0);
+                    gl.glRotated(90, 0, 0, 1);
+                    gl.glColor3fv(strapColor, 0);
+                    glut.glutSolidCylinder(0.3, 4.4, 8, 2);
                     gl.glPopMatrix();
                     // Draw callsign label above each jetpack
                     gl.glColor3f(1, 1, 1);
