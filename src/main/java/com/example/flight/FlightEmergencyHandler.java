@@ -1,30 +1,37 @@
 /**
- * FlightEmergencyHandler.java
- * by Haisam Elkewidy
- *
- * This class handles FlightEmergencyHandler functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - radioDestination (Point)
- *   - radioAltitude (Double)
- *   - followingRadioInstruction (boolean)
- *   - callsign (String)
- *   - mapImage (BufferedImage)
- *   - logger (EmergencyLogger)
- *   - radioListener (RadioInstructionListener)
- *
- * Methods:
- *   - FlightEmergencyHandler(callsign)
- *   - FlightEmergencyHandler()
- *   - receiveCoordinateInstruction(newX, newY, reason)
- *   - receiveAltitudeInstruction(currentAltitude, newAltitude, reason)
- *   - receiveEmergencyLandingInstruction(currentX, currentY, parkingSpaces, reason)
- *   - findEmergencyLandingSpot(currentX, currentY, parkingSpaces, reason)
- *   - generateEmergencyDetour(currentX, currentY, destination)
- *   - checkRadioDestinationReached(currentDest, distance, speed)
- *   - checkRadioAltitudeReached(currentAltitude)
- *   - clearInstructions()
- *
+ * Orchestrates emergency procedures for jetpack flights under distress or ATC directives.
+ * 
+ * Purpose:
+ * Handles critical flight situations requiring immediate intervention: emergency landings, altitude
+ * changes, coordinate diversions, and hazard avoidance. Processes radio instructions from ATC,
+ * calculates emergency routes avoiding water and obstacles, and coordinates with parking systems
+ * to secure safe landing zones. Logs all emergency actions for post-incident analysis.
+ * 
+ * Key Responsibilities:
+ * - Receive and execute ATC radio instructions (coordinate changes, altitude adjustments, landings)
+ * - Identify nearest safe parking spaces for emergency landing scenarios
+ * - Generate detour routes that avoid water bodies using map imagery analysis
+ * - Monitor instruction completion and clear directives upon arrival
+ * - Log emergency events via EmergencyLogger for compliance and review
+ * - Support RadioInstructionListener callbacks for UI synchronization
+ * - Maintain state for radio-directed destinations and altitude targets
+ * 
+ * Interactions:
+ * - Consumes radio instructions from RadioInstructionManager
+ * - Queries ParkingSpace collections for available landing zones
+ * - Uses BufferedImage map data to detect water pixels during route planning
+ * - Notifies RadioInstructionListener of instruction receipt and completion
+ * - Integrated into JetPackFlight for emergency procedure execution
+ * - Logs actions via EmergencyLogger for audit trail
+ * 
+ * Patterns & Constraints:
+ * - Stateful: tracks active radio instructions and completion status
+ * - Water avoidance algorithm samples map pixels to ensure safe routes
+ * - Prioritizes nearest parking spaces during emergency landing searches
+ * - Thread-safe instruction updates via synchronized access patterns
+ * - Callsign-based identification for logging and communication
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.flight;

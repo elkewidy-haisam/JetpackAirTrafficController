@@ -1,21 +1,31 @@
 /**
- * App.java
- * by Haisam Elkewidy
- *
- * This is the main entry point for the Air Traffic Controller application.
- * It initializes the GUI and provides command-line argument support for customization.
- * The application can be configured with options like pre-selecting a city.
- *
- * Variables:
- *   - APP_NAME (String): Name of the application displayed in UI
- *   - VERSION (String): Current version number
- *
- * Methods:
- *   - main(args): Main entry point that launches the application
- *   - parseArguments(args): Parses command-line arguments
- *   - printHelp(): Displays help information for command-line options
- *
- * The application supports command-line arguments for selecting cities and displaying help/version info.
+ * Main entry point for the Jetpack Air Traffic Controller application.
+ * 
+ * Purpose:
+ * Bootstraps the entire application by initializing the Swing-based GUI and processing command-line
+ * arguments for customization. Serves as the orchestrator that configures system look-and-feel,
+ * launches the main application frame (AirTrafficControllerFrame), and provides CLI support for
+ * pre-selecting cities or displaying version information.
+ * 
+ * Key Responsibilities:
+ * - Parse and validate command-line arguments (--help, --version, --city=<name>)
+ * - Set system look-and-feel for native UI appearance
+ * - Initialize and display the main AirTrafficControllerFrame on the Event Dispatch Thread
+ * - Handle graceful startup errors with user-friendly dialogs
+ * - Support headless/test mode detection to prevent GUI startup during automated tests
+ * 
+ * Interactions:
+ * - Creates and configures AirTrafficControllerFrame (primary UI component)
+ * - Uses SwingUtilities for thread-safe GUI initialization
+ * - Integrates with UIManager for cross-platform look-and-feel
+ * 
+ * Patterns & Constraints:
+ * - Follows standard Java application main() entry point pattern
+ * - Ensures GUI operations run on EDT via SwingUtilities.invokeLater()
+ * - Checks for test environment flag to avoid GUI conflicts during testing
+ * - Minimal dependencies; focuses solely on application bootstrap
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example;

@@ -1,29 +1,37 @@
 /**
- * AccidentAlert.java
- * by Haisam Elkewidy
- *
- * This class handles AccidentAlert functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - accidentID (String)
- *   - x (int)
- *   - y (int)
- *   - type (String)
- *   - severity (String)
- *   - description (String)
- *   - timestamp (long)
- *   - isActive (boolean)
- *   - accidents (List<Accident>)
- *   - alertId (String)
- *
- * Methods:
- *   - AccidentAlert(alertId)
- *   - AccidentAlert()
- *   - toString()
- *   - reportAccident(accidentID, x, y, type, severity, description)
- *   - alertJetpacksOfAccident(accidentID, nearbyJetpacks, radius)
- *   - removeAlert(accidentID)
- *
+ * Manages accident incident reporting, tracking, and proximity alerting for safety operations.
+ * 
+ * Purpose:
+ * Central registry for accident incidents within the controlled airspace, maintaining active accident
+ * records with location, type, severity, and timestamps. Issues proximity warnings to jetpacks near
+ * accident sites and supports accident clearance workflows. Integrates with ATC systems to broadcast
+ * safety advisories and enforce restricted zones around incident locations.
+ * 
+ * Key Responsibilities:
+ * - Register new accident reports with unique identifiers and metadata
+ * - Track accident location (x, y coordinates) for spatial queries
+ * - Maintain severity classifications (Low, Moderate, High, Critical)
+ * - Identify and alert jetpacks within configurable proximity radius
+ * - Support accident clearance and removal from active registry
+ * - Provide queries for nearby accidents based on position and range
+ * - Log accident events with timestamps for compliance and analysis
+ * 
+ * Interactions:
+ * - Integrated into AirTrafficController for system-wide accident management
+ * - Supplies data to CollisionDetector for hazard-aware flight path adjustments
+ * - Notifies Radio subsystem to broadcast accident alerts to affected aircraft
+ * - Referenced by FlightHazardMonitor to trigger detours and emergency procedures
+ * - Displayed in UI panels for operator situational awareness
+ * - Logged via CityLogManager for accident report generation
+ * 
+ * Patterns & Constraints:
+ * - Maintains List<Accident> for active incidents; thread-safe operations via synchronization
+ * - Nested Accident class encapsulates incident details as immutable records
+ * - Spatial queries use simple distance calculations for proximity detection
+ * - No automatic accident expiration; requires explicit clearance via removeAlert()
+ * - Supports multiple concurrent accidents across the airspace
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.accident;

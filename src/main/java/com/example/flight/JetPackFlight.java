@@ -1,40 +1,39 @@
 /**
- * JetPackFlight.java
- * by Haisam Elkewidy
- *
- * This class handles JetPackFlight functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - jetpack (JetPack)
- *   - color (Color)
- *   - baseColor (Color)
- *   - movementLogger (MovementLogger)
- *   - flightStateProvider (FlightStateProvider)
- *   - movementController (FlightMovementController)
- *   - hazardMonitor (FlightHazardMonitor)
- *   - emergencyHandler (FlightEmergencyHandler)
- *   - isActive (boolean)
- *   - currentStatus (String)
- *   - ... and 1 more
- *
- * Methods:
- *   - JetPackFlight(jetpack, start, destination, color)
- *   - onInstructionReceived(instruction)
- *   - onInstructionCompleted(instruction)
- *   - receiveCoordinateInstruction(newX, newY, reason)
- *   - receiveAltitudeInstruction(newAltitude, reason)
- *   - receiveEmergencyLandingInstruction(parkingSpaces, reason)
- *   - updatePosition()
- *   - hasReachedDestination()
- *   - addWaypoint(waypoint)
- *   - detour(detourPoints, hazardType)
- *   - halt(reason)
- *   - emergencyLanding(parkingSpaces, reason)
- *   - resumeNormalPath()
- *   - clearEmergencyHalt()
- *   - hasActiveHazards()
- *   - ... and 1 more
- *
+ * Represents an active jetpack flight with real-time position tracking and instruction handling.
+ * 
+ * Purpose:
+ * Encapsulates a complete flight operation from origin to destination, managing position updates,
+ * waypoint navigation, hazard avoidance, and emergency procedures. Coordinates multiple specialized
+ * subsystems (movement controller, hazard monitor, emergency handler) to provide cohesive flight
+ * management with logging and state synchronization.
+ * 
+ * Key Responsibilities:
+ * - Track jetpack position, velocity, and flight status throughout journey
+ * - Process ATC instructions (coordinate changes, altitude adjustments, emergency landings)
+ * - Update position incrementally via FlightMovementController
+ * - Monitor hazards continuously through FlightHazardMonitor
+ * - Execute emergency procedures via FlightEmergencyHandler
+ * - Log all movement events for replay and compliance review
+ * - Manage waypoint-based navigation and detour routing
+ * - Support flight halt/resume for temporary restrictions
+ * 
+ * Interactions:
+ * - FlightMovementController: Calculates incremental position updates toward waypoints
+ * - FlightHazardMonitor: Detects hazards (weather, accidents, police activity) requiring detours
+ * - FlightEmergencyHandler: Orchestrates emergency landing and safety procedures
+ * - MovementLogger: Records timestamped position and status changes
+ * - FlightStateProvider: Supplies current position/altitude for external queries
+ * - CityMapPanel: Receives position updates for animation rendering
+ * - RadioInstructionManager: Sources instructions from ATC communications
+ * 
+ * Patterns & Constraints:
+ * - Composition pattern: delegates specialized logic to controller/monitor/handler components
+ * - Observer-like callbacks: onInstructionReceived, onInstructionCompleted for UI updates
+ * - Stateful: maintains active/inactive, halted, emergency states
+ * - Thread-safe position updates via synchronized access at higher layers
+ * - Color-coded for visual distinction in UI (baseColor for normal, modified during emergencies)
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.flight;

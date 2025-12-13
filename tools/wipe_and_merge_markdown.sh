@@ -1,4 +1,32 @@
 #!/usr/bin/env bash
+# ==============================================================================
+# wipe_and_merge_markdown.sh - Consolidate documentation into README.md
+# ==============================================================================
+# Purpose:
+#   Merges all Markdown files in the repository into a single README.md,
+#   providing consolidated documentation. Optionally deletes source Markdown
+#   files after merge to eliminate duplication. Useful for creating unified
+#   documentation artifacts or preparing for documentation refactoring.
+#
+# Usage:
+#   ./tools/wipe_and_merge_markdown.sh        -> Merge into README.md (preserve sources)
+#   ./tools/wipe_and_merge_markdown.sh -y     -> Merge and delete source .md files
+#
+# Features:
+#   - Recursively finds all .md files in repository
+#   - Preserves source file paths in merged output for traceability
+#   - Excludes README.md itself from merge to avoid circularity
+#   - Optional deletion mode with confirmation flag (-y)
+#   - POSIX-compatible shell script for cross-platform execution
+#
+# Requirements:
+#   - Bash shell (v4.0+)
+#   - find, sort, cat utilities
+#   - Write permissions in repository root
+#
+# Author: Haisam Elkewidy
+# ==============================================================================
+
 set -euo pipefail
 
 # Wipes README.md and appends plain text from all other .md files in the repo.

@@ -1,35 +1,35 @@
 /**
- * Radar.java
- * by Haisam Elkewidy
- *
- * This class provides radar tracking capabilities for monitoring jetpack positions in the airspace.
- *
- * Variables:
- *   - trackedJetpacks (Map<JetPack, RadarContact>)
- *   - radarRange (double)
- *   - scanInterval (int)
- *   - isActive (boolean)
- *   - radarID (String)
- *   - centerX (int)
- *   - centerY (int)
- *   - x (int)
- *   - y (int)
- *   - altitude (int)
- *   - ... and 2 more
- *
- * Methods:
- *   - Radar(radarID, radarRange, centerX, centerY)
- *   - Radar()
- *   - updatePosition(x, y, altitude)
- *   - toString()
- *   - updateJetPackPosition(jetpack, x, y, altitude)
- *   - addJetpackToRadar(jetpack, x, y, altitude)
- *   - removeJetpackFromRadar(jetpack)
- *   - identifyAircraft(jetpack)
- *   - checkForCollisions(minimumSeparation)
- *   - performRadarSweep()
- *   - toString()
- *
+ * Provides radar tracking and surveillance for jetpack aircraft in controlled airspace.
+ * 
+ * Purpose:
+ * Implements a radar system that continuously monitors jetpack positions, detects proximity conflicts,
+ * and maintains a real-time registry of aircraft locations. Serves as the primary sensor subsystem
+ * for the air traffic control system, enabling collision avoidance, separation management, and
+ * situational awareness.
+ * 
+ * Key Responsibilities:
+ * - Track jetpack positions with 3D coordinates (x, y, altitude)
+ * - Maintain a registry of active aircraft within radar range
+ * - Detect potential collisions based on configurable minimum separation distances
+ * - Perform periodic radar sweeps to refresh contact data
+ * - Support aircraft identification and position queries
+ * - Enable/disable radar operations for maintenance or emergency scenarios
+ * 
+ * Interactions:
+ * - Integrated into AirTrafficController for centralized position updates
+ * - Feeds collision warnings to CollisionDetector for proximity analysis
+ * - Provides data to RadarTapeWindow for display of tracked contacts
+ * - Referenced by FlightHazardMonitor for safety assessments
+ * - Used in emergency procedures to identify aircraft near incidents
+ * 
+ * Patterns & Constraints:
+ * - Uses Map<JetPack, RadarContact> for efficient position lookups
+ * - Radar range and scan interval configurable per installation
+ * - Thread-safe for concurrent position updates from multiple jetpacks
+ * - Active/inactive state supports operational control and testing
+ * - Represents logical radar; no integration with actual RF hardware
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.detection;

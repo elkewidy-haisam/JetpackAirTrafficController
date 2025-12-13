@@ -1,23 +1,35 @@
 /**
- * FlightHazardMonitor.java
- * by Haisam Elkewidy
- *
- * This class handles FlightHazardMonitor functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - inclementWeather (boolean)
- *   - buildingCollapse (boolean)
- *   - airAccident (boolean)
- *   - policeActivity (boolean)
- *   - emergencyHalt (boolean)
- *
- * Methods:
- *   - FlightHazardMonitor()
- *   - hasActiveHazards()
- *   - calculateEffectiveSpeed(baseSpeed)
- *   - clearAllHazards()
- *   - clearEmergencyHalt()
- *
+ * Monitors environmental and operational hazards affecting jetpack flight safety and performance.
+ * 
+ * Purpose:
+ * Continuously tracks multiple hazard types (inclement weather, building collapses, air accidents,
+ * police activity, emergency halts) that impact flight operations. Adjusts effective flight speed
+ * based on active hazards and provides hazard status queries for decision-making. Enables dynamic
+ * response to changing environmental conditions and operational restrictions.
+ * 
+ * Key Responsibilities:
+ * - Track boolean flags for each hazard category (weather, structural, accident, law enforcement)
+ * - Calculate effective flight speed reductions when hazards are present
+ * - Support emergency halt state for immediate flight suspension
+ * - Provide aggregate hazard status queries (hasActiveHazards)
+ * - Enable selective hazard clearance and bulk hazard reset
+ * - Integrate hazard state into flight path decision-making
+ * 
+ * Interactions:
+ * - Integrated into JetPackFlight for real-time hazard-aware navigation
+ * - Consulted by FlightPath for detour and halt logic
+ * - Updated by FlightEmergencyHandler when hazards are detected or cleared
+ * - Referenced in speed calculations for animation and position updates
+ * - Displayed in UI panels for operator situational awareness
+ * 
+ * Patterns & Constraints:
+ * - Simple boolean flags for each hazard type; no complex state machine
+ * - Speed reduction applied multiplicatively when multiple hazards overlap
+ * - Emergency halt takes precedence over other hazard-based speed adjustments
+ * - Thread-safe for concurrent reads; synchronized writes required at higher layers
+ * - No automatic hazard expiration; requires explicit clearance
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.flight;
@@ -25,10 +37,6 @@ package com.example.flight;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * FlightHazardMonitor tracks and manages flight hazards for jetpack flights.
- * It provides methods to check active hazards and calculate effective speed.
- */
 public class FlightHazardMonitor {
     private boolean inclementWeather;
     private boolean buildingCollapse;

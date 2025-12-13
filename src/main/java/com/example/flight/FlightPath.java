@@ -1,35 +1,36 @@
 /**
- * FlightPath.java
- * by Haisam Elkewidy
- *
- * This class handles FlightPath functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - pathID (String)
- *   - origin (String)
- *   - destination (String)
- *   - waypoints (List<String>)
- *   - detourWaypoints (List<String>)
- *   - isDetourActive (boolean)
- *   - inclementWeather (boolean)
- *   - buildingCollapse (boolean)
- *   - airAccident (boolean)
- *   - policeActivity (boolean)
- *   - ... and 3 more
- *
- * Methods:
- *   - FlightPath(pathID, origin, destination, waypoints)
- *   - FlightPath(pathID, origin, destination)
- *   - FlightPath()
- *   - detour(detourPoints, hazardType)
- *   - detour(detourPoints)
- *   - halt(reason)
- *   - resumeNormalPath()
- *   - clearEmergencyHalt()
- *   - hasActiveHazards()
- *   - addWaypoint(waypoint)
- *   - toString()
- *
+ * Defines an approved route from origin to destination with waypoint navigation and hazard tracking.
+ * 
+ * Purpose:
+ * Models an ATC-approved flight plan containing origin, destination, and intermediate waypoints.
+ * Supports dynamic route modifications via detours when hazards (weather, accidents, police activity,
+ * building collapses) are detected. Maintains hazard state flags and emergency halt conditions to
+ * enable safe flight operations under changing environmental conditions.
+ * 
+ * Key Responsibilities:
+ * - Store flight plan components (pathID, origin, destination, waypoints)
+ * - Maintain ordered waypoint list for sequential navigation
+ * - Track active hazards by type (weather, accident, police, building collapse)
+ * - Support detour activation with temporary waypoint substitution
+ * - Enable flight halt with reason tracking for operational holds
+ * - Resume normal path after hazard clearance or detour completion
+ * - Provide hazard status queries for safety decision-making
+ * 
+ * Interactions:
+ * - Created by AirTrafficController during flight plan approval
+ * - Consumed by JetPackFlight for navigation and waypoint sequencing
+ * - Modified by FlightHazardMonitor when hazards require route changes
+ * - Referenced in radio communications for clearances and advisories
+ * - Used in session snapshots for flight plan persistence
+ * 
+ * Patterns & Constraints:
+ * - Mutable route: supports dynamic waypoint and detour modifications
+ * - Immutable identity: pathID, origin, destination fixed after creation
+ * - Maintains both normal and detour waypoint lists for efficient path switching
+ * - Boolean flags for hazard types enable multi-hazard scenarios
+ * - Emergency halt state separate from detour state for flexible control
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.flight;

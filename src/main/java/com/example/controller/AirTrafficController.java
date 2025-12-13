@@ -1,38 +1,38 @@
 /**
- * AirTrafficController.java
- * by Haisam Elkewidy
- *
- * This class handles AirTrafficController functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - controllerID (String)
- *   - location (String)
- *   - managedJetpacks (List<JetPack>)
- *   - radio (Radio)
- *   - radar (Radar)
- *   - weather (Weather)
- *   - accidentAlert (AccidentAlert)
- *   - grid (Grid)
- *   - dayTime (DayTime)
- *   - activeFlightPaths (List<FlightPath>)
- *   - ... and 1 more
- *
- * Methods:
- *   - AirTrafficController(controllerID, location, gridWidth, gridHeight)
- *   - AirTrafficController()
- *   - registerJetpack(jetpack, x, y, altitude)
- *   - unregisterJetpack(jetpack)
- *   - createFlightPath(jetpack, origin, destination)
- *   - updateJetpackPosition(jetpack, x, y, altitude)
- *   - reportAccident(x, y, type, severity, description)
- *   - clearAccident(accidentID)
- *   - updateWeather(newWeather)
- *   - performSystemCheck()
- *   - checkForCollisions()
- *   - emergencyShutdown()
- *   - restart()
- *   - toString()
- *
+ * Orchestrates air traffic control operations for a defined airspace region.
+ * 
+ * Purpose:
+ * Serves as the central command-and-control hub integrating all subsystems required for safe
+ * jetpack flight management: radio communications, radar tracking, weather monitoring, accident
+ * alerting, and flight path coordination. This is a non-GUI backend implementation suitable for
+ * command-line tools, testing, batch processing, or service deployments.
+ * 
+ * Key Responsibilities:
+ * - Register and track jetpacks entering/exiting the controlled airspace
+ * - Coordinate flight path approvals based on weather conditions and airspace availability
+ * - Monitor real-time positions via integrated Radar and detect potential collisions
+ * - Broadcast radio communications (clearances, weather updates, emergency directives)
+ * - Report and manage accident alerts, issuing warnings to nearby aircraft
+ * - Perform system health checks across all subsystems (radio, radar, weather, grid)
+ * - Support emergency shutdown and restart procedures
+ * 
+ * Interactions:
+ * - Radio: Broadcasts messages, clearances, and emergency directives to jetpacks
+ * - Radar: Tracks jetpack positions and detects proximity conflicts
+ * - Weather: Evaluates flight safety based on current atmospheric conditions
+ * - AccidentAlert: Manages incident reports and proximity alerts
+ * - Grid: Represents the Cartesian airspace for spatial operations
+ * - FlightPath: Approves and tracks active flight plans
+ * - DayTime: Provides temporal context for operations
+ * 
+ * Patterns & Constraints:
+ * - Aggregates multiple subsystems into a cohesive control tower model
+ * - Maintains operational state flag for system-wide enable/disable
+ * - Thread-safe for concurrent jetpack position updates
+ * - Complements AirTrafficControllerFrame (GUI-based implementation)
+ * - See ARCHITECTURE_NOTES.md for details on dual backend/frontend implementations
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.controller;

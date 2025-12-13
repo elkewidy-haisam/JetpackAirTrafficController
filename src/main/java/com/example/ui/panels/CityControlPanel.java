@@ -1,18 +1,28 @@
 /**
- * CityControlPanel.java
- * by Haisam Elkewidy
- *
- * This class handles CityControlPanel functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - dateTimePanel (DateTimeDisplayPanel)
- *   - weatherPanel (WeatherBroadcastPanel)
- *   - movementPanel (JetpackMovementPanel)
- *   - radioPanel (RadioInstructionsPanel)
- *
- * Methods:
- *   - CityControlPanel()
- *
+ * UI panel component for control display and interaction.
+ * 
+ * Purpose:
+ * Specialized Swing JPanel providing control-related visualization and user interaction.
+ * Integrates with the main application frame to present control data in a clear,
+ * actionable format for air traffic controllers.
+ * 
+ * Key Responsibilities:
+ * - Render control information with appropriate visual styling
+ * - Handle user interactions related to control operations
+ * - Update display in response to system state changes
+ * - Provide callbacks for parent frame coordination
+ * 
+ * Interactions:
+ * - Embedded in AirTrafficControllerFrame or CityMapPanel
+ * - Receives updates from manager classes and controllers
+ * - Triggers actions via event listeners and callbacks
+ * 
+ * Patterns & Constraints:
+ * - Extends JPanel for Swing integration
+ * - Custom paintComponent for rendering where needed
+ * - Event-driven updates for responsive UI
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.ui.panels;

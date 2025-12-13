@@ -1,20 +1,31 @@
 /**
- * City.java
- * by Haisam Elkewidy
- *
- * This class represents a city with its geographic dimensions and infrastructure.
- *
- * Variables:
- *   - name (String)
- *   - width (int)
- *   - height (int)
- *   - parkingSpaces (List<ParkingSpace>)
- *
- * Methods:
- *   - City(name, width, height)
- *   - addParkingSpace(space)
- *   - toString()
- *
+ * Represents a metropolitan area with geographic dimensions and parking infrastructure.
+ * 
+ * Purpose:
+ * Models a city entity containing spatial boundaries (width, height) and a registry of parking spaces
+ * where jetpacks can land and be stored. Serves as a container for city-specific data including
+ * infrastructure layout and resource allocation for flight operations.
+ * 
+ * Key Responsibilities:
+ * - Define city geographic extents for map rendering and flight boundaries
+ * - Maintain a collection of ParkingSpace objects for jetpack landing zones
+ * - Provide methods to add parking infrastructure dynamically
+ * - Support city identification via unique name
+ * 
+ * Interactions:
+ * - Referenced by CityMapPanel for rendering city layouts and parking locations
+ * - Used in CitySelectionPanel for city chooser interface
+ * - Associated with RealisticCityMap for detailed geographic representations
+ * - Consumed by ParkingSpaceManager for landing zone allocation
+ * - Displayed in various UI components with city-specific data
+ * 
+ * Patterns & Constraints:
+ * - Immutable dimensions ensure consistent spatial calculations
+ * - Parking spaces collection is mutable to support dynamic infrastructure updates
+ * - Lightweight domain model suitable for multiple city instances
+ * - No direct coupling to rendering or persistence layers
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.model;

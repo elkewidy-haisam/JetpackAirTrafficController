@@ -1,26 +1,28 @@
 /**
- * Building3D.java
- * by Haisam Elkewidy
- *
- * This class represents a 3D building structure in the city model with rendering properties.
- *
- * Variables:
- *   - x (double)
- *   - y (double)
- *   - width (double)
- *   - depth (double)
- *   - height (double)
- *   - color (Color)
- *   - type (String)
- *   - hasWindows (boolean)
- *   - floors (int)
- *
- * Methods:
- *   - Building3D(x, y, width, depth, height, type)
- *   - containsPoint(px, py)
- *   - distanceTo(px, py)
- *   - hasWindows()
- *
+ * Three-dimensional model representation of building for JOGL rendering.
+ * 
+ * Purpose:
+ * Models building geometry with position, dimensions, and visual properties for
+ * hardware-accelerated 3D rendering via JOGL. Supports collision detection, spatial queries,
+ * and realistic visualization in the 3D city view.
+ * 
+ * Key Responsibilities:
+ * - Store geometric data (position, dimensions) for rendering
+ * - Provide visual attributes (color, texture, detail level) for realism
+ * - Support collision and proximity queries for spatial operations
+ * - Enable type classification and metadata access
+ * 
+ * Interactions:
+ * - Rendered by JOGL3DPanel and JOGLRenderer3D
+ * - Referenced by CityModel3D for scene composition
+ * - Used in collision detection and spatial analysis
+ * 
+ * Patterns & Constraints:
+ * - Immutable geometry for thread-safe access
+ * - Compatible with OpenGL rendering pipelines
+ * - Simple collision models for performance
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.model;

@@ -1,22 +1,37 @@
 /**
- * MapTest.java
- * by Haisam Elkewidy
- *
- * This class handles MapTest functionality in the Air Traffic Controller system.
- *
- * Methods:
- *   - main(args)
- *
+ * Quick-start test harness for launching and validating the Air Traffic Controller GUI.
+ * 
+ * Purpose:
+ * Provides a streamlined entry point for rapid application testing during development. Initializes
+ * the AirTrafficControllerFrame with diagnostic console output and displays a comprehensive test
+ * checklist for manual verification of key features. Useful for smoke testing after code changes
+ * or before production builds.
+ * 
+ * Key Responsibilities:
+ * - Launch AirTrafficControllerFrame on the Event Dispatch Thread
+ * - Display structured test checklist covering core functionality
+ * - Provide visual confirmation of startup sequence
+ * - Enable quick iteration during UI development and debugging
+ * 
+ * Interactions:
+ * - Creates and displays AirTrafficControllerFrame (main application window)
+ * - Uses SwingUtilities for thread-safe GUI initialization
+ * - No integration with automated test frameworks; purely manual testing aid
+ * 
+ * Patterns & Constraints:
+ * - Standalone main() method; alternative entry point to App.java
+ * - EDT-safe via SwingUtilities.invokeLater()
+ * - Console-based checklist for human-in-the-loop validation
+ * - Development/testing utility; not intended for end-user execution
+ * - No command-line argument parsing or configuration
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example;
 
 import com.example.ui.frames.AirTrafficControllerFrame;
 import javax.swing.*;
-
-/**
- * Quick test to launch the Air Traffic Controller application
- */
 public class MapTest {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {

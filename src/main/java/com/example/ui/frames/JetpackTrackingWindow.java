@@ -1,30 +1,27 @@
 /**
- * JetpackTrackingWindow.java
- * by Haisam Elkewidy
- *
- * This class handles JetpackTrackingWindow functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - updateTimer (Timer)
- *   - jetpack (JetPack)
- *   - flight (JetPackFlight)
- *   - cityName (String)
- *   - allFlights (List<JetPackFlight>)
- *   - allStates (Map<JetPackFlight, JetPackFlightState>)
- *   - animationController (CityMapAnimationController)
- *   - renderPanel (JPanel)
- *   - useJOGL (boolean)
- *   - cityName (String)
- *   - ... and 5 more
- *
- * Methods:
- *   - JetpackTrackingWindow(jetpack, flight, cityName, allFlights, Map<JetPackFlight, allStates, animationController)
- *   - windowClosing(e)
- *   - mousePressed(e)
- *   - mouseReleased(e)
- *   - mouseDragged(e)
- *   - mouseWheelMoved(e)
- *
+ * JetpackTrackingWindow component for the Air Traffic Controller system.
+ * 
+ * Purpose:
+ * Provides jetpacktrackingwindow functionality within the jetpack air traffic control application.
+ * Supports operational requirements through specialized methods and state management.
+ * 
+ * Key Responsibilities:
+ * - Implement core jetpacktrackingwindow operations
+ * - Maintain necessary state for jetpacktrackingwindow functionality
+ * - Integrate with related system components
+ * - Support queries and updates as needed
+ * 
+ * Interactions:
+ * - Referenced by controllers and managers
+ * - Integrates with data models and services
+ * - Coordinates with UI components where applicable
+ * 
+ * Patterns & Constraints:
+ * - Follows system architecture conventions
+ * - Thread-safe where concurrent access expected
+ * - Minimal external dependencies
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.ui.frames;

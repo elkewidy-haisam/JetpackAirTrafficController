@@ -1,31 +1,38 @@
 /**
- * FlightMovementController.java
- * by Haisam Elkewidy
- *
- * This class handles FlightMovementController functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - x (double)
- *   - y (double)
- *   - destination (Point)
- *   - speed (double)
- *   - altitude (double)
- *   - trail (List<Point>)
- *   - waypoints (List<Point>)
- *   - detourWaypoints (List<Point>)
- *   - isDetourActive (boolean)
- *   - currentWaypointIndex (int)
- *   - ... and 1 more
- *
- * Methods:
- *   - FlightMovementController(start, destination, speed, altitude)
- *   - updatePosition(effectiveSpeed, isHalted)
- *   - hasReachedDestination(isHalted)
- *   - addWaypoint(waypoint)
- *   - detour(detourPoints)
- *   - resumeNormalPath()
- *   - updateAltitude(targetAltitude)
- *
+ * Calculates and updates jetpack position incrementally toward waypoints and destinations.
+ * 
+ * Purpose:
+ * Implements the core movement logic for jetpack flights, computing incremental position updates
+ * based on speed, direction, and waypoint sequences. Supports normal navigation, detour routing,
+ * altitude adjustments, and halt states. Maintains a position trail for visualization and records
+ * waypoint progression for navigation tracking.
+ * 
+ * Key Responsibilities:
+ * - Calculate incremental position changes toward current waypoint or destination
+ * - Manage ordered waypoint list for sequential navigation
+ * - Support detour activation with temporary waypoint overrides
+ * - Track altitude changes with smooth transitions
+ * - Maintain position trail (breadcrumb history) for rendering
+ * - Detect waypoint and destination arrival based on proximity thresholds
+ * - Handle halt state by freezing position updates
+ * 
+ * Interactions:
+ * - Integrated into JetPackFlight for position update loops
+ * - Consumes waypoint data from FlightPath for route guidance
+ * - Provides current position to FlightStateProvider for external queries
+ * - Supports detour instructions from FlightEmergencyHandler
+ * - Referenced by JetPackFlightRenderer for trail visualization
+ * - Used in collision detection for real-time position comparisons
+ * 
+ * Patterns & Constraints:
+ * - Stateful: maintains current position, waypoint index, and trail history
+ * - Uses vector mathematics for direction and distance calculations
+ * - Waypoint arrival detected via Euclidean distance threshold
+ * - Detour mode replaces normal waypoints; original route restored on resumption
+ * - Thread-safe for position reads; synchronized writes required for updates
+ * - Altitude transitions smoothed over multiple update cycles
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.flight;

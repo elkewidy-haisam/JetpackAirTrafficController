@@ -1,26 +1,39 @@
 /**
- * AirTrafficControllerFrame.java
- * by Haisam Elkewidy
- *
- * This class handles AirTrafficControllerFrame functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - currentCity (String)
- *   - mainPanel (JPanel)
- *   - citySelectionPanel (CitySelectionPanel)
- *   - cityMapPanel (CityMapPanel)
- *   - currentWeather (Weather)
- *   - currentDayTime (DayTime)
- *   - radarTapeWindow (RadarTapeWindow)
- *   - logManager (CityLogManager)
- *   - jetpackManager (CityJetpackManager)
- *   - timerManager (CityTimerManager)
- *   - ... and 4 more
- *
- * Methods:
- *   - AirTrafficControllerFrame()
- *   - actionPerformed(e)
- *
+ * Primary application window providing interactive air traffic control operations.
+ * 
+ * Purpose:
+ * Serves as the main GUI frame orchestrating the entire user experience for the Jetpack Air Traffic
+ * Controller system. Manages city selection, real-time map display, session persistence, radar tape
+ * logging, and menu-driven actions. Coordinates multiple manager classes to handle logging, jetpack
+ * tracking, timing, and display updates in a cohesive Swing-based interface.
+ * 
+ * Key Responsibilities:
+ * - Display city selection interface and transition to active city map views
+ * - Initialize and coordinate manager subsystems (logging, jetpack management, timers, display)
+ * - Manage lifecycle of child windows (RadarTapeWindow for communications log)
+ * - Provide File menu actions: save sessions, export logs/reports, open sessions folder
+ * - Maintain current weather and day/time state for the selected city
+ * - Handle safe panel transitions with animation cleanup to prevent resource leaks
+ * - Display console output for system messages and operator notifications
+ * 
+ * Interactions:
+ * - CitySelectionPanel: User-driven city choice interface
+ * - CityMapPanel: Core map view with animated jetpack flights and control elements
+ * - RadarTapeWindow: Floating window for radio communication history
+ * - CityLogManager: Centralized logging for radar, movement, weather, and accident data
+ * - CityJetpackManager: Registry and lifecycle management for jetpacks per city
+ * - SessionManager: Persistence for session snapshots and exports
+ * - ConfigManager: User preferences and application settings
+ * - ConsoleOutputPanel: Status messages displayed to operator
+ * 
+ * Patterns & Constraints:
+ * - Implements ActionListener for menu item events
+ * - Uses BorderLayout for flexible panel composition
+ * - Ensures all UI updates occur on the Event Dispatch Thread
+ * - Complements non-GUI AirTrafficController backend for service scenarios
+ * - Custom jetpack icon enhances branding across window chrome and taskbar
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.ui.frames;

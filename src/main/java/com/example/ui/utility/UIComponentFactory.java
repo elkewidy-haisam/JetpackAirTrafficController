@@ -1,23 +1,27 @@
 /**
- * UIComponentFactory.java
- * by Haisam Elkewidy
- *
- * This class handles UIComponentFactory functionality in the Air Traffic Controller system.
- *
- * Methods:
- *   - createReadOnlyTextArea(rows, columns, font)
- *   - createReadOnlyTextArea(rows, columns)
- *   - createScrollPane(view)
- *   - createScrollPaneAlwaysVisible(view)
- *   - createBorderLayoutPanel()
- *   - createBorderLayoutPanel(hgap, vgap)
- *   - createFlowLayoutPanel()
- *   - createFlowLayoutPanel(align)
- *   - createButton(text, font)
- *   - createButton(text, width, height)
- *   - createLabel(text, font)
- *   - createCenteredLabel(text, font)
- *
+ * UIComponentFactory component for the Air Traffic Controller system.
+ * 
+ * Purpose:
+ * Provides uicomponentfactory functionality within the jetpack air traffic control application.
+ * Supports operational requirements through specialized methods and state management.
+ * 
+ * Key Responsibilities:
+ * - Implement core uicomponentfactory operations
+ * - Maintain necessary state for uicomponentfactory functionality
+ * - Integrate with related system components
+ * - Support queries and updates as needed
+ * 
+ * Interactions:
+ * - Referenced by controllers and managers
+ * - Integrates with data models and services
+ * - Coordinates with UI components where applicable
+ * 
+ * Patterns & Constraints:
+ * - Follows system architecture conventions
+ * - Thread-safe where concurrent access expected
+ * - Minimal external dependencies
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.ui.utility;

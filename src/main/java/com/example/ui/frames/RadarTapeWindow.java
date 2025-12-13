@@ -1,20 +1,27 @@
 /**
- * RadarTapeWindow.java
- * by Haisam Elkewidy
- *
- * This class handles RadarTapeWindow functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - radarTextArea (JTextArea)
- *   - messages (LinkedList<String>)
- *   - timeFormatter (DateTimeFormatter)
- *   - city (String)
- *   - logWriter (LogWriter)
- *
- * Methods:
- *   - RadarTapeWindow(cityName, logWriter)
- *   - addMessage(message)
- *
+ * RadarTapeWindow component for the Air Traffic Controller system.
+ * 
+ * Purpose:
+ * Provides radartapewindow functionality within the jetpack air traffic control application.
+ * Supports operational requirements through specialized methods and state management.
+ * 
+ * Key Responsibilities:
+ * - Implement core radartapewindow operations
+ * - Maintain necessary state for radartapewindow functionality
+ * - Integrate with related system components
+ * - Support queries and updates as needed
+ * 
+ * Interactions:
+ * - Referenced by controllers and managers
+ * - Integrates with data models and services
+ * - Coordinates with UI components where applicable
+ * 
+ * Patterns & Constraints:
+ * - Follows system architecture conventions
+ * - Thread-safe where concurrent access expected
+ * - Minimal external dependencies
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.ui.frames;

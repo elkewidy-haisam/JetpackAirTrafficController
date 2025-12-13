@@ -1,31 +1,28 @@
 /**
- * JOGL3DPanel.java
- * by Haisam Elkewidy
- *
- * This class handles JOGL3DPanel functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - allFlights (List<JetPackFlight>)
- *   - renderer (JOGLRenderer3D)
- *   - glPanel (GLJPanel)
- *   - flight (JetPackFlight)
- *   - cityModel (CityModel3D)
- *   - flightStates (Map<JetPackFlight, JetPackFlightState>)
- *   - updateTimer (Timer)
- *   - hudOverlay (JPanel)
- *   - positionLabel (JLabel)
- *   - statusLabel (JLabel)
- *   - ... and 7 more
- *
- * Methods:
- *   - JOGL3DPanel(cityName, flight, allFlights, Map<JetPackFlight, flightStates, cityMap)
- *   - hideJetpack(flight)
- *   - showJetpack(flight)
- *   - registerPanel(panel)
- *   - unregisterPanel(panel)
- *   - stopUpdateTimer()
- *   - removeNotify()
- *
+ * UI panel component for jogl3d display and interaction.
+ * 
+ * Purpose:
+ * Specialized Swing JPanel providing jogl3d-related visualization and user interaction.
+ * Integrates with the main application frame to present jogl3d data in a clear,
+ * actionable format for air traffic controllers.
+ * 
+ * Key Responsibilities:
+ * - Render jogl3d information with appropriate visual styling
+ * - Handle user interactions related to jogl3d operations
+ * - Update display in response to system state changes
+ * - Provide callbacks for parent frame coordination
+ * 
+ * Interactions:
+ * - Embedded in AirTrafficControllerFrame or CityMapPanel
+ * - Receives updates from manager classes and controllers
+ * - Triggers actions via event listeners and callbacks
+ * 
+ * Patterns & Constraints:
+ * - Extends JPanel for Swing integration
+ * - Custom paintComponent for rendering where needed
+ * - Event-driven updates for responsive UI
+ * 
+ * @author Haisam Elkewidy
  */
 
 /*

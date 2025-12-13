@@ -1,12 +1,28 @@
 /**
- * JetPackFlightRenderer.java
- * by Haisam Elkewidy
- *
- * This class handles JetPackFlightRenderer functionality in the Air Traffic Controller system.
- *
- * Methods:
- *   - renderFlight(g2d, state)
- *
+ * Rendering component for jetpackflight visualization.
+ * 
+ * Purpose:
+ * Handles rendering logic for jetpackflight using appropriate
+ * graphics APIs. Translates model data into visual representations with proper scaling,
+ * colors, and transformations.
+ * 
+ * Key Responsibilities:
+ * - Render jetpackflight data to graphics context
+ * - Apply visual styling, colors, and effects
+ * - Handle coordinate transformations and scaling
+ * - Optimize rendering performance for smooth updates
+ * 
+ * Interactions:
+ * - Called by panel paintComponent methods
+ * - Consumes model data for visualization
+ * - Uses graphics APIs (Graphics2D, JOGL) for drawing
+ * 
+ * Patterns & Constraints:
+ * - Stateless rendering methods for thread safety
+ * - Efficient drawing algorithms for real-time updates
+ * - Handles null/invalid input gracefully
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.flight;

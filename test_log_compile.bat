@@ -1,3 +1,21 @@
+REM ============================================================================
+REM test_log_compile.bat - Compiles logging components for testing
+REM ============================================================================
+REM Purpose:
+REM   Batch script for the Jetpack Air Traffic Controller project that compiles logging test components using Maven.
+REM   Provides a convenient command-line interface for development and testing tasks.
+REM
+REM Usage:
+REM   test_log_compile.bat
+REM
+REM Requirements:
+REM   - Java JDK 11 or higher
+REM   - Maven (where applicable)
+REM   - Appropriate permissions for file operations
+REM
+REM Author: Haisam Elkewidy
+REM ============================================================================
+
 @echo off
 cd /d "c:\Users\Elkewidy\Desktop\e10b\e10btermproject"
 echo Compiling with logging features...

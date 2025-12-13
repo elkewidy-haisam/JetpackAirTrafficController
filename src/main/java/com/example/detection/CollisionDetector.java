@@ -1,18 +1,35 @@
 /**
- * CollisionDetector.java
- * by Haisam Elkewidy
- *
- * This class detects potential collisions between jetpacks and issues warnings to prevent accidents.
- *
- * Variables:
- *   - radarTape (RadarTapeWindow)
- *   - accidentAlert (AccidentAlert)
- *   - accidentCounter (int)
- *
- * Methods:
- *   - CollisionDetector()
- *   - checkCollisions(jetpackFlights, Map<JetPackFlight, flightStates)
- *
+ * Detects and responds to proximity conflicts and collisions between jetpack aircraft.
+ * 
+ * Purpose:
+ * Continuously analyzes jetpack positions to identify unsafe proximity situations and actual collisions.
+ * Issues graduated warnings (proximity alerts, critical warnings, collision reports) based on separation
+ * distances. Integrates with AccidentAlert to log incidents and RadarTapeWindow to display real-time
+ * notifications to air traffic controllers.
+ * 
+ * Key Responsibilities:
+ * - Calculate inter-aircraft distances from current flight positions
+ * - Issue proximity warnings when jetpacks enter WARNING_DISTANCE threshold (~100 units)
+ * - Escalate to critical alerts when separation drops below CRITICAL_DISTANCE (~50 units)
+ * - Detect actual collisions (zero or near-zero separation) and report to AccidentAlert
+ * - Maintain accident counter for incident tracking and reporting
+ * - Post collision events to RadarTapeWindow for operator notification
+ * 
+ * Interactions:
+ * - Consumes JetPackFlight and JetPackFlightState data for position analysis
+ * - Integrates with AccidentAlert to register collision incidents
+ * - Publishes warnings and alerts to RadarTapeWindow for display
+ * - Used by CityMapPanel during animation updates to enforce safety checks
+ * - Coordinates with FlightHazardMonitor for comprehensive hazard management
+ * 
+ * Patterns & Constraints:
+ * - Stateless collision detection; operates on provided flight collections
+ * - Configurable distance thresholds (WARNING_DISTANCE, CRITICAL_DISTANCE)
+ * - Efficient O(n²) pairwise distance calculation; suitable for moderate aircraft counts
+ * - Thread-safe for concurrent collision checks during parallel updates
+ * - No dependency on physics engine; uses simple Euclidean distance
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.detection;
@@ -25,10 +42,6 @@ import com.example.flight.JetPackFlight;
 import com.example.flight.JetPackFlightState;
 import com.example.ui.frames.RadarTapeWindow;
 
-/**
- * CollisionDetector detects and reports collisions between jetpack flights.
- * It monitors distances, issues warnings/alerts, and integrates with AccidentAlert for reporting.
- */
 public class CollisionDetector {
     
     private static final double WARNING_DISTANCE = 100.0;

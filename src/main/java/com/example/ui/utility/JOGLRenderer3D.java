@@ -1,34 +1,28 @@
 /**
- * JOGLRenderer3D.java
- * by Haisam Elkewidy
- *
- * This class handles JOGLRenderer3D functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - accidents (List<Accident>)
- *   - flightStates (Map<JetPackFlight, JetPackFlightState>)
- *   - cameraAzimuth (double)
- *   - cameraElevation (double)
- *   - cameraDistance (double)
- *   - glut (GLUT)
- *   - mouseAzimuth (double)
- *   - mouseElevation (double)
- *   - mouseDistance (double)
- *   - dragging (boolean)
- *   - ... and 5 more
- *
- * Methods:
- *   - JOGLRenderer3D()
- *   - mousePressed(x, y)
- *   - mouseReleased(x, y)
- *   - mouseDragged(x, y)
- *   - mouseWheelMoved(wheelRotation)
- *   - init(drawable)
- *   - dispose(drawable)
- *   - display(drawable)
- *   - updateData(flight, cityModel, nearbyJetpacks, accidents, Map<JetPackFlight, flightStates)
- *   - reshape(drawable, x, y, width, height)
- *
+ * Three-dimensional model representation of joglrenderer for JOGL rendering.
+ * 
+ * Purpose:
+ * Models joglrenderer geometry with position, dimensions, and visual properties for
+ * hardware-accelerated 3D rendering via JOGL. Supports collision detection, spatial queries,
+ * and realistic visualization in the 3D city view.
+ * 
+ * Key Responsibilities:
+ * - Store geometric data (position, dimensions) for rendering
+ * - Provide visual attributes (color, texture, detail level) for realism
+ * - Support collision and proximity queries for spatial operations
+ * - Enable type classification and metadata access
+ * 
+ * Interactions:
+ * - Rendered by JOGL3DPanel and JOGLRenderer3D
+ * - Referenced by CityModel3D for scene composition
+ * - Used in collision detection and spatial analysis
+ * 
+ * Patterns & Constraints:
+ * - Immutable geometry for thread-safe access
+ * - Compatible with OpenGL rendering pipelines
+ * - Simple collision models for performance
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.ui.utility;

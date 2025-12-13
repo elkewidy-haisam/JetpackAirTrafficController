@@ -1,18 +1,30 @@
 /**
- * Radio.java
- * by Haisam Elkewidy
- *
- * This class handles radio communications between Air Traffic Control and jetpack pilots.
- *
- * Variables:
- *   - frequency (String)
- *   - enabled (boolean)
- *
- * Methods:
- *   - Radio(frequency)
- *   - transmit(message)
- *   - toString()
- *
+ * Models radio communication equipment for air traffic control transmissions.
+ * 
+ * Purpose:
+ * Represents a radio transceiver operating on a designated frequency, enabling air traffic controllers
+ * to broadcast messages, clearances, and emergency directives to jetpack pilots. Provides a simplified
+ * abstraction of aviation radio systems with enable/disable functionality.
+ * 
+ * Key Responsibilities:
+ * - Maintain assigned radio frequency (e.g., "121.5" for emergency)
+ * - Support enable/disable toggling for operational control
+ * - Transmit messages to connected receivers (pilots, other controllers)
+ * - Provide immutable frequency identifier for channel coordination
+ * 
+ * Interactions:
+ * - Used by AirTrafficController to broadcast system-wide messages
+ * - Referenced in RadioInstructionsPanel for UI display of active frequency
+ * - Logged via RadioTransmissionLogger for compliance and playback
+ * - Associated with RadioMessage objects for structured communications
+ * 
+ * Patterns & Constraints:
+ * - Immutable frequency ensures channel stability
+ * - Lightweight model suitable for multiple radio instances per controller
+ * - No actual RF hardware integration; represents logical communication channel
+ * - Thread-safe for concurrent transmit operations at higher layers
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.model;

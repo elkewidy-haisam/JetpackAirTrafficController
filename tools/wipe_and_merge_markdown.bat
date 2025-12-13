@@ -1,3 +1,21 @@
+REM ============================================================================
+REM wipe_and_merge_markdown.bat - Consolidates all Markdown files into README
+REM ============================================================================
+REM Purpose:
+REM   Merges all Markdown documentation files in the repository into a single README.md,
+REM   creating consolidated documentation. Provides a convenient interface for documentation management.
+REM
+REM Usage:
+REM   wipe_and_merge_markdown.bat
+REM
+REM Requirements:
+REM   - Java JDK 11 or higher
+REM   - Maven (where applicable)
+REM   - Appropriate permissions for file operations
+REM
+REM Author: Haisam Elkewidy
+REM ============================================================================
+
 @echo off
 setlocal enabledelayedexpansion
 

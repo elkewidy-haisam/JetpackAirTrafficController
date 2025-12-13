@@ -1,20 +1,28 @@
 /**
- * RadioInstructionManager.java
- * by Haisam Elkewidy
- *
- * This class handles RadioInstructionManager functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - cityRadio (Radio)
- *   - currentWeather (Weather)
- *   - city (String)
- *   - random (Random)
- *   - logManager (CityLogManager)
- *   - radioInstructionsArea (JTextArea)
- *
- * Methods:
- *   - RadioInstructionManager(cityRadio, city, logManager)
- *
+ * Centralized management for instruction operations and lifecycle coordination.
+ * 
+ * Purpose:
+ * Manages instruction instances across the Air Traffic Controller system, providing
+ * factory methods, registry access, and coordination logic. Supports multi-city scenarios
+ * and ensures consistent instruction state across operational contexts.
+ * 
+ * Key Responsibilities:
+ * - Initialize and maintain instruction collections per city or system-wide
+ * - Provide query methods for instruction retrieval and filtering
+ * - Coordinate instruction state updates across subsystems
+ * - Support instruction lifecycle (creation, modification, disposal)
+ * 
+ * Interactions:
+ * - Referenced by AirTrafficControllerFrame and CityMapPanel
+ * - Integrates with logging and persistence subsystems
+ * - Coordinates with related manager classes
+ * 
+ * Patterns & Constraints:
+ * - Manager pattern centralizes instruction concerns
+ * - Thread-safe operations for concurrent access
+ * - Per-city collections for multi-city support
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.manager;

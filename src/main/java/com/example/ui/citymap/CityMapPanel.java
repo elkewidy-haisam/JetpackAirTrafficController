@@ -1,33 +1,28 @@
 /**
- * CityMapPanel.java
- * by Haisam Elkewidy
- *
- * This class handles CityMapPanel functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - radarTapeWindow (RadarTapeWindow)
- *   - logManager (CityLogManager)
- *   - city (String)
- *   - jetpacks (ArrayList<JetPack>)
- *   - mapPanel (JPanel)
- *   - mapWithJetpacks (JPanel)
- *   - jetpackFlights (List<JetPackFlight>)
- *   - flightStates (Map<JetPackFlight, JetPackFlightState>)
- *   - radarTape (RadarTapeWindow)
- *   - weatherLabel (JLabel)
- *   - ... and 22 more
- *
- * Methods:
- *   - CityMapPanel(city, jetpacks, weather, dayTime, logManager, radarWindow)
- *   - hideJetpack(flight)
- *   - showJetpack(flight)
- *   - updateAllFlightStatesRadarWindow()
- *   - keyPressed(e)
- *   - updateWeatherBroadcast()
- *   - appendJetpackMovement(message)
- *   - actionPerformed(e)
- *   - stopAnimation()
- *
+ * UI panel component for  display and interaction.
+ * 
+ * Purpose:
+ * Specialized Swing JPanel providing -related visualization and user interaction.
+ * Integrates with the main application frame to present  data in a clear,
+ * actionable format for air traffic controllers.
+ * 
+ * Key Responsibilities:
+ * - Render  information with appropriate visual styling
+ * - Handle user interactions related to  operations
+ * - Update display in response to system state changes
+ * - Provide callbacks for parent frame coordination
+ * 
+ * Interactions:
+ * - Embedded in AirTrafficControllerFrame or CityMapPanel
+ * - Receives updates from manager classes and controllers
+ * - Triggers actions via event listeners and callbacks
+ * 
+ * Patterns & Constraints:
+ * - Extends JPanel for Swing integration
+ * - Custom paintComponent for rendering where needed
+ * - Event-driven updates for responsive UI
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.ui.citymap;
