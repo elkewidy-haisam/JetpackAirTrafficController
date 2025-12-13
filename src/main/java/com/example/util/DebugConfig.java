@@ -34,33 +34,63 @@ package com.example.util;
 public class DebugConfig {
     /**
      * Master verbose flag - controls all debug output across the application.
-     * Set to false for production/normal use, true for debugging.
+     * When false, no debug output is produced regardless of individual system flags.
+     * Set to false for production/normal use, true for debugging and troubleshooting.
+     * Performance impact: Disabling this flag improves performance by eliminating debug checks.
      */
     public static final boolean VERBOSE = false;
 
     /**
-     * Individual system flags (all respect VERBOSE - if VERBOSE is false, these are ignored).
+     * Individual system-specific debug flags.
+     * These flags only have effect when VERBOSE is true (master switch).
+     * Use these for targeted debugging of specific subsystems without flooding logs.
      */
+    
+    // Weather system debug flag - logs weather changes, severity updates, and safety checks
     public static final boolean LOG_WEATHER = false;
+    
+    // Radar system debug flag - logs position updates, tracking events, and collision detection
     public static final boolean LOG_RADAR = false;
+    
+    // Accident system debug flag - logs accident reports, alerts, and clearance operations
     public static final boolean LOG_ACCIDENTS = false;
+    
+    // Radio system debug flag - logs transmissions, broadcasts, and communication events
     public static final boolean LOG_RADIO = false;
+    
+    // Air Traffic Controller debug flag - logs ATC operations, approvals, and system checks
     public static final boolean LOG_ATC = false;
 
     /**
-     * Checks if logging is enabled for a specific system.
-     * @param system The system name (weather, radar, accidents, radio, atc)
-     * @return true if logging is enabled for the system, false otherwise
+     * Checks if logging is enabled for a specific subsystem.
+     * Performs a two-level check: first the master VERBOSE flag, then the system-specific flag.
+     * This allows centralized control via VERBOSE while maintaining granular subsystem toggles.
+     * 
+     * @param system The subsystem name (case-insensitive: "weather", "radar", "accidents", "radio", "atc")
+     * @return true if both VERBOSE and the system-specific flag are true, false otherwise
      */
     public static boolean isEnabled(String system) {
+        // First check: master VERBOSE flag acts as kill switch for all debug output
         if (!VERBOSE) return false;
 
+        // Second check: evaluate system-specific flag based on subsystem name
         switch (system.toLowerCase()) {
+            // Weather subsystem logging control
             case "weather": return LOG_WEATHER;
+            
+            // Radar subsystem logging control
             case "radar": return LOG_RADAR;
+            
+            // Accident subsystem logging control
             case "accidents": return LOG_ACCIDENTS;
+            
+            // Radio subsystem logging control
             case "radio": return LOG_RADIO;
+            
+            // Air Traffic Controller subsystem logging control
             case "atc": return LOG_ATC;
+            
+            // Unknown subsystem names default to disabled
             default: return false;
         }
     }
