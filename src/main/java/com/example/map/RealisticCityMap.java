@@ -30,7 +30,9 @@ import java.util.Random;
  * Includes parking spaces for jetpack landing zones.
  */
 public class RealisticCityMap extends JPanel {
+    /** mapImage field */
     private BufferedImage mapImage;
+    /** cityName field */
     private String cityName;
     private boolean imageLoaded = false;
     private List<ParkingSpace> parkingSpaces;

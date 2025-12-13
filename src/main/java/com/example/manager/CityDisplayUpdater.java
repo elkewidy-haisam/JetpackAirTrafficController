@@ -26,7 +26,9 @@ import java.time.format.DateTimeFormatter;
  */
 public class CityDisplayUpdater {
     
+    /** weatherLabel field */
     private JLabel weatherLabel;
+    /** dateTimeLabel field */
     private JLabel dateTimeLabel;
     
     /**
