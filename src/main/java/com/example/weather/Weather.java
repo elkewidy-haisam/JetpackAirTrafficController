@@ -1,25 +1,33 @@
 /**
- * Weather component for the Air Traffic Controller system.
+ * Simulates and manages weather conditions including classification, severity levels, and atmospheric parameters.
  * 
  * Purpose:
- * Provides weather functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Models dynamic weather conditions that affect jetpack flight operations, assigning severity levels to
+ * weather types (Clear/Sunny=1 to Thunderstorm=5) and tracking atmospheric parameters (temperature, wind
+ * speed, visibility). Provides safety assessments for flight operations and broadcasts weather updates
+ * through the radio system.
  * 
  * Key Responsibilities:
- * - Implement core weather operations
- * - Maintain necessary state for weather functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Maintain current weather condition and severity level (1-5 scale)
+ * - Track atmospheric parameters (temperature, wind speed, visibility)
+ * - Classify weather types by operational severity (MINIMAL to CRITICAL)
+ * - Provide flight safety assessments based on weather severity
+ * - Support random weather changes for realistic simulation
+ * - Generate formatted weather broadcasts for radio transmission
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by CityMapPanel to trigger flight groundings in severe weather
+ * - Referenced by WeatherBroadcastPanel for UI display updates
+ * - Broadcasts through Radio system to notify all jetpacks
+ * - Affects FlightEmergencyHandler decisions for emergency landings
+ * - Logged by CityLogManager for weather history tracking
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Severity levels: 1 (safe) to 5 (critical - no flight operations)
+ * - Immutable weather-to-severity mapping defined at initialization
+ * - Random weather changes weighted by current conditions
+ * - Thread-safe for reads; external synchronization for weather updates
+ * - VERBOSE_LOGGING flag controls debug output for testing
  * 
  * @author Haisam Elkewidy
  */

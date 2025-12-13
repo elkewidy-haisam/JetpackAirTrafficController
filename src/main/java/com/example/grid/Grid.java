@@ -1,25 +1,30 @@
 /**
- * Grid component for the Air Traffic Controller system.
+ * Represents a geographic reference grid system for mapping and coordinate representation.
  * 
  * Purpose:
- * Provides grid functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Models a spatial grid structure with dimensions, type classification, and coordinate system information.
+ * Used to define the reference frame for mapping city layouts and positioning jetpacks within
+ * a standardized coordinate space. Supports different grid types and coordinate systems for flexibility.
  * 
  * Key Responsibilities:
- * - Implement core grid operations
- * - Maintain necessary state for grid functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Store grid dimensions (width, height) defining the coordinate space
+ * - Maintain grid type classification (Cartesian, Polar, UTM, etc.)
+ * - Track locale name for geographic context
+ * - Manage coordinate system specification
+ * - Support dynamic grid resizing and coordinate system changes
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Referenced by GridRenderer for visual grid overlay rendering
+ * - Used by CityMapPanel to define mapping coordinate space
+ * - Provides coordinate system context for position calculations
+ * - Supports conversion between different grid representations
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Simple data model with getters and configuration methods
+ * - Mutable dimensions to support dynamic grid updates
+ * - String-based type and coordinate system for flexibility
+ * - No validation logic - assumes valid inputs from caller
+ * - Thread-safety not guaranteed - external synchronization required
  * 
  * @author Haisam Elkewidy
  */

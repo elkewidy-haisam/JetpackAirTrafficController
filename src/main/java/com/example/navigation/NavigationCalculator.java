@@ -1,25 +1,29 @@
 /**
- * NavigationCalculator component for the Air Traffic Controller system.
+ * Provides navigation calculations including distance, direction, and compass headings for jetpack flight paths.
  * 
  * Purpose:
- * Provides navigationcalculator functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Utility class containing static methods for calculating navigation data required by the air traffic
+ * control system. Computes distances between points, compass directions (N, NE, E, etc.), and provides
+ * helper functions for flight path planning and movement vector calculations.
  * 
  * Key Responsibilities:
- * - Implement core navigationcalculator operations
- * - Maintain necessary state for navigationcalculator functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Calculate Euclidean distances between coordinates
+ * - Convert angle calculations to compass direction strings (North, Southeast, etc.)
+ * - Provide navigation utilities for jetpack flight path planning
+ * - Support movement direction calculations for UI displays and logging
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by JetPackFlight for movement direction calculations
+ * - Referenced by FlightMovementController for path planning
+ * - Utilized by UI components to display jetpack heading information
+ * - Supports logging systems with human-readable direction strings
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Pure utility class with only static methods (stateless)
+ * - Thread-safe due to lack of mutable state
+ * - Uses standard Java Point class for coordinate representation
+ * - Relies on Math.atan2 for angle calculations with proper quadrant handling
+ * - Alternative to GeometryUtils with navigation-specific functionality
  * 
  * @author Haisam Elkewidy
  */

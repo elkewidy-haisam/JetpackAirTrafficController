@@ -1,25 +1,29 @@
 /**
- * DebugConfig component for the Air Traffic Controller system.
+ * Global configuration for controlling debug logging output across all system components.
  * 
  * Purpose:
- * Provides debugconfig functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Centralized flag management for enabling/disabling verbose logging output throughout the application.
+ * Provides a master VERBOSE switch and individual subsystem toggles for targeted debugging of specific
+ * components (weather, radar, accidents, radio, ATC). Designed to be set at compile-time for performance.
  * 
  * Key Responsibilities:
- * - Implement core debugconfig operations
- * - Maintain necessary state for debugconfig functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Define master VERBOSE flag that controls all debug output
+ * - Provide per-subsystem logging flags (LOG_WEATHER, LOG_RADAR, etc.)
+ * - Offer isEnabled() method for programmatic debug state checks
+ * - Enable easy toggling between production and debug modes
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Referenced by all major components for conditional logging
+ * - Checked before expensive string formatting operations
+ * - Used by Weather, Radar, Radio, and ATC systems
+ * - Controls verbosity of log files and console output
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Configuration class with only public static final constants
+ * - Master-slave pattern: VERBOSE must be true for individual flags to work
+ * - Compile-time constants allow JVM to optimize away dead code branches
+ * - Set VERBOSE=false for production to eliminate performance overhead
+ * - Thread-safe by virtue of being immutable constants
  * 
  * @author Haisam Elkewidy
  */

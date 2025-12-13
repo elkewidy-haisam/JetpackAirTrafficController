@@ -1,25 +1,28 @@
 /**
- * City component for the Air Traffic Controller system.
+ * Represents a city in the air traffic control system with geographic boundaries and parking infrastructure.
  * 
  * Purpose:
- * Provides city functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Models a city as a bounded geographic area where jetpacks can operate, containing essential spatial
+ * information (dimensions) and the infrastructure (parking spaces) necessary for jetpack operations.
+ * This is the core domain model that defines the operational theater for air traffic control.
  * 
  * Key Responsibilities:
- * - Implement core city operations
- * - Maintain necessary state for city functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Store city identification (name) and geographic dimensions (width, height)
+ * - Maintain a collection of available parking spaces within the city
+ * - Provide accessor methods for city properties
+ * - Serve as a data container for city-specific configuration
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by CityMapPanel and UI components to define rendering boundaries
+ * - Referenced by ParkingSpaceGenerator to create and assign parking locations
+ * - Queried by JetPackFlight to determine if coordinates are within city bounds
+ * - Accessed by CityMapLoader to initialize city-specific map displays
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Simple data model (POJO) with minimal behavior
+ * - Immutable identification and dimensions (set only at construction)
+ * - Mutable parking space collection to support dynamic infrastructure updates
+ * - No business logic - pure data container following JavaBean conventions
  * 
  * @author Haisam Elkewidy
  */

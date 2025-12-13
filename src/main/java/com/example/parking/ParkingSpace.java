@@ -1,25 +1,32 @@
 /**
- * ParkingSpace component for the Air Traffic Controller system.
+ * Represents a designated parking location for jetpacks with occupation status tracking.
  * 
  * Purpose:
- * Provides parkingspace functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Models a physical parking space in the city where jetpacks can land and remain stationary.
+ * Tracks the space's unique identifier, geographic location, and current occupation status to
+ * support parking assignment, availability queries, and traffic management operations.
  * 
  * Key Responsibilities:
- * - Implement core parkingspace operations
- * - Maintain necessary state for parkingspace functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Store unique parking space identifier (city-prefix + number)
+ * - Maintain fixed geographic location coordinates
+ * - Track occupation state (occupied vs. vacant)
+ * - Provide occupy/vacate operations for parking management
+ * - Support proximity queries for nearest available space searches
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Created by ParkingSpaceGenerator during city initialization
+ * - Managed by ParkingSpaceManager for availability tracking
+ * - Referenced by JetPackFlightState when jetpacks park
+ * - Used by FlightEmergencyHandler to find nearest parking during emergencies
+ * - Queried by City for parking infrastructure reporting
+ * - Rendered by CityMapPanel as green squares on the map
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Immutable identifier and location (set at construction)
+ * - Single mutable field (isOccupied) for lifecycle management
+ * - Simple occupy/vacate operations (no reservation or locking)
+ * - No time-based parking limits or expiration
+ * - Thread-safety not guaranteed - caller must synchronize access
  * 
  * @author Haisam Elkewidy
  */

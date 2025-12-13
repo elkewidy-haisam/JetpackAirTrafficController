@@ -1,25 +1,30 @@
 /**
- * Accident component for the Air Traffic Controller system.
+ * Represents an accident incident in the airspace with location, classification, and status tracking.
  * 
  * Purpose:
- * Provides accident functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Models an aviation accident or hazardous event that occurs within the city airspace, capturing
+ * critical details such as location, type, severity, and active status. This is used by the air
+ * traffic control system to alert pilots, reroute flights, and log incident information.
  * 
  * Key Responsibilities:
- * - Implement core accident operations
- * - Maintain necessary state for accident functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Store immutable accident identification and location data
+ * - Classify accidents by type (COLLISION, GROUND_ACCIDENT, JETPACK_MALFUNCTION, etc.)
+ * - Track severity levels (MINOR, MODERATE, SEVERE, CRITICAL)
+ * - Maintain active status to indicate if the incident is ongoing or resolved
+ * - Provide timestamp for incident tracking and historical analysis
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Created by AccidentReporter when incidents occur
+ * - Referenced by Radio to broadcast accident alerts
+ * - Used by AccidentAlert to determine avoidance zones
+ * - Logged by CityLogManager for incident records
+ * - Displayed in UI components (RadioInstructionsPanel, JetpackMovementPanel)
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Immutable core properties (ID, location, type, severity, description, timestamp)
+ * - Single mutable field (isActive) for lifecycle management
+ * - Value object with comprehensive toString() for logging and debugging
+ * - Thread-safe for reads; writes to isActive should be synchronized at caller level
  * 
  * @author Haisam Elkewidy
  */

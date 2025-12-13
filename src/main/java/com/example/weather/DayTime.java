@@ -1,25 +1,31 @@
 /**
- * DayTime component for the Air Traffic Controller system.
+ * Manages time-of-day classification and provides period-specific descriptions for daylight cycle simulation.
  * 
  * Purpose:
- * Provides daytime functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Tracks the current time and categorizes it into distinct periods of the day (NIGHT, DAWN, SUNRISE, DAY,
+ * SUNSET, DUSK, NIGHTTIME). Used by the UI rendering system to apply appropriate visual effects such as
+ * darkening the map during night hours and brightening during daytime. Supports both real-time and
+ * simulated time configurations.
  * 
  * Key Responsibilities:
- * - Implement core daytime operations
- * - Maintain necessary state for daytime functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Classify current time into named day periods (DAWN, DAY, SUNSET, etc.)
+ * - Maintain configurable time ranges for each period
+ * - Provide human-readable descriptions of the current time of day
+ * - Support both system time and manual time setting for testing
+ * - Generate formatted time strings with emoji indicators (☀️, 🌙, etc.)
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by CityMapPanel to apply time-based shading to map display
+ * - Referenced by DateTimeDisplayPanel for time-of-day indicators
+ * - Supports Weather system for realistic environmental conditions
+ * - Provides visual feedback through UI components
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Uses Java LocalTime for time representation
+ * - Immutable time range configuration after initialization
+ * - Hour-based period classification (no minute granularity in ranges)
+ * - Thread-safe for reads; synchronization needed if updating time frequently
+ * - Simple state machine for transitioning between day periods
  * 
  * @author Haisam Elkewidy
  */
