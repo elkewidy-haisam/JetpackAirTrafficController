@@ -47,14 +47,26 @@ import com.example.ui.utility.UIComponentFactory;
  * Displays real-time jetpack movement information.
  */
 public class JetpackMovementPanel extends JPanel {
+    // Text area for displaying real-time jetpack movement information
     private JTextArea jetpackMovementArea;
     
+    /**
+     * Constructs a new JetpackMovementPanel.
+     * Initializes movement tracking display with orange styling.
+     */
     public JetpackMovementPanel() {
+        // Initialize and configure UI components
         initializeUI();
     }
     
+    /**
+     * Initializes and configures all UI components.
+     * Sets up display with dark orange border and cornsilk background.
+     */
     private void initializeUI() {
+        // Set BorderLayout for simple CENTER positioning
         setLayout(new BorderLayout());
+        // Create titled border with dark orange color (255,140,0)
         setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createLineBorder(new Color(255, 140, 0), 2),
             "Jetpack Movement",
@@ -63,40 +75,63 @@ public class JetpackMovementPanel extends JPanel {
             new Font("Arial", Font.BOLD, 12),
             new Color(255, 140, 0)
         ));
+        // Set white background for panel
         setBackground(Color.WHITE);
+        // Constrain maximum size to fit movement content
         setMaximumSize(new Dimension(300, 200));
         
+        // Create read-only text area with 10 rows, 25 columns, Courier Plain 10pt font
         jetpackMovementArea = UIComponentFactory.createReadOnlyTextArea(10, 25, UIComponentFactory.COURIER_PLAIN_10);
+        // Set cornsilk background (255,250,240)
         jetpackMovementArea.setBackground(new Color(255, 250, 240));
+        // Set saddle brown foreground text color (139,69,19)
         jetpackMovementArea.setForeground(new Color(139, 69, 19));
+        // Add 5-pixel margin on all sides
         jetpackMovementArea.setMargin(new Insets(5, 5, 5, 5));
         
+        // Create scroll pane wrapper for text area
         JScrollPane scrollPane = new JScrollPane(jetpackMovementArea);
+        // Always show vertical scrollbar for consistent layout
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         
+        // Add scroll pane to center of panel
         add(scrollPane, BorderLayout.CENTER);
     }
     
     /**
-     * Appends movement text to the display
+     * Appends movement text to the display with newline.
+     * Automatically scrolls to show newest movement updates.
+     * 
+     * @param text Movement text to append
      */
     public void appendMovement(String text) {
+        // Check if text area has been initialized
         if (jetpackMovementArea != null) {
+            // Append movement text with newline character
             jetpackMovementArea.append(text + "\n");
+            // Move caret to end of document to auto-scroll to newest movement
             jetpackMovementArea.setCaretPosition(jetpackMovementArea.getDocument().getLength());
         }
     }
     
     /**
-     * Clears the movement display
+     * Clears all text from the movement display.
      */
     public void clearMovement() {
+        // Check if text area has been initialized
         if (jetpackMovementArea != null) {
+            // Clear all text by setting empty string
             jetpackMovementArea.setText("");
         }
     }
     
+    /**
+     * Returns the text area component for direct access.
+     * 
+     * @return JTextArea displaying jetpack movement
+     */
     public JTextArea getMovementArea() {
+        // Return reference to movement text area
         return jetpackMovementArea;
     }
 }
