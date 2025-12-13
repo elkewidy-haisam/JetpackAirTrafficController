@@ -1,22 +1,28 @@
 /**
- * CityLogManager.java
- * by Haisam Elkewidy
- *
- * This class handles CityLogManager functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - cityJetpackLogFiles (Map<String, String>)
- *   - cityRadarLogFiles (Map<String, String>)
- *   - cityWeatherLogFiles (Map<String, String>)
- *   - cityAccidentLogFiles (Map<String, String>)
- *
- * Methods:
- *   - CityLogManager()
- *   - writeToJetpackLog(city, message)
- *   - writeToRadarLog(city, message)
- *   - writeToWeatherLog(city, message)
- *   - writeToAccidentLog(city, message)
- *
+ * Centralized management for log operations and lifecycle coordination.
+ * 
+ * Purpose:
+ * Manages log instances across the Air Traffic Controller system, providing
+ * factory methods, registry access, and coordination logic. Supports multi-city scenarios
+ * and ensures consistent log state across operational contexts.
+ * 
+ * Key Responsibilities:
+ * - Initialize and maintain log collections per city or system-wide
+ * - Provide query methods for log retrieval and filtering
+ * - Coordinate log state updates across subsystems
+ * - Support log lifecycle (creation, modification, disposal)
+ * 
+ * Interactions:
+ * - Referenced by AirTrafficControllerFrame and CityMapPanel
+ * - Integrates with logging and persistence subsystems
+ * - Coordinates with related manager classes
+ * 
+ * Patterns & Constraints:
+ * - Manager pattern centralizes log concerns
+ * - Thread-safe operations for concurrent access
+ * - Per-city collections for multi-city support
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.logging;

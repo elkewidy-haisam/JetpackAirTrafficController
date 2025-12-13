@@ -1,35 +1,27 @@
 /**
- * Radio.java
- * by Haisam Elkewidy
- *
- * This class handles Radio functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - frequency (String)
- *   - messageQueue (List<RadioMessage>)
- *   - random (Random)
- *   - commandExecutor (RadioCommandExecutor)
- *   - messageFormatter (RadioMessageFormatter)
- *   - transmissionLogger (RadioTransmissionLogger)
- *
- * Methods:
- *   - Radio(frequency, controllerCallSign)
- *   - Radio()
- *   - registerFlight(callsign, flight)
- *   - registerFlightState(callsign, flightState)
- *   - unregisterFlight(callsign)
- *   - giveNewCoordinates(jetpack, newX, newY, reason)
- *   - giveNewCoordinates(jetpack, newX, newY)
- *   - giveNewAltitude(jetpack, newAltitude, reason)
- *   - giveNewAltitude(jetpack, newAltitude)
- *   - clearForTakeoff(jetpack, runway)
- *   - clearForLanding(jetpack, landingZone)
- *   - broadcastToAll(message)
- *   - provideWeatherInfo(jetpack, weatherInfo)
- *   - requestPositionReport(jetpack)
- *   - reportAccident(accidentID, x, y, type, severity, description)
- *   - ... and 8 more
- *
+ * Radio component for the Air Traffic Controller system.
+ * 
+ * Purpose:
+ * Provides radio functionality within the jetpack air traffic control application.
+ * Supports operational requirements through specialized methods and state management.
+ * 
+ * Key Responsibilities:
+ * - Implement core radio operations
+ * - Maintain necessary state for radio functionality
+ * - Integrate with related system components
+ * - Support queries and updates as needed
+ * 
+ * Interactions:
+ * - Referenced by controllers and managers
+ * - Integrates with data models and services
+ * - Coordinates with UI components where applicable
+ * 
+ * Patterns & Constraints:
+ * - Follows system architecture conventions
+ * - Thread-safe where concurrent access expected
+ * - Minimal external dependencies
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.radio;

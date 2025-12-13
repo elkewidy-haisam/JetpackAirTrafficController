@@ -1,15 +1,28 @@
 /**
- * SessionManager.java
- * by Haisam Elkewidy
- *
- * This class handles SessionManager functionality in the Air Traffic Controller system.
- *
- * Methods:
- *   - SessionManager()
- *   - saveSession(city, flights, weather)
- *   - exportRadarLog(radarLog)
- *   - exportAccidentReport(accidents)
- *
+ * Centralized management for session operations and lifecycle coordination.
+ * 
+ * Purpose:
+ * Manages session instances across the Air Traffic Controller system, providing
+ * factory methods, registry access, and coordination logic. Supports multi-city scenarios
+ * and ensures consistent session state across operational contexts.
+ * 
+ * Key Responsibilities:
+ * - Initialize and maintain session collections per city or system-wide
+ * - Provide query methods for session retrieval and filtering
+ * - Coordinate session state updates across subsystems
+ * - Support session lifecycle (creation, modification, disposal)
+ * 
+ * Interactions:
+ * - Referenced by AirTrafficControllerFrame and CityMapPanel
+ * - Integrates with logging and persistence subsystems
+ * - Coordinates with related manager classes
+ * 
+ * Patterns & Constraints:
+ * - Manager pattern centralizes session concerns
+ * - Thread-safe operations for concurrent access
+ * - Per-city collections for multi-city support
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.utility.map;

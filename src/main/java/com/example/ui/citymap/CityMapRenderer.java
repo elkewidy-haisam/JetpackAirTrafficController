@@ -1,19 +1,28 @@
 /**
- * CityMapRenderer.java
- * by Haisam Elkewidy
- *
- * This class handles CityMapRenderer functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - city (String)
- *   - mapIcon (ImageIcon)
- *   - gridRenderer (GridRenderer)
- *   - performanceMonitor (PerformanceMonitor)
- *
- * Methods:
- *   - CityMapRenderer(city, mapIcon, gridRenderer, performanceMonitor)
- *   - paintMapComponent(g, component, jetpackFlights, parkingSpaces)
- *
+ * Rendering component for citymap visualization.
+ * 
+ * Purpose:
+ * Handles rendering logic for citymap using appropriate
+ * graphics APIs. Translates model data into visual representations with proper scaling,
+ * colors, and transformations.
+ * 
+ * Key Responsibilities:
+ * - Render citymap data to graphics context
+ * - Apply visual styling, colors, and effects
+ * - Handle coordinate transformations and scaling
+ * - Optimize rendering performance for smooth updates
+ * 
+ * Interactions:
+ * - Called by panel paintComponent methods
+ * - Consumes model data for visualization
+ * - Uses graphics APIs (Graphics2D, JOGL) for drawing
+ * 
+ * Patterns & Constraints:
+ * - Stateless rendering methods for thread safety
+ * - Efficient drawing algorithms for real-time updates
+ * - Handles null/invalid input gracefully
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.ui.citymap;

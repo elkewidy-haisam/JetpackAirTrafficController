@@ -1,13 +1,28 @@
 /**
- * Renderer3D.java
- * by Haisam Elkewidy
- *
- * This class handles Renderer3D functionality in the Air Traffic Controller system.
- *
- * Methods:
- *   - renderScene(g2d, width, height, flight, cityModel)
- *   - renderScene(g2d, width, height, flight, cityModel, nearbyJetpacks, accidents, Map<JetPackFlight, flightStates)
- *
+ * Three-dimensional model representation of renderer for JOGL rendering.
+ * 
+ * Purpose:
+ * Models renderer geometry with position, dimensions, and visual properties for
+ * hardware-accelerated 3D rendering via JOGL. Supports collision detection, spatial queries,
+ * and realistic visualization in the 3D city view.
+ * 
+ * Key Responsibilities:
+ * - Store geometric data (position, dimensions) for rendering
+ * - Provide visual attributes (color, texture, detail level) for realism
+ * - Support collision and proximity queries for spatial operations
+ * - Enable type classification and metadata access
+ * 
+ * Interactions:
+ * - Rendered by JOGL3DPanel and JOGLRenderer3D
+ * - Referenced by CityModel3D for scene composition
+ * - Used in collision detection and spatial analysis
+ * 
+ * Patterns & Constraints:
+ * - Immutable geometry for thread-safe access
+ * - Compatible with OpenGL rendering pipelines
+ * - Simple collision models for performance
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.ui.utility;

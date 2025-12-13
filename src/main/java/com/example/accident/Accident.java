@@ -1,23 +1,27 @@
 /**
- * Accident.java
- * by Haisam Elkewidy
- *
- * This class handles Accident functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - accidentID (String)
- *   - x (int)
- *   - y (int)
- *   - type (String)
- *   - severity (String)
- *   - description (String)
- *   - timestamp (long)
- *   - isActive (boolean)
- *
- * Methods:
- *   - Accident(accidentID, x, y, type, severity, description)
- *   - toString()
- *
+ * Accident component for the Air Traffic Controller system.
+ * 
+ * Purpose:
+ * Provides accident functionality within the jetpack air traffic control application.
+ * Supports operational requirements through specialized methods and state management.
+ * 
+ * Key Responsibilities:
+ * - Implement core accident operations
+ * - Maintain necessary state for accident functionality
+ * - Integrate with related system components
+ * - Support queries and updates as needed
+ * 
+ * Interactions:
+ * - Referenced by controllers and managers
+ * - Integrates with data models and services
+ * - Coordinates with UI components where applicable
+ * 
+ * Patterns & Constraints:
+ * - Follows system architecture conventions
+ * - Thread-safe where concurrent access expected
+ * - Minimal external dependencies
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.accident;

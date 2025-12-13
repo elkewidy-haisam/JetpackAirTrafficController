@@ -31,6 +31,17 @@
  * 
  * @author Haisam Elkewidy
  */
+
+package com.example.detection;
+
+import java.util.List;
+import java.util.Map;
+
+import com.example.accident.AccidentAlert;
+import com.example.flight.JetPackFlight;
+import com.example.flight.JetPackFlightState;
+import com.example.ui.frames.RadarTapeWindow;
+
 public class CollisionDetector {
     
     private static final double WARNING_DISTANCE = 100.0;

@@ -1,22 +1,28 @@
 /**
- * FlightHazardManager.java
- * by Haisam Elkewidy
- *
- * This class handles FlightHazardManager functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - inclementWeather (boolean)
- *   - buildingCollapse (boolean)
- *   - airAccident (boolean)
- *   - policeActivity (boolean)
- *   - emergencyHalt (boolean)
- *   - currentStatus (String)
- *
- * Methods:
- *   - FlightHazardManager()
- *   - clearEmergencyHalt()
- *   - hasActiveHazards()
- *
+ * Centralized management for hazard operations and lifecycle coordination.
+ * 
+ * Purpose:
+ * Manages hazard instances across the Air Traffic Controller system, providing
+ * factory methods, registry access, and coordination logic. Supports multi-city scenarios
+ * and ensures consistent hazard state across operational contexts.
+ * 
+ * Key Responsibilities:
+ * - Initialize and maintain hazard collections per city or system-wide
+ * - Provide query methods for hazard retrieval and filtering
+ * - Coordinate hazard state updates across subsystems
+ * - Support hazard lifecycle (creation, modification, disposal)
+ * 
+ * Interactions:
+ * - Referenced by AirTrafficControllerFrame and CityMapPanel
+ * - Integrates with logging and persistence subsystems
+ * - Coordinates with related manager classes
+ * 
+ * Patterns & Constraints:
+ * - Manager pattern centralizes hazard concerns
+ * - Thread-safe operations for concurrent access
+ * - Per-city collections for multi-city support
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.manager;

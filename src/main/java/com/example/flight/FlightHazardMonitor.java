@@ -31,6 +31,12 @@
  * 
  * @author Haisam Elkewidy
  */
+
+package com.example.flight;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class FlightHazardMonitor {
     private boolean inclementWeather;
     private boolean buildingCollapse;

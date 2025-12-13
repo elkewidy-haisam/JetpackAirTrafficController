@@ -1,25 +1,27 @@
 /**
- * JetPackFlightState.java
- * by Haisam Elkewidy
- *
- * This class handles JetPackFlightState functionality in the Air Traffic Controller system.
- *
- * Variables:
- *   - flight (JetPackFlight)
- *   - targetParking (ParkingSpace)
- *   - isParked (boolean)
- *   - parkingTimeRemaining (int)
- *   - random (Random)
- *   - availableParkingSpaces (List<ParkingSpace>)
- *   - radarTapeWindow (RadarTapeWindow)
- *   - movementLogger (MovementLogger)
- *   - repaintCallback (Runnable)
- *
- * Methods:
- *   - JetPackFlightState(flight, parkingSpaces)
- *   - updateParkingState()
- *   - update()
- *
+ * JetPackFlightState component for the Air Traffic Controller system.
+ * 
+ * Purpose:
+ * Provides jetpackflightstate functionality within the jetpack air traffic control application.
+ * Supports operational requirements through specialized methods and state management.
+ * 
+ * Key Responsibilities:
+ * - Implement core jetpackflightstate operations
+ * - Maintain necessary state for jetpackflightstate functionality
+ * - Integrate with related system components
+ * - Support queries and updates as needed
+ * 
+ * Interactions:
+ * - Referenced by controllers and managers
+ * - Integrates with data models and services
+ * - Coordinates with UI components where applicable
+ * 
+ * Patterns & Constraints:
+ * - Follows system architecture conventions
+ * - Thread-safe where concurrent access expected
+ * - Minimal external dependencies
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.flight;

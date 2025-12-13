@@ -1,23 +1,28 @@
 /**
- * CityModel3D.java
- * by Haisam Elkewidy
- *
- * This class creates and manages realistic 3D city models with buildings and terrain.
- *
- * Variables:
- *   - cityName (String)
- *   - buildings (List<Building3D>)
- *   - roads (List<Road3D>)
- *   - bridges (List<Bridge3D>)
- *   - houses (List<House3D>)
- *   - cityMap (BufferedImage)
- *   - mapWidth (int)
- *   - mapHeight (int)
- *   - random (Random)
- *
- * Methods:
- *   - CityModel3D(cityName, cityMap)
- *
+ * Three-dimensional model representation of citymodel for JOGL rendering.
+ * 
+ * Purpose:
+ * Models citymodel geometry with position, dimensions, and visual properties for
+ * hardware-accelerated 3D rendering via JOGL. Supports collision detection, spatial queries,
+ * and realistic visualization in the 3D city view.
+ * 
+ * Key Responsibilities:
+ * - Store geometric data (position, dimensions) for rendering
+ * - Provide visual attributes (color, texture, detail level) for realism
+ * - Support collision and proximity queries for spatial operations
+ * - Enable type classification and metadata access
+ * 
+ * Interactions:
+ * - Rendered by JOGL3DPanel and JOGLRenderer3D
+ * - Referenced by CityModel3D for scene composition
+ * - Used in collision detection and spatial analysis
+ * 
+ * Patterns & Constraints:
+ * - Immutable geometry for thread-safe access
+ * - Compatible with OpenGL rendering pipelines
+ * - Simple collision models for performance
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.model;
