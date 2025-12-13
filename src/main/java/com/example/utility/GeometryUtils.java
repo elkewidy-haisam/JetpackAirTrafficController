@@ -36,22 +36,52 @@
 package com.example.utility;
 
 public class GeometryUtils {
+    /**
+     * Calculates Euclidean distance between two points using double precision.
+     * Uses Pythagorean theorem: distance = sqrt((x2-x1)² + (y2-y1)²)
+     * 
+     * @param x1 first point x-coordinate
+     * @param y1 first point y-coordinate
+     * @param x2 second point x-coordinate
+     * @param y2 second point y-coordinate
+     * @return distance between the two points
+     */
     public static double distance(double x1, double y1, double x2, double y2) {
-        double dx = x2 - x1;
-        double dy = y2 - y1;
-        return Math.sqrt(dx * dx + dy * dy);
+        double dx = x2 - x1;                 // Calculate horizontal distance
+        double dy = y2 - y1;                 // Calculate vertical distance
+        return Math.sqrt(dx * dx + dy * dy); // Apply Pythagorean theorem
     }
 
+    /**
+     * Calculates Euclidean distance between two points using integer coordinates.
+     * Converts int coordinates to double for calculation.
+     * 
+     * @param x1 first point x-coordinate (integer)
+     * @param y1 first point y-coordinate (integer)
+     * @param x2 second point x-coordinate (integer)
+     * @param y2 second point y-coordinate (integer)
+     * @return distance between the two points as double
+     */
     public static double calculateDistance(int x1, int y1, int x2, int y2) {
-        double dx = x2 - x1;
-        double dy = y2 - y1;
-        return Math.sqrt(dx * dx + dy * dy);
+        double dx = x2 - x1;                 // Calculate horizontal distance (auto-converted to double)
+        double dy = y2 - y1;                 // Calculate vertical distance (auto-converted to double)
+        return Math.sqrt(dx * dx + dy * dy); // Apply Pythagorean theorem
     }
 
+    /**
+     * Calculates Euclidean distance between two points using double coordinates.
+     * Overloaded version for explicit double parameter types.
+     * 
+     * @param x1 first point x-coordinate (double)
+     * @param y1 first point y-coordinate (double)
+     * @param x2 second point x-coordinate (double)
+     * @param y2 second point y-coordinate (double)
+     * @return distance between the two points
+     */
     public static double calculateDistance(double x1, double y1, double x2, double y2) {
-        double dx = x2 - x1;
-        double dy = y2 - y1;
-        return Math.sqrt(dx * dx + dy * dy);
+        double dx = x2 - x1;                 // Calculate horizontal distance
+        double dy = y2 - y1;                 // Calculate vertical distance
+        return Math.sqrt(dx * dx + dy * dy); // Apply Pythagorean theorem
     }
 
 }

@@ -37,8 +37,18 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class TimezoneHelper {
+    /**
+     * Formats a datetime value with a specific timezone.
+     * Converts the input datetime to the specified timezone and formats it.
+     * 
+     * @param dateTime the ZonedDateTime to format
+     * @param zoneId the timezone ID string (e.g., "America/New_York", "America/Chicago")
+     * @return formatted datetime string in ISO format with timezone information
+     */
     public static String formatWithTimezone(ZonedDateTime dateTime, String zoneId) {
+        // Convert the datetime to the specified timezone while preserving the instant
         ZonedDateTime zoned = dateTime.withZoneSameInstant(ZoneId.of(zoneId));
+        // Format using ISO standard datetime format
         return zoned.format(DateTimeFormatter.ISO_ZONED_DATE_TIME);
     }
 }

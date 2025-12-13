@@ -33,7 +33,22 @@ package com.example.utility;
 import com.example.jetpack.JetPack;
 
 public class JetpackFactory {
+    /**
+     * Creates a new JetPack with specified identification and specifications.
+     * Initializes jetpack at origin (0,0) with zero heading and altitude.
+     * 
+     * @param id unique identifier for the jetpack
+     * @param serialNumber manufacturer serial number
+     * @param callsign radio callsign for ATC communications
+     * @param ownerName name of the jetpack owner/pilot
+     * @param year manufacturing year
+     * @param model jetpack model designation
+     * @param manufacturer company that manufactured the jetpack
+     * @return newly created JetPack object with all parameters set
+     */
     public static JetPack createJetPack(String id, String serialNumber, String callsign, String ownerName, String year, String model, String manufacturer) {
+        // Create and return new JetPack with all parameters
+        // Initial position: (0,0), heading: 0.0, altitude: 0.0
         return new JetPack(id, serialNumber, callsign, ownerName, year, model, manufacturer, new java.awt.Point(0, 0), 0.0, 0.0);
     }
 }

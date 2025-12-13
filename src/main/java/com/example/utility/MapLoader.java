@@ -33,11 +33,23 @@
 package com.example.utility;
 
 public class MapLoader {
+    /**
+     * Default constructor for MapLoader.
+     * Currently a placeholder for future initialization logic.
+     */
     public MapLoader() {
-        // Initialization logic if needed
+        // Initialization logic if needed - reserved for future implementation
     }
 
+    /**
+     * Loads a map from the specified file path.
+     * Currently a placeholder method for future map loading implementation.
+     * Will support loading PNG/JPG map images from file system or classpath.
+     * 
+     * @param mapFile the path to the map file to load
+     */
     public void loadMap(String mapFile) {
-        // Logic to load map data from file
+        // Logic to load map data from file - implementation pending
+        // Future: Use ImageIO.read() or similar to load map images
     }
 }
