@@ -26,12 +26,29 @@
 
 package com.example.ui.panels;
 
+/**
+ * Handler class for processing radio instructions on the city map.
+ * Interprets controller commands and updates jetpack flight behavior accordingly.
+ */
 public class CityMapRadioInstructionHandler {
+    
+    /**
+     * Constructs a new CityMapRadioInstructionHandler.
+     * Prepares the handler for instruction processing.
+     */
     public CityMapRadioInstructionHandler() {
-        // Initialization logic if needed
+        // TODO: Add initialization logic if needed (e.g., command parser setup)
     }
 
+    /**
+     * Processes a radio instruction for jetpack flights.
+     * Parses instruction text and updates flight paths, states, or parameters.
+     *
+     * @param instruction Radio command string to process (e.g., "JP-101 ASCEND 500")
+     */
     public void handleInstruction(String instruction) {
-        // Logic to process radio instructions for jetpack flights
+        // TODO: Implement logic to process radio instructions for jetpack flights
+        // Steps: Parse instruction format, identify target jetpack, extract command and parameters,
+        // update flight state, log to radar tape
     }
 }

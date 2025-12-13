@@ -27,11 +27,23 @@
 
 package com.example.ui.panels;
 
-
+/**
+ * Factory class for creating CityMapPanel instances.
+ * Centralizes panel creation with consistent configuration.
+ */
 public class CityMapPanelFactory {
+    
+    /**
+     * Creates a new CityMapPanel with default settings.
+     * Returns a fully initialized panel ready for city visualization.
+     *
+     * @return New CityMapPanel instance
+     */
     public static CityMapPanel createCityMapPanel() {
+        // Create and return new city map panel with default configuration
         return new CityMapPanel();
     }
 
-    // Add more factory methods for other related panels if needed
+    // TODO: Add more factory methods for other related panels if needed
+    // Examples: createCityMapPanelWithConfig(), createMinimapPanel()
 }

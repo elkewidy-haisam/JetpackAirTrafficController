@@ -26,13 +26,30 @@
 
 package com.example.ui.panels;
 
+/**
+ * Updater class for refreshing city map panel display.
+ * Handles triggering repaints and data synchronization for map visualization.
+ */
 public class CityMapUpdater {
+    
+    /**
+     * Constructs a new CityMapUpdater.
+     * Prepares the updater for panel refresh operations.
+     */
     public CityMapUpdater() {
-        // Initialization logic if needed
+        // TODO: Add initialization logic if needed (e.g., update frequency configuration)
     }
 
+    /**
+     * Updates the city map panel with new data and triggers repaint.
+     * Ensures latest jetpack positions, states, and map elements are displayed.
+     *
+     * @param panel The CityMapPanel to update
+     */
     public void updateMapPanel(CityMapPanel panel) {
-        // Logic to update the city map panel with new data
+        // TODO: Implement logic to update the city map panel with new data
+        // (e.g., refresh jetpack positions, update weather overlay)
+        // Trigger panel repaint to reflect changes
         panel.repaint();
     }
 }

@@ -26,12 +26,27 @@
 
 package com.example.ui.panels;
 
+/**
+ * Loader class for reading and preparing city map data.
+ * Handles map image loading, parsing, and initialization for display.
+ */
 public class CityMapLoader {
+    
+    /**
+     * Constructs a new CityMapLoader.
+     * Prepares the loader for map data operations.
+     */
     public CityMapLoader() {
-        // Initialization logic if needed
+        // TODO: Add initialization logic if needed (e.g., cache setup, path configuration)
     }
 
+    /**
+     * Loads city map data from resources or file system.
+     * Reads map images, metadata, and prepares data structures for rendering.
+     */
     public void loadMapData() {
-        // Logic to load city map data
+        // TODO: Implement logic to load city map data
+        // Steps: Read PNG image, parse dimensions, load building/road data,
+        // initialize terrain detection
     }
 }

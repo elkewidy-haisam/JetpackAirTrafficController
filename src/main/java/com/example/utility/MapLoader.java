@@ -26,12 +26,29 @@
 
 package com.example.utility;
 
+/**
+ * Utility class for loading map data from files.
+ * Handles reading and parsing of map resources for city visualization.
+ */
 public class MapLoader {
+    
+    /**
+     * Constructs a new MapLoader.
+     * Prepares the loader for map file operations.
+     */
     public MapLoader() {
-        // Initialization logic if needed
+        // TODO: Add initialization logic if needed (e.g., set default map directory path)
     }
 
+    /**
+     * Loads map data from specified file.
+     * Reads map file, parses content, and prepares data for rendering.
+     *
+     * @param mapFile Path to the map file to load
+     */
     public void loadMap(String mapFile) {
-        // Logic to load map data from file
+        // TODO: Implement logic to load map data from file
+        // Steps: Open file, parse format (PNG/JSON/XML), extract map dimensions,
+        // load terrain and building data
     }
 }

@@ -26,13 +26,31 @@
 
 package com.example.model;
 
+/**
+ * Formatter class for radio message display and logging.
+ * Converts RadioMessage objects into human-readable formatted strings.
+ */
 public class RadioMessageFormatter {
+    
+    /**
+     * Constructs a new RadioMessageFormatter.
+     * No special initialization required.
+     */
     public RadioMessageFormatter() {
-        // Default constructor
+        // Default constructor with no initialization needed
     }
 
+    /**
+     * Formats a radio message into a standardized display string.
+     * Includes message type, sender, receiver, and content in bracketed format.
+     *
+     * @param message The RadioMessage to format
+     * @return Formatted string representation of the message
+     */
     public String format(RadioMessage message) {
+        // Handle null message with error indicator
         if (message == null) return "[Invalid Message]";
+        // Format as: [TYPE] From: SENDER | To: RECEIVER | CONTENT
         return String.format("[%s] From: %s | To: %s | %s", message.getType(), message.getSender(), message.getReceiver(), message.getContent());
     }
 }
