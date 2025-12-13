@@ -30,16 +30,32 @@ package com.example.radio;
  * RadioMessageFormatter - formats radio transmission messages
  */
 public class RadioMessageFormatter {
+    // Controller's radio callsign used as message originator
     private String controllerCallSign;
     
+    /**
+     * Constructs a RadioMessageFormatter with specified controller callsign.
+     * All formatted messages will originate from this identifier.
+     * 
+     * @param controllerCallSign ATC station identifier (e.g., "ATC-NY-001")
+     */
     public RadioMessageFormatter(String controllerCallSign) {
+        // Store controller callsign for inclusion in all formatted messages
         this.controllerCallSign = controllerCallSign;
     }
     
     /**
-     * Formats coordinate change message
+     * Formats coordinate change instruction message.
+     * Creates standardized ATC phraseology for position changes.
+     * 
+     * @param callsign Target aircraft identifier
+     * @param newX New X coordinate
+     * @param newY New Y coordinate
+     * @param reason Explanation for position change
+     * @return Formatted radio message string
      */
     public String formatCoordinateInstruction(String callsign, int newX, int newY, String reason) {
+        // Format using standard ATC phraseology: FROM to TO: INSTRUCTION. Acknowledge.
         return String.format(
             "%s to %s: Proceed to new coordinates X=%d, Y=%d. Reason: %s. Acknowledge.",
             controllerCallSign, callsign, newX, newY, reason
@@ -47,10 +63,19 @@ public class RadioMessageFormatter {
     }
     
     /**
-     * Formats altitude change message
+     * Formats altitude change instruction message.
+     * Automatically determines "Climb" or "Descend" based on altitude sign.
+     * 
+     * @param callsign Target aircraft identifier
+     * @param newAltitude Target altitude (positive for climb, negative for descent)
+     * @param reason Explanation for altitude change
+     * @return Formatted radio message string
      */
     public String formatAltitudeInstruction(String callsign, int newAltitude, String reason) {
+        // Determine instruction verb based on altitude sign
         String instruction = newAltitude > 0 ? "Climb" : "Descend";
+        
+        // Format with absolute altitude value and appropriate verb
         return String.format(
             "%s to %s: %s to altitude %d feet. Reason: %s. Acknowledge.",
             controllerCallSign, callsign, instruction, Math.abs(newAltitude), reason

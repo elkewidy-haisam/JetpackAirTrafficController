@@ -28,8 +28,21 @@ package com.example.utility.timezone;
 
 
 public class TimezoneHelper {
+    /**
+     * Returns the appropriate timezone for a given city.
+     * Used for displaying city-specific local time in the UI and logs.
+     * Currently returns UTC as a placeholder - future implementation should
+     * map cities to their actual timezones (e.g., "New York" -> "America/New_York").
+     * 
+     * @param city The city name (e.g., "New York", "Boston", "Houston", "Dallas")
+     * @return ZoneId representing the city's timezone (currently always UTC)
+     */
     public static java.time.ZoneId getTimezoneForCity(String city) {
-        // Stub: Always return UTC for now
+        // Stub implementation: Always return UTC for now
+        // TODO: Implement city-to-timezone mapping:
+        //   - "New York" / "Boston" -> "America/New_York" (EST/EDT)
+        //   - "Houston" / "Dallas" -> "America/Chicago" (CST/CDT)
+        //   - Consider using a Map<String, ZoneId> for efficient lookup
         return java.time.ZoneId.of("UTC");
     }
 }

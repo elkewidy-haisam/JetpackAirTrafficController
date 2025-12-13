@@ -27,11 +27,33 @@
 package com.example.utility;
 
 public class MapLoader {
+    /**
+     * Constructs a new MapLoader instance.
+     * Currently performs no initialization - reserved for future enhancement
+     * such as caching, resource management, or configuration loading.
+     */
     public MapLoader() {
         // Initialization logic if needed
+        // Future enhancements could include:
+        //   - Setting up file path validators
+        //   - Initializing map data cache
+        //   - Loading map file format parsers
     }
 
+    /**
+     * Loads map data from the specified file.
+     * Placeholder implementation - future enhancement should parse map file formats
+     * (e.g., JSON, XML, custom binary) and populate city geography data structures.
+     * 
+     * @param mapFile Path to the map data file to load
+     */
     public void loadMap(String mapFile) {
         // Logic to load map data from file
+        // Future implementation should:
+        //   - Validate file exists and is readable
+        //   - Parse file format (JSON, XML, etc.)
+        //   - Extract building locations, road networks, parking spaces
+        //   - Populate City object with loaded data
+        //   - Handle IO exceptions and corrupt file formats
     }
 }

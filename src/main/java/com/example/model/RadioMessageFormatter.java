@@ -27,12 +27,34 @@
 package com.example.model;
 
 public class RadioMessageFormatter {
+    /**
+     * Constructs a new RadioMessageFormatter instance.
+     * Initializes the formatter with default settings for message presentation.
+     * The formatter uses a standardized template for all message types.
+     */
     public RadioMessageFormatter() {
-        // Default constructor
+        // Default constructor - no state required for stateless formatting operations
+        // Future enhancements could include configurable format templates or locale settings
     }
 
+    /**
+     * Formats a RadioMessage into a human-readable string for display and logging.
+     * Applies a standardized template that includes message type, sender, receiver, and content.
+     * Handles null messages gracefully by returning a safe placeholder string.
+     * 
+     * @param message The RadioMessage to format
+     * @return Formatted string representation, or "[Invalid Message]" if message is null
+     */
     public String format(RadioMessage message) {
+        // Null-safety check - prevents NullPointerException and provides clear error indication
         if (message == null) return "[Invalid Message]";
-        return String.format("[%s] From: %s | To: %s | %s", message.getType(), message.getSender(), message.getReceiver(), message.getContent());
+        
+        // Format message using standardized template: [TYPE] From: SENDER | To: RECEIVER | CONTENT
+        // This structure provides quick visual scanning in logs and radio transcript panels
+        return String.format("[%s] From: %s | To: %s | %s", 
+                           message.getType(),      // Message classification (e.g., CLEARANCE, ADVISORY)
+                           message.getSender(),    // Originating station or callsign
+                           message.getReceiver(),  // Destination callsign or broadcast indicator
+                           message.getMessage());  // Actual message payload
     }
 }

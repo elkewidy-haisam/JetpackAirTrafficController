@@ -34,41 +34,72 @@ import java.util.List;
  * RadioTransmissionLogger - manages radio transmission logging
  */
 public class RadioTransmissionLogger {
+    // Chronological list of all radio transmissions with timestamps
     private List<String> transmissionLog;
+    
+    // Flag indicating active transmission in progress
     private boolean isTransmitting;
     
+    /**
+     * Constructs a new RadioTransmissionLogger with empty log.
+     * Initializes ready to record radio communications.
+     */
     public RadioTransmissionLogger() {
+        // Initialize empty transmission log for chronological recording
         this.transmissionLog = new ArrayList<>();
+        
+        // Start in non-transmitting state
         this.isTransmitting = false;
     }
     
     /**
-     * Transmits a message (simulates radio transmission)
+     * Simulates radio transmission with realistic delay.
+     * Sets transmitting flag during operation to prevent concurrent transmissions.
+     * Blocks for 100ms to simulate real radio transmission latency.
+     * 
+     * @param message Message content (not logged by this method)
      */
     public void transmit(String message) {
+        // Set transmitting flag to indicate channel in use
         isTransmitting = true;
-        // Simulate transmission delay
+        
+        // Simulate transmission delay (100ms realistic radio latency)
         try {
             Thread.sleep(100);
         } catch (InterruptedException e) {
+            // Restore interrupt status if transmission interrupted
             Thread.currentThread().interrupt();
         }
+        
+        // Clear transmitting flag when transmission complete
         isTransmitting = false;
     }
     
     /**
-     * Logs a transmission to the transmission log
+     * Logs a transmission to the persistent log with timestamp.
+     * Captures current time and message for audit trail and replay.
+     * 
+     * @param message Message content to log
      */
     public void logTransmission(String message) {
+        // Capture current time as timestamp string
         String timestamp = LocalTime.now().toString();
+        
+        // Add timestamped entry to log: "HH:mm:ss.nnn - message"
         transmissionLog.add(timestamp + " - " + message);
     }
     
     /**
-     * Transmits and logs a message in one operation
+     * Transmits and logs a message in one atomic operation.
+     * Combines simulation delay with persistent logging for complete radio operation.
+     * 
+     * @param message Message to transmit and log
      */
     public void transmitAndLog(String message) {
+        // Simulate radio transmission with delay
         transmit(message);
+        
+        // Record transmission in persistent log
         logTransmission(message);
     }
     

@@ -47,32 +47,63 @@ public class Weather {
     private final String weatherID;
     private long lastUpdated;
 
+    /**
+     * Constructs a Weather object with default clear conditions.
+     * Initializes with safe flying conditions and default weather ID.
+     */
     public Weather() {
+        // Initialize weather type mapping
         this.weatherTypes = new HashMap<>();
         initializeWeatherTypes();
+        
+        // Start with clear, safe flying conditions
         this.currentWeather = "Clear/Sunny";
         this.currentSeverity = weatherTypes.get(currentWeather);
-        this.temperature = 72.0;
-        this.windSpeed = 5;
-        this.visibility = 10;
+        
+        // Set default atmospheric parameters for clear day
+        this.temperature = 72.0;  // Comfortable room temperature
+        this.windSpeed = 5;       // Light breeze
+        this.visibility = 10;     // Excellent visibility
+        
+        // Assign default weather system identifier
         this.weatherID = "WEATHER-01";
+        
+        // Capture initialization timestamp
         this.lastUpdated = System.currentTimeMillis();
     }
 
+    /**
+     * Constructs a Weather object with specified ID and initial conditions.
+     * Validates initial weather type, defaulting to clear if invalid.
+     * 
+     * @param weatherID Unique identifier for this weather system
+     * @param initialWeather Initial weather condition description
+     */
     public Weather(String weatherID, String initialWeather) {
+        // Initialize weather type mapping
         this.weatherTypes = new HashMap<>();
         initializeWeatherTypes();
+        
+        // Store weather system identifier
         this.weatherID = weatherID;
+        
+        // Set initial weather with validation
         if (weatherTypes.containsKey(initialWeather)) {
+            // Use provided weather if valid
             this.currentWeather = initialWeather;
             this.currentSeverity = weatherTypes.get(initialWeather);
         } else {
+            // Default to safe conditions if invalid weather specified
             this.currentWeather = "Clear/Sunny";
             this.currentSeverity = SEVERITY_MINIMAL;
         }
+        
+        // Set default atmospheric parameters
         this.temperature = 72.0;
         this.windSpeed = 5;
         this.visibility = 10;
+        
+        // Capture initialization timestamp
         this.lastUpdated = System.currentTimeMillis();
     }
 
@@ -114,20 +145,40 @@ public class Weather {
         return message;
     }
 
+    /**
+     * Changes weather to specified condition if valid.
+     * Updates severity, adjusts parameters, and broadcasts change.
+     * Silently ignores invalid weather types.
+     * 
+     * @param newWeather New weather condition string
+     */
     public void changeWeather(String newWeather) {
+        // Validate weather type exists in mapping
         if (!weatherTypes.containsKey(newWeather)) {
-            return;
+            return;  // Silently ignore invalid weather types
         }
+        
+        // Store previous state for comparison logging
         String oldWeather = this.currentWeather;
         int oldSeverity = this.currentSeverity;
+        
+        // Update weather condition and severity
         this.currentWeather = newWeather;
         this.currentSeverity = weatherTypes.get(newWeather);
+        
+        // Update timestamp to track when change occurred
         this.lastUpdated = System.currentTimeMillis();
+        
+        // Adjust temperature, wind, visibility based on new conditions
         adjustWeatherParameters();
+        
+        // Log weather change if verbose logging enabled
         if (VERBOSE_LOGGING) {
             System.out.println("\n*** WEATHER CHANGE ***");
             System.out.println("Previous: " + oldWeather + " (Severity " + oldSeverity + ")");
             System.out.println("Current: " + currentWeather + " (Severity " + currentSeverity + ")");
+            
+            // Alert on deteriorating conditions
             if (currentSeverity > oldSeverity) {
                 System.out.println("WARNING: Weather conditions have deteriorated!");
             } else if (currentSeverity < oldSeverity) {
@@ -135,13 +186,27 @@ public class Weather {
             }
             System.out.println("**********************\n");
         }
+        
+        // Broadcast new weather to all systems
         sendWeatherBroadcast();
     }
 
+    /**
+     * Changes weather to a random condition from available types.
+     * Useful for simulation and testing scenarios.
+     * Selects uniformly from all defined weather conditions.
+     */
     public void changeWeatherRandomly() {
+        // Create random number generator
         Random random = new Random();
+        
+        // Convert weather types keyset to array for indexing
         String[] weatherArray = weatherTypes.keySet().toArray(new String[weatherTypes.size()]);
+        
+        // Select random weather from available types
         String randomWeather = weatherArray[random.nextInt(weatherArray.length)];
+        
+        // Apply selected weather using standard change method
         changeWeather(randomWeather);
     }
 
@@ -231,7 +296,18 @@ public class Weather {
         }
     }
 
+    /**
+     * Determines if current conditions are safe for flight operations.
+     * Evaluates severity, visibility, and wind speed against safety thresholds.
+     * Used by ATC for flight approval decisions.
+     * 
+     * @return true if conditions meet all safety criteria, false otherwise
+     */
     public boolean isSafeToFly() {
+        // Check all safety criteria must be met:
+        // 1. Severity at or below manageable level (1-2)
+        // 2. Visibility at least 3 miles
+        // 3. Wind speed below 30 mph
         return currentSeverity <= SEVERITY_MANAGEABLE && visibility >= 3 && windSpeed < 30;
     }
 
