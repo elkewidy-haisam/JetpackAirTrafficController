@@ -1,25 +1,31 @@
 /**
- * MapLoader component for the Air Traffic Controller system.
+ * Utility for loading city map images from resources or file system for rendering.
  * 
  * Purpose:
- * Provides maploader functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Handles loading of city map images (PNG/JPG) from various sources including classpath resources and
+ * file system paths. Provides a unified interface for map loading that can be used by different city
+ * map viewers and UI components. Currently a placeholder/stub that can be extended with actual
+ * image loading logic using ImageIO or similar libraries.
  * 
  * Key Responsibilities:
- * - Implement core maploader operations
- * - Maintain necessary state for maploader functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Load map image files from specified paths
+ * - Support resource loading from classpath
+ * - Handle file I/O errors gracefully
+ * - Provide loaded map data to rendering components
+ * - Support multiple image formats (PNG, JPG, etc.)
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by CityMapLoader to load city-specific maps
+ * - Provides map images to CityMapPanel for rendering
+ * - May support WaterDetector for map analysis
+ * - Could integrate with CityModel3D for terrain generation
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Simple utility class (may evolve to singleton or factory)
+ * - Currently minimal implementation (stub/placeholder)
+ * - Should handle IOException for missing/corrupt maps
+ * - Thread-safe if implemented as stateless utility
+ * - May cache loaded maps for performance in future implementations
  * 
  * @author Haisam Elkewidy
  */
@@ -27,11 +33,23 @@
 package com.example.utility;
 
 public class MapLoader {
+    /**
+     * Default constructor for MapLoader.
+     * Currently a placeholder for future initialization logic.
+     */
     public MapLoader() {
-        // Initialization logic if needed
+        // Initialization logic if needed - reserved for future implementation
     }
 
+    /**
+     * Loads a map from the specified file path.
+     * Currently a placeholder method for future map loading implementation.
+     * Will support loading PNG/JPG map images from file system or classpath.
+     * 
+     * @param mapFile the path to the map file to load
+     */
     public void loadMap(String mapFile) {
-        // Logic to load map data from file
+        // Logic to load map data from file - implementation pending
+        // Future: Use ImageIO.read() or similar to load map images
     }
 }

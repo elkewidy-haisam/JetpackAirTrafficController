@@ -1,25 +1,30 @@
 /**
- * GeometryUtils component for the Air Traffic Controller system.
+ * Collection of static utility methods for geometric calculations (subpackage version with extended functionality).
  * 
  * Purpose:
- * Provides geometryutils functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Provides reusable geometric computation functions identical to or extending com.example.utility.GeometryUtils.
+ * This subpackage version may include additional geometry-specific utilities or alternative implementations.
+ * Centralizes distance calculations, angle computations, point transformations, and coordinate operations.
  * 
  * Key Responsibilities:
- * - Implement core geometryutils operations
- * - Maintain necessary state for geometryutils functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Calculate Euclidean distances between points
+ * - Create Point objects from double coordinates with proper rounding
+ * - Calculate angles between points for heading computation
+ * - Perform range/proximity checks
+ * - Clamp values to valid ranges
+ * - Support movement vector calculations
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by JetPackFlight for movement calculations
+ * - Referenced by collision detection systems
+ * - Utilized by flight path planning
+ * - Supports UI rendering operations
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Pure utility class with static methods only
+ * - Thread-safe (no mutable state)
+ * - Duplicate/alternative implementation of parent GeometryUtils
+ * - May be consolidated in future refactoring
  * 
  * @author Haisam Elkewidy
  */

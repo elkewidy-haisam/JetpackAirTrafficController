@@ -1,25 +1,17 @@
 /**
- * AccidentAlert component for the Air Traffic Controller system.
+ * Manages accident alert lifecycle and jetpack notification for hazard avoidance.
  * 
  * Purpose:
- * Provides accidentalert functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Creates and broadcasts accident alerts to notify jetpacks of hazardous areas requiring avoidance or
+ * rerouting. Tracks alert status (active/resolved) and integrates with radio communication system to
+ * ensure all aircraft are informed of incidents.
  * 
  * Key Responsibilities:
- * - Implement core accidentalert operations
- * - Maintain necessary state for accidentalert functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
- * 
- * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
- * 
- * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Create accident alerts with unique IDs
+ * - Broadcast alerts to jetpacks via radio
+ * - Track alert active status
+ * - Support alert resolution/removal
+ * - Provide alert information for UI display
  * 
  * @author Haisam Elkewidy
  */
@@ -29,46 +21,100 @@ package com.example.model;
 import java.time.LocalDateTime;
 
 public class AccidentAlert {
+    /** Description of the accident/incident that occurred */
     private final String description;
+    
+    /** Timestamp when this alert was created */
     private final LocalDateTime timestamp;
+    
+    /** Location description where the accident occurred */
     private final String location;
+    
+    /** ID of the jetpack involved in the accident */
     private final String jetpackId;
+    
+    /** Severity level classification of the accident */
     private final Severity severity;
 
+    /**
+     * Enumeration of accident severity levels.
+     * Used to classify the seriousness of incidents.
+     */
     public enum Severity {
-        MINOR, MAJOR, CRITICAL
+        /** Minor incident with minimal impact */
+        MINOR,
+        /** Major incident requiring attention */
+        MAJOR,
+        /** Critical incident requiring immediate response */
+        CRITICAL
     }
 
+    /**
+     * Constructs a new accident alert with specified details.
+     * Timestamp is automatically set to current system time.
+     * 
+     * @param description text describing what happened
+     * @param location where the accident occurred
+     * @param jetpackId ID of jetpack involved
+     * @param severity classification level of the incident
+     */
     public AccidentAlert(String description, String location, String jetpackId, Severity severity) {
-        this.description = description;
-        this.location = location;
-        this.jetpackId = jetpackId;
-        this.severity = severity;
-        this.timestamp = LocalDateTime.now();
+        this.description = description;      // Store accident description
+        this.location = location;            // Store location
+        this.jetpackId = jetpackId;          // Store involved jetpack ID
+        this.severity = severity;            // Store severity level
+        this.timestamp = LocalDateTime.now(); // Record current time
     }
 
+    /**
+     * Returns the accident description.
+     * @return description text
+     */
     public String getDescription() {
-        return description;
+        return description;  // Return stored description
     }
 
+    /**
+     * Returns the timestamp when alert was created.
+     * @return LocalDateTime of alert creation
+     */
     public LocalDateTime getTimestamp() {
-        return timestamp;
+        return timestamp;  // Return stored timestamp
     }
 
+    /**
+     * Returns the location of the accident.
+     * @return location description string
+     */
     public String getLocation() {
-        return location;
+        return location;  // Return stored location
     }
 
+    /**
+     * Returns the jetpack ID involved in accident.
+     * @return jetpack identifier string
+     */
     public String getJetpackId() {
-        return jetpackId;
+        return jetpackId;  // Return stored jetpack ID
     }
 
+    /**
+     * Returns the severity level of the accident.
+     * @return Severity enum value
+     */
     public Severity getSeverity() {
-        return severity;
+        return severity;  // Return stored severity
     }
 
+    /**
+     * Returns formatted string representation of this alert.
+     * Includes timestamp, description, jetpack ID, location, and severity.
+     * 
+     * @return formatted alert string for logging/display
+     */
     @Override
     public String toString() {
+        // Format and return all alert details in structured format
         return String.format("[%s] Accident: %s | Jetpack: %s | Location: %s | Severity: %s", 
             timestamp, description, jetpackId, location, severity);
     }

@@ -1,25 +1,29 @@
 /**
- * NavigationCalculator component for the Air Traffic Controller system.
+ * Provides navigation calculations including distance, direction, and compass headings for jetpack flight paths.
  * 
  * Purpose:
- * Provides navigationcalculator functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Utility class containing static methods for calculating navigation data required by the air traffic
+ * control system. Computes distances between points, compass directions (N, NE, E, etc.), and provides
+ * helper functions for flight path planning and movement vector calculations.
  * 
  * Key Responsibilities:
- * - Implement core navigationcalculator operations
- * - Maintain necessary state for navigationcalculator functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Calculate Euclidean distances between coordinates
+ * - Convert angle calculations to compass direction strings (North, Southeast, etc.)
+ * - Provide navigation utilities for jetpack flight path planning
+ * - Support movement direction calculations for UI displays and logging
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by JetPackFlight for movement direction calculations
+ * - Referenced by FlightMovementController for path planning
+ * - Utilized by UI components to display jetpack heading information
+ * - Supports logging systems with human-readable direction strings
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Pure utility class with only static methods (stateless)
+ * - Thread-safe due to lack of mutable state
+ * - Uses standard Java Point class for coordinate representation
+ * - Relies on Math.atan2 for angle calculations with proper quadrant handling
+ * - Alternative to GeometryUtils with navigation-specific functionality
  * 
  * @author Haisam Elkewidy
  */
@@ -40,33 +44,38 @@ import java.awt.Point;
 public class NavigationCalculator {
     
     /**
-     * Calculates distance between two points
+     * Calculates Euclidean distance between two points using coordinates.
+     * Uses the Pythagorean theorem: distance = sqrt((x2-x1)² + (y2-y1)²)
      * 
      * @param x1 First point x coordinate
      * @param y1 First point y coordinate
      * @param x2 Second point x coordinate
      * @param y2 Second point y coordinate
-     * @return Distance between points
+     * @return Distance between points as a double
      */
     public static double calculateDistance(double x1, double y1, double x2, double y2) {
-        double dx = x2 - x1;
-        double dy = y2 - y1;
-        return Math.sqrt(dx * dx + dy * dy);
+        double dx = x2 - x1;                 // Calculate horizontal distance component
+        double dy = y2 - y1;                 // Calculate vertical distance component
+        return Math.sqrt(dx * dx + dy * dy); // Apply Pythagorean theorem
     }
     
     /**
-     * Calculates distance between two points
+     * Calculates Euclidean distance between two Point objects.
+     * Convenience overload that extracts coordinates from Point objects.
      * 
      * @param from Starting point
      * @param to Ending point
-     * @return Distance between points
+     * @return Distance between points as a double
      */
     public static double calculateDistance(Point from, Point to) {
+        // Delegate to coordinate-based method using Point x,y values
         return calculateDistance(from.x, from.y, to.x, to.y);
     }
     
     /**
-     * Calculates the compass direction from one point to another
+     * Calculates the compass direction from one point to another.
+     * Returns a cardinal or intercardinal direction string.
+     * Uses angle ranges: East (±22.5°), Northeast (22.5-67.5°), etc.
      * 
      * @param fromX Starting x coordinate
      * @param fromY Starting y coordinate
@@ -75,128 +84,142 @@ public class NavigationCalculator {
      * @return Compass direction string (e.g., "North", "Southeast")
      */
     public static String calculateCompassDirection(double fromX, double fromY, double toX, double toY) {
-        double dx = toX - fromX;
-        double dy = toY - fromY;
-        double angle = Math.atan2(dy, dx);
-        double degrees = Math.toDegrees(angle);
+        double dx = toX - fromX;              // Calculate x offset
+        double dy = toY - fromY;              // Calculate y offset
+        double angle = Math.atan2(dy, dx);    // Get angle in radians
+        double degrees = Math.toDegrees(angle); // Convert to degrees (-180 to 180)
         
+        // Check which 45-degree sector the angle falls into
         if (degrees > -22.5 && degrees <= 22.5) {
-            return "East";
+            return "East";       // 0° ± 22.5°
         } else if (degrees > 22.5 && degrees <= 67.5) {
-            return "Northeast";
+            return "Northeast";  // 45° ± 22.5°
         } else if (degrees > 67.5 && degrees <= 112.5) {
-            return "North";
+            return "North";      // 90° ± 22.5°
         } else if (degrees > 112.5 && degrees <= 157.5) {
-            return "Northwest";
+            return "Northwest";  // 135° ± 22.5°
         } else if (degrees > 157.5 || degrees <= -157.5) {
-            return "West";
+            return "West";       // 180° or -180°
         } else if (degrees > -157.5 && degrees <= -112.5) {
-            return "Southwest";
+            return "Southwest";  // -135° ± 22.5°
         } else if (degrees > -112.5 && degrees <= -67.5) {
-            return "South";
+            return "South";      // -90° ± 22.5°
         } else {
-            return "Southeast";
+            return "Southeast";  // -45° ± 22.5°
         }
     }
     
     /**
-     * Calculates the compass direction with emoji
+     * Calculates the compass direction and prepends a rocket emoji.
+     * Useful for UI displays and logging with visual indicators.
      * 
      * @param fromX Starting x coordinate
      * @param fromY Starting y coordinate
      * @param toX Ending x coordinate
      * @param toY Ending y coordinate
-     * @return Direction string with rocket emoji
+     * @return Direction string prefixed with rocket emoji (e.g., "🚀 North")
      */
     public static String calculateDirectionWithEmoji(double fromX, double fromY, double toX, double toY) {
-        String direction = calculateCompassDirection(fromX, fromY, toX, toY);
-        return "🚀 " + direction;
+        String direction = calculateCompassDirection(fromX, fromY, toX, toY); // Get direction
+        return "🚀 " + direction;  // Prepend rocket emoji
     }
     
     /**
-     * Calculates angle in degrees from one point to another
+     * Calculates angle in degrees from one point to another.
+     * Returns angle in standard mathematical notation (-180 to 180).
      * 
      * @param fromX Starting x coordinate
      * @param fromY Starting y coordinate
      * @param toX Ending x coordinate
      * @param toY Ending y coordinate
-     * @return Angle in degrees
+     * @return Angle in degrees (-180 to 180)
      */
     public static double calculateAngle(double fromX, double fromY, double toX, double toY) {
-        double dx = toX - fromX;
-        double dy = toY - fromY;
-        return Math.toDegrees(Math.atan2(dy, dx));
+        double dx = toX - fromX;              // Calculate x offset
+        double dy = toY - fromY;              // Calculate y offset
+        return Math.toDegrees(Math.atan2(dy, dx)); // Convert radians to degrees
     }
     
     /**
-     * Calculates the next position moving towards a target
+     * Calculates the next position when moving towards a target at given speed.
+     * If target is within speed distance, returns target position directly.
+     * Otherwise, calculates intermediate position along the path.
      * 
      * @param currentX Current x position
      * @param currentY Current y position
      * @param targetX Target x position
      * @param targetY Target y position
-     * @param speed Movement speed
-     * @return New position as Point
+     * @param speed Movement speed per update
+     * @return New position as Point object
      */
     public static Point calculateNextPosition(double currentX, double currentY, 
                                               double targetX, double targetY, double speed) {
-        double dx = targetX - currentX;
-        double dy = targetY - currentY;
-        double distance = Math.sqrt(dx * dx + dy * dy);
+        double dx = targetX - currentX;              // Calculate x distance to target
+        double dy = targetY - currentY;              // Calculate y distance to target
+        double distance = Math.sqrt(dx * dx + dy * dy); // Calculate total distance
         
+        // If within speed distance, move directly to target
         if (distance <= speed) {
-            return new Point((int)targetX, (int)targetY);
+            return new Point((int)targetX, (int)targetY); // Return target position
         }
         
-        double newX = currentX + (dx / distance) * speed;
-        double newY = currentY + (dy / distance) * speed;
+        // Calculate next position along the path
+        double newX = currentX + (dx / distance) * speed; // Move speed units in x direction
+        double newY = currentY + (dy / distance) * speed; // Move speed units in y direction
         
-        return new Point((int)newX, (int)newY);
+        return new Point((int)newX, (int)newY);  // Return new position as Point
     }
     
     /**
-     * Checks if a position has reached its target
+     * Checks if current position has reached the target within threshold distance.
+     * Used to determine if navigation is complete.
      * 
      * @param currentX Current x position
      * @param currentY Current y position
      * @param targetX Target x position
      * @param targetY Target y position
-     * @param threshold Distance threshold for "reached"
-     * @return true if position has reached target
+     * @param threshold Distance threshold for "reached" status
+     * @return true if within threshold distance, false otherwise
      */
     public static boolean hasReachedTarget(double currentX, double currentY, 
                                           double targetX, double targetY, double threshold) {
+        // Calculate distance to target
         double distance = calculateDistance(currentX, currentY, targetX, targetY);
-        return distance < threshold;
+        return distance < threshold;  // Return true if within threshold
     }
     
     /**
-     * Normalizes an angle to 0-360 degrees
+     * Normalizes an angle to the 0-360 degree range.
+     * Converts any angle to equivalent angle in [0, 360) range.
      * 
-     * @param angle Angle in degrees
-     * @return Normalized angle (0-360)
+     * @param angle Angle in degrees (any value)
+     * @return Normalized angle between 0 and 360
      */
     public static double normalizeAngle(double angle) {
+        // Add 360 until angle is non-negative
         while (angle < 0) {
-            angle += 360;
+            angle += 360;  // Shift negative angles into positive range
         }
+        // Subtract 360 until angle is less than 360
         while (angle >= 360) {
-            angle -= 360;
+            angle -= 360;  // Wrap angles >= 360 back into range
         }
-        return angle;
+        return angle;  // Return normalized angle
     }
     
     /**
-     * Calculates bearing from one point to another
+     * Calculates bearing from one point to another.
+     * Bearing is measured clockwise from North (0° = North, 90° = East, etc.)
      * 
      * @param from Starting point
      * @param to Ending point
-     * @return Bearing in degrees (0-360)
+     * @return Bearing in degrees (0-360, where 0 = North)
      */
     public static double calculateBearing(Point from, Point to) {
+        // Calculate standard angle from from point to point
         double angle = calculateAngle(from.x, from.y, to.x, to.y);
         // Convert to bearing (0 = North, 90 = East, etc.)
-        double bearing = 90 - angle;
-        return normalizeAngle(bearing);
+        double bearing = 90 - angle;  // Rotate coordinate system
+        return normalizeAngle(bearing);  // Ensure result is in 0-360 range
     }
 }

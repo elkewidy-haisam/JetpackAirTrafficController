@@ -1,25 +1,33 @@
 /**
- * AccidentReporter component for the Air Traffic Controller system.
+ * Generates and reports aviation accidents with randomized or specified parameters to simulate incidents.
  * 
  * Purpose:
- * Provides accidentreporter functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Responsible for creating realistic accident scenarios within the air traffic control system,
+ * generating random accidents with appropriate types, severities, and locations, and broadcasting
+ * these incidents through the radio system. Integrates logging and UI updates to ensure all
+ * stakeholders are notified of hazardous conditions.
  * 
  * Key Responsibilities:
- * - Implement core accidentreporter operations
- * - Maintain necessary state for accidentreporter functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Generate random accidents with realistic types (COLLISION, BIRD_STRIKE, etc.)
+ * - Assign severity levels (MINOR to CRITICAL) to accidents
+ * - Report accidents through the city radio communication system
+ * - Update UI components with accident information
+ * - Log accident reports to city-specific log files
+ * - Create unique accident IDs with city-specific prefixes
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Uses Radio to broadcast accident alerts to all jetpacks
+ * - Integrates with CityLogManager for persistent accident logging
+ * - Updates RadioInstructionsPanel with accident broadcast messages
+ * - Notifies JetpackMovementPanel via callback interface
+ * - Works with AccidentAlert to trigger jetpack avoidance behaviors
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Factory-like pattern for generating randomized accidents
+ * - Dependency injection for Radio, CityLogManager, and UI components
+ * - Callback interface (JetpackMovementLogger) for loose coupling with UI
+ * - Consistent message formatting for logs and broadcasts
+ * - Thread-safe accident ID generation using timestamp
  * 
  * @author Haisam Elkewidy
  */
@@ -63,11 +71,17 @@ public class AccidentReporter {
         "Building damage reported"
     };
     
+    /** cityRadio field */
     private Radio cityRadio;
+    /** city field */
     private String city;
+    /** random field */
     private Random random;
+    /** logManager field */
     private CityLogManager logManager;
+    /** radioInstructionsArea field */
     private JTextArea radioInstructionsArea;
+    /** movementLogger field */
     private JetpackMovementLogger movementLogger;
     
     /**

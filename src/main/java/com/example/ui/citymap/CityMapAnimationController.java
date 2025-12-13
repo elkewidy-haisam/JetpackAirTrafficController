@@ -1,25 +1,9 @@
 /**
- * CityMapAnimationController component for the Air Traffic Controller system.
+ * Controls animation timing and frame updates for city map jetpack movements.
  * 
  * Purpose:
- * Provides citymapanimationcontroller functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
- * 
- * Key Responsibilities:
- * - Implement core citymapanimationcontroller operations
- * - Maintain necessary state for citymapanimationcontroller functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
- * 
- * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
- * 
- * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * Manages animation loop timing, frame rate control, and coordinates updates to all animated elements
+ * in the city map display. Ensures smooth 20 FPS animation of jetpack movements.
  * 
  * @author Haisam Elkewidy
  */
@@ -58,12 +42,19 @@ public class CityMapAnimationController {
                 return false;
             }
         }
+    /** Field for animationTimer */
     private javax.swing.Timer animationTimer;
+    /** Field for jetpackFlights */
     private final List<JetPackFlight> jetpackFlights;
+    /** Field for flightStates */
     private final Map<JetPackFlight, JetPackFlightState> flightStates;
+    /** Field for currentWeather */
     private final Weather currentWeather;
+    /** Field for performanceMonitor */
     private final PerformanceMonitor performanceMonitor;
+    /** Field for radarTapeWindow */
     private final RadarTapeWindow radarTapeWindow;
+    /** Field for weatherManager */
     private final CityMapWeatherManager weatherManager;
     
     public CityMapAnimationController(List<JetPackFlight> jetpackFlights,
@@ -89,8 +80,11 @@ public class CityMapAnimationController {
         }
         
         animationTimer = new javax.swing.Timer(40, new ActionListener() {
+            /** Field for Random() */
             private Random rand = new Random();
+            /** Field for 0 */
             private int updateCounter = 0;
+            /** Field for 0 */
             private int collisionCheckCounter = 0;
             
             @Override

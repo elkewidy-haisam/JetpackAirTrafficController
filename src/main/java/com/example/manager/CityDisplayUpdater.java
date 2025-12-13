@@ -1,25 +1,9 @@
 /**
- * CityDisplayUpdater component for the Air Traffic Controller system.
+ * Coordinates UI updates for city display components.
  * 
  * Purpose:
- * Provides citydisplayupdater functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
- * 
- * Key Responsibilities:
- * - Implement core citydisplayupdater operations
- * - Maintain necessary state for citydisplayupdater functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
- * 
- * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
- * 
- * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * Manages synchronized updates to city map display elements including jetpack positions, parking spaces,
+ * and visual overlays. Ensures UI components refresh properly when flight data changes.
  * 
  * @author Haisam Elkewidy
  */
@@ -42,7 +26,9 @@ import java.time.format.DateTimeFormatter;
  */
 public class CityDisplayUpdater {
     
+    /** weatherLabel field */
     private JLabel weatherLabel;
+    /** dateTimeLabel field */
     private JLabel dateTimeLabel;
     
     /**

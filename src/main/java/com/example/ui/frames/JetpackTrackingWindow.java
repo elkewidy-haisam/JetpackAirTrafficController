@@ -1,25 +1,20 @@
 /**
- * JetpackTrackingWindow component for the Air Traffic Controller system.
+ * 3D tracking window providing behind-the-jetpack view with realistic city models and terrain detection.
  * 
  * Purpose:
- * Provides jetpacktrackingwindow functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Displays immersive 3D perspective view of individual jetpack flights, showing realistic city-specific
+ * building layouts, water/land terrain classification, and real-time flight information in HUD overlay.
+ * Uses CityModel3D for realistic building generation and Renderer3D for advanced 3D graphics with proper
+ * perspective projection, culling, and atmospheric effects.
  * 
  * Key Responsibilities:
- * - Implement core jetpacktrackingwindow operations
- * - Maintain necessary state for jetpacktrackingwindow functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
- * 
- * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
- * 
- * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Create 3D tracking window for individual jetpack
+ * - Load city-specific 3D building models
+ * - Render behind-the-jetpack perspective view
+ * - Display HUD with position, status, and terrain information
+ * - Detect and display water vs. land terrain
+ * - Show destination marker in 3D space
+ * - Render jetpack model with animated flames
  * 
  * @author Haisam Elkewidy
  */
@@ -49,14 +44,23 @@ import com.example.accident.AccidentAlert;
  * Shows a behind-the-jetpack view, city context, and supports both JOGL and legacy rendering.
  */
 public class JetpackTrackingWindow extends JFrame {
+        /** updateTimer */
         private Timer updateTimer;
+    /** jetpack */
     private final JetPack jetpack;
+    /** flight */
     private final JetPackFlight flight;
+    /** cityName */
     private final String cityName;
+    /** allFlights */
     private final List<JetPackFlight> allFlights;
+    /** allStates */
     private final Map<JetPackFlight, JetPackFlightState> allStates;
+    /** animationController */
     private final CityMapAnimationController animationController;
+    /** JOGL3DPanel */
     private JPanel renderPanel; // Can be MapTrackingPanel or JOGL3DPanel
+    /** default */
     private boolean useJOGL = true; // Set to true to use JOGL by default
     
     public JetpackTrackingWindow(JetPack jetpack, JetPackFlight flight, String cityName,
@@ -233,9 +237,13 @@ public class JetpackTrackingWindow extends JFrame {
      * Inner class for rendering 3D behind-the-jetpack view with full context from main panel
      */
     private static class MapTrackingPanel extends JPanel {
+        /** cityName */
         private final String cityName;
+        /** flight */
         private final JetPackFlight flight;
+        /** allFlights */
         private final List<JetPackFlight> allFlights;
+        /** allStates */
         private final Map<JetPackFlight, JetPackFlightState> allStates;
         // Removed unused field: private final CityMapAnimationController animationController;
         private CityModel3D cityModel;

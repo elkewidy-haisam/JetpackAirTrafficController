@@ -1,25 +1,9 @@
 /**
- * AccidentReporter component for the Air Traffic Controller system.
+ * Duplicate/alias of com.example.accident.AccidentReporter for organizational purposes.
  * 
  * Purpose:
- * Provides accidentreporter functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
- * 
- * Key Responsibilities:
- * - Implement core accidentreporter operations
- * - Maintain necessary state for accidentreporter functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
- * 
- * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
- * 
- * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * Manager package version providing identical accident reporting functionality. May represent a different
+ * organizational layer or be consolidated with accident package version in future refactoring.
  * 
  * @author Haisam Elkewidy
  */
