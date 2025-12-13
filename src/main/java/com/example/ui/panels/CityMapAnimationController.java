@@ -26,16 +26,35 @@
 
 package com.example.ui.panels;
 
+/**
+ * Controller class for city map animation lifecycle management.
+ * Handles starting, stopping, and coordinating animated jetpack movements.
+ */
 public class CityMapAnimationController {
+    
+    /**
+     * Constructs a new CityMapAnimationController.
+     * Prepares the controller for animation management.
+     */
     public CityMapAnimationController() {
-        // Initialization logic if needed
+        // TODO: Add initialization logic if needed (e.g., timer setup, frame rate config)
     }
 
+    /**
+     * Starts the city map animation.
+     * Initiates jetpack movement updates and rendering loops.
+     */
     public void startAnimation() {
-        // Logic to start city map animation
+        // TODO: Implement logic to start city map animation
+        // Steps: Start animation timer, enable flight updates, begin position interpolation
     }
 
+    /**
+     * Stops the city map animation.
+     * Halts jetpack movement updates and pauses rendering.
+     */
     public void stopAnimation() {
-        // Logic to stop city map animation
+        // TODO: Implement logic to stop city map animation
+        // Steps: Stop animation timer, pause flight updates, clean up resources
     }
 }

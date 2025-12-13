@@ -30,15 +30,34 @@ package com.example.ui.panels;
 import javax.swing.JPanel;
 import java.awt.Graphics;
 
+/**
+ * Main Swing panel for city map visualization and jetpack tracking.
+ * Displays city map image, animated jetpacks, and interactive overlays.
+ */
 public class CityMapPanel extends JPanel {
+    
+    /**
+     * Constructs a new CityMapPanel.
+     * Initializes panel for city visualization.
+     */
     public CityMapPanel() {
+        // Initialize parent JPanel with default settings
         super();
-        // Initialization logic if needed
+        // TODO: Add initialization logic if needed (e.g., load map images, set up listeners)
     }
 
+    /**
+     * Custom paint method for rendering city map and jetpacks.
+     * Called automatically by Swing when panel needs redraw.
+     *
+     * @param g Graphics context for drawing operations
+     */
     @Override
     protected void paintComponent(Graphics g) {
+        // Call superclass to handle standard panel painting
         super.paintComponent(g);
-        // Custom drawing logic for city map and jetpacks
+        // TODO: Implement custom drawing logic for city map and jetpacks
+        // Steps: Draw map image, render jetpack positions, draw parking spaces,
+        // show weather overlay, display HUD elements
     }
 }
