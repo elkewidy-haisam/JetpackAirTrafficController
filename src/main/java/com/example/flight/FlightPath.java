@@ -86,17 +86,28 @@ public class FlightPath {
     private String currentStatus;
     
     /**
-     * Default constructor
+     * Default constructor for creating an uninitialized flight path.
+     * Creates empty path with no route defined - requires subsequent configuration.
+     * Initializes all collections and flags to safe default states.
      */
     public FlightPath() {
+        // Initialize with empty identification strings
         this.pathID = "";
         this.origin = "";
         this.destination = "";
+        
+        // Create empty waypoint collections for normal and detour routes
         this.waypoints = new ArrayList<>();
         this.detourWaypoints = new ArrayList<>();
+        
+        // Set detour and active flags to inactive state
         this.isDetourActive = false;
         this.isActive = false;
+        
+        // Mark status as inactive until route is configured
         this.currentStatus = "INACTIVE";
+        
+        // Initialize all hazard flags to false (no hazards present)
         initializeHazardFlags();
     }
     
@@ -140,13 +151,24 @@ public class FlightPath {
     }
     
     /**
-     * Initializes all hazard flags to false
+     * Initializes all hazard flags to false (no hazards present).
+     * Called during construction to ensure clean hazard state.
+     * Each flag tracks a different type of environmental or operational hazard.
      */
     private void initializeHazardFlags() {
+        // Weather-related hazard (storms, fog, high winds)
         this.inclementWeather = false;
+        
+        // Infrastructure hazard (structural collapse blocking route)
         this.buildingCollapse = false;
+        
+        // Airspace hazard (collision incident requiring avoidance)
         this.airAccident = false;
+        
+        // Security hazard (law enforcement activity in airspace)
         this.policeActivity = false;
+        
+        // Critical emergency requiring immediate landing
         this.emergencyHalt = false;
     }
     
@@ -211,21 +233,31 @@ public class FlightPath {
     }
     
     /**
-     * Alters the flight path by adding a detour in the event of a hazard
+     * Alters the flight path by adding a detour in the event of a hazard.
+     * Preserves original waypoints while activating alternate route.
+     * Returns silently if no valid detour points provided.
      * 
      * @param detourPoints List of waypoints for the detour route
-     * @param hazardType Type of hazard causing the detour
+     * @param hazardType Type of hazard causing the detour (for logging)
      */
     public void detour(List<String> detourPoints, String hazardType) {
+        // Validate detour waypoints - must have at least one point
         if (detourPoints == null || detourPoints.isEmpty()) {
+            // Cannot create detour with no waypoints - silently fail
             // System.out.println("ERROR: Cannot create detour with no waypoints");
             return;
         }
         
+        // Store detour waypoints as a defensive copy
         this.detourWaypoints = new ArrayList<>(detourPoints);
+        
+        // Activate detour flag to switch navigation to alternate route
         this.isDetourActive = true;
+        
+        // Update status to reflect detour activation
         this.currentStatus = "DETOUR";
         
+        // Log detour activation with hazard type for debugging
         // System.out.println("DETOUR ACTIVATED due to: " + hazardType);
         // System.out.println("Original route diverted. New waypoints: " + detourWaypoints);
     }
@@ -240,15 +272,23 @@ public class FlightPath {
     }
     
     /**
-     * Puts the flight path to a complete stop and causes the jetpack to do an emergency landing
+     * Puts the flight path to a complete stop and triggers emergency landing.
+     * Sets emergency halt flag, deactivates path, and updates status.
+     * Should be called for critical situations requiring immediate ground contact.
      * 
-     * @param reason Reason for the emergency halt
+     * @param reason Description of emergency condition (for logging and reporting)
      */
     public void halt(String reason) {
+        // Set emergency halt flag to indicate critical situation
         this.emergencyHalt = true;
+        
+        // Deactivate flight path - no further navigation should occur
         this.isActive = false;
+        
+        // Update status to emergency state for UI and logging
         this.currentStatus = "EMERGENCY HALT";
         
+        // Log emergency halt details for incident reporting
         // System.out.println("!!! EMERGENCY HALT !!!");
         // System.out.println("Reason: " + reason);
         // System.out.println("Initiating emergency landing procedures...");
@@ -279,26 +319,36 @@ public class FlightPath {
     }
     
     /**
-     * Gets a list of currently active hazards
+     * Gets a list of currently active hazards affecting this flight path.
+     * Returns human-readable names for display in UI and radio communications.
+     * Empty list indicates no hazards present and safe flight conditions.
      * 
-     * @return List of active hazard names
+     * @return List of active hazard names (never null, may be empty)
      */
     public List<String> getActiveHazards() {
+        // Create new list to accumulate active hazards
         List<String> hazards = new ArrayList<>();
+        
+        // Check each hazard flag and add corresponding name if active
         if (inclementWeather) hazards.add("INCLEMENT WEATHER");
         if (buildingCollapse) hazards.add("BUILDING COLLAPSE");
         if (airAccident) hazards.add("AIR ACCIDENT");
         if (policeActivity) hazards.add("POLICE ACTIVITY");
         if (emergencyHalt) hazards.add("EMERGENCY HALT");
+        
+        // Return list of active hazards (empty if none)
         return hazards;
     }
     
     /**
-     * Checks if any hazards are currently active
+     * Checks if any hazards are currently active on this flight path.
+     * Quick boolean check for safety assessment without building hazard list.
+     * Used for rapid safety validation before approving route changes.
      * 
-     * @return true if any hazard is active, false otherwise
+     * @return true if any hazard flag is set, false if all clear
      */
     public boolean hasActiveHazards() {
+        // OR all hazard flags together - true if any are active
         return inclementWeather || buildingCollapse || airAccident || policeActivity || emergencyHalt;
     }
     
