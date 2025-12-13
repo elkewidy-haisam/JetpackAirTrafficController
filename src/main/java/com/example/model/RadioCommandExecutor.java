@@ -26,13 +26,31 @@
 
 package com.example.model;
 
+/**
+ * Executor class for processing and transmitting radio commands.
+ * Handles command validation and transmission via radio equipment.
+ */
 public class RadioCommandExecutor {
+    
+    /**
+     * Constructs a new RadioCommandExecutor.
+     * No special initialization required.
+     */
     public RadioCommandExecutor() {
-        // Default constructor
+        // Default constructor with no initialization needed
     }
 
+    /**
+     * Executes a radio command by transmitting it via specified radio.
+     * Validates radio availability before transmission.
+     *
+     * @param command The command string to execute/transmit
+     * @param radio The Radio equipment to use for transmission
+     */
     public void executeCommand(String command, Radio radio) {
+        // Check if radio exists and is enabled before transmission
         if (radio != null && radio.isEnabled()) {
+            // Transmit command with execution prefix for logging/tracking
             radio.transmit("Executing command: " + command);
         }
     }

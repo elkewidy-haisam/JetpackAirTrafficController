@@ -86,17 +86,26 @@ public class FlightPath {
     private String currentStatus;
     
     /**
-     * Default constructor
+     * Default constructor creating an empty, inactive flight path.
      */
     public FlightPath() {
+        // Initialize path ID to empty string
         this.pathID = "";
+        // Initialize origin to empty string
         this.origin = "";
+        // Initialize destination to empty string
         this.destination = "";
+        // Create empty waypoint list
         this.waypoints = new ArrayList<>();
+        // Create empty detour waypoint list
         this.detourWaypoints = new ArrayList<>();
+        // Set detour inactive by default
         this.isDetourActive = false;
+        // Set path inactive by default
         this.isActive = false;
+        // Set initial status to inactive
         this.currentStatus = "INACTIVE";
+        // Initialize all hazard flags to false
         initializeHazardFlags();
     }
     

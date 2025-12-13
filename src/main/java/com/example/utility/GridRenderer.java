@@ -30,15 +30,35 @@ package com.example.utility;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
+/**
+ * Swing panel component for rendering city grid visualization.
+ * Extends JPanel to provide custom grid drawing in the AWT/Swing framework.
+ */
 public class GridRenderer extends JPanel {
+    
+    /**
+     * Constructs a new GridRenderer panel.
+     * Calls superclass constructor for default JPanel initialization.
+     * Additional initialization logic can be added here if needed.
+     */
     public GridRenderer() {
+        // Initialize parent JPanel with default settings
         super();
-        // Initialization logic if needed
+        // Placeholder for future initialization (e.g., set background, borders, listeners)
     }
 
+    /**
+     * Custom painting method for grid visualization.
+     * Called automatically by Swing when panel needs to be redrawn.
+     * Override to implement grid line drawing, sector highlighting, etc.
+     *
+     * @param g Graphics context for drawing operations
+     */
     @Override
     protected void paintComponent(Graphics g) {
+        // Call superclass to handle standard panel painting (background, etc.)
         super.paintComponent(g);
-        // Custom rendering logic for city grid
+        // TODO: Implement custom rendering logic for city grid
+        // Examples: draw grid lines, sector labels, coordinate markers, scale indicators
     }
 }
