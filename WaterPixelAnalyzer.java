@@ -1,3 +1,34 @@
+/**
+ * Diagnostic utility for analyzing water pixel distribution in city map images.
+ * 
+ * Purpose:
+ * Standalone command-line tool that processes city map PNG files to identify and quantify water
+ * pixels based on color analysis. Helps validate map assets, tune water detection algorithms, and
+ * ensure accurate water/land boundary representation for flight path planning and collision avoidance.
+ * 
+ * Key Responsibilities:
+ * - Load city map images from resources (boston, newyorkcity, dallas, houston)
+ * - Sample pixel colors at regular intervals for performance efficiency
+ * - Classify pixels as water or land based on RGB thresholds
+ * - Generate statistical reports (pixel counts, percentages, color distributions)
+ * - Identify potential water detection edge cases for algorithm refinement
+ * 
+ * Interactions:
+ * - Reads PNG images via ImageIO from src/main/java/maps/
+ * - Produces console output with analysis results
+ * - Informs WaterDetector utility configuration
+ * - Supports map asset validation during development
+ * 
+ * Patterns & Constraints:
+ * - Standalone main() method; no integration with runtime application
+ * - Sampling strategy (every 10th pixel) balances accuracy and performance
+ * - RGB color-based heuristics; no advanced computer vision techniques
+ * - No dependencies on AWT/Swing beyond BufferedImage
+ * - Intended for development/testing; not deployed in production builds
+ * 
+ * @author Haisam Elkewidy
+ */
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
