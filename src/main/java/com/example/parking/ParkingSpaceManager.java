@@ -1,26 +1,36 @@
 /**
- * Centralized management for parkingspace operations and lifecycle coordination.
+ * Manages parking space allocation, availability tracking, and intelligent placement for city maps.
  * 
  * Purpose:
- * Manages parkingspace instances across the Air Traffic Controller system, providing
- * factory methods, registry access, and coordination logic. Supports multi-city scenarios
- * and ensures consistent parkingspace state across operational contexts.
+ * Coordinates the generation, allocation, and lifecycle of parking spaces within a specific city,
+ * ensuring jetpacks have designated landing zones. Uses water detection to intelligently avoid
+ * placing parking spaces over rivers, harbors, or lakes. Tracks occupancy state for each space
+ * and provides queries for available spaces based on distance and availability criteria.
  * 
  * Key Responsibilities:
- * - Initialize and maintain parkingspace collections per city or system-wide
- * - Provide query methods for parkingspace retrieval and filtering
- * - Coordinate parkingspace state updates across subsystems
- * - Support parkingspace lifecycle (creation, modification, disposal)
+ * - Generate city-specific parking spaces with water-aware placement (100 per city)
+ * - Use water detection algorithm to reject parking placement over blue water pixels
+ * - Track parking space occupancy and availability in real-time
+ * - Provide nearest available parking space queries for landing operations
+ * - Coordinate parking space lifecycle (initialization, occupation, vacation)
+ * - Maintain parking space collections per city (BOS-P, NYC-P, HOU-P, DAL-P prefixes)
+ * - Report parking space generation statistics (attempts, water rejections)
  * 
  * Interactions:
- * - Referenced by AirTrafficControllerFrame and CityMapPanel
- * - Integrates with logging and persistence subsystems
- * - Coordinates with related manager classes
+ * - Used by CityMapPanel to initialize and render parking spaces
+ * - Queried by JetPackFlightState for parking space allocation during landing
+ * - Referenced by FlightEmergencyHandler to find nearest parking during emergencies
+ * - Integrates with WaterDetector algorithm for land/water pixel analysis
+ * - Coordinates with ParkingSpace model for individual space state management
+ * - Displayed in city map rendering (green markers for available spaces)
  * 
  * Patterns & Constraints:
- * - Manager pattern centralizes parkingspace concerns
- * - Thread-safe operations for concurrent access
- * - Per-city collections for multi-city support
+ * - Manager pattern encapsulates parking concerns and reduces CityMapPanel complexity
+ * - Per-city instance ensures independent parking management across cities
+ * - Water detection: rejects pixels where blue > red + threshold AND blue > green + threshold
+ * - Random placement with rejection sampling (max 10x attempts to reach target count)
+ * - Thread-safe read operations; external synchronization for occupancy changes
+ * - Parking space IDs follow pattern: [CITY_CODE]-P[number] (e.g., NYC-P42, BOS-P17)
  * 
  * @author Haisam Elkewidy
  */

@@ -1,25 +1,36 @@
 /**
- * Weather component for the Air Traffic Controller system.
+ * Dynamic weather system that simulates and manages atmospheric conditions affecting jetpack flight safety.
  * 
  * Purpose:
- * Provides weather functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Models real-time weather conditions with severity-based classification to determine flight safety
+ * and trigger operational responses. Provides weather broadcasts to air traffic controllers and pilots,
+ * manages weather transitions, and evaluates flight safety based on current conditions. Supports
+ * multi-city operations with independent weather instances per location.
  * 
  * Key Responsibilities:
- * - Implement core weather operations
- * - Maintain necessary state for weather functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Maintain current weather state (condition, severity, temperature, wind, visibility)
+ * - Classify weather conditions into 5 severity levels (MINIMAL to CRITICAL)
+ * - Generate randomized weather changes simulating natural atmospheric transitions
+ * - Broadcast weather information to operators and pilots via formatted messages
+ * - Evaluate flight safety based on severity thresholds (severity 4+ grounds flights)
+ * - Track weather update timestamps for data freshness validation
+ * - Provide detailed weather reports with temperature, wind speed, and visibility data
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Monitored by CityMapWeatherManager for UI display updates
+ * - Consulted by FlightHazardMonitor to determine if flights should be grounded
+ * - Broadcasts sent to Radio system for pilot notifications
+ * - Weather changes logged to city-specific weather broadcast logs
+ * - Used by AirTrafficControllerFrame to display current conditions
+ * - Integrated with DayTime for complete environmental simulation
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Severity-based classification system (1=Clear to 5=Thunderstorm/Blizzard)
+ * - Weather types mapped to severity levels via internal HashMap
+ * - Random weather transitions simulate realistic atmospheric changes
+ * - Immutable weatherID ensures instance tracking across system
+ * - Thread-safe if accessed from single city context (not synchronized for multi-thread)
+ * - Weather conditions affect flight operations: severity 4+ triggers emergency landings
  * 
  * @author Haisam Elkewidy
  */

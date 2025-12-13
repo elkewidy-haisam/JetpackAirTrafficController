@@ -1,25 +1,32 @@
 /**
- * GeometryUtils component for the Air Traffic Controller system.
+ * Utility class for geometric calculations used throughout the Air Traffic Controller system.
  * 
  * Purpose:
- * Provides geometryutils functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Provides centralized, reusable mathematical operations for 2D spatial calculations essential to
+ * jetpack flight tracking, collision detection, proximity analysis, and position management. Eliminates
+ * code duplication by consolidating distance calculations, point creation, and coordinate operations
+ * into a single, well-tested utility class.
  * 
  * Key Responsibilities:
- * - Implement core geometryutils operations
- * - Maintain necessary state for geometryutils functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Calculate Euclidean distances between coordinates and Point objects
+ * - Create Point instances from double-precision coordinates with proper rounding
+ * - Provide overloaded methods supporting both int and double coordinate systems
+ * - Enable efficient distance-based queries for collision detection and proximity alerts
+ * - Support geometric operations for flight path calculations and spatial analysis
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by JetPackFlight for distance calculations during movement updates
+ * - Referenced by CollisionDetector for proximity and collision analysis
+ * - Integrated with FlightEmergencyHandler for nearest parking space location
+ * - Utilized throughout UI components for rendering position calculations
+ * - Supports NavigationCalculator and spatial query operations
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Pure utility class with static methods only (no instance state)
+ * - Thread-safe due to stateless design and immutable operations
+ * - Uses standard Pythagorean theorem for distance calculations
+ * - Supports both integer and double-precision coordinate systems for flexibility
+ * - Zero external dependencies; relies only on java.awt.Point and Math
  * 
  * @author Haisam Elkewidy
  */

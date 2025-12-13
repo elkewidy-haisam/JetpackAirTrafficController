@@ -1,25 +1,39 @@
 /**
- * JetpackTrackingWindow component for the Air Traffic Controller system.
+ * Immersive 3D tracking window providing first-person perspective view of individual jetpack flights.
  * 
  * Purpose:
- * Provides jetpacktrackingwindow functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Creates dedicated monitoring windows for individual jetpacks, rendering a behind-the-jetpack
+ * perspective with realistic 3D city environments. Supports both hardware-accelerated JOGL OpenGL
+ * rendering and software-based fallback rendering. Provides operators with detailed flight tracking,
+ * heads-up display (HUD) information, and visual context of the jetpack's position within the
+ * city landscape.
  * 
  * Key Responsibilities:
- * - Implement core jetpacktrackingwindow operations
- * - Maintain necessary state for jetpacktrackingwindow functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Render 3D behind-the-jetpack view with city buildings, terrain, and water features
+ * - Display real-time HUD overlay showing position, status, terrain type, and destination
+ * - Integrate CityModel3D for realistic city-specific building distributions
+ * - Support JOGL hardware-accelerated rendering (60 FPS) and software fallback (20 FPS)
+ * - Synchronize position updates with main CityMapPanel via shared JetPackFlight object
+ * - Render animated jetpack model with thruster flames in foreground
+ * - Show destination markers and distance indicators in 3D space
+ * - Handle window lifecycle and cleanup (timer disposal, resource cleanup)
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Launched from CityMapJetpackListFactory when "Track" button clicked
+ * - Shares JetPackFlight reference with CityMapPanel for coordinate synchronization
+ * - Uses CityModel3D to load city-specific building layouts (New York, Boston, Houston, Dallas)
+ * - Integrates Renderer3D for software rendering or JOGL3DPanel for hardware acceleration
+ * - Accesses CityMapAnimationController for timing and state coordination
+ * - Displays real-time terrain detection (water/land/building) using WaterDetector
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - JFrame-based windowing with custom render panels
+ * - Dual rendering strategy: JOGL (preferred) with software renderer fallback
+ * - 50ms update timer (20 FPS) for real-time position tracking
+ * - Shares flight object reference for perfect coordinate synchronization
+ * - Window disposal stops timers and cleans up resources
+ * - HUD rendered as overlay with semi-transparent background
+ * - Each tracking window is independent and can coexist with others
  * 
  * @author Haisam Elkewidy
  */
