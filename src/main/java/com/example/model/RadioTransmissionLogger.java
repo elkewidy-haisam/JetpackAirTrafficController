@@ -14,18 +14,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RadioTransmissionLogger {
-    /** Field */
+    /** List storing all logged radio transmissions in chronological order */
     private final List<String> transmissions;
 
+    /**
+     * Constructs a new RadioTransmissionLogger.
+     * Initializes empty transmission log.
+     */
     public RadioTransmissionLogger() {
-        this.transmissions = new ArrayList<>();
+        this.transmissions = new ArrayList<>();  // Initialize empty list for transmission storage
     }
 
+    /**
+     * Logs a radio transmission to the history.
+     * Transmission is appended to the end of the log.
+     * 
+     * @param transmission the transmission message to log
+     */
     public void logTransmission(String transmission) {
-        transmissions.add(transmission);
+        transmissions.add(transmission);  // Append transmission to the log
     }
 
+    /**
+     * Returns the list of all logged transmissions.
+     * 
+     * @return List of transmission strings in chronological order
+     */
     public List<String> getTransmissions() {
-        return transmissions;
+        return transmissions;  // Return the transmission log
     }
 }

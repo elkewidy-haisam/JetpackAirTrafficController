@@ -28,18 +28,56 @@
 package com.example.model;
 
 public class Bridge3D {
-    public final double x, y, length, width, angle;
+    /** The x-coordinate of the bridge's center position */
+    public final double x;
+    /** The y-coordinate of the bridge's center position */
+    public final double y;
+    /** The length of the bridge along its primary axis */
+    public final double length;
+    /** The width of the bridge perpendicular to its length */
+    public final double width;
+    /** The rotation angle of the bridge in degrees */
+    public final double angle;
 
+    /**
+     * Constructs a new Bridge3D with specified geometry.
+     * All geometric properties are immutable after construction.
+     * 
+     * @param x center x-coordinate position
+     * @param y center y-coordinate position
+     * @param length bridge length along primary axis
+     * @param width bridge width perpendicular to length
+     * @param angle rotation angle in degrees
+     */
     public Bridge3D(double x, double y, double length, double width, double angle) {
-        this.x = x;
-        this.y = y;
-        this.length = length;
-        this.width = width;
-        this.angle = angle;
+        this.x = x;            // Store bridge x position
+        this.y = y;            // Store bridge y position
+        this.length = length;  // Store bridge length
+        this.width = width;    // Store bridge width
+        this.angle = angle;    // Store rotation angle
     }
 
-    public double getX() { return x; }
-    public double getY() { return y; }
-    public double getLength() { return length; }
-    public double getWidth() { return width; }
+    /**
+     * Returns the x-coordinate of the bridge.
+     * @return x-coordinate value
+     */
+    public double getX() { return x; }  // Return x position
+    
+    /**
+     * Returns the y-coordinate of the bridge.
+     * @return y-coordinate value
+     */
+    public double getY() { return y; }  // Return y position
+    
+    /**
+     * Returns the length of the bridge.
+     * @return length value
+     */
+    public double getLength() { return length; }  // Return bridge length
+    
+    /**
+     * Returns the width of the bridge.
+     * @return width value
+     */
+    public double getWidth() { return width; }  // Return bridge width
 }
