@@ -27,12 +27,25 @@
 package com.example.model;
 
 public class RadioCommandExecutor {
+    /**
+     * Default constructor for RadioCommandExecutor.
+     * No initialization required as this is a stateless utility class.
+     */
     public RadioCommandExecutor() {
-        // Default constructor
+        // Default constructor with no state to initialize
     }
 
+    /**
+     * Executes a command by transmitting it via radio.
+     * Only executes if radio is non-null and enabled.
+     * 
+     * @param command Command string to execute
+     * @param radio Radio instance to use for transmission
+     */
     public void executeCommand(String command, Radio radio) {
+        // Validate radio exists and is enabled before attempting transmission
         if (radio != null && radio.isEnabled()) {
+            // Transmit command execution message on radio frequency
             radio.transmit("Executing command: " + command);
         }
     }
