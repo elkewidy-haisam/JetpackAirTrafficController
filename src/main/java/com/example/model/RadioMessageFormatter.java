@@ -55,6 +55,6 @@ public class RadioMessageFormatter {
                            message.getType(),      // Message classification (e.g., CLEARANCE, ADVISORY)
                            message.getSender(),    // Originating station or callsign
                            message.getReceiver(),  // Destination callsign or broadcast indicator
-                           message.getContent());  // Actual message payload
+                           message.getMessage());  // Actual message payload
     }
 }
