@@ -29,9 +29,17 @@ package com.example.ui.panels;
 
 
 public class CityMapPanelFactory {
+    /**
+     * Factory method to create a new CityMapPanel instance.
+     * Constructs a basic CityMapPanel with default configuration.
+     * Future enhancements may include parameterized factory methods for customized panels.
+     * 
+     * @return new CityMapPanel instance ready for display
+     */
     public static CityMapPanel createCityMapPanel() {
-        return new CityMapPanel();
+        return new CityMapPanel();  // Create and return new CityMapPanel with default settings
     }
 
     // Add more factory methods for other related panels if needed
+    // Future: createCityMapPanel(City city, Weather weather, List<JetPack> jetpacks)
 }
