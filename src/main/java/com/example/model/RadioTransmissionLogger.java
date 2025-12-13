@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RadioTransmissionLogger {
+    /** Field */
     private final List<String> transmissions;
 
     public RadioTransmissionLogger() {
