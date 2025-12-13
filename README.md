@@ -1303,8 +1303,8 @@ This section provides comprehensive information about all communications logged 
     Details: [DESCRIPTION]
     ⚠️ ALL AIRCRAFT AVOID AREA
     ```
-  - Accident Types: COLLISION, MECHANICAL_FAILURE, WEATHER_RELATED, PILOT_ERROR
-  - Severity Levels: MINOR, MAJOR, CRITICAL
+  - Accident Types: COLLISION, GROUND_ACCIDENT, JETPACK_MALFUNCTION, BIRD_STRIKE, EMERGENCY_LANDING
+  - Severity Levels: MINOR, MODERATE, SEVERE, CRITICAL
 
 **Sample Log Entry**:
 ```
@@ -1423,14 +1423,16 @@ Flight Status:
 
 **Severity Levels**:
 - **MINOR**: Minor incidents, minimal damage, no injuries
-- **MAJOR**: Significant damage, possible injuries, investigation required
-- **CRITICAL**: Severe damage, casualties, full investigation and emergency response
+- **MODERATE**: Moderate damage, disruptions to operations, investigation may be required
+- **SEVERE**: Significant damage, possible injuries, full investigation required
+- **CRITICAL**: Severe damage, casualties, immediate emergency response and investigation
 
 **Accident Types**:
 - **COLLISION**: Mid-air collision or ground impact
-- **MECHANICAL_FAILURE**: Equipment malfunction or system failure
-- **WEATHER_RELATED**: Accident caused by weather conditions
-- **PILOT_ERROR**: Accident caused by pilot mistake
+- **GROUND_ACCIDENT**: Accident during takeoff, landing, or ground operations
+- **JETPACK_MALFUNCTION**: Equipment malfunction or system failure
+- **BIRD_STRIKE**: Collision with birds or wildlife
+- **EMERGENCY_LANDING**: Unplanned emergency landing incident
 
 **Report Format**:
 ```
