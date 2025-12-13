@@ -41,6 +41,7 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.detection.BuildingCollisionDetector;
 import com.example.model.Building3D;
 import com.example.model.CityModel3D;
 import com.example.utility.geometry.GeometryUtils;
@@ -69,6 +70,7 @@ public class FlightMovementController {
 
     // Reference to city/building model for collision avoidance
     private CityModel3D cityModel;
+    private BuildingCollisionDetector buildingCollisionDetector;
 
     /**
      * Constructs a FlightMovementController with initial position, destination, speed, and altitude.
@@ -122,20 +124,41 @@ public class FlightMovementController {
             nextY = target.y;
         }
 
-        // Collision detection with buildings
-        if (cityModel != null) {
-            for (Building3D b : cityModel.getBuildings()) {
-                // Check if next position is inside any building's footprint
-                if (b.containsPoint(nextX, nextY)) {
-                    // Generate a detour waypoint to go around the building
-                    // Simple logic: pick a point to the right of the building
-                    double detourX = b.getX() + b.getWidth() + 10;
-                    double detourY = b.getY() + b.getLength() + 10;
-                    List<Point> detour = new ArrayList<>();
-                    detour.add(new Point((int)detourX, (int)detourY));
-                    detour.add(target);
-                    detour(detour);
-                    return true; // Skip movement this tick, will move to detour next tick
+        // Collision detection with buildings using BuildingCollisionDetector
+        if (buildingCollisionDetector != null) {
+            // Check if the path is clear
+            if (!buildingCollisionDetector.isPathClear(x, y, altitude, nextX, nextY, altitude)) {
+                // Collision detected! Try to navigate around the building
+                
+                // Get minimum safe altitude at next position
+                double minSafeAlt = buildingCollisionDetector.getMinimumSafeAltitude(nextX, nextY);
+                
+                if (minSafeAlt > 0 && altitude < minSafeAlt) {
+                    // Climb to safe altitude
+                    altitude = Math.min(altitude + 5.0, minSafeAlt + 5.0);
+                    return true; // Continue at current position while climbing
+                }
+                
+                // Try to find a detour around the building
+                Building3D nearestBuilding = findNearestBuilding(nextX, nextY);
+                if (nearestBuilding != null) {
+                    // Generate detour waypoints to go around the building
+                    List<Point> detourPoints = generateBuildingDetour(nearestBuilding, target);
+                    if (!detourPoints.isEmpty()) {
+                        detour(detourPoints);
+                        return true; // Skip movement this tick, will move to detour next tick
+                    }
+                }
+                
+                // If no detour found, try moving perpendicular to current direction
+                double perpX = nextX + (dy / distance) * 10;
+                double perpY = nextY - (dx / distance) * 10;
+                if (!buildingCollisionDetector.checkCollision(perpX, perpY, altitude)) {
+                    nextX = perpX;
+                    nextY = perpY;
+                } else {
+                    // Can't move, stay in place
+                    return false;
                 }
             }
         }
@@ -316,4 +339,83 @@ public class FlightMovementController {
     // Setters
     public void setSpeed(double speed) { this.speed = speed; }
     public void setAltitude(double altitude) { this.altitude = altitude; }
+    
+    /**
+     * Sets the city model for building collision detection
+     */
+    public void setCityModel(CityModel3D cityModel) {
+        this.cityModel = cityModel;
+        if (cityModel != null) {
+            this.buildingCollisionDetector = new BuildingCollisionDetector(cityModel);
+        }
+    }
+    
+    /**
+     * Find the nearest building to a given position
+     */
+    private Building3D findNearestBuilding(double x, double y) {
+        Building3D nearest = null;
+        double minDistance = Double.MAX_VALUE;
+        
+        if (cityModel != null) {
+            for (Building3D building : cityModel.getBuildings()) {
+                double distance = building.distanceTo(x, y);
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    nearest = building;
+                }
+            }
+        }
+        
+        return nearest;
+    }
+    
+    /**
+     * Generate detour waypoints to navigate around a building
+     */
+    private List<Point> generateBuildingDetour(Building3D building, Point finalTarget) {
+        List<Point> detourPoints = new ArrayList<>();
+        
+        // Calculate building center and corners
+        double bx = building.getX();
+        double by = building.getY();
+        double bw = building.getWidth();
+        double bl = building.getLength();
+        
+        // Try going around each corner of the building
+        Point[] corners = {
+            new Point((int)(bx - 15), (int)(by - 15)),           // Bottom-left
+            new Point((int)(bx + bw + 15), (int)(by - 15)),      // Bottom-right
+            new Point((int)(bx + bw + 15), (int)(by + bl + 15)), // Top-right
+            new Point((int)(bx - 15), (int)(by + bl + 15))       // Top-left
+        };
+        
+        // Find the corner closest to the final target
+        Point bestCorner = null;
+        double minDistToTarget = Double.MAX_VALUE;
+        
+        for (Point corner : corners) {
+            double distToTarget = GeometryUtils.calculateDistance(
+                corner.x, corner.y, finalTarget.x, finalTarget.y);
+            
+            // Check if this corner is reachable (not blocked)
+            if (buildingCollisionDetector != null) {
+                double safeAlt = buildingCollisionDetector.getMinimumSafeAltitude(corner.x, corner.y);
+                if (safeAlt > 0 && altitude < safeAlt) {
+                    continue; // Skip this corner if we can't reach it safely
+                }
+            }
+            
+            if (distToTarget < minDistToTarget) {
+                minDistToTarget = distToTarget;
+                bestCorner = corner;
+            }
+        }
+        
+        if (bestCorner != null) {
+            detourPoints.add(bestCorner);
+        }
+        
+        return detourPoints;
+    }
 }

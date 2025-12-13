@@ -43,4 +43,46 @@ public class House3D {
     public double getWidth() { return width; }
     public double getLength() { return depth; }
     public double getHeight() { return height; }
+    
+    /**
+     * Check if a 3D point (x, y, altitude) collides with this house's hitbox
+     * @param px X coordinate
+     * @param py Y coordinate (map coordinate)
+     * @param altitude Altitude/height
+     * @return true if the point is inside the house's 3D volume
+     */
+    public boolean collidesWithPoint(double px, double py, double altitude) {
+        // Check if point is within house's horizontal footprint
+        boolean inFootprint = px >= x && px <= x + width &&
+                              py >= y && py <= y + depth;
+        
+        // Check if point is within house's vertical extent
+        boolean inHeight = altitude >= 0 && altitude <= height;
+        
+        return inFootprint && inHeight;
+    }
+    
+    /**
+     * Check if a 3D sphere (jetpack with radius) collides with this house's hitbox
+     * @param px X coordinate of sphere center
+     * @param py Y coordinate of sphere center
+     * @param altitude Altitude of sphere center
+     * @param radius Radius of the sphere (jetpack collision radius)
+     * @return true if the sphere intersects with the house
+     */
+    public boolean collidesWithSphere(double px, double py, double altitude, double radius) {
+        // Find closest point on house to sphere center
+        double closestX = Math.max(x, Math.min(px, x + width));
+        double closestY = Math.max(y, Math.min(py, y + depth));
+        double closestZ = Math.max(0, Math.min(altitude, height));
+        
+        // Calculate distance from sphere center to closest point
+        double dx = px - closestX;
+        double dy = py - closestY;
+        double dz = altitude - closestZ;
+        double distanceSquared = dx * dx + dy * dy + dz * dz;
+        
+        // Collision occurs if distance is less than radius
+        return distanceSquared <= (radius * radius);
+    }
 }

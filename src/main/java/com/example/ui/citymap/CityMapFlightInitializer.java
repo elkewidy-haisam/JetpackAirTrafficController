@@ -20,6 +20,7 @@ import java.util.Random;
 import com.example.flight.JetPackFlight;
 import com.example.flight.JetPackFlightState;
 import com.example.jetpack.JetPack;
+import com.example.navigation.BuildingAwarePathfinder;
 import com.example.parking.ParkingSpace;
 import com.example.radio.Radio;
 
@@ -40,8 +41,17 @@ public class CityMapFlightInitializer {
                                         int mapHeight,
                                         java.awt.image.BufferedImage mapImage,
                                         MovementLogger movementLogger,
-                                        FlightStateProvider flightStateProvider) {
+                                        FlightStateProvider flightStateProvider,
+                                        String cityName) {
         Random rand = new Random();
+        
+        // Create city model for building collision detection
+        com.example.model.CityModel3D cityModel = null;
+        BuildingAwarePathfinder pathfinder = null;
+        if (cityName != null && mapImage != null) {
+            cityModel = new com.example.model.CityModel3D(cityName, mapImage);
+            pathfinder = new BuildingAwarePathfinder(cityModel);
+        }
         
         for (JetPack jp : jetpacks) {
             Point start = new Point(
@@ -59,6 +69,24 @@ public class CityMapFlightInitializer {
             flight.setMovementLogger(message -> movementLogger.logMovement(message));
             flight.setFlightStateProvider(f -> flightStateProvider.getFlightState(f));
             flight.setMapImage(mapImage);
+            
+            // Set city model for building collision detection
+            if (cityModel != null) {
+                flight.setCityModel(cityModel);
+            }
+            
+            // Calculate building-aware path using A* pathfinding
+            if (pathfinder != null) {
+                List<Point> waypoints = pathfinder.findPath(start.x, start.y, destination.x, destination.y);
+                if (!waypoints.isEmpty()) {
+                    flight.setWaypoints(waypoints);
+                    
+                    // Log the pathfinding result
+                    movementLogger.logMovement(jp.getCallsign() + 
+                        " Path calculated with " + waypoints.size() + 
+                        " waypoints to avoid buildings");
+                }
+            }
             
             // Register flight with radio for command execution
             cityRadio.registerFlight(jp.getCallsign(), flight);
