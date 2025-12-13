@@ -43,43 +43,43 @@ public class App {
     private static final String VERSION = "2.0";
     
     public static void main(String[] args) {
-        // Prevent GUI startup in test environment
-        if (Boolean.getBoolean("test.env")) {
-            System.out.println("Test environment detected: Skipping GUI startup.");
-            return;
+        // Check for test environment flag to prevent GUI conflicts during automated tests
+        if (Boolean.getBoolean("test.env")) {  // System property "test.env" set to true
+            System.out.println("Test environment detected: Skipping GUI startup.");  // Log test mode detection
+            return;  // Exit early without launching GUI
         }
-        AppConfig config = parseArguments(args);
+        AppConfig config = parseArguments(args);  // Parse command-line arguments for customization
         try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());  // Apply native OS look-and-feel for better UX
         } catch (Exception e) {
-            System.err.println("Warning: Could not set system look and feel");
+            System.err.println("Warning: Could not set system look and feel");  // Non-fatal: continue with default look
         }
-        SwingUtilities.invokeLater(() -> {
+        SwingUtilities.invokeLater(() -> {  // Ensure GUI initialization happens on Event Dispatch Thread
             try {
-                System.out.println("=".repeat(50));
-                System.out.println("🚀 " + APP_NAME + " v" + VERSION);
-                System.out.println("=".repeat(50));
-                System.out.println("Starting application...");
-                if (config.city != null) {
-                    System.out.println("Pre-selected city: " + config.city);
+                System.out.println("=".repeat(50));  // Print header separator (50 equals signs)
+                System.out.println("🚀 " + APP_NAME + " v" + VERSION);  // Display application name and version with emoji
+                System.out.println("=".repeat(50));  // Print footer separator
+                System.out.println("Starting application...");  // Log startup initiation
+                if (config.city != null) {  // Check if user pre-selected a city via CLI
+                    System.out.println("Pre-selected city: " + config.city);  // Log the pre-selected city name
                 }
-                System.out.println("Initializing GUI...");
-                AirTrafficControllerFrame frame = new AirTrafficControllerFrame();
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setSize(800, 600);
-                frame.setTitle(APP_NAME + " v" + VERSION);
-                frame.setLocationRelativeTo(null);
-                frame.setVisible(true);
-                System.out.println("✅ Application started successfully!");
-                System.out.println("=".repeat(50));
+                System.out.println("Initializing GUI...");  // Log GUI initialization start
+                AirTrafficControllerFrame frame = new AirTrafficControllerFrame();  // Create main application window
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Exit application when window is closed
+                frame.setSize(800, 600);  // Set initial window dimensions (width x height)
+                frame.setTitle(APP_NAME + " v" + VERSION);  // Set window title bar text
+                frame.setLocationRelativeTo(null);  // Center window on screen
+                frame.setVisible(true);  // Make window visible to user
+                System.out.println("✅ Application started successfully!");  // Log successful startup with checkmark
+                System.out.println("=".repeat(50));  // Print final separator
             } catch (Exception e) {
-                System.err.println("❌ Error starting application:");
-                e.printStackTrace();
-                JOptionPane.showMessageDialog(null,
-                    "Failed to start application:\n" + e.getMessage(),
-                    "Startup Error",
-                    JOptionPane.ERROR_MESSAGE);
-                System.exit(1);
+                System.err.println("❌ Error starting application:");  // Log startup failure with X emoji
+                e.printStackTrace();  // Print full stack trace to stderr for debugging
+                JOptionPane.showMessageDialog(null,  // Show error dialog to user (no parent window)
+                    "Failed to start application:\n" + e.getMessage(),  // Error message text
+                    "Startup Error",  // Dialog title
+                    JOptionPane.ERROR_MESSAGE);  // Error icon type
+                System.exit(1);  // Exit with error code 1 to indicate failure
             }
         });
     }
@@ -88,37 +88,37 @@ public class App {
      * Parse command-line arguments
      */
     private static AppConfig parseArguments(String[] args) {
-        AppConfig config = new AppConfig();
+        AppConfig config = new AppConfig();  // Create new configuration object with defaults
         
-        for (int i = 0; i < args.length; i++) {
-            String arg = args[i];
+        for (int i = 0; i < args.length; i++) {  // Iterate through all command-line arguments
+            String arg = args[i];  // Get current argument string
             
-            if (arg.equals("--help") || arg.equals("-h")) {
-                printHelp();
-                System.exit(0);
-            } else if (arg.equals("--version") || arg.equals("-v")) {
-                System.out.println(APP_NAME + " version " + VERSION);
-                System.exit(0);
-            } else if (arg.startsWith("--city=")) {
-                config.city = arg.substring(7);
+            if (arg.equals("--help") || arg.equals("-h")) {  // Check for help flag (long or short form)
+                printHelp();  // Display usage information to console
+                System.exit(0);  // Exit gracefully after showing help
+            } else if (arg.equals("--version") || arg.equals("-v")) {  // Check for version flag
+                System.out.println(APP_NAME + " version " + VERSION);  // Print version info
+                System.exit(0);  // Exit after displaying version
+            } else if (arg.startsWith("--city=")) {  // Check for city pre-selection argument
+                config.city = arg.substring(7);  // Extract city name (skip "--city=" prefix of length 7)
             }
         }
         
-        return config;
+        return config;  // Return parsed configuration object
     }
     
     /**
      * Print help information
      */
     private static void printHelp() {
-        System.out.println(APP_NAME + " v" + VERSION);
-        System.out.println("\nUsage: java -cp target/classes com.example.App [OPTIONS]");
-        System.out.println("\nOptions:");
-        System.out.println("  --help, -h          Show this help message");
-        System.out.println("  --version, -v       Show version information");
-        System.out.println("  --city=<name>       Pre-select city (New York, Boston, Houston, Dallas)");
-        System.out.println("\nExample:");
-        System.out.println("  java -cp target/classes com.example.App --city=\"New York\"");
+        System.out.println(APP_NAME + " v" + VERSION);  // Print application name and version header
+        System.out.println("\nUsage: java -cp target/classes com.example.App [OPTIONS]");  // Show basic command syntax
+        System.out.println("\nOptions:");  // Section header for available options
+        System.out.println("  --help, -h          Show this help message");  // Help flag description
+        System.out.println("  --version, -v       Show version information");  // Version flag description
+        System.out.println("  --city=<name>       Pre-select city (New York, Boston, Houston, Dallas)");  // City pre-selection syntax
+        System.out.println("\nExample:");  // Section header for usage example
+        System.out.println("  java -cp target/classes com.example.App --city=\"New York\"");  // Show concrete usage example
     }
     
     /**
