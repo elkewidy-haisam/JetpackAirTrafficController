@@ -36,26 +36,93 @@ package com.example.parking;
 import java.awt.Point;
 
 public class ParkingSpace {
+    /** Unique identifier for this parking space (e.g., "NYC-P001", "BOS-P042") */
     private final String id;
+    
+    /** Geographic location of this parking space on the city map */
     private final Point location;
+    
+    /** Whether this parking space is currently occupied by a jetpack */
     private boolean isOccupied;
 
+    /**
+     * Constructs a new ParkingSpace at the specified coordinates.
+     * Initially the space is vacant (not occupied).
+     * 
+     * @param id unique identifier for this parking space
+     * @param x the x-coordinate location on the map
+     * @param y the y-coordinate location on the map
+     */
     public ParkingSpace(String id, int x, int y) {
-        this.id = id;
-        this.location = new Point(x, y);
-        this.isOccupied = false;
+        this.id = id;                          // Store the unique parking space ID
+        this.location = new Point(x, y);       // Create Point object with coordinates
+        this.isOccupied = false;               // Initialize as vacant
     }
 
-    public String getId() { return id; }
-    public Point getLocation() { return location; }
-    public boolean isOccupied() { return isOccupied; }
-    public int getX() { return location.x; }
-    public int getY() { return location.y; }
-    public void occupy() { this.isOccupied = true; }
-    public void vacate() { this.isOccupied = false; }
+    /**
+     * Returns the unique identifier of this parking space.
+     * @return the parking space ID string
+     */
+    public String getId() { 
+        return id;  // Return the stored ID
+    }
+    
+    /**
+     * Returns the geographic location of this parking space.
+     * @return the Point object containing x,y coordinates
+     */
+    public Point getLocation() { 
+        return location;  // Return the location Point
+    }
+    
+    /**
+     * Checks if this parking space is currently occupied.
+     * @return true if occupied, false if vacant
+     */
+    public boolean isOccupied() { 
+        return isOccupied;  // Return the occupation status
+    }
+    
+    /**
+     * Returns the x-coordinate of this parking space.
+     * @return the x-coordinate value
+     */
+    public int getX() { 
+        return location.x;  // Return x from the location Point
+    }
+    
+    /**
+     * Returns the y-coordinate of this parking space.
+     * @return the y-coordinate value
+     */
+    public int getY() { 
+        return location.y;  // Return y from the location Point
+    }
+    
+    /**
+     * Marks this parking space as occupied.
+     * Called when a jetpack lands in this space.
+     */
+    public void occupy() { 
+        this.isOccupied = true;  // Set occupied flag to true
+    }
+    
+    /**
+     * Marks this parking space as vacant.
+     * Called when a jetpack departs from this space.
+     */
+    public void vacate() { 
+        this.isOccupied = false;  // Set occupied flag to false
+    }
 
+    /**
+     * Returns a formatted string representation of this parking space.
+     * 
+     * @return formatted string with ID, location, and occupation status
+     */
     @Override
     public String toString() {
+        // Format and return parking space details
         return String.format("ParkingSpace[%s]: Location=%s Occupied=%b", id, location, isOccupied);
     }
 }
