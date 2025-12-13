@@ -27,11 +27,21 @@
 package com.example.utility;
 
 public class MapLoader {
+    /**
+     * Default constructor for MapLoader.
+     * Performs any initialization needed for map loading operations.
+     */
     public MapLoader() {
-        // Initialization logic if needed
+        // Placeholder for future initialization logic (e.g., setting up file readers)
     }
 
+    /**
+     * Loads map data from specified file.
+     * This is currently a stub method awaiting implementation.
+     * 
+     * @param mapFile Path to map file to load
+     */
     public void loadMap(String mapFile) {
-        // Logic to load map data from file
+        // Stub method - will parse and load map data from file when implemented
     }
 }

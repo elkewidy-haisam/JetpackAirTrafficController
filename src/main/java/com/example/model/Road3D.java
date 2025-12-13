@@ -28,18 +28,37 @@
 package com.example.model;
 
 public class Road3D {
+    // Road center X-coordinate; Y-coordinate; segment length; surface width; rotation angle in degrees
     public final double x, y, length, width, angle;
 
+    /**
+     * Constructs a new 3D road model with specified geometry.
+     * 
+     * @param x X-coordinate of road center in world space
+     * @param y Y-coordinate of road center in world space
+     * @param length Length of road segment (longitudinal dimension)
+     * @param width Width of road surface (lateral dimension)
+     * @param angle Rotation angle in degrees relative to positive X-axis
+     */
     public Road3D(double x, double y, double length, double width, double angle) {
+        // Store X-coordinate of road center position
         this.x = x;
+        // Store Y-coordinate of road center position
         this.y = y;
+        // Store length of road segment for rendering dimensions
         this.length = length;
+        // Store width of road surface for rendering dimensions
         this.width = width;
+        // Store rotation angle for proper orientation rendering
         this.angle = angle;
     }
 
+    // Returns X-coordinate of road center position
     public double getX() { return x; }
+    // Returns Y-coordinate of road center position
     public double getY() { return y; }
+    // Returns length of road segment
     public double getLength() { return length; }
+    // Returns width of road surface
     public double getWidth() { return width; }
 }

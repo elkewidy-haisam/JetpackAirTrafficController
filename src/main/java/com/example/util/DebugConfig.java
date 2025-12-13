@@ -53,14 +53,22 @@ public class DebugConfig {
      * @return true if logging is enabled for the system, false otherwise
      */
     public static boolean isEnabled(String system) {
+        // Check master verbose flag first - if false, all logging disabled
         if (!VERBOSE) return false;
 
+        // Convert system name to lowercase for case-insensitive matching
         switch (system.toLowerCase()) {
+            // Return weather logging flag if weather system requested
             case "weather": return LOG_WEATHER;
+            // Return radar logging flag if radar system requested
             case "radar": return LOG_RADAR;
+            // Return accidents logging flag if accidents system requested
             case "accidents": return LOG_ACCIDENTS;
+            // Return radio logging flag if radio system requested
             case "radio": return LOG_RADIO;
+            // Return ATC logging flag if ATC system requested
             case "atc": return LOG_ATC;
+            // Return false for unknown system names
             default: return false;
         }
     }

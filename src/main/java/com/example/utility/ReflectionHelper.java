@@ -29,8 +29,21 @@ package com.example.utility;
 import java.lang.reflect.Method;
 
 public class ReflectionHelper {
+    /**
+     * Invokes a method on an object using reflection.
+     * Dynamically calls a method by name with specified parameter types and arguments.
+     * 
+     * @param obj Object instance on which to invoke method
+     * @param methodName Name of method to invoke
+     * @param paramTypes Array of parameter types for method signature
+     * @param args Array of argument values to pass to method
+     * @return Result returned by invoked method
+     * @throws Exception if method not found or invocation fails
+     */
     public static Object invokeMethod(Object obj, String methodName, Class<?>[] paramTypes, Object[] args) throws Exception {
+        // Get Method object for specified method name and parameter types
         Method method = obj.getClass().getMethod(methodName, paramTypes);
+        // Invoke method on object with provided arguments and return result
         return method.invoke(obj, args);
     }
 }

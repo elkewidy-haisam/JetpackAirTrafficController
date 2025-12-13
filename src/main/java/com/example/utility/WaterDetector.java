@@ -30,14 +30,31 @@ package com.example.utility;
 import java.io.IOException;
 
 public class WaterDetector {
+    /**
+     * Constructs a new WaterDetector with specified resource path.
+     * Simulates loading water detection data from resource file.
+     * 
+     * @param resourcePath Path to water detection resource
+     * @throws IOException if resource cannot be loaded
+     */
     public WaterDetector(String resourcePath) throws IOException {
-        // Simulate resource loading failure for test
+        // Simulate resource loading failure for test scenarios
+        // Check if path is null, empty, or references boston map (for testing)
         if (resourcePath == null || resourcePath.isEmpty() || resourcePath.contains("boston_map.png")) {
+            // Throw exception to simulate resource loading failure
             throw new IOException("Could not find resource");
         }
-        // Otherwise, assume resource loaded
+        // Otherwise, assume resource loaded successfully (stub implementation)
     }
 
+    /**
+     * Checks if specified coordinates are over water.
+     * Dummy implementation for demonstration purposes.
+     * 
+     * @param x X-coordinate to check
+     * @param y Y-coordinate to check
+     * @return true if coordinates are over water, false otherwise
+     */
     public boolean isWater(double x, double y) {
         // Dummy logic: treat y < 0 as water for demonstration
         return y < 0;

@@ -27,11 +27,19 @@
 package com.example.ui.panels;
 
 public class CityMapFlightInitializer {
+    /**
+     * Default constructor for CityMapFlightInitializer.
+     * Performs initialization needed for flight setup operations.
+     */
     public CityMapFlightInitializer() {
-        // Initialization logic if needed
+        // Placeholder for initialization logic (e.g., setting up flight parameters)
     }
 
+    /**
+     * Initializes jetpack flights on the city map panel.
+     * Sets up initial flight positions and states for visualization.
+     */
     public void initializeFlights() {
-        // Logic to initialize jetpack flights on the city map panel
+        // Stub method - will initialize jetpack flights on city map when implemented
     }
 }

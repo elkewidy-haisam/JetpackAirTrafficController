@@ -31,14 +31,26 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 public class CityMapRenderer extends JPanel {
+    /**
+     * Constructs a new CityMapRenderer.
+     * Initializes parent JPanel and prepares for city map rendering.
+     */
     public CityMapRenderer() {
+        // Call parent JPanel constructor for Swing initialization
         super();
-        // Initialization logic if needed
+        // Placeholder for initialization logic (e.g., setting up rendering parameters)
     }
 
+    /**
+     * Custom paint method for rendering city map and jetpacks.
+     * Override of JPanel paintComponent for custom visualization.
+     * 
+     * @param g Graphics context for drawing operations
+     */
     @Override
     protected void paintComponent(Graphics g) {
+        // Call parent paintComponent to ensure proper Swing painting
         super.paintComponent(g);
-        // Custom rendering logic for city map and jetpacks
+        // Stub for custom rendering logic - will draw city map and jetpacks when implemented
     }
 }

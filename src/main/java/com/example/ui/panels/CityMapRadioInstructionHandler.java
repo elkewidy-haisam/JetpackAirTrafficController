@@ -27,11 +27,21 @@
 package com.example.ui.panels;
 
 public class CityMapRadioInstructionHandler {
+    /**
+     * Default constructor for CityMapRadioInstructionHandler.
+     * Performs initialization needed for instruction processing.
+     */
     public CityMapRadioInstructionHandler() {
-        // Initialization logic if needed
+        // Placeholder for initialization logic (e.g., setting up parsers, handlers)
     }
 
+    /**
+     * Processes a radio instruction for jetpack flights.
+     * Parses instruction and applies appropriate flight control actions.
+     * 
+     * @param instruction Radio instruction string to process
+     */
     public void handleInstruction(String instruction) {
-        // Logic to process radio instructions for jetpack flights
+        // Stub method - will parse and execute radio instruction when implemented
     }
 }

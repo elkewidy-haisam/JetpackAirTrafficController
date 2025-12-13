@@ -27,12 +27,24 @@
 package com.example.model;
 
 public class RadioMessageFormatter {
+    /**
+     * Default constructor for RadioMessageFormatter.
+     * No initialization required as this is a stateless utility class.
+     */
     public RadioMessageFormatter() {
-        // Default constructor
+        // Default constructor with no state to initialize
     }
 
+    /**
+     * Formats a RadioMessage into a human-readable string.
+     * 
+     * @param message RadioMessage to format
+     * @return Formatted string with type, sender, receiver, and content
+     */
     public String format(RadioMessage message) {
+        // Check if message is null to prevent NullPointerException
         if (message == null) return "[Invalid Message]";
+        // Format message as "[TYPE] From: SENDER | To: RECEIVER | CONTENT"
         return String.format("[%s] From: %s | To: %s | %s", message.getType(), message.getSender(), message.getReceiver(), message.getContent());
     }
 }

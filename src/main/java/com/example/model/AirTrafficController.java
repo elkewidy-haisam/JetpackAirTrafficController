@@ -30,32 +30,70 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AirTrafficController {
+    // Collection of all active jetpack flights being tracked
     private final List<JetPackFlight> flights;
+    // Collection of all active accident alerts in the airspace
     private final List<AccidentAlert> accidentAlerts;
 
+    /**
+     * Constructs a new AirTrafficController with empty flight and alert lists.
+     */
     public AirTrafficController() {
+        // Initialize empty list to hold active flights
         this.flights = new ArrayList<>();
+        // Initialize empty list to hold accident alerts
         this.accidentAlerts = new ArrayList<>();
     }
 
+    /**
+     * Adds a new flight to the tracking system.
+     * 
+     * @param flight JetPackFlight to add to active flights
+     */
     public void addFlight(JetPackFlight flight) {
+        // Append flight to collection of tracked flights
         flights.add(flight);
     }
 
+    /**
+     * Removes a flight from the tracking system.
+     * Called when flight lands or leaves airspace.
+     * 
+     * @param flight JetPackFlight to remove from active flights
+     */
     public void removeFlight(JetPackFlight flight) {
+        // Remove flight from collection of tracked flights
         flights.remove(flight);
     }
 
+    /**
+     * Returns the list of all active flights.
+     * 
+     * @return List of JetPackFlight objects
+     */
     public List<JetPackFlight> getFlights() {
+        // Return reference to flights collection
         return flights;
     }
 
+    /**
+     * Reports an accident by adding it to the alerts system.
+     * 
+     * @param alert AccidentAlert to report and track
+     */
     public void reportAccident(AccidentAlert alert) {
+        // Add alert to collection of active accident alerts
         accidentAlerts.add(alert);
-        // Additional logic for handling accident alerts can be added here
+        // Stub comment: Additional logic for handling accident alerts can be added here
     }
 
+    /**
+     * Returns the list of all active accident alerts.
+     * 
+     * @return List of AccidentAlert objects
+     */
     public List<AccidentAlert> getAccidentAlerts() {
+        // Return reference to accident alerts collection
         return accidentAlerts;
     }
 }

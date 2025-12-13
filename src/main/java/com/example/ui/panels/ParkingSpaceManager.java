@@ -32,17 +32,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ParkingSpaceManager {
+    // Collection of all parking spaces managed by this instance
     private final List<ParkingSpace> parkingSpaces;
 
+    /**
+     * Constructs a new ParkingSpaceManager with empty collection.
+     */
     public ParkingSpaceManager() {
+        // Initialize empty list to hold parking spaces
         this.parkingSpaces = new ArrayList<>();
     }
 
+    /**
+     * Adds a parking space to the managed collection.
+     * 
+     * @param space ParkingSpace to add
+     */
     public void addParkingSpace(ParkingSpace space) {
+        // Append parking space to collection
         parkingSpaces.add(space);
     }
 
+    /**
+     * Returns the list of all managed parking spaces.
+     * 
+     * @return List of ParkingSpace objects
+     */
     public List<ParkingSpace> getParkingSpaces() {
+        // Return reference to parking spaces collection
         return parkingSpaces;
     }
 }

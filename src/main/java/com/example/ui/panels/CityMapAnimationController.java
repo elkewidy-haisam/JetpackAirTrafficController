@@ -27,15 +27,27 @@
 package com.example.ui.panels;
 
 public class CityMapAnimationController {
+    /**
+     * Default constructor for CityMapAnimationController.
+     * Performs initialization needed for animation control.
+     */
     public CityMapAnimationController() {
-        // Initialization logic if needed
+        // Placeholder for initialization logic (e.g., setting up timers, animation state)
     }
 
+    /**
+     * Starts the city map animation.
+     * Begins animation loop for jetpack movements and visual updates.
+     */
     public void startAnimation() {
-        // Logic to start city map animation
+        // Stub method - will start city map animation timer/loop when implemented
     }
 
+    /**
+     * Stops the city map animation.
+     * Halts animation loop and freezes current visual state.
+     */
     public void stopAnimation() {
-        // Logic to stop city map animation
+        // Stub method - will stop city map animation timer/loop when implemented
     }
 }

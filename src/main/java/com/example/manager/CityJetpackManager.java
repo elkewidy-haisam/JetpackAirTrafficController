@@ -41,53 +41,63 @@ import java.util.Map;
  */
 public class CityJetpackManager {
     
+    // Map of city names to their respective jetpack collections
     private Map<String, ArrayList<JetPack>> cityJetpacks;
     
     /**
-     * Constructor - initializes jetpack collections for all cities
+     * Constructor - initializes jetpack collections for all cities.
      */
     public CityJetpackManager() {
+        // Initialize city-to-jetpack mappings
         initializeCityJetpacks();
     }
     
     /**
-     * Initializes pre-existing jetpacks for all cities (25 per city)
+     * Initializes pre-existing jetpacks for all cities.
+     * Generates jetpack fleets for each supported city using factory.
      */
     private void initializeCityJetpacks() {
+        // Create new HashMap to store city-to-jetpack mappings
         cityJetpacks = new HashMap<>();
         
-        // Generate 300 jetpacks for each city dynamically using factory
+        // Generate jetpack fleet for New York with "NY" prefix
         cityJetpacks.put("New York", JetpackFactory.generateJetpacksForCity("NY", "New York"));
+        // Generate jetpack fleet for Boston with "BOS" prefix
         cityJetpacks.put("Boston", JetpackFactory.generateJetpacksForCity("BOS", "Boston"));
+        // Generate jetpack fleet for Houston with "HOU" prefix
         cityJetpacks.put("Houston", JetpackFactory.generateJetpacksForCity("HOU", "Houston"));
+        // Generate jetpack fleet for Dallas with "DAL" prefix
         cityJetpacks.put("Dallas", JetpackFactory.generateJetpacksForCity("DAL", "Dallas"));
     }
     
     /**
-     * Gets the jetpack collection for a specific city
+     * Gets the jetpack collection for a specific city.
      * 
      * @param city The city name
      * @return ArrayList of jetpacks for the specified city
      */
     public ArrayList<JetPack> getJetpacksForCity(String city) {
+        // Look up and return jetpack collection for specified city
         return cityJetpacks.get(city);
     }
     
     /**
-     * Gets all city-jetpack mappings
+     * Gets all city-jetpack mappings.
      * 
      * @return Map of city names to jetpack collections
      */
     public Map<String, ArrayList<JetPack>> getAllCityJetpacks() {
+        // Return entire map of city-to-jetpack mappings
         return cityJetpacks;
     }
     
     /**
-     * Gets the list of all cities with jetpacks
+     * Gets the list of all cities with jetpacks.
      * 
      * @return Array of city names
      */
     public String[] getCities() {
+        // Extract city names from map keys and convert to array
         return cityJetpacks.keySet().toArray(new String[0]);
     }
 }

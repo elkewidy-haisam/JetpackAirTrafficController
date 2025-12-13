@@ -47,14 +47,26 @@ import com.example.ui.utility.UIComponentFactory;
  */
 public class DateTimeDisplayPanel extends JPanel {
     
+    // Text area for displaying current date and time information
     private JTextArea dateTimeDisplayArea;
     
+    /**
+     * Constructs a new DateTimeDisplayPanel.
+     * Initializes UI components for date/time display.
+     */
     public DateTimeDisplayPanel() {
+        // Initialize and configure UI components
         initializeUI();
     }
     
+    /**
+     * Initializes and configures all UI components.
+     * Sets up layout, borders, colors, and text area.
+     */
     private void initializeUI() {
+        // Set BorderLayout for simple CENTER positioning
         setLayout(new BorderLayout());
+        // Create titled border with steel blue color (70,130,180)
         setBorder(BorderFactory.createTitledBorder(
             BorderFactory.createLineBorder(new Color(70, 130, 180), 2),
             "Current Date & Time",
@@ -63,27 +75,44 @@ public class DateTimeDisplayPanel extends JPanel {
             new Font("Arial", Font.BOLD, 12),
             new Color(70, 130, 180)
         ));
+        // Set white background for panel
         setBackground(Color.WHITE);
+        // Constrain maximum size to fit date/time content
         setMaximumSize(new Dimension(300, 120));
         
+        // Create read-only text area with 4 rows, 25 columns, bold Arial 13pt font
         dateTimeDisplayArea = UIComponentFactory.createReadOnlyTextArea(4, 25, UIComponentFactory.ARIAL_BOLD_13);
+        // Set alice blue background (240,248,255)
         dateTimeDisplayArea.setBackground(new Color(240, 248, 255));
+        // Set navy blue foreground text color (0,0,128)
         dateTimeDisplayArea.setForeground(new Color(0, 0, 128));
+        // Add 10-pixel margin on all sides for spacing
         dateTimeDisplayArea.setMargin(new Insets(10, 10, 10, 10));
         
+        // Add text area to center of panel
         add(dateTimeDisplayArea, BorderLayout.CENTER);
     }
     
     /**
-     * Updates the date/time display
+     * Updates the displayed date/time text.
+     * 
+     * @param text New date/time string to display
      */
     public void updateDisplay(String text) {
+        // Check if text area has been initialized
         if (dateTimeDisplayArea != null) {
+            // Update text area content with new date/time string
             dateTimeDisplayArea.setText(text);
         }
     }
     
+    /**
+     * Returns the text area component for direct access.
+     * 
+     * @return JTextArea displaying date/time
+     */
     public JTextArea getDisplayArea() {
+        // Return reference to text area component
         return dateTimeDisplayArea;
     }
 }
