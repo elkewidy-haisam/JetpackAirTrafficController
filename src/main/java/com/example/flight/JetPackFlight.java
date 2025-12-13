@@ -71,6 +71,8 @@ public class JetPackFlight {
     private boolean isActive;
     private String currentStatus;
     private String pathID;
+    // Pathfinding support
+    private com.example.navigation.BuildingAwarePathfinder pathfinder;
 
     public interface MovementLogger {
         void appendJetpackMovement(String message);
@@ -129,6 +131,10 @@ public class JetPackFlight {
      */
     public void setCityModel(com.example.model.CityModel3D cityModel) {
         movementController.setCityModel(cityModel);
+        // Also initialize pathfinder for calculating new routes
+        if (cityModel != null) {
+            this.pathfinder = new com.example.navigation.BuildingAwarePathfinder(cityModel);
+        }
     }
     
     public void setRadioInstructionListener(RadioInstructionListener listener) {
@@ -226,6 +232,19 @@ public class JetPackFlight {
         }
         
         movementController.setNewDestination(newDest);
+        
+        // Calculate building-aware path to new destination
+        if (pathfinder != null) {
+            List<Point> waypoints = pathfinder.findPath(getX(), getY(), newDest.x, newDest.y);
+            if (!waypoints.isEmpty()) {
+                movementController.setWaypoints(waypoints);
+                if (movementLogger != null) {
+                    movementLogger.appendJetpackMovement(jetpack.getCallsign() + 
+                        " New path calculated with " + waypoints.size() + " waypoints");
+                }
+            }
+        }
+        
         logMovementDirection();
     }
     
