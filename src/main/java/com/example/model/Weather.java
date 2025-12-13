@@ -31,33 +31,75 @@
 
 package com.example.model;
 
+/**
+ * Simple weather model with condition and severity.
+ * Mutable value object for weather state tracking.
+ */
 public class Weather {
+    // Current weather condition description (e.g., "Clear/Sunny", "Rain", "Fog")
     private String currentWeather;
+    // Severity level description (e.g., "Low", "Moderate", "Severe")
     private String currentSeverity;
 
+    /**
+     * Constructs a new Weather with specified condition and severity.
+     *
+     * @param currentWeather Weather condition description
+     * @param currentSeverity Severity level description
+     */
     public Weather(String currentWeather, String currentSeverity) {
+        // Set initial weather condition
         this.currentWeather = currentWeather;
+        // Set initial severity level
         this.currentSeverity = currentSeverity;
     }
 
+    /**
+     * Gets the current weather condition.
+     *
+     * @return Weather condition string
+     */
     public String getCurrentWeather() {
         return currentWeather;
     }
 
+    /**
+     * Sets the current weather condition.
+     *
+     * @param currentWeather New weather condition
+     */
     public void setCurrentWeather(String currentWeather) {
+        // Update weather condition
         this.currentWeather = currentWeather;
     }
 
+    /**
+     * Gets the current severity level.
+     *
+     * @return Severity level string
+     */
     public String getCurrentSeverity() {
         return currentSeverity;
     }
 
+    /**
+     * Sets the current severity level.
+     *
+     * @param currentSeverity New severity level
+     */
     public void setCurrentSeverity(String currentSeverity) {
+        // Update severity level
         this.currentSeverity = currentSeverity;
     }
 
+    /**
+     * Returns string representation of weather state.
+     *
+     * @return Formatted string with weather and severity
+     */
     @Override
     public String toString() {
+        // Format as: Weather[weather=X, severity=Y]
         return String.format("Weather[weather=%s, severity=%s]", currentWeather, currentSeverity);
     }
 }
