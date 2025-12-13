@@ -202,150 +202,235 @@ public class Weather {
         changeWeather(randomWeather);  // Apply the randomly selected weather
     }
 
+    /**
+     * Adjusts atmospheric parameters (temperature, wind speed, visibility) based on current weather.
+     * Each weather type has realistic ranges with randomization for variety.
+     * Called after weather changes to update conditions appropriately.
+     */
     private void adjustWeatherParameters() {
-        Random random = new Random();
-        switch (currentWeather) {
-            case "Clear/Sunny":
-                temperature = 70 + random.nextInt(20);
-                windSpeed = 3 + random.nextInt(7);
-                visibility = 10;
+        Random random = new Random();  // Create random number generator for variation
+        switch (currentWeather) {  // Select parameter ranges based on weather type
+            case "Clear/Sunny":  // Perfect weather conditions
+                temperature = 70 + random.nextInt(20);  // 70-89°F (pleasant to warm)
+                windSpeed = 3 + random.nextInt(7);      // 3-9 mph (light breeze)
+                visibility = 10;                        // 10 miles (maximum visibility)
                 break;
-            case "Partly Cloudy":
-            case "Overcast":
-                temperature = 60 + random.nextInt(15);
-                windSpeed = 5 + random.nextInt(10);
-                visibility = 8 + random.nextInt(3);
+            case "Partly Cloudy":  // Moderate cloud cover
+            case "Overcast":       // Full cloud cover
+                temperature = 60 + random.nextInt(15);  // 60-74°F (moderate temps)
+                windSpeed = 5 + random.nextInt(10);     // 5-14 mph (light to moderate wind)
+                visibility = 8 + random.nextInt(3);     // 8-10 miles (good visibility)
                 break;
-            case "Light Rain":
-            case "Drizzle":
-                temperature = 50 + random.nextInt(15);
-                windSpeed = 8 + random.nextInt(12);
-                visibility = 5 + random.nextInt(4);
+            case "Light Rain":  // Light precipitation
+            case "Drizzle":     // Very light rain
+                temperature = 50 + random.nextInt(15);  // 50-64°F (cool conditions)
+                windSpeed = 8 + random.nextInt(12);     // 8-19 mph (moderate wind)
+                visibility = 5 + random.nextInt(4);     // 5-8 miles (reduced visibility)
                 break;
-            case "Light Snow":
-            case "Flurries":
-                temperature = 25 + random.nextInt(15);
-                windSpeed = 10 + random.nextInt(10);
-                visibility = 4 + random.nextInt(4);
+            case "Light Snow":  // Light snow conditions
+            case "Flurries":    // Intermittent snow
+                temperature = 25 + random.nextInt(15);  // 25-39°F (below freezing to near freezing)
+                windSpeed = 10 + random.nextInt(10);    // 10-19 mph (moderate wind)
+                visibility = 4 + random.nextInt(4);     // 4-7 miles (snow reduces visibility)
                 break;
-            case "Fog":
-            case "Mist":
-                temperature = 45 + random.nextInt(20);
-                windSpeed = 2 + random.nextInt(5);
-                visibility = 1 + random.nextInt(3);
+            case "Fog":  // Heavy fog conditions
+            case "Mist": // Light fog
+                temperature = 45 + random.nextInt(20);  // 45-64°F (cool to moderate)
+                windSpeed = 2 + random.nextInt(5);      // 2-6 mph (light wind, fog forms in calm)
+                visibility = 1 + random.nextInt(3);     // 1-3 miles (severely reduced visibility)
                 break;
-            case "Steady Rain":
-                temperature = 45 + random.nextInt(20);
-                windSpeed = 15 + random.nextInt(15);
-                visibility = 2 + random.nextInt(4);
+            case "Steady Rain":  // Continuous rainfall
+                temperature = 45 + random.nextInt(20);  // 45-64°F (cool to moderate)
+                windSpeed = 15 + random.nextInt(15);    // 15-29 mph (strong wind)
+                visibility = 2 + random.nextInt(4);     // 2-5 miles (poor visibility)
                 break;
-            case "Showers":
-            case "Thunder Showers":
-                temperature = 55 + random.nextInt(20);
-                windSpeed = 20 + random.nextInt(20);
-                visibility = 2 + random.nextInt(3);
+            case "Showers":       // Intermittent heavy rain
+            case "Thunder Showers": // Rain with lightning
+                temperature = 55 + random.nextInt(20);  // 55-74°F (moderate temps)
+                windSpeed = 20 + random.nextInt(20);    // 20-39 mph (very strong wind)
+                visibility = 2 + random.nextInt(3);     // 2-4 miles (very poor visibility)
                 break;
-            case "Windy Conditions":
-                temperature = 50 + random.nextInt(25);
-                windSpeed = 25 + random.nextInt(25);
-                visibility = 6 + random.nextInt(5);
+            case "Windy Conditions":  // High winds
+                temperature = 50 + random.nextInt(25);  // 50-74°F (wide temperature range)
+                windSpeed = 25 + random.nextInt(25);    // 25-49 mph (dangerous wind speeds)
+                visibility = 6 + random.nextInt(5);     // 6-10 miles (moderate visibility)
                 break;
-            default:
-                temperature = 65;
-                windSpeed = 10;
-                visibility = 10;
+            default:  // Fallback for unknown weather types
+                temperature = 65;   // Default moderate temperature
+                windSpeed = 10;     // Default moderate wind
+                visibility = 10;    // Default good visibility
         }
     }
 
+    /**
+     * Returns a human-readable description for a given severity level.
+     * 
+     * @param severity the severity level (1-5)
+     * @return descriptive string explaining the severity impact
+     */
     private String getSeverityDescription(int severity) {
-        switch (severity) {
-            case SEVERITY_MINIMAL: return "Everyday conditions, minimal risk";
-            case SEVERITY_MANAGEABLE: return "Noticeable impact, manageable disruptions";
-            case SEVERITY_MODERATE: return "Moderate risk, flight restrictions";
-            case SEVERITY_SEVERE: return "Severe conditions, flight hazardous";
-            case SEVERITY_CRITICAL: return "Critical conditions, no-fly zone";
-            default: return "Unknown severity";
+        switch (severity) {  // Map severity number to description
+            case SEVERITY_MINIMAL: return "Everyday conditions, minimal risk";        // Level 1
+            case SEVERITY_MANAGEABLE: return "Noticeable impact, manageable disruptions";  // Level 2
+            case SEVERITY_MODERATE: return "Moderate risk, flight restrictions";      // Level 3
+            case SEVERITY_SEVERE: return "Severe conditions, flight hazardous";       // Level 4
+            case SEVERITY_CRITICAL: return "Critical conditions, no-fly zone";        // Level 5
+            default: return "Unknown severity";  // Fallback for invalid severity
         }
     }
 
+    /**
+     * Returns the current flight operational status based on weather severity.
+     * Provides guidance for air traffic control decisions.
+     * 
+     * @return operational status string for current severity
+     */
     private String getFlightStatus() {
-        switch (currentSeverity) {
-            case SEVERITY_MINIMAL: return "Normal operations";
-            case SEVERITY_MANAGEABLE: return "Caution advised";
-            case SEVERITY_MODERATE: return "Flight restrictions in effect";
-            case SEVERITY_SEVERE: return "Flight operations suspended";
-            default: return "No-fly zone declared";
+        switch (currentSeverity) {  // Map severity to flight status
+            case SEVERITY_MINIMAL: return "Normal operations";              // Level 1 - all clear
+            case SEVERITY_MANAGEABLE: return "Caution advised";             // Level 2 - be aware
+            case SEVERITY_MODERATE: return "Flight restrictions in effect"; // Level 3 - limited ops
+            case SEVERITY_SEVERE: return "Flight operations suspended";     // Level 4 - ground all
+            default: return "No-fly zone declared";  // Level 5 - absolute prohibition
         }
     }
 
+    /**
+     * Returns pilot recommendations based on current weather severity.
+     * Provides actionable guidance for flight safety decisions.
+     * 
+     * @return recommendation string for current severity level
+     */
     private String getRecommendations() {
-        switch (currentSeverity) {
-            case SEVERITY_MINIMAL: return "Safe to fly. Standard precautions apply.";
-            case SEVERITY_MANAGEABLE: return "Exercise increased caution. Monitor conditions closely.";
-            case SEVERITY_MODERATE: return "Experienced pilots only. Avoid unnecessary flights.";
-            case SEVERITY_SEVERE: return "Ground all aircraft. Emergency operations only.";
-            default: return "All flights prohibited. Seek immediate shelter.";
+        switch (currentSeverity) {  // Select recommendations based on severity
+            case SEVERITY_MINIMAL: return "Safe to fly. Standard precautions apply.";           // Level 1 - normal ops
+            case SEVERITY_MANAGEABLE: return "Exercise increased caution. Monitor conditions closely.";  // Level 2 - heightened awareness
+            case SEVERITY_MODERATE: return "Experienced pilots only. Avoid unnecessary flights.";  // Level 3 - restricted
+            case SEVERITY_SEVERE: return "Ground all aircraft. Emergency operations only.";      // Level 4 - suspend ops
+            default: return "All flights prohibited. Seek immediate shelter.";  // Level 5 - total prohibition
         }
     }
 
+    /**
+     * Determines if conditions are safe for jetpack flight operations.
+     * Checks severity level, visibility, and wind speed against safety thresholds.
+     * 
+     * @return true if safe to fly, false if conditions are hazardous
+     */
     public boolean isSafeToFly() {
-        return currentSeverity <= SEVERITY_MANAGEABLE && visibility >= 3 && windSpeed < 30;
+        // Return true only if ALL safety conditions are met:
+        return currentSeverity <= SEVERITY_MANAGEABLE  // Severity must be 1 or 2 (not 3+)
+                && visibility >= 3                      // Visibility must be at least 3 miles
+                && windSpeed < 30;                      // Wind speed must be under 30 mph
     }
 
+    /**
+     * Returns a defensive copy of all weather types and their severity mappings.
+     * Protects internal state from external modification.
+     * 
+     * @return new HashMap with weather type to severity level mappings
+     */
     public Map<String, Integer> getWeatherTypes() {
-        return new HashMap<>(weatherTypes);
+        return new HashMap<>(weatherTypes);  // Return copy to prevent external modification
     }
 
+    /**
+     * Returns the current weather condition name.
+     * @return string representing current weather (e.g., "Clear/Sunny", "Thunderstorm")
+     */
     public String getCurrentWeather() {
-        return currentWeather;
+        return currentWeather;  // Return current weather type
     }
 
+    /**
+     * Returns the current weather severity level.
+     * @return severity integer (1-5 scale)
+     */
     public int getCurrentSeverity() {
-        return currentSeverity;
+        return currentSeverity;  // Return current severity value
     }
 
+    /**
+     * Returns the current temperature.
+     * @return temperature in degrees Fahrenheit
+     */
     public double getTemperature() {
-        return temperature;
+        return temperature;  // Return temperature value
     }
 
+    /**
+     * Sets the temperature to a specific value.
+     * @param temperature the new temperature in degrees Fahrenheit
+     */
     public void setTemperature(double temperature) {
-        this.temperature = temperature;
+        this.temperature = temperature;  // Update temperature field
     }
 
+    /**
+     * Returns the current wind speed.
+     * @return wind speed in miles per hour
+     */
     public int getWindSpeed() {
-        return windSpeed;
+        return windSpeed;  // Return wind speed value
     }
 
+    /**
+     * Sets the wind speed to a specific value.
+     * @param windSpeed the new wind speed in miles per hour
+     */
     public void setWindSpeed(int windSpeed) {
-        this.windSpeed = windSpeed;
+        this.windSpeed = windSpeed;  // Update wind speed field
     }
 
+    /**
+     * Returns the current visibility distance.
+     * @return visibility in miles
+     */
     public int getVisibility() {
-        return visibility;
+        return visibility;  // Return visibility value
     }
 
+    /**
+     * Sets the visibility to a specific distance.
+     * @param visibility the new visibility distance in miles
+     */
     public void setVisibility(int visibility) {
-        this.visibility = visibility;
+        this.visibility = visibility;  // Update visibility field
     }
 
+    /**
+     * Returns the unique weather station identifier.
+     * @return weather ID string
+     */
     public String getWeatherID() {
-        return weatherID;
+        return weatherID;  // Return immutable weather ID
     }
 
+    /**
+     * Returns the timestamp of the last weather update.
+     * @return milliseconds since epoch of last update
+     */
     public long getLastUpdated() {
-        return lastUpdated;
+        return lastUpdated;  // Return last update timestamp
     }
 
+    /**
+     * Returns a formatted string representation of this Weather object.
+     * Includes all key atmospheric parameters and flight safety status.
+     * 
+     * @return comprehensive weather state string
+     */
     @Override
     public String toString() {
+        // Build multi-field string representation
         return "Weather{" +
-                "weatherID='" + weatherID + '\'' +
-                ", currentWeather='" + currentWeather + '\'' +
-                ", severity=" + currentSeverity +
-                ", temperature=" + String.format("%.1f", temperature) + "°F" +
-                ", windSpeed=" + windSpeed + " mph" +
-                ", visibility=" + visibility + " miles" +
-                ", safeToFly=" + isSafeToFly() +
+                "weatherID='" + weatherID + '\'' +                              // Include weather station ID
+                ", currentWeather='" + currentWeather + '\'' +                  // Include weather type
+                ", severity=" + currentSeverity +                                // Include severity level
+                ", temperature=" + String.format("%.1f", temperature) + "°F" +  // Include temperature with 1 decimal
+                ", windSpeed=" + windSpeed + " mph" +                           // Include wind speed
+                ", visibility=" + visibility + " miles" +                       // Include visibility
+                ", safeToFly=" + isSafeToFly() +                               // Include safety assessment
                 '}';
     }
 }
