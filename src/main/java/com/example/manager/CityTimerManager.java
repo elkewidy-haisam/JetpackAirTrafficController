@@ -44,62 +44,80 @@ public class CityTimerManager {
     private Timer animationTimer;
     
     /**
-     * Starts the weather timer to update weather every 30 seconds
+     * Starts the weather timer to update weather every 30 seconds.
+     * Stops any existing weather timer before starting new one.
      * 
      * @param callback The action to perform on each timer tick
      */
     public void startWeatherTimer(Runnable callback) {
-        stopWeatherTimer(); // Stop existing timer if any
+        // Stop any currently running weather timer to prevent duplicates
+        stopWeatherTimer();
         
+        // Create new Swing timer with 30 second (30000ms) delay
         weatherTimer = new Timer(30000, e -> callback.run());
+        // Start the timer
         weatherTimer.start();
     }
     
     /**
-     * Starts the date/time timer to update every second
+     * Starts the date/time timer to update every second.
+     * Stops any existing date/time timer before starting new one.
      * 
      * @param callback The action to perform on each timer tick
      */
     public void startDateTimeTimer(Runnable callback) {
-        stopDateTimeTimer(); // Stop existing timer if any
+        // Stop any currently running date/time timer to prevent duplicates
+        stopDateTimeTimer();
         
+        // Create new Swing timer with 1 second (1000ms) delay
         dateTimeTimer = new Timer(1000, e -> callback.run());
+        // Start the timer
         dateTimeTimer.start();
     }
     
     /**
-     * Stops the weather timer
+     * Stops the weather timer if it exists and is running.
      */
     public void stopWeatherTimer() {
+        // Check if weather timer exists and is currently running
         if (weatherTimer != null && weatherTimer.isRunning()) {
+            // Stop the timer
             weatherTimer.stop();
         }
     }
     
     /**
-     * Stops the date/time timer
+     * Stops the date/time timer if it exists and is running.
      */
     public void stopDateTimeTimer() {
+        // Check if date/time timer exists and is currently running
         if (dateTimeTimer != null && dateTimeTimer.isRunning()) {
+            // Stop the timer
             dateTimeTimer.stop();
         }
     }
     
     /**
-     * Stops the animation timer
+     * Stops the animation timer if it exists and is running.
      */
     public void stopAnimationTimer() {
+        // Check if animation timer exists and is currently running
         if (animationTimer != null && animationTimer.isRunning()) {
+            // Stop the timer
             animationTimer.stop();
         }
     }
     
     /**
-     * Stops all timers
+     * Stops all managed timers (weather, date/time, and animation).
+     * Convenience method for bulk timer cleanup.
      */
     public void stopAllTimers() {
+        // Stop weather update timer
         stopWeatherTimer();
+        // Stop date/time update timer
         stopDateTimeTimer();
+        // Stop animation timer
         stopAnimationTimer();
     }
     
