@@ -48,9 +48,9 @@ import java.util.Random;
  */
 public class ParkingSpaceGenerator {
     
-    /** 100 field */
+    /** Target number of parking spaces to generate per city (default: 100) */
     private static final int TARGET_SPACES = 100;
-    /** 10 field */
+    /** Maximum attempts multiplier - allows TARGET_SPACES * 10 tries to find valid locations */
     private static final int MAX_ATTEMPTS_MULTIPLIER = 10;
     
     /**
@@ -64,32 +64,35 @@ public class ParkingSpaceGenerator {
      */
     public List<ParkingSpace> generateParkingSpaces(int mapWidth, int mapHeight, 
                                                     BufferedImage mapImage, String cityCode) {
-        List<ParkingSpace> spaces = new ArrayList<>();
-        Random rand = new Random();
+        List<ParkingSpace> spaces = new ArrayList<>();  // Create empty list to store parking spaces
+        Random rand = new Random();  // Create random number generator for random placement
 
-        // Generating parking spaces
-        int attempts = 0;
-        int maxAttempts = TARGET_SPACES * MAX_ATTEMPTS_MULTIPLIER;
-        int waterRejections = 0;
+        // Generating parking spaces by randomly sampling map locations
+        int attempts = 0;  // Track total placement attempts
+        int maxAttempts = TARGET_SPACES * MAX_ATTEMPTS_MULTIPLIER;  // Calculate maximum attempts allowed (100 * 10 = 1000)
+        int waterRejections = 0;  // Count how many locations were rejected due to water
 
-        while (spaces.size() < TARGET_SPACES && attempts < maxAttempts) {
-            attempts++;
+        while (spaces.size() < TARGET_SPACES && attempts < maxAttempts) {  // Continue until target reached or max attempts exceeded
+            attempts++;  // Increment attempt counter
             
-            int x = 10 + rand.nextInt(mapWidth - 20);
-            int y = 10 + rand.nextInt(mapHeight - 20);
+            // Generate random coordinates with 10-pixel margin from edges
+            int x = 10 + rand.nextInt(mapWidth - 20);   // Random X between 10 and (width - 10)
+            int y = 10 + rand.nextInt(mapHeight - 20);  // Random Y between 10 and (height - 10)
 
-            if (isLandPixel(mapImage, x, y)) {
+            if (isLandPixel(mapImage, x, y)) {  // Check if this location is valid land (not water)
+                // Create new parking space with city-specific ID (e.g., "BOS-P1", "NYC-P42")
                 spaces.add(new ParkingSpace(cityCode + "-P" + (spaces.size() + 1), x, y));
                 
-                // Progress tracking removed for performance
-            } else {
-                waterRejections++;
+                // Progress tracking removed for performance (previously logged each successful placement)
+            } else {  // Location is water - reject it
+                waterRejections++;  // Increment water rejection counter
             }
         }
 
-        // Parking spaces generated
+        // Parking spaces generated - loop complete
+        // Final list contains up to TARGET_SPACES parking locations on valid land
         
-        return spaces;
+        return spaces;  // Return the generated list of parking spaces
     }
     
     /**
@@ -101,33 +104,35 @@ public class ParkingSpaceGenerator {
      * @return true if the pixel is land, false if water
      */
     private boolean isLandPixel(BufferedImage image, int x, int y) {
-        if (x < 0 || x >= image.getWidth() || y < 0 || y >= image.getHeight()) {
-            return false;
+        if (x < 0 || x >= image.getWidth() || y < 0 || y >= image.getHeight()) {  // Check bounds
+            return false;  // Out of bounds - treat as invalid (not land)
         }
 
-        int rgb = image.getRGB(x, y);
-        int red = (rgb >> 16) & 0xFF;
-        int green = (rgb >> 8) & 0xFF;
-        int blue = rgb & 0xFF;
+        int rgb = image.getRGB(x, y);  // Get pixel color value at coordinates
+        int red = (rgb >> 16) & 0xFF;    // Extract red channel (shift right 16 bits, mask to 8 bits)
+        int green = (rgb >> 8) & 0xFF;   // Extract green channel (shift right 8 bits, mask to 8 bits)
+        int blue = rgb & 0xFF;           // Extract blue channel (mask to lower 8 bits)
 
-        // Detect water characteristics
-        boolean isBlueish = blue > red + 20 && blue > green + 20;
-        boolean isDarkWater = blue > red && blue > green && (red + green + blue) < 200;
-        boolean isLightBlue = blue > 150 && blue > red && blue > green;
+        // Detect water characteristics - water typically has high blue values
+        boolean isBlueish = blue > red + 20 && blue > green + 20;  // Blue significantly higher than other channels
+        boolean isDarkWater = blue > red && blue > green && (red + green + blue) < 200;  // Dark blue water
+        boolean isLightBlue = blue > 150 && blue > red && blue > green;  // Light blue water (lakes, harbors)
         
-        // Land characteristics
-        boolean isBright = (red + green + blue) > 600;
-        boolean isDark = (red + green + blue) < 150;
+        // Land characteristics - land is typically non-blue
+        boolean isBright = (red + green + blue) > 600;  // Very bright pixels (white buildings, roads)
+        boolean isDark = (red + green + blue) < 150;    // Very dark pixels (buildings, shadows)
 
+        // Return true if NOT water (none of water conditions) OR definitely land (bright/dark)
         return !isBlueish && !isDarkWater && !isLightBlue || isBright || isDark;
     }
     
     /**
-     * Gets the target number of parking spaces
+     * Gets the target number of parking spaces to generate.
+     * Static method for external reference to generation parameters.
      * 
-     * @return Target number of spaces
+     * @return Target number of spaces (100)
      */
     public static int getTargetSpaces() {
-        return TARGET_SPACES;
+        return TARGET_SPACES;  // Return the constant target value
     }
 }
