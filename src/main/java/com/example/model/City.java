@@ -34,40 +34,84 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class City {
+    /** Unique name identifier for this city (e.g., "New York", "Boston") */
     private final String name;
+    /** Width of the city map in coordinate units */
     private final int width;
+    /** Height of the city map in coordinate units */
     private final int height;
+    /** Collection of parking spaces available in this city */
     private final List<ParkingSpace> parkingSpaces;
 
+    /**
+     * Constructs a new City with specified name and dimensions.
+     * Initializes with empty parking space list.
+     * 
+     * @param name unique city name identifier
+     * @param width map width in coordinate units
+     * @param height map height in coordinate units
+     */
     public City(String name, int width, int height) {
-        this.name = name;
-        this.width = width;
-        this.height = height;
-        this.parkingSpaces = new ArrayList<>();
+        this.name = name;                      // Store city name
+        this.width = width;                    // Store map width
+        this.height = height;                  // Store map height
+        this.parkingSpaces = new ArrayList<>();  // Initialize empty parking list
     }
 
+    /**
+     * Returns the name of this city.
+     * @return city name string
+     */
     public String getName() {
-        return name;
+        return name;  // Return immutable city name
     }
 
+    /**
+     * Returns the width of this city's map.
+     * @return map width in coordinate units
+     */
     public int getWidth() {
-        return width;
+        return width;  // Return immutable width
     }
 
+    /**
+     * Returns the height of this city's map.
+     * @return map height in coordinate units
+     */
     public int getHeight() {
-        return height;
+        return height;  // Return immutable height
     }
 
+    /**
+     * Returns the list of parking spaces in this city.
+     * Returns the actual list (not a copy), allowing external modification.
+     * 
+     * @return List of ParkingSpace objects
+     */
     public List<ParkingSpace> getParkingSpaces() {
-        return parkingSpaces;
+        return parkingSpaces;  // Return parking spaces list
     }
 
+    /**
+     * Adds a parking space to this city.
+     * Appends the space to the parking spaces list.
+     * 
+     * @param space the ParkingSpace to add
+     */
     public void addParkingSpace(ParkingSpace space) {
-        parkingSpaces.add(space);
+        parkingSpaces.add(space);  // Add space to list
     }
 
+    /**
+     * Returns a formatted string representation of this city.
+     * Includes name, dimensions, and parking space count.
+     * 
+     * @return formatted city details string
+     */
     @Override
     public String toString() {
-        return String.format("City[name=%s, width=%d, height=%d, parkingSpaces=%d]", name, width, height, parkingSpaces.size());
+        // Format string with all city properties
+        return String.format("City[name=%s, width=%d, height=%d, parkingSpaces=%d]", 
+                name, width, height, parkingSpaces.size());
     }
 }

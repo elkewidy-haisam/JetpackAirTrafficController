@@ -83,12 +83,12 @@ public class Radio {
      * Default constructor
      */
     public Radio() {
-        this.frequency = "121.5"; // Emergency frequency
-        this.messageQueue = new ArrayList<>();
-        this.random = new Random();
-        this.commandExecutor = new RadioCommandExecutor();
-        this.messageFormatter = new RadioMessageFormatter("ATC-CONTROL");
-        this.transmissionLogger = new RadioTransmissionLogger();
+        this.frequency = "121.5"; // Set to emergency frequency 121.5 MHz
+        this.messageQueue = new ArrayList<>();  // Initialize empty message queue
+        this.random = new Random();  // Create random number generator for acknowledgments
+        this.commandExecutor = new RadioCommandExecutor();  // Create command executor for flight commands
+        this.messageFormatter = new RadioMessageFormatter("ATC-CONTROL");  // Create formatter with default ATC callsign
+        this.transmissionLogger = new RadioTransmissionLogger();  // Create logger for transmission history
     }
     
     /**
@@ -98,33 +98,33 @@ public class Radio {
      * @param controllerCallSign Call sign for the air traffic controller
      */
     public Radio(String frequency, String controllerCallSign) {
-        this.frequency = frequency;
-        this.messageQueue = new ArrayList<>();
-        this.random = new Random();
-        this.commandExecutor = new RadioCommandExecutor();
-        this.messageFormatter = new RadioMessageFormatter(controllerCallSign);
-        this.transmissionLogger = new RadioTransmissionLogger();
+        this.frequency = frequency;  // Set specified radio frequency
+        this.messageQueue = new ArrayList<>();  // Initialize empty message queue
+        this.random = new Random();  // Create random number generator for acknowledgments
+        this.commandExecutor = new RadioCommandExecutor();  // Create command executor for flight commands
+        this.messageFormatter = new RadioMessageFormatter(controllerCallSign);  // Create formatter with specified callsign
+        this.transmissionLogger = new RadioTransmissionLogger();  // Create logger for transmission history
     }
     
     /**
      * Registers a flight for radio command execution
      */
     public void registerFlight(String callsign, Object flight) {
-        commandExecutor.registerFlight(callsign, flight);
+        commandExecutor.registerFlight(callsign, flight);  // Delegate registration to command executor
     }
     
     /**
      * Registers a flight state for radio command execution
      */
     public void registerFlightState(String callsign, Object flightState) {
-        commandExecutor.registerFlightState(callsign, flightState);
+        commandExecutor.registerFlightState(callsign, flightState);  // Delegate flight state registration to executor
     }
     
     /**
      * Unregisters a flight
      */
     public void unregisterFlight(String callsign) {
-        commandExecutor.unregisterFlight(callsign);
+        commandExecutor.unregisterFlight(callsign);  // Delegate unregistration to command executor
     }
     
     /**
@@ -136,14 +136,14 @@ public class Radio {
      * @param reason Reason for coordinate change
      */
     public void giveNewCoordinates(JetPack jetpack, int newX, int newY, String reason) {
-        String message = messageFormatter.formatCoordinateInstruction(
-            jetpack.getCallsign(), newX, newY, reason
+        String message = messageFormatter.formatCoordinateInstruction(  // Format coordinate instruction message
+            jetpack.getCallsign(), newX, newY, reason  // Pass callsign, coordinates, and reason
         );
         
-        transmissionLogger.transmitAndLog(message);
-        commandExecutor.executeCoordinateInstruction(jetpack.getCallsign(), newX, newY, reason);
+        transmissionLogger.transmitAndLog(message);  // Log the transmission for record keeping
+        commandExecutor.executeCoordinateInstruction(jetpack.getCallsign(), newX, newY, reason);  // Execute command on flight object
         
-        // Radio transmission sent
+        // Radio transmission sent - jetpack should receive and acknowledge
     }
     
     /**
@@ -155,7 +155,7 @@ public class Radio {
      * @param newY New Y coordinate
      */
     public void giveNewCoordinates(JetPack jetpack, int newX, int newY) {
-        giveNewCoordinates(jetpack, newX, newY, "Route adjustment");
+        giveNewCoordinates(jetpack, newX, newY, "Route adjustment");  // Call overloaded method with default reason
     }
     
     /**
@@ -166,14 +166,14 @@ public class Radio {
      * @param reason Reason for altitude change
      */
     public void giveNewAltitude(JetPack jetpack, int newAltitude, String reason) {
-        String message = messageFormatter.formatAltitudeInstruction(
-            jetpack.getCallsign(), newAltitude, reason
+        String message = messageFormatter.formatAltitudeInstruction(  // Format altitude instruction message
+            jetpack.getCallsign(), newAltitude, reason  // Pass callsign, altitude, and reason
         );
         
-        transmissionLogger.transmitAndLog(message);
-        commandExecutor.executeAltitudeInstruction(jetpack.getCallsign(), (double)newAltitude, reason);
+        transmissionLogger.transmitAndLog(message);  // Log the transmission for record keeping
+        commandExecutor.executeAltitudeInstruction(jetpack.getCallsign(), (double)newAltitude, reason);  // Execute command on flight object (convert to double)
         
-        // Radio transmission sent
+        // Radio transmission sent - jetpack should receive and adjust altitude
     }
     
     /**
@@ -184,7 +184,7 @@ public class Radio {
      * @param newAltitude New altitude in feet
      */
     public void giveNewAltitude(JetPack jetpack, int newAltitude) {
-        giveNewAltitude(jetpack, newAltitude, "Altitude adjustment");
+        giveNewAltitude(jetpack, newAltitude, "Altitude adjustment");  // Call overloaded method with default reason
     }
     
     /**
@@ -194,9 +194,9 @@ public class Radio {
      * @param runway Takeoff location
      */
     public void clearForTakeoff(JetPack jetpack, String runway) {
-        String message = messageFormatter.formatTakeoffClearance(jetpack.getCallsign(), runway);
-        transmissionLogger.transmitAndLog(message);
-        // Takeoff clearance sent
+        String message = messageFormatter.formatTakeoffClearance(jetpack.getCallsign(), runway);  // Format takeoff clearance message
+        transmissionLogger.transmitAndLog(message);  // Log the takeoff clearance
+        // Takeoff clearance sent - jetpack may proceed with departure
     }
     
     /**
@@ -206,9 +206,9 @@ public class Radio {
      * @param landingZone Landing zone identifier
      */
     public void clearForLanding(JetPack jetpack, String landingZone) {
-        String message = messageFormatter.formatLandingClearance(jetpack.getCallsign(), landingZone);
-        transmissionLogger.transmitAndLog(message);
-        // Landing clearance sent
+        String message = messageFormatter.formatLandingClearance(jetpack.getCallsign(), landingZone);  // Format landing clearance message
+        transmissionLogger.transmitAndLog(message);  // Log the landing clearance
+        // Landing clearance sent - jetpack may proceed to land
     }
     
     /**
@@ -218,15 +218,15 @@ public class Radio {
      * @param directive Emergency instruction
      */
     public void issueEmergencyDirective(JetPack jetpack, String directive) {
-        String message = messageFormatter.formatEmergencyDirective(jetpack.getCallsign(), directive);
-        transmissionLogger.transmitAndLog(message);
+        String message = messageFormatter.formatEmergencyDirective(jetpack.getCallsign(), directive);  // Format emergency directive message
+        transmissionLogger.transmitAndLog(message);  // Log the emergency directive
         
         // Execute emergency landing if directive contains "landing"
-        if (directive.toLowerCase().contains("landing")) {
-            commandExecutor.executeEmergencyLandingInstruction(jetpack.getCallsign(), directive);
+        if (directive.toLowerCase().contains("landing")) {  // Check if emergency directive involves landing
+            commandExecutor.executeEmergencyLandingInstruction(jetpack.getCallsign(), directive);  // Execute emergency landing command on flight object
         }
         
-        // Emergency directive sent
+        // Emergency directive sent - immediate pilot action required
     }
     
     /**
@@ -235,9 +235,9 @@ public class Radio {
      * @param message Message to broadcast
      */
     public void broadcastToAll(String message) {
-        String broadcastMessage = messageFormatter.formatBroadcast(message);
-        transmissionLogger.transmitAndLog(broadcastMessage);
-        // Broadcast sent
+        String broadcastMessage = messageFormatter.formatBroadcast(message);  // Format as broadcast message
+        transmissionLogger.transmitAndLog(broadcastMessage);  // Log the broadcast transmission
+        // Broadcast sent to all jetpacks on frequency
     }
     
     /**
@@ -247,9 +247,9 @@ public class Radio {
      * @param weatherInfo Weather information
      */
     public void provideWeatherInfo(JetPack jetpack, String weatherInfo) {
-        String message = messageFormatter.formatWeatherInfo(jetpack.getCallsign(), weatherInfo);
-        transmissionLogger.transmitAndLog(message);
-        // Weather info sent
+        String message = messageFormatter.formatWeatherInfo(jetpack.getCallsign(), weatherInfo);  // Format weather information message
+        transmissionLogger.transmitAndLog(message);  // Log the weather transmission
+        // Weather info sent to jetpack for pilot awareness
     }
     
     /**
@@ -258,9 +258,9 @@ public class Radio {
      * @param jetpack Target jetpack
      */
     public void requestPositionReport(JetPack jetpack) {
-        String message = messageFormatter.formatPositionRequest(jetpack.getCallsign());
-        transmissionLogger.transmitAndLog(message);
-        // Position request sent
+        String message = messageFormatter.formatPositionRequest(jetpack.getCallsign());  // Format position report request
+        transmissionLogger.transmitAndLog(message);  // Log the position request
+        // Position request sent - pilot should respond with current position
     }
     
     /**
@@ -274,9 +274,9 @@ public class Radio {
      * @param description Description of the accident
      */
     public void reportAccident(String accidentID, int x, int y, String type, String severity, String description) {
-        String message = messageFormatter.formatAccidentReport(accidentID, x, y, type, severity, description);
-        transmissionLogger.transmitAndLog(message);
-        // Accident reported
+        String message = messageFormatter.formatAccidentReport(accidentID, x, y, type, severity, description);  // Format accident report message with all details
+        transmissionLogger.transmitAndLog(message);  // Log the accident report transmission
+        // Accident reported to all aircraft - pilots should avoid area
     }
     
     /**
@@ -287,161 +287,161 @@ public class Radio {
      * @param y Y coordinate of accident location
      */
     public void clearAccidentReport(String accidentID, int x, int y) {
-        String message = messageFormatter.formatAccidentCleared(accidentID, x, y);
-        transmissionLogger.transmitAndLog(message);
-        // Accident cleared
+        String message = messageFormatter.formatAccidentCleared(accidentID, x, y);  // Format accident cleared message
+        transmissionLogger.transmitAndLog(message);  // Log the accident cleared transmission
+        // Accident cleared - area is now safe for flight operations
     }
     
     /**
      * Gets the transmission log
      */
     public List<String> getTransmissionLog() {
-        return transmissionLogger.getTransmissionLog();
+        return transmissionLogger.getTransmissionLog();  // Retrieve complete transmission history from logger
     }
     
     /**
      * Clears the transmission log
      */
     public void clearTransmissionLog() {
-        transmissionLogger.clearTransmissionLog();
-        // Transmission log cleared
+        transmissionLogger.clearTransmissionLog();  // Clear all logged transmissions
+        // Transmission log cleared - history reset
     }
     
     /**
      * Prints the transmission log
      */
     public void printLog() {
-        transmissionLogger.printLog();
+        transmissionLogger.printLog();  // Print transmission log to console
     }
     
     // Getters and Setters
     
     public String getFrequency() {
-        return frequency;
+        return frequency;  // Return current radio frequency
     }
     
     public void setFrequency(String frequency) {
-        this.frequency = frequency;
-        // Frequency changed
+        this.frequency = frequency;  // Update radio frequency
+        // Frequency changed - will affect all future transmissions
     }
     
     public boolean isTransmitting() {
-        return transmissionLogger.isTransmitting();
+        return transmissionLogger.isTransmitting();  // Check if radio is currently transmitting
     }
     
     public String getControllerCallSign() {
-        return messageFormatter.getControllerCallSign();
+        return messageFormatter.getControllerCallSign();  // Get ATC callsign from formatter
     }
     
     public void setControllerCallSign(String controllerCallSign) {
-        messageFormatter.setControllerCallSign(controllerCallSign);
+        messageFormatter.setControllerCallSign(controllerCallSign);  // Update ATC callsign in formatter
     }
     
     @Override
     public String toString() {
-        return "Radio{" +
-                "frequency='" + frequency + '\'' +
-                ", isTransmitting=" + transmissionLogger.isTransmitting() +
-                ", controllerCallSign='" + messageFormatter.getControllerCallSign() + '\'' +
-                ", transmissionsLogged=" + transmissionLogger.getTransmissionCount() +
-                '}';
+        return "Radio{" +  // Build string representation
+                "frequency='" + frequency + '\'' +  // Include frequency
+                ", isTransmitting=" + transmissionLogger.isTransmitting() +  // Include transmission status
+                ", controllerCallSign='" + messageFormatter.getControllerCallSign() + '\'' +  // Include callsign
+                ", transmissionsLogged=" + transmissionLogger.getTransmissionCount() +  // Include log count
+                '}';  // Close string
     }
     
     /**
      * Generate a random pilot acknowledgment
      */
     private String generateAcknowledgment() {
-        return ACKNOWLEDGMENTS[random.nextInt(ACKNOWLEDGMENTS.length)];
+        return ACKNOWLEDGMENTS[random.nextInt(ACKNOWLEDGMENTS.length)];  // Select random acknowledgment from array
     }
     
     /**
      * Simulate pilot acknowledgment to a message
      */
     public String getPilotAcknowledgment(JetPack jetpack, String instruction) {
-        String ack = generateAcknowledgment();
-        String message = messageFormatter.formatPilotAcknowledgment(jetpack.getCallsign(), ack);
-        transmissionLogger.logTransmission(message);
-        return message;
+        String ack = generateAcknowledgment();  // Generate random acknowledgment phrase
+        String message = messageFormatter.formatPilotAcknowledgment(jetpack.getCallsign(), ack);  // Format pilot's acknowledgment message
+        transmissionLogger.logTransmission(message);  // Log the pilot's response
+        return message;  // Return formatted acknowledgment
     }
     
     /**
      * Send a two-way radio message
      */
     public RadioMessage sendMessage(String sender, String receiver, String message, RadioMessage.MessageType type) {
-        RadioMessage radioMsg = new RadioMessage(sender, receiver, message, type);
-        messageQueue.add(radioMsg);
-        transmissionLogger.logTransmission(message);
+        RadioMessage radioMsg = new RadioMessage(sender, receiver, message, type);  // Create radio message object
+        messageQueue.add(radioMsg);  // Add message to queue
+        transmissionLogger.logTransmission(message);  // Log the message transmission
         
         // Simulate pilot acknowledgment after a delay
-        if (type == RadioMessage.MessageType.INSTRUCTION || type == RadioMessage.MessageType.EMERGENCY) {
-            new Thread(() -> {
+        if (type == RadioMessage.MessageType.INSTRUCTION || type == RadioMessage.MessageType.EMERGENCY) {  // Check if message requires acknowledgment
+            new Thread(() -> {  // Start async thread for delayed acknowledgment
                 try {
-                    Thread.sleep(500 + random.nextInt(1000)); // 0.5-1.5 seconds
-                    String ack = generateAcknowledgment();
-                    String ackMessage = String.format("%s, %s, %s", receiver, ack, sender);
-                    RadioMessage ackMsg = new RadioMessage(receiver, sender, ackMessage, RadioMessage.MessageType.ACKNOWLEDGMENT);
-                    messageQueue.add(ackMsg);
-                    radioMsg.setAcknowledged(true);
-                    transmissionLogger.logTransmission(ackMessage);
-                    // Pilot acknowledged
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
+                    Thread.sleep(500 + random.nextInt(1000)); // Random delay 0.5-1.5 seconds (simulates pilot thinking time)
+                    String ack = generateAcknowledgment();  // Generate acknowledgment phrase
+                    String ackMessage = String.format("%s, %s, %s", receiver, ack, sender);  // Format acknowledgment message
+                    RadioMessage ackMsg = new RadioMessage(receiver, sender, ackMessage, RadioMessage.MessageType.ACKNOWLEDGMENT);  // Create acknowledgment message
+                    messageQueue.add(ackMsg);  // Add acknowledgment to queue
+                    radioMsg.setAcknowledged(true);  // Mark original message as acknowledged
+                    transmissionLogger.logTransmission(ackMessage);  // Log acknowledgment
+                    // Pilot acknowledged - message received and understood
+                } catch (InterruptedException e) {  // Handle thread interruption
+                    Thread.currentThread().interrupt();  // Restore interrupt status
                 }
-            }).start();
+            }).start();  // Start the acknowledgment thread
         }
         
-        return radioMsg;
+        return radioMsg;  // Return the sent message
     }
     
     /**
      * Get all radio messages
      */
     public List<RadioMessage> getMessageQueue() {
-        return new ArrayList<>(messageQueue);
+        return new ArrayList<>(messageQueue);  // Return copy of message queue
     }
     
     /**
      * Get unacknowledged messages
      */
     public List<RadioMessage> getUnacknowledgedMessages() {
-        List<RadioMessage> unacked = new ArrayList<>();
-        for (RadioMessage msg : messageQueue) {
-            if (!msg.isAcknowledged() && msg.getType() != RadioMessage.MessageType.ACKNOWLEDGMENT) {
-                unacked.add(msg);
+        List<RadioMessage> unacked = new ArrayList<>();  // Create list for unacknowledged messages
+        for (RadioMessage msg : messageQueue) {  // Iterate through all messages
+            if (!msg.isAcknowledged() && msg.getType() != RadioMessage.MessageType.ACKNOWLEDGMENT) {  // Check if message is unacknowledged and not itself an acknowledgment
+                unacked.add(msg);  // Add to unacknowledged list
             }
         }
-        return unacked;
+        return unacked;  // Return list of unacknowledged messages
     }
     
     /**
      * Clear message queue
      */
     public void clearMessageQueue() {
-        messageQueue.clear();
+        messageQueue.clear();  // Remove all messages from queue
     }
     
     /**
      * Switch to emergency frequency
      */
     public void switchToEmergencyFrequency() {
-        setFrequency("121.5");
-        // Switched to emergency frequency
+        setFrequency("121.5");  // Switch to international emergency frequency 121.5 MHz
+        // Switched to emergency frequency - all aircraft monitor this channel
     }
     
     /**
      * Generate realistic tower handoff message
      */
     public void towerHandoff(JetPack jetpack, String departureController, String arrivalController) {
-        String message = messageFormatter.formatHandoffMessage(jetpack.getCallsign(), arrivalController);
-        transmissionLogger.transmitAndLog(message);
-        // Handoff initiated
+        String message = messageFormatter.formatHandoffMessage(jetpack.getCallsign(), arrivalController);  // Format handoff instruction message
+        transmissionLogger.transmitAndLog(message);  // Transmit and log handoff message
+        // Handoff initiated - jetpack transferring to new controller
         
         // Pilot acknowledges handoff
-        String ack = messageFormatter.formatHandoffAcknowledgment(
-            jetpack.getCallsign(), arrivalController, generateAcknowledgment()
+        String ack = messageFormatter.formatHandoffAcknowledgment(  // Format pilot's handoff acknowledgment
+            jetpack.getCallsign(), arrivalController, generateAcknowledgment()  // Include callsign, new controller, and acknowledgment phrase
         );
-        transmissionLogger.logTransmission(ack);
-        // Pilot acknowledged handoff
+        transmissionLogger.logTransmission(ack);  // Log pilot's acknowledgment
+        // Pilot acknowledged handoff - now in contact with arrival controller
     }
 }
 

@@ -25,11 +25,19 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Unit test for App
+ * Unit test for App class - basic placeholder test
  */
 public class AppTest {
+    /**
+     * Basic placeholder test that always passes.
+     * Validates that JUnit test infrastructure is properly configured.
+     * Future enhancement: Add actual App functionality tests.
+     */
     @Test
     public void testApp() {
-        assertTrue(true);
+        assertTrue(true);  // Assert true to verify test framework is working
+        // TODO: Add meaningful tests for App class
+        // TODO: Test command-line argument parsing
+        // TODO: Test GUI initialization in test mode
     }
 }

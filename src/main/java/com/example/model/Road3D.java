@@ -28,18 +28,44 @@
 package com.example.model;
 
 public class Road3D {
-    public final double x, y, length, width, angle;
+    /** X-coordinate of road origin point on the city map */
+    public final double x;
+    /** Y-coordinate of road origin point on the city map */
+    public final double y;
+    /** Length of the road in map units (along its main axis) */
+    public final double length;
+    /** Width of the road in map units (perpendicular to length) */
+    public final double width;
+    /** Rotation angle of the road in radians (0 = horizontal, π/2 = vertical) */
+    public final double angle;
 
+    /**
+     * Constructs a new Road3D with specified geometry.
+     * All parameters are immutable after construction for thread-safety.
+     * 
+     * @param x the x-coordinate of the road origin
+     * @param y the y-coordinate of the road origin
+     * @param length the road length in map units
+     * @param width the road width in map units
+     * @param angle the rotation angle in radians
+     */
     public Road3D(double x, double y, double length, double width, double angle) {
-        this.x = x;
-        this.y = y;
-        this.length = length;
-        this.width = width;
-        this.angle = angle;
+        this.x = x;            // Store road x position
+        this.y = y;            // Store road y position
+        this.length = length;  // Store road length
+        this.width = width;    // Store road width
+        this.angle = angle;    // Store rotation angle
     }
 
+    /** Returns the x-coordinate of this road. @return x-coordinate value */
     public double getX() { return x; }
+    
+    /** Returns the y-coordinate of this road. @return y-coordinate value */
     public double getY() { return y; }
+    
+    /** Returns the length of this road. @return length value in map units */
     public double getLength() { return length; }
+    
+    /** Returns the width of this road. @return width value in map units */
     public double getWidth() { return width; }
 }

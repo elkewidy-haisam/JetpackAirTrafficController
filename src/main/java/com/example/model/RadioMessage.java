@@ -35,40 +35,84 @@
 package com.example.model;
 
 public class RadioMessage {
+    /** Identifier of the message sender (e.g., "ATC-1", "JET-042") */
     private final String sender;
+    /** Identifier of the message receiver (e.g., "JET-042", "ALL") */
     private final String receiver;
+    /** The message content/payload (free-form text) */
     private final String content;
+    /** The type/category of this message for filtering and display */
     private final MessageType type;
 
+    /**
+     * Enumeration of possible radio message types.
+     * Used to categorize and prioritize radio communications.
+     */
     public enum MessageType {
-        INSTRUCTION, STATUS, ALERT, GENERAL
+        INSTRUCTION,  // Command or instruction from ATC to pilot
+        STATUS,       // Status update or report from pilot to ATC
+        ALERT,        // Emergency or critical alert message
+        GENERAL       // General communication or information
     }
 
+    /**
+     * Constructs a new immutable RadioMessage.
+     * All fields are final and cannot be changed after creation.
+     * 
+     * @param sender the sender identifier
+     * @param receiver the receiver identifier
+     * @param content the message text content
+     * @param type the message type category
+     */
     public RadioMessage(String sender, String receiver, String content, MessageType type) {
-        this.sender = sender;
-        this.receiver = receiver;
-        this.content = content;
-        this.type = type;
+        this.sender = sender;      // Store sender identifier
+        this.receiver = receiver;  // Store receiver identifier
+        this.content = content;    // Store message content
+        this.type = type;          // Store message type
     }
 
+    /**
+     * Returns the sender identifier of this message.
+     * @return sender ID string
+     */
     public String getSender() {
-        return sender;
+        return sender;  // Return immutable sender
     }
 
+    /**
+     * Returns the receiver identifier of this message.
+     * @return receiver ID string
+     */
     public String getReceiver() {
-        return receiver;
+        return receiver;  // Return immutable receiver
     }
 
+    /**
+     * Returns the content/payload of this message.
+     * @return message content string
+     */
     public String getContent() {
-        return content;
+        return content;  // Return immutable content
     }
 
+    /**
+     * Returns the type/category of this message.
+     * @return MessageType enum value
+     */
     public MessageType getType() {
-        return type;
+        return type;  // Return immutable type
     }
 
+    /**
+     * Returns a formatted string representation of this radio message.
+     * Includes type, sender, receiver, and content.
+     * 
+     * @return formatted message string
+     */
     @Override
     public String toString() {
-        return String.format("RadioMessage[type=%s, from=%s, to=%s, content=%s]", type, sender, receiver, content);
+        // Format all message fields into readable string
+        return String.format("RadioMessage[type=%s, from=%s, to=%s, content=%s]", 
+                type, sender, receiver, content);
     }
 }

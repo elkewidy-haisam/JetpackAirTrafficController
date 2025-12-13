@@ -31,14 +31,32 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 public class GridRenderer extends JPanel {
+    /**
+     * Constructs a new GridRenderer with default settings.
+     * Initializes the grid rendering panel with parent JPanel constructor.
+     */
     public GridRenderer() {
-        super();
+        super();  // Initialize parent JPanel with default layout
         // Initialization logic if needed
+        // Future: Configure grid line spacing and color
+        // Future: Set up coordinate system parameters
     }
 
+    /**
+     * Custom paint method to render coordinate grid overlay.
+     * Called automatically by Swing when panel needs repainting.
+     * Override to draw grid lines for spatial reference.
+     * 
+     * @param g the Graphics context to draw on
+     */
     @Override
     protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
+        super.paintComponent(g);  // Paint parent component first (background)
         // Custom rendering logic for city grid
+        // TODO: Draw horizontal grid lines at regular intervals
+        // TODO: Draw vertical grid lines at regular intervals
+        // TODO: Draw coordinate labels at grid intersections
+        // TODO: Highlight major grid lines (every 10th line)
+        // TODO: Use semi-transparent color to not obscure map
     }
 }

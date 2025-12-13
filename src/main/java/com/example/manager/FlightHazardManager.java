@@ -51,19 +51,19 @@ public class FlightHazardManager {
      * Constructor - initializes all hazards to false
      */
     public FlightHazardManager() {
-        initializeHazardFlags();
-        this.currentStatus = "ACTIVE";
+        initializeHazardFlags();  // Set all hazard flags to false (safe state)
+        this.currentStatus = "ACTIVE";  // Initialize status as normal operations
     }
     
     /**
      * Initializes all hazard flags to false
      */
     private void initializeHazardFlags() {
-        this.inclementWeather = false;
-        this.buildingCollapse = false;
-        this.airAccident = false;
-        this.policeActivity = false;
-        this.emergencyHalt = false;
+        this.inclementWeather = false;  // No weather hazards initially
+        this.buildingCollapse = false;  // No building hazards initially
+        this.airAccident = false;  // No accident hazards initially
+        this.policeActivity = false;  // No police activity initially
+        this.emergencyHalt = false;  // No emergency halt initially
     }
     
     /**
@@ -72,9 +72,9 @@ public class FlightHazardManager {
      * @param active true to activate hazard
      */
     public void setInclementWeather(boolean active) {
-        this.inclementWeather = active;
-        if (active) {
-            currentStatus = "WEATHER WARNING";
+        this.inclementWeather = active;  // Update weather hazard flag
+        if (active) {  // Check if hazard is being activated
+            currentStatus = "WEATHER WARNING";  // Update status to reflect weather warning
         }
     }
     
@@ -84,9 +84,9 @@ public class FlightHazardManager {
      * @param active true to activate hazard
      */
     public void setBuildingCollapse(boolean active) {
-        this.buildingCollapse = active;
-        if (active) {
-            currentStatus = "BUILDING HAZARD";
+        this.buildingCollapse = active;  // Update building collapse hazard flag
+        if (active) {  // Check if hazard is being activated
+            currentStatus = "BUILDING HAZARD";  // Update status to reflect building hazard
         }
     }
     
@@ -96,9 +96,9 @@ public class FlightHazardManager {
      * @param active true to activate hazard
      */
     public void setAirAccident(boolean active) {
-        this.airAccident = active;
-        if (active) {
-            currentStatus = "ACCIDENT ZONE";
+        this.airAccident = active;  // Update air accident hazard flag
+        if (active) {  // Check if hazard is being activated
+            currentStatus = "ACCIDENT ZONE";  // Update status to reflect accident zone
         }
     }
     
@@ -108,9 +108,9 @@ public class FlightHazardManager {
      * @param active true to activate hazard
      */
     public void setPoliceActivity(boolean active) {
-        this.policeActivity = active;
-        if (active) {
-            currentStatus = "POLICE AREA";
+        this.policeActivity = active;  // Update police activity hazard flag
+        if (active) {  // Check if hazard is being activated
+            currentStatus = "POLICE AREA";  // Update status to reflect police area
         }
     }
     
@@ -120,11 +120,11 @@ public class FlightHazardManager {
      * @param active true to activate emergency halt
      */
     public void setEmergencyHalt(boolean active) {
-        this.emergencyHalt = active;
-        if (active) {
-            currentStatus = "EMERGENCY HALT";
-        } else {
-            currentStatus = "ACTIVE";
+        this.emergencyHalt = active;  // Update emergency halt flag
+        if (active) {  // Check if emergency halt is being activated
+            currentStatus = "EMERGENCY HALT";  // Update status to reflect emergency halt
+        } else {  // Emergency halt is being deactivated
+            currentStatus = "ACTIVE";  // Return to active/normal status
         }
     }
     
@@ -132,9 +132,9 @@ public class FlightHazardManager {
      * Clears emergency halt
      */
     public void clearEmergencyHalt() {
-        if (emergencyHalt) {
-            emergencyHalt = false;
-            currentStatus = "ACTIVE";
+        if (emergencyHalt) {  // Check if emergency halt is currently active
+            emergencyHalt = false;  // Deactivate emergency halt
+            currentStatus = "ACTIVE";  // Return to active/normal status
         }
     }
     
@@ -144,13 +144,13 @@ public class FlightHazardManager {
      * @return List of active hazard names
      */
     public List<String> getActiveHazards() {
-        List<String> hazards = new ArrayList<>();
-        if (inclementWeather) hazards.add("WEATHER");
-        if (buildingCollapse) hazards.add("BUILDING_COLLAPSE");
-        if (airAccident) hazards.add("AIR_ACCIDENT");
-        if (policeActivity) hazards.add("POLICE_ACTIVITY");
-        if (emergencyHalt) hazards.add("EMERGENCY_HALT");
-        return hazards;
+        List<String> hazards = new ArrayList<>();  // Create empty list to collect active hazards
+        if (inclementWeather) hazards.add("WEATHER");  // Add weather if active
+        if (buildingCollapse) hazards.add("BUILDING_COLLAPSE");  // Add building collapse if active
+        if (airAccident) hazards.add("AIR_ACCIDENT");  // Add air accident if active
+        if (policeActivity) hazards.add("POLICE_ACTIVITY");  // Add police activity if active
+        if (emergencyHalt) hazards.add("EMERGENCY_HALT");  // Add emergency halt if active
+        return hazards;  // Return list of all active hazards
     }
     
     /**
@@ -159,7 +159,7 @@ public class FlightHazardManager {
      * @return true if any hazards are active
      */
     public boolean hasActiveHazards() {
-        return inclementWeather || buildingCollapse || airAccident || policeActivity || emergencyHalt;
+        return inclementWeather || buildingCollapse || airAccident || policeActivity || emergencyHalt;  // Return true if any hazard flag is active
     }
     
     /**
@@ -223,9 +223,9 @@ public class FlightHazardManager {
      * @return Adjusted speed accounting for hazards
      */
     public double getEffectiveSpeed(double baseSpeed) {
-        if (inclementWeather) {
-            return baseSpeed * 0.5; // Reduce speed in bad weather
+        if (inclementWeather) {  // Check if weather hazard is active
+            return baseSpeed * 0.5;  // Reduce speed to 50% in bad weather for safety
         }
-        return baseSpeed;
+        return baseSpeed;  // Return unmodified speed if no weather hazards
     }
 }

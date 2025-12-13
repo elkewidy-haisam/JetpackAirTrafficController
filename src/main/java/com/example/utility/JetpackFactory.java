@@ -49,6 +49,16 @@ public class JetpackFactory {
     public static JetPack createJetPack(String id, String serialNumber, String callsign, String ownerName, String year, String model, String manufacturer) {
         // Create and return new JetPack with all parameters
         // Initial position: (0,0), heading: 0.0, altitude: 0.0
-        return new JetPack(id, serialNumber, callsign, ownerName, year, model, manufacturer, new java.awt.Point(0, 0), 0.0, 0.0);
+        // Caller is expected to set actual position after creation
+        return new JetPack(id,              // Set unique jetpack identifier
+                serialNumber,                // Set manufacturer serial number
+                callsign,                    // Set radio callsign for ATC
+                ownerName,                   // Set owner/pilot name
+                year,                        // Set manufacturing year
+                model,                       // Set jetpack model designation
+                manufacturer,                // Set manufacturer name
+                new java.awt.Point(0, 0),   // Initialize at origin (0,0) - temporary position
+                0.0,                         // Initialize heading at 0.0 degrees (north)
+                0.0);                        // Initialize altitude at 0.0 (ground level)
     }
 }

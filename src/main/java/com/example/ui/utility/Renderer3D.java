@@ -43,53 +43,94 @@ import java.util.Map;
  */
 public class Renderer3D {
     /**
-     * Render complete 3D scene from jetpack perspective (legacy method for backward compatibility)
+     * Render complete 3D scene from jetpack perspective (legacy method for backward compatibility).
+     * Delegates to full version with empty lists for nearby jetpacks and accidents.
+     * 
+     * @param g2d Graphics2D context to render on
+     * @param width viewport width
+     * @param height viewport height
+     * @param flight the jetpack flight to render perspective from
+     * @param cityModel the 3D city model to render
      */
     public static void renderScene(Graphics2D g2d, int width, int height, JetPackFlight flight, CityModel3D cityModel) {
+        // Call full version with empty collections for backward compatibility
         renderScene(g2d, width, height, flight, cityModel, new ArrayList<>(), new ArrayList<>(), null);
     }
 
     /**
-     * Render complete 3D scene from jetpack perspective with nearby jetpacks and accidents
+     * Render complete 3D scene from jetpack perspective with nearby jetpacks and accidents.
+     * Main rendering method that draws sky, ground, city, jetpacks, and accidents.
+     * 
+     * @param g2d Graphics2D context to render on
+     * @param width viewport width
+     * @param height viewport height
+     * @param flight the jetpack flight to render perspective from
+     * @param cityModel the 3D city model to render
+     * @param nearbyJetpacks list of nearby jetpacks to render
+     * @param accidents list of accidents to render
+     * @param flightStates map of flight states for rendering
      */
     public static void renderScene(Graphics2D g2d, int width, int height,
                                   JetPackFlight flight, CityModel3D cityModel,
                                   List<JetPackFlight> nearbyJetpacks,
                                   List<AccidentAlert.Accident> accidents,
                                   Map<JetPackFlight, JetPackFlightState> flightStates) {
-        // Clear background
-        g2d.setColor(Color.BLACK);
-        g2d.fillRect(0, 0, width, height);
+        // Clear background to black
+        g2d.setColor(Color.BLACK);  // Set black color
+        g2d.fillRect(0, 0, width, height);  // Fill entire viewport
 
-        // Get jetpack position and direction
-        double jetpackX = flight.getX();
-        double jetpackY = flight.getY();
+        // Get jetpack position and direction from flight object
+        double jetpackX = flight.getX();  // Get current X coordinate
+        double jetpackY = flight.getY();  // Get current Y coordinate
 
-        // Get destination for camera direction
-        Point dest = flight.getDestination();
-        double dx = dest.x - jetpackX;
-        double dy = dest.y - jetpackY;
-        double angle = Math.atan2(dy, dx);
+        // Get destination for camera direction calculation
+        Point dest = flight.getDestination();  // Get destination point
+        double dx = dest.x - jetpackX;  // Calculate X offset to destination
+        double dy = dest.y - jetpackY;  // Calculate Y offset to destination
+        double angle = Math.atan2(dy, dx);  // Calculate angle to destination in radians
 
-        // Draw sky
+        // Draw sky in upper half of viewport
         drawSky(g2d, width, height);
 
-        // Draw ground/water
+        // Draw ground/water in lower half with perspective
         drawGround(g2d, width, height, jetpackX, jetpackY, angle, cityModel);
 
-        // ...existing code...
+        // ...existing code for drawing buildings, jetpacks, accidents...
+        // TODO: Add building rendering
+        // TODO: Add nearby jetpack rendering
+        // TODO: Add accident site rendering
     }
 
-    // Stub for drawSky
+    /**
+     * Draws the sky in the upper portion of the viewport.
+     * Simple cyan color representing daytime sky.
+     * 
+     * @param g2d Graphics2D context
+     * @param width viewport width
+     * @param height viewport height
+     */
     private static void drawSky(Graphics2D g2d, int width, int height) {
-        g2d.setColor(Color.CYAN);
-        g2d.fillRect(0, 0, width, height / 2);
+        g2d.setColor(Color.CYAN);  // Set cyan sky color
+        g2d.fillRect(0, 0, width, height / 2);  // Fill upper half with sky
     }
 
-    // Stub for drawGround
+    /**
+     * Draws the ground/water in the lower portion of the viewport.
+     * Simple green color representing ground with perspective.
+     * 
+     * @param g2d Graphics2D context
+     * @param width viewport width
+     * @param height viewport height
+     * @param jetpackX jetpack X position for perspective
+     * @param jetpackY jetpack Y position for perspective
+     * @param angle camera angle for perspective
+     * @param cityModel city model for terrain data
+     */
     private static void drawGround(Graphics2D g2d, int width, int height, double jetpackX, double jetpackY, double angle, CityModel3D cityModel) {
-        g2d.setColor(Color.GREEN);
-        g2d.fillRect(0, height / 2, width, height / 2);
+        g2d.setColor(Color.GREEN);  // Set green ground color
+        g2d.fillRect(0, height / 2, width, height / 2);  // Fill lower half with ground
+        // TODO: Add water rendering based on cityModel
+        // TODO: Add perspective grid rendering
     }
 
     // ...other rendering methods, e.g., drawBuildings, drawJetpacks, etc...

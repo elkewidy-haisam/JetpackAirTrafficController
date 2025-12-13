@@ -28,11 +28,29 @@
 package com.example.ui.panels;
 
 public class CityMapWeatherManager {
+    /**
+     * Constructs a new CityMapWeatherManager.
+     * Reserved for future initialization such as weather panel references and update timers.
+     */
     public CityMapWeatherManager() {
         // Initialization logic if needed
+        // Future: Store reference to CityMapPanel for weather overlay updates
+        // Future: Initialize weather update timer
     }
 
+    /**
+     * Updates the weather display on the city map panel.
+     * Processes weather information string and triggers visual updates to show
+     * current conditions (e.g., overlay tinting, weather icons, condition text).
+     * Future implementation will parse weather info and update map rendering.
+     * 
+     * @param weatherInfo the weather information string to display (e.g., "Clear/Sunny - 72°F")
+     */
     public void updateWeather(String weatherInfo) {
         // Logic to update weather display on the city map panel
+        // TODO: Parse weather information string
+        // TODO: Update map overlay tint based on conditions
+        // TODO: Update weather icon/text in corner of map
+        // TODO: Trigger repaint of CityMapPanel
     }
 }

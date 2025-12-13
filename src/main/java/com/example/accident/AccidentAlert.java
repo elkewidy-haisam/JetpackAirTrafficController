@@ -40,68 +40,180 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AccidentAlert {
+    /**
+     * Inner class representing a single accident incident.
+     * Encapsulates all accident metadata including location, severity, and status.
+     */
     public static class Accident {
+        /** Unique identifier for this accident (e.g., "ACC-001") */
         private final String accidentID;
+        /** X-coordinate of accident location on city map */
         private final int x;
+        /** Y-coordinate of accident location on city map */
         private final int y;
+        /** Type of accident (e.g., "Collision", "Mechanical Failure", "Weather") */
         private final String type;
+        /** Severity level (e.g., "Low", "Moderate", "High", "Critical") */
         private final String severity;
+        /** Detailed description of the accident incident */
         private final String description;
+        /** Timestamp when accident was reported (milliseconds since epoch) */
         private final long timestamp;
+        /** Whether this accident is still active (not yet cleared) */
         private boolean isActive;
 
+        /**
+         * Constructs a new Accident with specified details.
+         * Sets timestamp to current time and active status to true.
+         * 
+         * @param accidentID unique accident identifier
+         * @param x x-coordinate of accident location
+         * @param y y-coordinate of accident location
+         * @param type accident type classification
+         * @param severity severity level
+         * @param description detailed accident description
+         */
         public Accident(String accidentID, int x, int y, String type, String severity, String description) {
-            this.accidentID = accidentID;
-            this.x = x;
-            this.y = y;
-            this.type = type;
-            this.severity = severity;
-            this.description = description;
-            this.timestamp = System.currentTimeMillis();
-            this.isActive = true;
+            this.accidentID = accidentID;            // Store accident ID
+            this.x = x;                              // Store x-coordinate
+            this.y = y;                              // Store y-coordinate
+            this.type = type;                        // Store accident type
+            this.severity = severity;                // Store severity level
+            this.description = description;          // Store description
+            this.timestamp = System.currentTimeMillis();  // Record current time
+            this.isActive = true;                    // Mark as active initially
         }
 
+        /** Returns accident ID. @return accident identifier string */
         public String getAccidentID() { return accidentID; }
+        /** Returns x-coordinate. @return x position */
         public int getX() { return x; }
+        /** Returns y-coordinate. @return y position */
         public int getY() { return y; }
+        /** Returns accident type. @return type string */
         public String getType() { return type; }
+        /** Returns severity level. @return severity string */
         public String getSeverity() { return severity; }
+        /** Returns description. @return description string */
         public String getDescription() { return description; }
+        /** Returns timestamp. @return timestamp in milliseconds */
         public long getTimestamp() { return timestamp; }
+        /** Returns active status. @return true if active, false if cleared */
         public boolean isActive() { return isActive; }
+        /** Sets active status. @param active new active state */
         public void setActive(boolean active) { isActive = active; }
 
+        /**
+         * Returns formatted string representation of this accident.
+         * @return string with ID, type, severity, location, and active status
+         */
         @Override
         public String toString() {
-            return String.format("Accident[ID=%s, Type=%s, Severity=%s, Location=(%d,%d), Active=%s]", accidentID, type, severity, x, y, isActive);
+            // Format accident details into readable string
+            return String.format("Accident[ID=%s, Type=%s, Severity=%s, Location=(%d,%d), Active=%s]", 
+                    accidentID, type, severity, x, y, isActive);
         }
     }
 
+    /** List of all accidents being tracked by this alert system */
     private final List<Accident> accidents = new ArrayList<>();
+    /** Identifier for this alert system instance */
     private String alertId;
 
+    /**
+     * Default constructor with empty alert ID.
+     * Creates an accident alert system with default identifier.
+     */
     public AccidentAlert() {
-        this.alertId = "";
+        this.alertId = "";  // Initialize with empty ID
     }
 
+    /**
+     * Constructor with specified alert system ID.
+     * @param alertId unique identifier for this alert system
+     */
     public AccidentAlert(String alertId) {
-        this.alertId = alertId;
+        this.alertId = alertId;  // Store provided alert ID
     }
 
+    /**
+     * Reports and registers a new accident incident.
+     * Creates an Accident object and adds it to the tracking list.
+     * 
+     * @param accidentID unique accident identifier
+     * @param x x-coordinate of accident location
+     * @param y y-coordinate of accident location
+     * @param type accident type classification
+     * @param severity severity level
+     * @param description detailed accident description
+     */
     public void reportAccident(String accidentID, int x, int y, String type, String severity, String description) {
-        Accident accident = new Accident(accidentID, x, y, type, severity, description);
-        accidents.add(accident);
+        Accident accident = new Accident(accidentID, x, y, type, severity, description);  // Create accident record
+        accidents.add(accident);  // Add to tracked accidents list
     }
 
-    public List<Accident> getAccidents() { return new ArrayList<>(accidents); }
-    public List<Accident> getAccidentsNearLocation(int x, int y, double radius) { return new ArrayList<>(); }
-    public void alertJetpacksOfAccident(String accidentID, List<?> nearbyJetpacks, double radius) {}
-    public boolean removeAlert(String accidentID) { return false; }
-    public int getActiveAccidentCount() { return 0; }
+    /**
+     * Returns a defensive copy of all accidents.
+     * @return new List containing all accident records
+     */
+    public List<Accident> getAccidents() { 
+        return new ArrayList<>(accidents);  // Return copy to protect internal state
+    }
+    
+    /**
+     * Returns accidents within specified radius of location.
+     * Currently returns empty list (stub implementation).
+     * 
+     * @param x x-coordinate of center point
+     * @param y y-coordinate of center point
+     * @param radius search radius in map units
+     * @return list of nearby accidents (empty in stub)
+     */
+    public List<Accident> getAccidentsNearLocation(int x, int y, double radius) { 
+        return new ArrayList<>();  // TODO: Implement proximity search
+    }
+    
+    /**
+     * Alerts jetpacks near accident location.
+     * Currently stub implementation (no-op).
+     * 
+     * @param accidentID ID of accident to alert about
+     * @param nearbyJetpacks list of jetpacks near accident
+     * @param radius alert radius
+     */
+    public void alertJetpacksOfAccident(String accidentID, List<?> nearbyJetpacks, double radius) {
+        // TODO: Implement jetpack notification logic
+    }
+    
+    /**
+     * Removes/clears an accident from tracking.
+     * Currently stub implementation.
+     * 
+     * @param accidentID ID of accident to remove
+     * @return true if removed, false otherwise (always false in stub)
+     */
+    public boolean removeAlert(String accidentID) { 
+        return false;  // TODO: Implement accident removal
+    }
+    
+    /**
+     * Returns count of active (not cleared) accidents.
+     * Currently stub returning 0.
+     * 
+     * @return number of active accidents (0 in stub)
+     */
+    public int getActiveAccidentCount() { 
+        return 0;  // TODO: Count active accidents
+    }
 
-        // Added for test compatibility
-        public String getAlertSystemID() {
-            if (alertId == null || alertId.isEmpty()) return "COLLISION-ALERT";
-            return alertId;
-        }
+    /**
+     * Returns the alert system identifier.
+     * Returns "COLLISION-ALERT" if no ID was set.
+     * 
+     * @return alert system ID string
+     */
+    public String getAlertSystemID() {
+        if (alertId == null || alertId.isEmpty()) return "COLLISION-ALERT";  // Default ID
+        return alertId;  // Return stored ID
+    }
 }

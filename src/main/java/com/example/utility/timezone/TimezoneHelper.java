@@ -12,8 +12,17 @@ package com.example.utility.timezone;
 
 
 public class TimezoneHelper {
+    /**
+     * Returns the timezone ZoneId for a specified city.
+     * Currently returns UTC for all cities (stub implementation).
+     * Future enhancement: Map cities to actual timezones (EST for New York, CST for Dallas, etc.)
+     * 
+     * @param city the city name to get timezone for
+     * @return ZoneId for the city's timezone (currently always UTC)
+     */
     public static java.time.ZoneId getTimezoneForCity(String city) {
-        // Stub: Always return UTC for now
-        return java.time.ZoneId.of("UTC");
+        // Stub implementation: Always return UTC regardless of city
+        // TODO: Implement city-to-timezone mapping (NY->EST, Dallas->CST, etc.)
+        return java.time.ZoneId.of("UTC");  // Return UTC ZoneId
     }
 }

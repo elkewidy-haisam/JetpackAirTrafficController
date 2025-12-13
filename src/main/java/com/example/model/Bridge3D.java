@@ -28,18 +28,44 @@
 package com.example.model;
 
 public class Bridge3D {
-    public final double x, y, length, width, angle;
+    /** X-coordinate of bridge origin point on the city map */
+    public final double x;
+    /** Y-coordinate of bridge origin point on the city map */
+    public final double y;
+    /** Length of the bridge in map units (along its main axis) */
+    public final double length;
+    /** Width of the bridge in map units (perpendicular to length) */
+    public final double width;
+    /** Rotation angle of the bridge in radians (0 = horizontal, π/2 = vertical) */
+    public final double angle;
 
+    /**
+     * Constructs a new Bridge3D with specified geometry.
+     * All parameters are immutable after construction for thread-safety.
+     * 
+     * @param x the x-coordinate of the bridge origin
+     * @param y the y-coordinate of the bridge origin
+     * @param length the bridge length in map units
+     * @param width the bridge width in map units
+     * @param angle the rotation angle in radians
+     */
     public Bridge3D(double x, double y, double length, double width, double angle) {
-        this.x = x;
-        this.y = y;
-        this.length = length;
-        this.width = width;
-        this.angle = angle;
+        this.x = x;            // Store bridge x position
+        this.y = y;            // Store bridge y position
+        this.length = length;  // Store bridge length
+        this.width = width;    // Store bridge width
+        this.angle = angle;    // Store rotation angle
     }
 
+    /** Returns the x-coordinate of this bridge. @return x-coordinate value */
     public double getX() { return x; }
+    
+    /** Returns the y-coordinate of this bridge. @return y-coordinate value */
     public double getY() { return y; }
+    
+    /** Returns the length of this bridge. @return length value in map units */
     public double getLength() { return length; }
+    
+    /** Returns the width of this bridge. @return width value in map units */
     public double getWidth() { return width; }
 }

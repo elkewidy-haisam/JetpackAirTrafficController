@@ -39,103 +39,118 @@ import javax.swing.Timer;
  */
 public class CityTimerManager {
     
+    /** Timer for periodic weather updates (30 second intervals) */
     private Timer weatherTimer;
+    /** Timer for date/time display updates (1 second intervals) */
     private Timer dateTimeTimer;
+    /** Timer for animation frame updates (variable rate) */
     private Timer animationTimer;
     
     /**
-     * Starts the weather timer to update weather every 30 seconds
+     * Starts the weather timer to update weather every 30 seconds.
+     * Stops any existing weather timer before creating new one.
      * 
      * @param callback The action to perform on each timer tick
      */
     public void startWeatherTimer(Runnable callback) {
-        stopWeatherTimer(); // Stop existing timer if any
+        stopWeatherTimer();  // Stop existing timer if any to prevent duplicates
         
-        weatherTimer = new Timer(30000, e -> callback.run());
-        weatherTimer.start();
+        // Create new timer with 30 second delay (30000 milliseconds)
+        weatherTimer = new Timer(30000, e -> callback.run());  // Execute callback on each tick
+        weatherTimer.start();  // Start the timer
     }
     
     /**
-     * Starts the date/time timer to update every second
+     * Starts the date/time timer to update every second.
+     * Stops any existing date/time timer before creating new one.
      * 
      * @param callback The action to perform on each timer tick
      */
     public void startDateTimeTimer(Runnable callback) {
-        stopDateTimeTimer(); // Stop existing timer if any
+        stopDateTimeTimer();  // Stop existing timer if any to prevent duplicates
         
-        dateTimeTimer = new Timer(1000, e -> callback.run());
-        dateTimeTimer.start();
+        // Create new timer with 1 second delay (1000 milliseconds)
+        dateTimeTimer = new Timer(1000, e -> callback.run());  // Execute callback on each tick
+        dateTimeTimer.start();  // Start the timer
     }
     
     /**
-     * Stops the weather timer
+     * Stops the weather timer if it is running.
+     * Safe to call even if timer is null or not running.
      */
     public void stopWeatherTimer() {
-        if (weatherTimer != null && weatherTimer.isRunning()) {
-            weatherTimer.stop();
+        if (weatherTimer != null && weatherTimer.isRunning()) {  // Check timer exists and is running
+            weatherTimer.stop();  // Stop the timer
         }
     }
     
     /**
-     * Stops the date/time timer
+     * Stops the date/time timer if it is running.
+     * Safe to call even if timer is null or not running.
      */
     public void stopDateTimeTimer() {
-        if (dateTimeTimer != null && dateTimeTimer.isRunning()) {
-            dateTimeTimer.stop();
+        if (dateTimeTimer != null && dateTimeTimer.isRunning()) {  // Check timer exists and is running
+            dateTimeTimer.stop();  // Stop the timer
         }
     }
     
     /**
-     * Stops the animation timer
+     * Stops the animation timer if it is running.
+     * Safe to call even if timer is null or not running.
      */
     public void stopAnimationTimer() {
-        if (animationTimer != null && animationTimer.isRunning()) {
-            animationTimer.stop();
+        if (animationTimer != null && animationTimer.isRunning()) {  // Check timer exists and is running
+            animationTimer.stop();  // Stop the timer
         }
     }
     
     /**
-     * Stops all timers
+     * Stops all managed timers (weather, date/time, animation).
+     * Ensures clean shutdown when switching cities or closing application.
      */
     public void stopAllTimers() {
-        stopWeatherTimer();
-        stopDateTimeTimer();
-        stopAnimationTimer();
+        stopWeatherTimer();  // Stop weather update timer
+        stopDateTimeTimer();  // Stop date/time display timer
+        stopAnimationTimer();  // Stop animation frame timer
     }
     
     /**
-     * Sets the animation timer reference (managed externally)
+     * Sets the animation timer reference (managed externally).
+     * Animation timer is typically created by CityMapAnimationController.
      * 
-     * @param timer The animation timer
+     * @param timer The animation timer to manage
      */
     public void setAnimationTimer(Timer timer) {
-        this.animationTimer = timer;
+        this.animationTimer = timer;  // Store animation timer reference
     }
     
     /**
-     * Gets the weather timer
+     * Gets the weather timer instance.
+     * Returns null if timer hasn't been started yet.
      * 
-     * @return The weather timer
+     * @return The weather timer, or null if not initialized
      */
     public Timer getWeatherTimer() {
-        return weatherTimer;
+        return weatherTimer;  // Return weather timer reference
     }
     
     /**
-     * Gets the date/time timer
+     * Gets the date/time timer instance.
+     * Returns null if timer hasn't been started yet.
      * 
-     * @return The date/time timer
+     * @return The date/time timer, or null if not initialized
      */
     public Timer getDateTimeTimer() {
-        return dateTimeTimer;
+        return dateTimeTimer;  // Return date/time timer reference
     }
     
     /**
-     * Gets the animation timer
+     * Gets the animation timer instance.
+     * Returns null if timer hasn't been set yet.
      * 
-     * @return The animation timer
+     * @return The animation timer, or null if not initialized
      */
     public Timer getAnimationTimer() {
-        return animationTimer;
+        return animationTimer;  // Return animation timer reference
     }
 }

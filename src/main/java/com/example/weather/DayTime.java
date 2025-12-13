@@ -136,54 +136,91 @@ public class DayTime {
         setTime();
     }
 
+    /**
+     * Returns the RGB color scheme for the current time of day.
+     * Used for tinting the map display to reflect lighting conditions.
+     * 
+     * @return int array [R, G, B] with values 0-255 for current period
+     */
     public int[] getColorScheme() {
-        switch (timeOfDay) {
-            case "NIGHT": return new int[]{10, 10, 40};
-            case "DAWN": return new int[]{135, 135, 180};
-            case "SUNRISE": return new int[]{255, 200, 150};
-            case "DAY": return new int[]{135, 206, 250};
-            case "SUNSET": return new int[]{255, 140, 100};
-            case "DUSK": return new int[]{100, 80, 130};
-            case "NIGHTTIME": return new int[]{30, 30, 60};
-            default: return new int[]{135, 206, 250};
+        switch (timeOfDay) {  // Select color based on current period
+            case "NIGHT": return new int[]{10, 10, 40};        // Dark blue for late night
+            case "DAWN": return new int[]{135, 135, 180};      // Light gray-blue for early morning
+            case "SUNRISE": return new int[]{255, 200, 150};   // Warm orange for sunrise
+            case "DAY": return new int[]{135, 206, 250};       // Sky blue for daytime
+            case "SUNSET": return new int[]{255, 140, 100};    // Deep orange for sunset
+            case "DUSK": return new int[]{100, 80, 130};       // Purple-gray for evening
+            case "NIGHTTIME": return new int[]{30, 30, 60};    // Dark blue for night
+            default: return new int[]{135, 206, 250};          // Default to day color
         }
     }
 
+    /**
+     * Returns a human-readable description of current lighting conditions.
+     * Includes visibility assessment for flight operations.
+     * 
+     * @return descriptive string about current time period and visibility
+     */
     public String getTimeOfDayDescription() {
-        switch (timeOfDay) {
-            case "NIGHT": return "Late night - minimal visibility";
-            case "DAWN": return "Early morning - visibility improving";
-            case "SUNRISE": return "Sunrise - good visibility";
-            case "DAY": return "Daytime - excellent visibility";
-            case "SUNSET": return "Sunset - good visibility, changing light";
-            case "DUSK": return "Evening - visibility decreasing";
-            case "NIGHTTIME": return "Night - reduced visibility";
-            default: return "Unknown time period";
+        switch (timeOfDay) {  // Select description based on current period
+            case "NIGHT": return "Late night - minimal visibility";               // 0-5 AM conditions
+            case "DAWN": return "Early morning - visibility improving";           // 5-7 AM conditions
+            case "SUNRISE": return "Sunrise - good visibility";                   // 7-9 AM conditions
+            case "DAY": return "Daytime - excellent visibility";                  // 9-17 (5 PM) conditions
+            case "SUNSET": return "Sunset - good visibility, changing light";     // 17-19 (7 PM) conditions
+            case "DUSK": return "Evening - visibility decreasing";                // 19-21 (9 PM) conditions
+            case "NIGHTTIME": return "Night - reduced visibility";                // 21-24 (midnight) conditions
+            default: return "Unknown time period";                                // Fallback for errors
         }
     }
 
+    /**
+     * Returns the current time being tracked.
+     * @return LocalTime object representing current hour and minute
+     */
     public LocalTime getCurrentTime() {
-        return currentTime;
+        return currentTime;  // Return the stored time
     }
 
+    /**
+     * Returns the current period of day classification.
+     * @return String representing current period (e.g., "DAY", "NIGHT")
+     */
     public String getTimeOfDay() {
-        return timeOfDay;
+        return timeOfDay;  // Return the classified period name
     }
 
+    /**
+     * Returns a defensive copy of all time range definitions.
+     * Prevents external modification of internal state.
+     * 
+     * @return new HashMap with period names mapped to [start, end] hour arrays
+     */
     public Map<String, int[]> getTimeRanges() {
-        return new HashMap<>(timeRanges);
+        return new HashMap<>(timeRanges);  // Return copy to protect internal state
     }
 
+    /**
+     * Returns a formatted time string for display.
+     * @return time string in HH:MM format with zero-padding
+     */
     public String getFormattedTime() {
-        return String.format("%02d:%02d", currentTime.getHour(), currentTime.getMinute());
+        return String.format("%02d:%02d", currentTime.getHour(), currentTime.getMinute());  // Format with leading zeros
     }
 
+    /**
+     * Returns a comprehensive string representation of this DayTime.
+     * Includes formatted time, period, and visibility description.
+     * 
+     * @return formatted string with all DayTime state
+     */
     @Override
     public String toString() {
+        // Build multi-field string representation
         return "DayTime{" +
-                "currentTime=" + getFormattedTime() +
-                ", timeOfDay='" + timeOfDay + '\'' +
-                ", description='" + getTimeOfDayDescription() + '\'' +
+                "currentTime=" + getFormattedTime() +             // Include formatted time
+                ", timeOfDay='" + timeOfDay + '\'' +              // Include period name
+                ", description='" + getTimeOfDayDescription() + '\'' +  // Include description
                 '}';
     }
 }

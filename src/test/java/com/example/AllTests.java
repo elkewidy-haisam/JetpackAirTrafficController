@@ -36,29 +36,31 @@ import com.example.utility.WaterDetectorTest;
 
 /**
  * Comprehensive Test Suite Runner
- * Runs all unit tests for the JetPack Traffic Control System
+ * Runs all unit tests for the JetPack Traffic Control System.
+ * Use this class to execute all tests in a single run for continuous integration.
  */
-@RunWith(Suite.class)
-@SuiteClasses({
-    // Model tests
-    JetPackTest.class,
-    ParkingSpaceTest.class,
-    WeatherTest.class,
+@RunWith(Suite.class)  // Specify JUnit Suite runner to execute multiple test classes
+@SuiteClasses({  // Define the list of test classes to include in this suite
+    // Model tests - validate core data structures and business logic
+    JetPackTest.class,         // Test JetPack model operations
+    ParkingSpaceTest.class,    // Test parking space management
+    WeatherTest.class,         // Test weather system functionality
     
-    // Detection tests
-    RadarTest.class,
-    CollisionDetectorTest.class,
+    // Detection tests - validate collision and radar systems
+    RadarTest.class,           // Test radar tracking and detection
+    CollisionDetectorTest.class,  // Test collision detection algorithms
     
-    // Utility tests
-    GeometryUtilsTest.class,
-    WaterDetectorTest.class,
+    // Utility tests - validate helper functions and calculations
+    GeometryUtilsTest.class,   // Test geometric calculations
+    WaterDetectorTest.class,   // Test water body detection
     
-    // Flight tests
-    FlightEmergencyHandlerTest.class,
+    // Flight tests - validate flight control and emergency systems
+    FlightEmergencyHandlerTest.class,  // Test emergency handling logic
     
-    // Original test
-    AppTest.class
+    // Original test - basic framework validation
+    AppTest.class              // Test application bootstrap
 })
 public class AllTests {
     // This class remains empty, it is used only as a holder for the above annotations
+    // JUnit Suite runner uses annotations to determine which tests to execute
 }
