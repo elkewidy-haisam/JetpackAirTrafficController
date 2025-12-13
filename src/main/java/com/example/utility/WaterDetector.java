@@ -1,25 +1,24 @@
 /**
- * WaterDetector component for the Air Traffic Controller system.
+ * Test stub for water detection functionality.
  * 
  * Purpose:
- * Provides waterdetector functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Simplified test implementation of WaterDetector for unit testing purposes. Provides minimal water
+ * detection logic (y < 0 treated as water) and simulates resource loading failures for testing error
+ * handling paths. The full implementation is in com.example.utility.water.WaterDetector.
  * 
  * Key Responsibilities:
- * - Implement core waterdetector operations
- * - Maintain necessary state for waterdetector functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Provide dummy water detection for testing
+ * - Simulate resource loading failures
+ * - Support unit test scenarios
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used in unit tests for water detection features
+ * - Allows testing without full map image resources
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Test stub/mock implementation
+ * - Intentionally simplified logic
+ * - Not for production use
  * 
  * @author Haisam Elkewidy
  */

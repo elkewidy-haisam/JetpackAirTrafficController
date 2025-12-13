@@ -1,25 +1,34 @@
 /**
- * WaterDetector component for the Air Traffic Controller system.
+ * Analyzes city map images to detect water bodies using RGB color analysis for safe jetpack operations.
  * 
  * Purpose:
- * Provides waterdetector functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Provides pixel-by-pixel analysis of city map images to distinguish between water bodies (rivers, lakes,
+ * harbors) and land areas. Used primarily to ensure jetpacks don't attempt to park or land in water,
+ * and to support realistic parking space generation and emergency landing site selection. Uses empirically-
+ * tuned RGB threshold algorithms to identify water pixels in map imagery.
  * 
  * Key Responsibilities:
- * - Implement core waterdetector operations
- * - Maintain necessary state for waterdetector functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Load and analyze city map images from resources
+ * - Detect water pixels using RGB color threshold algorithms
+ * - Generate random land points for parking space placement
+ * - Find closest land point using spiral search algorithm
+ * - Support water avoidance for flight path planning
+ * - Handle out-of-bounds coordinates as water for safety
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by ParkingSpaceGenerator to avoid water when placing parking
+ * - Referenced by FlightEmergencyHandler for safe emergency landing sites
+ * - Supports CityModel3D for terrain classification
+ * - Integrates with JetPackFlightState for parking location validation
+ * - Used by JetpackTrackingWindow to display terrain type in HUD
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Loads map image once at construction, reused for all queries
+ * - RGB threshold algorithm: (b > r+20 && b > g+20) for basic water
+ * - Three-tier detection: standard water, deep water, dark water
+ * - Spiral search for closest land (circular expansion from center)
+ * - Out-of-bounds treated as water for conservative safety
+ * - Thread-safe for reads after construction
  * 
  * @author Haisam Elkewidy
  */

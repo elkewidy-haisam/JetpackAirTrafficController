@@ -1,25 +1,31 @@
 /**
- * JetpackFactory component for the Air Traffic Controller system.
+ * Extended jetpack factory providing city-specific fleet generation with customized callsigns and configurations.
  * 
  * Purpose:
- * Provides jetpackfactory functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Generates complete jetpack fleets (100+ units) for specific cities with city-appropriate callsigns, models,
+ * and manufacturers. Provides more sophisticated generation logic than the base JetpackFactory, including
+ * cycling through city-specific arrays of callsigns, owner names, models, and manufacturers to create
+ * realistic and diverse jetpack populations.
  * 
  * Key Responsibilities:
- * - Implement core jetpackfactory operations
- * - Maintain necessary state for jetpackfactory functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Generate 100-300 jetpacks per city with city-specific callsigns
+ * - Assign city-appropriate models and manufacturers
+ * - Create diverse owner names by cycling and numbering
+ * - Apply callsign formatting with leading zeros for numbers 1-10
+ * - Support different city configurations (New York, Boston, Dallas, Houston)
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Delegates to com.example.utility.JetpackFactory for actual object creation
+ * - Used by city map viewers to generate complete jetpack fleets
+ * - Provides jetpacks to CityMapPanel for flight initialization
+ * - Supports realistic callsign generation (ALPHA-01, BRAVO-02, etc.)
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Factory pattern with city-specific configuration
+ * - Cycling arrays for varied but predictable generation
+ * - Leading zero padding for callsigns 01-10
+ * - Returns ArrayList for easy manipulation
+ * - Stateless static methods
  * 
  * @author Haisam Elkewidy
  */

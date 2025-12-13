@@ -1,25 +1,31 @@
 /**
- * TimezoneHelper component for the Air Traffic Controller system.
+ * Provides timezone-related utility functions for city-specific time conversions and formatting.
  * 
  * Purpose:
- * Provides timezonehelper functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Maps cities to their respective timezones and provides methods for formatting date/time values in
+ * specific timezone contexts. Supports the multi-city air traffic control system where each city operates
+ * in its own timezone (New York: America/New_York, Dallas: America/Chicago, etc.). Used primarily for
+ * displaying local times in the UI and applying time-based visual effects.
  * 
  * Key Responsibilities:
- * - Implement core timezonehelper operations
- * - Maintain necessary state for timezonehelper functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Map city names to ZoneId timezone identifiers
+ * - Convert ZonedDateTime to city-specific local times
+ * - Format datetime values with timezone information
+ * - Provide current hour in city-specific timezone for day/night effects
+ * - Support timezone-aware datetime calculations
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by DateTimeDisplayPanel to show city-local time
+ * - Referenced by CityMapPanel for time-based shading effects
+ * - Integrates with DayTime for period classification
+ * - Supports AirTrafficControllerFrame for UI time display
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Pure utility class with only static methods (stateless)
+ * - Thread-safe due to lack of mutable state
+ * - Uses Java 8+ java.time API (ZonedDateTime, ZoneId)
+ * - City-to-timezone mapping hardcoded for supported cities
+ * - ISO format output for standardized datetime representation
  * 
  * @author Haisam Elkewidy
  */
