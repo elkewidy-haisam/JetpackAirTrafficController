@@ -1,12 +1,10 @@
 com/example/utility/JetpackFactory.class
-com/example/util/DebugConfig.class
 com/example/model/RadioCommandExecutor.class
 com/example/ui/citymap/CityMapJetpackListFactory$1.class
 com/example/accident/Accident.class
 com/example/model/CityModel3D.class
 com/example/model/ParkingSpace.class
 com/example/ui/citymap/CityMapPanel$3.class
-com/example/MapTest.class
 com/example/utility/TimezoneHelper.class
 com/example/manager/CityTimerManager.class
 com/example/flight/JetPackFlight$1.class
@@ -21,7 +19,6 @@ com/example/ui/panels/JOGL3DPanel.class
 com/example/flight/FlightMovementController.class
 com/example/flight/FlightEmergencyHandler$RadioInstructionListener.class
 com/example/ui/citymap/CityMapLoader.class
-com/example/ui/panels/JetpackListPanel.class
 com/example/ui/panels/CityMapLoader.class
 com/example/utility/PerformanceMonitor.class
 com/example/model/Grid.class
@@ -31,7 +28,6 @@ com/example/utility/ReflectionHelper.class
 com/example/ui/citymap/CityMapPanelFactory$1.class
 com/example/ui/panels/CityMapJetpackListFactory.class
 com/example/model/Radio.class
-com/example/ui/panels/MapDisplayPanel$ParkingSpaceRenderer.class
 com/example/manager/CityJetpackManager.class
 com/example/ui/panels/CityMapAnimationController.class
 com/example/ui/panels/CityMapPanel.class
@@ -65,7 +61,6 @@ com/example/model/Road3D.class
 com/example/ui/panels/WeatherBroadcastPanel.class
 com/example/utility/GeometryUtils.class
 com/example/logging/CityLogManager.class
-com/example/manager/RadioInstructionManager.class
 com/example/utility/reflection/ReflectionHelper.class
 com/example/model/RadioMessage.class
 com/example/map/RealisticCityMap.class
@@ -73,8 +68,6 @@ com/example/App.class
 com/example/ui/citymap/CityMapFlightInitializer.class
 com/example/jetpack/JetPack.class
 com/example/utility/water/WaterDetector.class
-com/example/ui/panels/CityControlPanel.class
-com/example/navigation/NavigationCalculator.class
 com/example/detection/Radar$RadarContact.class
 com/example/model/City.class
 com/example/model/RadioMessageFormatter.class
@@ -93,7 +86,6 @@ com/example/ui/panels/ConsoleOutputPanel.class
 com/example/city/City.class
 com/example/ui/panels/RadioInstructionsPanel.class
 com/example/accident/AccidentAlert.class
-com/example/manager/FlightHazardManager.class
 com/example/ui/frames/JetpackTrackingWindow$3.class
 com/example/model/RealisticCityMap.class
 com/example/flight/FlightEmergencyHandler$EmergencyLogger.class
@@ -135,17 +127,14 @@ com/example/flight/JetPackFlight$MovementLogger.class
 com/example/utility/GridRenderer.class
 com/example/ui/citymap/CityMapAnimationController$1.class
 com/example/model/RadioTransmissionLogger.class
-com/example/utility/MapLoader.class
 com/example/ui/panels/CityMapRadioInstructionHandler.class
 com/example/ui/panels/CityMapUpdater.class
 com/example/radio/RadioMessage$MessageType.class
-com/example/ui/panels/MapDisplayPanel.class
 com/example/ui/frames/JetpackTrackingWindow$1.class
 com/example/ui/citymap/CityMapAnimationController.class
 com/example/renderer/JOGLRenderer3D.class
 com/example/ui/citymap/CityMapFlightInitializer$MovementLogger.class
 com/example/ui/panels/CityMapRenderer.class
-com/example/ui/panels/MapDisplayPanel$ShadingRenderer.class
 com/example/model/Bridge3D.class
 com/example/ui/utility/JOGLRenderer3D.class
 com/example/ui/panels/CityMapFlightInitializer.class
