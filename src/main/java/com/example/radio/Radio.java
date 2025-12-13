@@ -1,25 +1,37 @@
 /**
- * Radio component for the Air Traffic Controller system.
+ * Radio communication system for air traffic control transmissions and pilot instructions.
  * 
  * Purpose:
- * Provides radio functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Alternative package location for Radio class providing radio communication capabilities.
+ * This version in com.example.radio package may serve different architectural purposes
+ * than the com.example.model.Radio version. Implements radio transceiver operations
+ * for broadcasting ATC instructions, weather updates, and emergency directives to jetpack
+ * pilots. See com.example.model.Radio for the primary model-layer radio implementation.
  * 
  * Key Responsibilities:
- * - Implement core radio operations
- * - Maintain necessary state for radio functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Broadcast takeoff and landing clearances to jetpacks
+ * - Transmit coordinate and altitude instructions
+ * - Issue emergency directives during critical situations
+ * - Manage radio frequency assignments and enable/disable states
+ * - Support multi-channel communication for different purposes
+ * - Log transmissions for compliance and playback
+ * - Coordinate with ATC for instruction dissemination
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by radio subsystem components for communication operations
+ * - May coordinate with com.example.model.Radio for unified radio management
+ * - Integrates with RadioCommandExecutor for instruction execution
+ * - Logs via RadioTransmissionLogger for audit trail
+ * - Formats messages via RadioMessageFormatter for display
+ * - Broadcasts to jetpack pilots and ATC operators
+ * - Supports RadioInstructionsPanel UI updates
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Package-level separation from model.Radio for architectural flexibility
+ * - May represent radio subsystem-specific implementation
+ * - Frequency-based channel identification
+ * - Enable/disable state for operational control
+ * - Note: See com.example.model.Radio for detailed radio communication documentation
  * 
  * @author Haisam Elkewidy
  */
