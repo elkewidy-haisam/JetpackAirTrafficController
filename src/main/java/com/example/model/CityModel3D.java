@@ -37,32 +37,32 @@ import java.util.Random;
  * Handles feature extraction, procedural building generation, and terrain queries.
  */
 public class CityModel3D {
-                public String getCityName() { return cityName; }
-            public BufferedImage getMapImage() { return cityMap; }
-        public int getMapWidth() { return mapWidth; }
-        public int getMapHeight() { return mapHeight; }
-    private final String cityName;
-    private final List<Building3D> buildings;
-    private final List<Road3D> roads;
-    private final List<Bridge3D> bridges;
-    private final List<House3D> houses;
-    private final BufferedImage cityMap;
-    private final int mapWidth;
-    private final int mapHeight;
-    private final Random random;
+                public String getCityName() { return cityName; }  // Retrieve city name identifier
+            public BufferedImage getMapImage() { return cityMap; }  // Get underlying map image for analysis
+        public int getMapWidth() { return mapWidth; }  // Get map width in pixels for bounds checking
+        public int getMapHeight() { return mapHeight; }  // Get map height in pixels for bounds checking
+    private final String cityName;  // City identifier (e.g., "New York", "Boston")
+    private final List<Building3D> buildings;  // Collection of procedurally generated buildings
+    private final List<Road3D> roads;  // Road network extracted from map
+    private final List<Bridge3D> bridges;  // Bridge structures connecting areas
+    private final List<House3D> houses;  // Residential house models
+    private final BufferedImage cityMap;  // Source map image with terrain/feature data
+    private final int mapWidth;  // Cached map width for performance
+    private final int mapHeight;  // Cached map height for performance
+    private final Random random;  // RNG for procedural generation variance
 
     public CityModel3D(String cityName, BufferedImage cityMap) {
-        this.cityName = cityName;
-        this.cityMap = cityMap;
-        this.mapWidth = cityMap.getWidth();
-        this.mapHeight = cityMap.getHeight();
-        this.buildings = new ArrayList<>();
-        this.roads = new ArrayList<>();
-        this.bridges = new ArrayList<>();
-        this.houses = new ArrayList<>();
-        this.random = new Random();
-        extractMapFeatures();
-        generateCityBuildings();
+        this.cityName = cityName;  // Store city identifier
+        this.cityMap = cityMap;  // Store source map image
+        this.mapWidth = cityMap.getWidth();  // Cache map width dimension
+        this.mapHeight = cityMap.getHeight();  // Cache map height dimension
+        this.buildings = new ArrayList<>();  // Initialize empty building list
+        this.roads = new ArrayList<>();  // Initialize empty road list
+        this.bridges = new ArrayList<>();  // Initialize empty bridge list
+        this.houses = new ArrayList<>();  // Initialize empty house list
+        this.random = new Random();  // Create RNG for procedural generation
+        extractMapFeatures();  // Extract roads, bridges, houses from map colors
+        generateCityBuildings();  // Generate city-specific building layout
     }
 
     /**
@@ -74,24 +74,24 @@ public class CityModel3D {
         // Bridges: orange/yellow (RGB high red+green, low blue)
         // Houses: brown (RGB high red, medium green, low blue)
         // Water: already handled
-        for (int y = 0; y < mapHeight; y += 2) {
-            for (int x = 0; x < mapWidth; x += 2) {
-                int rgb = cityMap.getRGB(x, y);
-                int r = (rgb >> 16) & 0xFF;
-                int g = (rgb >> 8) & 0xFF;
-                int b = rgb & 0xFF;
+        for (int y = 0; y < mapHeight; y += 2) {  // Iterate through rows, step by 2 for performance
+            for (int x = 0; x < mapWidth; x += 2) {  // Iterate through columns, step by 2 for performance
+                int rgb = cityMap.getRGB(x, y);  // Get pixel color at current position
+                int r = (rgb >> 16) & 0xFF;  // Extract red component (bits 16-23)
+                int g = (rgb >> 8) & 0xFF;  // Extract green component (bits 8-15)
+                int b = rgb & 0xFF;  // Extract blue component (bits 0-7)
 
                 // Detect road (gray)
-                if (Math.abs(r - g) < 15 && Math.abs(r - b) < 15 && r > 80 && r < 200) {
-                    roads.add(new Road3D(x, y, 20, 6, 0));
+                if (Math.abs(r - g) < 15 && Math.abs(r - b) < 15 && r > 80 && r < 200) {  // Check if RGB values are similar and in gray range
+                    roads.add(new Road3D(x, y, 20, 6, 0));  // Create road segment at this position
                 }
                 // Detect bridge (yellow/orange)
-                else if (r > 180 && g > 120 && b < 100) {
-                    bridges.add(new Bridge3D(x, y, 30, 8, 0));
+                else if (r > 180 && g > 120 && b < 100) {  // Check for warm colors (high red/green, low blue)
+                    bridges.add(new Bridge3D(x, y, 30, 8, 0));  // Create bridge structure at this position
                 }
                 // Detect house (brown)
-                else if (r > 120 && g > 60 && g < 120 && b < 80) {
-                    houses.add(new House3D(x, y, 10, 10, 18));
+                else if (r > 120 && g > 60 && g < 120 && b < 80) {  // Check for brown tones
+                    houses.add(new House3D(x, y, 10, 10, 18));  // Create house model at this position
                 }
             }
         }
@@ -101,27 +101,27 @@ public class CityModel3D {
      * Generate buildings based on city characteristics
      */
     private void generateCityBuildings() {
-        switch (cityName) {
+        switch (cityName) {  // Match city name to generation strategy
             case "New York":
-                generateNewYorkBuildings();
+                generateNewYorkBuildings();  // Generate dense skyscraper layout
                 break;
             case "Boston":
-                generateBostonBuildings();
+                generateBostonBuildings();  // Generate historic/modern mix layout
                 break;
             case "Houston":
-                generateHoustonBuildings();
+                generateHoustonBuildings();  // Generate sprawling city layout
                 break;
             case "Dallas":
-                generateDallasBuildings();
+                generateDallasBuildings();  // Generate modern downtown with suburbs
                 break;
             default:
-                generateGenericCityBuildings();
+                generateGenericCityBuildings();  // Generate generic fallback layout
         }
     }
 
-    public List<Road3D> getRoads() { return roads; }
-    public List<Bridge3D> getBridges() { return bridges; }
-    public List<House3D> getHouses() { return houses; }
+    public List<Road3D> getRoads() { return roads; }  // Get road network for rendering
+    public List<Bridge3D> getBridges() { return bridges; }  // Get bridge structures for rendering
+    public List<House3D> getHouses() { return houses; }  // Get house models for rendering
     
     /**
      * Generate New York City buildings - dense skyscrapers, tall buildings
@@ -270,23 +270,23 @@ public class CityModel3D {
     /**
      * Add a cluster of buildings in a specific area
      */
-    private void addBuildingCluster(double centerX, double centerY, 
-                                   double areaWidth, double areaHeight,
-                                   double minHeight, double maxHeight,
-                                   double buildingWidth, double buildingDepth,
-                                   int count, String type) {
-        for (int i = 0; i < count; i++) {
+    private void addBuildingCluster(double centerX, double centerY,  // Cluster center coordinates
+                                   double areaWidth, double areaHeight,  // Cluster dimensions
+                                   double minHeight, double maxHeight,  // Height range for buildings
+                                   double buildingWidth, double buildingDepth,  // Base building dimensions
+                                   int count, String type) {  // Number of buildings and type classification
+        for (int i = 0; i < count; i++) {  // Generate specified number of buildings
             // Random position within the cluster area
-            double x = centerX + (random.nextDouble() - 0.5) * areaWidth;
-            double y = centerY + (random.nextDouble() - 0.5) * areaHeight;
+            double x = centerX + (random.nextDouble() - 0.5) * areaWidth;  // Random X within cluster bounds (-0.5 to 0.5 centers around centerX)
+            double y = centerY + (random.nextDouble() - 0.5) * areaHeight;  // Random Y within cluster bounds
             
             // Check if on land (not water)
-            if (!isWater(x, y)) {
-                double height = minHeight + random.nextDouble() * (maxHeight - minHeight);
-                double width = buildingWidth * (0.8 + random.nextDouble() * 0.4);
-                double depth = buildingDepth * (0.8 + random.nextDouble() * 0.4);
+            if (!isWater(x, y)) {  // Only place buildings on valid land
+                double height = minHeight + random.nextDouble() * (maxHeight - minHeight);  // Random height in specified range
+                double width = buildingWidth * (0.8 + random.nextDouble() * 0.4);  // Vary width ±20% for variety
+                double depth = buildingDepth * (0.8 + random.nextDouble() * 0.4);  // Vary depth ±20% for variety
                 
-                buildings.add(new Building3D(x, y, width, depth, height, type));
+                buildings.add(new Building3D(x, y, width, depth, height, type));  // Create and add building to collection
             }
         }
     }
@@ -295,58 +295,58 @@ public class CityModel3D {
      * Check if a position is over water based on map pixel color
      */
     public boolean isWater(double x, double y) {
-        if (x < 0 || x >= mapWidth || y < 0 || y >= mapHeight) {
-            return false;
+        if (x < 0 || x >= mapWidth || y < 0 || y >= mapHeight) {  // Check if position is outside map bounds
+            return false;  // Out of bounds is not water
         }
         
-        int px = (int)x;
-        int py = (int)y;
+        int px = (int)x;  // Convert double X to pixel coordinate
+        int py = (int)y;  // Convert double Y to pixel coordinate
         
-        if (px < 0) px = 0;
-        if (px >= mapWidth) px = mapWidth - 1;
-        if (py < 0) py = 0;
-        if (py >= mapHeight) py = mapHeight - 1;
+        if (px < 0) px = 0;  // Clamp X to minimum bound
+        if (px >= mapWidth) px = mapWidth - 1;  // Clamp X to maximum bound
+        if (py < 0) py = 0;  // Clamp Y to minimum bound
+        if (py >= mapHeight) py = mapHeight - 1;  // Clamp Y to maximum bound
         
-        int rgb = cityMap.getRGB(px, py);
-        int red = (rgb >> 16) & 0xFF;
-        int green = (rgb >> 8) & 0xFF;
-        int blue = rgb & 0xFF;
+        int rgb = cityMap.getRGB(px, py);  // Get pixel color at clamped position
+        int red = (rgb >> 16) & 0xFF;  // Extract red component
+        int green = (rgb >> 8) & 0xFF;  // Extract green component
+        int blue = rgb & 0xFF;  // Extract blue component
         
         // Water detection: blue dominant color
         // Water typically has: blue > red and blue > green
-        return (blue > red + 15 && blue > green + 10) || 
-               (blue > 120 && red < 100 && green < 130);
+        return (blue > red + 15 && blue > green + 10) ||  // Blue dominates by threshold (rivers, oceans)
+               (blue > 120 && red < 100 && green < 130);  // Strong blue with low red/green (deep water)
     }
     
     /**
      * Get terrain type at position (for rendering)
      */
     public String getTerrainType(double x, double y) {
-        if (isWater(x, y)) {
-            return "water";
+        if (isWater(x, y)) {  // Check if position is over water
+            return "water";  // Return water terrain type
         }
         
         // Check if in a building
-        for (Building3D building : buildings) {
-            if (building.containsPoint(x, y)) {
-                return "building";
+        for (Building3D building : buildings) {  // Iterate through all buildings
+            if (building.containsPoint(x, y)) {  // Check if point is within building bounds
+                return "building";  // Return building terrain type
             }
         }
         
-        return "land";
+        return "land";  // Default to land terrain type
     }
     
     /**
      * Get buildings near a position (for rendering)
      */
     public List<Building3D> getBuildingsNear(double x, double y, double radius) {
-        List<Building3D> nearBuildings = new ArrayList<>();
-        for (Building3D building : buildings) {
-            if (building.distanceTo(x, y) <= radius) {
-                nearBuildings.add(building);
+        List<Building3D> nearBuildings = new ArrayList<>();  // Initialize result collection
+        for (Building3D building : buildings) {  // Iterate through all buildings
+            if (building.distanceTo(x, y) <= radius) {  // Check if building is within search radius
+                nearBuildings.add(building);  // Add building to result collection
             }
         }
-        return nearBuildings;
+        return nearBuildings;  // Return nearby buildings
     }
     
     /**
@@ -354,19 +354,19 @@ public class CityModel3D {
      */
     private void generateGenericCityBuildings() {
         // Central business district
-        addBuildingCluster(mapWidth * 0.5, mapHeight * 0.5, 
-                          mapWidth * 0.2, mapHeight * 0.2, 
-                          100, 300, 50, 30, 50, "office");
+        addBuildingCluster(mapWidth * 0.5, mapHeight * 0.5,  // Center of map
+                          mapWidth * 0.2, mapHeight * 0.2,  // 20% of map dimensions
+                          100, 300, 50, 30, 50, "office");  // Tall office buildings
         
         // Surrounding areas
-        addBuildingCluster(mapWidth * 0.3, mapHeight * 0.3, 
-                          mapWidth * 0.4, mapHeight * 0.4, 
-                          30, 100, 60, 35, 100, "residential");
+        addBuildingCluster(mapWidth * 0.3, mapHeight * 0.3,  // Offset from center
+                          mapWidth * 0.4, mapHeight * 0.4,  // 40% of map dimensions
+                          30, 100, 60, 35, 100, "residential");  // Lower residential buildings
     }
     
     // Getters
     public List<Building3D> getBuildings() {
-        return buildings;
+        return buildings;  // Return all buildings in the city model
     }
     
 }
