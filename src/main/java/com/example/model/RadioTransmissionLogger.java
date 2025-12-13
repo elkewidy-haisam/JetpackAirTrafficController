@@ -30,17 +30,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RadioTransmissionLogger {
+    // List to store all radio transmission log entries chronologically
     private final List<String> transmissions;
 
+    /**
+     * Constructs a new RadioTransmissionLogger with empty log.
+     */
     public RadioTransmissionLogger() {
+        // Initialize empty list to hold transmission log entries
         this.transmissions = new ArrayList<>();
     }
 
+    /**
+     * Logs a radio transmission by adding it to the transmission list.
+     * 
+     * @param transmission Transmission message to log
+     */
     public void logTransmission(String transmission) {
+        // Append transmission to end of log list (chronological order)
         transmissions.add(transmission);
     }
 
+    /**
+     * Returns the list of all logged transmissions.
+     * 
+     * @return List of transmission strings in chronological order
+     */
     public List<String> getTransmissions() {
+        // Return reference to transmissions list
         return transmissions;
     }
 }
