@@ -44,15 +44,24 @@ public class Weather {
     public static final int SEVERITY_MODERATE = 3;
     public static final int SEVERITY_SEVERE = 4;
     public static final int SEVERITY_CRITICAL = 5;
+    /** false */
     private static final boolean VERBOSE_LOGGING = false;
 
+    /** weatherTypes */
     private final Map<String, Integer> weatherTypes;
+    /** currentWeather */
     private String currentWeather;
+    /** currentSeverity */
     private int currentSeverity;
+    /** temperature */
     private double temperature;
+    /** windSpeed */
     private int windSpeed;
+    /** visibility */
     private int visibility;
+    /** weatherID */
     private final String weatherID;
+    /** lastUpdated */
     private long lastUpdated;
 
     public Weather() {

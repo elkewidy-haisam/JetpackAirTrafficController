@@ -56,13 +56,18 @@ import com.example.jetpack.JetPack;
  */
 public class Radio {
     
+    /** frequency */
     private String frequency;
+    /** messageQueue */
     private List<RadioMessage> messageQueue;
+    /** random */
     private Random random;
     
     // Extracted components
     private RadioCommandExecutor commandExecutor;
+    /** messageFormatter */
     private RadioMessageFormatter messageFormatter;
+    /** transmissionLogger */
     private RadioTransmissionLogger transmissionLogger;
     
     // Standard pilot acknowledgment phrases

@@ -51,14 +51,23 @@ public class JetPackFlightState {
         public void setRepaintCallback(Runnable repaintCallback) {
             this.repaintCallback = repaintCallback;
         }
+    /** flight */
     private final JetPackFlight flight;
+    /** targetParking */
     private ParkingSpace targetParking;
+    /** isParked */
     private boolean isParked;
+    /** parkingTimeRemaining */
     private int parkingTimeRemaining;
+    /** random */
     private final Random random;
+    /** availableParkingSpaces */
     private final List<ParkingSpace> availableParkingSpaces;
+    /** radarTapeWindow */
     private RadarTapeWindow radarTapeWindow;
+    /** movementLogger */
     private MovementLogger movementLogger;
+    /** repaintCallback */
     private Runnable repaintCallback;
 
     public interface MovementLogger {

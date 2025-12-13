@@ -47,7 +47,9 @@ import com.example.utility.reflection.ReflectionHelper;
  * RadioCommandExecutor - executes radio commands on registered flights using reflection
  */
 public class RadioCommandExecutor {
+    /** flightRegistry field */
     private Map<String, Object> flightRegistry;
+    /** flightStateRegistry field */
     private Map<String, Object> flightStateRegistry;
     
     public RadioCommandExecutor() {

@@ -39,7 +39,9 @@ import java.util.List;
  * RadioTransmissionLogger - manages radio transmission logging
  */
 public class RadioTransmissionLogger {
+    /** transmissionLog field */
     private List<String> transmissionLog;
+    /** isTransmitting field */
     private boolean isTransmitting;
     
     public RadioTransmissionLogger() {

@@ -48,7 +48,9 @@ import java.util.Random;
  */
 public class ParkingSpaceGenerator {
     
+    /** 100 field */
     private static final int TARGET_SPACES = 100;
+    /** 10 field */
     private static final int MAX_ATTEMPTS_MULTIPLIER = 10;
     
     /**

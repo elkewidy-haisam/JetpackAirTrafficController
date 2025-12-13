@@ -71,11 +71,17 @@ public class AccidentReporter {
         "Building damage reported"
     };
     
+    /** cityRadio field */
     private Radio cityRadio;
+    /** city field */
     private String city;
+    /** random field */
     private Random random;
+    /** logManager field */
     private CityLogManager logManager;
+    /** radioInstructionsArea field */
     private JTextArea radioInstructionsArea;
+    /** movementLogger field */
     private JetpackMovementLogger movementLogger;
     
     /**

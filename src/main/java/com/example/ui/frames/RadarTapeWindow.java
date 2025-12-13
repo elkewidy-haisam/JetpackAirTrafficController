@@ -38,11 +38,17 @@ import com.example.ui.utility.UIComponentFactory;
  * Provides message history, timestamping, and log file writing.
  */
 public class RadarTapeWindow extends JFrame {
+    /** radarTextArea */
     private JTextArea radarTextArea;
+    /** messages */
     private LinkedList<String> messages;
+    /** 100 */
     private static final int MAX_MESSAGES = 100;
+    /** timeFormatter */
     private DateTimeFormatter timeFormatter;
+    /** city */
     private String city;
+    /** logWriter */
     private LogWriter logWriter;
 
     public interface LogWriter {

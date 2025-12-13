@@ -37,6 +37,7 @@ package com.example.radio;
  * RadioMessageFormatter - formats radio transmission messages
  */
 public class RadioMessageFormatter {
+    /** controllerCallSign field */
     private String controllerCallSign;
     
     public RadioMessageFormatter(String controllerCallSign) {

@@ -44,14 +44,23 @@ import com.example.accident.AccidentAlert;
  * Shows a behind-the-jetpack view, city context, and supports both JOGL and legacy rendering.
  */
 public class JetpackTrackingWindow extends JFrame {
+        /** updateTimer */
         private Timer updateTimer;
+    /** jetpack */
     private final JetPack jetpack;
+    /** flight */
     private final JetPackFlight flight;
+    /** cityName */
     private final String cityName;
+    /** allFlights */
     private final List<JetPackFlight> allFlights;
+    /** allStates */
     private final Map<JetPackFlight, JetPackFlightState> allStates;
+    /** animationController */
     private final CityMapAnimationController animationController;
+    /** JOGL3DPanel */
     private JPanel renderPanel; // Can be MapTrackingPanel or JOGL3DPanel
+    /** default */
     private boolean useJOGL = true; // Set to true to use JOGL by default
     
     public JetpackTrackingWindow(JetPack jetpack, JetPackFlight flight, String cityName,
@@ -228,9 +237,13 @@ public class JetpackTrackingWindow extends JFrame {
      * Inner class for rendering 3D behind-the-jetpack view with full context from main panel
      */
     private static class MapTrackingPanel extends JPanel {
+        /** cityName */
         private final String cityName;
+        /** flight */
         private final JetPackFlight flight;
+        /** allFlights */
         private final List<JetPackFlight> allFlights;
+        /** allStates */
         private final Map<JetPackFlight, JetPackFlightState> allStates;
         // Removed unused field: private final CityMapAnimationController animationController;
         private CityModel3D cityModel;
