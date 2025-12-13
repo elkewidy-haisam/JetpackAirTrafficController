@@ -1,25 +1,37 @@
 /**
- * Accident component for the Air Traffic Controller system.
+ * Domain model representing an incident or hazardous event affecting jetpack flight operations.
  * 
  * Purpose:
- * Provides accident functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Encapsulates all data for a single accident event including location, type classification,
+ * severity level, and descriptive details. Provides a standardized structure for accident reporting,
+ * tracking, and coordination with flight safety systems. Supports accident lifecycle management
+ * from initial report through resolution and clearance.
  * 
  * Key Responsibilities:
- * - Implement core accident operations
- * - Maintain necessary state for accident functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Store immutable accident identification (ID, timestamp) for incident tracking
+ * - Maintain accident location coordinates for hazard zone mapping
+ * - Classify incident type (collision, equipment failure, weather, building collapse)
+ * - Track severity level (minor, moderate, severe, critical) for response prioritization
+ * - Provide human-readable description for operator awareness
+ * - Manage active/inactive status for lifecycle tracking and hazard clearance
+ * - Support timestamp queries for incident age and freshness validation
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Created by AccidentReporter when incidents occur or are reported
+ * - Referenced by AccidentAlert for flight detour coordination
+ * - Logged to city-specific accident report files by CityLogManager
+ * - Displayed in UI components for operator notification
+ * - Consulted by FlightHazardMonitor to determine if detours required
+ * - Used by Radio to broadcast accident notifications to affected aircraft
+ * - Archived for post-incident analysis and safety reporting
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Immutable identity fields (accidentID, location, type, severity, timestamp)
+ * - Mutable active status for lifecycle management (reported → resolved → cleared)
+ * - Lightweight data object suitable for high-frequency accident tracking
+ * - Thread-safe for read operations; external synchronization for status updates
+ * - Severity levels support graduated response (minor=advisory, critical=ground all flights)
+ * - Timestamp enables time-based hazard expiration and staleness detection
  * 
  * @author Haisam Elkewidy
  */

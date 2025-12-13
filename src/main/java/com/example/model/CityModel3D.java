@@ -1,26 +1,38 @@
 /**
- * Three-dimensional model representation of citymodel for JOGL rendering.
+ * Generates realistic 3D city models with procedural buildings, terrain analysis, and water detection.
  * 
  * Purpose:
- * Models citymodel geometry with position, dimensions, and visual properties for
- * hardware-accelerated 3D rendering via JOGL. Supports collision detection, spatial queries,
- * and realistic visualization in the 3D city view.
+ * Creates city-specific 3D environments for jetpack tracking visualization by generating realistic
+ * building distributions that match actual urban characteristics of New York, Boston, Houston, and
+ * Dallas. Performs intelligent terrain analysis to detect water bodies and avoid building placement
+ * in rivers, harbors, and lakes. Provides spatial queries for nearby buildings and terrain type
+ * detection for immersive 3D rendering.
  * 
  * Key Responsibilities:
- * - Store geometric data (position, dimensions) for rendering
- * - Provide visual attributes (color, texture, detail level) for realism
- * - Support collision and proximity queries for spatial operations
- * - Enable type classification and metadata access
+ * - Generate city-specific building layouts (150-450 buildings per city)
+ * - Create realistic building distributions matching real urban density patterns
+ * - Detect water vs. land using RGB pixel analysis (blue channel dominance)
+ * - Provide terrain type queries (water/building/land) for any map coordinate
+ * - Return nearby buildings within camera view frustum for efficient rendering
+ * - Generate procedural roads, bridges, and houses for visual richness
+ * - Support city characteristics: NYC (dense skyscrapers), Boston (historic mix), Houston (sprawling), Dallas (modern towers)
  * 
  * Interactions:
- * - Rendered by JOGL3DPanel and JOGLRenderer3D
- * - Referenced by CityModel3D for scene composition
- * - Used in collision detection and spatial analysis
+ * - Used by JetpackTrackingWindow to load city environments for 3D view
+ * - Rendered by Renderer3D and JOGLRenderer3D for visual display
+ * - Integrates with CityMapLoader to access city map images
+ * - Provides terrain data to flight HUD for "WATER/LAND/BUILDING" indicators
+ * - Coordinates with WaterDetector algorithm for pixel classification
+ * - Buildings referenced by collision detection in future enhancements
  * 
  * Patterns & Constraints:
- * - Immutable geometry for thread-safe access
- * - Compatible with OpenGL rendering pipelines
- * - Simple collision models for performance
+ * - City-specific building generation algorithms (separate methods per city)
+ * - Water detection: blue > red+15 AND blue > green+10, OR blue > 120 AND red < 100
+ * - Building counts: NYC (~200), Boston (~185), Houston (~215), Dallas (~225)
+ * - Building heights: 20-450 feet based on type (residential to skyscraper)
+ * - Spatial queries optimized with distance culling (1500 unit render distance)
+ * - Immutable city name and map; buildings generated once at construction
+ * - Thread-safe for read-only operations after initialization
  * 
  * @author Haisam Elkewidy
  */

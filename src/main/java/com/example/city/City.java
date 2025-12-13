@@ -1,25 +1,36 @@
 /**
- * City component for the Air Traffic Controller system.
+ * Domain model representing a city's airspace with dimensions and parking infrastructure.
  * 
  * Purpose:
- * Provides city functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Defines the operational boundaries and parking resources for a specific city in the air traffic
+ * control system. Encapsulates city-level metadata including name, map dimensions, and designated
+ * parking spaces for jetpack operations. Serves as a lightweight container for city-specific data
+ * used by backend operations and non-GUI scenarios.
  * 
  * Key Responsibilities:
- * - Implement core city operations
- * - Maintain necessary state for city functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Store city identification (name) for multi-city support
+ * - Define airspace boundaries via width and height dimensions
+ * - Maintain collection of parking spaces available in this city
+ * - Provide accessor methods for city properties and parking allocation
+ * - Support parking space registration and management
+ * - Enable city-level queries for operational planning
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by AirTrafficController backend for programmatic city management
+ * - Referenced in non-GUI simulations and batch processing scenarios
+ * - Provides parking data for flight planning algorithms
+ * - Alternative to GUI-based CityMapPanel city representation
+ * - Supports testing and automation without UI dependencies
+ * - Can be persisted for configuration or session state
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Simple data transfer object (DTO) pattern for backend use
+ * - Mutable parking space list for dynamic allocation
+ * - Complementary to GUI city representation in AirTrafficControllerFrame
+ * - Minimal dependencies; no UI or rendering concerns
+ * - Suitable for command-line tools and service implementations
+ * - Dimensions represent map pixel coordinates (width x height)
+ * - City name matches map file names (New York, Boston, Houston, Dallas)
  * 
  * @author Haisam Elkewidy
  */
