@@ -127,9 +127,9 @@ public class RadioTransmissionLogger {
     
     /**
      * Prints the transmission log to console.
-     * Currently a no-op placeholder method.
+     * Currently a no-op placeholder method - no output generated.
      */
     public void printLog() {
-        // Log cleared - no action taken
+        // No-op placeholder - printing functionality not yet implemented
     }
 }
