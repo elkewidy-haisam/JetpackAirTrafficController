@@ -68,49 +68,76 @@ public class JetpackTrackingWindow extends JFrame {
     // Flag to select rendering mode: true for JOGL OpenGL, false for Graphics2D fallback
     private boolean useJOGL = true;
     
+    /**
+     * Constructs a new tracking window for a specific jetpack.
+     * Initializes UI components and sets up 3D rendering pipeline.
+     *
+     * @param jetpack The jetpack to track
+     * @param flight Flight data for the tracked jetpack
+     * @param cityName Name of the city context
+     * @param allFlights List of all flights for situational awareness
+     * @param allStates Map of flight states for all jetpacks
+     * @param animationController Controller for synchronized animation updates
+     */
     public JetpackTrackingWindow(JetPack jetpack, JetPackFlight flight, String cityName,
                                  List<JetPackFlight> allFlights, 
                                  Map<JetPackFlight, JetPackFlightState> allStates,
                                  CityMapAnimationController animationController) {
+        // Store reference to tracked jetpack
         this.jetpack = jetpack;
+        // Store flight instance for position/state queries
         this.flight = flight;
+        // Store city name for title and map loading
         this.cityName = cityName;
+        // Store all flights for rendering nearby jetpacks
         this.allFlights = allFlights;
+        // Store state map for checking parking/emergency status
         this.allStates = allStates;
+        // Store animation controller for synchronized updates
         this.animationController = animationController;
         
+        // Set window dimensions (900x700 pixels)
         setSize(900, 700);
+        // Close only this window on X button, not entire application
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        // Center window on screen
         setLocationRelativeTo(null);
         
-        // Create main panel
+        // Create main container panel with BorderLayout
         JPanel mainPanel = new JPanel(new BorderLayout());
+        // Use black background for 3D immersion
         mainPanel.setBackground(Color.BLACK);
         
-        // Header panel with jetpack info and rendering toggle
+        // Create header showing jetpack identification details
         JPanel headerPanel = createHeaderPanel();
+        // Place header at top of window
         mainPanel.add(headerPanel, BorderLayout.NORTH);
         
-        // Create 3D rendering panel based on mode
+        // Initialize JOGL or Graphics2D rendering panel
         createRenderPanel();
+        // Place render view in center (takes most space)
         mainPanel.add(renderPanel, BorderLayout.CENTER);
         
-        // Info panel at bottom
+        // Create info panel with renderer description
         JPanel infoPanel = createInfoPanel();
+        // Place info panel at bottom of window
         mainPanel.add(infoPanel, BorderLayout.SOUTH);
         
+        // Add main panel to frame
         add(mainPanel);
         
-        // Start update timer (only for legacy mode)
+        // Start periodic repaint timer for legacy Graphics2D mode only
         if (!useJOGL) {
-            startUpdateTimer();
+            startUpdateTimer();  // JOGL has its own internal timer
         }
         
-        // Handle window closing
+        // Register window close handler for cleanup
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
+                // Stop Swing timer if running
                 stopUpdateTimer();
+                // Stop JOGL animator if using hardware rendering
                 if (renderPanel instanceof JOGL3DPanel) {
                     ((JOGL3DPanel) renderPanel).stopUpdateTimer();
                 }
@@ -119,50 +146,74 @@ public class JetpackTrackingWindow extends JFrame {
     }
     
     /**
-     * Create rendering panel based on JOGL or legacy mode
+     * Create rendering panel based on JOGL or legacy mode.
+     * Attempts JOGL initialization; throws exception on failure.
      */
     private void createRenderPanel() {
         try {
+            // Load city map PNG image for terrain/building data
             BufferedImage cityMap = CityMapLoader.loadCityMap(cityName);
+            // Validate that map loaded successfully
             if (cityMap == null) {
                 throw new RuntimeException("City map could not be loaded for JOGL panel");
             }
+            // Create JOGL 3D panel with flight tracking context
             JOGL3DPanel joglPanel = new JOGL3DPanel(cityName, flight, allFlights, allStates, cityMap);
+            // Get the underlying JOGL GL panel for direct event handling
             com.jogamp.opengl.awt.GLJPanel glPanel = joglPanel.getGLPanel();
+            // Get renderer for camera control
             com.example.ui.utility.JOGLRenderer3D renderer = joglPanel.getRenderer();
+            
+            // Add mouse listener for camera rotation via click-drag
             glPanel.addMouseListener(new java.awt.event.MouseAdapter() {
                 @Override
                 public void mousePressed(java.awt.event.MouseEvent e) {
+                    // Notify renderer of mouse press for drag start
                     renderer.mousePressed(e.getX(), e.getY());
                 }
                 @Override
                 public void mouseReleased(java.awt.event.MouseEvent e) {
+                    // Notify renderer of mouse release for drag end
                     renderer.mouseReleased(e.getX(), e.getY());
                 }
             });
+            
+            // Add mouse motion listener for camera panning via drag
             glPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
                 @Override
                 public void mouseDragged(java.awt.event.MouseEvent e) {
+                    // Update camera orientation based on drag motion
                     renderer.mouseDragged(e.getX(), e.getY());
+                    // Trigger OpenGL redraw with new camera angles
                     glPanel.repaint();
                 }
             });
+            
+            // Add mouse wheel listener for camera zoom in/out
             glPanel.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
                 @Override
                 public void mouseWheelMoved(java.awt.event.MouseWheelEvent e) {
+                    // Adjust camera distance based on wheel rotation
                     renderer.mouseWheelMoved(e.getWheelRotation());
+                    // Trigger OpenGL redraw with new zoom level
                     glPanel.repaint();
                 }
             });
+            
+            // Assign JOGL panel as the render panel
             renderPanel = joglPanel;
+            // Log successful JOGL initialization
             System.out.println("Using JOGL hardware-accelerated 3D rendering");
         } catch (Exception e) {
+            // Log JOGL initialization failure to stderr
             System.err.println("Failed to initialize JOGL: " + e.getMessage());
             e.printStackTrace();
+            // Show error dialog to user
             JOptionPane.showMessageDialog(this,
                 "Failed to initialize JOGL 3D window:\n" + e.getMessage(),
                 "JOGL Initialization Error",
                 JOptionPane.ERROR_MESSAGE);
+            // Re-throw as runtime exception to prevent window creation
             throw new RuntimeException("JOGL initialization failed", e);
         }
     }
