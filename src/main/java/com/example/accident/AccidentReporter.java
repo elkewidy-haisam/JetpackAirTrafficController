@@ -1,25 +1,41 @@
 /**
- * AccidentReporter component for the Air Traffic Controller system.
+ * Generates and reports random accident incidents for simulation realism and operator training.
  * 
  * Purpose:
- * Provides accidentreporter functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Creates simulated accident reports with random types, locations, severities, and descriptions to
+ * populate the air traffic control system with realistic incident scenarios. Logs accidents to
+ * city-specific files, broadcasts via radio channels, and displays in UI panels for operator
+ * awareness. Supports training scenarios, system demonstrations, and incident response testing
+ * without requiring actual accidents to occur.
  * 
  * Key Responsibilities:
- * - Implement core accidentreporter operations
- * - Maintain necessary state for accidentreporter functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Generate random accident reports with varied types and severities
+ * - Create realistic incident descriptions and timestamps
+ * - Select random map locations for accident placement
+ * - Log accidents to city-specific accident report files
+ * - Broadcast accident notifications via Radio system
+ * - Display accident information in RadioInstructionsPanel
+ * - Support incident response training and system demonstrations
+ * - Enable realistic traffic management scenarios
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by managers and timers for periodic random accident generation
+ * - Logs to CityLogManager for city-specific accident reports
+ * - Broadcasts via Radio for pilot notifications
+ * - Updates RadioInstructionsPanel for operator display
+ * - Coordinates with AccidentAlert for flight detour triggers
+ * - May integrate with JetpackMovementPanel for movement logging
+ * - Supports testing scenarios with controlled accident injection
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Random accident generation using predefined type/severity/description templates
+ * - Accident types: COLLISION, GROUND_ACCIDENT, JETPACK_MALFUNCTION, BIRD_STRIKE, EMERGENCY_LANDING
+ * - Severity levels: MINOR, MODERATE, SEVERE, CRITICAL
+ * - Random location within map boundaries (50-750 x, 50-550 y typical ranges)
+ * - Formatted messages with timestamp, type, location, severity, description
+ * - Logs to [city]_accident_reports_log.txt files
+ * - Thread-safe Random instance for concurrent accident generation
+ * - Callback-based architecture for UI updates and logging
  * 
  * @author Haisam Elkewidy
  */

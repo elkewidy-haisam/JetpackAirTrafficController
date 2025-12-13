@@ -1,25 +1,39 @@
 /**
- * JetPackFlight component for the Air Traffic Controller system.
+ * Simplified flight state model for backend operations tracking jetpack position and activity status.
  * 
  * Purpose:
- * Provides jetpackflight functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Represents a jetpack flight instance with minimal state for backend, non-GUI scenarios. Tracks
+ * jetpack identification, current position coordinates, and active/inactive status without the
+ * complexity of animation, rendering, or parking behavior. Provides a lightweight alternative to
+ * the comprehensive GUI-based JetPackFlight inner class in AirTrafficControllerFrame.
  * 
  * Key Responsibilities:
- * - Implement core jetpackflight operations
- * - Maintain necessary state for jetpackflight functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Store jetpack identification (jetpackId) for flight tracking
+ * - Maintain current position (x, y coordinates) for spatial queries
+ * - Track active/inactive status for operational state management
+ * - Support position updates for backend flight simulations
+ * - Enable programmatic flight tracking without UI overhead
+ * - Provide simple data model for testing and automation
+ * - Serve backend services and command-line tools
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Managed by AirTrafficController (backend version) for flight registry
+ * - Alternative to comprehensive GUI JetPackFlight with animation/rendering
+ * - Used in automated tests without UI dependencies
+ * - Supports backend flight simulations and batch processing
+ * - Integrates with FlightPath for backend route planning
+ * - May be persisted for session state or logging
+ * - Enables command-line flight tracking utilities
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Lightweight data model with minimal state (ID, position, active flag)
+ * - Immutable jetpackId ensures consistent flight identification
+ * - Mutable position supports dynamic flight progression
+ * - No animation, rendering, parking, or UI concerns (backend only)
+ * - Contrast with GUI JetPackFlight: this lacks timers, graphics, parking logic
+ * - Thread-safe for read operations; synchronization for position updates
+ * - Suitable for testing, CLI tools, services, batch processing
+ * - See ARCHITECTURE_NOTES.md for GUI vs. backend architecture details
  * 
  * @author Haisam Elkewidy
  */

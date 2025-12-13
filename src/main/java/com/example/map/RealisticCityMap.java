@@ -1,25 +1,40 @@
 /**
- * RealisticCityMap component for the Air Traffic Controller system.
+ * JPanel component displaying realistic satellite imagery maps with parking spaces for city visualization.
  * 
  * Purpose:
- * Provides realisticcitymap functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Renders high-fidelity satellite imagery or realistic road maps for cities (New York, Boston, Houston,
+ * Dallas) with overlaid parking space markers. Provides fallback to procedurally generated maps if
+ * imagery cannot be loaded from public sources. Supports visual city representation for jetpack
+ * operations planning, parking visualization, and geographic context in the air traffic control system.
  * 
  * Key Responsibilities:
- * - Implement core realisticcitymap operations
- * - Maintain necessary state for realisticcitymap functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Load and display realistic satellite or road map imagery
+ * - Overlay parking space locations with visual markers
+ * - Provide fallback to generated maps if imagery loading fails
+ * - Support multiple cities with city-specific map sources
+ * - Handle remote image loading from public map sources
+ * - Cache loaded map images for performance
+ * - Render parking spaces with distinct colors and markers
+ * - Support zooming and panning for detailed map exploration
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - May be used as alternative to CityMapPanel for static map display
+ * - Integrates with parking space data from ParkingSpaceManager
+ * - Loads map imagery from URLs or local resources
+ * - Supports offline operation with fallback generated maps
+ * - Referenced in testing scenarios for map visualization
+ * - Coordinates with BufferedImage for pixel manipulation
+ * - May integrate with future map provider APIs
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - JPanel-based rendering with custom paintComponent
+ * - Satellite imagery from publicly available sources (OpenStreetMap, etc.)
+ * - Fallback to procedurally generated maps ensures robustness
+ * - Map caching reduces repeated network access
+ * - Parking markers rendered as colored overlays
+ * - Support for multiple map sources and formats
+ * - Handles network timeouts and loading failures gracefully
+ * - City-specific map URLs configured in HashMap or properties
  * 
  * @author Haisam Elkewidy
  */
