@@ -49,7 +49,7 @@ public class Weather {
     public static final int SEVERITY_SEVERE = 4;
     /** Severity level 5: Critical conditions - all flight operations must cease immediately */
     public static final int SEVERITY_CRITICAL = 5;
-    /** Flag to control debug output - set to false in production to reduce console noise */
+    /** Flag to control debug output - currently disabled to reduce console noise in production */
     private static final boolean VERBOSE_LOGGING = false;
 
     /** Maps weather condition names (e.g., "Clear/Sunny") to their severity levels (1-5) */
@@ -169,7 +169,7 @@ public class Weather {
      */
     public void changeWeather(String newWeather) {
         if (!weatherTypes.containsKey(newWeather)) {  // Validate weather type exists
-            return;  // Silently abort if invalid weather type
+            return;  // Silently ignore invalid weather type (maintains current weather state for safety)
         }
         String oldWeather = this.currentWeather;  // Store previous weather for logging
         int oldSeverity = this.currentSeverity;   // Store previous severity for comparison

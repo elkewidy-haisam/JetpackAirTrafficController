@@ -98,13 +98,7 @@ public class ParkingSpaceManager {
         }
 
         parkingSpaces.addAll(spaces);  // Add all generated spaces to managed list
-
-        // ...removed debug output for production performance...
-        for (ParkingSpace ps : parkingSpaces) {  // Iterate through all parking spaces
-            // ...removed debug output for each space...
-        }
-        // ...removed debug output and file writing block entirely...
-        // Parking spaces generated successfully
+        // Parking spaces generated successfully - ready for use
     }
     
     /**

@@ -34,6 +34,6 @@ public class RadioCommandExecutor {
             // Transmit command execution confirmation message over radio
             radio.transmit("Executing command: " + command);
         }
-        // If radio is null or disabled, command is silently dropped for safety
+        // If radio is null or disabled, command is intentionally ignored (prevents errors during shutdown/testing)
     }
 }
