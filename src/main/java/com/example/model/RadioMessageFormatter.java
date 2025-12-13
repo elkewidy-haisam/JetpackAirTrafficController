@@ -1,25 +1,9 @@
 /**
- * RadioMessageFormatter component for the Air Traffic Controller system.
+ * Duplicate/alias of com.example.radio.RadioMessageFormatter for backwards compatibility.
  * 
  * Purpose:
- * Provides radiomessageformatter functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
- * 
- * Key Responsibilities:
- * - Implement core radiomessageformatter operations
- * - Maintain necessary state for radiomessageformatter functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
- * 
- * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
- * 
- * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * Model package version of RadioMessageFormatter. Formats radio messages in aviation standard format.
+ * Maintained for backwards compatibility. May be deprecated and removed in favor of radio package version.
  * 
  * @author Haisam Elkewidy
  */

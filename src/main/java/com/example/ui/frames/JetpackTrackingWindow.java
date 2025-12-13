@@ -1,25 +1,20 @@
 /**
- * JetpackTrackingWindow component for the Air Traffic Controller system.
+ * 3D tracking window providing behind-the-jetpack view with realistic city models and terrain detection.
  * 
  * Purpose:
- * Provides jetpacktrackingwindow functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Displays immersive 3D perspective view of individual jetpack flights, showing realistic city-specific
+ * building layouts, water/land terrain classification, and real-time flight information in HUD overlay.
+ * Uses CityModel3D for realistic building generation and Renderer3D for advanced 3D graphics with proper
+ * perspective projection, culling, and atmospheric effects.
  * 
  * Key Responsibilities:
- * - Implement core jetpacktrackingwindow operations
- * - Maintain necessary state for jetpacktrackingwindow functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
- * 
- * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
- * 
- * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Create 3D tracking window for individual jetpack
+ * - Load city-specific 3D building models
+ * - Render behind-the-jetpack perspective view
+ * - Display HUD with position, status, and terrain information
+ * - Detect and display water vs. land terrain
+ * - Show destination marker in 3D space
+ * - Render jetpack model with animated flames
  * 
  * @author Haisam Elkewidy
  */

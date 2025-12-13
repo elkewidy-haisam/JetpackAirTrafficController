@@ -1,25 +1,34 @@
 /**
- * JetPackFlightState component for the Air Traffic Controller system.
+ * Manages jetpack parking lifecycle including space selection, parking timers, and state transitions.
  * 
  * Purpose:
- * Provides jetpackflightstate functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Encapsulates all parking-related behavior for a jetpack flight, including finding available parking
+ * spaces, managing the parking duration timer, and coordinating state transitions between flying and
+ * parked states. Integrates with radar communications and movement logging to broadcast parking events.
  * 
  * Key Responsibilities:
- * - Implement core jetpackflightstate operations
- * - Maintain necessary state for jetpackflightstate functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Select target parking space from available spaces
+ * - Manage parking countdown timer (duration until departure)
+ * - Track parked vs. flying state
+ * - Find nearest available parking during emergencies
+ * - Communicate parking events via radar and movement logs
+ * - Trigger UI repaints when parking state changes
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Wraps and manages JetPackFlight for parking operations
+ * - Queries and occupies ParkingSpace objects
+ * - Broadcasts parking events through RadarTapeWindow
+ * - Logs parking actions via MovementLogger callback interface
+ * - Triggers UI updates via repaint callback
+ * - Uses Random for parking duration variability
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - State pattern: manages parked/flying state transitions
+ * - Callback pattern: MovementLogger interface for loose coupling
+ * - Timer-based parking duration (countdown to departure)
+ * - Parking space selection: random from available or nearest for emergency
+ * - Parking space occupation/vacation management
+ * - Thread-safety depends on caller synchronization
  * 
  * @author Haisam Elkewidy
  */

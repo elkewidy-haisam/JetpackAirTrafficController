@@ -1,25 +1,9 @@
 /**
- * CityMapJetpackListFactory component for the Air Traffic Controller system.
+ * Factory for creating jetpack list panel with track buttons for individual jetpack monitoring.
  * 
  * Purpose:
- * Provides citymapjetpacklistfactory functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
- * 
- * Key Responsibilities:
- * - Implement core citymapjetpacklistfactory operations
- * - Maintain necessary state for citymapjetpacklistfactory functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
- * 
- * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
- * 
- * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * Generates the scrollable list of jetpacks displayed at the bottom of city map, including Track buttons
+ * that open 3D tracking windows. Formats jetpack information in tabular layout with proper spacing.
  * 
  * @author Haisam Elkewidy
  */

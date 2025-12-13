@@ -1,25 +1,31 @@
 /**
- * JetPackFlight component for the Air Traffic Controller system.
+ * Simplified model representing a jetpack's current flight position and active status.
  * 
  * Purpose:
- * Provides jetpackflight functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Lightweight data model tracking a jetpack's real-time position (x, y coordinates) and operational
+ * status (active/inactive). Used as a simpler alternative or companion to the full JetPackFlight
+ * animation class in AirTrafficControllerFrame. Provides basic position updates without the complexity
+ * of full flight simulation, movement, and parking behavior.
  * 
  * Key Responsibilities:
- * - Implement core jetpackflight operations
- * - Maintain necessary state for jetpackflight functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Store jetpack unique identifier
+ * - Track current 2D position coordinates
+ * - Maintain active/inactive operational status
+ * - Provide position update methods
+ * - Support simple flight state queries
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - May be used by simplified UI components for position display
+ * - Could serve as data transfer object for flight information
+ * - Provides basic flight data without animation logic
+ * - Alternative to more complex inner JetPackFlight class in AirTrafficControllerFrame
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Simple data model (POJO) with minimal behavior
+ * - Immutable jetpack ID
+ * - Mutable position and active status
+ * - No animation, movement, or parking logic
+ * - Thread-safety not guaranteed - external synchronization required
  * 
  * @author Haisam Elkewidy
  */

@@ -1,25 +1,16 @@
 /**
- * JetPack component for the Air Traffic Controller system.
+ * Primary jetpack model with complete identification, ownership, and operational data.
  * 
  * Purpose:
- * Provides jetpack functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Comprehensive jetpack entity containing all identification (serial, callsign), ownership (pilot name),
+ * specifications (year, model, manufacturer), and operational data (position, heading, altitude). This is
+ * the main jetpack class used throughout the application for flight tracking and management.
  * 
  * Key Responsibilities:
- * - Implement core jetpack operations
- * - Maintain necessary state for jetpack functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
- * 
- * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
- * 
- * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Store complete jetpack identification and specifications
+ * - Track real-time position, heading, and altitude
+ * - Provide accessor methods for all properties
+ * - Support flight operations and parking
  * 
  * @author Haisam Elkewidy
  */

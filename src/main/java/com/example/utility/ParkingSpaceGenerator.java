@@ -1,25 +1,10 @@
 /**
- * ParkingSpaceGenerator component for the Air Traffic Controller system.
+ * Duplicate/alias of com.example.parking.ParkingSpaceGenerator for organizational purposes.
  * 
  * Purpose:
- * Provides parkingspacegenerator functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
- * 
- * Key Responsibilities:
- * - Implement core parkingspacegenerator operations
- * - Maintain necessary state for parkingspacegenerator functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
- * 
- * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
- * 
- * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * Utility package version of ParkingSpaceGenerator with identical parking space generation functionality.
+ * Generates parking spaces while avoiding water bodies using WaterDetector. May be consolidated with
+ * parking package version in future refactoring.
  * 
  * @author Haisam Elkewidy
  */

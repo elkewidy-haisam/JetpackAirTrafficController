@@ -1,25 +1,9 @@
 /**
- * CityMapUpdater component for the Air Traffic Controller system.
+ * Coordinates periodic updates to city map display including jetpack positions and UI elements.
  * 
  * Purpose:
- * Provides citymapupdater functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
- * 
- * Key Responsibilities:
- * - Implement core citymapupdater operations
- * - Maintain necessary state for citymapupdater functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
- * 
- * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
- * 
- * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * Manages timer-based updates to city map components, ensuring jetpack positions, parking spaces, and
+ * other dynamic elements are refreshed at appropriate intervals for smooth animation.
  * 
  * @author Haisam Elkewidy
  */

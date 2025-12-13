@@ -1,25 +1,17 @@
 /**
- * AccidentAlert component for the Air Traffic Controller system.
+ * Manages accident alert lifecycle and jetpack notification for hazard avoidance.
  * 
  * Purpose:
- * Provides accidentalert functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Creates and broadcasts accident alerts to notify jetpacks of hazardous areas requiring avoidance or
+ * rerouting. Tracks alert status (active/resolved) and integrates with radio communication system to
+ * ensure all aircraft are informed of incidents.
  * 
  * Key Responsibilities:
- * - Implement core accidentalert operations
- * - Maintain necessary state for accidentalert functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
- * 
- * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
- * 
- * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Create accident alerts with unique IDs
+ * - Broadcast alerts to jetpacks via radio
+ * - Track alert active status
+ * - Support alert resolution/removal
+ * - Provide alert information for UI display
  * 
  * @author Haisam Elkewidy
  */

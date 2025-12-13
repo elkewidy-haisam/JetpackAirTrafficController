@@ -1,25 +1,17 @@
 /**
- * RadarTapeWindow component for the Air Traffic Controller system.
+ * Displays scrolling radar communication tape showing radio transmissions and ATC instructions.
  * 
  * Purpose:
- * Provides radartapewindow functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Provides a dedicated window for viewing radio communications between ATC and jetpacks, similar to
+ * real-world radar tape displays used in air traffic control. Shows chronological message history with
+ * automatic scrolling and color-coded message types.
  * 
  * Key Responsibilities:
- * - Implement core radartapewindow operations
- * - Maintain necessary state for radartapewindow functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
- * 
- * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
- * 
- * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Display radio communication messages
+ * - Auto-scroll to show latest transmissions
+ * - Color-code different message types
+ * - Maintain message history
+ * - Integrate with Radio system
  * 
  * @author Haisam Elkewidy
  */

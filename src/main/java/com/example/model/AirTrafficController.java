@@ -1,25 +1,17 @@
 /**
- * AirTrafficController component for the Air Traffic Controller system.
+ * Original backend air traffic controller coordinating jetpack operations without GUI dependencies.
  * 
  * Purpose:
- * Provides airtrafficcontroller functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Standalone ATC implementation for programmatic/command-line use without Swing dependencies. Manages
+ * jetpack registry, flight path assignments, and radar tracking. Represents the original backend design
+ * before GUI integration via AirTrafficControllerFrame. Can be used for automated testing, batch processing,
+ * or server-side operations.
  * 
  * Key Responsibilities:
- * - Implement core airtrafficcontroller operations
- * - Maintain necessary state for airtrafficcontroller functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
- * 
- * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
- * 
- * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Maintain registry of active jetpacks
+ * - Assign and manage flight paths
+ * - Coordinate radar tracking
+ * - Provide programmatic ATC API
  * 
  * @author Haisam Elkewidy
  */
