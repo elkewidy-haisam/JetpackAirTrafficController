@@ -29,9 +29,24 @@ package com.example.ui.panels;
 
 
 public class CityMapPanelFactory {
+    /**
+     * Creates a new CityMapPanel for visualizing city airspace and jetpack positions.
+     * Factory method provides consistent instantiation and allows for future
+     * dependency injection or configuration-based customization.
+     * Returns a fully initialized panel ready for display in the main application frame.
+     * 
+     * @return A new CityMapPanel instance with default configuration
+     */
     public static CityMapPanel createCityMapPanel() {
+        // Create new CityMapPanel instance with default settings
+        // Future enhancement could:
+        //   - Accept configuration parameters (e.g., initial city, zoom level)
+        //   - Inject dependencies (e.g., CityLogManager, SessionManager)
+        //   - Apply theme-specific styling (dark mode vs. light mode)
+        //   - Pre-load map data for faster display
         return new CityMapPanel();
     }
 
     // Add more factory methods for other related panels if needed
+    // Examples: createMiniMapPanel(), create3DCityMapPanel(), etc.
 }

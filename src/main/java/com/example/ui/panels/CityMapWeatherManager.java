@@ -28,11 +28,35 @@
 package com.example.ui.panels;
 
 public class CityMapWeatherManager {
+    /**
+     * Constructs a new CityMapWeatherManager.
+     * Initializes the manager ready to coordinate weather visualization updates
+     * on the city map display, including overlays, effects, and status indicators.
+     */
     public CityMapWeatherManager() {
         // Initialization logic if needed
+        // Future enhancements could include:
+        //   - Storing reference to city map panel for direct updates
+        //   - Initializing weather effect renderers (rain, fog, etc.)
+        //   - Setting up weather change listeners for automatic updates
     }
 
+    /**
+     * Updates the weather display on the city map panel.
+     * Applies weather information to visual overlays, updates weather indicators,
+     * and adjusts rendering based on visibility and conditions. Called when
+     * weather changes or when switching between cities.
+     * 
+     * @param weatherInfo String describing current weather conditions and severity
+     */
     public void updateWeather(String weatherInfo) {
         // Logic to update weather display on the city map panel
+        // Future implementation should:
+        //   - Parse weatherInfo string to extract condition and severity
+        //   - Update weather overlay graphics (rain animation, fog effect)
+        //   - Adjust visibility rendering (reduce alpha for fog)
+        //   - Update weather indicator widget on map
+        //   - Change color scheme based on time of day and conditions
+        //   - Trigger map panel repaint to show weather changes
     }
 }
