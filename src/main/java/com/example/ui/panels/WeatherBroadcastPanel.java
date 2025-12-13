@@ -47,47 +47,67 @@ import com.example.ui.utility.UIComponentFactory;
  * Displays real-time weather broadcast information for a city.
  */
 public class WeatherBroadcastPanel extends JPanel {
+    /** Text area for displaying weather broadcast information */
     private JTextArea weatherBroadcastArea;
     
+    /**
+     * Constructs a new WeatherBroadcastPanel.
+     * Initializes the UI with forest green themed border and text area.
+     */
     public WeatherBroadcastPanel() {
-        initializeUI();
-    }
-    
-    private void initializeUI() {
-        setLayout(new BorderLayout());
-        setBorder(BorderFactory.createTitledBorder(
-            BorderFactory.createLineBorder(new Color(34, 139, 34), 2),
-            "Weather Broadcast",
-            javax.swing.border.TitledBorder.LEFT,
-            javax.swing.border.TitledBorder.TOP,
-            new Font("Arial", Font.BOLD, 12),
-            new Color(34, 139, 34)
-        ));
-        setBackground(Color.WHITE);
-        setMaximumSize(new Dimension(300, 150));
-        
-        weatherBroadcastArea = UIComponentFactory.createReadOnlyTextArea(6, 25, UIComponentFactory.COURIER_PLAIN_11);
-        weatherBroadcastArea.setBackground(new Color(240, 255, 240));
-        weatherBroadcastArea.setForeground(new Color(0, 100, 0));
-        weatherBroadcastArea.setMargin(new Insets(5, 5, 5, 5));
-        
-        JScrollPane scrollPane = new JScrollPane(weatherBroadcastArea);
-        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-        
-        add(scrollPane, BorderLayout.CENTER);
+        initializeUI();  // Initialize UI components
     }
     
     /**
-     * Updates the weather broadcast display
+     * Initializes the UI layout and components.
+     * Creates styled text area with forest green border for weather information.
+     */
+    private void initializeUI() {
+        setLayout(new BorderLayout());  // Use BorderLayout for simple center placement
+        // Create titled border with forest green color
+        setBorder(BorderFactory.createTitledBorder(
+            BorderFactory.createLineBorder(new Color(34, 139, 34), 2),  // Forest green 2px border
+            "Weather Broadcast",  // Title text
+            javax.swing.border.TitledBorder.LEFT,  // Title aligned left
+            javax.swing.border.TitledBorder.TOP,  // Title at top
+            new Font("Arial", Font.BOLD, 12),  // Title font
+            new Color(34, 139, 34)  // Forest green title color matches border
+        ));
+        setBackground(Color.WHITE);  // White background for panel
+        setMaximumSize(new Dimension(300, 150));  // Limit maximum size
+        
+        // Create read-only text area for displaying weather broadcast
+        weatherBroadcastArea = UIComponentFactory.createReadOnlyTextArea(6, 25, UIComponentFactory.COURIER_PLAIN_11);
+        weatherBroadcastArea.setBackground(new Color(240, 255, 240));  // Honeydew green background
+        weatherBroadcastArea.setForeground(new Color(0, 100, 0));  // Dark green text
+        weatherBroadcastArea.setMargin(new Insets(5, 5, 5, 5));  // 5px padding all sides
+        
+        // Add scroll pane for long weather broadcasts
+        JScrollPane scrollPane = new JScrollPane(weatherBroadcastArea);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);  // Show scrollbar when needed
+        
+        add(scrollPane, BorderLayout.CENTER);  // Add scroll pane to center
+    }
+    
+    /**
+     * Updates the weather broadcast display with new text.
+     * Sets the text area content and scrolls to top.
+     * 
+     * @param text the formatted weather broadcast information to display
      */
     public void updateBroadcast(String text) {
-        if (weatherBroadcastArea != null) {
-            weatherBroadcastArea.setText(text);
-            weatherBroadcastArea.setCaretPosition(0);
+        if (weatherBroadcastArea != null) {  // Check text area is initialized
+            weatherBroadcastArea.setText(text);  // Update display text
+            weatherBroadcastArea.setCaretPosition(0);  // Scroll to top
         }
     }
     
+    /**
+     * Returns the broadcast text area for direct manipulation.
+     * 
+     * @return the JTextArea displaying weather broadcast
+     */
     public JTextArea getBroadcastArea() {
-        return weatherBroadcastArea;
+        return weatherBroadcastArea;  // Return text area reference
     }
 }
