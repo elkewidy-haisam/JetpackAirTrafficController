@@ -103,13 +103,20 @@ public class BuildingCollisionDetector {
      */
     public boolean isPathClear(double x1, double y1, double altitude1, 
                                 double x2, double y2, double altitude2) {
-        // Sample points along the path
-        int samples = 10;
+        // Calculate path distance
+        double dx = x2 - x1;
+        double dy = y2 - y1;
+        double dz = altitude2 - altitude1;
+        double distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+        
+        // Adaptive sampling: one sample per jetpack radius distance, minimum 3, maximum 20
+        int samples = Math.max(3, Math.min(20, (int)(distance / jetpackRadius)));
+        
         for (int i = 0; i <= samples; i++) {
             double t = i / (double) samples;
-            double x = x1 + t * (x2 - x1);
-            double y = y1 + t * (y2 - y1);
-            double altitude = altitude1 + t * (altitude2 - altitude1);
+            double x = x1 + t * dx;
+            double y = y1 + t * dy;
+            double altitude = altitude1 + t * dz;
             
             if (checkCollision(x, y, altitude)) {
                 return false;
