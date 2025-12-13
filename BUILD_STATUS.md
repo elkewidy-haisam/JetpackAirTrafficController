@@ -16,7 +16,7 @@ The Jetpack Air Traffic Controller project has been successfully built and teste
 - **Source Files:** 114 Java files
 - **Compiled Classes:** 153 class files
 - **Compilation Time:** 7.821 seconds
-- **Warnings:** 1 minor warning (system modules path not set in conjunction with -source 11)
+- **Warnings:** 1 minor warning: "system modules path not set in conjunction with -source 11" (occurs when compiling with JDK 17 targeting Java 11)
 
 ### Testing
 - **Status:** ✅ SUCCESS
@@ -168,8 +168,9 @@ This is a comprehensive **Jetpack Air Traffic Controller** system with the follo
 
 ### Minor Warnings
 1. **Compiler Warning:** "system modules path not set in conjunction with -source 11"
-   - **Impact:** None - This is a cosmetic warning when using Java 17 to compile Java 11 target
-   - **Resolution:** Not required - The code compiles and runs correctly
+   - **Cause:** Compiling with JDK 17 while targeting Java 11 source compatibility
+   - **Impact:** None - This is a cosmetic warning that does not affect functionality
+   - **Resolution:** Not required - The code compiles and runs correctly. Can be suppressed by setting `<release>11</release>` in pom.xml instead of using `<source>` and `<target>`, but this is optional
 
 ### GUI Limitations
 - The application requires a display (GUI) to run
