@@ -31,18 +31,36 @@
 package com.example.utility;
 
 public class PerformanceMonitor {
+    // Timestamp in milliseconds when timing started
     private long startTime;
+    // Timestamp in milliseconds when timing stopped
     private long endTime;
 
+    /**
+     * Starts the performance timer.
+     * Captures current system time as start timestamp.
+     */
     public void start() {
+        // Record current system time in milliseconds as start point
         startTime = System.currentTimeMillis();
     }
 
+    /**
+     * Stops the performance timer.
+     * Captures current system time as end timestamp.
+     */
     public void stop() {
+        // Record current system time in milliseconds as end point
         endTime = System.currentTimeMillis();
     }
 
+    /**
+     * Calculates elapsed time between start and stop.
+     * 
+     * @return Elapsed time in milliseconds
+     */
     public long getElapsedTime() {
+        // Calculate and return difference between end and start times
         return endTime - startTime;
     }
 }
