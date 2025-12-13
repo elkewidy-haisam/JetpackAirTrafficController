@@ -112,13 +112,14 @@ public class App {
      */
     private static void printHelp() {
         System.out.println(APP_NAME + " v" + VERSION);  // Print application name and version header
-        System.out.println("\nUsage: java -cp target/classes com.example.App [OPTIONS]");  // Show basic command syntax
+        System.out.println("\nUsage: java -jar jetpack-air-traffic-controller.jar [OPTIONS]");  // Show basic command syntax with fat JAR
         System.out.println("\nOptions:");  // Section header for available options
         System.out.println("  --help, -h          Show this help message");  // Help flag description
         System.out.println("  --version, -v       Show version information");  // Version flag description
         System.out.println("  --city=<name>       Pre-select city (New York, Boston, Houston, Dallas)");  // City pre-selection syntax
-        System.out.println("\nExample:");  // Section header for usage example
-        System.out.println("  java -cp target/classes com.example.App --city=\"New York\"");  // Show concrete usage example
+        System.out.println("\nExamples:");  // Section header for usage examples
+        System.out.println("  java -jar jetpack-air-traffic-controller.jar --city=\"New York\"");  // Show concrete usage example with fat JAR
+        System.out.println("  mvn exec:java -Dexec.mainClass=\"com.example.App\" -Dexec.args='--city=\"Boston\"'");  // Show Maven alternative
     }
     
     /**
