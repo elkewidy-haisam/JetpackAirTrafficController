@@ -2,7 +2,6 @@
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/detection/CollisionDetector.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/panels/RadioInstructionsPanel.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/utility/JOGLRenderer3D.java
-/home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/util/DebugConfig.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/model/House3D.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/utility/reflection/ReflectionHelper.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/frames/RadarTapeWindow.java
@@ -20,7 +19,6 @@
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/citymap/CityMapPanelFactory.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/parking/ParkingSpaceGenerator.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/model/RadioMessageFormatter.java
-/home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/manager/RadioInstructionManager.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/utility/UIComponentFactory.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/frames/AirTrafficControllerFrame.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/flight/JetPackFlight.java
@@ -29,7 +27,6 @@
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/utility/WaterDetector.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/flight/FlightPath.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/weather/DayTime.java
-/home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/panels/JetpackListPanel.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/radio/RadioMessage.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/accident/AccidentAlert.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/flight/JetPackFlightRenderer.java
@@ -49,7 +46,6 @@
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/radio/RadioTransmissionLogger.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/model/Building3D.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/citymap/CityMapWeatherManager.java
-/home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/utility/MapLoader.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/panels/CityMapRadioInstructionHandler.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/utility/GeometryUtils.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/citymap/CityMapRadioInstructionHandler.java
@@ -57,7 +53,6 @@
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/model/City.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/jetpack/JetPack.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/utility/performance/PerformanceMonitor.java
-/home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/panels/CityControlPanel.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/utility/ParkingSpaceGenerator.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/panels/JetpackMovementPanel.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/citymap/CityMapUpdater.java
@@ -66,7 +61,6 @@
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/util/ConfigManager.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/panels/ConsoleOutputPanel.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/grid/Grid.java
-/home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/manager/FlightHazardManager.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/flight/FlightEmergencyHandler.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/panels/ParkingSpaceManager.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/model/ParkingSpace.java
@@ -84,7 +78,6 @@
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/model/Radio.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/utility/jetpack/JetpackFactory.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/panels/CityMapAnimationController.java
-/home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/navigation/NavigationCalculator.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/manager/CityDisplayUpdater.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/utility/JetpackFactory.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/manager/CityTimerManager.java
@@ -97,11 +90,9 @@
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/model/JetPackFlight.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/utility/TimezoneHelper.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/panels/WeatherBroadcastPanel.java
-/home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/MapTest.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/citymap/CityMapLoader.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/model/CityModel3D.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/flight/FlightHazardMonitor.java
-/home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/panels/MapDisplayPanel.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/ui/panels/CityMapRenderer.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/model/RadioCommandExecutor.java
 /home/runner/work/JetpackAirTrafficController/JetpackAirTrafficController/src/main/java/com/example/city/City.java
