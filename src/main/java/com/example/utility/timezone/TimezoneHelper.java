@@ -26,10 +26,23 @@
 
 package com.example.utility.timezone;
 
-
+/**
+ * Utility class for determining timezone information for cities.
+ * Provides city-to-timezone mapping for correct local time display.
+ */
 public class TimezoneHelper {
+    
+    /**
+     * Gets the timezone for a given city name.
+     * Currently returns UTC as stub implementation; intended for future expansion
+     * with proper city-to-timezone mapping (e.g., "New York" -> "America/New_York").
+     *
+     * @param city Name of the city to look up timezone for
+     * @return ZoneId for the city's timezone (currently always UTC)
+     */
     public static java.time.ZoneId getTimezoneForCity(String city) {
-        // Stub: Always return UTC for now
+        // TODO: Implement actual city-to-timezone mapping logic
+        // Stub implementation: Always return UTC for now
         return java.time.ZoneId.of("UTC");
     }
 }

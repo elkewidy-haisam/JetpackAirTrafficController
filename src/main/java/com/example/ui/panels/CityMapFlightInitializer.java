@@ -26,12 +26,27 @@
 
 package com.example.ui.panels;
 
+/**
+ * Initializer class for setting up jetpack flights on the city map.
+ * Handles creation and initial positioning of flight objects for visualization.
+ */
 public class CityMapFlightInitializer {
+    
+    /**
+     * Constructs a new CityMapFlightInitializer.
+     * Prepares the initializer for flight setup operations.
+     */
     public CityMapFlightInitializer() {
-        // Initialization logic if needed
+        // TODO: Add initialization logic if needed (e.g., load default flight parameters)
     }
 
+    /**
+     * Initializes jetpack flights for display on the city map panel.
+     * Creates flight instances, assigns starting positions, and registers with map.
+     */
     public void initializeFlights() {
-        // Logic to initialize jetpack flights on the city map panel
+        // TODO: Implement logic to initialize jetpack flights on the city map panel
+        // Steps: Load flight data, create JetPackFlight objects, set initial positions,
+        // register with animation controller
     }
 }

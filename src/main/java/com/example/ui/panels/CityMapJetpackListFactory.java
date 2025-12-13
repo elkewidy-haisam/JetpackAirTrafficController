@@ -28,9 +28,23 @@ package com.example.ui.panels;
 
 import javax.swing.JPanel;
 
+/**
+ * Factory class for creating jetpack list panel components.
+ * Provides centralized panel creation with consistent initialization.
+ */
 public class CityMapJetpackListFactory {
+    
+    /**
+     * Creates a new panel for displaying the list of active jetpacks.
+     * Returns a basic JPanel instance for future customization with list components.
+     *
+     * @return New JPanel instance for jetpack list display
+     */
     public static JPanel createJetpackListPanel() {
+        // Create and return empty panel (to be populated with jetpack list data)
         return new JPanel();
     }
-    // Add more factory methods for jetpack-related panels if needed
+    
+    // TODO: Add more factory methods for jetpack-related panels if needed
+    // Examples: createJetpackDetailsPanel(), createJetpackStatusPanel()
 }

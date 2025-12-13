@@ -218,42 +218,76 @@ public class JetpackTrackingWindow extends JFrame {
         }
     }
     
+    /**
+     * Creates the header panel displaying jetpack identification information.
+     * Styled with blue background and white/yellow text for visibility.
+     *
+     * @return Configured JPanel with jetpack details
+     */
     private JPanel createHeaderPanel() {
+        // Create container panel for header content
         JPanel headerPanel = new JPanel();
+        // Use vertical box layout to stack labels
         headerPanel.setLayout(new BoxLayout(headerPanel, BoxLayout.Y_AXIS));
+        // Set steel blue background color
         headerPanel.setBackground(new Color(70, 130, 180));
+        // Add 10-pixel padding on all sides
         headerPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         
-        // Title with renderer type indicator
+        // Determine renderer type text based on current mode
         String rendererType = useJOGL ? "JOGL OpenGL" : "Graphics2D";
+        // Create title label with city name and renderer type
         JLabel titleLabel = new JLabel("Jetpack Tracking - " + cityName + " (" + rendererType + ")");
+        // Set title font to bold Arial 18pt
         titleLabel.setFont(new Font("Arial", Font.BOLD, 18));
+        // Use white text for title
         titleLabel.setForeground(Color.WHITE);
+        // Left-align title within panel
         titleLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
         
+        // Create callsign label (primary identifier for radio communications)
         JLabel callsignLabel = new JLabel("Callsign: " + jetpack.getCallsign());
+        // Set callsign font to bold Arial 14pt
         callsignLabel.setFont(new Font("Arial", Font.BOLD, 14));
+        // Use yellow to highlight callsign (high visibility)
         callsignLabel.setForeground(Color.YELLOW);
+        // Left-align callsign within panel
         callsignLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
         
+        // Create label for serial number and owner name
         JLabel serialLabel = new JLabel("Serial: " + jetpack.getSerialNumber() + " | Owner: " + jetpack.getOwnerName());
+        // Set font to plain Arial 12pt
         serialLabel.setFont(new Font("Arial", Font.PLAIN, 12));
+        // Use white text
         serialLabel.setForeground(Color.WHITE);
+        // Left-align within panel
         serialLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
         
+        // Create label for jetpack model, manufacturer, and year
         JLabel modelLabel = new JLabel("Model: " + jetpack.getModel() + " | Manufacturer: " + jetpack.getManufacturer() + " | Year: " + jetpack.getYear());
+        // Set font to plain Arial 12pt
         modelLabel.setFont(new Font("Arial", Font.PLAIN, 12));
+        // Use white text
         modelLabel.setForeground(Color.WHITE);
+        // Left-align within panel
         modelLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
         
+        // Add title to header panel
         headerPanel.add(titleLabel);
+        // Add 5-pixel vertical spacing
         headerPanel.add(Box.createVerticalStrut(5));
+        // Add callsign label
         headerPanel.add(callsignLabel);
+        // Add 3-pixel vertical spacing
         headerPanel.add(Box.createVerticalStrut(3));
+        // Add serial/owner label
         headerPanel.add(serialLabel);
+        // Add 3-pixel vertical spacing
         headerPanel.add(Box.createVerticalStrut(3));
+        // Add model information label
         headerPanel.add(modelLabel);
         
+        // Return fully configured header panel
         return headerPanel;
     }
     
