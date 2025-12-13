@@ -9,6 +9,20 @@
 
 The Jetpack Air Traffic Controller project has been successfully built and tested.
 
+### 🚀 Quick Start - Executable JAR
+
+The project now includes an **executable fat JAR** with all dependencies included:
+
+```bash
+# Build the executable JAR
+mvn package
+
+# Run it directly - no classpath configuration needed!
+java -jar target/jetpack-air-traffic-controller.jar
+```
+
+The fat JAR (`jetpack-air-traffic-controller.jar`) is **6.6 MB** and includes all JOGL dependencies, making it easy to distribute and run on any system with Java 11+.
+
 ## Build Summary
 
 ### Compilation
@@ -44,9 +58,12 @@ The Jetpack Air Traffic Controller project has been successfully built and teste
 
 ### Packaging
 - **Status:** ✅ SUCCESS
-- **Output:** `target/e10btermproject-1.0-SNAPSHOT.jar`
-- **Size:** 2.9 MB
-- **Packaging Time:** 3.088 seconds
+- **Standard JAR:** `target/e10btermproject-1.0-SNAPSHOT.jar` (2.9 MB)
+- **Executable Fat JAR:** `target/jetpack-air-traffic-controller.jar` (6.6 MB)
+  - Includes all dependencies (JOGL libraries)
+  - Directly executable with `java -jar`
+  - No classpath configuration needed
+- **Packaging Time:** ~16 seconds (including shade plugin)
 
 ## Project Structure
 
@@ -99,26 +116,44 @@ mvn test
 
 #### Package the Application
 ```bash
+# Creates both standard JAR and executable fat JAR with dependencies
 mvn package
 ```
 
 #### Run the Application (GUI)
-```bash
-# Using Maven
-mvn exec:java -Dexec.mainClass="com.example.App"
 
-# Or using the JAR directly (requires dependencies in classpath)
+**Option 1: Using the Executable Fat JAR (Recommended)**
+```bash
+# Simple execution - no classpath needed!
+java -jar target/jetpack-air-traffic-controller.jar
+```
+
+**Option 2: Using Maven**
+```bash
+mvn exec:java -Dexec.mainClass="com.example.App"
+```
+
+**Option 3: Using the Standard JAR (requires dependencies in classpath)**
+```bash
 java -cp target/e10btermproject-1.0-SNAPSHOT.jar:~/.m2/repository/org/jogamp/jogl/jogl-all/2.3.2/jogl-all-2.3.2.jar:~/.m2/repository/org/jogamp/gluegen/gluegen-rt/2.3.2/gluegen-rt-2.3.2.jar com.example.App
 ```
 
 #### Run with City Pre-selection
 ```bash
+# Using fat JAR
+java -jar target/jetpack-air-traffic-controller.jar --city="New York"
+
+# Using Maven
 mvn exec:java -Dexec.mainClass="com.example.App" -Dexec.args='--city="New York"'
 ```
 
-#### Display Help
+#### Display Help and Version
 ```bash
-mvn exec:java -Dexec.mainClass="com.example.App" -Dexec.args='--help'
+# Show help
+java -jar target/jetpack-air-traffic-controller.jar --help
+
+# Show version
+java -jar target/jetpack-air-traffic-controller.jar --version
 ```
 
 ## Application Features
