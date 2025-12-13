@@ -32,12 +32,28 @@ package com.example;
 
 import com.example.ui.frames.AirTrafficControllerFrame;
 import javax.swing.*;
+
+/**
+ * Manual test harness for Air Traffic Controller GUI validation.
+ * Provides rapid smoke testing during development.
+ */
 public class MapTest {
+    
+    /**
+     * Main entry point for test application launch.
+     * Starts GUI and displays test checklist.
+     *
+     * @param args Command-line arguments (unused)
+     */
     public static void main(String[] args) {
+        // Schedule GUI initialization on Event Dispatch Thread for thread safety
         SwingUtilities.invokeLater(() -> {
+            // Log application startup
             System.out.println("Launching Air Traffic Controller Application...");
+            // Create and display main application window
             AirTrafficControllerFrame mainFrame = new AirTrafficControllerFrame();
             
+            // Display structured test checklist for manual verification
             System.out.println("\n=== APPLICATION TEST CHECKLIST ===");
             System.out.println("☐ City selection screen appears");
             System.out.println("☐ Select a city and click 'Monitor City'");
