@@ -37,56 +37,83 @@ import com.example.ui.utility.UIComponentFactory;
  * Each sub-panel is accessible via a getter for integration with the main frame.
  */
 public class CityControlPanel extends JPanel {
+    /** Panel displaying current date and time with day/night indicator */
     private DateTimeDisplayPanel dateTimePanel;
+    /** Panel displaying current weather conditions */
     private WeatherBroadcastPanel weatherPanel;
+    /** Panel displaying jetpack movement information */
     private JetpackMovementPanel movementPanel;
+    /** Panel displaying radio instructions and communications */
     private RadioInstructionsPanel radioPanel;
 
-    /** Constructs the CityControlPanel and initializes all sub-panels. */
+    /**
+     * Constructs the CityControlPanel and initializes all sub-panels.
+     * Creates vertical layout with date/time, weather, movement, and radio panels.
+     */
     public CityControlPanel() {
-        initializeUI();
+        initializeUI();  // Initialize all UI components
     }
 
-    /** Initializes the layout and adds all sub-panels to the control panel. */
+    /**
+     * Initializes the layout and adds all sub-panels to the control panel.
+     * Sets up vertical BoxLayout with 10px spacing between panels.
+     */
     private void initializeUI() {
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        UIComponentFactory.setPreferredSize(this, 300, 600);
-        setBackground(Color.WHITE);
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));  // Stack panels vertically
+        UIComponentFactory.setPreferredSize(this, 300, 600);  // Set preferred size
+        setBackground(Color.WHITE);  // White background
 
-        // Date/Time Panel
-        dateTimePanel = new DateTimeDisplayPanel();
-        add(dateTimePanel);
-        add(Box.createRigidArea(new Dimension(0, 10)));
+        // Date/Time Panel - shows current date, time, and day/night indicator
+        dateTimePanel = new DateTimeDisplayPanel();  // Create date/time panel
+        add(dateTimePanel);  // Add to control panel
+        add(Box.createRigidArea(new Dimension(0, 10)));  // Add 10px vertical spacing
 
-        // Weather Broadcast Panel
-        weatherPanel = new WeatherBroadcastPanel();
-        add(weatherPanel);
-        add(Box.createRigidArea(new Dimension(0, 10)));
+        // Weather Broadcast Panel - shows weather conditions
+        weatherPanel = new WeatherBroadcastPanel();  // Create weather panel
+        add(weatherPanel);  // Add to control panel
+        add(Box.createRigidArea(new Dimension(0, 10)));  // Add 10px vertical spacing
 
-        // Jetpack Movement Panel
-        movementPanel = new JetpackMovementPanel();
-        add(movementPanel);
-        add(Box.createRigidArea(new Dimension(0, 10)));
+        // Jetpack Movement Panel - shows jetpack activity
+        movementPanel = new JetpackMovementPanel();  // Create movement panel
+        add(movementPanel);  // Add to control panel
+        add(Box.createRigidArea(new Dimension(0, 10)));  // Add 10px vertical spacing
 
-        // Radio Instructions Panel
-        radioPanel = new RadioInstructionsPanel();
-        add(radioPanel);
+        // Radio Instructions Panel - shows radio communications
+        radioPanel = new RadioInstructionsPanel();  // Create radio panel
+        add(radioPanel);  // Add to control panel (no spacing after last panel)
     }
 
-    // Getters for each sub-panel
+    // Getters for each sub-panel to allow parent components to access and update them
+
+    /**
+     * Returns the date/time display panel.
+     * @return DateTimeDisplayPanel instance
+     */
     public DateTimeDisplayPanel getDateTimePanel() {
-        return dateTimePanel;
+        return dateTimePanel;  // Return date/time panel reference
     }
 
+    /**
+     * Returns the weather broadcast panel.
+     * @return WeatherBroadcastPanel instance
+     */
     public WeatherBroadcastPanel getWeatherPanel() {
-        return weatherPanel;
+        return weatherPanel;  // Return weather panel reference
     }
 
+    /**
+     * Returns the jetpack movement panel.
+     * @return JetpackMovementPanel instance
+     */
     public JetpackMovementPanel getMovementPanel() {
-        return movementPanel;
+        return movementPanel;  // Return movement panel reference
     }
 
+    /**
+     * Returns the radio instructions panel.
+     * @return RadioInstructionsPanel instance
+     */
     public RadioInstructionsPanel getRadioPanel() {
-        return radioPanel;
+        return radioPanel;  // Return radio panel reference
     }
 }

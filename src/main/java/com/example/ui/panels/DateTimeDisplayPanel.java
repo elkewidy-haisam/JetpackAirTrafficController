@@ -47,43 +47,63 @@ import com.example.ui.utility.UIComponentFactory;
  */
 public class DateTimeDisplayPanel extends JPanel {
     
+    /** Text area for displaying date/time information with day/night indicator */
     private JTextArea dateTimeDisplayArea;
     
+    /**
+     * Constructs a new DateTimeDisplayPanel.
+     * Initializes the UI components with styled border and text area.
+     */
     public DateTimeDisplayPanel() {
-        initializeUI();
-    }
-    
-    private void initializeUI() {
-        setLayout(new BorderLayout());
-        setBorder(BorderFactory.createTitledBorder(
-            BorderFactory.createLineBorder(new Color(70, 130, 180), 2),
-            "Current Date & Time",
-            javax.swing.border.TitledBorder.LEFT,
-            javax.swing.border.TitledBorder.TOP,
-            new Font("Arial", Font.BOLD, 12),
-            new Color(70, 130, 180)
-        ));
-        setBackground(Color.WHITE);
-        setMaximumSize(new Dimension(300, 120));
-        
-        dateTimeDisplayArea = UIComponentFactory.createReadOnlyTextArea(4, 25, UIComponentFactory.ARIAL_BOLD_13);
-        dateTimeDisplayArea.setBackground(new Color(240, 248, 255));
-        dateTimeDisplayArea.setForeground(new Color(0, 0, 128));
-        dateTimeDisplayArea.setMargin(new Insets(10, 10, 10, 10));
-        
-        add(dateTimeDisplayArea, BorderLayout.CENTER);
+        initializeUI();  // Initialize UI components
     }
     
     /**
-     * Updates the date/time display
+     * Initializes the UI layout and components.
+     * Sets up border, background, and creates the text display area.
+     */
+    private void initializeUI() {
+        setLayout(new BorderLayout());  // Use BorderLayout for simple center placement
+        // Create titled border with steel blue color
+        setBorder(BorderFactory.createTitledBorder(
+            BorderFactory.createLineBorder(new Color(70, 130, 180), 2),  // Steel blue 2px border
+            "Current Date & Time",  // Title text
+            javax.swing.border.TitledBorder.LEFT,  // Title aligned left
+            javax.swing.border.TitledBorder.TOP,  // Title at top
+            new Font("Arial", Font.BOLD, 12),  // Title font
+            new Color(70, 130, 180)  // Title color matches border
+        ));
+        setBackground(Color.WHITE);  // White background for panel
+        setMaximumSize(new Dimension(300, 120));  // Limit maximum size
+        
+        // Create read-only text area for displaying date/time
+        dateTimeDisplayArea = UIComponentFactory.createReadOnlyTextArea(4, 25, UIComponentFactory.ARIAL_BOLD_13);
+        dateTimeDisplayArea.setBackground(new Color(240, 248, 255));  // Alice blue background
+        dateTimeDisplayArea.setForeground(new Color(0, 0, 128));  // Navy blue text
+        dateTimeDisplayArea.setMargin(new Insets(10, 10, 10, 10));  // 10px padding all sides
+        
+        add(dateTimeDisplayArea, BorderLayout.CENTER);  // Add text area to center
+    }
+    
+    /**
+     * Updates the date/time display with new text.
+     * Sets the text area content to show current date, time, and day/night indicator.
+     * 
+     * @param text the formatted date/time string to display
      */
     public void updateDisplay(String text) {
-        if (dateTimeDisplayArea != null) {
-            dateTimeDisplayArea.setText(text);
+        if (dateTimeDisplayArea != null) {  // Check text area is initialized
+            dateTimeDisplayArea.setText(text);  // Update display text
         }
     }
     
+    /**
+     * Returns the text area component for direct manipulation.
+     * Allows parent components to customize appearance or behavior.
+     * 
+     * @return the JTextArea displaying date/time information
+     */
     public JTextArea getDisplayArea() {
-        return dateTimeDisplayArea;
+        return dateTimeDisplayArea;  // Return text area reference
     }
 }
