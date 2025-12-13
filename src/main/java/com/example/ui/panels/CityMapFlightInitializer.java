@@ -27,11 +27,33 @@
 package com.example.ui.panels;
 
 public class CityMapFlightInitializer {
+    /**
+     * Constructs a new CityMapFlightInitializer.
+     * Prepares the initializer to set up flight operations on city map panels.
+     * Does not perform initialization automatically - requires explicit initializeFlights() call.
+     */
     public CityMapFlightInitializer() {
         // Initialization logic if needed
+        // Future enhancements could include:
+        //   - Storing reference to city map panel for flight placement
+        //   - Loading flight configuration settings (initial positions, altitudes)
+        //   - Initializing flight path generation algorithms
     }
 
+    /**
+     * Initializes active jetpack flights on the city map visualization.
+     * Creates initial flight objects, assigns starting positions, and integrates
+     * them into the map panel's rendering pipeline. Typically called when switching
+     * to a new city or starting a new simulation session.
+     */
     public void initializeFlights() {
         // Logic to initialize jetpack flights on the city map panel
+        // Future implementation should:
+        //   - Retrieve jetpack list for the selected city
+        //   - Assign initial positions (parking spaces or random distribution)
+        //   - Create JetPackFlight objects with starting state
+        //   - Register flights with the map panel for rendering
+        //   - Set initial flight paths and destinations
+        //   - Update map panel to display newly initialized flights
     }
 }
