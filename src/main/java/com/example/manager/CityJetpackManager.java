@@ -41,53 +41,59 @@ import java.util.Map;
  */
 public class CityJetpackManager {
     
+    /** Map storing jetpack collections keyed by city name */
     private Map<String, ArrayList<JetPack>> cityJetpacks;
     
     /**
-     * Constructor - initializes jetpack collections for all cities
+     * Constructor - initializes jetpack collections for all cities.
+     * Calls initialization method to populate jetpack fleets.
      */
     public CityJetpackManager() {
-        initializeCityJetpacks();
+        initializeCityJetpacks();  // Initialize jetpacks for all supported cities
     }
     
     /**
-     * Initializes pre-existing jetpacks for all cities (25 per city)
+     * Initializes pre-existing jetpacks for all cities (300 per city).
+     * Uses JetpackFactory to generate city-specific jetpack fleets with proper callsigns.
      */
     private void initializeCityJetpacks() {
-        cityJetpacks = new HashMap<>();
+        cityJetpacks = new HashMap<>();  // Create empty map for city-to-jetpacks mapping
         
         // Generate 300 jetpacks for each city dynamically using factory
-        cityJetpacks.put("New York", JetpackFactory.generateJetpacksForCity("NY", "New York"));
-        cityJetpacks.put("Boston", JetpackFactory.generateJetpacksForCity("BOS", "Boston"));
-        cityJetpacks.put("Houston", JetpackFactory.generateJetpacksForCity("HOU", "Houston"));
-        cityJetpacks.put("Dallas", JetpackFactory.generateJetpacksForCity("DAL", "Dallas"));
+        cityJetpacks.put("New York", JetpackFactory.generateJetpacksForCity("NY", "New York"));  // NY fleet with NY- prefix
+        cityJetpacks.put("Boston", JetpackFactory.generateJetpacksForCity("BOS", "Boston"));     // Boston fleet with BOS- prefix
+        cityJetpacks.put("Houston", JetpackFactory.generateJetpacksForCity("HOU", "Houston"));   // Houston fleet with HOU- prefix
+        cityJetpacks.put("Dallas", JetpackFactory.generateJetpacksForCity("DAL", "Dallas"));     // Dallas fleet with DAL- prefix
     }
     
     /**
-     * Gets the jetpack collection for a specific city
+     * Gets the jetpack collection for a specific city.
+     * Returns null if city not found.
      * 
-     * @param city The city name
-     * @return ArrayList of jetpacks for the specified city
+     * @param city The city name (e.g., "New York", "Boston")
+     * @return ArrayList of jetpacks for the specified city, or null if city not found
      */
     public ArrayList<JetPack> getJetpacksForCity(String city) {
-        return cityJetpacks.get(city);
+        return cityJetpacks.get(city);  // Lookup and return city's jetpack list
     }
     
     /**
-     * Gets all city-jetpack mappings
+     * Gets all city-jetpack mappings.
+     * Returns the actual map (not a copy), allowing external modification.
      * 
      * @return Map of city names to jetpack collections
      */
     public Map<String, ArrayList<JetPack>> getAllCityJetpacks() {
-        return cityJetpacks;
+        return cityJetpacks;  // Return the complete map
     }
     
     /**
-     * Gets the list of all cities with jetpacks
+     * Gets the list of all cities with jetpacks.
+     * Returns array of city names from the map keys.
      * 
      * @return Array of city names
      */
     public String[] getCities() {
-        return cityJetpacks.keySet().toArray(new String[0]);
+        return cityJetpacks.keySet().toArray(new String[0]);  // Convert keys to array
     }
 }
