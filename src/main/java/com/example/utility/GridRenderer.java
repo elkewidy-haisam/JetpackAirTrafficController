@@ -31,14 +31,26 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 public class GridRenderer extends JPanel {
+    /**
+     * Constructs a new GridRenderer panel.
+     * Calls parent JPanel constructor for initialization.
+     */
     public GridRenderer() {
+        // Call parent JPanel constructor to initialize Swing component
         super();
-        // Initialization logic if needed
+        // Placeholder for future initialization logic (e.g., setting background color, borders)
     }
 
+    /**
+     * Paints this component with custom grid rendering.
+     * Override of JPanel paintComponent for custom drawing logic.
+     * 
+     * @param g Graphics context for drawing operations
+     */
     @Override
     protected void paintComponent(Graphics g) {
+        // Call parent paintComponent to ensure proper Swing painting
         super.paintComponent(g);
-        // Custom rendering logic for city grid
+        // Stub for custom rendering logic - will draw city grid when implemented
     }
 }
