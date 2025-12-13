@@ -30,25 +30,57 @@
 
 package com.example.model;
 
+/**
+ * Immutable value object representing a two-dimensional grid coordinate system.
+ * Defines spatial boundaries for airspace, maps, and collision detection.
+ */
 public class Grid {
+    // Width of the grid in discrete units (X-axis extent)
     private final int width;
+    // Height of the grid in discrete units (Y-axis extent)
     private final int height;
 
+    /**
+     * Constructs a new Grid with specified dimensions.
+     * Both dimensions are immutable after construction for thread safety.
+     *
+     * @param width Horizontal size of the grid
+     * @param height Vertical size of the grid
+     */
     public Grid(int width, int height) {
+        // Assign immutable width (X-axis extent)
         this.width = width;
+        // Assign immutable height (Y-axis extent)
         this.height = height;
     }
 
+    /**
+     * Gets the width of this grid.
+     *
+     * @return Grid width in units
+     */
     public int getWidth() {
         return width;
     }
 
+    /**
+     * Gets the height of this grid.
+     *
+     * @return Grid height in units
+     */
     public int getHeight() {
         return height;
     }
 
+    /**
+     * Returns a string representation of this grid.
+     * Useful for debugging and logging grid dimensions.
+     *
+     * @return Formatted string showing width and height
+     */
     @Override
     public String toString() {
+        // Format as: Grid[width=X, height=Y]
         return String.format("Grid[width=%d, height=%d]", width, height);
     }
 }

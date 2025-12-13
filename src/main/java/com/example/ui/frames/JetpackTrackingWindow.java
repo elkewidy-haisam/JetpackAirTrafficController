@@ -49,15 +49,24 @@ import com.example.accident.AccidentAlert;
  * Shows a behind-the-jetpack view, city context, and supports both JOGL and legacy rendering.
  */
 public class JetpackTrackingWindow extends JFrame {
-        private Timer updateTimer;
+    // Timer for periodic repaints in legacy Graphics2D mode (unused in JOGL mode)
+    private Timer updateTimer;
+    // The specific jetpack being tracked by this window
     private final JetPack jetpack;
+    // Flight instance containing position and state data for tracked jetpack
     private final JetPackFlight flight;
+    // Name of the city where tracking is occurring (e.g., "New York", "Boston")
     private final String cityName;
+    // Complete list of all active flights in the city for context rendering
     private final List<JetPackFlight> allFlights;
+    // Map of flight states for all jetpacks (parking, emergency, normal)
     private final Map<JetPackFlight, JetPackFlightState> allStates;
+    // Animation controller from main panel for synchronized updates
     private final CityMapAnimationController animationController;
-    private JPanel renderPanel; // Can be MapTrackingPanel or JOGL3DPanel
-    private boolean useJOGL = true; // Set to true to use JOGL by default
+    // Polymorphic render panel (either JOGL3DPanel or MapTrackingPanel)
+    private JPanel renderPanel;
+    // Flag to select rendering mode: true for JOGL OpenGL, false for Graphics2D fallback
+    private boolean useJOGL = true;
     
     public JetpackTrackingWindow(JetPack jetpack, JetPackFlight flight, String cityName,
                                  List<JetPackFlight> allFlights, 
