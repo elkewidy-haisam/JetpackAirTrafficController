@@ -1,18 +1,31 @@
 /**
- * JetPack.java
- * by Haisam Elkewidy
- *
- * This class represents a jetpack vehicle with pilot information, position, and flight capabilities.
- *
- * Variables:
- *   - callsign (String)
- *   - pilotName (String)
- *   - available (boolean)
- *
- * Methods:
- *   - JetPack(callsign, pilotName)
- *   - toString()
- *
+ * Represents an individual jetpack vehicle with unique identification and pilot information.
+ * 
+ * Purpose:
+ * Models a jetpack aircraft within the air traffic control system, storing essential identification
+ * (callsign), operator details (pilot name), and operational status (availability). Acts as a
+ * fundamental data entity referenced across radar tracking, radio communications, and flight
+ * management subsystems.
+ * 
+ * Key Responsibilities:
+ * - Maintain immutable identification data (callsign, pilot name)
+ * - Track availability state to indicate whether jetpack is in service or grounded
+ * - Provide standardized string representation for logging and display
+ * 
+ * Interactions:
+ * - Referenced by Radar for position tracking
+ * - Used in Radio broadcasts and communications
+ * - Tracked by AirTrafficController in managed jetpack registry
+ * - Associated with FlightPath objects for flight plan management
+ * - Displayed in UI panels and 3D renderers
+ * 
+ * Patterns & Constraints:
+ * - Immutable identity fields (callsign, pilotName) ensure data integrity
+ * - Lightweight value object suitable for high-frequency updates
+ * - No direct dependencies on UI or infrastructure layers
+ * - Thread-safe for read operations; write to availability requires synchronization at higher layers
+ * 
+ * @author Haisam Elkewidy
  */
 
 package com.example.model;
