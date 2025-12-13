@@ -42,12 +42,19 @@ public class CityMapAnimationController {
                 return false;
             }
         }
+    /** Field for animationTimer */
     private javax.swing.Timer animationTimer;
+    /** Field for jetpackFlights */
     private final List<JetPackFlight> jetpackFlights;
+    /** Field for flightStates */
     private final Map<JetPackFlight, JetPackFlightState> flightStates;
+    /** Field for currentWeather */
     private final Weather currentWeather;
+    /** Field for performanceMonitor */
     private final PerformanceMonitor performanceMonitor;
+    /** Field for radarTapeWindow */
     private final RadarTapeWindow radarTapeWindow;
+    /** Field for weatherManager */
     private final CityMapWeatherManager weatherManager;
     
     public CityMapAnimationController(List<JetPackFlight> jetpackFlights,
@@ -73,8 +80,11 @@ public class CityMapAnimationController {
         }
         
         animationTimer = new javax.swing.Timer(40, new ActionListener() {
+            /** Field for Random() */
             private Random rand = new Random();
+            /** Field for 0 */
             private int updateCounter = 0;
+            /** Field for 0 */
             private int collisionCheckCounter = 0;
             
             @Override

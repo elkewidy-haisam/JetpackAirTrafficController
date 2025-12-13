@@ -24,9 +24,13 @@ public class CityMapLoader {
      * Result class containing loaded map data
      */
     public static class MapLoadResult {
+        /** Field for mapIcon */
         private final ImageIcon mapIcon;
+        /** Field for mapImage */
         private final BufferedImage mapImage;
+        /** Field for mapWidth */
         private final int mapWidth;
+        /** Field for mapHeight */
         private final int mapHeight;
         
         public MapLoadResult(ImageIcon mapIcon, BufferedImage mapImage, int mapWidth, int mapHeight) {

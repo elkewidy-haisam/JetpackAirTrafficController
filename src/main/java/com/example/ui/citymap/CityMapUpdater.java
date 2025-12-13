@@ -22,10 +22,15 @@ import com.example.weather.Weather;
  * CityMapUpdater - Handles all UI text area updates for the city map panel
  */
 public class CityMapUpdater {
+    /** Field for city */
     private final String city;
+    /** Field for logManager */
     private final CityLogManager logManager;
+    /** Field for weatherBroadcastArea */
     private final JTextArea weatherBroadcastArea;
+    /** Field for jetpackMovementArea */
     private final JTextArea jetpackMovementArea;
+    /** Field for radioInstructionsArea */
     private final JTextArea radioInstructionsArea;
     
     public CityMapUpdater(String city, CityLogManager logManager,

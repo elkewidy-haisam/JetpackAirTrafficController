@@ -26,11 +26,17 @@ import com.example.weather.Weather;
  * CityMapRadioInstructionHandler - Handles random radio instruction generation
  */
 public class CityMapRadioInstructionHandler {
+    /** Field for city */
     private final String city;
+    /** Field for cityRadio */
     private final Radio cityRadio;
+    /** Field for currentWeather */
     private final Weather currentWeather;
+    /** Field for logManager */
     private final CityLogManager logManager;
+    /** Field for updater */
     private final CityMapUpdater updater;
+    /** Field for random */
     private final Random random;
     
     public CityMapRadioInstructionHandler(String city, Radio cityRadio, Weather currentWeather,

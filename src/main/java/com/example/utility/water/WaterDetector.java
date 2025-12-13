@@ -43,8 +43,11 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 
 public class WaterDetector {
+    /** mapImage */
     private BufferedImage mapImage;
+    /** width */
     private int width;
+    /** height */
     private int height;
 
     public WaterDetector(String resourcePath) throws IOException {
