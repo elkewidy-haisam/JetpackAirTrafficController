@@ -1,25 +1,39 @@
 /**
- * DayTime component for the Air Traffic Controller system.
+ * Tracks and classifies time of day into periods for lighting, shading, and operational context.
  * 
  * Purpose:
- * Provides daytime functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Manages current time state and classifies it into named periods (NIGHT, DAWN, SUNRISE, DAY, SUNSET,
+ * DUSK, NIGHTTIME) for visual rendering adjustments and operational context. Enables time-based map
+ * shading (darker at night, lighter during day) and provides descriptive time-of-day labels for UI
+ * displays. Supports both real-time and simulated time scenarios for testing and demonstrations.
  * 
  * Key Responsibilities:
- * - Implement core daytime operations
- * - Maintain necessary state for daytime functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Track current time using LocalTime (Java time API)
+ * - Classify time into 7 distinct periods with hour-based ranges
+ * - Provide time-of-day descriptions for UI labels and operator context
+ * - Support time updates for real-time progression or simulation
+ * - Enable time-based visual rendering (map shading, lighting effects)
+ * - Coordinate with weather system for complete environmental simulation
+ * - Support both current system time and manually set times for testing
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used by CityMapPanel for time-based shading overlay rendering
+ * - Referenced by CityDisplayUpdater for time-of-day display labels
+ * - Coordinates with Weather for complete environmental conditions
+ * - Supports visual effects: darker maps at night, lighter during day
+ * - Integrated with timezone-aware displays (EST, CST, PST for cities)
+ * - Used in testing scenarios with fixed times for reproducibility
+ * - May drive future features: dynamic lighting, shadows, visibility
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Time periods: NIGHT(0-5), DAWN(5-7), SUNRISE(7-9), DAY(9-17), SUNSET(17-19), DUSK(19-21), NIGHTTIME(21-24)
+ * - Hour-based classification for simplicity (no minute-level transitions)
+ * - LocalTime provides timezone-independent time tracking
+ * - Mutable time allows updates for animation or simulation
+ * - Range-based classification via HashMap lookup
+ * - Thread-safe for read operations; synchronization for time updates
+ * - Shading intensity: typically 30-40% darker during NIGHT/NIGHTTIME periods
+ * - Default constructor uses current system time; alternative constructor for testing
  * 
  * @author Haisam Elkewidy
  */

@@ -1,25 +1,40 @@
 /**
- * JetpackFactory component for the Air Traffic Controller system.
+ * Factory class for creating jetpack instances with consistent initialization and default values.
  * 
  * Purpose:
- * Provides jetpackfactory functionality within the jetpack air traffic control application.
- * Supports operational requirements through specialized methods and state management.
+ * Provides centralized jetpack creation with standardized initialization of position, altitude, and
+ * speed to default values. Encapsulates jetpack construction logic to ensure consistent object state
+ * across the application. Reduces code duplication and potential errors from manual jetpack
+ * instantiation. Supports future enhancements like validation, configuration injection, or
+ * specialized jetpack types.
  * 
  * Key Responsibilities:
- * - Implement core jetpackfactory operations
- * - Maintain necessary state for jetpackfactory functionality
- * - Integrate with related system components
- * - Support queries and updates as needed
+ * - Create JetPack instances with provided identification and metadata
+ * - Initialize position to origin point (0, 0) as default spawn location
+ * - Set altitude and speed to zero for safe initial state
+ * - Ensure consistent jetpack construction across application
+ * - Provide single point of control for jetpack creation logic
+ * - Support future validation or configuration injection
+ * - Enable testing with controlled jetpack creation
  * 
  * Interactions:
- * - Referenced by controllers and managers
- * - Integrates with data models and services
- * - Coordinates with UI components where applicable
+ * - Used throughout application for jetpack instantiation
+ * - May be called by city initialization code for fleet generation
+ * - Referenced in test fixtures for controlled jetpack creation
+ * - Potentially extended for city-specific jetpack configurations
+ * - Coordinates with JetPack model for proper construction
+ * - Supports future specialized factories for different jetpack types
+ * - May integrate with configuration systems for default values
  * 
  * Patterns & Constraints:
- * - Follows system architecture conventions
- * - Thread-safe where concurrent access expected
- * - Minimal external dependencies
+ * - Factory pattern encapsulates object creation complexity
+ * - Static utility method for stateless factory operation
+ * - Default values: position (0,0), altitude 0.0, speed 0.0
+ * - Thread-safe due to stateless design
+ * - No validation in current implementation (add as needed)
+ * - Lightweight factory suitable for high-frequency creation
+ * - Extensible for future jetpack variants (cargo, passenger, emergency)
+ * - Coordinates with JetPack constructor for actual instantiation
  * 
  * @author Haisam Elkewidy
  */
